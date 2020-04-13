@@ -21,10 +21,7 @@ namespace ERC
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void OperationForm_Load(object sender, EventArgs e)
         {
@@ -35,49 +32,10 @@ namespace ERC
             
             this.Size = new Size(w, h);
 
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel3_Paint_1(object sender, PaintEventArgs e)
-        {
 
         }
 
 
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void OperationForm_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void OperationForm_SizeChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            MessageBox.Show(this.Size.ToString());
-        }
 
         private void OperationForm_ClientSizeChanged(object sender, EventArgs e)
         {
@@ -117,15 +75,15 @@ namespace ERC
                 sen.BackColor = Color.FromArgb(113, 120, 132);
                 string name_1 = name.Split('l')[2];
                 //MessageBox.Show(name_1);
-                Control sen_1 = sen.Parent.Controls[("pictureBox" + name_1)];
+                Control sen_1 = sen.Parent.Controls[("tableLayout" + name_1)];
                 sen_1.BackColor= Color.FromArgb(108, 184, 126);
             }
             else if(name.StartsWith("picture"))
             {
-                sen.BackColor = Color.FromArgb(108, 184, 126);
+                sen.Parent.BackColor = Color.FromArgb(108, 184, 126);
                 string name_1 = name.Split('x')[1];
                 //MessageBox.Show(name_1);
-                Control sen_1 = sen.Parent.Controls[("label" + name_1)];
+                Control sen_1 = sen.Parent.Parent.Controls["label" + name_1];
                 sen_1.BackColor = Color.FromArgb(113, 120, 132);
             }
  
@@ -143,15 +101,16 @@ namespace ERC
                 sen.BackColor = Color.FromArgb(143, 148, 158);
                 string name_1 = name.Split('l')[2];
                 //MessageBox.Show(name_1);
-                Control sen_1 = sen.Parent.Controls[("pictureBox" + name_1)];
+                Control sen_1 = sen.Parent.Controls[("tableLayout" + name_1)];
                 sen_1.BackColor = Color.Transparent;
             }
             else if (name.StartsWith("picture"))
             {
-                sen.BackColor = Color.Transparent;
+                sen.Parent.BackColor = Color.Transparent;
                 string name_1 = name.Split('x')[1];
                 //MessageBox.Show(name_1);
-                Control sen_1 = sen.Parent.Controls[("label" + name_1)];
+                Control sen_1 = sen.Parent.Parent.Controls["label" + name_1];
+                //MessageBox.Show(sen_1.ToString());
                 sen_1.BackColor = Color.FromArgb(143, 148, 158);
             }
 
@@ -160,14 +119,56 @@ namespace ERC
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
+
+
+        private void pictureBox10_MouseEnter(object sender, EventArgs e)
+        {
+            Control sen =(PictureBox)sender;
+            sen.BackColor = Color.FromArgb(222, 54, 66);
+        }
+
+        private void pictureBox10_MouseLeave(object sender, EventArgs e)
+        {
+            Control sen = (PictureBox)sender;
+            sen.BackColor = Color.FromArgb(255,255,255);
+        }
+
+        private void tableLayoutPanel3_Paint_2(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void pictureBox11_MouseEnter(object sender, EventArgs e)
         {
+            Control sen = (PictureBox)sender;
+            sen.BackColor = Color.FromArgb(108, 184, 126);
+        }
 
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        bool normal = true;
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            if (normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                bunifuElipse1.ElipseRadius = 0;
+                normal = false;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                bunifuElipse1.ElipseRadius = 50;
+                normal = true;
+            }
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+            
         }
     }
 }
