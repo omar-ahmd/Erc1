@@ -17,11 +17,7 @@ namespace ERC
         {
             InitializeComponent();
             // StartPosition was set to FormStartPosition.Manual in the properties window.
-            Rectangle screen = Screen.PrimaryScreen.WorkingArea;
-            int w = Width >= screen.Width ? screen.Width : (int)((screen.Width + Width) / (1.8f));
-            int h = Height >= screen.Height ? screen.Height : (int)((screen.Height + Height) / (1.8f));
-            this.Location = new Point((screen.Width - w) / 2, (screen.Height - h) / 2);
-            this.Size = new Size(w, h);
+
 
         }
 
@@ -32,7 +28,12 @@ namespace ERC
 
         private void OperationForm_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(this.Size.ToString());
+            Rectangle screen = Screen.PrimaryScreen.WorkingArea;
+            int w = Width >= screen.Width ? screen.Width : (int)((screen.Width + Width) / (1.8f));
+            int h = Height >= screen.Height ? screen.Height : (int)((screen.Height + Height) / (1.8f));
+            this.Location = new Point((screen.Width - w) / 2, (screen.Height - h) / 2);
+            
+            this.Size = new Size(w, h);
 
         }
 
@@ -160,6 +161,11 @@ namespace ERC
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

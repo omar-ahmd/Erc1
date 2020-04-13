@@ -16,7 +16,7 @@ namespace ERC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new OperationForm());
+            Application.Run(new LoginForm());
         }
     }
 }
