@@ -149,8 +149,6 @@
             this.bunifuElipse1.ElipseRadius = 50;
             this.bunifuElipse1.TargetControl = this;
             // 
-            // materialSingleLineTextField1
-            // 
             this.materialSingleLineTextField1.Depth = 0;
             this.materialSingleLineTextField1.Hint = "Enter Your ID";
             this.materialSingleLineTextField1.Location = new System.Drawing.Point(82, 303);
