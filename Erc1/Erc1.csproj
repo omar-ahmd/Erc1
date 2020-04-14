@@ -162,5 +162,20 @@
   <ItemGroup>
     <None Include="Resources\kisspng-computer-icons-password-password-5b11e040ab26d0.1824988915278981767011.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whitecircle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedCircle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GreenCircle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\111.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -22,21 +22,17 @@ namespace ERC
             int h = Height >= screen.Height ? screen.Height : (int)((screen.Height + Height) / (1.8f));
             this.Location = new Point((screen.Width - w) / 2, (screen.Height - h) / 2);
             this.Size = new Size(w, h);
+            
         }
 
-
-
-        private void OperationForm_Load(object sender, EventArgs e)
-        {
-
-
-
-        }
-        
         bool normal = true;
-        
 
-        private void pageControl2_Click(object sender, EventArgs e)
+
+        private void exit_Clicked(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void maximize_Clicked(object sender, EventArgs e)
         {
             if (normal)
             {
@@ -51,17 +47,15 @@ namespace ERC
                 normal = true;
             }
         }
-
-
-
-        private void pageControl1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void pageControl3_Click(object sender, EventArgs e)
+        private void minimize_Clicked(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
+
 }

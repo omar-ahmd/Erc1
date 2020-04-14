@@ -177,7 +177,7 @@
             this.materialSingleLineTextField2.Size = new System.Drawing.Size(396, 28);
             this.materialSingleLineTextField2.TabIndex = 13;
             this.materialSingleLineTextField2.UseSystemPasswordChar = false;
-            this.materialSingleLineTextField2.Click += new System.EventHandler(this.materialSingleLineTextField2_Click);
+
             // 
             // bunifuElipse2
             // 
@@ -223,7 +223,7 @@
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Logo.TabIndex = 9;
             this.Logo.TabStop = false;
-            this.Logo.MouseHover += new System.EventHandler(this.Logo_MouseHover);
+
             // 
             // LoginForm
             // 

@@ -66,6 +66,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.label3_Click);
             this.pictureBox3.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
             this.pictureBox3.MouseLeave += new System.EventHandler(this.label3_MouseLeave);
             // 
@@ -83,6 +84,7 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "textbutton";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             this.label3.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
             this.label3.MouseLeave += new System.EventHandler(this.label3_MouseLeave);
             // 

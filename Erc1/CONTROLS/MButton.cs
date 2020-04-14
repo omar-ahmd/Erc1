@@ -69,5 +69,20 @@ namespace Erc1.CONTROLS
                 sen_1.BackColor = Color.Transparent;
             }
         }
+
+        public event EventHandler Clicked;
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Clicked.Invoke(this, e);
+            }
+            catch (Exception)
+            {
+
+                
+            }
+        }
     }
 }
