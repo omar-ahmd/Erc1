@@ -56,6 +56,18 @@ namespace ERC
         {
 
         }
+
+        private void sButton1_Mouseenter(object sender, EventArgs e)
+        {
+            sButton1.panelColor = Color.FromArgb(108, 184, 126);
+            sButton1.labelColor = Color.FromArgb(113, 120, 132);
+        }
+
+        private void sButton1_Mouseleave(object sender, EventArgs e)
+        {
+            sButton1.panelColor = Color.Transparent;
+            sButton1.labelColor = Color.Transparent;
+        }
     }
 
 }
