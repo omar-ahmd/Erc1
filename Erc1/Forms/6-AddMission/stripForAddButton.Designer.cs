@@ -55,6 +55,7 @@
             // 
             // sButton3
             // 
+            this.sButton3.Clicked = false;
             this.sButton3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sButton3.labelColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
             this.sButton3.labelText = "مهمات مؤجلة";
@@ -67,9 +68,11 @@
             this.sButton3.textFont = new System.Drawing.Font("Air Strip Arabic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sButton3.textForeColor = System.Drawing.Color.White;
             this.sButton3.ButClicked += new System.EventHandler(this.sButton3_ButClicked);
+            this.sButton3.Load += new System.EventHandler(this.sButton3_Load);
             // 
             // sButton2
             // 
+            this.sButton2.Clicked = false;
             this.sButton2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sButton2.labelColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
             this.sButton2.labelText = "مهمات ملغاة";
@@ -85,6 +88,7 @@
             // 
             // sButton1
             // 
+            this.sButton1.Clicked = false;
             this.sButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sButton1.labelColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
             this.sButton1.labelText = "مهمات منفذة";

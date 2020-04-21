@@ -16,7 +16,39 @@ namespace Erc1.CONTROLS
         public MButton()
         {
             InitializeComponent();
-            
+            BClicked = false;
+
+
+        }
+        public event EventHandler clickedChanged;
+        public bool clicked;
+        public bool BClicked { get=> clicked; set { if (clicked != value) { clicked = value; clickedChanged += MButton_clickedChanged;clickedChanged.Invoke(this, EventArgs.Empty); } } }
+
+        private void MButton_clickedChanged(object sender, EventArgs e)
+        {
+            if(BClicked)
+            {
+                this.label3.BackColor = Color.FromArgb(113, 120, 132);
+                this.BackColor = Color.FromArgb(108, 184, 126);
+                this.tableLayout3.BackColor = Color.FromArgb(108, 184, 126);
+                this.pictureBox3.MouseEnter -= new System.EventHandler(this.label3_MouseEnter);
+                this.pictureBox3.MouseLeave -= new System.EventHandler(this.label3_MouseLeave);
+                this.label3.MouseEnter -= new System.EventHandler(this.label3_MouseEnter);
+                this.label3.MouseLeave -= new System.EventHandler(this.label3_MouseLeave);
+
+            }
+            else
+            {
+                this.label3.BackColor = Color.Transparent;
+                this.tableLayout3.BackColor = Color.Transparent;
+                this.BackColor = Color.Transparent;
+                this.pictureBox3.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
+                this.pictureBox3.MouseLeave += new System.EventHandler(this.label3_MouseLeave);
+                this.label3.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
+                this.label3.MouseLeave += new System.EventHandler(this.label3_MouseLeave);
+
+            }
+
         }
 
         public string BText { get => this.label3.Text; set => this.label3.Text = value; }
@@ -83,6 +115,15 @@ namespace Erc1.CONTROLS
 
                 
             }
+        }
+
+        private void Homebtn_Paint(object sender, PaintEventArgs e)
+        {
+            if (this.label3.Text == "الصفحة الرئيسية")
+            {
+                BClicked = true;
+            }
+            this.Homebtn.Paint -= new System.Windows.Forms.PaintEventHandler(this.Homebtn_Paint);
         }
     }
 }

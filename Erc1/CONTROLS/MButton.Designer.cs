@@ -115,6 +115,7 @@
             this.Homebtn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.Homebtn.Size = new System.Drawing.Size(205, 38);
             this.Homebtn.TabIndex = 3;
+            this.Homebtn.Paint += new System.Windows.Forms.PaintEventHandler(this.Homebtn_Paint);
             // 
             // MButton
             // 

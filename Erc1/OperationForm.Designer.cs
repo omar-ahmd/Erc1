@@ -46,7 +46,9 @@ namespace ERC
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
@@ -67,12 +69,10 @@ namespace ERC
             this.Car = new Erc1.CONTROLS.MButton();
             this.Add = new Erc1.CONTROLS.MButton();
             this.Settings = new Erc1.CONTROLS.MButton();
-            this.mButton1 = new Erc1.CONTROLS.MButton();
+            this.Paramadic = new Erc1.CONTROLS.MButton();
             this.minimize = new Erc1.CONTROLS.PageControl();
             this.maximize = new Erc1.CONTROLS.PageControl();
             this.exit = new Erc1.CONTROLS.PageControl();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.OperationLayout.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.operlabel.SuspendLayout();
@@ -134,7 +134,7 @@ namespace ERC
             this.tableLayoutPanel4.Controls.Add(this.Car, 0, 10);
             this.tableLayoutPanel4.Controls.Add(this.Add, 0, 12);
             this.tableLayoutPanel4.Controls.Add(this.Settings, 0, 14);
-            this.tableLayoutPanel4.Controls.Add(this.mButton1, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(this.Paramadic, 0, 4);
             this.tableLayoutPanel4.Controls.Add(this.panel1, 0, 5);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(819, 0);
@@ -294,6 +294,16 @@ namespace ERC
             this.panel9.Size = new System.Drawing.Size(205, 1);
             this.panel9.TabIndex = 9;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 133);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(205, 1);
+            this.panel1.TabIndex = 22;
+            // 
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
@@ -303,6 +313,15 @@ namespace ERC
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(1, 559);
             this.panel15.TabIndex = 10;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(818, 559);
+            this.panel2.TabIndex = 11;
             // 
             // tableLayoutPanel1
             // 
@@ -527,6 +546,8 @@ namespace ERC
             // 
             // Home
             // 
+            this.Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(184)))), ((int)(((byte)(126)))));
+            this.Home.BClicked = true;
             this.Home.BImage = global::Erc1.Properties.Resources._251_2511320_home_icon_black_home_tab_bar_icon_hd;
             this.Home.BText = "الصفحة الرئيسية";
             this.Home.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -535,9 +556,11 @@ namespace ERC
             this.Home.Name = "Home";
             this.Home.Size = new System.Drawing.Size(205, 38);
             this.Home.TabIndex = 11;
+            this.Home.Clicked += new System.EventHandler(this.Home_Clicked);
             // 
             // Reports
             // 
+            this.Reports.BClicked = false;
             this.Reports.BImage = global::Erc1.Properties.Resources.unnamed;
             this.Reports.BText = "التقارير";
             this.Reports.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -546,9 +569,11 @@ namespace ERC
             this.Reports.Name = "Reports";
             this.Reports.Size = new System.Drawing.Size(205, 38);
             this.Reports.TabIndex = 16;
+            this.Reports.Clicked += new System.EventHandler(this.Home_Clicked);
             // 
             // Hospitals
             // 
+            this.Hospitals.BClicked = false;
             this.Hospitals.BImage = global::Erc1.Properties.Resources.hospital_1321215620284374583;
             this.Hospitals.BText = "المستشفيات";
             this.Hospitals.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -557,9 +582,11 @@ namespace ERC
             this.Hospitals.Name = "Hospitals";
             this.Hospitals.Size = new System.Drawing.Size(205, 38);
             this.Hospitals.TabIndex = 17;
+            this.Hospitals.Clicked += new System.EventHandler(this.Home_Clicked);
             // 
             // Car
             // 
+            this.Car.BClicked = false;
             this.Car.BImage = global::Erc1.Properties.Resources._295_2958655_car_medicine_ambulance_emergency_healthcare_emergency_ambulance_ambulance;
             this.Car.BText = "سيارات اللإسعاف";
             this.Car.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -568,9 +595,11 @@ namespace ERC
             this.Car.Name = "Car";
             this.Car.Size = new System.Drawing.Size(205, 38);
             this.Car.TabIndex = 18;
+            this.Car.Clicked += new System.EventHandler(this.Home_Clicked);
             // 
             // Add
             // 
+            this.Add.BClicked = false;
             this.Add.BImage = global::Erc1.Properties.Resources._18ed11399c;
             this.Add.BText = "إضافة مهمة";
             this.Add.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -584,6 +613,7 @@ namespace ERC
             // 
             // Settings
             // 
+            this.Settings.BClicked = false;
             this.Settings.BImage = global::Erc1.Properties.Resources.setting2;
             this.Settings.BText = "الإعدادات";
             this.Settings.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -593,16 +623,18 @@ namespace ERC
             this.Settings.Size = new System.Drawing.Size(205, 38);
             this.Settings.TabIndex = 20;
             // 
-            // mButton1
+            // Paramadic
             // 
-            this.mButton1.BImage = global::Erc1.Properties.Resources.unnamed;
-            this.mButton1.BText = "المسعفون";
-            this.mButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mButton1.Location = new System.Drawing.Point(0, 95);
-            this.mButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.mButton1.Name = "mButton1";
-            this.mButton1.Size = new System.Drawing.Size(205, 38);
-            this.mButton1.TabIndex = 21;
+            this.Paramadic.BClicked = false;
+            this.Paramadic.BImage = global::Erc1.Properties.Resources.unnamed;
+            this.Paramadic.BText = "المسعفون";
+            this.Paramadic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Paramadic.Location = new System.Drawing.Point(0, 95);
+            this.Paramadic.Margin = new System.Windows.Forms.Padding(0);
+            this.Paramadic.Name = "Paramadic";
+            this.Paramadic.Size = new System.Drawing.Size(205, 38);
+            this.Paramadic.TabIndex = 21;
+            this.Paramadic.Clicked += new System.EventHandler(this.Home_Clicked);
             // 
             // minimize
             // 
@@ -642,25 +674,6 @@ namespace ERC
             this.exit.Size = new System.Drawing.Size(25, 25);
             this.exit.TabIndex = 0;
             this.exit.Clicked += new System.EventHandler(this.exit_Clicked);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 133);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(205, 1);
-            this.panel1.TabIndex = 22;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(818, 559);
-            this.panel2.TabIndex = 11;
             // 
             // OperationForm
             // 
@@ -737,7 +750,7 @@ namespace ERC
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.Panel ContainerOfStrips;
 
-        private Erc1.CONTROLS.MButton mButton1;
+        private Erc1.CONTROLS.MButton Paramadic;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
     }

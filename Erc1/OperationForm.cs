@@ -59,7 +59,14 @@ namespace ERC
 
 
         private void Add_Clicked(object sender, EventArgs e)
-        { 
+        {
+            Add.BClicked = true;
+            Home.BClicked = false;
+            Reports.BClicked = false;
+            Hospitals.BClicked = false;
+            Car.BClicked = false;
+            Settings.BClicked = false;
+            Paramadic.BClicked = false;
             
             stripForAddButton sfab = new stripForAddButton();
             sfab.Dock = DockStyle.Fill;
@@ -169,6 +176,23 @@ namespace ERC
         private void Add_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Home_Clicked(object sender, EventArgs e)
+        {
+            Add.BClicked = false;
+            Home.BClicked = false;
+            Reports.BClicked = false;
+            Hospitals.BClicked = false;
+            Car.BClicked = false;
+            Settings.BClicked = false;
+            Paramadic.BClicked = false;
+ 
+            Control sen = (Control)sender;
+            ((MButton)(sen)).BClicked = true;
+            
+
+            //MessageBox.Show(sender.GetType().ToString());
         }
     }
 

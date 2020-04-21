@@ -76,6 +76,9 @@ namespace Erc1.Forms._6_AddMission
 
         public event EventHandler ImpClicked, DelClicked, CancClicked;
 
+        private void sButton3_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
