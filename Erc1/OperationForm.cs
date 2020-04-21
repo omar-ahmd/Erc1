@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Erc1.CONTROLS;
+using Erc1.Forms;
+using Erc1.Forms._6_AddMission;
 
 namespace ERC
 {
@@ -26,6 +28,7 @@ namespace ERC
         }
 
         bool normal = true;
+        
 
 
         private void exit_Clicked(object sender, EventArgs e)
@@ -52,21 +55,120 @@ namespace ERC
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+
+
+
+        private void Add_Clicked(object sender, EventArgs e)
+        { 
+            
+            stripForAddButton sfab = new stripForAddButton();
+            sfab.Dock = DockStyle.Fill;
+            ContainerOfStrips.Controls.Add(sfab);
+            sfab.ImpClicked += Sfab_ImpClicked;
+            sfab.DelClicked += Sfab_DelClicked;
+            sfab.CancClicked += Sfab_CancClicked;
+
+        }
+
+        private void Sfab_CancClicked(object sender, EventArgs e)
+        {
+            if(dm != null)
+            {
+                dm.Hide();
+            }
+            if (im != null)
+            {
+                im.Hide();
+            }
+            if (cm == null)
+            {
+                cm = new CanceledMission
+                {
+                    BackColor = Color.Black,
+                    Dock = DockStyle.Fill,
+                    TopLevel = false,
+                    TopMost = true
+
+
+                };
+                //panel2.Controls.Clear();
+                panel2.Controls.Add(cm);
+            }
+            cm.TopLevel = false;
+            cm.TopMost = true;
+            cm.Show();
+            
+        }
+        CanceledMission cm;
+        DelayedMissions dm;
+        implementedmissons im;
+        private void Sfab_DelClicked(object sender, EventArgs e)
+        {
+            if (cm!=null)
+            {
+                cm.Hide();
+            }
+            if (im != null)
+            {
+                im.Hide();
+            }
+            if (dm == null)
+            {
+                dm = new DelayedMissions
+                {
+                    BackColor = Color.Yellow,
+                    Dock = DockStyle.Fill,
+                    TopLevel = false,
+                    TopMost = true
+
+                };
+                //panel2.Controls.Clear();
+                panel2.Controls.Add(dm);
+            }
+            dm.TopLevel = false;
+            dm.TopMost = true;
+            dm.Show();
+        }
+
+        private void Sfab_ImpClicked(object sender, EventArgs e)
+        {
+            if (dm!=null)
+            {
+                dm.Hide();
+            }
+            if (cm!=null)
+            {
+                cm.Hide();
+            }
+            if (im == null)
+            {
+                im = new implementedmissons
+                {
+                    BackColor = Color.Black,
+                    Dock = DockStyle.Fill,
+                    TopLevel = false,
+                    TopMost = true
+
+
+                };
+                //panel2.Controls.Clear();
+                panel2.Controls.Add(im);
+            }
+            im.TopLevel = false;
+            im.TopMost = true;
+            im.Show();
+            
+
+        }
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void sButton1_Mouseenter(object sender, EventArgs e)
+        private void Add_Load(object sender, EventArgs e)
         {
-            sButton1.panelColor = Color.FromArgb(108, 184, 126);
-            sButton1.labelColor = Color.FromArgb(113, 120, 132);
-        }
 
-        private void sButton1_Mouseleave(object sender, EventArgs e)
-        {
-            sButton1.panelColor = Color.Transparent;
-            sButton1.labelColor = Color.Transparent;
         }
     }
 

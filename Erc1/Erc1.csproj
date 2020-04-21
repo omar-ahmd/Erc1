@@ -76,6 +76,30 @@
     <Compile Include="CONTROLS\SButton.Designer.cs">
       <DependentUpon>SButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\6-AddMission\CanceledMission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6-AddMission\CanceledMission.Designer.cs">
+      <DependentUpon>CanceledMission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6-AddMission\DelayedMissions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6-AddMission\DelayedMissions.Designer.cs">
+      <DependentUpon>DelayedMissions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6-AddMission\implementedmissons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6-AddMission\implementedmissons.Designer.cs">
+      <DependentUpon>implementedmissons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6-AddMission\stripForAddButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\6-AddMission\stripForAddButton.Designer.cs">
+      <DependentUpon>stripForAddButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CONTROLS\SButton.resx">
       <DependentUpon>SButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6-AddMission\implementedmissons.resx">
+      <DependentUpon>implementedmissons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6-AddMission\stripForAddButton.resx">
+      <DependentUpon>stripForAddButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -185,6 +215,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\1-MainPage\" />
+    <Folder Include="Forms\2-employee\" />
+    <Folder Include="Forms\3-Reports\" />
+    <Folder Include="Forms\4-Hospitals\" />
+    <Folder Include="Forms\5-Cars\" />
+    <Folder Include="Forms\7-Settings\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

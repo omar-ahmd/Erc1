@@ -33,7 +33,7 @@ namespace ERC
         {
             this.components = new System.ComponentModel.Container();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.OperationLayout = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
@@ -60,18 +60,20 @@ namespace ERC
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.ContainerOfStrips = new System.Windows.Forms.Panel();
             this.Home = new Erc1.CONTROLS.MButton();
             this.Reports = new Erc1.CONTROLS.MButton();
             this.Hospitals = new Erc1.CONTROLS.MButton();
             this.Car = new Erc1.CONTROLS.MButton();
             this.Add = new Erc1.CONTROLS.MButton();
             this.Settings = new Erc1.CONTROLS.MButton();
+            this.mButton1 = new Erc1.CONTROLS.MButton();
             this.minimize = new Erc1.CONTROLS.PageControl();
             this.maximize = new Erc1.CONTROLS.PageControl();
             this.exit = new Erc1.CONTROLS.PageControl();
-            this.sButton1 = new Erc1.CONTROLS.SButton();
-            this.tableLayoutPanel3.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.OperationLayout.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.operlabel.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
@@ -88,7 +90,6 @@ namespace ERC
             this.tableLayoutPanel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tableLayoutPanel13.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -96,49 +97,51 @@ namespace ERC
             this.bunifuElipse1.ElipseRadius = 50;
             this.bunifuElipse1.TargetControl = this;
             // 
-            // tableLayoutPanel3
+            // OperationLayout
             // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.panel15, 1, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 91);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1024, 559);
-            this.tableLayoutPanel3.TabIndex = 3;
-            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
+            this.OperationLayout.ColumnCount = 3;
+            this.OperationLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.OperationLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1F));
+            this.OperationLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.OperationLayout.Controls.Add(this.tableLayoutPanel4, 2, 0);
+            this.OperationLayout.Controls.Add(this.panel15, 1, 0);
+            this.OperationLayout.Controls.Add(this.panel2, 0, 0);
+            this.OperationLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OperationLayout.Location = new System.Drawing.Point(0, 91);
+            this.OperationLayout.Margin = new System.Windows.Forms.Padding(0);
+            this.OperationLayout.Name = "OperationLayout";
+            this.OperationLayout.RowCount = 1;
+            this.OperationLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.OperationLayout.Size = new System.Drawing.Size(1024, 559);
+            this.OperationLayout.TabIndex = 3;
             // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(148)))), ((int)(((byte)(158)))));
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.panel16, 0, 13);
-            this.tableLayoutPanel4.Controls.Add(this.panel14, 0, 11);
+            this.tableLayoutPanel4.Controls.Add(this.panel16, 0, 15);
+            this.tableLayoutPanel4.Controls.Add(this.panel14, 0, 13);
             this.tableLayoutPanel4.Controls.Add(this.Home, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.panel13, 0, 9);
-            this.tableLayoutPanel4.Controls.Add(this.panel12, 0, 7);
-            this.tableLayoutPanel4.Controls.Add(this.panel11, 0, 5);
+            this.tableLayoutPanel4.Controls.Add(this.panel13, 0, 11);
+            this.tableLayoutPanel4.Controls.Add(this.panel12, 0, 9);
+            this.tableLayoutPanel4.Controls.Add(this.panel11, 0, 7);
             this.tableLayoutPanel4.Controls.Add(this.panel10, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.operlabel, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.panel9, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.Reports, 0, 4);
-            this.tableLayoutPanel4.Controls.Add(this.Hospitals, 0, 6);
-            this.tableLayoutPanel4.Controls.Add(this.Car, 0, 8);
-            this.tableLayoutPanel4.Controls.Add(this.Add, 0, 10);
-            this.tableLayoutPanel4.Controls.Add(this.Settings, 0, 12);
+            this.tableLayoutPanel4.Controls.Add(this.Reports, 0, 6);
+            this.tableLayoutPanel4.Controls.Add(this.Hospitals, 0, 8);
+            this.tableLayoutPanel4.Controls.Add(this.Car, 0, 10);
+            this.tableLayoutPanel4.Controls.Add(this.Add, 0, 12);
+            this.tableLayoutPanel4.Controls.Add(this.Settings, 0, 14);
+            this.tableLayoutPanel4.Controls.Add(this.mButton1, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(this.panel1, 0, 5);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(819, 0);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 15;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
+            this.tableLayoutPanel4.RowCount = 17;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
@@ -152,15 +155,18 @@ namespace ERC
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(205, 559);
             this.tableLayoutPanel4.TabIndex = 0;
+            this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel16.Location = new System.Drawing.Point(0, 278);
+            this.panel16.Location = new System.Drawing.Point(0, 328);
             this.panel16.Margin = new System.Windows.Forms.Padding(0);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(205, 1);
@@ -170,7 +176,7 @@ namespace ERC
             // 
             this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel14.Location = new System.Drawing.Point(0, 239);
+            this.panel14.Location = new System.Drawing.Point(0, 289);
             this.panel14.Margin = new System.Windows.Forms.Padding(0);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(205, 1);
@@ -180,7 +186,7 @@ namespace ERC
             // 
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel13.Location = new System.Drawing.Point(0, 200);
+            this.panel13.Location = new System.Drawing.Point(0, 250);
             this.panel13.Margin = new System.Windows.Forms.Padding(0);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(205, 1);
@@ -190,7 +196,7 @@ namespace ERC
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(0, 161);
+            this.panel12.Location = new System.Drawing.Point(0, 211);
             this.panel12.Margin = new System.Windows.Forms.Padding(0);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(205, 1);
@@ -200,7 +206,7 @@ namespace ERC
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(0, 122);
+            this.panel11.Location = new System.Drawing.Point(0, 172);
             this.panel11.Margin = new System.Windows.Forms.Padding(0);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(205, 1);
@@ -210,7 +216,7 @@ namespace ERC
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(0, 83);
+            this.panel10.Location = new System.Drawing.Point(0, 94);
             this.panel10.Margin = new System.Windows.Forms.Padding(0);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(205, 1);
@@ -231,7 +237,7 @@ namespace ERC
             this.operlabel.Name = "operlabel";
             this.operlabel.RowCount = 1;
             this.operlabel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.operlabel.Size = new System.Drawing.Size(205, 44);
+            this.operlabel.Size = new System.Drawing.Size(205, 55);
             this.operlabel.TabIndex = 8;
             // 
             // tableLayoutPanel10
@@ -249,17 +255,17 @@ namespace ERC
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(41, 44);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(41, 55);
             this.tableLayoutPanel10.TabIndex = 12;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = global::Erc1.Properties.Resources._44288;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(4, 5);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 35);
+            this.pictureBox2.Size = new System.Drawing.Size(32, 44);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
@@ -273,7 +279,7 @@ namespace ERC
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(158, 44);
+            this.label2.Size = new System.Drawing.Size(158, 55);
             this.label2.TabIndex = 4;
             this.label2.Text = "العمليات";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -282,7 +288,7 @@ namespace ERC
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(0, 44);
+            this.panel9.Location = new System.Drawing.Point(0, 55);
             this.panel9.Margin = new System.Windows.Forms.Padding(0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(205, 1);
@@ -302,7 +308,7 @@ namespace ERC
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.OperationLayout, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -398,7 +404,7 @@ namespace ERC
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Air Strip Arabic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
@@ -498,7 +504,7 @@ namespace ERC
             this.tableLayoutPanel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(148)))), ((int)(((byte)(158)))));
             this.tableLayoutPanel13.ColumnCount = 1;
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.Controls.Add(this.panel1, 0, 1);
+            this.tableLayoutPanel13.Controls.Add(this.ContainerOfStrips, 0, 1);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel13.Location = new System.Drawing.Point(153, 0);
             this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(0);
@@ -509,23 +515,22 @@ namespace ERC
             this.tableLayoutPanel13.Size = new System.Drawing.Size(665, 91);
             this.tableLayoutPanel13.TabIndex = 3;
             // 
-            // panel1
+            // ContainerOfStrips
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.panel1.Controls.Add(this.sButton1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 41);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(665, 50);
-            this.panel1.TabIndex = 0;
+            this.ContainerOfStrips.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
+            this.ContainerOfStrips.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContainerOfStrips.Location = new System.Drawing.Point(0, 41);
+            this.ContainerOfStrips.Margin = new System.Windows.Forms.Padding(0);
+            this.ContainerOfStrips.Name = "ContainerOfStrips";
+            this.ContainerOfStrips.Size = new System.Drawing.Size(665, 50);
+            this.ContainerOfStrips.TabIndex = 0;
             // 
             // Home
             // 
             this.Home.BImage = global::Erc1.Properties.Resources._251_2511320_home_icon_black_home_tab_bar_icon_hd;
             this.Home.BText = "الصفحة الرئيسية";
             this.Home.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Home.Location = new System.Drawing.Point(0, 45);
+            this.Home.Location = new System.Drawing.Point(0, 56);
             this.Home.Margin = new System.Windows.Forms.Padding(0);
             this.Home.Name = "Home";
             this.Home.Size = new System.Drawing.Size(205, 38);
@@ -536,7 +541,7 @@ namespace ERC
             this.Reports.BImage = global::Erc1.Properties.Resources.unnamed;
             this.Reports.BText = "التقارير";
             this.Reports.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Reports.Location = new System.Drawing.Point(0, 84);
+            this.Reports.Location = new System.Drawing.Point(0, 134);
             this.Reports.Margin = new System.Windows.Forms.Padding(0);
             this.Reports.Name = "Reports";
             this.Reports.Size = new System.Drawing.Size(205, 38);
@@ -547,7 +552,7 @@ namespace ERC
             this.Hospitals.BImage = global::Erc1.Properties.Resources.hospital_1321215620284374583;
             this.Hospitals.BText = "المستشفيات";
             this.Hospitals.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Hospitals.Location = new System.Drawing.Point(0, 123);
+            this.Hospitals.Location = new System.Drawing.Point(0, 173);
             this.Hospitals.Margin = new System.Windows.Forms.Padding(0);
             this.Hospitals.Name = "Hospitals";
             this.Hospitals.Size = new System.Drawing.Size(205, 38);
@@ -558,7 +563,7 @@ namespace ERC
             this.Car.BImage = global::Erc1.Properties.Resources._295_2958655_car_medicine_ambulance_emergency_healthcare_emergency_ambulance_ambulance;
             this.Car.BText = "سيارات اللإسعاف";
             this.Car.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Car.Location = new System.Drawing.Point(0, 162);
+            this.Car.Location = new System.Drawing.Point(0, 212);
             this.Car.Margin = new System.Windows.Forms.Padding(0);
             this.Car.Name = "Car";
             this.Car.Size = new System.Drawing.Size(205, 38);
@@ -569,22 +574,35 @@ namespace ERC
             this.Add.BImage = global::Erc1.Properties.Resources._18ed11399c;
             this.Add.BText = "إضافة مهمة";
             this.Add.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Add.Location = new System.Drawing.Point(0, 201);
+            this.Add.Location = new System.Drawing.Point(0, 251);
             this.Add.Margin = new System.Windows.Forms.Padding(0);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(205, 38);
             this.Add.TabIndex = 19;
+            this.Add.Clicked += new System.EventHandler(this.Add_Clicked);
+            this.Add.Load += new System.EventHandler(this.Add_Load);
             // 
             // Settings
             // 
             this.Settings.BImage = global::Erc1.Properties.Resources.setting2;
             this.Settings.BText = "الإعدادات";
             this.Settings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Settings.Location = new System.Drawing.Point(0, 240);
+            this.Settings.Location = new System.Drawing.Point(0, 290);
             this.Settings.Margin = new System.Windows.Forms.Padding(0);
             this.Settings.Name = "Settings";
             this.Settings.Size = new System.Drawing.Size(205, 38);
             this.Settings.TabIndex = 20;
+            // 
+            // mButton1
+            // 
+            this.mButton1.BImage = global::Erc1.Properties.Resources.unnamed;
+            this.mButton1.BText = "المسعفون";
+            this.mButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mButton1.Location = new System.Drawing.Point(0, 95);
+            this.mButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.mButton1.Name = "mButton1";
+            this.mButton1.Size = new System.Drawing.Size(205, 38);
+            this.mButton1.TabIndex = 21;
             // 
             // minimize
             // 
@@ -625,20 +643,24 @@ namespace ERC
             this.exit.TabIndex = 0;
             this.exit.Clicked += new System.EventHandler(this.exit_Clicked);
             // 
-            // sButton1
+            // panel1
             // 
-            this.sButton1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sButton1.labelColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.sButton1.labelText = "label1";
-            this.sButton1.Location = new System.Drawing.Point(430, 0);
-            this.sButton1.Name = "sButton1";
-            this.sButton1.panelColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.sButton1.Size = new System.Drawing.Size(235, 50);
-            this.sButton1.TabIndex = 0;
-            this.sButton1.textFont = new System.Drawing.Font("Air Strip Arabic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sButton1.textForeColor = System.Drawing.Color.White;
-            this.sButton1.Mouseenter += new System.EventHandler(this.sButton1_Mouseenter);
-            this.sButton1.Mouseleave += new System.EventHandler(this.sButton1_Mouseleave);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(202)))), ((int)(((byte)(202)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 133);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(205, 1);
+            this.panel1.TabIndex = 22;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(818, 559);
+            this.panel2.TabIndex = 11;
             // 
             // OperationForm
             // 
@@ -651,7 +673,7 @@ namespace ERC
             this.Name = "OperationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OperationForm";
-            this.tableLayoutPanel3.ResumeLayout(false);
+            this.OperationLayout.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.operlabel.ResumeLayout(false);
             this.operlabel.PerformLayout();
@@ -670,7 +692,6 @@ namespace ERC
             this.tableLayoutPanel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tableLayoutPanel13.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -679,7 +700,7 @@ namespace ERC
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel OperationLayout;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel14;
@@ -714,7 +735,10 @@ namespace ERC
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        private System.Windows.Forms.Panel ContainerOfStrips;
+
+        private Erc1.CONTROLS.MButton mButton1;
         private System.Windows.Forms.Panel panel1;
-        private Erc1.CONTROLS.SButton sButton1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
