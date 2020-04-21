@@ -123,6 +123,12 @@
     <EmbeddedResource Include="CONTROLS\SButton.resx">
       <DependentUpon>SButton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6-AddMission\CanceledMission.resx">
+      <DependentUpon>CanceledMission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\6-AddMission\DelayedMissions.resx">
+      <DependentUpon>DelayedMissions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\6-AddMission\implementedmissons.resx">
       <DependentUpon>implementedmissons.cs</DependentUpon>
     </EmbeddedResource>
