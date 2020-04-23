@@ -53,7 +53,7 @@ namespace Erc1.CONTROLS
         private void label1_Mouseenter(object sender, EventArgs e)
         {
             Control sen = (Control)sender;
-            label1.BackColor = Color.FromArgb(113, 120, 180);
+            label1.BackColor = Color.FromArgb(94, 100, 110);
             panel1.BackColor = Color.FromArgb(108, 184, 126);
 
         }

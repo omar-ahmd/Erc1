@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CONTROLS\LabelBord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CONTROLS\LabelBord.Designer.cs">
+      <DependentUpon>LabelBord.cs</DependentUpon>
+    </Compile>
     <Compile Include="CONTROLS\MButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CONTROLS\LabelBord.resx">
+      <DependentUpon>LabelBord.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CONTROLS\MButton.resx">
       <DependentUpon>MButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,6 +238,12 @@
     <Folder Include="Forms\4-Hospitals\" />
     <Folder Include="Forms\5-Cars\" />
     <Folder Include="Forms\7-Settings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-11.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

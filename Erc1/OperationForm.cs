@@ -91,7 +91,7 @@ namespace ERC
             {
                 cm = new CanceledMission
                 {
-                    BackColor = Color.Black,
+                    //BackColor = Color.Black,
                     Dock = DockStyle.Fill,
                     TopLevel = false,
                     TopMost = true
@@ -123,7 +123,7 @@ namespace ERC
             {
                 dm = new DelayedMissions
                 {
-                    BackColor = Color.Yellow,
+                    //BackColor = Color.Yellow,
                     Dock = DockStyle.Fill,
                     TopLevel = false,
                     TopMost = true
@@ -151,7 +151,7 @@ namespace ERC
             {
                 im = new implementedmissons
                 {
-                    BackColor = Color.Black,
+                    //BackColor = Color.Black,
                     Dock = DockStyle.Fill,
                     TopLevel = false,
                     TopMost = true
