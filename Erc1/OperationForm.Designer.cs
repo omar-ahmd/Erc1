@@ -37,6 +37,7 @@ namespace ERC
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.Home = new Erc1.CONTROLS.MButton();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -46,6 +47,12 @@ namespace ERC
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.Reports = new Erc1.CONTROLS.MButton();
+            this.Hospitals = new Erc1.CONTROLS.MButton();
+            this.Car = new Erc1.CONTROLS.MButton();
+            this.Add = new Erc1.CONTROLS.MButton();
+            this.Settings = new Erc1.CONTROLS.MButton();
+            this.Paramadic = new Erc1.CONTROLS.MButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -58,21 +65,14 @@ namespace ERC
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.minimize = new Erc1.CONTROLS.PageControl();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.maximize = new Erc1.CONTROLS.PageControl();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.exit = new Erc1.CONTROLS.PageControl();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.ContainerOfStrips = new System.Windows.Forms.Panel();
-            this.Home = new Erc1.CONTROLS.MButton();
-            this.Reports = new Erc1.CONTROLS.MButton();
-            this.Hospitals = new Erc1.CONTROLS.MButton();
-            this.Car = new Erc1.CONTROLS.MButton();
-            this.Add = new Erc1.CONTROLS.MButton();
-            this.Settings = new Erc1.CONTROLS.MButton();
-            this.Paramadic = new Erc1.CONTROLS.MButton();
-            this.minimize = new Erc1.CONTROLS.PageControl();
-            this.maximize = new Erc1.CONTROLS.PageControl();
-            this.exit = new Erc1.CONTROLS.PageControl();
             this.OperationLayout.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.operlabel.SuspendLayout();
@@ -160,7 +160,6 @@ namespace ERC
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(205, 559);
             this.tableLayoutPanel4.TabIndex = 0;
-            this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
             // panel16
             // 
@@ -181,6 +180,20 @@ namespace ERC
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(205, 1);
             this.panel14.TabIndex = 14;
+            // 
+            // Home
+            // 
+            this.Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(184)))), ((int)(((byte)(126)))));
+            this.Home.BClicked = true;
+            this.Home.BImage = global::Erc1.Properties.Resources._251_2511320_home_icon_black_home_tab_bar_icon_hd;
+            this.Home.BText = "الصفحة الرئيسية";
+            this.Home.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Home.Location = new System.Drawing.Point(0, 56);
+            this.Home.Margin = new System.Windows.Forms.Padding(0);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(205, 38);
+            this.Home.TabIndex = 11;
+            this.Home.Clicked += new System.EventHandler(this.Home_Clicked);
             // 
             // panel13
             // 
@@ -274,7 +287,7 @@ namespace ERC
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Air Strip Arabic", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
@@ -293,6 +306,83 @@ namespace ERC
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(205, 1);
             this.panel9.TabIndex = 9;
+            // 
+            // Reports
+            // 
+            this.Reports.BClicked = false;
+            this.Reports.BImage = global::Erc1.Properties.Resources.unnamed;
+            this.Reports.BText = "التقارير";
+            this.Reports.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Reports.Location = new System.Drawing.Point(0, 134);
+            this.Reports.Margin = new System.Windows.Forms.Padding(0);
+            this.Reports.Name = "Reports";
+            this.Reports.Size = new System.Drawing.Size(205, 38);
+            this.Reports.TabIndex = 16;
+            this.Reports.Clicked += new System.EventHandler(this.Home_Clicked);
+            // 
+            // Hospitals
+            // 
+            this.Hospitals.BClicked = false;
+            this.Hospitals.BImage = global::Erc1.Properties.Resources.hospital_1321215620284374583;
+            this.Hospitals.BText = "المستشفيات";
+            this.Hospitals.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Hospitals.Location = new System.Drawing.Point(0, 173);
+            this.Hospitals.Margin = new System.Windows.Forms.Padding(0);
+            this.Hospitals.Name = "Hospitals";
+            this.Hospitals.Size = new System.Drawing.Size(205, 38);
+            this.Hospitals.TabIndex = 17;
+            this.Hospitals.Clicked += new System.EventHandler(this.Home_Clicked);
+            // 
+            // Car
+            // 
+            this.Car.BClicked = false;
+            this.Car.BImage = global::Erc1.Properties.Resources._295_2958655_car_medicine_ambulance_emergency_healthcare_emergency_ambulance_ambulance;
+            this.Car.BText = "سيارات اللإسعاف";
+            this.Car.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Car.Location = new System.Drawing.Point(0, 212);
+            this.Car.Margin = new System.Windows.Forms.Padding(0);
+            this.Car.Name = "Car";
+            this.Car.Size = new System.Drawing.Size(205, 38);
+            this.Car.TabIndex = 18;
+            this.Car.Clicked += new System.EventHandler(this.Home_Clicked);
+            // 
+            // Add
+            // 
+            this.Add.BClicked = false;
+            this.Add.BImage = global::Erc1.Properties.Resources._18ed11399c;
+            this.Add.BText = "إضافة مهمة";
+            this.Add.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Add.Location = new System.Drawing.Point(0, 251);
+            this.Add.Margin = new System.Windows.Forms.Padding(0);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(205, 38);
+            this.Add.TabIndex = 19;
+            this.Add.Clicked += new System.EventHandler(this.Add_Clicked);
+            // 
+            // Settings
+            // 
+            this.Settings.BClicked = false;
+            this.Settings.BImage = global::Erc1.Properties.Resources.setting2;
+            this.Settings.BText = "الإعدادات";
+            this.Settings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Settings.Location = new System.Drawing.Point(0, 290);
+            this.Settings.Margin = new System.Windows.Forms.Padding(0);
+            this.Settings.Name = "Settings";
+            this.Settings.Size = new System.Drawing.Size(205, 38);
+            this.Settings.TabIndex = 20;
+            // 
+            // Paramadic
+            // 
+            this.Paramadic.BClicked = false;
+            this.Paramadic.BImage = global::Erc1.Properties.Resources.unnamed;
+            this.Paramadic.BText = "المسعفون";
+            this.Paramadic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Paramadic.Location = new System.Drawing.Point(0, 95);
+            this.Paramadic.Margin = new System.Windows.Forms.Padding(0);
+            this.Paramadic.Name = "Paramadic";
+            this.Paramadic.Size = new System.Drawing.Size(205, 38);
+            this.Paramadic.TabIndex = 21;
+            this.Paramadic.Clicked += new System.EventHandler(this.Home_Clicked);
             // 
             // panel1
             // 
@@ -322,6 +412,7 @@ namespace ERC
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(818, 559);
             this.panel2.TabIndex = 11;
+            this.panel2.SizeChanged += new System.EventHandler(this.panel2_SizeChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -342,8 +433,8 @@ namespace ERC
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel12, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.pictureBox3, 0, 0);
@@ -474,6 +565,19 @@ namespace ERC
             this.tableLayoutPanel9.Size = new System.Drawing.Size(25, 41);
             this.tableLayoutPanel9.TabIndex = 2;
             // 
+            // minimize
+            // 
+            this.minimize.BackColor = System.Drawing.Color.Transparent;
+            this.minimize.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.minimize.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.minimize.Location = new System.Drawing.Point(0, 8);
+            this.minimize.Margin = new System.Windows.Forms.Padding(0);
+            this.minimize.MyType = Erc1.CONTROLS.PageControl.Type.minimize;
+            this.minimize.Name = "minimize";
+            this.minimize.Size = new System.Drawing.Size(25, 25);
+            this.minimize.TabIndex = 2;
+            this.minimize.Clicked += new System.EventHandler(this.minimize_Clicked);
+            // 
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.ColumnCount = 1;
@@ -489,6 +593,19 @@ namespace ERC
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(25, 41);
             this.tableLayoutPanel8.TabIndex = 1;
+            // 
+            // maximize
+            // 
+            this.maximize.BackColor = System.Drawing.Color.Transparent;
+            this.maximize.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.maximize.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.maximize.Location = new System.Drawing.Point(0, 8);
+            this.maximize.Margin = new System.Windows.Forms.Padding(0);
+            this.maximize.MyType = Erc1.CONTROLS.PageControl.Type.maximize;
+            this.maximize.Name = "maximize";
+            this.maximize.Size = new System.Drawing.Size(25, 25);
+            this.maximize.TabIndex = 1;
+            this.maximize.Clicked += new System.EventHandler(this.maximize_Clicked);
             // 
             // tableLayoutPanel11
             // 
@@ -506,162 +623,6 @@ namespace ERC
             this.tableLayoutPanel11.Size = new System.Drawing.Size(25, 41);
             this.tableLayoutPanel11.TabIndex = 3;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Image = global::Erc1.Properties.Resources._111;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(153, 91);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // tableLayoutPanel13
-            // 
-            this.tableLayoutPanel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(148)))), ((int)(((byte)(158)))));
-            this.tableLayoutPanel13.ColumnCount = 1;
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.Controls.Add(this.ContainerOfStrips, 0, 1);
-            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(153, 0);
-            this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
-            this.tableLayoutPanel13.RowCount = 2;
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46F));
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(665, 91);
-            this.tableLayoutPanel13.TabIndex = 3;
-            // 
-            // ContainerOfStrips
-            // 
-            this.ContainerOfStrips.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.ContainerOfStrips.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ContainerOfStrips.Location = new System.Drawing.Point(0, 41);
-            this.ContainerOfStrips.Margin = new System.Windows.Forms.Padding(0);
-            this.ContainerOfStrips.Name = "ContainerOfStrips";
-            this.ContainerOfStrips.Size = new System.Drawing.Size(665, 50);
-            this.ContainerOfStrips.TabIndex = 0;
-            // 
-            // Home
-            // 
-            this.Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(184)))), ((int)(((byte)(126)))));
-            this.Home.BClicked = true;
-            this.Home.BImage = global::Erc1.Properties.Resources._251_2511320_home_icon_black_home_tab_bar_icon_hd;
-            this.Home.BText = "الصفحة الرئيسية";
-            this.Home.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Home.Location = new System.Drawing.Point(0, 56);
-            this.Home.Margin = new System.Windows.Forms.Padding(0);
-            this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(205, 38);
-            this.Home.TabIndex = 11;
-            this.Home.Clicked += new System.EventHandler(this.Home_Clicked);
-            // 
-            // Reports
-            // 
-            this.Reports.BClicked = false;
-            this.Reports.BImage = global::Erc1.Properties.Resources.unnamed;
-            this.Reports.BText = "التقارير";
-            this.Reports.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Reports.Location = new System.Drawing.Point(0, 134);
-            this.Reports.Margin = new System.Windows.Forms.Padding(0);
-            this.Reports.Name = "Reports";
-            this.Reports.Size = new System.Drawing.Size(205, 38);
-            this.Reports.TabIndex = 16;
-            this.Reports.Clicked += new System.EventHandler(this.Home_Clicked);
-            // 
-            // Hospitals
-            // 
-            this.Hospitals.BClicked = false;
-            this.Hospitals.BImage = global::Erc1.Properties.Resources.hospital_1321215620284374583;
-            this.Hospitals.BText = "المستشفيات";
-            this.Hospitals.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Hospitals.Location = new System.Drawing.Point(0, 173);
-            this.Hospitals.Margin = new System.Windows.Forms.Padding(0);
-            this.Hospitals.Name = "Hospitals";
-            this.Hospitals.Size = new System.Drawing.Size(205, 38);
-            this.Hospitals.TabIndex = 17;
-            this.Hospitals.Clicked += new System.EventHandler(this.Home_Clicked);
-            // 
-            // Car
-            // 
-            this.Car.BClicked = false;
-            this.Car.BImage = global::Erc1.Properties.Resources._295_2958655_car_medicine_ambulance_emergency_healthcare_emergency_ambulance_ambulance;
-            this.Car.BText = "سيارات اللإسعاف";
-            this.Car.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Car.Location = new System.Drawing.Point(0, 212);
-            this.Car.Margin = new System.Windows.Forms.Padding(0);
-            this.Car.Name = "Car";
-            this.Car.Size = new System.Drawing.Size(205, 38);
-            this.Car.TabIndex = 18;
-            this.Car.Clicked += new System.EventHandler(this.Home_Clicked);
-            // 
-            // Add
-            // 
-            this.Add.BClicked = false;
-            this.Add.BImage = global::Erc1.Properties.Resources._18ed11399c;
-            this.Add.BText = "إضافة مهمة";
-            this.Add.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Add.Location = new System.Drawing.Point(0, 251);
-            this.Add.Margin = new System.Windows.Forms.Padding(0);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(205, 38);
-            this.Add.TabIndex = 19;
-            this.Add.Clicked += new System.EventHandler(this.Add_Clicked);
-            this.Add.Load += new System.EventHandler(this.Add_Load);
-            // 
-            // Settings
-            // 
-            this.Settings.BClicked = false;
-            this.Settings.BImage = global::Erc1.Properties.Resources.setting2;
-            this.Settings.BText = "الإعدادات";
-            this.Settings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Settings.Location = new System.Drawing.Point(0, 290);
-            this.Settings.Margin = new System.Windows.Forms.Padding(0);
-            this.Settings.Name = "Settings";
-            this.Settings.Size = new System.Drawing.Size(205, 38);
-            this.Settings.TabIndex = 20;
-            // 
-            // Paramadic
-            // 
-            this.Paramadic.BClicked = false;
-            this.Paramadic.BImage = global::Erc1.Properties.Resources.unnamed;
-            this.Paramadic.BText = "المسعفون";
-            this.Paramadic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Paramadic.Location = new System.Drawing.Point(0, 95);
-            this.Paramadic.Margin = new System.Windows.Forms.Padding(0);
-            this.Paramadic.Name = "Paramadic";
-            this.Paramadic.Size = new System.Drawing.Size(205, 38);
-            this.Paramadic.TabIndex = 21;
-            this.Paramadic.Clicked += new System.EventHandler(this.Home_Clicked);
-            // 
-            // minimize
-            // 
-            this.minimize.BackColor = System.Drawing.Color.Transparent;
-            this.minimize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.minimize.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.minimize.Location = new System.Drawing.Point(0, 8);
-            this.minimize.Margin = new System.Windows.Forms.Padding(0);
-            this.minimize.MyType = Erc1.CONTROLS.PageControl.Type.minimize;
-            this.minimize.Name = "minimize";
-            this.minimize.Size = new System.Drawing.Size(25, 25);
-            this.minimize.TabIndex = 2;
-            this.minimize.Clicked += new System.EventHandler(this.minimize_Clicked);
-            // 
-            // maximize
-            // 
-            this.maximize.BackColor = System.Drawing.Color.Transparent;
-            this.maximize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.maximize.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.maximize.Location = new System.Drawing.Point(0, 8);
-            this.maximize.Margin = new System.Windows.Forms.Padding(0);
-            this.maximize.MyType = Erc1.CONTROLS.PageControl.Type.maximize;
-            this.maximize.Name = "maximize";
-            this.maximize.Size = new System.Drawing.Size(25, 25);
-            this.maximize.TabIndex = 1;
-            this.maximize.Clicked += new System.EventHandler(this.maximize_Clicked);
-            // 
             // exit
             // 
             this.exit.BackColor = System.Drawing.Color.Transparent;
@@ -674,6 +635,44 @@ namespace ERC
             this.exit.Size = new System.Drawing.Size(25, 25);
             this.exit.TabIndex = 0;
             this.exit.Clicked += new System.EventHandler(this.exit_Clicked);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox3.Image = global::Erc1.Properties.Resources._111;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(122, 91);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(148)))), ((int)(((byte)(158)))));
+            this.tableLayoutPanel13.ColumnCount = 1;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel13.Controls.Add(this.ContainerOfStrips, 0, 1);
+            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(122, 0);
+            this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 2;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(696, 91);
+            this.tableLayoutPanel13.TabIndex = 3;
+            // 
+            // ContainerOfStrips
+            // 
+            this.ContainerOfStrips.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
+            this.ContainerOfStrips.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContainerOfStrips.Location = new System.Drawing.Point(0, 41);
+            this.ContainerOfStrips.Margin = new System.Windows.Forms.Padding(0);
+            this.ContainerOfStrips.Name = "ContainerOfStrips";
+            this.ContainerOfStrips.Size = new System.Drawing.Size(696, 50);
+            this.ContainerOfStrips.TabIndex = 0;
             // 
             // OperationForm
             // 

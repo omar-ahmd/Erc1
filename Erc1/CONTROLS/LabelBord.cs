@@ -17,12 +17,19 @@ namespace Erc1.CONTROLS
             InitializeComponent();
         }
         public event EventHandler CheckChange;
-        public bool check = false;
+        bool check = false;
         public bool Check { get=> check; set { check = value; CheckChange += LabelBord_CheckChange; CheckChange.Invoke(this,EventArgs.Empty); } }
 
         private void LabelBord_CheckChange(object sender, EventArgs e)
         {
-            
+            if(Check)
+            {
+                panel1.BackColor= Color.FromArgb(109, 184, 127);
+            }
+            else
+            {
+                panel1.BackColor = Color.Transparent;
+            }
         }
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
@@ -33,7 +40,7 @@ namespace Erc1.CONTROLS
         public Color ForColor { get => label1.ForeColor; set => label1.ForeColor = value; }
         public Font font { get => label1.Font; set => label1.Font = value; }
         private void tableLayoutPanel2_Click(object sender, EventArgs e)
-        {
+        { 
             if(Check)
             {
                 panel1.BackColor = Color.Transparent;

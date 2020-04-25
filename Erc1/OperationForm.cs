@@ -16,6 +16,11 @@ namespace ERC
 {
     public partial class OperationForm : Form
     {
+
+        CanceledMission cm = new CanceledMission();
+        //DelayedMissions dm = new DelayedMissions();
+        implementedmissons im = new implementedmissons(MissionType.Implemented);
+        implementedmissons dm = new implementedmissons(MissionType.Dlayed);
         public OperationForm()
         {
             InitializeComponent();
@@ -24,7 +29,25 @@ namespace ERC
             int h = Height >= screen.Height ? screen.Height : (int)((screen.Height + Height) / (1.8f));
             this.Location = new Point((screen.Width - w) / 2, (screen.Height - h) / 2);
             this.Size = new Size(w, h);
-            
+
+
+            //im.Dock = DockStyle.Fill;
+            im.TopLevel = false;
+            panel2.Controls.Add(im);
+            im.Hide();
+
+            //dm.Dock = DockStyle.Fill;
+            dm.TopLevel = false;
+            panel2.Controls.Add(dm);
+            dm.Hide();
+
+            //cm.Dock = DockStyle.Fill;
+            cm.TopLevel = false;
+            panel2.Controls.Add(cm);
+            cm.Hide();
+
+
+
         }
 
         bool normal = true;
@@ -77,107 +100,6 @@ namespace ERC
 
         }
 
-        private void Sfab_CancClicked(object sender, EventArgs e)
-        {
-            if(dm != null)
-            {
-                dm.Hide();
-            }
-            if (im != null)
-            {
-                im.Hide();
-            }
-            if (cm == null)
-            {
-                cm = new CanceledMission
-                {
-                    //BackColor = Color.Black,
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-
-
-                };
-                //panel2.Controls.Clear();
-                panel2.Controls.Add(cm);
-            }
-            cm.TopLevel = false;
-            cm.TopMost = true;
-            cm.Show();
-            
-        }
-        CanceledMission cm;
-        DelayedMissions dm;
-        implementedmissons im;
-        private void Sfab_DelClicked(object sender, EventArgs e)
-        {
-            if (cm!=null)
-            {
-                cm.Hide();
-            }
-            if (im != null)
-            {
-                im.Hide();
-            }
-            if (dm == null)
-            {
-                dm = new DelayedMissions
-                {
-                    //BackColor = Color.Yellow,
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-
-                };
-                //panel2.Controls.Clear();
-                panel2.Controls.Add(dm);
-            }
-            dm.TopLevel = false;
-            dm.TopMost = true;
-            dm.Show();
-        }
-
-        private void Sfab_ImpClicked(object sender, EventArgs e)
-        {
-            if (dm!=null)
-            {
-                dm.Hide();
-            }
-            if (cm!=null)
-            {
-                cm.Hide();
-            }
-            if (im == null)
-            {
-                im = new implementedmissons
-                {
-                    //BackColor = Color.Black,
-                    Dock = DockStyle.Fill,
-                    TopLevel = false,
-                    TopMost = true
-
-
-                };
-                //panel2.Controls.Clear();
-                panel2.Controls.Add(im);
-            }
-            im.TopLevel = false;
-            im.TopMost = true;
-            im.Show();
-            
-
-        }
-
-        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Add_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Home_Clicked(object sender, EventArgs e)
         {
             Add.BClicked = false;
@@ -187,12 +109,49 @@ namespace ERC
             Car.BClicked = false;
             Settings.BClicked = false;
             Paramadic.BClicked = false;
- 
+
             Control sen = (Control)sender;
             ((MButton)(sen)).BClicked = true;
-            
+
 
             //MessageBox.Show(sender.GetType().ToString());
+        }
+
+
+
+
+
+        //Add Mission buttons
+        private void Sfab_CancClicked(object sender, EventArgs e)
+        {
+            dm.Hide();
+            cm.Show();
+            im.Hide();
+
+        }
+
+        private void Sfab_DelClicked(object sender, EventArgs e)
+        {
+            dm.Show();
+            cm.Hide();
+            im.Hide();
+        }
+
+        private void Sfab_ImpClicked(object sender, EventArgs e)
+        {
+            dm.Hide();
+            cm.Hide();
+            im.Show();
+            
+
+        }
+
+        private void panel2_SizeChanged(object sender, EventArgs e)
+        {
+            foreach (Control cont in panel2.Controls)
+            {
+                cont.Size = panel2.Size;
+            }
         }
     }
 
