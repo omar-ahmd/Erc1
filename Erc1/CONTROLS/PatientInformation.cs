@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Erc1.CONTROLS
@@ -15,6 +8,15 @@ namespace Erc1.CONTROLS
         public PatientInformation()
         {
             InitializeComponent();
+        }
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleparam = base.CreateParams;
+                handleparam.ExStyle |= 0x02000000;
+                return handleparam;
+            }
         }
 
         private void FromHos_CheckChange(object sender, EventArgs e)
@@ -28,7 +30,7 @@ namespace Erc1.CONTROLS
             else
             {
                 FromHosInfo.Enabled = true;
-                if(FromHome.Check)
+                if (FromHome.Check)
                 {
                     FromHomeInfo.Enabled = false;
                     FromHome.Check = false;
@@ -88,9 +90,6 @@ namespace Erc1.CONTROLS
             }
         }
 
-        private void label12_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Erc1.CONTROLS
 {
-    public partial class MButton : UserControl 
+    public partial class MButton : UserControl
     {
-        
+
         public MButton()
         {
             InitializeComponent();
@@ -20,13 +14,19 @@ namespace Erc1.CONTROLS
 
 
         }
-        public event EventHandler clickedChanged;
+
+
+        public event EventHandler clickedChanged, Clicked;
         public bool clicked;
-        public bool BClicked { get=> clicked; set { if (clicked != value) { clicked = value; clickedChanged += MButton_clickedChanged;clickedChanged.Invoke(this, EventArgs.Empty); } } }
+
+        public bool BClicked { get => clicked; set { if (clicked != value) { clicked = value; clickedChanged += MButton_clickedChanged; clickedChanged.Invoke(this, EventArgs.Empty); } } }
+        public string BText { get => this.label3.Text; set => this.label3.Text = value; }
+        public Image BImage { get => this.pictureBox3.Image; set => this.pictureBox3.Image = value; }
+
 
         private void MButton_clickedChanged(object sender, EventArgs e)
         {
-            if(BClicked)
+            if (BClicked)
             {
                 this.label3.BackColor = Color.FromArgb(113, 120, 132);
                 this.BackColor = Color.FromArgb(108, 184, 126);
@@ -50,12 +50,6 @@ namespace Erc1.CONTROLS
             }
 
         }
-
-        public string BText { get => this.label3.Text; set => this.label3.Text = value; }
-
-        public  Image BImage { get => this.pictureBox3.Image; set => this.pictureBox3.Image = value; }
-
-
         private void label3_MouseEnter(object sender, EventArgs e)
         {
             Control sen = (Control)sender;
@@ -78,7 +72,6 @@ namespace Erc1.CONTROLS
                 sen_1.BackColor = Color.FromArgb(113, 120, 132);
             }
         }
-
         private void label3_MouseLeave(object sender, EventArgs e)
         {
             Control sen = (Control)sender;
@@ -101,9 +94,6 @@ namespace Erc1.CONTROLS
                 sen_1.BackColor = Color.Transparent;
             }
         }
-
-        public event EventHandler Clicked;
-
         private void label3_Click(object sender, EventArgs e)
         {
             try
@@ -113,10 +103,9 @@ namespace Erc1.CONTROLS
             catch (Exception)
             {
 
-                
+
             }
         }
-
         private void Homebtn_Paint(object sender, PaintEventArgs e)
         {
             if (this.label3.Text == "الصفحة الرئيسية")

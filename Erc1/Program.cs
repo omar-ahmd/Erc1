@@ -1,11 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ERC
 {
+    public class Doublebufferedpanel : Panel
+    {
+        public Doublebufferedpanel()
+        {
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint |
+                ControlStyles.OptimizedDoubleBuffer |
+                ControlStyles.UserPaint, true);
+        }
+    }
     static class Program
     {
         /// <summary>

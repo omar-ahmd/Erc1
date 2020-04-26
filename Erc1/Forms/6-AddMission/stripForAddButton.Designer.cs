@@ -71,7 +71,6 @@
             this.sButton3.textFont = new System.Drawing.Font("Air Strip Arabic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sButton3.textForeColor = System.Drawing.Color.White;
             this.sButton3.ButClicked += new System.EventHandler(this.sButton3_ButClicked);
-            this.sButton3.Load += new System.EventHandler(this.sButton3_Load);
             // 
             // sButton2
             // 

@@ -55,7 +55,7 @@ namespace ERC
             this.Paramadic = new Erc1.CONTROLS.MButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel2 = new Doublebufferedpanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
@@ -413,6 +413,7 @@ namespace ERC
             this.panel2.Size = new System.Drawing.Size(818, 559);
             this.panel2.TabIndex = 11;
             this.panel2.SizeChanged += new System.EventHandler(this.panel2_SizeChanged);
+            this.panel2.Resize += new System.EventHandler(this.panel2_Resize);
             // 
             // tableLayoutPanel1
             // 
@@ -685,6 +686,7 @@ namespace ERC
             this.Name = "OperationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OperationForm";
+            this.Resize += new System.EventHandler(this.OperationForm_Resize);
             this.OperationLayout.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.operlabel.ResumeLayout(false);
@@ -751,6 +753,6 @@ namespace ERC
 
         private Erc1.CONTROLS.MButton Paramadic;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        public Doublebufferedpanel panel2;
     }
 }

@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.Remoting.Messaging;
 
 namespace Erc1.CONTROLS
 {
@@ -25,7 +18,7 @@ namespace Erc1.CONTROLS
 
         private void SButton_ClickedChange(object sender, EventArgs e)
         {
-            if(Clicked)
+            if (Clicked)
             {
                 this.panel1.MouseEnter -= new System.EventHandler(this.label1_Mouseenter);
                 this.panel1.MouseLeave -= new System.EventHandler(this.panel1_MouseLeave);
@@ -45,8 +38,8 @@ namespace Erc1.CONTROLS
         }
 
         public string labelText { get => label1.Text; set => label1.Text = value; }
-        public Color panelColor { get=>panel1.BackColor; set=>panel1.BackColor=value; }
-        public Color labelColor { get=>label1.BackColor; set=>label1.BackColor=value; }
+        public Color panelColor { get => panel1.BackColor; set => panel1.BackColor = value; }
+        public Color labelColor { get => label1.BackColor; set => label1.BackColor = value; }
         public Color textForeColor { get => label1.ForeColor; set => label1.ForeColor = value; }
         public Font textFont { get => label1.Font; set => label1.Font = value; }
 
@@ -77,7 +70,7 @@ namespace Erc1.CONTROLS
             catch (Exception)
             {
 
-                
+
             }
         }
     }

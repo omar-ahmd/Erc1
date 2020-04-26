@@ -1,6 +1,8 @@
-﻿namespace Erc1.Forms
+﻿using System.Drawing;
+
+namespace Erc1.Forms
 {
-    partial class implementedmissons
+    partial class AddMission
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +31,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DateTimePicker dateTimePicker1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(implementedmissons));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMission));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -175,6 +177,7 @@
             this.tableLayoutPanel3.Controls.Add(this.MissionID, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // tableLayoutPanel9
             // 
@@ -707,14 +710,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // implementedmissons
+            // AddMission
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "implementedmissons";
+            this.Name = "AddMission";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.tableLayoutPanel1.ResumeLayout(false);

@@ -70,7 +70,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(43, 31);
             this.tableLayoutPanel2.TabIndex = 1;
             this.tableLayoutPanel2.Click += new System.EventHandler(this.tableLayoutPanel2_Click);
-            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // panel1
             // 
@@ -93,7 +92,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "مهمة طارئة";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.SizeChanged += new System.EventHandler(this.label1_SizeChanged);
             // 
             // LabelBord
             // 

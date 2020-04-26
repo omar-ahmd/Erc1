@@ -73,18 +73,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CONTROLS\CanceledMissionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CONTROLS\CanceledMissionForm.Designer.cs">
-      <DependentUpon>CanceledMissionForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CONTROLS\DelayedMissionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CONTROLS\DelayedMissionForm.Designer.cs">
-      <DependentUpon>DelayedMissionForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="CONTROLS\LabelBord.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -121,23 +109,11 @@
     <Compile Include="CONTROLS\SButton.Designer.cs">
       <DependentUpon>SButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\6-AddMission\CanceledMission.cs">
+    <Compile Include="Forms\6-AddMission\AddMission.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\6-AddMission\CanceledMission.Designer.cs">
-      <DependentUpon>CanceledMission.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\6-AddMission\DelayedMissions.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\6-AddMission\DelayedMissions.Designer.cs">
-      <DependentUpon>DelayedMissions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\6-AddMission\implementedmissons.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\6-AddMission\implementedmissons.Designer.cs">
-      <DependentUpon>implementedmissons.cs</DependentUpon>
+    <Compile Include="Forms\6-AddMission\AddMission.Designer.cs">
+      <DependentUpon>AddMission.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\6-AddMission\stripForAddButton.cs">
       <SubType>UserControl</SubType>
@@ -157,7 +133,9 @@
     <Compile Include="OperationForm.Designer.cs">
       <DependentUpon>OperationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Program.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CONTROLS\LabelBord.resx">
       <DependentUpon>LabelBord.cs</DependentUpon>
@@ -177,14 +155,8 @@
     <EmbeddedResource Include="CONTROLS\SButton.resx">
       <DependentUpon>SButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\6-AddMission\CanceledMission.resx">
-      <DependentUpon>CanceledMission.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\6-AddMission\DelayedMissions.resx">
-      <DependentUpon>DelayedMissions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\6-AddMission\implementedmissons.resx">
-      <DependentUpon>implementedmissons.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\6-AddMission\AddMission.resx">
+      <DependentUpon>AddMission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\6-AddMission\stripForAddButton.resx">
       <DependentUpon>stripForAddButton.cs</DependentUpon>
