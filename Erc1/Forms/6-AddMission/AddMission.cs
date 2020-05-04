@@ -14,8 +14,8 @@ namespace Erc1.Forms
     }
     public partial class AddMission : Form
     {
-        ParamInformation pI = new ParamInformation();
-        PatientInformation paI = new PatientInformation();
+        PatientInformation paI;
+        ParamInformation pI;
         public AddMission()
         {
             InitializeComponent();
@@ -43,6 +43,8 @@ namespace Erc1.Forms
             {
                 case Forms.MissionType.Implemented:
                     {
+                        pI = new ParamInformation();
+                        paI = new PatientInformation();
                         pI.TopLevel = false;
                         pI.Dock = DockStyle.Fill;
                         tableLayoutPanel20.Controls.Add(pI, 0, 1);
@@ -65,6 +67,7 @@ namespace Erc1.Forms
 
                 case Forms.MissionType.Dlayed:
                     {
+                        paI = new PatientInformation();
                         button2.Hide();
                         button1.Text = "معلومات الحالة";
                         button1.Enabled = false;
@@ -81,6 +84,19 @@ namespace Erc1.Forms
                     }
                 case Forms.MissionType.Canceled:
                     {
+                        paI = new PatientInformation();
+                        button2.Hide();
+                        button1.Text = "معلومات الحالة";
+                        button1.Enabled = false;
+                        
+
+                        this.panel9.BackgroundImage = Erc1.Properties.Resources._14;
+                        paI.CancilingtText.Visible = true;
+                        paI.panel3.Visible = true;
+                        paI.TopLevel = false;
+                        paI.Dock = DockStyle.Fill;
+                        paI.Show();
+                        tableLayoutPanel20.Controls.Add(paI, 0, 1);
                         break;
                     }
                 default:
@@ -91,7 +107,6 @@ namespace Erc1.Forms
         private void button2_Click(object sender, EventArgs e)
         {
             panel9.BackgroundImage = Erc1.Properties.Resources._112;
-            paI.Invalidate();
             paI.Show();
             pI.Hide();
         }
@@ -116,11 +131,7 @@ namespace Erc1.Forms
 
         }
 
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
 
-
-        }
 
 
     }

@@ -38,7 +38,11 @@
             this.patientName = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.CancilingtText = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.CancilingCause = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.FromHos = new Erc1.CONTROLS.LabelBord();
             this.FromHome = new Erc1.CONTROLS.LabelBord();
@@ -145,6 +149,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel2.SuspendLayout();
             this.FromHosInfo.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
@@ -354,20 +360,42 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Controls.Add(this.button1, 1, 1);
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.Controls.Add(this.CancilingtText, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.button1, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(74, 15);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.81F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.19F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(397, 67);
             this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // CancilingtText
+            // 
+            this.CancilingtText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CancilingtText.BackColor = System.Drawing.SystemColors.Control;
+            this.CancilingtText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CancilingtText.Enabled = false;
+            this.CancilingtText.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
+            this.CancilingtText.Location = new System.Drawing.Point(0, 26);
+            this.CancilingtText.Margin = new System.Windows.Forms.Padding(0);
+            this.CancilingtText.Name = "CancilingtText";
+            this.CancilingtText.ReadOnly = true;
+            this.CancilingtText.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.CancilingtText.Size = new System.Drawing.Size(277, 36);
+            this.CancilingtText.TabIndex = 9;
+            this.CancilingtText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CancilingtText.Visible = false;
+            this.CancilingtText.WordWrap = false;
             // 
             // button1
             // 
@@ -379,14 +407,55 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Air Strip Arabic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(297, 16);
+            this.button1.Location = new System.Drawing.Point(316, 26);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 33);
+            this.button1.Size = new System.Drawing.Size(81, 41);
             this.button1.TabIndex = 0;
             this.button1.Text = "حفظ";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.UseWaitCursor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.CancilingCause);
+            this.panel3.Controls.Add(this.pictureBox8);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(177, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(100, 26);
+            this.panel3.TabIndex = 10;
+            this.panel3.Visible = false;
+            // 
+            // CancilingCause
+            // 
+            this.CancilingCause.AutoSize = true;
+            this.CancilingCause.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
+            this.CancilingCause.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CancilingCause.Font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancilingCause.ForeColor = System.Drawing.Color.White;
+            this.CancilingCause.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.CancilingCause.Location = new System.Drawing.Point(14, 0);
+            this.CancilingCause.Name = "CancilingCause";
+            this.CancilingCause.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.CancilingCause.Size = new System.Drawing.Size(86, 19);
+            this.CancilingCause.TabIndex = 1;
+            this.CancilingCause.Text = "سبب الالغاء";
+            this.CancilingCause.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox8.Image = global::Erc1.Properties.Resources.Untitled_11;
+            this.pictureBox8.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.pictureBox8.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(100, 26);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 0;
+            this.pictureBox8.TabStop = false;
             // 
             // panel2
             // 
@@ -2149,6 +2218,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.FromHosInfo.ResumeLayout(false);
@@ -2326,5 +2399,9 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label CancilingCause;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        public System.Windows.Forms.TextBox CancilingtText;
+        public System.Windows.Forms.Panel panel3;
     }
 }

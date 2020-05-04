@@ -13,9 +13,9 @@ namespace ERC
 
         ///Add mission forms
 
-        AddMission cm = new AddMission(MissionType.Canceled) { TopLevel = false };
-        AddMission im = new AddMission(MissionType.Implemented) { TopLevel = false };
-        AddMission dm = new AddMission(MissionType.Dlayed) { TopLevel = false };
+        AddMission cm;
+        AddMission im;
+        AddMission dm;
         public OperationForm()
         {
             InitializeComponent();
@@ -116,23 +116,42 @@ namespace ERC
         //Add Mission buttons
         private void Sfab_CancClicked(object sender, EventArgs e)
         {
-
+            if (cm == null)
+            {
+                cm = new AddMission(MissionType.Canceled) { TopLevel = false };
+                cm.Size = panel2.Size;
+                panel2.Controls.Add(cm);
+            }
             cm.Show();
-            dm.Hide();
-            im.Hide();
+            if (dm != null) dm.Hide();
+            if (im != null) im.Hide();
 
         }
         private void Sfab_DelClicked(object sender, EventArgs e)
         {
+            if (dm == null)
+            {
+                dm = new AddMission(MissionType.Dlayed) { TopLevel = false };
+                dm.Size = panel2.Size;
+                panel2.Controls.Add(dm);
+            }
             dm.Show();
-            cm.Hide();
-            im.Hide();
+            if (im != null) im.Hide();
+            if (cm != null) cm.Hide();
         }
         private void Sfab_ImpClicked(object sender, EventArgs e)
         {
+            if (im == null)
+            {
+                im = new AddMission(MissionType.Implemented) { TopLevel = false };
+                im.Size = panel2.Size;
+                panel2.Controls.Add(im);
+            }
             im.Show();
-            dm.Hide();
-            cm.Hide();
+            if(dm!=null) dm.Hide();
+            if(cm!=null) cm.Hide();
+
+
 
 
 

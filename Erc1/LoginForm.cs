@@ -8,10 +8,11 @@ namespace ERC
         public LoginForm()
         {
             InitializeComponent();
+            
         }
 
-        OperationForm of = new OperationForm();
 
+        OperationForm of = new OperationForm();
 
 
 

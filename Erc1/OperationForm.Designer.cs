@@ -55,7 +55,7 @@ namespace ERC
             this.Paramadic = new Erc1.CONTROLS.MButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.panel2 = new Doublebufferedpanel();
+            this.panel2 = new ERC.Doublebufferedpanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
@@ -711,7 +711,6 @@ namespace ERC
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel OperationLayout;
