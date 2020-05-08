@@ -105,6 +105,12 @@
     <Compile Include="CONTROLS\SButton.Designer.cs">
       <DependentUpon>SButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\4-Hospitals\HospitalsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\4-Hospitals\HospitalsForm.Designer.cs">
+      <DependentUpon>HospitalsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\6-AddMission\AddMission.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CONTROLS\SButton.resx">
       <DependentUpon>SButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\4-Hospitals\HospitalsForm.resx">
+      <DependentUpon>HospitalsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\6-AddMission\AddMission.resx">
       <DependentUpon>AddMission.cs</DependentUpon>
@@ -248,7 +257,6 @@
     <Folder Include="Forms\1-MainPage\" />
     <Folder Include="Forms\2-employee\" />
     <Folder Include="Forms\3-Reports\" />
-    <Folder Include="Forms\4-Hospitals\" />
     <Folder Include="Forms\5-Cars\" />
     <Folder Include="Forms\7-Settings\" />
   </ItemGroup>

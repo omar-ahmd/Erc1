@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Erc1.Forms._4_Hospitals;
+using System;
 using System.Windows.Forms;
 
 namespace ERC
@@ -22,7 +23,7 @@ namespace ERC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new HospitalsForm());
         }
     }
 }

@@ -149,6 +149,8 @@
             this.bunifuElipse1.ElipseRadius = 50;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // materialSingleLineTextField1
+            // 
             this.materialSingleLineTextField1.Depth = 0;
             this.materialSingleLineTextField1.Hint = "Enter Your ID";
             this.materialSingleLineTextField1.Location = new System.Drawing.Point(82, 303);
@@ -177,7 +179,6 @@
             this.materialSingleLineTextField2.Size = new System.Drawing.Size(396, 28);
             this.materialSingleLineTextField2.TabIndex = 13;
             this.materialSingleLineTextField2.UseSystemPasswordChar = false;
-
             // 
             // bunifuElipse2
             // 
@@ -223,7 +224,6 @@
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Logo.TabIndex = 9;
             this.Logo.TabStop = false;
-
             // 
             // LoginForm
             // 
@@ -258,8 +258,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox RememberMe;
         private System.Windows.Forms.LinkLabel ForgotPass;
         private System.Windows.Forms.PictureBox Logo;
@@ -274,6 +272,7 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+        public System.Windows.Forms.Button button1;
         //private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }
