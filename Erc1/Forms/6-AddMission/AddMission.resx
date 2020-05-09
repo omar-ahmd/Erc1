@@ -117,54 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="dateTimePicker1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="dateTimePicker1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dateTimePicker1.CalendarFont" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 15pt</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="dateTimePicker1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="dateTimePicker1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Air Strip Arabic, 12pt</value>
-  </data>
-  <data name="dateTimePicker1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="dateTimePicker1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="dateTimePicker1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="dateTimePicker1.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="dateTimePicker1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 32</value>
-  </data>
-  <data name="dateTimePicker1.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;dateTimePicker1.Name" xml:space="preserve">
-    <value>dateTimePicker1</value>
-  </data>
-  <data name="&gt;&gt;dateTimePicker1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dateTimePicker1.Parent" xml:space="preserve">
-    <value>tableLayoutPanel10</value>
-  </data>
-  <data name="&gt;&gt;dateTimePicker1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -180,148 +133,351 @@
   <data name="tableLayoutPanel10.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="comboBox4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Year.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="comboBox4.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="Year.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
-  <data name="comboBox4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Air Strip Arabic, 15pt</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Year.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Narrow, 10.2pt</value>
   </data>
-  <data name="comboBox4.Items" xml:space="preserve">
-    <value>100-طرابلس</value>
+  <data name="Year.Items" xml:space="preserve">
+    <value>2015</value>
   </data>
-  <data name="comboBox4.Items1" xml:space="preserve">
-    <value>200-ضنية</value>
+  <data name="Year.Items1" xml:space="preserve">
+    <value>2016</value>
   </data>
-  <data name="comboBox4.Items2" xml:space="preserve">
-    <value>300</value>
+  <data name="Year.Items2" xml:space="preserve">
+    <value>2017</value>
   </data>
-  <data name="comboBox4.Items3" xml:space="preserve">
-    <value>400-قلمون</value>
+  <data name="Year.Items3" xml:space="preserve">
+    <value>2018</value>
   </data>
-  <data name="comboBox4.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="Year.Items4" xml:space="preserve">
+    <value>2019</value>
+  </data>
+  <data name="Year.Items5" xml:space="preserve">
+    <value>2020</value>
+  </data>
+  <data name="Year.Items6" xml:space="preserve">
+    <value>2021</value>
+  </data>
+  <data name="Year.Items7" xml:space="preserve">
+    <value>2022</value>
+  </data>
+  <data name="Year.Items8" xml:space="preserve">
+    <value>2023</value>
+  </data>
+  <data name="Year.Items9" xml:space="preserve">
+    <value>2024</value>
+  </data>
+  <data name="Year.Items10" xml:space="preserve">
+    <value>2025</value>
+  </data>
+  <data name="Year.Items11" xml:space="preserve">
+    <value>2026</value>
+  </data>
+  <data name="Year.Items12" xml:space="preserve">
+    <value>2027</value>
+  </data>
+  <data name="Year.Items13" xml:space="preserve">
+    <value>2028</value>
+  </data>
+  <data name="Year.Items14" xml:space="preserve">
+    <value>2029</value>
+  </data>
+  <data name="Year.Items15" xml:space="preserve">
+    <value>2030</value>
+  </data>
+  <data name="Year.Items16" xml:space="preserve">
+    <value>2031</value>
+  </data>
+  <data name="Year.Items17" xml:space="preserve">
+    <value>2032</value>
+  </data>
+  <data name="Year.Items18" xml:space="preserve">
+    <value>2033</value>
+  </data>
+  <data name="Year.Items19" xml:space="preserve">
+    <value>2034</value>
+  </data>
+  <data name="Year.Items20" xml:space="preserve">
+    <value>2035</value>
+  </data>
+  <data name="Year.Items21" xml:space="preserve">
+    <value>2036</value>
+  </data>
+  <data name="Year.Items22" xml:space="preserve">
+    <value>2038</value>
+  </data>
+  <data name="Year.Items23" xml:space="preserve">
+    <value>2039</value>
+  </data>
+  <data name="Year.Items24" xml:space="preserve">
+    <value>2040</value>
+  </data>
+  <data name="Year.Items25" xml:space="preserve">
+    <value>2041</value>
+  </data>
+  <data name="Year.Items26" xml:space="preserve">
+    <value>2042</value>
+  </data>
+  <data name="Year.Items27" xml:space="preserve">
+    <value>2043</value>
+  </data>
+  <data name="Year.Items28" xml:space="preserve">
+    <value>2044</value>
+  </data>
+  <data name="Year.Items29" xml:space="preserve">
+    <value>2045</value>
+  </data>
+  <data name="Year.Items30" xml:space="preserve">
+    <value>2046</value>
+  </data>
+  <data name="Year.Items31" xml:space="preserve">
+    <value>2047</value>
+  </data>
+  <data name="Year.Items32" xml:space="preserve">
+    <value>2048</value>
+  </data>
+  <data name="Year.Items33" xml:space="preserve">
+    <value>2049</value>
+  </data>
+  <data name="Year.Items34" xml:space="preserve">
+    <value>2050</value>
+  </data>
+  <data name="Year.Items35" xml:space="preserve">
+    <value>2051</value>
+  </data>
+  <data name="Year.Items36" xml:space="preserve">
+    <value>2052</value>
+  </data>
+  <data name="Year.Items37" xml:space="preserve">
+    <value>2053</value>
+  </data>
+  <data name="Year.Items38" xml:space="preserve">
+    <value>2054</value>
+  </data>
+  <data name="Year.Items39" xml:space="preserve">
+    <value>2055</value>
+  </data>
+  <data name="Year.Items40" xml:space="preserve">
+    <value>2056</value>
+  </data>
+  <data name="Year.Items41" xml:space="preserve">
+    <value>2057</value>
+  </data>
+  <data name="Year.Items42" xml:space="preserve">
+    <value>2058</value>
+  </data>
+  <data name="Year.Items43" xml:space="preserve">
+    <value>2059</value>
+  </data>
+  <data name="Year.Items44" xml:space="preserve">
+    <value>2060</value>
+  </data>
+  <data name="Year.Items45" xml:space="preserve">
+    <value>2061</value>
+  </data>
+  <data name="Year.Items46" xml:space="preserve">
+    <value>2062</value>
+  </data>
+  <data name="Year.Items47" xml:space="preserve">
+    <value>2063</value>
+  </data>
+  <data name="Year.Items48" xml:space="preserve">
+    <value>2064</value>
+  </data>
+  <data name="Year.Items49" xml:space="preserve">
+    <value>2065</value>
+  </data>
+  <data name="Year.Items50" xml:space="preserve">
+    <value>2066</value>
+  </data>
+  <data name="Year.Items51" xml:space="preserve">
+    <value>2067</value>
+  </data>
+  <data name="Year.Items52" xml:space="preserve">
+    <value>2068</value>
+  </data>
+  <data name="Year.Items53" xml:space="preserve">
+    <value>2069</value>
+  </data>
+  <data name="Year.Items54" xml:space="preserve">
+    <value>2070</value>
+  </data>
+  <data name="Year.Location" type="System.Drawing.Point, System.Drawing">
     <value>111, 0</value>
   </data>
-  <data name="comboBox4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="Year.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="comboBox4.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+  <data name="Year.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
   </data>
-  <data name="comboBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 35</value>
+  <data name="Year.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 30</value>
   </data>
-  <data name="comboBox4.TabIndex" type="System.Int32, mscorlib">
+  <data name="Year.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="&gt;&gt;comboBox4.Name" xml:space="preserve">
-    <value>comboBox4</value>
+  <data name="&gt;&gt;Year.Name" xml:space="preserve">
+    <value>Year</value>
   </data>
-  <data name="&gt;&gt;comboBox4.Type" xml:space="preserve">
+  <data name="&gt;&gt;Year.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;comboBox4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Year.Parent" xml:space="preserve">
     <value>tableLayoutPanel10</value>
   </data>
-  <data name="&gt;&gt;comboBox4.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;Year.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="comboBox3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="Month.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="comboBox3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="Month.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
-  <data name="comboBox3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Air Strip Arabic, 15pt</value>
+  <data name="Month.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Narrow, 10.2pt</value>
   </data>
-  <data name="comboBox3.Items" xml:space="preserve">
-    <value>100-طرابلس</value>
+  <data name="Month.Items" xml:space="preserve">
+    <value>01</value>
   </data>
-  <data name="comboBox3.Items1" xml:space="preserve">
-    <value>200-ضنية</value>
+  <data name="Month.Items1" xml:space="preserve">
+    <value>02</value>
   </data>
-  <data name="comboBox3.Items2" xml:space="preserve">
-    <value>300</value>
+  <data name="Month.Items2" xml:space="preserve">
+    <value>03</value>
   </data>
-  <data name="comboBox3.Items3" xml:space="preserve">
-    <value>400-قلمون</value>
+  <data name="Month.Items3" xml:space="preserve">
+    <value>04</value>
   </data>
-  <data name="comboBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>333, 0</value>
+  <data name="Month.Items4" xml:space="preserve">
+    <value>05</value>
   </data>
-  <data name="comboBox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+  <data name="Month.Items5" xml:space="preserve">
+    <value>06</value>
   </data>
-  <data name="comboBox3.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
+  <data name="Month.Items6" xml:space="preserve">
+    <value>07</value>
   </data>
-  <data name="comboBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 35</value>
+  <data name="Month.Items7" xml:space="preserve">
+    <value>08</value>
   </data>
-  <data name="comboBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="Month.Items8" xml:space="preserve">
+    <value>09</value>
   </data>
-  <data name="&gt;&gt;comboBox3.Name" xml:space="preserve">
-    <value>comboBox3</value>
-  </data>
-  <data name="&gt;&gt;comboBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBox3.Parent" xml:space="preserve">
-    <value>tableLayoutPanel10</value>
-  </data>
-  <data name="&gt;&gt;comboBox3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="comboBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="comboBox2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="comboBox2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Air Strip Arabic, 15pt</value>
-  </data>
-  <data name="comboBox2.Items" xml:space="preserve">
-    <value>100-طرابلس</value>
-  </data>
-  <data name="comboBox2.Items1" xml:space="preserve">
-    <value>200-ضنية</value>
-  </data>
-  <data name="comboBox2.Items2" xml:space="preserve">
-    <value>300</value>
-  </data>
-  <data name="comboBox2.Items3" xml:space="preserve">
-    <value>400-قلمون</value>
-  </data>
-  <data name="comboBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>222, 0</value>
-  </data>
-  <data name="comboBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="comboBox2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
-  </data>
-  <data name="comboBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 35</value>
-  </data>
-  <data name="comboBox2.TabIndex" type="System.Int32, mscorlib">
+  <data name="Month.Items9" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;comboBox2.Name" xml:space="preserve">
-    <value>comboBox2</value>
+  <data name="Month.Items10" xml:space="preserve">
+    <value>11</value>
   </data>
-  <data name="&gt;&gt;comboBox2.Type" xml:space="preserve">
+  <data name="Month.Items11" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="Month.Location" type="System.Drawing.Point, System.Drawing">
+    <value>222, 0</value>
+  </data>
+  <data name="Month.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="Month.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
+  </data>
+  <data name="Month.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 30</value>
+  </data>
+  <data name="Month.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;Month.Name" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="&gt;&gt;Month.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;comboBox2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Month.Parent" xml:space="preserve">
     <value>tableLayoutPanel10</value>
   </data>
-  <data name="&gt;&gt;comboBox2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;Month.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Day.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Day.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="Day.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Narrow, 10.2pt</value>
+  </data>
+  <data name="Day.Location" type="System.Drawing.Point, System.Drawing">
+    <value>333, 0</value>
+  </data>
+  <data name="Day.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="Day.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
+  </data>
+  <data name="Day.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 30</value>
+  </data>
+  <data name="Day.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;Day.Name" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="&gt;&gt;Day.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Day.Parent" xml:space="preserve">
+    <value>tableLayoutPanel10</value>
+  </data>
+  <data name="&gt;&gt;Day.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Time.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Time.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Air Strip Arabic, 12pt</value>
+  </data>
+  <data name="Time.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Time.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="Time.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
+  </data>
+  <data name="Time.RightToLeftLayout" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Time.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 32</value>
+  </data>
+  <data name="Time.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;Time.Name" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="&gt;&gt;Time.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Time.Parent" xml:space="preserve">
+    <value>tableLayoutPanel10</value>
+  </data>
+  <data name="&gt;&gt;Time.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="tableLayoutPanel10.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -358,7 +514,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel10.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="dateTimePicker1" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="comboBox4" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboBox3" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboBox2" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,25,Percent,25,Percent,25,Percent,25" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="Year" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Month" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Day" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Time" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,25,Percent,25,Percent,25,Percent,25" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableLayoutPanel11.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
@@ -633,88 +789,88 @@
   <data name="MissionID.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="textBox3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="AnnualID.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="textBox3.Enabled" type="System.Boolean, mscorlib">
+  <data name="AnnualID.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="textBox3.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="AnnualID.Font" type="System.Drawing.Font, System.Drawing">
     <value>Air Strip Arabic, 13.8pt</value>
   </data>
-  <data name="textBox3.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="AnnualID.Location" type="System.Drawing.Point, System.Drawing">
     <value>274, 19</value>
   </data>
-  <data name="textBox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="AnnualID.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="textBox3.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+  <data name="AnnualID.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
   </data>
-  <data name="textBox3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="AnnualID.Size" type="System.Drawing.Size, System.Drawing">
     <value>222, 36</value>
   </data>
-  <data name="textBox3.TabIndex" type="System.Int32, mscorlib">
+  <data name="AnnualID.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="textBox3.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+  <data name="AnnualID.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="textBox3.WordWrap" type="System.Boolean, mscorlib">
+  <data name="AnnualID.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;textBox3.Name" xml:space="preserve">
-    <value>textBox3</value>
+  <data name="&gt;&gt;AnnualID.Name" xml:space="preserve">
+    <value>AnnualID</value>
   </data>
-  <data name="&gt;&gt;textBox3.Type" xml:space="preserve">
+  <data name="&gt;&gt;AnnualID.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;AnnualID.Parent" xml:space="preserve">
     <value>MissionID</value>
   </data>
-  <data name="&gt;&gt;textBox3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;AnnualID.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="textBox4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="MonthlyID.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="textBox4.Enabled" type="System.Boolean, mscorlib">
+  <data name="MonthlyID.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="textBox4.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="MonthlyID.Font" type="System.Drawing.Font, System.Drawing">
     <value>Air Strip Arabic, 13.8pt</value>
   </data>
-  <data name="textBox4.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="MonthlyID.Location" type="System.Drawing.Point, System.Drawing">
     <value>52, 19</value>
   </data>
-  <data name="textBox4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="MonthlyID.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="textBox4.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+  <data name="MonthlyID.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
   </data>
-  <data name="textBox4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="MonthlyID.Size" type="System.Drawing.Size, System.Drawing">
     <value>222, 36</value>
   </data>
-  <data name="textBox4.TabIndex" type="System.Int32, mscorlib">
+  <data name="MonthlyID.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="textBox4.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+  <data name="MonthlyID.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="textBox4.WordWrap" type="System.Boolean, mscorlib">
+  <data name="MonthlyID.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;textBox4.Name" xml:space="preserve">
-    <value>textBox4</value>
+  <data name="&gt;&gt;MonthlyID.Name" xml:space="preserve">
+    <value>MonthlyID</value>
   </data>
-  <data name="&gt;&gt;textBox4.Type" xml:space="preserve">
+  <data name="&gt;&gt;MonthlyID.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;MonthlyID.Parent" xml:space="preserve">
     <value>MissionID</value>
   </data>
-  <data name="&gt;&gt;textBox4.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;MonthlyID.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="tableLayoutPanel7.ColumnCount" type="System.Int32, mscorlib">
@@ -883,7 +1039,7 @@
     <value>1</value>
   </data>
   <data name="MissionID.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="textBox3" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="textBox4" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel7" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,10,Percent,42.5,Percent,42.5,Percent,5" /&gt;&lt;Rows Styles="Percent,35,Percent,50,Percent,15" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="AnnualID" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="MonthlyID" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel7" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,10,Percent,42.5,Percent,42.5,Percent,5" /&gt;&lt;Rows Styles="Percent,35,Percent,50,Percent,15" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableLayoutPanel5.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1158,100 +1314,100 @@
   <data name="tableLayoutPanel8.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="panel3" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,75,Percent,25" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="comboBox12.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="CarId.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="comboBox12.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="CarId.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
-  <data name="comboBox12.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="CarId.Font" type="System.Drawing.Font, System.Drawing">
     <value>Air Strip Arabic, 15pt</value>
   </data>
-  <data name="comboBox12.Items" xml:space="preserve">
+  <data name="CarId.Items" xml:space="preserve">
     <value>100-طرابلس</value>
   </data>
-  <data name="comboBox12.Items1" xml:space="preserve">
+  <data name="CarId.Items1" xml:space="preserve">
     <value>200-ضنية</value>
   </data>
-  <data name="comboBox12.Items2" xml:space="preserve">
+  <data name="CarId.Items2" xml:space="preserve">
     <value>300</value>
   </data>
-  <data name="comboBox12.Items3" xml:space="preserve">
+  <data name="CarId.Items3" xml:space="preserve">
     <value>400-قلمون</value>
   </data>
-  <data name="comboBox12.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="CarId.Location" type="System.Drawing.Point, System.Drawing">
     <value>52, 19</value>
   </data>
-  <data name="comboBox12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="CarId.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="comboBox12.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+  <data name="CarId.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
   </data>
-  <data name="comboBox12.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="CarId.Size" type="System.Drawing.Size, System.Drawing">
     <value>222, 35</value>
   </data>
-  <data name="comboBox12.TabIndex" type="System.Int32, mscorlib">
+  <data name="CarId.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;comboBox12.Name" xml:space="preserve">
-    <value>comboBox12</value>
+  <data name="&gt;&gt;CarId.Name" xml:space="preserve">
+    <value>CarId</value>
   </data>
-  <data name="&gt;&gt;comboBox12.Type" xml:space="preserve">
+  <data name="&gt;&gt;CarId.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;comboBox12.Parent" xml:space="preserve">
+  <data name="&gt;&gt;CarId.Parent" xml:space="preserve">
     <value>tableLayoutPanel5</value>
   </data>
-  <data name="&gt;&gt;comboBox12.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;CarId.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="comboBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="CenterID.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="comboBox1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="CenterID.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
-  <data name="comboBox1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="CenterID.Font" type="System.Drawing.Font, System.Drawing">
     <value>Air Strip Arabic, 15pt</value>
   </data>
-  <data name="comboBox1.Items" xml:space="preserve">
+  <data name="CenterID.Items" xml:space="preserve">
     <value>100-طرابلس</value>
   </data>
-  <data name="comboBox1.Items1" xml:space="preserve">
+  <data name="CenterID.Items1" xml:space="preserve">
     <value>200-ضنية</value>
   </data>
-  <data name="comboBox1.Items2" xml:space="preserve">
+  <data name="CenterID.Items2" xml:space="preserve">
     <value>300</value>
   </data>
-  <data name="comboBox1.Items3" xml:space="preserve">
+  <data name="CenterID.Items3" xml:space="preserve">
     <value>400-قلمون</value>
   </data>
-  <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="CenterID.Location" type="System.Drawing.Point, System.Drawing">
     <value>274, 19</value>
   </data>
-  <data name="comboBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="CenterID.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="comboBox1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+  <data name="CenterID.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
   </data>
-  <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="CenterID.Size" type="System.Drawing.Size, System.Drawing">
     <value>222, 35</value>
   </data>
-  <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="CenterID.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
-    <value>comboBox1</value>
+  <data name="&gt;&gt;CenterID.Name" xml:space="preserve">
+    <value>CenterID</value>
   </data>
-  <data name="&gt;&gt;comboBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;CenterID.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;comboBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;CenterID.Parent" xml:space="preserve">
     <value>tableLayoutPanel5</value>
   </data>
-  <data name="&gt;&gt;comboBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;CenterID.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="tableLayoutPanel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -1285,7 +1441,7 @@
     <value>2</value>
   </data>
   <data name="tableLayoutPanel5.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanel4" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel8" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="comboBox12" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="comboBox1" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,10,Percent,42.5,Percent,42.5,Percent,5" /&gt;&lt;Rows Styles="Percent,35,Percent,50,Percent,15" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanel4" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel8" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="CarId" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="CenterID" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,10,Percent,42.5,Percent,42.5,Percent,5" /&gt;&lt;Rows Styles="Percent,35,Percent,50,Percent,15" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableLayoutPanel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1326,40 +1482,40 @@
   <data name="tableLayoutPanel14.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="textBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="MoreInfoAboutCase.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="textBox1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="MoreInfoAboutCase.Font" type="System.Drawing.Font, System.Drawing">
     <value>Air Strip Arabic, 13.8pt</value>
   </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="MoreInfoAboutCase.Location" type="System.Drawing.Point, System.Drawing">
     <value>52, 19</value>
   </data>
-  <data name="textBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="MoreInfoAboutCase.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="textBox1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+  <data name="MoreInfoAboutCase.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
   </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="MoreInfoAboutCase.Size" type="System.Drawing.Size, System.Drawing">
     <value>443, 36</value>
   </data>
-  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
+  <data name="MoreInfoAboutCase.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="textBox1.WordWrap" type="System.Boolean, mscorlib">
+  <data name="MoreInfoAboutCase.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
-    <value>textBox1</value>
+  <data name="&gt;&gt;MoreInfoAboutCase.Name" xml:space="preserve">
+    <value>MoreInfoAboutCase</value>
   </data>
-  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;MoreInfoAboutCase.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;MoreInfoAboutCase.Parent" xml:space="preserve">
     <value>tableLayoutPanel14</value>
   </data>
-  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;MoreInfoAboutCase.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tableLayoutPanel18.ColumnCount" type="System.Int32, mscorlib">
@@ -1528,7 +1684,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel14.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="textBox1" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel18" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,10,Percent,85,Percent,5,Absolute,20" /&gt;&lt;Rows Styles="Percent,35,Percent,50,Percent,15" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="MoreInfoAboutCase" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel18" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,10,Percent,85,Percent,5,Absolute,20" /&gt;&lt;Rows Styles="Percent,35,Percent,50,Percent,15" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableLayoutPanel15.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1803,100 +1959,100 @@
   <data name="tableLayoutPanel17.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="panel7" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,75,Percent,25" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="comboBox5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="Case.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="comboBox5.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="Case.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
-  <data name="comboBox5.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="Case.Font" type="System.Drawing.Font, System.Drawing">
     <value>Air Strip Arabic, 15pt</value>
   </data>
-  <data name="comboBox5.Items" xml:space="preserve">
+  <data name="Case.Items" xml:space="preserve">
     <value>100-طرابلس</value>
   </data>
-  <data name="comboBox5.Items1" xml:space="preserve">
+  <data name="Case.Items1" xml:space="preserve">
     <value>200-ضنية</value>
   </data>
-  <data name="comboBox5.Items2" xml:space="preserve">
+  <data name="Case.Items2" xml:space="preserve">
     <value>300</value>
   </data>
-  <data name="comboBox5.Items3" xml:space="preserve">
+  <data name="Case.Items3" xml:space="preserve">
     <value>400-قلمون</value>
   </data>
-  <data name="comboBox5.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="Case.Location" type="System.Drawing.Point, System.Drawing">
     <value>52, 19</value>
   </data>
-  <data name="comboBox5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="Case.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="comboBox5.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+  <data name="Case.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
   </data>
-  <data name="comboBox5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="Case.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 35</value>
   </data>
-  <data name="comboBox5.TabIndex" type="System.Int32, mscorlib">
+  <data name="Case.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;comboBox5.Name" xml:space="preserve">
-    <value>comboBox5</value>
+  <data name="&gt;&gt;Case.Name" xml:space="preserve">
+    <value>Case</value>
   </data>
-  <data name="&gt;&gt;comboBox5.Type" xml:space="preserve">
+  <data name="&gt;&gt;Case.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;comboBox5.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Case.Parent" xml:space="preserve">
     <value>tableLayoutPanel15</value>
   </data>
-  <data name="&gt;&gt;comboBox5.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;Case.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="comboBox6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="CaseType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="comboBox6.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="CaseType.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
-  <data name="comboBox6.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="CaseType.Font" type="System.Drawing.Font, System.Drawing">
     <value>Air Strip Arabic, 15pt</value>
   </data>
-  <data name="comboBox6.Items" xml:space="preserve">
+  <data name="CaseType.Items" xml:space="preserve">
     <value>100-طرابلس</value>
   </data>
-  <data name="comboBox6.Items1" xml:space="preserve">
+  <data name="CaseType.Items1" xml:space="preserve">
     <value>200-ضنية</value>
   </data>
-  <data name="comboBox6.Items2" xml:space="preserve">
+  <data name="CaseType.Items2" xml:space="preserve">
     <value>300</value>
   </data>
-  <data name="comboBox6.Items3" xml:space="preserve">
+  <data name="CaseType.Items3" xml:space="preserve">
     <value>400-قلمون</value>
   </data>
-  <data name="comboBox6.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="CaseType.Location" type="System.Drawing.Point, System.Drawing">
     <value>273, 19</value>
   </data>
-  <data name="comboBox6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="CaseType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="comboBox6.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+  <data name="CaseType.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
   </data>
-  <data name="comboBox6.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="CaseType.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 35</value>
   </data>
-  <data name="comboBox6.TabIndex" type="System.Int32, mscorlib">
+  <data name="CaseType.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;comboBox6.Name" xml:space="preserve">
-    <value>comboBox6</value>
+  <data name="&gt;&gt;CaseType.Name" xml:space="preserve">
+    <value>CaseType</value>
   </data>
-  <data name="&gt;&gt;comboBox6.Type" xml:space="preserve">
+  <data name="&gt;&gt;CaseType.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;comboBox6.Parent" xml:space="preserve">
+  <data name="&gt;&gt;CaseType.Parent" xml:space="preserve">
     <value>tableLayoutPanel15</value>
   </data>
-  <data name="&gt;&gt;comboBox6.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;CaseType.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="tableLayoutPanel15.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -1930,36 +2086,36 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel15.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanel16" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel17" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="comboBox5" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="comboBox6" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,10,Percent,42.5,Percent,42.5,Percent,5" /&gt;&lt;Rows Styles="Percent,35,Percent,50,Percent,15" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanel16" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel17" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Case" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="CaseType" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,10,Percent,42.5,Percent,42.5,Percent,5" /&gt;&lt;Rows Styles="Percent,35,Percent,50,Percent,15" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="MissionType.ColumnCount" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="labelBord3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="ColdMission.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="labelBord3.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ColdMission.Location" type="System.Drawing.Point, System.Drawing">
     <value>273, 21</value>
   </data>
-  <data name="labelBord3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="ColdMission.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="labelBord3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ColdMission.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 22</value>
   </data>
-  <data name="labelBord3.TabIndex" type="System.Int32, mscorlib">
+  <data name="ColdMission.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;labelBord3.Name" xml:space="preserve">
-    <value>labelBord3</value>
+  <data name="&gt;&gt;ColdMission.Name" xml:space="preserve">
+    <value>ColdMission</value>
   </data>
-  <data name="&gt;&gt;labelBord3.Type" xml:space="preserve">
+  <data name="&gt;&gt;ColdMission.Type" xml:space="preserve">
     <value>Erc1.CONTROLS.LabelBord, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;labelBord3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ColdMission.Parent" xml:space="preserve">
     <value>MissionType</value>
   </data>
-  <data name="&gt;&gt;labelBord3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ColdMission.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
@@ -2061,85 +2217,85 @@
   <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="labelBord1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="FireMission.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="labelBord1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="FireMission.Location" type="System.Drawing.Point, System.Drawing">
     <value>51, 21</value>
   </data>
-  <data name="labelBord1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="FireMission.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="labelBord1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="FireMission.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 22</value>
   </data>
-  <data name="labelBord1.TabIndex" type="System.Int32, mscorlib">
+  <data name="FireMission.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;labelBord1.Name" xml:space="preserve">
-    <value>labelBord1</value>
+  <data name="&gt;&gt;FireMission.Name" xml:space="preserve">
+    <value>FireMission</value>
   </data>
-  <data name="&gt;&gt;labelBord1.Type" xml:space="preserve">
+  <data name="&gt;&gt;FireMission.Type" xml:space="preserve">
     <value>Erc1.CONTROLS.LabelBord, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;labelBord1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;FireMission.Parent" xml:space="preserve">
     <value>MissionType</value>
   </data>
-  <data name="&gt;&gt;labelBord1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;FireMission.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="labelBord2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="UrgentMission.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="labelBord2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="UrgentMission.Location" type="System.Drawing.Point, System.Drawing">
     <value>384, 21</value>
   </data>
-  <data name="labelBord2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="UrgentMission.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="labelBord2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="UrgentMission.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 22</value>
   </data>
-  <data name="labelBord2.TabIndex" type="System.Int32, mscorlib">
+  <data name="UrgentMission.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;labelBord2.Name" xml:space="preserve">
-    <value>labelBord2</value>
+  <data name="&gt;&gt;UrgentMission.Name" xml:space="preserve">
+    <value>UrgentMission</value>
   </data>
-  <data name="&gt;&gt;labelBord2.Type" xml:space="preserve">
+  <data name="&gt;&gt;UrgentMission.Type" xml:space="preserve">
     <value>Erc1.CONTROLS.LabelBord, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;labelBord2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;UrgentMission.Parent" xml:space="preserve">
     <value>MissionType</value>
   </data>
-  <data name="&gt;&gt;labelBord2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;UrgentMission.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="labelBord4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="ActivityMission.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="labelBord4.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ActivityMission.Location" type="System.Drawing.Point, System.Drawing">
     <value>162, 21</value>
   </data>
-  <data name="labelBord4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="ActivityMission.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="labelBord4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ActivityMission.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 22</value>
   </data>
-  <data name="labelBord4.TabIndex" type="System.Int32, mscorlib">
+  <data name="ActivityMission.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;labelBord4.Name" xml:space="preserve">
-    <value>labelBord4</value>
+  <data name="&gt;&gt;ActivityMission.Name" xml:space="preserve">
+    <value>ActivityMission</value>
   </data>
-  <data name="&gt;&gt;labelBord4.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActivityMission.Type" xml:space="preserve">
     <value>Erc1.CONTROLS.LabelBord, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;labelBord4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActivityMission.Parent" xml:space="preserve">
     <value>MissionType</value>
   </data>
-  <data name="&gt;&gt;labelBord4.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ActivityMission.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="MissionType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -2173,7 +2329,7 @@
     <value>2</value>
   </data>
   <data name="MissionType.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelBord3" Row="2" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="panel5" Row="0" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="labelBord1" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelBord2" Row="2" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="labelBord4" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,10,Percent,21.25,Absolute,2,Percent,21.25,Absolute,2,Percent,21.25,Absolute,2,Percent,21.25,Percent,5" /&gt;&lt;Rows Styles="Percent,35,Percent,5,Percent,40,Percent,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="ColdMission" Row="2" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="panel5" Row="0" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="FireMission" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="UrgentMission" Row="2" RowSpan="1" Column="7" ColumnSpan="1" /&gt;&lt;Control Name="ActivityMission" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,10,Percent,21.25,Absolute,2,Percent,21.25,Absolute,2,Percent,21.25,Absolute,2,Percent,21.25,Percent,5" /&gt;&lt;Rows Styles="Percent,35,Percent,5,Percent,40,Percent,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableLayoutPanel12.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

@@ -35,7 +35,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ID_Patient = new System.Windows.Forms.TextBox();
             this.labelBord1 = new Erc1.CONTROLS.LabelBord();
-            this.Name_Patient = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.CancilingtText = new System.Windows.Forms.TextBox();
@@ -143,6 +142,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
+            this.Name_Patient = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -199,10 +199,10 @@
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.Controls.Add(this.Name_Patient, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.ID_Patient, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.labelBord1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.Name_Patient, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(520, 15);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
@@ -300,25 +300,6 @@
             this.labelBord1.TabIndex = 7;
             this.labelBord1.text = "يستطيع الجلوس";
             // 
-            // Name_Patient
-            // 
-            this.Name_Patient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Name_Patient.BackColor = System.Drawing.SystemColors.Control;
-            this.Name_Patient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Name_Patient.Enabled = false;
-            this.Name_Patient.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
-            this.Name_Patient.Location = new System.Drawing.Point(0, 25);
-            this.Name_Patient.Margin = new System.Windows.Forms.Padding(0);
-            this.Name_Patient.Name = "Name_Patient";
-            this.Name_Patient.ReadOnly = true;
-            this.Name_Patient.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Name_Patient.Size = new System.Drawing.Size(297, 36);
-            this.Name_Patient.TabIndex = 8;
-            this.Name_Patient.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Name_Patient.WordWrap = false;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
@@ -415,6 +396,7 @@
             this.Save.Text = "حفظ";
             this.Save.UseVisualStyleBackColor = true;
             this.Save.UseWaitCursor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // panel3
             // 
@@ -2200,6 +2182,28 @@
             this.label31.Text = "تفاصيل";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // Name_Patient
+            // 
+            this.Name_Patient.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Name_Patient.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Name_Patient.BackColor = System.Drawing.SystemColors.Control;
+            this.Name_Patient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Name_Patient.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name_Patient.FormattingEnabled = true;
+            this.Name_Patient.ItemHeight = 27;
+            this.Name_Patient.Items.AddRange(new object[] {
+            "100-طرابلس",
+            "200-ضنية",
+            "300",
+            "400-قلمون"});
+            this.Name_Patient.Location = new System.Drawing.Point(0, 25);
+            this.Name_Patient.Margin = new System.Windows.Forms.Padding(0);
+            this.Name_Patient.Name = "Name_Patient";
+            this.Name_Patient.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Name_Patient.Size = new System.Drawing.Size(297, 35);
+            this.Name_Patient.Sorted = true;
+            this.Name_Patient.TabIndex = 9;
+            // 
             // PatientInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2287,121 +2291,120 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox ID_Patient;
-        private LabelBord labelBord1;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button Save;
-        private System.Windows.Forms.Panel panel2;
-        private LabelBord FromHos;
-        private LabelBord FromHome;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel4;
-        private LabelBord ToHos;
-        private LabelBord ToHome;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TableLayoutPanel FromHosInfo;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.TextBox ID_FromHospital;
-        private System.Windows.Forms.TableLayoutPanel ToHosInfo;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
-        private System.Windows.Forms.TextBox ID_ToHospital;
-        private System.Windows.Forms.TableLayoutPanel FromHomeInfo;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.TextBox Medicine;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel25;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.TextBox OtherInfo;
-        private System.Windows.Forms.TextBox Name_Patient;
-        private System.Windows.Forms.ComboBox Name_FromHosSection;
-        private System.Windows.Forms.ComboBox FromHosRoom;
-        private System.Windows.Forms.ComboBox FromHosFloor;
-        private System.Windows.Forms.ComboBox Name_FromHospital;
-        private System.Windows.Forms.ComboBox Name_ToHosSection;
-        private System.Windows.Forms.ComboBox ToHosFloor;
-        private System.Windows.Forms.ComboBox ToHosRoom;
-        private System.Windows.Forms.ComboBox Name_ToHospital;
-        private System.Windows.Forms.ComboBox InfectionDiseases;
-        private System.Windows.Forms.ComboBox Insurance;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private System.Windows.Forms.TextBox FromNotes;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ComboBox FromRegion;
-        private System.Windows.Forms.ComboBox FromCity;
-        private System.Windows.Forms.ComboBox FromStreet;
-        private System.Windows.Forms.ComboBox FromFloor;
-        private System.Windows.Forms.ComboBox FromBuilding;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TableLayoutPanel ToHomeInfo;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
-        private System.Windows.Forms.TextBox ToNotes;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
-        private System.Windows.Forms.ComboBox ToRegion;
-        private System.Windows.Forms.ComboBox comboBox19;
-        private System.Windows.Forms.ComboBox ToStreet;
-        private System.Windows.Forms.ComboBox ToFloor;
-        private System.Windows.Forms.ComboBox ToBuilding;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel27;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label CancilingCause;
-        private System.Windows.Forms.PictureBox pictureBox8;
         public System.Windows.Forms.TextBox CancilingtText;
         public System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.ComboBox Name_Patient;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.TextBox ID_Patient;
+        public LabelBord labelBord1;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        public System.Windows.Forms.Button Save;
+        public System.Windows.Forms.Panel panel2;
+        public LabelBord FromHos;
+        public LabelBord FromHome;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Panel panel4;
+        public LabelBord ToHos;
+        public LabelBord ToHome;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TableLayoutPanel FromHosInfo;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        public System.Windows.Forms.Panel panel5;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        public System.Windows.Forms.TextBox ID_FromHospital;
+        public System.Windows.Forms.TableLayoutPanel ToHosInfo;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Label label10;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        public System.Windows.Forms.Panel panel6;
+        public System.Windows.Forms.Label label11;
+        public System.Windows.Forms.PictureBox pictureBox3;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
+        public System.Windows.Forms.TextBox ID_ToHospital;
+        public System.Windows.Forms.TableLayoutPanel FromHomeInfo;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
+        public System.Windows.Forms.Label label12;
+        public System.Windows.Forms.Label label13;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
+        public System.Windows.Forms.Panel panel8;
+        public System.Windows.Forms.Label label19;
+        public System.Windows.Forms.PictureBox pictureBox5;
+        public System.Windows.Forms.TextBox Medicine;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
+        public System.Windows.Forms.Panel panel7;
+        public System.Windows.Forms.Label label18;
+        public System.Windows.Forms.PictureBox pictureBox4;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel25;
+        public System.Windows.Forms.Panel panel9;
+        public System.Windows.Forms.Label label20;
+        public System.Windows.Forms.PictureBox pictureBox6;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;
+        public System.Windows.Forms.Panel panel10;
+        public System.Windows.Forms.Label label21;
+        public System.Windows.Forms.PictureBox pictureBox7;
+        public System.Windows.Forms.TextBox OtherInfo;
+        public System.Windows.Forms.ComboBox Name_FromHosSection;
+        public System.Windows.Forms.ComboBox FromHosRoom;
+        public System.Windows.Forms.ComboBox FromHosFloor;
+        public System.Windows.Forms.ComboBox Name_FromHospital;
+        public System.Windows.Forms.ComboBox Name_ToHosSection;
+        public System.Windows.Forms.ComboBox ToHosFloor;
+        public System.Windows.Forms.ComboBox ToHosRoom;
+        public System.Windows.Forms.ComboBox Name_ToHospital;
+        public System.Windows.Forms.ComboBox InfectionDiseases;
+        public System.Windows.Forms.ComboBox Insurance;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        public System.Windows.Forms.TextBox FromNotes;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        public System.Windows.Forms.Label label22;
+        public System.Windows.Forms.Label label23;
+        public System.Windows.Forms.Label label24;
+        public System.Windows.Forms.ComboBox FromRegion;
+        public System.Windows.Forms.ComboBox FromCity;
+        public System.Windows.Forms.ComboBox FromStreet;
+        public System.Windows.Forms.ComboBox FromFloor;
+        public System.Windows.Forms.ComboBox FromBuilding;
+        public System.Windows.Forms.Label label26;
+        public System.Windows.Forms.Label label25;
+        public System.Windows.Forms.TableLayoutPanel ToHomeInfo;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
+        public System.Windows.Forms.TextBox ToNotes;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
+        public System.Windows.Forms.ComboBox ToRegion;
+        public System.Windows.Forms.ComboBox comboBox19;
+        public System.Windows.Forms.ComboBox ToStreet;
+        public System.Windows.Forms.ComboBox ToFloor;
+        public System.Windows.Forms.ComboBox ToBuilding;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
+        public System.Windows.Forms.Label label15;
+        public System.Windows.Forms.Label label16;
+        public System.Windows.Forms.Label label17;
+        public System.Windows.Forms.Label label27;
+        public System.Windows.Forms.Label label28;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel27;
+        public System.Windows.Forms.Label label29;
+        public System.Windows.Forms.Label label30;
+        public System.Windows.Forms.Label label31;
+        public System.Windows.Forms.Label CancilingCause;
+        public System.Windows.Forms.PictureBox pictureBox8;
     }
 }

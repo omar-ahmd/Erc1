@@ -105,6 +105,7 @@
     <Compile Include="CONTROLS\SButton.Designer.cs">
       <DependentUpon>SButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataLayer\Mission.cs" />
     <Compile Include="Forms\4-Hospitals\HospitalsForm.cs">
       <SubType>Form</SubType>
     </Compile>

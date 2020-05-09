@@ -30,16 +30,16 @@ namespace Erc1.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DateTimePicker dateTimePicker1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMission));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.Year = new System.Windows.Forms.ComboBox();
+            this.Month = new System.Windows.Forms.ComboBox();
+            this.Day = new System.Windows.Forms.ComboBox();
+            this.Time = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,8 +48,8 @@ namespace Erc1.Forms
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.MissionID = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.AnnualID = new System.Windows.Forms.TextBox();
+            this.MonthlyID = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -63,11 +63,11 @@ namespace Erc1.Forms
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CarId = new System.Windows.Forms.ComboBox();
+            this.CenterID = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.MoreInfoAboutCase = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -81,16 +81,16 @@ namespace Erc1.Forms
             this.panel7 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.Case = new System.Windows.Forms.ComboBox();
+            this.CaseType = new System.Windows.Forms.ComboBox();
             this.MissionType = new System.Windows.Forms.TableLayoutPanel();
-            this.labelBord3 = new Erc1.CONTROLS.LabelBord();
+            this.ColdMission = new Erc1.CONTROLS.LabelBord();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.labelBord1 = new Erc1.CONTROLS.LabelBord();
-            this.labelBord2 = new Erc1.CONTROLS.LabelBord();
-            this.labelBord4 = new Erc1.CONTROLS.LabelBord();
+            this.FireMission = new Erc1.CONTROLS.LabelBord();
+            this.UrgentMission = new Erc1.CONTROLS.LabelBord();
+            this.ActivityMission = new Erc1.CONTROLS.LabelBord();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
@@ -99,7 +99,6 @@ namespace Erc1.Forms
             this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -144,18 +143,6 @@ namespace Erc1.Forms
             this.tableLayoutPanel22.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            resources.ApplyResources(dateTimePicker1, "dateTimePicker1");
-            dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.Control;
-            dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.Green;
-            dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.ShowUpDown = true;
-            dateTimePicker1.TabStop = false;
-            dateTimePicker1.Value = new System.DateTime(2020, 4, 25, 23, 54, 0, 0);
-            // 
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
@@ -189,56 +176,119 @@ namespace Erc1.Forms
             // tableLayoutPanel10
             // 
             resources.ApplyResources(this.tableLayoutPanel10, "tableLayoutPanel10");
-            this.tableLayoutPanel10.Controls.Add(dateTimePicker1, 3, 0);
-            this.tableLayoutPanel10.Controls.Add(this.comboBox4, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.comboBox3, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.comboBox2, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.Year, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.Month, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.Day, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.Time, 3, 0);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             // 
-            // comboBox4
+            // Year
             // 
-            this.comboBox4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox4.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.comboBox4, "comboBox4");
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            resources.GetString("comboBox4.Items"),
-            resources.GetString("comboBox4.Items1"),
-            resources.GetString("comboBox4.Items2"),
-            resources.GetString("comboBox4.Items3")});
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Sorted = true;
+            this.Year.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Year.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Year.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.Year, "Year");
+            this.Year.FormattingEnabled = true;
+            this.Year.Items.AddRange(new object[] {
+            resources.GetString("Year.Items"),
+            resources.GetString("Year.Items1"),
+            resources.GetString("Year.Items2"),
+            resources.GetString("Year.Items3"),
+            resources.GetString("Year.Items4"),
+            resources.GetString("Year.Items5"),
+            resources.GetString("Year.Items6"),
+            resources.GetString("Year.Items7"),
+            resources.GetString("Year.Items8"),
+            resources.GetString("Year.Items9"),
+            resources.GetString("Year.Items10"),
+            resources.GetString("Year.Items11"),
+            resources.GetString("Year.Items12"),
+            resources.GetString("Year.Items13"),
+            resources.GetString("Year.Items14"),
+            resources.GetString("Year.Items15"),
+            resources.GetString("Year.Items16"),
+            resources.GetString("Year.Items17"),
+            resources.GetString("Year.Items18"),
+            resources.GetString("Year.Items19"),
+            resources.GetString("Year.Items20"),
+            resources.GetString("Year.Items21"),
+            resources.GetString("Year.Items22"),
+            resources.GetString("Year.Items23"),
+            resources.GetString("Year.Items24"),
+            resources.GetString("Year.Items25"),
+            resources.GetString("Year.Items26"),
+            resources.GetString("Year.Items27"),
+            resources.GetString("Year.Items28"),
+            resources.GetString("Year.Items29"),
+            resources.GetString("Year.Items30"),
+            resources.GetString("Year.Items31"),
+            resources.GetString("Year.Items32"),
+            resources.GetString("Year.Items33"),
+            resources.GetString("Year.Items34"),
+            resources.GetString("Year.Items35"),
+            resources.GetString("Year.Items36"),
+            resources.GetString("Year.Items37"),
+            resources.GetString("Year.Items38"),
+            resources.GetString("Year.Items39"),
+            resources.GetString("Year.Items40"),
+            resources.GetString("Year.Items41"),
+            resources.GetString("Year.Items42"),
+            resources.GetString("Year.Items43"),
+            resources.GetString("Year.Items44"),
+            resources.GetString("Year.Items45"),
+            resources.GetString("Year.Items46"),
+            resources.GetString("Year.Items47"),
+            resources.GetString("Year.Items48"),
+            resources.GetString("Year.Items49"),
+            resources.GetString("Year.Items50"),
+            resources.GetString("Year.Items51"),
+            resources.GetString("Year.Items52"),
+            resources.GetString("Year.Items53"),
+            resources.GetString("Year.Items54")});
+            this.Year.Name = "Year";
+            this.Year.Sorted = true;
+            this.Year.SelectedValueChanged += new System.EventHandler(this.Month_SelectedValueChanged);
             // 
-            // comboBox3
+            // Month
             // 
-            this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox3.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.comboBox3, "comboBox3");
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            resources.GetString("comboBox3.Items"),
-            resources.GetString("comboBox3.Items1"),
-            resources.GetString("comboBox3.Items2"),
-            resources.GetString("comboBox3.Items3")});
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Sorted = true;
+            this.Month.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Month.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Month.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.Month, "Month");
+            this.Month.FormattingEnabled = true;
+            this.Month.Items.AddRange(new object[] {
+            resources.GetString("Month.Items"),
+            resources.GetString("Month.Items1"),
+            resources.GetString("Month.Items2"),
+            resources.GetString("Month.Items3"),
+            resources.GetString("Month.Items4"),
+            resources.GetString("Month.Items5"),
+            resources.GetString("Month.Items6"),
+            resources.GetString("Month.Items7"),
+            resources.GetString("Month.Items8"),
+            resources.GetString("Month.Items9"),
+            resources.GetString("Month.Items10"),
+            resources.GetString("Month.Items11")});
+            this.Month.Name = "Month";
+            this.Month.Sorted = true;
+            this.Month.SelectedValueChanged += new System.EventHandler(this.Month_SelectedValueChanged);
             // 
-            // comboBox2
+            // Day
             // 
-            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox2.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.comboBox2, "comboBox2");
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            resources.GetString("comboBox2.Items"),
-            resources.GetString("comboBox2.Items1"),
-            resources.GetString("comboBox2.Items2"),
-            resources.GetString("comboBox2.Items3")});
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Sorted = true;
+            this.Day.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Day.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Day.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.Day, "Day");
+            this.Day.FormattingEnabled = true;
+            this.Day.Name = "Day";
+            this.Day.Sorted = true;
+            // 
+            // Time
+            // 
+            resources.ApplyResources(this.Time, "Time");
+            this.Time.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.Time.Name = "Time";
+            this.Time.ShowUpDown = true;
             // 
             // tableLayoutPanel11
             // 
@@ -295,24 +345,24 @@ namespace Erc1.Forms
             // 
             this.MissionID.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.MissionID, "MissionID");
-            this.MissionID.Controls.Add(this.textBox3, 2, 1);
-            this.MissionID.Controls.Add(this.textBox4, 1, 1);
+            this.MissionID.Controls.Add(this.AnnualID, 2, 1);
+            this.MissionID.Controls.Add(this.MonthlyID, 1, 1);
             this.MissionID.Controls.Add(this.tableLayoutPanel7, 2, 0);
             this.MissionID.Name = "MissionID";
             // 
-            // textBox3
+            // AnnualID
             // 
-            resources.ApplyResources(this.textBox3, "textBox3");
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
+            resources.ApplyResources(this.AnnualID, "AnnualID");
+            this.AnnualID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AnnualID.Name = "AnnualID";
+            this.AnnualID.ReadOnly = true;
             // 
-            // textBox4
+            // MonthlyID
             // 
-            resources.ApplyResources(this.textBox4, "textBox4");
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
+            resources.ApplyResources(this.MonthlyID, "MonthlyID");
+            this.MonthlyID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MonthlyID.Name = "MonthlyID";
+            this.MonthlyID.ReadOnly = true;
             // 
             // tableLayoutPanel7
             // 
@@ -348,8 +398,8 @@ namespace Erc1.Forms
             resources.ApplyResources(this.tableLayoutPanel5, "tableLayoutPanel5");
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel4, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel8, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.comboBox12, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(this.comboBox1, 2, 1);
+            this.tableLayoutPanel5.Controls.Add(this.CarId, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.CenterID, 2, 1);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             // 
             // tableLayoutPanel4
@@ -408,35 +458,35 @@ namespace Erc1.Forms
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.TabStop = false;
             // 
-            // comboBox12
+            // CarId
             // 
-            this.comboBox12.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox12.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox12.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.comboBox12, "comboBox12");
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Items.AddRange(new object[] {
-            resources.GetString("comboBox12.Items"),
-            resources.GetString("comboBox12.Items1"),
-            resources.GetString("comboBox12.Items2"),
-            resources.GetString("comboBox12.Items3")});
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Sorted = true;
+            this.CarId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.CarId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CarId.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.CarId, "CarId");
+            this.CarId.FormattingEnabled = true;
+            this.CarId.Items.AddRange(new object[] {
+            resources.GetString("CarId.Items"),
+            resources.GetString("CarId.Items1"),
+            resources.GetString("CarId.Items2"),
+            resources.GetString("CarId.Items3")});
+            this.CarId.Name = "CarId";
+            this.CarId.Sorted = true;
             // 
-            // comboBox1
+            // CenterID
             // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            resources.GetString("comboBox1.Items"),
-            resources.GetString("comboBox1.Items1"),
-            resources.GetString("comboBox1.Items2"),
-            resources.GetString("comboBox1.Items3")});
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Sorted = true;
+            this.CenterID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.CenterID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CenterID.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.CenterID, "CenterID");
+            this.CenterID.FormattingEnabled = true;
+            this.CenterID.Items.AddRange(new object[] {
+            resources.GetString("CenterID.Items"),
+            resources.GetString("CenterID.Items1"),
+            resources.GetString("CenterID.Items2"),
+            resources.GetString("CenterID.Items3")});
+            this.CenterID.Name = "CenterID";
+            this.CenterID.Sorted = true;
             // 
             // tableLayoutPanel12
             // 
@@ -450,16 +500,16 @@ namespace Erc1.Forms
             // 
             this.tableLayoutPanel14.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.tableLayoutPanel14, "tableLayoutPanel14");
-            this.tableLayoutPanel14.Controls.Add(this.textBox1, 1, 1);
+            this.tableLayoutPanel14.Controls.Add(this.MoreInfoAboutCase, 1, 1);
             this.tableLayoutPanel14.Controls.Add(this.tableLayoutPanel18, 1, 0);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             // 
-            // textBox1
+            // MoreInfoAboutCase
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
+            this.MoreInfoAboutCase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
+            this.MoreInfoAboutCase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.MoreInfoAboutCase, "MoreInfoAboutCase");
+            this.MoreInfoAboutCase.Name = "MoreInfoAboutCase";
             // 
             // tableLayoutPanel18
             // 
@@ -495,8 +545,8 @@ namespace Erc1.Forms
             resources.ApplyResources(this.tableLayoutPanel15, "tableLayoutPanel15");
             this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel16, 2, 0);
             this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel17, 1, 0);
-            this.tableLayoutPanel15.Controls.Add(this.comboBox5, 1, 1);
-            this.tableLayoutPanel15.Controls.Add(this.comboBox6, 2, 1);
+            this.tableLayoutPanel15.Controls.Add(this.Case, 1, 1);
+            this.tableLayoutPanel15.Controls.Add(this.CaseType, 2, 1);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             // 
             // tableLayoutPanel16
@@ -555,55 +605,56 @@ namespace Erc1.Forms
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.TabStop = false;
             // 
-            // comboBox5
+            // Case
             // 
-            this.comboBox5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox5.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox5.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.comboBox5, "comboBox5");
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            resources.GetString("comboBox5.Items"),
-            resources.GetString("comboBox5.Items1"),
-            resources.GetString("comboBox5.Items2"),
-            resources.GetString("comboBox5.Items3")});
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Sorted = true;
+            this.Case.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Case.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Case.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.Case, "Case");
+            this.Case.FormattingEnabled = true;
+            this.Case.Items.AddRange(new object[] {
+            resources.GetString("Case.Items"),
+            resources.GetString("Case.Items1"),
+            resources.GetString("Case.Items2"),
+            resources.GetString("Case.Items3")});
+            this.Case.Name = "Case";
+            this.Case.Sorted = true;
             // 
-            // comboBox6
+            // CaseType
             // 
-            this.comboBox6.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox6.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox6.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.comboBox6, "comboBox6");
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
-            resources.GetString("comboBox6.Items"),
-            resources.GetString("comboBox6.Items1"),
-            resources.GetString("comboBox6.Items2"),
-            resources.GetString("comboBox6.Items3")});
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Sorted = true;
+            this.CaseType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.CaseType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CaseType.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.CaseType, "CaseType");
+            this.CaseType.FormattingEnabled = true;
+            this.CaseType.Items.AddRange(new object[] {
+            resources.GetString("CaseType.Items"),
+            resources.GetString("CaseType.Items1"),
+            resources.GetString("CaseType.Items2"),
+            resources.GetString("CaseType.Items3")});
+            this.CaseType.Name = "CaseType";
+            this.CaseType.Sorted = true;
             // 
             // MissionType
             // 
             this.MissionType.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.MissionType, "MissionType");
-            this.MissionType.Controls.Add(this.labelBord3, 5, 2);
+            this.MissionType.Controls.Add(this.ColdMission, 5, 2);
             this.MissionType.Controls.Add(this.panel5, 7, 0);
-            this.MissionType.Controls.Add(this.labelBord1, 1, 2);
-            this.MissionType.Controls.Add(this.labelBord2, 7, 2);
-            this.MissionType.Controls.Add(this.labelBord4, 3, 2);
+            this.MissionType.Controls.Add(this.FireMission, 1, 2);
+            this.MissionType.Controls.Add(this.UrgentMission, 7, 2);
+            this.MissionType.Controls.Add(this.ActivityMission, 3, 2);
             this.MissionType.Name = "MissionType";
             // 
-            // labelBord3
+            // ColdMission
             // 
-            this.labelBord3.Check = false;
-            resources.ApplyResources(this.labelBord3, "labelBord3");
-            this.labelBord3.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBord3.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
-            this.labelBord3.Name = "labelBord3";
-            this.labelBord3.text = "مهمة باردة";
+            this.ColdMission.Check = true;
+            resources.ApplyResources(this.ColdMission, "ColdMission");
+            this.ColdMission.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ColdMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this.ColdMission.Name = "ColdMission";
+            this.ColdMission.text = "مهمة باردة";
+            this.ColdMission.CheckChange += new System.EventHandler(this.ColdMission_CheckChange);
             // 
             // panel5
             // 
@@ -627,32 +678,35 @@ namespace Erc1.Forms
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.TabStop = false;
             // 
-            // labelBord1
+            // FireMission
             // 
-            this.labelBord1.Check = false;
-            resources.ApplyResources(this.labelBord1, "labelBord1");
-            this.labelBord1.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBord1.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
-            this.labelBord1.Name = "labelBord1";
-            this.labelBord1.text = "حريق";
+            this.FireMission.Check = false;
+            resources.ApplyResources(this.FireMission, "FireMission");
+            this.FireMission.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FireMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this.FireMission.Name = "FireMission";
+            this.FireMission.text = "حريق";
+            this.FireMission.CheckChange += new System.EventHandler(this.FireMission_CheckChange);
             // 
-            // labelBord2
+            // UrgentMission
             // 
-            this.labelBord2.Check = false;
-            resources.ApplyResources(this.labelBord2, "labelBord2");
-            this.labelBord2.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBord2.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
-            this.labelBord2.Name = "labelBord2";
-            this.labelBord2.text = "مهمة طارئة";
+            this.UrgentMission.Check = false;
+            resources.ApplyResources(this.UrgentMission, "UrgentMission");
+            this.UrgentMission.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UrgentMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this.UrgentMission.Name = "UrgentMission";
+            this.UrgentMission.text = "مهمة طارئة";
+            this.UrgentMission.CheckChange += new System.EventHandler(this.UrgentMission_CheckChange);
             // 
-            // labelBord4
+            // ActivityMission
             // 
-            this.labelBord4.Check = false;
-            resources.ApplyResources(this.labelBord4, "labelBord4");
-            this.labelBord4.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBord4.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
-            this.labelBord4.Name = "labelBord4";
-            this.labelBord4.text = "تغطية نشاط";
+            this.ActivityMission.Check = false;
+            resources.ApplyResources(this.ActivityMission, "ActivityMission");
+            this.ActivityMission.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActivityMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this.ActivityMission.Name = "ActivityMission";
+            this.ActivityMission.text = "تغطية نشاط";
+            this.ActivityMission.CheckChange += new System.EventHandler(this.ActivityMission_CheckChange);
             // 
             // tableLayoutPanel19
             // 
@@ -719,6 +773,7 @@ namespace Erc1.Forms
             this.Name = "AddMission";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.Load += new System.EventHandler(this.AddMission_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -778,72 +833,73 @@ namespace Erc1.Forms
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.TableLayoutPanel MissionID;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
-        private System.Windows.Forms.TableLayoutPanel MissionType;
-        private CONTROLS.LabelBord labelBord3;
-        private CONTROLS.LabelBord labelBord1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
-        private System.Windows.Forms.Panel panel5;
-        private CONTROLS.LabelBord labelBord2;
-        private CONTROLS.LabelBord labelBord4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox12;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pictureBox9;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        public System.Windows.Forms.TableLayoutPanel MissionID;
+        public System.Windows.Forms.TextBox AnnualID;
+        public System.Windows.Forms.TextBox MonthlyID;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
+        public System.Windows.Forms.TableLayoutPanel MissionType;
+        public CONTROLS.LabelBord ColdMission;
+        public CONTROLS.LabelBord FireMission;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        public System.Windows.Forms.Panel panel5;
+        public CONTROLS.LabelBord UrgentMission;
+        public CONTROLS.LabelBord ActivityMission;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
+        public System.Windows.Forms.TextBox MoreInfoAboutCase;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        public System.Windows.Forms.Panel panel4;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.PictureBox pictureBox4;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        public System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        public System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.PictureBox pictureBox3;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
+        public System.Windows.Forms.Panel panel8;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.PictureBox pictureBox8;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
+        public System.Windows.Forms.Panel panel6;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.PictureBox pictureBox6;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
+        public System.Windows.Forms.Panel panel7;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.PictureBox pictureBox7;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.PictureBox pictureBox5;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
+        public System.Windows.Forms.Panel panel9;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.ComboBox Year;
+        public System.Windows.Forms.ComboBox Month;
+        public System.Windows.Forms.ComboBox Day;
+        public System.Windows.Forms.ComboBox CarId;
+        public System.Windows.Forms.ComboBox CenterID;
+        public System.Windows.Forms.ComboBox Case;
+        public System.Windows.Forms.ComboBox CaseType;
+        public System.Windows.Forms.Panel panel10;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.PictureBox pictureBox9;
+        public System.Windows.Forms.DateTimePicker Time;
     }
 }
