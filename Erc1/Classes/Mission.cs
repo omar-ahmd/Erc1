@@ -12,26 +12,67 @@ namespace Erc1.Classes
 {
     class Mission
     {
+        
+////////////using (AdventureWorks db = new AdventureWorks())
+////////////{
+////////////    var person = (from p in db.People
+////////////                  join e in db.EmailAddresses
+////////////                  on p.BusinessEntityID equals e.BusinessEntityID
+////////////                  where p.FirstName == "KEN"
+////////////                  select new
+////////////                  {
+////////////                      ID = p.BusinessEntityID,
+////////////                      FirstName = p.FirstName,
+////////////                      MiddleName = p.MiddleName,
+////////////                      LastName = p.LastName,
+////////////                      EmailID = e.EmailAddress1
+////////////                  }).ToList();
+ 
+////////////    foreach (var p in person)
+////////////    {
+////////////        Console.WriteLine("{0} {1} {2} {3} {4}", p.ID, p.FirstName, p.MiddleName, p.LastName, p.EmailID);
+////////////    }
+////////////}
+
         public static IEnumerable Getالمراكز() 
         {
             
-
-
                 using (ERCEntities entity = new ERCEntities())
                 {
                 var c = (
                 from marakez in entity.المراكز
                 join manate2 in entity.المناطق
                 on marakez.المنطقة equals manate2.رمز
+                orderby marakez.المنطقة
                 select new
                 {
-                   manate2= manate2.المنطقة
+                    manate2 = manate2.المنطقة,
+                    marakez = marakez.الرمز
                 }
-                    );
+                    ); ;
                     return c.ToList();
                 };
             
         }
+        public static IEnumerable Getالآليات(string marakez)
+        {
+
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from elie in entity.الآليات
+                where elie.المركز == marakez.ToString()
+                select new
+                {
+                    elie = elie.موديل_
+                }
+                    ); ;
+                //var c = entity.الآليات.Where(r => r.المركز== marakez);
+                return c.ToList();
+            };
+
+        }
+
 
         public static void insertMission(int الرمز_الشهري, DateTime التاريخ,int الآلية, int المريض, Nullable<int> من_مشفى, Nullable<int> من_القسم, Nullable<int> الطبيب_المعالج,
            Nullable<int> الجهة_الضامنة, Nullable<int> إلى_مشفى, Nullable<int> إلى_القسم, int مسؤول_المهمة, int مسعف_1,int مسعف_2,

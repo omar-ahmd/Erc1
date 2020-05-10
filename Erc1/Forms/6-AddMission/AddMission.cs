@@ -135,7 +135,15 @@ namespace Erc1.Forms
         {
             var names = Classes.Mission.Getالمراكز();
             comboBox1.DataSource = names;
+            comboBox1.ValueMember = "marakez";
             comboBox1.DisplayMember = "manate2";
+        }
+
+        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            var elie = Classes.Mission.Getالآليات(comboBox1.SelectedValue.ToString());
+            comboBox12.DataSource = elie;
+            comboBox12.DisplayMember = "elie";
         }
     }
 }
