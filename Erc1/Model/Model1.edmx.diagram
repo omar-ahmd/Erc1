@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3135c90b0b0647bcb5be0d97820dd424" Name="Diagram1">
-        <EntityTypeShape EntityType="ERCModel.sysdiagram" Width="1.5" PointX="0.625" PointY="0.5" IsExpanded="true" />
+      <Diagram DiagramId="8a9f6d1543ba418790b5a2423b686b32" Name="Diagram1">
+        <EntityTypeShape EntityType="ERCModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ERCModel.أقسام_المستشفيات" Width="1.5" PointX="6" PointY="14.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ERCModel.الأطباء" Width="1.5" PointX="3" PointY="20.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ERCModel.الآليات" Width="1.5" PointX="5.25" PointY="33" IsExpanded="true" />

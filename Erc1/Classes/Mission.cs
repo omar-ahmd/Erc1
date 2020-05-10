@@ -4,7 +4,7 @@ using System.Linq;
 using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
-using Erc1.Model;
+using Erc1.model;
 using System.Collections;
 using System.Data;
 
@@ -40,7 +40,7 @@ namespace Erc1.Classes
              Nullable<int> الى_رمز_المدينة, Nullable<int> الى_رمز_المنطقة, string التفاصيل, string اسم_المتصل,
               int طبيعة_المهمة, string رمز__المركز)
         {
-            using (ERCEntities entity =new Model.ERCEntities())
+            using (ERCEntities entity =new model.ERCEntities())
             {
                 المهمات_المنفذة newmission = new المهمات_المنفذة()
                 {

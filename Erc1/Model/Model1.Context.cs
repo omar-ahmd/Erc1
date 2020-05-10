@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Erc1.Model
+namespace Erc1.model
 {
     using System;
     using System.Data.Entity;

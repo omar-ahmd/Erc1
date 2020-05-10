@@ -600,7 +600,7 @@ namespace Erc1.Forms
             // 
             this.labelBord3.Check = false;
             resources.ApplyResources(this.labelBord3, "labelBord3");
-            this.labelBord3.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBord3.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBord3.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
             this.labelBord3.Name = "labelBord3";
             this.labelBord3.text = "مهمة باردة";
@@ -631,7 +631,7 @@ namespace Erc1.Forms
             // 
             this.labelBord1.Check = false;
             resources.ApplyResources(this.labelBord1, "labelBord1");
-            this.labelBord1.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBord1.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBord1.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
             this.labelBord1.Name = "labelBord1";
             this.labelBord1.text = "حريق";
@@ -640,7 +640,7 @@ namespace Erc1.Forms
             // 
             this.labelBord2.Check = false;
             resources.ApplyResources(this.labelBord2, "labelBord2");
-            this.labelBord2.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBord2.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBord2.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
             this.labelBord2.Name = "labelBord2";
             this.labelBord2.text = "مهمة طارئة";
@@ -649,7 +649,7 @@ namespace Erc1.Forms
             // 
             this.labelBord4.Check = false;
             resources.ApplyResources(this.labelBord4, "labelBord4");
-            this.labelBord4.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBord4.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBord4.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
             this.labelBord4.Name = "labelBord4";
             this.labelBord4.text = "تغطية نشاط";
@@ -719,6 +719,7 @@ namespace Erc1.Forms
             this.Name = "AddMission";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.Load += new System.EventHandler(this.AddMission_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

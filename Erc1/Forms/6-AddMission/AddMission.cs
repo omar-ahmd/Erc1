@@ -131,8 +131,11 @@ namespace Erc1.Forms
 
         }
 
-
-
-
+        private void AddMission_Load(object sender, EventArgs e)
+        {
+            var names = Classes.Mission.Getالمراكز();
+            comboBox1.DataSource = names;
+            comboBox1.DisplayMember = "manate2";
+        }
     }
 }
