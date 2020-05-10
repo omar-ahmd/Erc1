@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -19,13 +20,14 @@ namespace Erc1.DataLayer
         Activity
 
     }
+
     class Mission
     {
-        public Mission()
+        public Mission(Erc1.Forms.MissionType missionType)
         {
-
+            missionType = this.mission;
         }
-        
+        public Erc1.Forms.MissionType mission { get; set; }
         public int MonthID { get; set; }
         public int AnnualID { get; set; }
         public Center center { get; set; }
@@ -48,6 +50,9 @@ namespace Erc1.DataLayer
         public Adress Toadress { get; set; }
         public Insurance insurance { get; set; }
         public Caller caller { get; set; }
+
+
+
         public static int GetNewMonthId()
         {
             return 0;
@@ -56,7 +61,11 @@ namespace Erc1.DataLayer
         {
             return 0;
         }
-        public static Mission ImportMissionFromDataBase(int MonthlyId,int AnnualId)
+        public static bool GetTableOfMission()
+        {
+            return false;
+        }
+        public static Mission AddMission(int MonthlyId, int AnnualId, int Year)
         {
             return null;
         }
@@ -70,7 +79,7 @@ namespace Erc1.DataLayer
             MonthID = int.Parse(addMission.MonthlyID.Text);
             center = Center.GetCenterByID(int.Parse(addMission.CenterID.Text));
             car = Car.GetCarByID(int.Parse(addMission.CarId.Text));
-            Date = new DateTime(int.Parse(addMission.Year.Text), int.Parse(addMission.Month.Text), int.Parse(addMission.Day.Text), addMission.Time.Value.Hour, addMission.Time.Value.Minute,0);
+            Date = new DateTime(int.Parse(addMission.Year.Text), int.Parse(addMission.Month.Text), int.Parse(addMission.Day.Text), addMission.Time.Value.Hour, addMission.Time.Value.Minute, 0);
             Missiontype = addMission.type;
             MoreInfoAboutCase = addMission.MoreInfoAboutCase.Text;
             Cases = new Case[12];
@@ -84,17 +93,65 @@ namespace Erc1.DataLayer
         }
 
 
-
     }
     class Patient
     {
+        public Patient()
+        {
+
+        }
+
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public int Weight { get; set; }
+        public Insurance insurance { get; set; }
+        public string Phone { get; set; }
+        public Adress adress { get; set; }
+        public InfectedDisease InfectedDisease { get; set; }
+
+        public static Patient GetPatient(int ID)
+        {
+            return null;
+        }
+        public static Patient GetPatient(String Name)
+        {
+            return null;
+        }
+
+        public static bool AddPatient(Patient patient)
+        {
+            return false;
+        }
+        public static DataTable GetPatients()
+        {
+            return null;
+        }
+
 
     }
     class Car
     {
         public int CarID { get; set; }
+        public Center center { get; set; }
+        public string Use { get; set; }
+        public int Model { get; set; }
+        public string CarType { get; set; }
+        public string FuelType { get; set; }
+        public bool IsWorked { get; set; }
+        public bool IsAvailable { get; set; }
 
-        public static Car GetCarByID(int ID)
+
+
+        public static Car GetCar(int ID)
+        {
+            return null;
+        }
+        public static bool AddCar(Car car)
+        {
+            return false;
+        }
+        public static DataTable GetCars()
         {
             return null;
         }
@@ -137,7 +194,7 @@ namespace Erc1.DataLayer
         public int CaseID { get; set; }
         public string CaseName { get; set; }
         public string CaseType { get; set; }
-        public static bool getcaseBYName (string name)
+        public static bool getcaseBYName(string name)
         {
             return false;
         }
@@ -156,8 +213,13 @@ namespace Erc1.DataLayer
         {
             return false;
         }
-        
-        
 
 
+
+
+    }
+    class InfectedDisease
+    {
+
+    }
 }
