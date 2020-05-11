@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="616aa73694194f5db6db215d5250477a" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="ERCModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.أقسام_المستشفيات" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.الأطباء" Width="1.5" PointX="3" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.الآليات" Width="1.5" PointX="5.25" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.الجهات_الضامنة" Width="1.5" PointX="3.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.الحالات" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.العاملون" Width="1.5" PointX="5.25" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.المدن" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.المراكز" Width="1.5" PointX="3" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.المرضى" Width="1.5" PointX="6" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.المستشفيات" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.المستشفيات_مع_اقسام" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.المناطق" Width="1.5" PointX="0.75" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.المهماة_المؤجلة" Width="1.5" PointX="8.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.المهمات_الملغاة" Width="1.5" PointX="11.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.المهمات_المنفذة" Width="1.5" PointX="7.5" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.طبيعة_المهمة" Width="1.5" PointX="9" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.نوعيات_الحالات" Width="1.5" PointX="3.75" PointY="6.625" IsExpanded="true" />
+        <AssociationConnector Association="ERCModel.FK_الأطباء_ToTable_الأقسام" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المستشفيات_مع_اقسام_ToTableأقسام_المستشفيات" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_الملغاة_ToTableالمستشفيات1" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_الملغاة_ToTableالمستشفيات2" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableالمستشفيات1" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableالمستشفيات2" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المؤجلة_ToTableالمستشفيات1" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المؤجلة_ToTableالمستشفيات2" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_الأطباء_ToTable_المستشفيات" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_الأطباء_ToTableالمدن" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_الأطباء_ToTableالمناطق" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_الآليات_ToTable_المراكز" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableالآليات" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المرضى_ToTableالضمان" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_الحالات_ToTableنوعيات_الحالات" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_الملغاة_ToTableالحالات" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableالحالات" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المؤجلة_ToTableالحالات" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_العاملون_ToTableالمراكز" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableالعاملون1" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableالعاملون2" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableالعاملون3" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableالعاملون4" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المرضى_ToTableالمدن" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المستشفيات_ToTableالمدينة" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_الملغاة_ToTableالمدن1" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_الملغاة_ToTableالمدن2" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableالمدن1" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableالمدن2" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المؤجلة_ToTableالمدن1" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المؤجلة_ToTableالمدن2" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المراكز_ToTableالمناطق" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المرضى_ToTableالمناطق" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_الملغاة_ToTableالمرضى" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableالمرضى" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المستشفيات_مع_اقسام_ToTableالمستشفيات" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المستشفيات_ToTableالمناطق" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_الملغاة_ToTableأقسام_المستشفيات1" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_الملغاة_ToTableأقسام_المستشفيات2" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableأقسام_المستشفيات1" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableأقسام_المستشفيات2" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المؤجلة_ToTableأقسام_المستشفيات1" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المؤجلة_ToTableأقسام_المستشفيات2" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_الملغاة_ToTableالمناطق1" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_الملغاة_ToTableالمناطق2" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableالمناطق1" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableالمناطق2" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المؤجلة_ToTableالمناطق1" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المؤجلة_ToTableالمناطق2" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_الملغاة_ToTableطبيعة_المهمة" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableطبيعة_المهمة" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

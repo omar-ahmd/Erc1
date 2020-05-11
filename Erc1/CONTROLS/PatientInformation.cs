@@ -94,5 +94,15 @@ namespace Erc1.CONTROLS
         {
 
         }
+
+        private void Name_Patient_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Name_Patient.Text == "جديد")
+            {
+                Erc1.Forms._8_AddPatient.AddPatient addPatient = new Forms._8_AddPatient.AddPatient();
+                addPatient.Show();
+            }
+
+        }
     }
 }

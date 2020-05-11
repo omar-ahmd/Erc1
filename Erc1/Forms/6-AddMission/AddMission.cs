@@ -16,7 +16,7 @@ namespace Erc1.Forms
     {
         public PatientInformation paI;
         public ParamInformation pI;
-        public Erc1.DataLayer.MissionType type { get; set; }
+        public Erc1.BAL.MissionType type { get; set; }
         public AddMission()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace Erc1.Forms
                         | ControlStyles.SupportsTransparentBackColor, true);*/
 
             this.DoubleBuffered = true;
-            type = DataLayer.MissionType.Cold;
+            type = BAL.MissionType.Cold;
 
 
         }
@@ -179,7 +179,7 @@ namespace Erc1.Forms
             if (UrgentMission.Check)
             {
                 
-                type = DataLayer.MissionType.Urgent;
+                type = BAL.MissionType.Urgent;
                 ColdMission.Check = false;
                 FireMission.Check = false;
                 ActivityMission.Check = false;
@@ -195,7 +195,7 @@ namespace Erc1.Forms
         {
             if (ColdMission.Check)
             {
-                type = DataLayer.MissionType.Cold;
+                type = BAL.MissionType.Cold;
                 UrgentMission.Check = false;
                 FireMission.Check = false;
                 ActivityMission.Check = false;
@@ -206,7 +206,7 @@ namespace Erc1.Forms
         {
             if (ActivityMission.Check)
             {
-                type = DataLayer.MissionType.Activity;
+                type = BAL.MissionType.Activity;
                 ColdMission.Check = false;
                 FireMission.Check = false;
                 UrgentMission.Check = false;
@@ -217,7 +217,7 @@ namespace Erc1.Forms
         {
             if (FireMission.Check)
             {
-                type = DataLayer.MissionType.Fire;
+                type = BAL.MissionType.Fire;
                 ColdMission.Check = false;
                 UrgentMission.Check = false;
                 ActivityMission.Check = false;

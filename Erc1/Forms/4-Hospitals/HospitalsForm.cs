@@ -1,8 +1,10 @@
 ﻿using ERC;
+using Erc1.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Objects.DataClasses;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,7 +22,7 @@ namespace Erc1.Forms._4_Hospitals
         bool available = true;
         bool Busy = false;
         bool MidBusy = false;
-
+        أقسام_المستشفيات departement = new أقسام_المستشفيات();
         private void button1_Click(object sender, EventArgs e)
         {
             if(available)
@@ -40,6 +42,18 @@ namespace Erc1.Forms._4_Hospitals
                 button1.BackColor = Color.Green;
                 MidBusy = false;
                 available = true;
+            }
+
+            using (ERCEntities1 db = new ERCEntities1())
+            {
+
+                
+                departement.اسم_القسم = "الطوائ";
+
+
+                db.أقسام_المستشفيات.Add(departement);
+                db.SaveChanges();
+
             }
         }
         int row=0, column=1;

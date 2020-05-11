@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.Name_Patient = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,9 +49,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.FromHosInfo = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.FromHosFloor = new System.Windows.Forms.ComboBox();
             this.FromHosRoom = new System.Windows.Forms.ComboBox();
-            this.Name_FromHosSection = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,9 +65,9 @@
             this.ID_FromHospital = new System.Windows.Forms.TextBox();
             this.ToHosInfo = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.Name_ToHosSection = new System.Windows.Forms.ComboBox();
-            this.ToHosFloor = new System.Windows.Forms.ComboBox();
-            this.ToHosRoom = new System.Windows.Forms.ComboBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -103,11 +104,11 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.Medicine = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
             this.Insurance = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
@@ -142,7 +143,6 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.Name_Patient = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -213,6 +213,26 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(397, 67);
             this.tableLayoutPanel5.TabIndex = 1;
+            // 
+            // Name_Patient
+            // 
+            this.Name_Patient.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Name_Patient.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Name_Patient.BackColor = System.Drawing.SystemColors.Control;
+            this.Name_Patient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Name_Patient.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name_Patient.FormattingEnabled = true;
+            this.Name_Patient.ItemHeight = 27;
+            this.Name_Patient.Items.AddRange(new object[] {
+            "جديد"});
+            this.Name_Patient.Location = new System.Drawing.Point(0, 25);
+            this.Name_Patient.Margin = new System.Windows.Forms.Padding(0);
+            this.Name_Patient.Name = "Name_Patient";
+            this.Name_Patient.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Name_Patient.Size = new System.Drawing.Size(297, 35);
+            this.Name_Patient.Sorted = true;
+            this.Name_Patient.TabIndex = 9;
+            this.Name_Patient.SelectedIndexChanged += new System.EventHandler(this.Name_Patient_SelectedIndexChanged);
             // 
             // tableLayoutPanel4
             // 
@@ -522,20 +542,39 @@
             // 
             this.tableLayoutPanel9.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel9.ColumnCount = 3;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel9.Controls.Add(this.textBox1, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.FromHosFloor, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.FromHosRoom, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.Name_FromHosSection, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(0, 88);
             this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel9.Size = new System.Drawing.Size(397, 46);
             this.tableLayoutPanel9.TabIndex = 3;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBox1.Size = new System.Drawing.Size(120, 36);
+            this.textBox1.TabIndex = 10;
+            this.textBox1.WordWrap = false;
             // 
             // FromHosFloor
             // 
@@ -551,7 +590,7 @@
             "200-ضنية",
             "300",
             "400-قلمون"});
-            this.FromHosFloor.Location = new System.Drawing.Point(119, 0);
+            this.FromHosFloor.Location = new System.Drawing.Point(120, 0);
             this.FromHosFloor.Margin = new System.Windows.Forms.Padding(0);
             this.FromHosFloor.Name = "FromHosFloor";
             this.FromHosFloor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -573,35 +612,13 @@
             "200-ضنية",
             "300",
             "400-قلمون"});
-            this.FromHosRoom.Location = new System.Drawing.Point(0, 0);
+            this.FromHosRoom.Location = new System.Drawing.Point(239, 0);
             this.FromHosRoom.Margin = new System.Windows.Forms.Padding(0);
             this.FromHosRoom.Name = "FromHosRoom";
             this.FromHosRoom.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.FromHosRoom.Size = new System.Drawing.Size(119, 35);
+            this.FromHosRoom.Size = new System.Drawing.Size(158, 35);
             this.FromHosRoom.Sorted = true;
             this.FromHosRoom.TabIndex = 6;
-            // 
-            // Name_FromHosSection
-            // 
-            this.Name_FromHosSection.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.Name_FromHosSection.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.Name_FromHosSection.BackColor = System.Drawing.SystemColors.Control;
-            this.Name_FromHosSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Name_FromHosSection.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name_FromHosSection.FormattingEnabled = true;
-            this.Name_FromHosSection.ItemHeight = 27;
-            this.Name_FromHosSection.Items.AddRange(new object[] {
-            "100-طرابلس",
-            "200-ضنية",
-            "300",
-            "400-قلمون"});
-            this.Name_FromHosSection.Location = new System.Drawing.Point(238, 0);
-            this.Name_FromHosSection.Margin = new System.Windows.Forms.Padding(0);
-            this.Name_FromHosSection.Name = "Name_FromHosSection";
-            this.Name_FromHosSection.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Name_FromHosSection.Size = new System.Drawing.Size(159, 35);
-            this.Name_FromHosSection.Sorted = true;
-            this.Name_FromHosSection.TabIndex = 7;
             // 
             // tableLayoutPanel8
             // 
@@ -807,86 +824,83 @@
             // 
             this.tableLayoutPanel11.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel11.ColumnCount = 3;
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel11.Controls.Add(this.Name_ToHosSection, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.ToHosFloor, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.ToHosRoom, 0, 0);
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel11.Controls.Add(this.textBox2, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.comboBox1, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.comboBox2, 0, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel11.Location = new System.Drawing.Point(0, 88);
             this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel11.Size = new System.Drawing.Size(397, 46);
-            this.tableLayoutPanel11.TabIndex = 3;
+            this.tableLayoutPanel11.TabIndex = 4;
             // 
-            // Name_ToHosSection
+            // textBox2
             // 
-            this.Name_ToHosSection.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.Name_ToHosSection.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.Name_ToHosSection.BackColor = System.Drawing.SystemColors.Control;
-            this.Name_ToHosSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Name_ToHosSection.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name_ToHosSection.FormattingEnabled = true;
-            this.Name_ToHosSection.ItemHeight = 27;
-            this.Name_ToHosSection.Items.AddRange(new object[] {
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Enabled = false;
+            this.textBox2.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
+            this.textBox2.Location = new System.Drawing.Point(0, 0);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBox2.Size = new System.Drawing.Size(120, 36);
+            this.textBox2.TabIndex = 10;
+            this.textBox2.WordWrap = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox1.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.ItemHeight = 27;
+            this.comboBox1.Items.AddRange(new object[] {
             "100-طرابلس",
             "200-ضنية",
             "300",
             "400-قلمون"});
-            this.Name_ToHosSection.Location = new System.Drawing.Point(238, 0);
-            this.Name_ToHosSection.Margin = new System.Windows.Forms.Padding(0);
-            this.Name_ToHosSection.Name = "Name_ToHosSection";
-            this.Name_ToHosSection.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Name_ToHosSection.Size = new System.Drawing.Size(159, 35);
-            this.Name_ToHosSection.Sorted = true;
-            this.Name_ToHosSection.TabIndex = 12;
+            this.comboBox1.Location = new System.Drawing.Point(120, 0);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox1.Size = new System.Drawing.Size(119, 35);
+            this.comboBox1.Sorted = true;
+            this.comboBox1.TabIndex = 8;
             // 
-            // ToHosFloor
+            // comboBox2
             // 
-            this.ToHosFloor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.ToHosFloor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.ToHosFloor.BackColor = System.Drawing.SystemColors.Control;
-            this.ToHosFloor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ToHosFloor.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ToHosFloor.FormattingEnabled = true;
-            this.ToHosFloor.ItemHeight = 27;
-            this.ToHosFloor.Items.AddRange(new object[] {
+            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox2.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.ItemHeight = 27;
+            this.comboBox2.Items.AddRange(new object[] {
             "100-طرابلس",
             "200-ضنية",
             "300",
             "400-قلمون"});
-            this.ToHosFloor.Location = new System.Drawing.Point(119, 0);
-            this.ToHosFloor.Margin = new System.Windows.Forms.Padding(0);
-            this.ToHosFloor.Name = "ToHosFloor";
-            this.ToHosFloor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ToHosFloor.Size = new System.Drawing.Size(119, 35);
-            this.ToHosFloor.Sorted = true;
-            this.ToHosFloor.TabIndex = 11;
-            // 
-            // ToHosRoom
-            // 
-            this.ToHosRoom.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.ToHosRoom.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.ToHosRoom.BackColor = System.Drawing.SystemColors.Control;
-            this.ToHosRoom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ToHosRoom.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ToHosRoom.FormattingEnabled = true;
-            this.ToHosRoom.ItemHeight = 27;
-            this.ToHosRoom.Items.AddRange(new object[] {
-            "100-طرابلس",
-            "200-ضنية",
-            "300",
-            "400-قلمون"});
-            this.ToHosRoom.Location = new System.Drawing.Point(0, 0);
-            this.ToHosRoom.Margin = new System.Windows.Forms.Padding(0);
-            this.ToHosRoom.Name = "ToHosRoom";
-            this.ToHosRoom.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ToHosRoom.Size = new System.Drawing.Size(119, 35);
-            this.ToHosRoom.Sorted = true;
-            this.ToHosRoom.TabIndex = 10;
+            this.comboBox2.Location = new System.Drawing.Point(239, 0);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox2.Size = new System.Drawing.Size(158, 35);
+            this.comboBox2.Sorted = true;
+            this.comboBox2.TabIndex = 6;
             // 
             // tableLayoutPanel12
             // 
@@ -1434,8 +1448,8 @@
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel21.Controls.Add(this.InfectionDiseases, 0, 1);
             this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel23, 0, 0);
-            this.tableLayoutPanel21.Controls.Add(this.Medicine, 1, 1);
             this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel22, 1, 0);
+            this.tableLayoutPanel21.Controls.Add(this.comboBox3, 1, 1);
             this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel21.Location = new System.Drawing.Point(520, 443);
             this.tableLayoutPanel21.Margin = new System.Windows.Forms.Padding(0);
@@ -1524,22 +1538,6 @@
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
             // 
-            // Medicine
-            // 
-            this.Medicine.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Medicine.BackColor = System.Drawing.SystemColors.Control;
-            this.Medicine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Medicine.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
-            this.Medicine.Location = new System.Drawing.Point(198, 23);
-            this.Medicine.Margin = new System.Windows.Forms.Padding(0);
-            this.Medicine.Name = "Medicine";
-            this.Medicine.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Medicine.Size = new System.Drawing.Size(199, 36);
-            this.Medicine.TabIndex = 6;
-            this.Medicine.WordWrap = false;
-            // 
             // tableLayoutPanel22
             // 
             this.tableLayoutPanel22.ColumnCount = 2;
@@ -1594,6 +1592,28 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.comboBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox3.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.ItemHeight = 27;
+            this.comboBox3.Items.AddRange(new object[] {
+            "100-طرابلس",
+            "200-ضنية",
+            "300",
+            "400-قلمون"});
+            this.comboBox3.Location = new System.Drawing.Point(198, 23);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox3.Size = new System.Drawing.Size(199, 35);
+            this.comboBox3.Sorted = true;
+            this.comboBox3.TabIndex = 9;
             // 
             // tableLayoutPanel24
             // 
@@ -2182,28 +2202,6 @@
             this.label31.Text = "تفاصيل";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Name_Patient
-            // 
-            this.Name_Patient.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.Name_Patient.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.Name_Patient.BackColor = System.Drawing.SystemColors.Control;
-            this.Name_Patient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Name_Patient.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name_Patient.FormattingEnabled = true;
-            this.Name_Patient.ItemHeight = 27;
-            this.Name_Patient.Items.AddRange(new object[] {
-            "100-طرابلس",
-            "200-ضنية",
-            "300",
-            "400-قلمون"});
-            this.Name_Patient.Location = new System.Drawing.Point(0, 25);
-            this.Name_Patient.Margin = new System.Windows.Forms.Padding(0);
-            this.Name_Patient.Name = "Name_Patient";
-            this.Name_Patient.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Name_Patient.Size = new System.Drawing.Size(297, 35);
-            this.Name_Patient.Sorted = true;
-            this.Name_Patient.TabIndex = 9;
-            // 
             // PatientInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2230,6 +2228,7 @@
             this.panel2.PerformLayout();
             this.FromHosInfo.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
@@ -2240,6 +2239,7 @@
             this.tableLayoutPanel6.PerformLayout();
             this.ToHosInfo.ResumeLayout(false);
             this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel12.PerformLayout();
             this.tableLayoutPanel13.ResumeLayout(false);
@@ -2257,7 +2257,6 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel21.ResumeLayout(false);
-            this.tableLayoutPanel21.PerformLayout();
             this.tableLayoutPanel23.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -2325,7 +2324,6 @@
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         public System.Windows.Forms.TextBox ID_FromHospital;
         public System.Windows.Forms.TableLayoutPanel ToHosInfo;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         public System.Windows.Forms.Label label8;
         public System.Windows.Forms.Label label9;
@@ -2347,7 +2345,6 @@
         public System.Windows.Forms.Panel panel8;
         public System.Windows.Forms.Label label19;
         public System.Windows.Forms.PictureBox pictureBox5;
-        public System.Windows.Forms.TextBox Medicine;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
         public System.Windows.Forms.Panel panel7;
         public System.Windows.Forms.Label label18;
@@ -2362,13 +2359,7 @@
         public System.Windows.Forms.Label label21;
         public System.Windows.Forms.PictureBox pictureBox7;
         public System.Windows.Forms.TextBox OtherInfo;
-        public System.Windows.Forms.ComboBox Name_FromHosSection;
-        public System.Windows.Forms.ComboBox FromHosRoom;
-        public System.Windows.Forms.ComboBox FromHosFloor;
         public System.Windows.Forms.ComboBox Name_FromHospital;
-        public System.Windows.Forms.ComboBox Name_ToHosSection;
-        public System.Windows.Forms.ComboBox ToHosFloor;
-        public System.Windows.Forms.ComboBox ToHosRoom;
         public System.Windows.Forms.ComboBox Name_ToHospital;
         public System.Windows.Forms.ComboBox InfectionDiseases;
         public System.Windows.Forms.ComboBox Insurance;
@@ -2381,7 +2372,6 @@
         public System.Windows.Forms.ComboBox FromRegion;
         public System.Windows.Forms.ComboBox FromCity;
         public System.Windows.Forms.ComboBox FromStreet;
-        public System.Windows.Forms.ComboBox FromFloor;
         public System.Windows.Forms.ComboBox FromBuilding;
         public System.Windows.Forms.Label label26;
         public System.Windows.Forms.Label label25;
@@ -2406,5 +2396,14 @@
         public System.Windows.Forms.Label label31;
         public System.Windows.Forms.Label CancilingCause;
         public System.Windows.Forms.PictureBox pictureBox8;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.ComboBox FromHosFloor;
+        public System.Windows.Forms.ComboBox FromHosRoom;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox comboBox2;
+        public System.Windows.Forms.ComboBox FromFloor;
+        public System.Windows.Forms.ComboBox comboBox3;
     }
 }
