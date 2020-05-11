@@ -26,12 +26,13 @@ namespace Erc1.BAL
 		Hospital,
 		Home
 	}
-    class AddMission:IAddMission
+    class AddMission
     {
 		public AddMission()
 		{
 
 		}
+		public المهمات_المنفذة Mission;
 
 		private int centerID;
 		private int carID;
@@ -39,7 +40,9 @@ namespace Erc1.BAL
 		private int annualID;
 		private DateTime date;
 		private MissionType missionType;
+		private int missionTypeID;
 		private string[] caseName;
+		private int[] caseNameID;
 		private int caseTypeID;
 		private string caseTypeName;
 		private string moreInfoAboutCase;
@@ -80,10 +83,20 @@ namespace Erc1.BAL
 			get { return missionType; }
 			set { missionType = value; }
 		}
+		public int MissionTypeID
+		{
+			get { return missionTypeID; }
+			set { missionTypeID = value; }
+		}
 		public string[] CaseName
 		{
 			get { return caseName; }
 			set { caseName = value; }
+		}
+		public int[] CaseNameID
+		{
+			get { return caseNameID; }
+			set { caseNameID = value; }
 		}
 		public int CaseTypeID
 		{
@@ -111,14 +124,29 @@ namespace Erc1.BAL
 			set { paramedicsInfo = value; }
 		}
 
-		public المهمات_المنفذة Misson = new المهمات_المنفذة();
-
-
-		public void SaveMission()
-		{
-			Misson.
-		}
 		
+
+
+		public المهمات_المنفذة SaveImplementedMission()
+		{
+			Mission = new المهمات_المنفذة();
+			Mission.الرمز_الشهري = MonthlyID;
+			//Mission.رمز_السنوي = AnnualID;
+			Mission.الآلية = carID;
+			Mission.التاريخ = Date;
+			Mission.طبيعة_المهمة = MissionTypeID;
+			//dabbousi should creat a casestable that is have as a key(monthlyid,annualid)
+			//dabbousi should creat a caseTypetable 
+			Mission.التفاصيل = MoreInfoAboutCase;
+			PatientInfo.SaveInfo(Mission);
+			ParamedicsInfo.SaveInfo(Mission);
+
+			return Mission;
+
+
+
+		}
+
 
 
 	}
@@ -386,14 +414,61 @@ namespace Erc1.BAL
 			set { patientID = value; }
 		}
 
+		public static bool IsPatientExist(int PatientID)
+		{
+			return false;
+		}
+		public bool SaveInfo(المهمات_المنفذة Mission)
+		{
+			Mission.المريض = patientID;
+			
+			if(!IsPatientExist(patientID))
+			{
+				المرضى Patient = new المرضى();
+				//get data of new patient and added him to data table of patients
+				//a new form appear and the user fill the data 
+				//addpatient class
+			}
+			if (From == FromTo.Home)
+			{
+				Mission.من_رمز_المدينة = FromCityID;
+				Mission.من_رمز_المنطقة = FromregionID;
+				Mission.تفاصيل_ال_من = FromstreetName + " ," + Frombuilding + " ," + Fromfloor + " ," + FromMoreInfoAboutAdress;
+			}
+			else
+			{
+				Mission.من_مشفى = FromHospitalID;
+				Mission.من_القسم = FromDepatementID;
+				Mission.تفاصيل_ال_من = FromHosFloor + " ," + fromroom;
+			}
+
+			if (To == FromTo.Home)
+			{
+				Mission.الى_رمز_المدينة = ToCityID;
+				Mission.الى_رمز_المنطقة = ToregionID;
+				Mission.تفاصيل_ال_الى = TostreetName + " ," + Tobuilding + " ," + Tofloor + " ," + ToMoreInfoAboutAdress;
+			}
+			else
+			{
+				Mission.إلى_مشفى = ToHospitalID;
+				Mission.إلى_القسم = ToDepatementID;
+				Mission.تفاصيل_ال_الى = ToHosFloor + " ," + ToRoom;
+			}
+		    // add infectious case variable to implemented mission
+			// add canSit variable to implemented mission
+			// call function to add new infectious case for patient if it is not exist
 
 
+		}
 		
 
 	}
 	class ParamedicsInfo
 	{
-
+		public bool SaveInfo(المهمات_المنفذة Mission)
+		{
+			return false;
+		}
 	}
 	
 }

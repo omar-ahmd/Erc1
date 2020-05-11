@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="ERCModel.أقسام_المستشفيات" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ERCModel.الأطباء" Width="1.5" PointX="3" PointY="19.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ERCModel.الآليات" Width="1.5" PointX="5.25" PointY="20.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERCModel.الجهات_الضامنة" Width="1.5" PointX="3.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.الجهات_الضامنة" Width="1.5" PointX="3.75" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ERCModel.الحالات" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ERCModel.العاملون" Width="1.5" PointX="5.25" PointY="24.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ERCModel.المدن" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
@@ -38,7 +38,7 @@
         <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableالآليات" ManuallyRouted="false" />
         <AssociationConnector Association="ERCModel.FK_المرضى_ToTableالضمان" ManuallyRouted="false" />
         <AssociationConnector Association="ERCModel.FK_الحالات_ToTableنوعيات_الحالات" ManuallyRouted="false" />
-        <AssociationConnector Association="ERCModel.FK_المهمات_الملغاة_ToTableالحالات" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_الملغاة_ToTableالحالات" ManuallyRouted="false" ></AssociationConnector>
         <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableالحالات" ManuallyRouted="false" />
         <AssociationConnector Association="ERCModel.FK_المهمات_المؤجلة_ToTableالحالات" ManuallyRouted="false" />
         <AssociationConnector Association="ERCModel.FK_العاملون_ToTableالمراكز" ManuallyRouted="false" />
