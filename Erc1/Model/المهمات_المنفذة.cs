@@ -63,5 +63,6 @@ namespace Erc1.model
         public virtual المناطق المناطق { get; set; }
         public virtual المناطق المناطق1 { get; set; }
         public virtual طبيعة_المهمة طبيعة_المهمة1 { get; set; }
+        public virtual الجهات_الضامنة الجهات_الضامنة { get; set; }
     }
 }

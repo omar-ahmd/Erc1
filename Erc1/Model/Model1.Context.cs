@@ -151,5 +151,15 @@ namespace Erc1.model
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
+    
+        public virtual ObjectResult<Getالمراكز_Result> Getالمراكز()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Getالمراكز_Result>("Getالمراكز");
+        }
+    
+        public virtual ObjectResult<Getالمراكز_Result> Getالمراكز1()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Getالمراكز_Result>("Getالمراكز1");
+        }
     }
 }

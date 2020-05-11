@@ -3,6 +3,7 @@ using System;
 using System.Reflection;
 using System.Windows.Forms;
 
+
 namespace Erc1.Forms
 {
     public enum MissionType
@@ -130,20 +131,43 @@ namespace Erc1.Forms
 
 
         }
-
+        bool isFilled =false;
         private void AddMission_Load(object sender, EventArgs e)
         {
-            var names = Classes.Mission.Getالمراكز();
-            comboBox1.DataSource = names;
-            comboBox1.ValueMember = "marakez";
-            comboBox1.DisplayMember = "manate2";
-        }
+            var regions = Classes.mission.Getcenter();
+           
+            comboBox1.DataSource = regions;
+            comboBox1.ValueMember = "الرمز";
+            comboBox1.DisplayMember = "المنطقة";
+          
+            dataGridView1.DataSource = regions;
+            if (!isFilled)
+            {
+                comboBox1.SelectedIndexChanged += comboBox1_SelectionChangeCommitted;
+                isFilled = true;
+            }
 
+            comboBox3.Items.Add(DateTime.Now.Year);
+            comboBox3.SelectedIndex = 0;
+            comboBox2.Items.Add(DateTime.Now.Month);
+            comboBox2.SelectedIndex = 0;
+            comboBox4.Items.Add(DateTime.Now.Day);
+            comboBox4.SelectedIndex = 0;
+        }
+        
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            var elie = Classes.Mission.Getالآليات(comboBox1.SelectedValue.ToString());
-            comboBox12.DataSource = elie;
-            comboBox12.DisplayMember = "elie";
+            MessageBox.Show(comboBox1.SelectedValue.ToString());
+            var cars = Classes.Mission.Getالآليات(comboBox1.SelectedValue.ToString());
+            comboBox12.DataSource = cars;
+            comboBox12.DisplayMember = "cars";
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+ 
     }
 }

@@ -84,6 +84,7 @@
         <AssociationConnector Association="ERCModel.FK_المهمات_المؤجلة_ToTableالمناطق2" ManuallyRouted="false" />
         <AssociationConnector Association="ERCModel.FK_المهمات_الملغاة_ToTableطبيعة_المهمة" ManuallyRouted="false" />
         <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableطبيعة_المهمة" ManuallyRouted="false" />
+        <AssociationConnector Association="ERCModel.FK_المهمات_المنفذة_ToTableالجهة_الضامنة" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

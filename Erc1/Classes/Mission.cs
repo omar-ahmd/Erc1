@@ -40,14 +40,14 @@ namespace Erc1.Classes
                 using (ERCEntities entity = new ERCEntities())
                 {
                 var c = (
-                from marakez in entity.المراكز
-                join manate2 in entity.المناطق
-                on marakez.المنطقة equals manate2.رمز
-                orderby marakez.المنطقة
+                from centers in entity.المراكز
+                join regions in entity.المناطق
+                on centers.المنطقة equals regions.رمز
+                orderby centers.المنطقة
                 select new
                 {
-                    manate2 = manate2.المنطقة,
-                    marakez = marakez.الرمز
+                    regions = regions.المنطقة,
+                    centers = centers.الرمز
                 }
                     ); ;
                     return c.ToList();
@@ -60,11 +60,11 @@ namespace Erc1.Classes
             using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
-                from elie in entity.الآليات
-                where elie.المركز == marakez.ToString()
+                from cars in entity.الآليات
+                where cars.المركز == marakez.ToString()
                 select new
                 {
-                    elie = elie.موديل_
+                    cars = cars.موديل_
                 }
                     ); ;
                 //var c = entity.الآليات.Where(r => r.المركز== marakez);

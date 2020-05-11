@@ -95,6 +95,7 @@ namespace Erc1.Forms
             this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.labelBord3 = new Erc1.CONTROLS.LabelBord();
             this.labelBord1 = new Erc1.CONTROLS.LabelBord();
             this.labelBord2 = new Erc1.CONTROLS.LabelBord();
@@ -142,6 +143,7 @@ namespace Erc1.Forms
             this.tableLayoutPanel21.SuspendLayout();
             this.tableLayoutPanel23.SuspendLayout();
             this.tableLayoutPanel22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -202,11 +204,6 @@ namespace Erc1.Forms
             this.comboBox4.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this.comboBox4, "comboBox4");
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            resources.GetString("comboBox4.Items"),
-            resources.GetString("comboBox4.Items1"),
-            resources.GetString("comboBox4.Items2"),
-            resources.GetString("comboBox4.Items3")});
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Sorted = true;
             // 
@@ -217,11 +214,6 @@ namespace Erc1.Forms
             this.comboBox3.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this.comboBox3, "comboBox3");
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            resources.GetString("comboBox3.Items"),
-            resources.GetString("comboBox3.Items1"),
-            resources.GetString("comboBox3.Items2"),
-            resources.GetString("comboBox3.Items3")});
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Sorted = true;
             // 
@@ -232,11 +224,6 @@ namespace Erc1.Forms
             this.comboBox2.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this.comboBox2, "comboBox2");
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            resources.GetString("comboBox2.Items"),
-            resources.GetString("comboBox2.Items1"),
-            resources.GetString("comboBox2.Items2"),
-            resources.GetString("comboBox2.Items3")});
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Sorted = true;
             // 
@@ -415,11 +402,6 @@ namespace Erc1.Forms
             this.comboBox12.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this.comboBox12, "comboBox12");
             this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Items.AddRange(new object[] {
-            resources.GetString("comboBox12.Items"),
-            resources.GetString("comboBox12.Items1"),
-            resources.GetString("comboBox12.Items2"),
-            resources.GetString("comboBox12.Items3")});
             this.comboBox12.Name = "comboBox12";
             this.comboBox12.Sorted = true;
             // 
@@ -430,14 +412,8 @@ namespace Erc1.Forms
             this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            resources.GetString("comboBox1.Items"),
-            resources.GetString("comboBox1.Items1"),
-            resources.GetString("comboBox1.Items2"),
-            resources.GetString("comboBox1.Items3")});
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Sorted = true;
-            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
             // tableLayoutPanel12
             // 
@@ -623,6 +599,7 @@ namespace Erc1.Forms
             // 
             resources.ApplyResources(this.tableLayoutPanel19, "tableLayoutPanel19");
             this.tableLayoutPanel19.Controls.Add(this.panel9, 1, 1);
+            this.tableLayoutPanel19.Controls.Add(this.dataGridView1, 0, 1);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             // 
             // panel9
@@ -673,6 +650,13 @@ namespace Erc1.Forms
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.dataGridView1, "dataGridView1");
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
             // 
             // labelBord3
             // 
@@ -774,6 +758,7 @@ namespace Erc1.Forms
             this.tableLayoutPanel21.ResumeLayout(false);
             this.tableLayoutPanel23.ResumeLayout(false);
             this.tableLayoutPanel22.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -847,5 +832,6 @@ namespace Erc1.Forms
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

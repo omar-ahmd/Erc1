@@ -189,18 +189,6 @@
   <data name="comboBox4.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15pt</value>
   </data>
-  <data name="comboBox4.Items" xml:space="preserve">
-    <value>100-طرابلس</value>
-  </data>
-  <data name="comboBox4.Items1" xml:space="preserve">
-    <value>200-ضنية</value>
-  </data>
-  <data name="comboBox4.Items2" xml:space="preserve">
-    <value>300</value>
-  </data>
-  <data name="comboBox4.Items3" xml:space="preserve">
-    <value>400-قلمون</value>
-  </data>
   <data name="comboBox4.Location" type="System.Drawing.Point, System.Drawing">
     <value>111, 0</value>
   </data>
@@ -237,18 +225,6 @@
   <data name="comboBox3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15pt</value>
   </data>
-  <data name="comboBox3.Items" xml:space="preserve">
-    <value>100-طرابلس</value>
-  </data>
-  <data name="comboBox3.Items1" xml:space="preserve">
-    <value>200-ضنية</value>
-  </data>
-  <data name="comboBox3.Items2" xml:space="preserve">
-    <value>300</value>
-  </data>
-  <data name="comboBox3.Items3" xml:space="preserve">
-    <value>400-قلمون</value>
-  </data>
   <data name="comboBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>333, 0</value>
   </data>
@@ -284,18 +260,6 @@
   </data>
   <data name="comboBox2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15pt</value>
-  </data>
-  <data name="comboBox2.Items" xml:space="preserve">
-    <value>100-طرابلس</value>
-  </data>
-  <data name="comboBox2.Items1" xml:space="preserve">
-    <value>200-ضنية</value>
-  </data>
-  <data name="comboBox2.Items2" xml:space="preserve">
-    <value>300</value>
-  </data>
-  <data name="comboBox2.Items3" xml:space="preserve">
-    <value>400-قلمون</value>
   </data>
   <data name="comboBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>222, 0</value>
@@ -1167,18 +1131,6 @@
   <data name="comboBox12.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15pt</value>
   </data>
-  <data name="comboBox12.Items" xml:space="preserve">
-    <value>100-طرابلس</value>
-  </data>
-  <data name="comboBox12.Items1" xml:space="preserve">
-    <value>200-ضنية</value>
-  </data>
-  <data name="comboBox12.Items2" xml:space="preserve">
-    <value>300</value>
-  </data>
-  <data name="comboBox12.Items3" xml:space="preserve">
-    <value>400-قلمون</value>
-  </data>
   <data name="comboBox12.Location" type="System.Drawing.Point, System.Drawing">
     <value>52, 19</value>
   </data>
@@ -1214,18 +1166,6 @@
   </data>
   <data name="comboBox1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15pt</value>
-  </data>
-  <data name="comboBox1.Items" xml:space="preserve">
-    <value>100-طرابلس</value>
-  </data>
-  <data name="comboBox1.Items1" xml:space="preserve">
-    <value>200-ضنية</value>
-  </data>
-  <data name="comboBox1.Items2" xml:space="preserve">
-    <value>300</value>
-  </data>
-  <data name="comboBox1.Items3" xml:space="preserve">
-    <value>400-قلمون</value>
   </data>
   <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>274, 19</value>
@@ -2278,7 +2218,7 @@
     <value>Yes</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 16</value>
+    <value>110, 16</value>
   </data>
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2302,7 +2242,7 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutPanel23.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 0</value>
+    <value>113, 0</value>
   </data>
   <data name="tableLayoutPanel23.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2311,7 +2251,7 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel23.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 20</value>
+    <value>113, 20</value>
   </data>
   <data name="tableLayoutPanel23.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2356,7 +2296,7 @@
     <value>Yes</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 16</value>
+    <value>110, 16</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2389,7 +2329,7 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 20</value>
+    <value>113, 20</value>
   </data>
   <data name="tableLayoutPanel22.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2422,7 +2362,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>940, 20</value>
+    <value>782, 20</value>
   </data>
   <data name="tableLayoutPanel21.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2455,7 +2395,7 @@
     <value>2</value>
   </data>
   <data name="tableLayoutPanel20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>940, 348</value>
+    <value>782, 348</value>
   </data>
   <data name="tableLayoutPanel20.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2479,13 +2419,13 @@
     <value>Fill</value>
   </data>
   <data name="panel9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 7</value>
+    <value>210, 7</value>
   </data>
   <data name="panel9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="panel9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>940, 348</value>
+    <value>782, 348</value>
   </data>
   <data name="panel9.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2501,6 +2441,30 @@
   </data>
   <data name="&gt;&gt;panel9.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 10</value>
+  </data>
+  <data name="dataGridView1.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 214</value>
+  </data>
+  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
+    <value>dataGridView1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
+    <value>tableLayoutPanel19</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="tableLayoutPanel19.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2536,7 +2500,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel19.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="panel9" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,5,Percent,90,Percent,5" /&gt;&lt;Rows Styles="Percent,2,Percent,96,Percent,2" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="panel9" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="dataGridView1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,20.09569,Percent,74.83253,Percent,5" /&gt;&lt;Rows Styles="Percent,2,Percent,96,Percent,2" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
