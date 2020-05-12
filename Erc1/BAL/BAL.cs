@@ -26,9 +26,9 @@ namespace Erc1.BAL
 		Hospital,
 		Home
 	}
-    class AddMission
+    class addMission
     {
-		public AddMission()
+		public addMission()
 		{
 
 		}
@@ -48,9 +48,13 @@ namespace Erc1.BAL
 		private string moreInfoAboutCase;
 		private PatientInfo patientInfo;
 		private ParamedicsInfo paramedicsInfo;
+		private Erc1.Forms.MissionType missionty;
 
-
-
+		public Erc1.Forms.MissionType MissionTy
+		{
+			get { return missionty; }
+			set { missionty = value; }
+		}
 		public int CenterID
 		{
 			get { return centerID; }
@@ -146,6 +150,43 @@ namespace Erc1.BAL
 
 
 		}
+		
+
+		public bool ImportInfo(AddMission addMission)
+		{
+			try
+			{
+
+				MissionTy = addMission.MissionTy;
+
+				CenterID = int.Parse(addMission.CenterID.SelectedItem.ToString());
+				CarID = int.Parse(addMission.CarId.SelectedItem.ToString());
+				MonthlyID = int.Parse(addMission.MonthlyID.Text);
+				AnnualID = int.Parse(addMission.AnnualID.Text);
+				DateTime Date = new DateTime(int.Parse(addMission.Year.Text), int.Parse(addMission.Month.Text), int.Parse(addMission.Day.Text), addMission.Time.Value.Hour, addMission.Time.Value.Minute, 0);
+				this.Date = Date;
+				MissionType = addMission.type;
+				//casesID
+				CaseTypeID = addMission.CaseType.SelectedIndex;
+				CaseTypeName = addMission.CaseType.SelectedItem.ToString();
+				MoreInfoAboutCase = addMission.MoreInfoAboutCase.Text;
+
+				PatientInfo = new PatientInfo();
+				PatientInfo.ImportInfo(addMission.paI);
+
+				ParamedicsInfo = new ParamedicsInfo();
+				ParamedicsInfo.ImportData(addMission.pI);
+				return true;
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show("يرجى تعبئة كل المعلومات");
+				return false;
+			}
+
+
+
+		}
 
 
 
@@ -203,6 +244,7 @@ namespace Erc1.BAL
 		private string insuranceName;
 		private string moreInfoAboutPatient;
 		private string causeOfCancilling;
+
 
 		public string CauseOfCancilling 
 		{
@@ -441,7 +483,6 @@ namespace Erc1.BAL
 				Mission.من_القسم = FromDepatementID;
 				Mission.تفاصيل_ال_من = FromHosFloor + " ," + fromroom;
 			}
-
 			if (To == FromTo.Home)
 			{
 				Mission.الى_رمز_المدينة = ToCityID;
@@ -461,6 +502,125 @@ namespace Erc1.BAL
 			return true;
 		}
 		
+		public bool ImportInfo(CONTROLS.PatientInformation patientInfo)
+		{
+			try
+			{
+				PatientID = int.Parse(patientInfo.ID_Patient.Text);
+				PatientName = patientInfo.Name_Patient.Text;
+
+				CanSit = patientInfo.CanSit.Check;
+
+				if(patientInfo.FromHos.Check)
+				{
+					From = FromTo.Hospital;
+
+					FromHospitalID=int.Parse(patientInfo.ID_FromHospital.Text);
+					FromHospitalName = patientInfo.Name_FromHospital.Text;
+
+					FromDepatementID = patientInfo.FromHosDepartement.SelectedIndex;
+					FromDepartementName = patientInfo.FromHosDepartement.SelectedItem.ToString();
+
+					FromHosFloor = int.Parse(patientInfo.FromHosFloor.SelectedItem.ToString());
+
+					FromRoom = int.Parse(patientInfo.FromHosRoom.Text);
+
+
+				}
+				else if(patientInfo.FromHome.Check)
+				{
+					From = FromTo.Home;
+
+					FromCityID = patientInfo.FromCity.SelectedIndex;
+					FromCityName = patientInfo.FromCity.SelectedItem.ToString();
+
+					FromregionID = patientInfo.FromRegion.SelectedIndex;
+					FromregionName = patientInfo.FromRegion.SelectedItem.ToString();
+
+					FromstreetName = patientInfo.FromStreet.Text;
+
+					Frombuilding = patientInfo.FromBuilding.Text;
+
+					Fromfloor = int.Parse(patientInfo.FromFloor.Text);
+
+					FromMoreInfoAboutAdress = patientInfo.MoreFromInfo.Text;
+
+
+				}
+				else
+				{
+					MessageBox.Show("يجب تعبئ كامل المعلومات");
+				}
+
+				if (patientInfo.ToHos.Check)
+				{
+					To = FromTo.Hospital;
+
+
+					ToHospitalID = int.Parse(patientInfo.ID_ToHospital.Text);
+					ToHospitalName = patientInfo.Name_ToHospital.Text;
+
+					ToDepatementID = patientInfo.ToHosDepartement.SelectedIndex;
+					ToDepartementName = patientInfo.ToHosDepartement.SelectedItem.ToString();
+
+					ToHosFloor = int.Parse(patientInfo.ToHosFloor.SelectedItem.ToString());
+
+					ToRoom = int.Parse(patientInfo.ToHosRoom.Text);
+
+
+
+				}
+				else if (patientInfo.ToHome.Check)
+				{
+					To = FromTo.Home;
+
+					ToCityID = patientInfo.ToCity.SelectedIndex;
+					ToCityName = patientInfo.ToCity.SelectedItem.ToString();
+
+					ToregionID = patientInfo.ToRegion.SelectedIndex;
+					ToregionName = patientInfo.ToRegion.SelectedItem.ToString();
+
+					TostreetName = patientInfo.ToStreet.Text;
+
+					Tobuilding = patientInfo.ToBuilding.Text;
+
+					Tofloor = int.Parse(patientInfo.ToFloor.Text);
+
+					ToMoreInfoAboutAdress = patientInfo.MoreToInfo.Text;
+				}
+				else
+				{
+					MessageBox.Show("يجب تعبئ كامل المعلومات");
+				}
+
+				MedicineID = patientInfo.comboBox3.SelectedIndex;
+				MedicineName = patientInfo.comboBox3.SelectedItem.ToString();
+
+				// infetious case
+
+				InsuranceID = patientInfo.Insurance.SelectedIndex;
+				insuranceName = patientInfo.Insurance.SelectedItem.ToString();
+
+				MoreInfoAboutPatient = patientInfo.OtherInfo.Text;
+				
+
+
+				return true;
+
+
+			}
+			catch (InvalidCastException ex)
+			{
+				MessageBox.Show("الرموز يجب أن تكون بالارقام");
+				return false;
+				
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+				return false;
+			}
+		}
 
 	}
 	class ParamedicsInfo
@@ -479,9 +639,10 @@ namespace Erc1.BAL
 		private string recipientMissionName;
 		private string moreInfo;
 		private string callerName;
-		private string callerPhone;
+		private int callerPhone;
 
-		public string CallerPhone
+
+		public int CallerPhone
 		{
 			get { return callerPhone; }
 			set { callerPhone = value; }
@@ -558,17 +719,74 @@ namespace Erc1.BAL
 			get { return driverID; }
 			set { driverID = value; }
 		}
+
+
+
 		public bool SaveInfo(المهمات_المنفذة Mission)
 		{
-			Mission.السائق = DriverID;
-			Mission.مسؤول_المهمة = HeadOfMissionID;
-			Mission.مسعف_1 = Paramedic1ID;
-			Mission.مسعف_2 = Paramedic2ID;
-			Mission.متلقي_المهمة = RecipientMissionID;
-			//add caller name and phone to database
-			//add headofshift to database in mission table
+			try
+			{
+				Mission.السائق = DriverID;
+				Mission.مسؤول_المهمة = HeadOfMissionID;
+				Mission.مسعف_1 = Paramedic1ID;
+				Mission.مسعف_2 = Paramedic2ID;
+				Mission.متلقي_المهمة = RecipientMissionID;
+				Mission.اسم_المتصل = callerName;
+				Mission.المتصل = callerPhone;
 
-			return false;
+				//add headofshift to database in mission table
+				return true;
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+				return false;
+			}
+			
+		}
+
+
+
+		public bool ImportData(CONTROLS.ParamInformation paramInfo)
+		{
+			try
+			{
+				Paramedic1Name = paramInfo.Name_Paramedic1.Text;
+				Paramedic1ID = int.Parse(paramInfo.ID_Paramedic1.Text);
+
+				Paramedic2Name = paramInfo.Name_Paramedic2.Text;
+				Paramedic2ID = int.Parse(paramInfo.ID_Paramedic2.Text);
+
+				HeadOfMissionID = int.Parse(paramInfo.ID_HeadOfMission.Text);
+				HeadOfMissionName = paramInfo.Name_HeadOfMission.Text;
+
+				DriverID = int.Parse(paramInfo.ID_Driver.Text);
+				DriverName = paramInfo.Name_Driver.Text;
+
+				HeadOfShiftName = paramInfo.Name_HeadOfShift.Text;
+				HeadOfShiftID = int.Parse(paramInfo.ID_HeadOfShift.Text);
+
+				RecipientMissionID = int.Parse(paramInfo.ID_RecipientOfMission.Text);
+				RecipientMissionName = paramInfo.Name_RecipientOfMission.Text;
+
+				CallerName = paramInfo.CallerName.Text;
+				CallerPhone = int.Parse(paramInfo.CallerPhone.Text);
+
+				MoreInfo = paramInfo.MoreInfo.Text;
+				return true;
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+				return false;
+			}
+			
+
+
+			
+
+
+
 		}
 	}
 	

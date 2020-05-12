@@ -27,8 +27,7 @@ namespace Erc1.Forms
 
             this.DoubleBuffered = true;
             type = BAL.MissionType.Cold;
-
-
+            
         }
 
         public static void EnableDoubleBuff(Control c)
@@ -37,10 +36,18 @@ namespace Erc1.Forms
             DemoProp.SetValue(c, true, null);
         }
 
+        private MissionType missionTy;
+
+        public MissionType MissionTy
+        {
+            get { return missionTy; }
+            set { missionTy = value; }
+        }
 
         public AddMission(MissionType missionType)
         {
             InitializeComponent();
+            missionTy = missionType;
             switch (missionType)
             {
                 case Forms.MissionType.Implemented:
@@ -104,6 +111,9 @@ namespace Erc1.Forms
                 default:
                     break;
             }
+            MessageBox.Show("dd");
+            cM = new CasesOfMission(Case);
+            //cM.comboBox1.DataSource = Case.DataSource;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -222,6 +232,17 @@ namespace Erc1.Forms
                 UrgentMission.Check = false;
                 ActivityMission.Check = false;
             }
+        }
+        CasesOfMission cM;
+        private void Save_Click(object sender, EventArgs e)
+        {
+            cM.Show();
+            
+        }
+
+        private void Case_SelectedValueChanged(object sender, EventArgs e)
+        {
+            cM.AddCase(Case.SelectedItem.ToString(), 8);
         }
     }
 }

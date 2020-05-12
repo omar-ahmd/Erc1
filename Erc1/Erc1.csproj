@@ -138,6 +138,12 @@
     <Compile Include="Forms\8-AddPatient\AddPatient.Designer.cs">
       <DependentUpon>AddPatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CasesOfMission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CasesOfMission.Designer.cs">
+      <DependentUpon>CasesOfMission.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\8-AddPatient\AddPatient.resx">
       <DependentUpon>AddPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CasesOfMission.resx">
+      <DependentUpon>CasesOfMission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
