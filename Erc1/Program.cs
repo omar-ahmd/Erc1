@@ -23,7 +23,7 @@ namespace ERC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HospitalsForm());
+            Application.Run(new LoginForm());
         }
     }
 }

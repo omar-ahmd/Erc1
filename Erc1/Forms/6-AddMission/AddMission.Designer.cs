@@ -84,13 +84,9 @@ namespace Erc1.Forms
             this.Case = new System.Windows.Forms.ComboBox();
             this.CaseType = new System.Windows.Forms.ComboBox();
             this.MissionType = new System.Windows.Forms.TableLayoutPanel();
-            this.ColdMission = new Erc1.CONTROLS.LabelBord();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.FireMission = new Erc1.CONTROLS.LabelBord();
-            this.UrgentMission = new Erc1.CONTROLS.LabelBord();
-            this.ActivityMission = new Erc1.CONTROLS.LabelBord();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
@@ -99,6 +95,11 @@ namespace Erc1.Forms
             this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
+            this.Save = new System.Windows.Forms.Button();
+            this.ColdMission = new Erc1.CONTROLS.LabelBord();
+            this.FireMission = new Erc1.CONTROLS.LabelBord();
+            this.UrgentMission = new Erc1.CONTROLS.LabelBord();
+            this.ActivityMission = new Erc1.CONTROLS.LabelBord();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -543,10 +544,11 @@ namespace Erc1.Forms
             // 
             this.tableLayoutPanel15.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.tableLayoutPanel15, "tableLayoutPanel15");
-            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel16, 2, 0);
-            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel17, 1, 0);
-            this.tableLayoutPanel15.Controls.Add(this.Case, 1, 1);
-            this.tableLayoutPanel15.Controls.Add(this.CaseType, 2, 1);
+            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel16, 3, 0);
+            this.tableLayoutPanel15.Controls.Add(this.tableLayoutPanel17, 2, 0);
+            this.tableLayoutPanel15.Controls.Add(this.Case, 2, 1);
+            this.tableLayoutPanel15.Controls.Add(this.CaseType, 3, 1);
+            this.tableLayoutPanel15.Controls.Add(this.Save, 1, 1);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             // 
             // tableLayoutPanel16
@@ -646,16 +648,6 @@ namespace Erc1.Forms
             this.MissionType.Controls.Add(this.ActivityMission, 3, 2);
             this.MissionType.Name = "MissionType";
             // 
-            // ColdMission
-            // 
-            this.ColdMission.Check = true;
-            resources.ApplyResources(this.ColdMission, "ColdMission");
-            this.ColdMission.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ColdMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
-            this.ColdMission.Name = "ColdMission";
-            this.ColdMission.text = "مهمة باردة";
-            this.ColdMission.CheckChange += new System.EventHandler(this.ColdMission_CheckChange);
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
@@ -677,36 +669,6 @@ namespace Erc1.Forms
             this.pictureBox5.Image = global::Erc1.Properties.Resources.Untitled_11;
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.TabStop = false;
-            // 
-            // FireMission
-            // 
-            this.FireMission.Check = false;
-            resources.ApplyResources(this.FireMission, "FireMission");
-            this.FireMission.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FireMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
-            this.FireMission.Name = "FireMission";
-            this.FireMission.text = "حريق";
-            this.FireMission.CheckChange += new System.EventHandler(this.FireMission_CheckChange);
-            // 
-            // UrgentMission
-            // 
-            this.UrgentMission.Check = false;
-            resources.ApplyResources(this.UrgentMission, "UrgentMission");
-            this.UrgentMission.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UrgentMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
-            this.UrgentMission.Name = "UrgentMission";
-            this.UrgentMission.text = "مهمة طارئة";
-            this.UrgentMission.CheckChange += new System.EventHandler(this.UrgentMission_CheckChange);
-            // 
-            // ActivityMission
-            // 
-            this.ActivityMission.Check = false;
-            resources.ApplyResources(this.ActivityMission, "ActivityMission");
-            this.ActivityMission.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActivityMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
-            this.ActivityMission.Name = "ActivityMission";
-            this.ActivityMission.text = "تغطية نشاط";
-            this.ActivityMission.CheckChange += new System.EventHandler(this.ActivityMission_CheckChange);
             // 
             // tableLayoutPanel19
             // 
@@ -762,6 +724,55 @@ namespace Erc1.Forms
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Save
+            // 
+            resources.ApplyResources(this.Save, "Save");
+            this.Save.BackgroundImage = global::Erc1.Properties.Resources.جديد;
+            this.Save.FlatAppearance.BorderSize = 0;
+            this.Save.ForeColor = System.Drawing.Color.White;
+            this.Save.Name = "Save";
+            this.Save.UseVisualStyleBackColor = true;
+            // 
+            // ColdMission
+            // 
+            this.ColdMission.Check = true;
+            resources.ApplyResources(this.ColdMission, "ColdMission");
+            this.ColdMission.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ColdMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this.ColdMission.Name = "ColdMission";
+            this.ColdMission.text = "مهمة باردة";
+            this.ColdMission.CheckChange += new System.EventHandler(this.ColdMission_CheckChange);
+            // 
+            // FireMission
+            // 
+            this.FireMission.Check = false;
+            resources.ApplyResources(this.FireMission, "FireMission");
+            this.FireMission.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FireMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this.FireMission.Name = "FireMission";
+            this.FireMission.text = "حريق";
+            this.FireMission.CheckChange += new System.EventHandler(this.FireMission_CheckChange);
+            // 
+            // UrgentMission
+            // 
+            this.UrgentMission.Check = false;
+            resources.ApplyResources(this.UrgentMission, "UrgentMission");
+            this.UrgentMission.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UrgentMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this.UrgentMission.Name = "UrgentMission";
+            this.UrgentMission.text = "مهمة طارئة";
+            this.UrgentMission.CheckChange += new System.EventHandler(this.UrgentMission_CheckChange);
+            // 
+            // ActivityMission
+            // 
+            this.ActivityMission.Check = false;
+            resources.ApplyResources(this.ActivityMission, "ActivityMission");
+            this.ActivityMission.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActivityMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this.ActivityMission.Name = "ActivityMission";
+            this.ActivityMission.text = "تغطية نشاط";
+            this.ActivityMission.CheckChange += new System.EventHandler(this.ActivityMission_CheckChange);
             // 
             // AddMission
             // 
@@ -901,5 +912,6 @@ namespace Erc1.Forms
         public System.Windows.Forms.Label label9;
         public System.Windows.Forms.PictureBox pictureBox9;
         public System.Windows.Forms.DateTimePicker Time;
+        public System.Windows.Forms.Button Save;
     }
 }

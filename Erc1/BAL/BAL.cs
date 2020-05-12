@@ -131,7 +131,7 @@ namespace Erc1.BAL
 		{
 			Mission = new المهمات_المنفذة();
 			Mission.الرمز_الشهري = MonthlyID;
-			//Mission.رمز_السنوي = AnnualID;
+			//Mission.رمز_السنوي = AnnualID; change datatype of annualid
 			Mission.الآلية = carID;
 			Mission.التاريخ = Date;
 			Mission.طبيعة_المهمة = MissionTypeID;
@@ -454,19 +454,120 @@ namespace Erc1.BAL
 				Mission.إلى_القسم = ToDepatementID;
 				Mission.تفاصيل_ال_الى = ToHosFloor + " ," + ToRoom;
 			}
-		    // add infectious case variable to implemented mission
+			// add infectious case variable to implemented mission
 			// add canSit variable to implemented mission
 			// call function to add new infectious case for patient if it is not exist
 
-
+			return true;
 		}
 		
 
 	}
 	class ParamedicsInfo
 	{
+		private int driverID;
+		private string driverName;
+		private int headOfShiftID;
+		private string headOfShiftName;
+		private int headOfMissionID;
+		private string headOfMissionName;
+		private int paramedic1ID;
+		private string paramedic1Name;
+		private int paramedic2ID;
+		private string paramedic2Name;
+		private int recipientMissionID;
+		private string recipientMissionName;
+		private string moreInfo;
+		private string callerName;
+		private string callerPhone;
+
+		public string CallerPhone
+		{
+			get { return callerPhone; }
+			set { callerPhone = value; }
+		}
+
+		public string CallerName
+		{
+			get { return callerName; }
+			set { callerName = value; }
+		}
+
+		public string MoreInfo
+		{
+			get { return moreInfo; }
+			set { moreInfo = value; }
+		}
+		public string RecipientMissionName
+		{
+			get { return recipientMissionName; }
+			set { recipientMissionName = value; }
+		}
+		public int RecipientMissionID
+		{
+			get { return recipientMissionID; }
+			set { recipientMissionID = value; }
+		}
+		public string Paramedic2Name
+		{
+			get { return paramedic2Name; }
+			set { paramedic2Name = value; }
+		}
+		public int Paramedic2ID
+		{
+			get { return paramedic2ID; }
+			set { paramedic2ID = value; }
+		}
+		public string Paramedic1Name
+		{
+			get { return paramedic1Name; }
+			set { paramedic1Name = value; }
+		}
+		public int Paramedic1ID
+		{
+			get { return paramedic1ID; }
+			set { paramedic1ID = value; }
+		}
+		public string HeadOfMissionName
+		{
+			get { return headOfMissionName; }
+			set { headOfMissionName = value; }
+		}
+		public int HeadOfMissionID
+		{
+			get { return headOfMissionID; }
+			set { headOfMissionID = value; }
+		}
+		public string HeadOfShiftName
+		{
+			get { return headOfShiftName; }
+			set { headOfShiftName = value; }
+		}
+		public int HeadOfShiftID
+		{
+			get { return headOfShiftID; }
+			set { headOfShiftID = value; }
+		}
+		public string DriverName
+		{
+			get { return driverName; }
+			set { driverName = value; }
+		}
+		public int DriverID
+		{
+			get { return driverID; }
+			set { driverID = value; }
+		}
 		public bool SaveInfo(المهمات_المنفذة Mission)
 		{
+			Mission.السائق = DriverID;
+			Mission.مسؤول_المهمة = HeadOfMissionID;
+			Mission.مسعف_1 = Paramedic1ID;
+			Mission.مسعف_2 = Paramedic2ID;
+			Mission.متلقي_المهمة = RecipientMissionID;
+			//add caller name and phone to database
+			//add headofshift to database in mission table
+
 			return false;
 		}
 	}

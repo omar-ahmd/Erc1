@@ -137,9 +137,6 @@
   <data name="Year.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="Year.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Year.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial Narrow, 10.2pt</value>
@@ -339,9 +336,6 @@
   <data name="Month.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="Month.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
   <data name="Month.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial Narrow, 10.2pt</value>
   </data>
@@ -410,9 +404,6 @@
   </data>
   <data name="Day.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
-  </data>
-  <data name="Day.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
   </data>
   <data name="Day.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial Narrow, 10.2pt</value>
@@ -1317,9 +1308,6 @@
   <data name="CarId.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="CarId.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
   <data name="CarId.Font" type="System.Drawing.Font, System.Drawing">
     <value>Air Strip Arabic, 15pt</value>
   </data>
@@ -1364,9 +1352,6 @@
   </data>
   <data name="CenterID.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
-  </data>
-  <data name="CenterID.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
   </data>
   <data name="CenterID.Font" type="System.Drawing.Font, System.Drawing">
     <value>Air Strip Arabic, 15pt</value>
@@ -1687,7 +1672,7 @@
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="MoreInfoAboutCase" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel18" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,10,Percent,85,Percent,5,Absolute,20" /&gt;&lt;Rows Styles="Percent,35,Percent,50,Percent,15" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableLayoutPanel15.ColumnCount" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="tableLayoutPanel16.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1705,7 +1690,7 @@
     <value>On</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 0</value>
+    <value>-15, 0</value>
   </data>
   <data name="label6.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
@@ -1744,7 +1729,7 @@
     <value>0, 0</value>
   </data>
   <data name="pictureBox6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 19</value>
+    <value>91, 19</value>
   </data>
   <data name="pictureBox6.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -1768,13 +1753,13 @@
     <value>Fill</value>
   </data>
   <data name="panel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 0</value>
+    <value>91, 0</value>
   </data>
   <data name="panel6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="panel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 19</value>
+    <value>91, 19</value>
   </data>
   <data name="panel6.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1795,7 +1780,7 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutPanel16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 0</value>
+    <value>312, 0</value>
   </data>
   <data name="tableLayoutPanel16.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1804,7 +1789,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 19</value>
+    <value>182, 19</value>
   </data>
   <data name="tableLayoutPanel16.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1840,7 +1825,7 @@
     <value>On</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-9, 0</value>
+    <value>-19, 0</value>
   </data>
   <data name="label7.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
@@ -1879,7 +1864,7 @@
     <value>0, 0</value>
   </data>
   <data name="pictureBox7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 19</value>
+    <value>46, 19</value>
   </data>
   <data name="pictureBox7.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -1903,13 +1888,13 @@
     <value>Fill</value>
   </data>
   <data name="panel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 0</value>
+    <value>136, 0</value>
   </data>
   <data name="panel7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="panel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 19</value>
+    <value>46, 19</value>
   </data>
   <data name="panel7.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1930,7 +1915,7 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutPanel17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 0</value>
+    <value>130, 0</value>
   </data>
   <data name="tableLayoutPanel17.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1939,7 +1924,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 19</value>
+    <value>182, 19</value>
   </data>
   <data name="tableLayoutPanel17.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1962,9 +1947,6 @@
   <data name="Case.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="Case.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
   <data name="Case.Font" type="System.Drawing.Font, System.Drawing">
     <value>Air Strip Arabic, 15pt</value>
   </data>
@@ -1981,7 +1963,7 @@
     <value>400-قلمون</value>
   </data>
   <data name="Case.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 19</value>
+    <value>130, 19</value>
   </data>
   <data name="Case.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1990,7 +1972,7 @@
     <value>Yes</value>
   </data>
   <data name="Case.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 35</value>
+    <value>182, 35</value>
   </data>
   <data name="Case.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -2010,9 +1992,6 @@
   <data name="CaseType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="CaseType.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
   <data name="CaseType.Font" type="System.Drawing.Font, System.Drawing">
     <value>Air Strip Arabic, 15pt</value>
   </data>
@@ -2029,7 +2008,7 @@
     <value>400-قلمون</value>
   </data>
   <data name="CaseType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 19</value>
+    <value>312, 19</value>
   </data>
   <data name="CaseType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2038,7 +2017,7 @@
     <value>Yes</value>
   </data>
   <data name="CaseType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 35</value>
+    <value>182, 35</value>
   </data>
   <data name="CaseType.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -2054,6 +2033,51 @@
   </data>
   <data name="&gt;&gt;CaseType.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="Save.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="Save.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="Save.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Save.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="Save.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Air Strip Arabic, 10.8pt</value>
+  </data>
+  <data name="Save.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>On</value>
+  </data>
+  <data name="Save.Location" type="System.Drawing.Point, System.Drawing">
+    <value>52, 19</value>
+  </data>
+  <data name="Save.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="Save.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 27</value>
+  </data>
+  <data name="Save.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="Save.Text" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="&gt;&gt;Save.Name" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;Save.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Save.Parent" xml:space="preserve">
+    <value>tableLayoutPanel15</value>
+  </data>
+  <data name="&gt;&gt;Save.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="tableLayoutPanel15.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2086,7 +2110,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel15.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanel16" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel17" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Case" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="CaseType" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,10,Percent,42.5,Percent,42.5,Percent,5" /&gt;&lt;Rows Styles="Percent,35,Percent,50,Percent,15" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tableLayoutPanel16" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel17" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="Case" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="CaseType" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Save" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,10,Percent,15,Percent,35,Percent,35,Percent,5" /&gt;&lt;Rows Styles="Percent,35,Percent,50,Percent,15" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="MissionType.ColumnCount" type="System.Int32, mscorlib">
     <value>9</value>
