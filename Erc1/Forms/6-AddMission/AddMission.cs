@@ -135,7 +135,7 @@ namespace Erc1.Forms
         bool isFilled =false;
         private void AddMission_Load(object sender, EventArgs e)
         {
-            var centers = Classes.mission.GetCenterCity();
+            var centers = Classes.mission.Get_Center_City();
             
             comboBox1.DataSource = centers;
             comboBox1.DisplayMember = "city";
@@ -153,6 +153,11 @@ namespace Erc1.Forms
             comboBox2.SelectedIndex = 0;
             comboBox4.Items.Add(DateTime.Now.Day);
             comboBox4.SelectedIndex = 0;
+
+            var disease = Classes.mission.Get_الحالات();
+            comboBox5.DataSource = disease;
+            comboBox5.ValueMember = "رمز";
+            comboBox5.DisplayMember = "المرض_بالانجليزي";
         }
         
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)

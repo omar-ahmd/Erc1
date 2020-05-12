@@ -14,13 +14,53 @@ namespace Erc1.Classes
     {
 
 
-        // get centers id (column name =".الرمز")
-        public static IEnumerable GetCenter()
+        // get centers id (column name ="الرمز")
+        public static IEnumerable Get_Center()
         {
             using (var entity = new ERCEntities())
             {
-                //return c.ToList();
                 var c = entity.المراكز.Select(r =>new { r.الرمز });
+                return c.ToList();
+            }
+        }
+
+
+        // get الحالات names english (column name ="المرض بالانجليزي")
+        public static IEnumerable Get_الحالات()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from disease in entity.الحالات
+                select new
+                {
+                    disease.رمز,
+                    disease.المرض_بالانجليزي
+                }
+                    ) ; ;
+                return c.ToList();
+            };
+        }
+
+        // get الحالات english_names by idنوعية_الحالة (column name ="المرض بالانجليزي")
+        public static IEnumerable Get_الحالات_by_idنوعية_الحالة(int id_type_of_disease)
+        {
+            using (var entity = new ERCEntities())
+            {
+                var c = entity.الحالات
+                    .Where(r=>r.رمز_النوعية== id_type_of_disease)
+                    .Select(r => new { r.المرض_بالانجليزي });
+                return c.ToList();
+            }
+        }
+
+
+        // get نوعيات الحالات (column name ="النوعية")
+        public static IEnumerable Get_نوعيات_الحالات()
+        {
+            using (var entity = new ERCEntities())
+            {
+                var c = entity.نوعيات_الحالات;
                 return c.ToList();
             }
         }
@@ -28,10 +68,12 @@ namespace Erc1.Classes
 
 
 
-        // city name of center
-        public static IEnumerable GetCenterCity()
-        {
 
+
+
+        // city name of center
+        public static IEnumerable Get_Center_City()
+        {
             using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
@@ -40,8 +82,8 @@ namespace Erc1.Classes
                 on centers.المدينة equals city. رمز
                 select new
                 {
-                    city = city.المدينة,
-                    centers = centers.الرمز
+                    centers = centers.الرمز,
+                    city = city.المدينة
                 }
                     ); ;
                 return c.ToList();
