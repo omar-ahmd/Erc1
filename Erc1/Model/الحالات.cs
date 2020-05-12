@@ -18,7 +18,6 @@ namespace Erc1.model
         public الحالات()
         {
             this.المهمات_الملغاة = new HashSet<المهمات_الملغاة>();
-            this.المهمات_المنفذة = new HashSet<المهمات_المنفذة>();
             this.المهماة_المؤجلة = new HashSet<المهماة_المؤجلة>();
         }
     
@@ -30,8 +29,6 @@ namespace Erc1.model
         public virtual نوعيات_الحالات نوعيات_الحالات { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<المهمات_الملغاة> المهمات_الملغاة { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<المهمات_المنفذة> المهمات_المنفذة { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<المهماة_المؤجلة> المهماة_المؤجلة { get; set; }
     }

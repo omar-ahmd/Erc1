@@ -31,7 +31,6 @@ namespace Erc1.model
         public Nullable<int> المتصل { get; set; }
         public string الهاتف { get; set; }
         public Nullable<int> متلقي_المهمة { get; set; }
-        public int رمز_الحالة { get; set; }
         public string رمز_السنوي { get; set; }
         public int السنة { get; set; }
         public string تفاصيل_ال_من { get; set; }
@@ -43,13 +42,14 @@ namespace Erc1.model
         public string التفاصيل { get; set; }
         public string اسم_المتصل { get; set; }
         public int طبيعة_المهمة { get; set; }
-        public string رمز__المركز { get; set; }
+        public int رمز__المركز { get; set; }
+        public Nullable<bool> مريض_مقعد { get; set; }
     
         public virtual أقسام_المستشفيات أقسام_المستشفيات { get; set; }
         public virtual أقسام_المستشفيات أقسام_المستشفيات1 { get; set; }
         public virtual الأطباء الأطباء { get; set; }
         public virtual الآليات الآليات { get; set; }
-        public virtual الحالات الحالات { get; set; }
+        public virtual الجهات_الضامنة الجهات_الضامنة { get; set; }
         public virtual العاملون العاملون { get; set; }
         public virtual العاملون العاملون1 { get; set; }
         public virtual العاملون العاملون2 { get; set; }
@@ -63,6 +63,5 @@ namespace Erc1.model
         public virtual المناطق المناطق { get; set; }
         public virtual المناطق المناطق1 { get; set; }
         public virtual طبيعة_المهمة طبيعة_المهمة1 { get; set; }
-        public virtual الجهات_الضامنة الجهات_الضامنة { get; set; }
     }
 }

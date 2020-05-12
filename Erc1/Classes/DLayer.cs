@@ -13,22 +13,69 @@ namespace Erc1.Classes
     class mission
     {
 
-        public static IEnumerable Getcenter()
+
+        // get centers id (column name =".الرمز")
+        public static IEnumerable GetCenter()
         {
             using (var entity = new ERCEntities())
             {
-                var c = entity.Getالمراكز();
+                //return c.ToList();
+                var c = entity.المراكز.Select(r =>new { r.الرمز });
                 return c.ToList();
             }
         }
 
 
+
+
+        // city name of center
+        public static IEnumerable GetCenterCity()
+        {
+
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from centers in entity.المراكز
+                join city in entity.المدن 
+                on centers.المدينة equals city. رمز
+                select new
+                {
+                    city = city.المدينة,
+                    centers = centers.الرمز
+                }
+                    ); ;
+                return c.ToList();
+            };
+        }
+
+
+
+        // cars of a center by id 
+        public static IEnumerable Getالآليات(int marakez)
+        {
+
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from cars in entity.الآليات
+                where cars.المركز == marakez
+                select new
+                {
+                    cars = cars.موديل_
+                }
+                    ); ;
+                return c.ToList();
+            };
+
+        }
+
+        // add mission
         public static void AddMission(int الرمز_الشهري, DateTime التاريخ, int الآلية, int المريض, Nullable<int> من_مشفى, Nullable<int> من_القسم, Nullable<int> الطبيب_المعالج,
              Nullable<int> الجهة_الضامنة, Nullable<int> إلى_مشفى, Nullable<int> إلى_القسم, int مسؤول_المهمة, int مسعف_1, int مسعف_2,
             int السائق, Nullable<int> المتصل, string الهاتف, Nullable<int> متلقي_المهمة, int رمز_الحالة, string رمز_السنوي,
             int السنة, string تفاصيل_ال_من, string تفاصيل_ال_الى, Nullable<int> من_رمز_المدينة, Nullable<int> من_رمز_المنطقة,
             Nullable<int> الى_رمز_المدينة, Nullable<int> الى_رمز_المنطقة, string التفاصيل, string اسم_المتصل,
-            int طبيعة_المهمة, string رمز__المركز)
+            int طبيعة_المهمة, int رمز__المركز)
         {
             using (ERCEntities entity = new model.ERCEntities())
             {
@@ -51,7 +98,6 @@ namespace Erc1.Classes
                     المتصل = المتصل,
                     الهاتف = الهاتف,
                     متلقي_المهمة = متلقي_المهمة,
-                    رمز_الحالة = رمز_الحالة,
                     رمز_السنوي = رمز_السنوي,
                     السنة = السنة,
                     تفاصيل_ال_من = تفاصيل_ال_من,

@@ -45,9 +45,15 @@ namespace Erc1.model
         public virtual DbSet<المهمات_الملغاة> المهمات_الملغاة { get; set; }
         public virtual DbSet<المهمات_المنفذة> المهمات_المنفذة { get; set; }
         public virtual DbSet<الوظيفة> الوظيفة { get; set; }
+        public virtual DbSet<حالات_المهمات> حالات_المهمات { get; set; }
         public virtual DbSet<طبيعة_المهمة> طبيعة_المهمة { get; set; }
         public virtual DbSet<فئة_الدم> فئة_الدم { get; set; }
         public virtual DbSet<نوعيات_الحالات> نوعيات_الحالات { get; set; }
+    
+        public virtual ObjectResult<Getالمراكز_Result> Getالمراكز()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Getالمراكز_Result>("Getالمراكز");
+        }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
@@ -150,16 +156,6 @@ namespace Erc1.model
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
-        }
-    
-        public virtual ObjectResult<Getالمراكز_Result> Getالمراكز()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Getالمراكز_Result>("Getالمراكز");
-        }
-    
-        public virtual ObjectResult<Getالمراكز_Result> Getالمراكز1()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Getالمراكز_Result>("Getالمراكز1");
         }
     }
 }

@@ -21,14 +21,14 @@ namespace Erc1.model
             this.العاملون = new HashSet<العاملون>();
         }
     
-        public string الرمز { get; set; }
-        public Nullable<int> المنطقة { get; set; }
+        public int الرمز { get; set; }
+        public Nullable<int> المدينة { get; set; }
         public Nullable<System.DateTime> تاريخ_التاسيس { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<الآليات> الآليات { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<العاملون> العاملون { get; set; }
-        public virtual المناطق المناطق { get; set; }
+        public virtual المدن المدن { get; set; }
     }
 }

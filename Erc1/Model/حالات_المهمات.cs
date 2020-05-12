@@ -10,10 +10,11 @@
 namespace Erc1.model
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class Getالمراكز_Result
+    public partial class حالات_المهمات
     {
-        public string المدينة { get; set; }
-        public int الرمز { get; set; }
+        public int رمز_الحالة { get; set; }
+        public int رمز_المهمة { get; set; }
     }
 }

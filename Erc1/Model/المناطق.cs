@@ -19,7 +19,6 @@ namespace Erc1.model
         {
             this.الأطباء = new HashSet<الأطباء>();
             this.العاملون = new HashSet<العاملون>();
-            this.المراكز = new HashSet<المراكز>();
             this.المرضى = new HashSet<المرضى>();
             this.المستشفيات = new HashSet<المستشفيات>();
             this.المهمات_الملغاة = new HashSet<المهمات_الملغاة>();
@@ -37,8 +36,6 @@ namespace Erc1.model
         public virtual ICollection<الأطباء> الأطباء { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<العاملون> العاملون { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<المراكز> المراكز { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<المرضى> المرضى { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

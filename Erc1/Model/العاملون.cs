@@ -42,7 +42,7 @@ namespace Erc1.model
         public Nullable<bool> سائق_أو_لا { get; set; }
         public string الموقع { get; set; }
         public Nullable<bool> مسؤول_مهمة_أو_لا { get; set; }
-        public string المركز { get; set; }
+        public int المركز { get; set; }
         public string اللقب { get; set; }
         public Nullable<System.DateTime> تاريخ_الانتساب { get; set; }
         public Nullable<int> رمز_المدينة { get; set; }

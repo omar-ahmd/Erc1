@@ -1,5 +1,6 @@
 ﻿using Erc1.CONTROLS;
 using System;
+using System.Collections;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -134,13 +135,12 @@ namespace Erc1.Forms
         bool isFilled =false;
         private void AddMission_Load(object sender, EventArgs e)
         {
-            var regions = Classes.mission.Getcenter();
-           
-            comboBox1.DataSource = regions;
-            comboBox1.ValueMember = "الرمز";
-            comboBox1.DisplayMember = "المنطقة";
-          
-            dataGridView1.DataSource = regions;
+            var centers = Classes.mission.GetCenterCity();
+            
+            comboBox1.DataSource = centers;
+            comboBox1.DisplayMember = "city";
+            comboBox1.ValueMember = "centers";
+            dataGridView1.DataSource = centers;
             if (!isFilled)
             {
                 comboBox1.SelectedIndexChanged += comboBox1_SelectionChangeCommitted;
@@ -157,8 +157,7 @@ namespace Erc1.Forms
         
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            MessageBox.Show(comboBox1.SelectedValue.ToString());
-            var cars = Classes.Mission.Getالآليات(comboBox1.SelectedValue.ToString());
+            var cars = Classes.Mission.Getالآليات(int.Parse(comboBox1.SelectedValue.ToString()));
             comboBox12.DataSource = cars;
             comboBox12.DisplayMember = "cars";
         }

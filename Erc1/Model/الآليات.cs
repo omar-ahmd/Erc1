@@ -21,7 +21,7 @@ namespace Erc1.model
         }
     
         public int رمز_الآلية { get; set; }
-        public string المركز { get; set; }
+        public int المركز { get; set; }
         public string نوعية_الاستخدام { get; set; }
         public string موديل_ { get; set; }
         public string نوعية_السيارة { get; set; }
