@@ -25,7 +25,7 @@ namespace Erc1.Classes
         //}
 
 
-        // get الحالات names english (column names ="المرض بالانجليزي","رمز")
+        // get الحالات names (column names ="المرض","رمز")
         public static IEnumerable Get_الحالات()
         {
             using (ERCEntities entity = new ERCEntities())
@@ -35,14 +35,14 @@ namespace Erc1.Classes
                 select new
                 {
                     disease.رمز,
-                    disease.المرض_بالانجليزي
+                   المرض = disease.المرض_بالانجليزي + " - " + disease.المرض
                 }
                     ) ; ;
                 return c.ToList();
             };
         }
 
-        // get الحالات english_names by idنوعية_الحالة (column name ="المرض")
+        // get الحالات names by idنوعية_الحالة (column name ="المرض")
         public static IEnumerable Get_الحالات_by_idنوعية_الحالة(int id_type_of_disease)
         {
             using (var entity = new ERCEntities())
