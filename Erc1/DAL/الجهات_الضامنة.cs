@@ -18,6 +18,7 @@ namespace Erc1.DAL
         public الجهات_الضامنة()
         {
             this.المرضى = new HashSet<المرضى>();
+            this.المهمات_المنفذة = new HashSet<المهمات_المنفذة>();
         }
     
         public int الرمز { get; set; }
@@ -25,5 +26,7 @@ namespace Erc1.DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<المرضى> المرضى { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<المهمات_المنفذة> المهمات_المنفذة { get; set; }
     }
 }

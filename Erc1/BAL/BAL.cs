@@ -753,7 +753,7 @@ namespace Erc1.BAL
 				Mission.مسعف_2 = Paramedic2ID;
 				Mission.متلقي_المهمة = RecipientMissionID;
 				Mission.اسم_المتصل = callerName;
-				Mission.المتصل = callerPhone;
+				Mission.رقم_المتصل = callerPhone;
 
 				//add headofshift to database in mission table
 				return true;

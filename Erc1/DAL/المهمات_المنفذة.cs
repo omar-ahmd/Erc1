@@ -20,17 +20,18 @@ namespace Erc1.DAL
         public int المريض { get; set; }
         public Nullable<int> من_مشفى { get; set; }
         public Nullable<int> من_القسم { get; set; }
+        public Nullable<int> الطبيب_المعالج { get; set; }
+        public Nullable<int> الجهة_الضامنة { get; set; }
         public Nullable<int> إلى_مشفى { get; set; }
         public Nullable<int> إلى_القسم { get; set; }
         public int مسؤول_المهمة { get; set; }
         public int مسعف_1 { get; set; }
         public int مسعف_2 { get; set; }
         public int السائق { get; set; }
-        public Nullable<int> المتصل { get; set; }
+        public int رقم_المتصل { get; set; }
         public string الهاتف { get; set; }
         public Nullable<int> متلقي_المهمة { get; set; }
-        public int رمز_الحالة { get; set; }
-        public string رمز_السنوي { get; set; }
+        public int رمز_السنوي { get; set; }
         public int السنة { get; set; }
         public string تفاصيل_ال_من { get; set; }
         public string تفاصيل_ال_الى { get; set; }
@@ -41,16 +42,23 @@ namespace Erc1.DAL
         public string التفاصيل { get; set; }
         public string اسم_المتصل { get; set; }
         public int طبيعة_المهمة { get; set; }
-        public string رمز__المركز { get; set; }
+        public int رمز__المركز { get; set; }
+        public Nullable<bool> مريض_مقعد { get; set; }
+        public Nullable<int> الأمراض_المعدية { get; set; }
+        public Nullable<int> مسؤول_الدوام { get; set; }
     
         public virtual أقسام_المستشفيات أقسام_المستشفيات { get; set; }
         public virtual أقسام_المستشفيات أقسام_المستشفيات1 { get; set; }
+        public virtual الأطباء الأطباء { get; set; }
         public virtual الآليات الآليات { get; set; }
-        public virtual الحالات الحالات { get; set; }
+        public virtual الأمراض_المعدية الأمراض_المعدية1 { get; set; }
+        public virtual الجهات_الضامنة الجهات_الضامنة { get; set; }
         public virtual العاملون العاملون { get; set; }
         public virtual العاملون العاملون1 { get; set; }
         public virtual العاملون العاملون2 { get; set; }
         public virtual العاملون العاملون3 { get; set; }
+        public virtual العاملون العاملون4 { get; set; }
+        public virtual العاملون العاملون5 { get; set; }
         public virtual المدن المدن { get; set; }
         public virtual المدن المدن1 { get; set; }
         public virtual المرضى المرضى { get; set; }

@@ -29,9 +29,12 @@ namespace Erc1.DAL
         public string الهاتف { get; set; }
         public string العنوان { get; set; }
         public Nullable<int> رمز_المدينة { get; set; }
-        public Nullable<int> أمراض_معدية { get; set; }
+        public Nullable<int> أمراض_مزمنة { get; set; }
         public Nullable<int> رمز_المنطقة { get; set; }
+        public Nullable<int> الطبيب_المعالج { get; set; }
     
+        public virtual الأطباء الأطباء { get; set; }
+        public virtual الأمراض_المزمنة الأمراض_المزمنة { get; set; }
         public virtual الجهات_الضامنة الجهات_الضامنة { get; set; }
         public virtual المدن المدن { get; set; }
         public virtual المناطق المناطق { get; set; }

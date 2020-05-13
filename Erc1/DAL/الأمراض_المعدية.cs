@@ -12,29 +12,17 @@ namespace Erc1.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class الأطباء
+    public partial class الأمراض_المعدية
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public الأطباء()
+        public الأمراض_المعدية()
         {
-            this.المرضى = new HashSet<المرضى>();
             this.المهمات_المنفذة = new HashSet<المهمات_المنفذة>();
         }
     
-        public int رمز { get; set; }
-        public string C_اسم { get; set; }
-        public string عنوان { get; set; }
-        public string اختصاص { get; set; }
-        public string هاتف { get; set; }
-        public Nullable<int> مكان_العمل { get; set; }
-        public Nullable<int> رمز_المدينة { get; set; }
-        public Nullable<int> رمز_المنطقة { get; set; }
+        public int الرمز { get; set; }
+        public string المرض { get; set; }
     
-        public virtual المستشفيات المستشفيات { get; set; }
-        public virtual المدن المدن { get; set; }
-        public virtual المناطق المناطق { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<المرضى> المرضى { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<المهمات_المنفذة> المهمات_المنفذة { get; set; }
     }

@@ -44,7 +44,7 @@ namespace Erc1.Forms._4_Hospitals
                 available = true;
             }
 
-            using (ERCEntities1 db = new ERCEntities1())
+            using (ERCEntities db = new ERCEntities())
             {
 
                 

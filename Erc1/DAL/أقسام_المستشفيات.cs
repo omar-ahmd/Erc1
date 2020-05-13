@@ -17,7 +17,6 @@ namespace Erc1.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public أقسام_المستشفيات()
         {
-            this.الأطباء = new HashSet<الأطباء>();
             this.المستشفيات_مع_اقسام = new HashSet<المستشفيات_مع_اقسام>();
             this.المهمات_الملغاة = new HashSet<المهمات_الملغاة>();
             this.المهمات_الملغاة1 = new HashSet<المهمات_الملغاة>();
@@ -30,8 +29,6 @@ namespace Erc1.DAL
         public int الرمز { get; set; }
         public string اسم_القسم { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<الأطباء> الأطباء { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<المستشفيات_مع_اقسام> المستشفيات_مع_اقسام { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

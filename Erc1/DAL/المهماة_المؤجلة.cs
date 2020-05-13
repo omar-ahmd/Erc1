@@ -15,7 +15,7 @@ namespace Erc1.DAL
     public partial class المهماة_المؤجلة
     {
         public int رمز { get; set; }
-        public string رمز_المركز { get; set; }
+        public int رمز_المركز { get; set; }
         public Nullable<int> اسم { get; set; }
         public Nullable<int> العمر { get; set; }
         public Nullable<int> من_رمز_المدينة { get; set; }

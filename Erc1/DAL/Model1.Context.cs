@@ -15,10 +15,10 @@ namespace Erc1.DAL
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class ERCEntities1 : DbContext
+    public partial class ERCEntities : DbContext
     {
-        public ERCEntities1()
-            : base("name=ERCEntities1")
+        public ERCEntities()
+            : base("name=ERCEntities")
         {
         }
     
@@ -31,6 +31,8 @@ namespace Erc1.DAL
         public virtual DbSet<أقسام_المستشفيات> أقسام_المستشفيات { get; set; }
         public virtual DbSet<الأطباء> الأطباء { get; set; }
         public virtual DbSet<الآليات> الآليات { get; set; }
+        public virtual DbSet<الأمراض_المزمنة> الأمراض_المزمنة { get; set; }
+        public virtual DbSet<الأمراض_المعدية> الأمراض_المعدية { get; set; }
         public virtual DbSet<الجهات_الضامنة> الجهات_الضامنة { get; set; }
         public virtual DbSet<الحالات> الحالات { get; set; }
         public virtual DbSet<العاملون> العاملون { get; set; }
@@ -43,7 +45,10 @@ namespace Erc1.DAL
         public virtual DbSet<المهماة_المؤجلة> المهماة_المؤجلة { get; set; }
         public virtual DbSet<المهمات_الملغاة> المهمات_الملغاة { get; set; }
         public virtual DbSet<المهمات_المنفذة> المهمات_المنفذة { get; set; }
+        public virtual DbSet<الوظيفة> الوظيفة { get; set; }
+        public virtual DbSet<حالات_المهمات> حالات_المهمات { get; set; }
         public virtual DbSet<طبيعة_المهمة> طبيعة_المهمة { get; set; }
+        public virtual DbSet<فئة_الدم> فئة_الدم { get; set; }
         public virtual DbSet<نوعيات_الحالات> نوعيات_الحالات { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
@@ -101,7 +106,7 @@ namespace Erc1.DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual int sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
                 new ObjectParameter("diagramname", diagramname) :
@@ -111,10 +116,10 @@ namespace Erc1.DAL
                 new ObjectParameter("owner_id", owner_id) :
                 new ObjectParameter("owner_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual int sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
                 new ObjectParameter("diagramname", diagramname) :
@@ -124,7 +129,7 @@ namespace Erc1.DAL
                 new ObjectParameter("owner_id", owner_id) :
                 new ObjectParameter("owner_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
         }
     
         public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)

@@ -114,42 +114,7 @@
       <DependentUpon>SButton.cs</DependentUpon>
     </Compile>
     <Compile Include="BAL\BAL.cs" />
-    <Compile Include="Forms\4-Hospitals\HospitalsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\4-Hospitals\HospitalsForm.Designer.cs">
-      <DependentUpon>HospitalsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\6-AddMission\AddMission.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\6-AddMission\AddMission.Designer.cs">
-      <DependentUpon>AddMission.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\6-AddMission\stripForAddButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\6-AddMission\stripForAddButton.Designer.cs">
-      <DependentUpon>stripForAddButton.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\8-AddPatient\AddPatient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\8-AddPatient\AddPatient.Designer.cs">
-      <DependentUpon>AddPatient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\CasesOfMission.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CasesOfMission.Designer.cs">
-      <DependentUpon>CasesOfMission.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LoginForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="DAL\DAL.cs" />
     <Compile Include="DAL\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -165,6 +130,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -175,6 +146,12 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\الأطباء.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\الأمراض_المزمنة.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\الأمراض_المعدية.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\الجهات_الضامنة.cs">
@@ -213,11 +190,56 @@
     <Compile Include="DAL\المهمات_المنفذة.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\الوظيفة.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\حالات_المهمات.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\طبيعة_المهمة.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\فئة_الدم.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\نوعيات_الحالات.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\4-Hospitals\HospitalsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\4-Hospitals\HospitalsForm.Designer.cs">
+      <DependentUpon>HospitalsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6-AddMission\AddMission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\6-AddMission\AddMission.Designer.cs">
+      <DependentUpon>AddMission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\6-AddMission\stripForAddButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\6-AddMission\stripForAddButton.Designer.cs">
+      <DependentUpon>stripForAddButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\8-AddPatient\AddPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\8-AddPatient\AddPatient.Designer.cs">
+      <DependentUpon>AddPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CasesOfMission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CasesOfMission.Designer.cs">
+      <DependentUpon>CasesOfMission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OperationForm.cs">
       <SubType>Form</SubType>
