@@ -15,10 +15,10 @@ namespace Erc1.DAL
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class ERCEntities : DbContext
+    public partial class ERCEntities3 : DbContext
     {
-        public ERCEntities()
-            : base("name=ERCEntities")
+        public ERCEntities3()
+            : base("name=ERCEntities3")
         {
         }
     
@@ -50,6 +50,11 @@ namespace Erc1.DAL
         public virtual DbSet<طبيعة_المهمة> طبيعة_المهمة { get; set; }
         public virtual DbSet<فئة_الدم> فئة_الدم { get; set; }
         public virtual DbSet<نوعيات_الحالات> نوعيات_الحالات { get; set; }
+    
+        public virtual ObjectResult<Getالمراكز_Result> Getالمراكز()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Getالمراكز_Result>("Getالمراكز");
+        }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
@@ -106,7 +111,7 @@ namespace Erc1.DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        public virtual int sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
                 new ObjectParameter("diagramname", diagramname) :
@@ -116,10 +121,10 @@ namespace Erc1.DAL
                 new ObjectParameter("owner_id", owner_id) :
                 new ObjectParameter("owner_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        public virtual int sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
                 new ObjectParameter("diagramname", diagramname) :
@@ -129,7 +134,7 @@ namespace Erc1.DAL
                 new ObjectParameter("owner_id", owner_id) :
                 new ObjectParameter("owner_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
         }
     
         public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)

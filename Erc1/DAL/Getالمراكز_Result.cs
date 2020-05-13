@@ -11,12 +11,9 @@ namespace Erc1.DAL
 {
     using System;
     
-    public partial class sp_helpdiagrams_Result
+    public partial class Getالمراكز_Result
     {
-        public string Database { get; set; }
-        public string Name { get; set; }
-        public int ID { get; set; }
-        public string Owner { get; set; }
-        public int OwnerID { get; set; }
+        public string المدينة { get; set; }
+        public int الرمز { get; set; }
     }
 }

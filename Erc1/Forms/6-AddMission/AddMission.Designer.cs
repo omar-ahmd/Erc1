@@ -466,13 +466,7 @@ namespace Erc1.Forms
             this.CarId.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this.CarId, "CarId");
             this.CarId.FormattingEnabled = true;
-            this.CarId.Items.AddRange(new object[] {
-            resources.GetString("CarId.Items"),
-            resources.GetString("CarId.Items1"),
-            resources.GetString("CarId.Items2"),
-            resources.GetString("CarId.Items3")});
             this.CarId.Name = "CarId";
-            this.CarId.Sorted = true;
             // 
             // CenterID
             // 
@@ -481,13 +475,8 @@ namespace Erc1.Forms
             this.CenterID.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this.CenterID, "CenterID");
             this.CenterID.FormattingEnabled = true;
-            this.CenterID.Items.AddRange(new object[] {
-            resources.GetString("CenterID.Items"),
-            resources.GetString("CenterID.Items1"),
-            resources.GetString("CenterID.Items2"),
-            resources.GetString("CenterID.Items3")});
             this.CenterID.Name = "CenterID";
-            this.CenterID.Sorted = true;
+            this.CenterID.SelectedValueChanged += new System.EventHandler(this.CenterID_SelectedValueChanged);
             // 
             // tableLayoutPanel12
             // 
@@ -636,7 +625,6 @@ namespace Erc1.Forms
             resources.GetString("CaseType.Items2"),
             resources.GetString("CaseType.Items3")});
             this.CaseType.Name = "CaseType";
-            this.CaseType.Sorted = true;
             // 
             // Save
             // 

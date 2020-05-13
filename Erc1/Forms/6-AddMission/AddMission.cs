@@ -1,6 +1,10 @@
-﻿using Erc1.CONTROLS;
+﻿using Erc1.BAL;
+using Erc1.CONTROLS;
 using System;
+using System.Collections;
+using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Erc1.Forms
@@ -17,33 +21,24 @@ namespace Erc1.Forms
         public PatientInformation paI;
         public ParamInformation pI;
         public Erc1.BAL.MissionType type { get; set; }
-        public AddMission()
-        {
-            InitializeComponent();
-            /*this.SetStyle(ControlStyles.UserPaint
-                        | ControlStyles.OptimizedDoubleBuffer
-                        | ControlStyles.AllPaintingInWmPaint
-                        | ControlStyles.SupportsTransparentBackColor, true);*/
-
-            this.DoubleBuffered = true;
-            type = BAL.MissionType.Cold;
-            
-        }
-
         public static void EnableDoubleBuff(Control c)
         {
             PropertyInfo DemoProp = typeof(Control).GetProperty("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance);
             DemoProp.SetValue(c, true, null);
         }
-
         private MissionType missionTy;
-
         public MissionType MissionTy
         {
             get { return missionTy; }
             set { missionTy = value; }
         }
 
+        CasesOfMission cM;
+
+
+
+        Thread ImportCasesType, ImportCenter, ImportCarsInCenter;
+        IEnumerable casetype = null, centers = null, CarsInCenter = null;
         public AddMission(MissionType missionType)
         {
             InitializeComponent();
@@ -111,18 +106,22 @@ namespace Erc1.Forms
                 default:
                     break;
             }
-            MessageBox.Show("dd");
             cM = new CasesOfMission(Case);
-            //cM.comboBox1.DataSource = Case.DataSource;
-        }
 
+            
+
+
+
+
+
+
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             panel9.BackgroundImage = Erc1.Properties.Resources._112;
             paI.Show();
             pI.Hide();
         }
-
         protected override CreateParams CreateParams
         {
             get
@@ -142,9 +141,28 @@ namespace Erc1.Forms
 
 
         }
-
         private void AddMission_Load(object sender, EventArgs e)
         {
+            ImportCasesType = new Thread(() => { casetype = addMission.Get_CasesType(); });
+            ImportCenter = new Thread(() => { centers = addMission.Get_centers(); });
+
+            ImportCasesType.Start();
+            ImportCenter.Start();
+
+            ImportCenter.Join();
+            ImportCasesType.Join();
+
+            CenterID.DataSource = centers;
+            CenterID.ValueMember = "id";
+            CenterID.DisplayMember = "centers";
+            MessageBox.Show("k");
+
+            CaseType.DataSource = casetype;
+            CaseType.ValueMember = "الرمز";
+            CaseType.DisplayMember = "النوعية";
+
+            CenterAdded = true;
+
             Day.DropDownHeight = Day.ItemHeight * 5;
             Month.DropDownHeight = Month.ItemHeight * 5;
             Year.DropDownHeight = Year.ItemHeight * 5;
@@ -183,7 +201,6 @@ namespace Erc1.Forms
 
             
         }
-
         private void UrgentMission_CheckChange(object sender, EventArgs e)
         {
             if (UrgentMission.Check)
@@ -200,7 +217,6 @@ namespace Erc1.Forms
             
             
         }
-
         private void ColdMission_CheckChange(object sender, EventArgs e)
         {
             if (ColdMission.Check)
@@ -210,6 +226,18 @@ namespace Erc1.Forms
                 FireMission.Check = false;
                 ActivityMission.Check = false;
             }
+        }
+        bool CenterAdded = false;
+        private void CenterID_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (CenterAdded)
+            {
+                CarId.DataSource = addMission.GetCars(int.Parse(CenterID.SelectedValue.ToString()));
+                CarId.ValueMember = "id";
+                CarId.DisplayMember = "cars";
+            }
+            
+
         }
 
         private void ActivityMission_CheckChange(object sender, EventArgs e)
@@ -222,7 +250,6 @@ namespace Erc1.Forms
                 UrgentMission.Check = false;
             }
         }
-
         private void FireMission_CheckChange(object sender, EventArgs e)
         {
             if (FireMission.Check)
@@ -233,16 +260,17 @@ namespace Erc1.Forms
                 ActivityMission.Check = false;
             }
         }
-        CasesOfMission cM;
+
         private void Save_Click(object sender, EventArgs e)
         {
             cM.Show();
             
         }
-
         private void Case_SelectedValueChanged(object sender, EventArgs e)
         {
             cM.AddCase(Case.SelectedItem.ToString(), 8);
         }
+        
+       
     }
 }

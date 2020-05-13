@@ -9,11 +9,39 @@ using System.Windows.Forms;
 using System.Workflow.ComponentModel;
 using Erc1.Forms;
 using Erc1.DAL;
+
 using System.Collections;
 using System.Security.Permissions;
+using System.Threading;
+using System.Reflection;
 
 namespace Erc1.BAL
 {
+	public class MyFunctions
+	{
+		public static DataTable ToDataTable<T>(List<T> items)
+		{
+			var tb = new DataTable(typeof(T).Name);
+			PropertyInfo[] props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+			foreach (var prop in props)
+			{
+				tb.Columns.Add(prop.Name, prop.PropertyType);
+
+
+			}
+			foreach (var item in items)
+			{
+				var values = new object[props.Length];
+				for (var i = 0; i < props.Length; i++)
+				{
+					values[i] = props[i].GetValue(item, null);
+				}
+				tb.Rows.Add(values);
+			}
+			return tb;
+		}
+	}
+	
 	public enum MissionType
 	{
 		Urgent,
@@ -190,25 +218,25 @@ namespace Erc1.BAL
 
 		public static IEnumerable Get_Cases()
 		{
-			return Get_الحالات();
+			return mission.Get_الحالات();
 		}
 		public static IEnumerable Get_centers()
 		{
-			return Get_Centers();
+			return mission.Get_Centers();
 		}
 		
 		public static IEnumerable Get_CasesType()
 		{
-			return Get_نوعيات_الحالات();
+			return mission.Get_نوعيات_الحالات(); 
 		}
 		
 		public static IEnumerable GetWorkers()
 		{
-			return Get_العاملون();
+			return mission.Get_العاملون();
 		}
 		public static IEnumerable GetCars(int CentrID)
 		{
-			return Getالآليات(CentrID);
+			return mission.Getالآليات(CentrID);
 		}
 
 	}
@@ -753,7 +781,7 @@ namespace Erc1.BAL
 				Mission.مسعف_2 = Paramedic2ID;
 				Mission.متلقي_المهمة = RecipientMissionID;
 				Mission.اسم_المتصل = callerName;
-				Mission.رقم_المتصل = callerPhone;
+				Mission.رقم_المتصل = callerPhone.ToString();
 
 				//add headofshift to database in mission table
 				return true;

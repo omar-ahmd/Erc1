@@ -15,8 +15,6 @@ namespace Erc1.DAL
     public partial class حالات_المهمات
     {
         public int رمز_الحالة { get; set; }
-        public int الرمز_الشهري { get; set; }
-        public string رمز_السنوي { get; set; }
-        public string السنة { get; set; }
+        public int رمز_المهمة { get; set; }
     }
 }

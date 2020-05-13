@@ -28,7 +28,7 @@ namespace Erc1.DAL
         public int مسعف_1 { get; set; }
         public int مسعف_2 { get; set; }
         public int السائق { get; set; }
-        public int رقم_المتصل { get; set; }
+        public string رقم_المتصل { get; set; }
         public string الهاتف { get; set; }
         public Nullable<int> متلقي_المهمة { get; set; }
         public int رمز_السنوي { get; set; }

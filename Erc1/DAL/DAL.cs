@@ -16,7 +16,7 @@ namespace Erc1.DAL
         //// get المراكز id (column name ="الرمز")
         //public static IEnumerable Get_CentersId()
         //{
-        //    using (var entity = new ERCEntities())
+        //    using (var entity = new ERCEntities3())
         //    {
         //        var c = entity.المراكز.Select(r =>new { r.الرمز });
         //        return c.ToList();
@@ -28,7 +28,7 @@ namespace Erc1.DAL
         // get الحالات names (column names ="المرض","رمز")
         public static IEnumerable Get_الحالات()
         {
-            using (ERCEntities entity = new ERCEntities())
+            using (ERCEntities3 entity = new ERCEntities3())
             {
                 var c = (
                 from disease in entity.الحالات
@@ -48,7 +48,7 @@ namespace Erc1.DAL
         // get الحالات names by idنوعية_الحالة (column name ="المرض")
         public static IEnumerable Get_الحالات_by_idنوعية_الحالة(int id_type_of_disease)
         {
-            using (var entity = new ERCEntities())
+            using (var entity = new ERCEntities3())
             {
                 var c = entity.الحالات
                     .Where(r => r.رمز_النوعية == id_type_of_disease)
@@ -67,7 +67,7 @@ namespace Erc1.DAL
         // get نوعيات الحالات (column name ="النوعية","الرمز")
         public static IEnumerable Get_نوعيات_الحالات()
         {
-            using (var entity = new ERCEntities())
+            using (var entity = new ERCEntities3())
             {
                 var c = entity.نوعيات_الحالات;
                 return c.ToList();
@@ -80,7 +80,7 @@ namespace Erc1.DAL
         // get العاملون names (column names ="الاسم","الرمز")
         public static IEnumerable Get_العاملون()
         {
-            using (ERCEntities entity = new ERCEntities())
+            using (ERCEntities3 entity = new ERCEntities3())
             {
                 var c = (
                 from staff in entity.العاملون
@@ -101,7 +101,7 @@ namespace Erc1.DAL
         // get العاملون names by المراكز(column names ="الاسم","الرمز")
         public static IEnumerable Get_العاملون_by_idالمراكز(int center_id)
         {
-            using (ERCEntities entity = new ERCEntities())
+            using (ERCEntities3 entity = new ERCEntities3())
             {
                 var c = (
                 from staff in entity.العاملون.
@@ -123,7 +123,7 @@ namespace Erc1.DAL
         //get all centers (column names ="centers","id")
         public static IEnumerable Get_Centers()
         {
-            using (ERCEntities entity = new ERCEntities())
+            using (ERCEntities3 entity = new ERCEntities3())
             {
                 var c = from centers in entity.المراكز
                         where centers.المدن.رمز == centers.المدينة
@@ -144,16 +144,17 @@ namespace Erc1.DAL
         public static IEnumerable Getالآليات(int marakez)
         {
 
-            using (ERCEntities entity = new ERCEntities())
+            using (ERCEntities3 entity = new ERCEntities3())
             {
                 var c = (
                 from cars in entity.الآليات
                 where cars.المركز == marakez
                 select new
                 {
+                    id = cars.رمز_الآلية,
                     cars = cars.موديل_
                 }
-                    ); ;
+                    ); 
                 return c.ToList();
             };
 

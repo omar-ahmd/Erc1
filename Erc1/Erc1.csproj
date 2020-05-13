@@ -115,6 +115,9 @@
     </Compile>
     <Compile Include="BAL\BAL.cs" />
     <Compile Include="DAL\DAL.cs" />
+    <Compile Include="DAL\Getالمراكز_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -129,12 +132,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\sp_helpdiagrams_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>

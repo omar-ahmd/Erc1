@@ -1311,18 +1311,6 @@
   <data name="CarId.Font" type="System.Drawing.Font, System.Drawing">
     <value>Air Strip Arabic, 15pt</value>
   </data>
-  <data name="CarId.Items" xml:space="preserve">
-    <value>100-طرابلس</value>
-  </data>
-  <data name="CarId.Items1" xml:space="preserve">
-    <value>200-ضنية</value>
-  </data>
-  <data name="CarId.Items2" xml:space="preserve">
-    <value>300</value>
-  </data>
-  <data name="CarId.Items3" xml:space="preserve">
-    <value>400-قلمون</value>
-  </data>
   <data name="CarId.Location" type="System.Drawing.Point, System.Drawing">
     <value>52, 19</value>
   </data>
@@ -1355,18 +1343,6 @@
   </data>
   <data name="CenterID.Font" type="System.Drawing.Font, System.Drawing">
     <value>Air Strip Arabic, 15pt</value>
-  </data>
-  <data name="CenterID.Items" xml:space="preserve">
-    <value>100-طرابلس</value>
-  </data>
-  <data name="CenterID.Items1" xml:space="preserve">
-    <value>200-ضنية</value>
-  </data>
-  <data name="CenterID.Items2" xml:space="preserve">
-    <value>300</value>
-  </data>
-  <data name="CenterID.Items3" xml:space="preserve">
-    <value>400-قلمون</value>
   </data>
   <data name="CenterID.Location" type="System.Drawing.Point, System.Drawing">
     <value>274, 19</value>
@@ -2012,6 +1988,9 @@
   </data>
   <data name="CaseType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
+  </data>
+  <data name="CaseType.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="CaseType.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
