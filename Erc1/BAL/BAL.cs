@@ -9,8 +9,8 @@ using System.Windows.Forms;
 using System.Workflow.ComponentModel;
 using Erc1.Forms;
 using Erc1.DAL;
-
-
+using System.Collections;
+using System.Security.Permissions;
 
 namespace Erc1.BAL
 {
@@ -188,7 +188,28 @@ namespace Erc1.BAL
 
 		}
 
-
+		public static IEnumerable Get_Cases()
+		{
+			return Get_الحالات();
+		}
+		public static IEnumerable Get_centers()
+		{
+			return Get_Centers();
+		}
+		
+		public static IEnumerable Get_CasesType()
+		{
+			return Get_نوعيات_الحالات();
+		}
+		
+		public static IEnumerable GetWorkers()
+		{
+			return Get_العاملون();
+		}
+		public static IEnumerable GetCars(int CentrID)
+		{
+			return Getالآليات(CentrID);
+		}
 
 	}
 	class PatientInfo

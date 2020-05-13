@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ID_Patient = new System.Windows.Forms.TextBox();
+            this.CanSit = new Erc1.CONTROLS.LabelBord();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.CancilingtText = new System.Windows.Forms.TextBox();
@@ -142,7 +143,6 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.CanSit = new Erc1.CONTROLS.LabelBord();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -306,6 +306,19 @@
             this.ID_Patient.TabIndex = 6;
             this.ID_Patient.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ID_Patient.WordWrap = false;
+            // 
+            // CanSit
+            // 
+            this.CanSit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CanSit.Check = false;
+            this.CanSit.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CanSit.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
+            this.CanSit.Location = new System.Drawing.Point(0, 0);
+            this.CanSit.Margin = new System.Windows.Forms.Padding(0);
+            this.CanSit.Name = "CanSit";
+            this.CanSit.Size = new System.Drawing.Size(168, 25);
+            this.CanSit.TabIndex = 7;
+            this.CanSit.text = "يستطيع الجلوس";
             // 
             // tableLayoutPanel1
             // 
@@ -2166,19 +2179,6 @@
             this.label31.TabIndex = 2;
             this.label31.Text = "تفاصيل";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // CanSit
-            // 
-            this.CanSit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.CanSit.Check = false;
-            this.CanSit.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CanSit.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
-            this.CanSit.Location = new System.Drawing.Point(0, 0);
-            this.CanSit.Margin = new System.Windows.Forms.Padding(0);
-            this.CanSit.Name = "CanSit";
-            this.CanSit.Size = new System.Drawing.Size(168, 25);
-            this.CanSit.TabIndex = 7;
-            this.CanSit.text = "يستطيع الجلوس";
             // 
             // PatientInformation
             // 
