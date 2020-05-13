@@ -14,18 +14,18 @@ namespace Erc1.Classes
     {
 
 
-        // get centers id (column name ="الرمز")
-        public static IEnumerable Get_Center()
-        {
-            using (var entity = new ERCEntities())
-            {
-                var c = entity.المراكز.Select(r =>new { r.الرمز });
-                return c.ToList();
-            }
-        }
+        //// get المراكز id (column name ="الرمز")
+        //public static IEnumerable Get_CentersId()
+        //{
+        //    using (var entity = new ERCEntities())
+        //    {
+        //        var c = entity.المراكز.Select(r =>new { r.الرمز });
+        //        return c.ToList();
+        //    }
+        //}
 
 
-        // get الحالات names english (column name ="المرض بالانجليزي")
+        // get الحالات names english (column names ="المرض بالانجليزي","رمز")
         public static IEnumerable Get_الحالات()
         {
             using (ERCEntities entity = new ERCEntities())
@@ -42,20 +42,21 @@ namespace Erc1.Classes
             };
         }
 
-        // get الحالات english_names by idنوعية_الحالة (column name ="المرض بالانجليزي")
+        // get الحالات english_names by idنوعية_الحالة (column name ="المرض")
         public static IEnumerable Get_الحالات_by_idنوعية_الحالة(int id_type_of_disease)
         {
             using (var entity = new ERCEntities())
             {
                 var c = entity.الحالات
                     .Where(r=>r.رمز_النوعية== id_type_of_disease)
-                    .Select(r => new { r.المرض_بالانجليزي });
+                    .Select(r => new { r.رمز,
+                        المرض= r.المرض_بالانجليزي +" - "+r.المرض });
                 return c.ToList();
             }
         }
 
 
-        // get نوعيات الحالات (column name ="النوعية")
+        // get نوعيات الحالات (column name ="النوعية","الرمز")
         public static IEnumerable Get_نوعيات_الحالات()
         {
             using (var entity = new ERCEntities())
@@ -66,30 +67,59 @@ namespace Erc1.Classes
         }
 
 
-
-
-
-
-
-        // city name of center
-        public static IEnumerable Get_Center_City()
+        // get العاملون names (column names ="الاسم","الرمز")
+        public static IEnumerable Get_العاملون()
         {
             using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
-                from centers in entity.المراكز
-                join city in entity.المدن 
-                on centers.المدينة equals city. رمز
+                from staff in entity.العاملون
                 select new
                 {
-                    centers = centers.الرمز,
-                    city = city.المدينة
+                    staff.الرمز,
+                    staff.الاسم
                 }
                     ); ;
                 return c.ToList();
             };
         }
 
+
+        // get العاملون names by المراكز(column names ="الاسم","الرمز")
+        public static IEnumerable Get_العاملون_by_idالمراكز(int center_id)
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from staff in entity.العاملون.
+                Where(r => r.المركز == center_id)
+                select new
+                {
+                    staff.الرمز,
+                    staff.الاسم
+                }
+                    ); ;
+                return c.ToList();
+            };
+        }
+
+
+        //get all centers (column names ="centers","id")
+        public static IEnumerable Get_Centers()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = from centers in entity.المراكز
+                        where centers.المدن.رمز == centers.المدينة
+                        select new
+                        {
+                            centers = centers.الرمز + " - " + centers.المدن.المدينة,
+                            id = centers.الرمز
+                        };
+                    
+                return c.ToList();
+            };
+        }
 
 
         // cars of a center by id 

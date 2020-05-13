@@ -46,6 +46,7 @@ namespace Erc1.Forms
                 case Forms.MissionType.Implemented:
                     {
                         pI = new ParamInformation();
+                        pI.Name = "pi";
                         paI = new PatientInformation();
                         pI.TopLevel = false;
                         pI.Dock = DockStyle.Fill;
@@ -135,11 +136,17 @@ namespace Erc1.Forms
         bool isFilled =false;
         private void AddMission_Load(object sender, EventArgs e)
         {
-            var centers = Classes.mission.Get_Center_City();
+
+            var centers = Classes.mission.Get_Centers();
+
+            //var b = new BindingSource();
+            //b.DataSource = centers;
             
             comboBox1.DataSource = centers;
-            comboBox1.DisplayMember = "city";
-            comboBox1.ValueMember = "centers";
+            comboBox1.DisplayMember = "centers";
+            comboBox1.ValueMember = "id";
+           // MessageBox.Show(comboBox1.SelectedValue.ToString());
+            comboBox1.Invalidate();
             dataGridView1.DataSource = centers;
             if (!isFilled)
             {
@@ -154,17 +161,38 @@ namespace Erc1.Forms
             comboBox4.Items.Add(DateTime.Now.Day);
             comboBox4.SelectedIndex = 0;
 
-            var disease = Classes.mission.Get_الحالات();
+
+            var disease_type = Classes.mission.Get_نوعيات_الحالات();
+            comboBox6.DataSource = disease_type;
+            comboBox6.ValueMember = "الرمز";
+            comboBox6.DisplayMember = "النوعية";
+            comboBox6.SelectedIndexChanged += ComboBox6_SelectedIndexChanged;
+
+
+
+        }
+
+        private void ComboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            var disease = Classes.mission.Get_الحالات_by_idنوعية_الحالة(int.Parse(comboBox6.SelectedValue.ToString()));
             comboBox5.DataSource = disease;
             comboBox5.ValueMember = "رمز";
-            comboBox5.DisplayMember = "المرض_بالانجليزي";
+            comboBox5.DisplayMember = "المرض";
         }
-        
+
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
             var cars = Classes.Mission.Getالآليات(int.Parse(comboBox1.SelectedValue.ToString()));
             comboBox12.DataSource = cars;
             comboBox12.DisplayMember = "cars";
+
+            var staff = Classes.mission.Get_العاملون_by_idالمراكز(int.Parse(comboBox1.SelectedValue.ToString()));
+            ComboBox _c20 = (ComboBox)(tableLayoutPanel20.Controls.Find("pi",true)[0].Controls.Find("tpi1",true)[0].Controls.Find("tpi5",true)[0].Controls.Find("Name_HeadOfShift", true))[0];
+            _c20.DataSource = staff;
+            _c20.ValueMember = "الرمز";
+            _c20.DisplayMember = "الاسم";
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

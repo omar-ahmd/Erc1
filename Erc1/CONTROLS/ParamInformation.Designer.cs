@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tpi1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.Name_HeadOfMission = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
@@ -56,13 +56,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.ID_RecipientOfMission = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Name_HeadOfShift = new System.Windows.Forms.ComboBox();
-            this.ID_HeadOfShift = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Name_Paramedic1 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -83,7 +76,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.Notes = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.ID_HeadOfShift = new System.Windows.Forms.TextBox();
+            this.Name_HeadOfShift = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tpi5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tpi1.SuspendLayout();
             this.tableLayoutPanel20.SuspendLayout();
             this.tableLayoutPanel21.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -100,10 +100,6 @@
             this.tableLayoutPanel9.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -116,43 +112,46 @@
             this.tableLayoutPanel11.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tpi5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tpi1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.5F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel20, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel18, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel14, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel8, 3, 7);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 3, 5);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel10, 1, 5);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 9;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(948, 540);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tpi1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.tpi1.ColumnCount = 5;
+            this.tpi1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.5F));
+            this.tpi1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tpi1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tpi1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tpi1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.5F));
+            this.tpi1.Controls.Add(this.tableLayoutPanel20, 1, 1);
+            this.tpi1.Controls.Add(this.tableLayoutPanel18, 1, 3);
+            this.tpi1.Controls.Add(this.tableLayoutPanel14, 1, 7);
+            this.tpi1.Controls.Add(this.tableLayoutPanel8, 3, 7);
+            this.tpi1.Controls.Add(this.tpi5, 3, 1);
+            this.tpi1.Controls.Add(this.tableLayoutPanel2, 3, 3);
+            this.tpi1.Controls.Add(this.tableLayoutPanel6, 3, 5);
+            this.tpi1.Controls.Add(this.tableLayoutPanel10, 1, 5);
+            this.tpi1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tpi1.Location = new System.Drawing.Point(0, 0);
+            this.tpi1.Margin = new System.Windows.Forms.Padding(0);
+            this.tpi1.Name = "tpi1";
+            this.tpi1.RowCount = 9;
+            this.tpi1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11F));
+            this.tpi1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tpi1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
+            this.tpi1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tpi1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
+            this.tpi1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tpi1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
+            this.tpi1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tpi1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11F));
+            this.tpi1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tpi1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tpi1.Size = new System.Drawing.Size(948, 540);
+            this.tpi1.TabIndex = 1;
             // 
             // tableLayoutPanel20
             // 
@@ -178,7 +177,7 @@
             // 
             this.Name_HeadOfMission.BackColor = System.Drawing.SystemColors.Control;
             this.Name_HeadOfMission.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Name_HeadOfMission.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name_HeadOfMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name_HeadOfMission.FormattingEnabled = true;
             this.Name_HeadOfMission.Items.AddRange(new object[] {
             "100-طرابلس",
@@ -189,7 +188,7 @@
             this.Name_HeadOfMission.Margin = new System.Windows.Forms.Padding(0);
             this.Name_HeadOfMission.Name = "Name_HeadOfMission";
             this.Name_HeadOfMission.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Name_HeadOfMission.Size = new System.Drawing.Size(284, 35);
+            this.Name_HeadOfMission.Size = new System.Drawing.Size(284, 37);
             this.Name_HeadOfMission.Sorted = true;
             this.Name_HeadOfMission.TabIndex = 11;
             // 
@@ -224,13 +223,13 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
             this.label10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label10.Font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.label10.Location = new System.Drawing.Point(-21, 0);
+            this.label10.Location = new System.Drawing.Point(7, 0);
             this.label10.Name = "label10";
             this.label10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label10.Size = new System.Drawing.Size(116, 19);
+            this.label10.Size = new System.Drawing.Size(88, 20);
             this.label10.TabIndex = 1;
             this.label10.Text = "مسؤول المهمة";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -255,13 +254,13 @@
             this.ID_HeadOfMission.BackColor = System.Drawing.SystemColors.Control;
             this.ID_HeadOfMission.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ID_HeadOfMission.Enabled = false;
-            this.ID_HeadOfMission.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
+            this.ID_HeadOfMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
             this.ID_HeadOfMission.Location = new System.Drawing.Point(284, 28);
             this.ID_HeadOfMission.Margin = new System.Windows.Forms.Padding(0);
             this.ID_HeadOfMission.Name = "ID_HeadOfMission";
             this.ID_HeadOfMission.ReadOnly = true;
             this.ID_HeadOfMission.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ID_HeadOfMission.Size = new System.Drawing.Size(95, 36);
+            this.ID_HeadOfMission.Size = new System.Drawing.Size(95, 34);
             this.ID_HeadOfMission.TabIndex = 6;
             this.ID_HeadOfMission.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ID_HeadOfMission.WordWrap = false;
@@ -290,7 +289,7 @@
             // 
             this.Name_Paramedic2.BackColor = System.Drawing.SystemColors.Control;
             this.Name_Paramedic2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Name_Paramedic2.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name_Paramedic2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name_Paramedic2.FormattingEnabled = true;
             this.Name_Paramedic2.Items.AddRange(new object[] {
             "100-طرابلس",
@@ -301,7 +300,7 @@
             this.Name_Paramedic2.Margin = new System.Windows.Forms.Padding(0);
             this.Name_Paramedic2.Name = "Name_Paramedic2";
             this.Name_Paramedic2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Name_Paramedic2.Size = new System.Drawing.Size(284, 35);
+            this.Name_Paramedic2.Size = new System.Drawing.Size(284, 37);
             this.Name_Paramedic2.Sorted = true;
             this.Name_Paramedic2.TabIndex = 10;
             // 
@@ -336,13 +335,13 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
             this.label9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label9.Font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.label9.Location = new System.Drawing.Point(21, 0);
+            this.label9.Location = new System.Drawing.Point(36, 0);
             this.label9.Name = "label9";
             this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label9.Size = new System.Drawing.Size(74, 19);
+            this.label9.Size = new System.Drawing.Size(59, 20);
             this.label9.TabIndex = 1;
             this.label9.Text = "مسعف 2";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -367,13 +366,13 @@
             this.ID_Paramedic2.BackColor = System.Drawing.SystemColors.Control;
             this.ID_Paramedic2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ID_Paramedic2.Enabled = false;
-            this.ID_Paramedic2.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
+            this.ID_Paramedic2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
             this.ID_Paramedic2.Location = new System.Drawing.Point(284, 28);
             this.ID_Paramedic2.Margin = new System.Windows.Forms.Padding(0);
             this.ID_Paramedic2.Name = "ID_Paramedic2";
             this.ID_Paramedic2.ReadOnly = true;
             this.ID_Paramedic2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ID_Paramedic2.Size = new System.Drawing.Size(95, 36);
+            this.ID_Paramedic2.Size = new System.Drawing.Size(95, 34);
             this.ID_Paramedic2.TabIndex = 6;
             this.ID_Paramedic2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ID_Paramedic2.WordWrap = false;
@@ -430,13 +429,13 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
             this.label7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label7.Font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.label7.Location = new System.Drawing.Point(24, 0);
+            this.label7.Location = new System.Drawing.Point(33, 0);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label7.Size = new System.Drawing.Size(70, 19);
+            this.label7.Size = new System.Drawing.Size(61, 20);
             this.label7.TabIndex = 1;
             this.label7.Text = "ملاحظات";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -461,13 +460,13 @@
             this.textBox7.BackColor = System.Drawing.SystemColors.Control;
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox7.Enabled = false;
-            this.textBox7.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
             this.textBox7.Location = new System.Drawing.Point(0, 28);
             this.textBox7.Margin = new System.Windows.Forms.Padding(0);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
             this.textBox7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox7.Size = new System.Drawing.Size(379, 36);
+            this.textBox7.Size = new System.Drawing.Size(379, 34);
             this.textBox7.TabIndex = 6;
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox7.WordWrap = false;
@@ -496,7 +495,7 @@
             // 
             this.Name_RecipientOfMission.BackColor = System.Drawing.SystemColors.Control;
             this.Name_RecipientOfMission.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Name_RecipientOfMission.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name_RecipientOfMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name_RecipientOfMission.FormattingEnabled = true;
             this.Name_RecipientOfMission.Items.AddRange(new object[] {
             "100-طرابلس",
@@ -507,7 +506,7 @@
             this.Name_RecipientOfMission.Margin = new System.Windows.Forms.Padding(0);
             this.Name_RecipientOfMission.Name = "Name_RecipientOfMission";
             this.Name_RecipientOfMission.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Name_RecipientOfMission.Size = new System.Drawing.Size(284, 35);
+            this.Name_RecipientOfMission.Size = new System.Drawing.Size(284, 37);
             this.Name_RecipientOfMission.Sorted = true;
             this.Name_RecipientOfMission.TabIndex = 9;
             // 
@@ -542,13 +541,13 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
             this.label4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label4.Font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.label4.Location = new System.Drawing.Point(-17, 0);
+            this.label4.Location = new System.Drawing.Point(17, 0);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label4.Size = new System.Drawing.Size(112, 19);
+            this.label4.Size = new System.Drawing.Size(78, 20);
             this.label4.TabIndex = 1;
             this.label4.Text = "متلقي المهمة";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -573,130 +572,16 @@
             this.ID_RecipientOfMission.BackColor = System.Drawing.SystemColors.Control;
             this.ID_RecipientOfMission.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ID_RecipientOfMission.Enabled = false;
-            this.ID_RecipientOfMission.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
+            this.ID_RecipientOfMission.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
             this.ID_RecipientOfMission.Location = new System.Drawing.Point(284, 28);
             this.ID_RecipientOfMission.Margin = new System.Windows.Forms.Padding(0);
             this.ID_RecipientOfMission.Name = "ID_RecipientOfMission";
             this.ID_RecipientOfMission.ReadOnly = true;
             this.ID_RecipientOfMission.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ID_RecipientOfMission.Size = new System.Drawing.Size(95, 36);
+            this.ID_RecipientOfMission.Size = new System.Drawing.Size(95, 34);
             this.ID_RecipientOfMission.TabIndex = 6;
             this.ID_RecipientOfMission.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ID_RecipientOfMission.WordWrap = false;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel4, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.Name_HeadOfShift, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.ID_HeadOfShift, 1, 1);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(497, 59);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 3;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(379, 81);
-            this.tableLayoutPanel5.TabIndex = 1;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(284, 0);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(95, 28);
-            this.tableLayoutPanel4.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(95, 28);
-            this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
-            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label1.Font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.label1.Location = new System.Drawing.Point(-14, 0);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(109, 19);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "مسؤول الدوام";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Erc1.Properties.Resources.Untitled_11;
-            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(95, 28);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // Name_HeadOfShift
-            // 
-            this.Name_HeadOfShift.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.Name_HeadOfShift.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.Name_HeadOfShift.BackColor = System.Drawing.SystemColors.Control;
-            this.Name_HeadOfShift.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Name_HeadOfShift.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name_HeadOfShift.FormattingEnabled = true;
-            this.Name_HeadOfShift.Items.AddRange(new object[] {
-            "100-طرابلس",
-            "200-ضنية",
-            "300",
-            "400-قلمون"});
-            this.Name_HeadOfShift.Location = new System.Drawing.Point(0, 28);
-            this.Name_HeadOfShift.Margin = new System.Windows.Forms.Padding(0);
-            this.Name_HeadOfShift.Name = "Name_HeadOfShift";
-            this.Name_HeadOfShift.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Name_HeadOfShift.Size = new System.Drawing.Size(284, 35);
-            this.Name_HeadOfShift.Sorted = true;
-            this.Name_HeadOfShift.TabIndex = 5;
-            // 
-            // ID_HeadOfShift
-            // 
-            this.ID_HeadOfShift.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ID_HeadOfShift.BackColor = System.Drawing.SystemColors.Control;
-            this.ID_HeadOfShift.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ID_HeadOfShift.Enabled = false;
-            this.ID_HeadOfShift.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
-            this.ID_HeadOfShift.Location = new System.Drawing.Point(284, 28);
-            this.ID_HeadOfShift.Margin = new System.Windows.Forms.Padding(0);
-            this.ID_HeadOfShift.Name = "ID_HeadOfShift";
-            this.ID_HeadOfShift.ReadOnly = true;
-            this.ID_HeadOfShift.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ID_HeadOfShift.Size = new System.Drawing.Size(95, 36);
-            this.ID_HeadOfShift.TabIndex = 6;
-            this.ID_HeadOfShift.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ID_HeadOfShift.WordWrap = false;
             // 
             // tableLayoutPanel2
             // 
@@ -722,7 +607,7 @@
             // 
             this.Name_Paramedic1.BackColor = System.Drawing.SystemColors.Control;
             this.Name_Paramedic1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Name_Paramedic1.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name_Paramedic1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name_Paramedic1.FormattingEnabled = true;
             this.Name_Paramedic1.Items.AddRange(new object[] {
             "100-طرابلس",
@@ -733,7 +618,7 @@
             this.Name_Paramedic1.Margin = new System.Windows.Forms.Padding(0);
             this.Name_Paramedic1.Name = "Name_Paramedic1";
             this.Name_Paramedic1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Name_Paramedic1.Size = new System.Drawing.Size(284, 35);
+            this.Name_Paramedic1.Size = new System.Drawing.Size(284, 37);
             this.Name_Paramedic1.Sorted = true;
             this.Name_Paramedic1.TabIndex = 7;
             // 
@@ -768,13 +653,13 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
             this.label2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label2.Font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.label2.Location = new System.Drawing.Point(20, 0);
+            this.label2.Location = new System.Drawing.Point(36, 0);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(75, 19);
+            this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "مسعف 1";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -799,13 +684,13 @@
             this.ID_Paramedic1.BackColor = System.Drawing.SystemColors.Control;
             this.ID_Paramedic1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ID_Paramedic1.Enabled = false;
-            this.ID_Paramedic1.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
+            this.ID_Paramedic1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
             this.ID_Paramedic1.Location = new System.Drawing.Point(284, 28);
             this.ID_Paramedic1.Margin = new System.Windows.Forms.Padding(0);
             this.ID_Paramedic1.Name = "ID_Paramedic1";
             this.ID_Paramedic1.ReadOnly = true;
             this.ID_Paramedic1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ID_Paramedic1.Size = new System.Drawing.Size(95, 36);
+            this.ID_Paramedic1.Size = new System.Drawing.Size(95, 34);
             this.ID_Paramedic1.TabIndex = 6;
             this.ID_Paramedic1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ID_Paramedic1.WordWrap = false;
@@ -834,7 +719,7 @@
             // 
             this.Name_Driver.BackColor = System.Drawing.SystemColors.Control;
             this.Name_Driver.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Name_Driver.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name_Driver.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name_Driver.FormattingEnabled = true;
             this.Name_Driver.Items.AddRange(new object[] {
             "100-طرابلس",
@@ -845,7 +730,7 @@
             this.Name_Driver.Margin = new System.Windows.Forms.Padding(0);
             this.Name_Driver.Name = "Name_Driver";
             this.Name_Driver.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Name_Driver.Size = new System.Drawing.Size(284, 35);
+            this.Name_Driver.Size = new System.Drawing.Size(284, 37);
             this.Name_Driver.Sorted = true;
             this.Name_Driver.TabIndex = 8;
             // 
@@ -880,13 +765,13 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
             this.label3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label3.Font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.label3.Location = new System.Drawing.Point(46, 0);
+            this.label3.Location = new System.Drawing.Point(59, 0);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(49, 19);
+            this.label3.Size = new System.Drawing.Size(36, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "سائق";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -911,13 +796,13 @@
             this.ID_Driver.BackColor = System.Drawing.SystemColors.Control;
             this.ID_Driver.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ID_Driver.Enabled = false;
-            this.ID_Driver.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
+            this.ID_Driver.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
             this.ID_Driver.Location = new System.Drawing.Point(284, 28);
             this.ID_Driver.Margin = new System.Windows.Forms.Padding(0);
             this.ID_Driver.Name = "ID_Driver";
             this.ID_Driver.ReadOnly = true;
             this.ID_Driver.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ID_Driver.Size = new System.Drawing.Size(95, 36);
+            this.ID_Driver.Size = new System.Drawing.Size(95, 34);
             this.ID_Driver.TabIndex = 6;
             this.ID_Driver.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ID_Driver.WordWrap = false;
@@ -974,13 +859,13 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
             this.label5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label5.Font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.label5.Location = new System.Drawing.Point(24, 0);
+            this.label5.Location = new System.Drawing.Point(33, 0);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label5.Size = new System.Drawing.Size(70, 19);
+            this.label5.Size = new System.Drawing.Size(61, 20);
             this.label5.TabIndex = 1;
             this.label5.Text = "ملاحظات";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1005,27 +890,139 @@
             this.Notes.BackColor = System.Drawing.SystemColors.Control;
             this.Notes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Notes.Enabled = false;
-            this.Notes.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
+            this.Notes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
             this.Notes.Location = new System.Drawing.Point(0, 28);
             this.Notes.Margin = new System.Windows.Forms.Padding(0);
             this.Notes.Name = "Notes";
             this.Notes.ReadOnly = true;
             this.Notes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Notes.Size = new System.Drawing.Size(379, 36);
+            this.Notes.Size = new System.Drawing.Size(379, 34);
             this.Notes.TabIndex = 6;
             this.Notes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Notes.WordWrap = false;
+            // 
+            // ID_HeadOfShift
+            // 
+            this.ID_HeadOfShift.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ID_HeadOfShift.BackColor = System.Drawing.SystemColors.Control;
+            this.ID_HeadOfShift.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ID_HeadOfShift.Enabled = false;
+            this.ID_HeadOfShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.ID_HeadOfShift.Location = new System.Drawing.Point(284, 28);
+            this.ID_HeadOfShift.Margin = new System.Windows.Forms.Padding(0);
+            this.ID_HeadOfShift.Name = "ID_HeadOfShift";
+            this.ID_HeadOfShift.ReadOnly = true;
+            this.ID_HeadOfShift.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ID_HeadOfShift.Size = new System.Drawing.Size(95, 34);
+            this.ID_HeadOfShift.TabIndex = 6;
+            this.ID_HeadOfShift.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ID_HeadOfShift.WordWrap = false;
+            // 
+            // Name_HeadOfShift
+            // 
+            this.Name_HeadOfShift.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Name_HeadOfShift.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Name_HeadOfShift.BackColor = System.Drawing.SystemColors.Control;
+            this.Name_HeadOfShift.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Name_HeadOfShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name_HeadOfShift.FormattingEnabled = true;
+            this.Name_HeadOfShift.Items.AddRange(new object[] {
+            "100-طرابلس",
+            "200-ضنية",
+            "300",
+            "400-قلمون"});
+            this.Name_HeadOfShift.Location = new System.Drawing.Point(0, 28);
+            this.Name_HeadOfShift.Margin = new System.Windows.Forms.Padding(0);
+            this.Name_HeadOfShift.Name = "Name_HeadOfShift";
+            this.Name_HeadOfShift.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Name_HeadOfShift.Size = new System.Drawing.Size(284, 37);
+            this.Name_HeadOfShift.Sorted = true;
+            this.Name_HeadOfShift.TabIndex = 5;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(284, 0);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(95, 28);
+            this.tableLayoutPanel4.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(95, 28);
+            this.panel1.TabIndex = 0;
+            // 
+            // tpi5
+            // 
+            this.tpi5.BackColor = System.Drawing.Color.Transparent;
+            this.tpi5.ColumnCount = 2;
+            this.tpi5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tpi5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tpi5.Controls.Add(this.tableLayoutPanel4, 1, 0);
+            this.tpi5.Controls.Add(this.Name_HeadOfShift, 0, 1);
+            this.tpi5.Controls.Add(this.ID_HeadOfShift, 1, 1);
+            this.tpi5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tpi5.Location = new System.Drawing.Point(497, 59);
+            this.tpi5.Margin = new System.Windows.Forms.Padding(0);
+            this.tpi5.Name = "tpi5";
+            this.tpi5.RowCount = 3;
+            this.tpi5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tpi5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tpi5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tpi5.Size = new System.Drawing.Size(379, 81);
+            this.tpi5.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
+            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.label1.Location = new System.Drawing.Point(11, 0);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(84, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "مسؤول الدوام";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 27);
+            this.button1.TabIndex = 2;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // ParamInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 540);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tpi1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ParamInformation";
             this.Text = "ParamInformation";
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tpi1.ResumeLayout(false);
             this.tableLayoutPanel20.ResumeLayout(false);
             this.tableLayoutPanel20.PerformLayout();
             this.tableLayoutPanel21.ResumeLayout(false);
@@ -1050,12 +1047,6 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1074,13 +1065,18 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tpi5.ResumeLayout(false);
+            this.tpi5.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        public System.Windows.Forms.TableLayoutPanel tpi1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
         private System.Windows.Forms.Panel panel10;
@@ -1105,13 +1101,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.TextBox ID_RecipientOfMission;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox Name_HeadOfShift;
-        private System.Windows.Forms.TextBox ID_HeadOfShift;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Panel panel2;
@@ -1135,5 +1124,12 @@
         private System.Windows.Forms.ComboBox Name_RecipientOfMission;
         private System.Windows.Forms.ComboBox Name_Paramedic1;
         private System.Windows.Forms.ComboBox Name_Driver;
+        private System.Windows.Forms.TableLayoutPanel tpi5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox Name_HeadOfShift;
+        private System.Windows.Forms.TextBox ID_HeadOfShift;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
