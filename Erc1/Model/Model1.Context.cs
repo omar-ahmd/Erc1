@@ -31,6 +31,7 @@ namespace Erc1.model
         public virtual DbSet<أقسام_المستشفيات> أقسام_المستشفيات { get; set; }
         public virtual DbSet<الأطباء> الأطباء { get; set; }
         public virtual DbSet<الآليات> الآليات { get; set; }
+        public virtual DbSet<الأمراض_المزمنة> الأمراض_المزمنة { get; set; }
         public virtual DbSet<الأمراض_المعدية> الأمراض_المعدية { get; set; }
         public virtual DbSet<الجهات_الضامنة> الجهات_الضامنة { get; set; }
         public virtual DbSet<الحالات> الحالات { get; set; }
@@ -49,11 +50,6 @@ namespace Erc1.model
         public virtual DbSet<طبيعة_المهمة> طبيعة_المهمة { get; set; }
         public virtual DbSet<فئة_الدم> فئة_الدم { get; set; }
         public virtual DbSet<نوعيات_الحالات> نوعيات_الحالات { get; set; }
-    
-        public virtual ObjectResult<Getالمراكز_Result> Getالمراكز()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Getالمراكز_Result>("Getالمراكز");
-        }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

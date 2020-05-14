@@ -84,9 +84,13 @@ namespace Erc1.Forms
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.MissionType = new System.Windows.Forms.TableLayoutPanel();
+            this.labelBord3 = new Erc1.CONTROLS.LabelBord();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.labelBord1 = new Erc1.CONTROLS.LabelBord();
+            this.labelBord2 = new Erc1.CONTROLS.LabelBord();
+            this.labelBord4 = new Erc1.CONTROLS.LabelBord();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
@@ -96,10 +100,6 @@ namespace Erc1.Forms
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.labelBord3 = new Erc1.CONTROLS.LabelBord();
-            this.labelBord1 = new Erc1.CONTROLS.LabelBord();
-            this.labelBord2 = new Erc1.CONTROLS.LabelBord();
-            this.labelBord4 = new Erc1.CONTROLS.LabelBord();
             dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -573,6 +573,15 @@ namespace Erc1.Forms
             this.MissionType.Controls.Add(this.labelBord4, 3, 2);
             this.MissionType.Name = "MissionType";
             // 
+            // labelBord3
+            // 
+            this.labelBord3.Check = false;
+            resources.ApplyResources(this.labelBord3, "labelBord3");
+            this.labelBord3.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBord3.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this.labelBord3.Name = "labelBord3";
+            this.labelBord3.text = "مهمة باردة";
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
@@ -594,6 +603,33 @@ namespace Erc1.Forms
             this.pictureBox5.Image = global::Erc1.Properties.Resources.Untitled_11;
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.TabStop = false;
+            // 
+            // labelBord1
+            // 
+            this.labelBord1.Check = false;
+            resources.ApplyResources(this.labelBord1, "labelBord1");
+            this.labelBord1.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBord1.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this.labelBord1.Name = "labelBord1";
+            this.labelBord1.text = "حريق";
+            // 
+            // labelBord2
+            // 
+            this.labelBord2.Check = false;
+            resources.ApplyResources(this.labelBord2, "labelBord2");
+            this.labelBord2.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBord2.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this.labelBord2.Name = "labelBord2";
+            this.labelBord2.text = "مهمة طارئة";
+            // 
+            // labelBord4
+            // 
+            this.labelBord4.Check = false;
+            resources.ApplyResources(this.labelBord4, "labelBord4");
+            this.labelBord4.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBord4.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this.labelBord4.Name = "labelBord4";
+            this.labelBord4.text = "تغطية نشاط";
             // 
             // tableLayoutPanel19
             // 
@@ -657,42 +693,6 @@ namespace Erc1.Forms
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            // 
-            // labelBord3
-            // 
-            this.labelBord3.Check = false;
-            resources.ApplyResources(this.labelBord3, "labelBord3");
-            this.labelBord3.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBord3.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
-            this.labelBord3.Name = "labelBord3";
-            this.labelBord3.text = "مهمة باردة";
-            // 
-            // labelBord1
-            // 
-            this.labelBord1.Check = false;
-            resources.ApplyResources(this.labelBord1, "labelBord1");
-            this.labelBord1.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBord1.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
-            this.labelBord1.Name = "labelBord1";
-            this.labelBord1.text = "حريق";
-            // 
-            // labelBord2
-            // 
-            this.labelBord2.Check = false;
-            resources.ApplyResources(this.labelBord2, "labelBord2");
-            this.labelBord2.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBord2.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
-            this.labelBord2.Name = "labelBord2";
-            this.labelBord2.text = "مهمة طارئة";
-            // 
-            // labelBord4
-            // 
-            this.labelBord4.Check = false;
-            resources.ApplyResources(this.labelBord4, "labelBord4");
-            this.labelBord4.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBord4.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
-            this.labelBord4.Name = "labelBord4";
-            this.labelBord4.text = "تغطية نشاط";
             // 
             // AddMission
             // 

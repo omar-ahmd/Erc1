@@ -25,6 +25,62 @@ namespace Erc1.Classes
         //}
 
 
+        //get all centers (column names ="centers","id")
+        public static IEnumerable Get_Centers()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = from centers in entity.المراكز
+                        where centers.المدن.رمز == centers.المدينة
+                        select new
+                        {
+                            centers = centers.الرمز + " - " + centers.المدن.المدينة,
+                            id = centers.الرمز
+                        };
+
+                return c.ToList();
+            };
+        }
+
+
+
+        // cars of a center by id column name("cars")
+        public static IEnumerable Getالآليات()
+        {
+
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from cars in entity.الآليات
+                select new
+                {
+                    cars = cars.رمز_الآلية
+                }
+                    ); ;
+                return c.ToList();
+            };
+
+        }
+
+        // cars of a center by id column name("cars")
+        public static IEnumerable Getالآليات_by_المركز(int marakez)
+        {
+
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from cars in entity.الآليات
+                where cars.المركز == marakez
+                select new
+                {
+                    cars = cars.رمز_الآلية
+                }
+                    ); ;
+                return c.ToList();
+            };
+
+        }
+
         // get الحالات names (column names ="المرض","رمز")
         public static IEnumerable Get_الحالات()
         {
@@ -67,6 +123,20 @@ namespace Erc1.Classes
         }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // get العاملون names (column names ="الاسم","الرمز")
         public static IEnumerable Get_العاملون()
         {
@@ -104,47 +174,213 @@ namespace Erc1.Classes
         }
 
 
-        //get all centers (column names ="centers","id")
-        public static IEnumerable Get_Centers()
+
+
+        // get المسعفون names by المراكز(column names ="الاسم","الرمز")
+        public static IEnumerable Get_المسعفون_by_idالمراكز(int center_id)
         {
-            using (ERCEntities entity = new ERCEntities())
-            {
-                var c = from centers in entity.المراكز
-                        where centers.المدن.رمز == centers.المدينة
-                        select new
-                        {
-                            centers = centers.الرمز + " - " + centers.المدن.المدينة,
-                            id = centers.الرمز
-                        };
-                    
-                return c.ToList();
-            };
-        }
-
-
-        // cars of a center by id 
-        public static IEnumerable Getالآليات(int marakez)
-        {
-
             using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
-                from cars in entity.الآليات
-                where cars.المركز == marakez
+                from staff in entity.العاملون.
+                Where(r => (r.المركز == center_id && r.الوظيفة1.الوظيفة1=="مسعف" && r.مسعف_أو_مساعد==true))
                 select new
                 {
-                    cars = cars.موديل_
+                    staff.الرمز,
+                    staff.الاسم
                 }
                     ); ;
                 return c.ToList();
             };
-
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // get المرضى names(column names ="اسم","الرمز")
+        public static IEnumerable Get_المرضى()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from p in entity.المرضى
+                select new
+                {
+                   p.الرمز,
+                   p.اسم
+                }
+                    ); ;
+                return c.ToList();
+            };
+        }
+
+
+        // get المرضى id from name
+        public static string Get_المرضى_DATALAYER(string name)
+        {
+            DataLayer dt;
+            dt = new DataLayer(@"QSC-2019\SQLEXPRESS", "ERC");
+            string c=dt.GetValue("select الرمز from المرضى where اسم = '" + 
+                name + "'").ToString();
+            return c;
+        }
+
+
+        // get المدن names(column names ="المدينة","رمز")
+        public static IEnumerable Get_المدن()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from p in entity.المدن
+                select new
+                {
+                    p.رمز,
+                    p.المدينة
+                }
+                    ); ;
+                return c.ToList();
+            };
+        }
+
+        public static DataTable Get_المدن_DATALAYER()
+        {
+            DataLayer dt;
+            DataTable city;
+            dt = new DataLayer(@"QSC-2019\SQLEXPRESS", "ERC");
+             city = dt.GetData("select * from المدن","city");
+            return city;
+        }
+
+        public static DataTable Get_المناطق_DATALAYER(int city_key)
+        {
+            DataLayer dt;
+            DataTable region;
+            dt = new DataLayer(@"QSC-2019\SQLEXPRESS", "ERC");
+            region = dt.GetData("select رمز,المنطقة from المناطق where المدينة='"+
+                city_key.ToString()+"'", "region");
+            return region;
+        }
+
+        // get المستشفيات(column names ="اسم","الرمز")
+        public static IEnumerable Get_المستشفيات()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from h in entity.المستشفيات
+                select new
+                {
+                    h.رمز_المستشفى,
+                    h.اسم_المستشفى
+                }
+                    ); ;
+                return c.ToList();
+            };
+        }
+
+
+        // get طوابق المستشفيات (column names ="عدد_الطوابق","الرمز")
+        public static IEnumerable Get_طوابق_المستشفيات(int hospital_key)
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from h in entity.المستشفيات
+                where h.رمز_المستشفى == hospital_key
+                select new
+                {
+                    h.رمز_المستشفى,
+                    h.عدد_الطوابق
+                }
+                    ); ;
+                return c.ToList();
+            };
+        }
+
+
+
+        //// get أقسام المستشفيات (column names ="sections_id","sections_name")
+        //public static IEnumerable Get_أقسام_المستشفيات(int hospital_key)
+        //{
+        //    using (ERCEntities entity = new ERCEntities())
+        //    {
+        //        var c = (
+        //     from h_s in entity.المستشفيات_مع_اقسام
+        //     from s in entity.أقسام_المستشفيات
+        //     where h_s.رمز_المشفى == hospital_key && h_s.رمز_القسم==s.الرمز
+        //     select new
+        //     { 
+        //         sections_id =s.الرمز,
+        //         sections_name = s.اسم_القسم
+        //     }) ;
+        //        return c.ToList();
+        //    }
+        //}
+
+
+
+        // get أقسام المستشفيات (column names ="sections_id","sections_name")
+        public static IEnumerable Get_أقسام_المستشفيات(int hospital_key)
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+             from h_s in entity.المستشفيات_مع_اقسام
+             where h_s.رمز_المشفى == hospital_key && h_s.رمز_القسم == h_s.أقسام_المستشفيات.الرمز
+             select new
+             {
+                 sections_id = h_s.أقسام_المستشفيات.الرمز,
+                 sections_name = h_s.أقسام_المستشفيات.اسم_القسم
+             });
+                return c.ToList();
+            }
+        }
+
+        public static DataTable Get_أقسام_المستشفيات_Datalayer(int hospital_key)
+        {
+            DataLayer dt;
+            DataTable sections;
+            dt = new DataLayer(@"QSC-2019\SQLEXPRESS", "ERC");
+            sections = dt.GetData(@"select kesem.[الرمز] , kesem.[اسم القسم] 
+                    from[أقسام المستشفيات] as kesem
+                    join[المستشفيات مع اقسام] as hk
+                    on kesem.[الرمز] = hk.[رمز القسم]
+                    join[المستشفيات] as hospital
+                    on hk.[رمز المشفى] = hospital.[رمز المستشفى]
+                    where hospital.[رمز المستشفى] ="+hospital_key,"sections");
+            return sections;
+        }
+
+
+
+
+
+
+
+
+
+    
 
         // add mission
         public static void AddMission(int الرمز_الشهري, DateTime التاريخ, int الآلية, int المريض, Nullable<int> من_مشفى, Nullable<int> من_القسم, Nullable<int> الطبيب_المعالج,
              Nullable<int> الجهة_الضامنة, Nullable<int> إلى_مشفى, Nullable<int> إلى_القسم, int مسؤول_المهمة, int مسعف_1, int مسعف_2,
-            int السائق, Nullable<int> المتصل, string الهاتف, Nullable<int> متلقي_المهمة, int رمز_الحالة, string رمز_السنوي,
+            int السائق, int الهاتف, Nullable<int> متلقي_المهمة, int رمز_الحالة, int رمز_السنوي,
             int السنة, string تفاصيل_ال_من, string تفاصيل_ال_الى, Nullable<int> من_رمز_المدينة, Nullable<int> من_رمز_المنطقة,
             Nullable<int> الى_رمز_المدينة, Nullable<int> الى_رمز_المنطقة, string التفاصيل, string اسم_المتصل,
             int طبيعة_المهمة, int رمز__المركز)
@@ -167,7 +403,6 @@ namespace Erc1.Classes
                     مسعف_1 = مسعف_1,
                     مسعف_2 = مسعف_2,
                     السائق = السائق,
-                    المتصل = المتصل,
                     الهاتف = الهاتف,
                     متلقي_المهمة = متلقي_المهمة,
                     رمز_السنوي = رمز_السنوي,

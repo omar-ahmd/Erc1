@@ -12,18 +12,18 @@ namespace Erc1.model
     using System;
     using System.Collections.Generic;
     
-    public partial class الأمراض_المعدية
+    public partial class الأمراض_المزمنة
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public الأمراض_المعدية()
+        public الأمراض_المزمنة()
         {
-            this.المهمات_المنفذة = new HashSet<المهمات_المنفذة>();
+            this.المرضى = new HashSet<المرضى>();
         }
     
         public int الرمز { get; set; }
         public string المرض { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<المهمات_المنفذة> المهمات_المنفذة { get; set; }
+        public virtual ICollection<المرضى> المرضى { get; set; }
     }
 }

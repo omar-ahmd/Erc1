@@ -80,7 +80,7 @@ namespace Erc1.Classes
 
         public static void insertMission(int الرمز_الشهري, DateTime التاريخ,int الآلية, int المريض, Nullable<int> من_مشفى, Nullable<int> من_القسم, Nullable<int> الطبيب_المعالج,
            Nullable<int> الجهة_الضامنة, Nullable<int> إلى_مشفى, Nullable<int> إلى_القسم, int مسؤول_المهمة, int مسعف_1,int مسعف_2,
-            int السائق, Nullable<int> المتصل, string الهاتف, Nullable<int> متلقي_المهمة, int رمز_الحالة, string رمز_السنوي,
+            int السائق, Nullable<int> المتصل, int الهاتف, Nullable<int> متلقي_المهمة, int رمز_الحالة, int رمز_السنوي,
              int السنة, string تفاصيل_ال_من, string تفاصيل_ال_الى, Nullable<int> من_رمز_المدينة, Nullable<int> من_رمز_المنطقة,
              Nullable<int> الى_رمز_المدينة, Nullable<int> الى_رمز_المنطقة, string التفاصيل, string اسم_المتصل,
               int طبيعة_المهمة, int رمز__المركز)
@@ -103,7 +103,6 @@ namespace Erc1.Classes
                     مسعف_1= مسعف_1,
                     مسعف_2= مسعف_2,
                     السائق= السائق,
-                    المتصل= المتصل,
                     الهاتف= الهاتف,
                     متلقي_المهمة= متلقي_المهمة,
                     رمز_السنوي= رمز_السنوي,

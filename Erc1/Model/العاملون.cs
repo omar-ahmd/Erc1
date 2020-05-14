@@ -22,6 +22,7 @@ namespace Erc1.model
             this.المهمات_المنفذة2 = new HashSet<المهمات_المنفذة>();
             this.المهمات_المنفذة3 = new HashSet<المهمات_المنفذة>();
             this.المهمات_المنفذة4 = new HashSet<المهمات_المنفذة>();
+            this.المهمات_المنفذة5 = new HashSet<المهمات_المنفذة>();
         }
     
         public int الرمز { get; set; }
@@ -38,9 +39,8 @@ namespace Erc1.model
         public Nullable<int> الوظيفة { get; set; }
         public string الدوام { get; set; }
         public Nullable<int> فئة_الدم { get; set; }
-        public string مسعف_أو_مساعد { get; set; }
+        public Nullable<bool> مسعف_أو_مساعد { get; set; }
         public Nullable<bool> سائق_أو_لا { get; set; }
-        public string الموقع { get; set; }
         public Nullable<bool> مسؤول_مهمة_أو_لا { get; set; }
         public int المركز { get; set; }
         public string اللقب { get; set; }
@@ -63,5 +63,7 @@ namespace Erc1.model
         public virtual ICollection<المهمات_المنفذة> المهمات_المنفذة3 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<المهمات_المنفذة> المهمات_المنفذة4 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<المهمات_المنفذة> المهمات_المنفذة5 { get; set; }
     }
 }

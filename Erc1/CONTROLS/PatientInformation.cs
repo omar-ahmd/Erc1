@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections;
+using System.Collections;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Erc1.CONTROLS
@@ -90,6 +93,10 @@ namespace Erc1.CONTROLS
             }
         }
 
+        private void Name_Patient_TextChanged(object sender, EventArgs e)
+        {
 
+        
+        }
     }
 }
