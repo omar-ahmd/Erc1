@@ -141,6 +141,9 @@
   <data name="Year.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial Narrow, 10.2pt</value>
   </data>
+  <data name="Year.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="Year.Items" xml:space="preserve">
     <value>2015</value>
   </data>
@@ -339,6 +342,9 @@
   <data name="Month.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial Narrow, 10.2pt</value>
   </data>
+  <data name="Month.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="Month.Items" xml:space="preserve">
     <value>01</value>
   </data>
@@ -407,6 +413,9 @@
   </data>
   <data name="Day.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial Narrow, 10.2pt</value>
+  </data>
+  <data name="Day.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="Day.Location" type="System.Drawing.Point, System.Drawing">
     <value>333, 0</value>
@@ -1311,6 +1320,9 @@
   <data name="CarId.Font" type="System.Drawing.Font, System.Drawing">
     <value>Air Strip Arabic, 15pt</value>
   </data>
+  <data name="CarId.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="CarId.Location" type="System.Drawing.Point, System.Drawing">
     <value>52, 19</value>
   </data>
@@ -1343,6 +1355,9 @@
   </data>
   <data name="CenterID.Font" type="System.Drawing.Font, System.Drawing">
     <value>Air Strip Arabic, 15pt</value>
+  </data>
+  <data name="CenterID.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="CenterID.Location" type="System.Drawing.Point, System.Drawing">
     <value>274, 19</value>
@@ -1926,6 +1941,9 @@
   <data name="Case.Font" type="System.Drawing.Font, System.Drawing">
     <value>Air Strip Arabic, 15pt</value>
   </data>
+  <data name="Case.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="Case.Items" xml:space="preserve">
     <value>100-طرابلس</value>
   </data>
@@ -1970,6 +1988,9 @@
   </data>
   <data name="CaseType.Font" type="System.Drawing.Font, System.Drawing">
     <value>Air Strip Arabic, 15pt</value>
+  </data>
+  <data name="CaseType.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="CaseType.Items" xml:space="preserve">
     <value>100-طرابلس</value>

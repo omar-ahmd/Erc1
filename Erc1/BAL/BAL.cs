@@ -224,20 +224,27 @@ namespace Erc1.BAL
 		{
 			return mission.Get_Centers();
 		}
-		
 		public static IEnumerable Get_CasesType()
 		{
 			return mission.Get_نوعيات_الحالات(); 
 		}
-		
 		public static IEnumerable GetWorkers()
 		{
 			return mission.Get_العاملون();
+		}
+		public static IEnumerable GetWorkers(int CenterID)
+		{
+			return mission.Get_العاملون_by_idالمراكز(CenterID);
 		}
 		public static IEnumerable GetCars(int CentrID)
 		{
 			return mission.Getالآليات(CentrID);
 		}
+		public static IEnumerable GetCases()
+		{
+			return mission.Get_الحالات();
+		}
+
 
 	}
 	class PatientInfo

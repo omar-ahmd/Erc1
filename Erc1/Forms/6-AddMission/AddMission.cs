@@ -37,8 +37,19 @@ namespace Erc1.Forms
 
 
 
-        Thread ImportCasesType, ImportCenter, ImportCarsInCenter;
-        IEnumerable casetype = null, centers = null, CarsInCenter = null;
+        Thread ImportCasesType, ImportCenter, ImportCases;
+        IEnumerable casetype = null, centers = null, Cases = null;
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleparam = base.CreateParams;
+                handleparam.ExStyle |= 0x02000000;
+                return handleparam;
+            }
+        }
+
         public AddMission(MissionType missionType)
         {
             InitializeComponent();
@@ -122,15 +133,7 @@ namespace Erc1.Forms
             paI.Show();
             pI.Hide();
         }
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams handleparam = base.CreateParams;
-                handleparam.ExStyle |= 0x02000000;
-                return handleparam;
-            }
-        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             panel9.BackgroundImage = Erc1.Properties.Resources._12;
@@ -145,31 +148,40 @@ namespace Erc1.Forms
         {
             ImportCasesType = new Thread(() => { casetype = addMission.Get_CasesType(); });
             ImportCenter = new Thread(() => { centers = addMission.Get_centers(); });
+            ImportCases = new Thread(() => { Cases = addMission.GetCases(); }) ;
 
             ImportCasesType.Start();
             ImportCenter.Start();
+            ImportCases.Start();
 
             ImportCenter.Join();
             ImportCasesType.Join();
+            ImportCases.Join();
+
 
             CenterID.DataSource = centers;
             CenterID.ValueMember = "id";
             CenterID.DisplayMember = "centers";
-            MessageBox.Show("k");
+            CenterID.SelectedValueChanged += CenterID_SelectedValueChanged;
 
             CaseType.DataSource = casetype;
             CaseType.ValueMember = "الرمز";
             CaseType.DisplayMember = "النوعية";
 
             CenterAdded = true;
+            CenterID.SelectedValue = 200;
+            CenterID.SelectedValue = 100;
 
-            Day.DropDownHeight = Day.ItemHeight * 5;
-            Month.DropDownHeight = Month.ItemHeight * 5;
-            Year.DropDownHeight = Year.ItemHeight * 5;
+            Case.DataSource = Cases;
+            Case.ValueMember = "رمز";
+            Case.DisplayMember = "المرض";
 
-            Month.SelectedItem = DateTime.Now.Day.ToString("D2");
-            Day.SelectedItem = DateTime.Now.Month.ToString("D2");
+
+            
+            
             Year.SelectedItem = DateTime.Now.Year.ToString("D2");
+            Month.SelectedItem = DateTime.Now.Month.ToString("D2");
+            Day.SelectedItem = DateTime.Now.Day.ToString("D2");
 
             int dayinmonth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
             
@@ -235,11 +247,72 @@ namespace Erc1.Forms
                 CarId.DataSource = addMission.GetCars(int.Parse(CenterID.SelectedValue.ToString()));
                 CarId.ValueMember = "id";
                 CarId.DisplayMember = "cars";
-            }
+
+
+
+                IEnumerable HeadOfshift = addMission.GetWorkers(int.Parse(CenterID.SelectedValue.ToString()));
+                IEnumerable HeadOfmission = addMission.GetWorkers(int.Parse(CenterID.SelectedValue.ToString()));
+                IEnumerable paramedic1 = addMission.GetWorkers(int.Parse(CenterID.SelectedValue.ToString()));
+                IEnumerable paramedic2 = addMission.GetWorkers(int.Parse(CenterID.SelectedValue.ToString()));
+                IEnumerable recipientOfMission = addMission.GetWorkers(int.Parse(CenterID.SelectedValue.ToString()));
+
+                string valuem = "الرمز", Display = "الاسم";
+
+                try
+                {
+                    pI.Name_HeadOfMission.DataSource = HeadOfmission;
+                    pI.Name_HeadOfMission.ValueMember = valuem;
+                    pI.Name_HeadOfMission.DisplayMember = Display;
+                    if (pI.Name_HeadOfMission.SelectedValue != null)
+                    {
+                        pI.ID_HeadOfMission.Text = pI.Name_HeadOfMission.SelectedValue.ToString();
+                    }
+                    pI.Name_HeadOfMission.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+
+                    pI.Name_HeadOfShift.DataSource = HeadOfshift;
+                    pI.Name_HeadOfShift.ValueMember = valuem;
+                    pI.Name_HeadOfShift.DisplayMember = Display;
+                    if (pI.Name_HeadOfShift.SelectedValue != null)
+                    {
+                        pI.ID_HeadOfShift.Text = pI.Name_HeadOfShift.SelectedValue.ToString();
+                    }
+                    pI.Name_HeadOfShift.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+
+                    pI.Name_Paramedic1.DataSource = paramedic1;
+                    pI.Name_Paramedic1.ValueMember = valuem;
+                    pI.Name_Paramedic1.DisplayMember = Display;
+                    if (pI.Name_Paramedic1.SelectedValue != null)
+                    {
+                        pI.ID_Paramedic1.Text = pI.Name_Paramedic1.SelectedValue.ToString();
+                    }
+                    pI.Name_Paramedic1.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+
+                    pI.Name_Paramedic2.DataSource = paramedic2;
+                    pI.Name_Paramedic2.ValueMember = valuem;
+                    pI.Name_Paramedic2.DisplayMember = Display;
+                    if (pI.Name_Paramedic2.SelectedValue != null)
+                    {
+                        pI.ID_Paramedic2.Text = pI.Name_Paramedic2.SelectedValue.ToString();
+                    }
+                    pI.Name_Paramedic2.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+
+                    pI.Name_RecipientOfMission.DataSource = recipientOfMission;
+                    pI.Name_RecipientOfMission.ValueMember = valuem;
+                    pI.Name_RecipientOfMission.DisplayMember = Display;
+
+                        pI.ID_RecipientOfMission.Text = pI.Name_RecipientOfMission.SelectedValue.ToString();
+                    
+
+                    pI.Name_RecipientOfMission.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+             }
             
 
         }
-
         private void ActivityMission_CheckChange(object sender, EventArgs e)
         {
             if (ActivityMission.Check)
@@ -260,7 +333,6 @@ namespace Erc1.Forms
                 ActivityMission.Check = false;
             }
         }
-
         private void Save_Click(object sender, EventArgs e)
         {
             cM.Show();
