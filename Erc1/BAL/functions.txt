@@ -1,5 +1,7 @@
 ﻿
         Mohammd
+
+        Mohammd
         // get الحالات names (column names ="المرض" , "رمز")
         Get_الحالات()
 
@@ -30,8 +32,39 @@
 
 
 
-        // cars of a center by id 
-        public static IEnumerable Getالآليات(int marakez)
+        
+        // cars of a center by id column name("cars")
+        Getالآليات()
+
+
+
+        // cars of a center by id column name("cars")
+        Getالآليات_by_المركز(int marakez)
+
+        
+        // get المرضى names(column names ="اسم","الرمز")
+        Get_المرضى()
+
+
+
+        // get المدن names(column names ="المدينة","رمز")
+        Get_المدن()
+
+
+        // get المستشفيات(column names ="اسم","الرمز")
+        Get_المستشفيات()
+
+
+        // get أقسام المستشفيات (column names ="sections_id","sections_name")
+         Get_أقسام_المستشفيات(int hospital_key)
+         
+
+        // get طوابق المستشفيات (column names ="عدد_الطوابق","الرمز")
+        Get_طوابق_المستشفيات(int hospital_key)
+
+
+
+
          
         requests:
         -GetDriver

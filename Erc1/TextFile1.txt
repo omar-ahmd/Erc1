@@ -1,0 +1,23 @@
+﻿
+        // get الحالات names by idنوعية_الحالة (column name ="المرض")
+        Get_الحالات_by_idنوعية_الحالة(int id_type_of_disease)
+
+
+        // get نوعيات الحالات (column name ="النوعية","الرمز")
+        Get_نوعيات_الحالات()
+
+
+        // get العاملون names (column names ="الاسم","الرمز")
+        Get_العاملون()
+
+
+        // get العاملون names by المراكز(column names ="الاسم","الرمز")
+        Get_العاملون_by_idالمراكز(int center_id)
+
+
+        //get all centers (column names ="centers","id")
+       Get_Centers()
+
+
+        // cars of a center by id 
+        Getالآليات(int marakez)
