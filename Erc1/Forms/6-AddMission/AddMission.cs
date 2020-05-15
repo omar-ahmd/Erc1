@@ -148,8 +148,7 @@ namespace Erc1.Forms
             comboBox1.DisplayMember = "centers";
             comboBox1.ValueMember = "id";
 
-            comboBox1.Invalidate();
-            dataGridView1.DataSource = centers;
+
             if (!isFilled)
             {
                 comboBox1.SelectedIndexChanged += comboBox1_SelectionChangeCommitted;
@@ -178,7 +177,7 @@ namespace Erc1.Forms
             _c21.SelectedValueChanged += _c21_SelectedValueChanged;
 
             ComboBox c22 = (ComboBox)(tableLayoutPanel20.Controls.Find("pai", true)[0].Controls.Find("tp1", true)[0].Controls.Find("FromHomeInfo", true)[0].Controls.Find("FromCity", true))[0];
-            DataTable city = mission.Get_المدن_DATALAYER();
+            var city = mission.Get_المدن();
             c22.DataSource = city;
             c22.ValueMember = "رمز";
             c22.DisplayMember = "المدينة";
@@ -221,7 +220,7 @@ namespace Erc1.Forms
         {
             ComboBox c22 = (ComboBox)(tableLayoutPanel20.Controls.Find("pai", true)[0].Controls.Find("tp1", true)[0].Controls.Find("FromHomeInfo", true)[0].Controls.Find("FromCity", true))[0];
             ComboBox c23 = (ComboBox)(tableLayoutPanel20.Controls.Find("pai", true)[0].Controls.Find("tp1", true)[0].Controls.Find("FromHomeInfo", true)[0].Controls.Find("FromRegion", true))[0];
-            DataTable regions = mission.Get_المناطق_DATALAYER(int.Parse(c22.SelectedValue.ToString()));
+            var regions = mission.Get_المناطق(int.Parse(c22.SelectedValue.ToString()));
             c23.DataSource = regions;
             c23.DisplayMember = "المنطقة";
         }
@@ -253,7 +252,19 @@ namespace Erc1.Forms
             _c20.DataSource = staff;
             _c20.ValueMember = "الرمز";
             _c20.DisplayMember = "الاسم";
-            
+
+            var driver= Classes.mission.Get_السائقون_by_idالمراكز(int.Parse(comboBox1.SelectedValue.ToString()));
+            ComboBox _c21 = (ComboBox)(tableLayoutPanel20.Controls.Find("pi", true)[0].Controls.Find("tpi1", true)[0].Controls.Find("tp6", true)[0].Controls.Find("Name_Driver", true))[0];
+            _c21.DataSource = driver;
+            _c21.ValueMember = "الرمز";
+            _c21.DisplayMember = "الاسم";
+
+            var mission_resposable= Classes.mission.Get_مسؤول_مهمة_by_idالمراكز(int.Parse(comboBox1.SelectedValue.ToString()));
+            ComboBox _c22 = (ComboBox)(tableLayoutPanel20.Controls.Find("pi", true)[0].Controls.Find("tpi1", true)[0].Controls.Find("tp2", true)[0].Controls.Find("Name_HeadOfMission", true))[0];
+            _c22.DataSource = mission_resposable;
+            _c22.ValueMember = "الرمز";
+            _c22.DisplayMember = "الاسم";
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

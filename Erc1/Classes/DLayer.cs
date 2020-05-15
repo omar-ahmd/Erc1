@@ -183,7 +183,7 @@ namespace Erc1.Classes
             {
                 var c = (
                 from staff in entity.العاملون.
-                Where(r => (r.المركز == center_id && r.الوظيفة1.الوظيفة1=="مسعف" && r.مسعف_أو_مساعد==true))
+                Where(r => (r.المركز == center_id  && r.مسعف_أو_مساعد==true))
                 select new
                 {
                     staff.الرمز,
@@ -193,6 +193,43 @@ namespace Erc1.Classes
                 return c.ToList();
             };
         }
+
+        // get السائقون names by المراكز(column names ="الاسم","الرمز")
+        public static IEnumerable Get_السائقون_by_idالمراكز(int center_id)
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from staff in entity.العاملون.
+                Where(r => (r.المركز == center_id  && r.سائق_أو_لا == true))
+                select new
+                {
+                    staff.الرمز,
+                    staff.الاسم
+                }
+                    ); ;
+                return c.ToList();
+            };
+        }
+
+        // get مسؤول مهمة names by المراكز(column names ="الاسم","الرمز")
+        public static IEnumerable Get_مسؤول_مهمة_by_idالمراكز(int center_id)
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from staff in entity.العاملون.
+                Where(r => (r.المركز == center_id && r.مسؤول_مهمة_أو_لا == true))
+                select new
+                {
+                    staff.الرمز,
+                    staff.الاسم
+                }
+                    ); ;
+                return c.ToList();
+            };
+        }
+
 
 
 
@@ -265,6 +302,24 @@ namespace Erc1.Classes
             dt = new DataLayer(@"QSC-2019\SQLEXPRESS", "ERC");
              city = dt.GetData("select * from المدن","city");
             return city;
+        }
+
+        // get المناطق names(column names ="المنطقة","رمز")
+        public static IEnumerable Get_المناطق(int city_key)
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from p in entity.المناطق
+                where p.المدينة==city_key
+                select new
+                {
+                    p.رمز,
+                    p.المنطقة
+                }
+                    ); ;
+                return c.ToList();
+            };
         }
 
         public static DataTable Get_المناطق_DATALAYER(int city_key)

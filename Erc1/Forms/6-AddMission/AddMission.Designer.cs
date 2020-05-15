@@ -99,7 +99,6 @@ namespace Erc1.Forms
             this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -143,7 +142,6 @@ namespace Erc1.Forms
             this.tableLayoutPanel21.SuspendLayout();
             this.tableLayoutPanel23.SuspendLayout();
             this.tableLayoutPanel22.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -635,7 +633,6 @@ namespace Erc1.Forms
             // 
             resources.ApplyResources(this.tableLayoutPanel19, "tableLayoutPanel19");
             this.tableLayoutPanel19.Controls.Add(this.panel9, 1, 1);
-            this.tableLayoutPanel19.Controls.Add(this.dataGridView1, 0, 1);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             // 
             // panel9
@@ -686,13 +683,6 @@ namespace Erc1.Forms
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.dataGridView1, "dataGridView1");
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
             // 
             // AddMission
             // 
@@ -758,7 +748,6 @@ namespace Erc1.Forms
             this.tableLayoutPanel21.ResumeLayout(false);
             this.tableLayoutPanel23.ResumeLayout(false);
             this.tableLayoutPanel22.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -832,6 +821,5 @@ namespace Erc1.Forms
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
