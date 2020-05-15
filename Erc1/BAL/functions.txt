@@ -59,15 +59,23 @@
          Get_أقسام_المستشفيات(int hospital_key)
          
 
+
         // get طوابق المستشفيات (column names ="عدد_الطوابق","الرمز")
         Get_طوابق_المستشفيات(int hospital_key)
 
 
 
+        // get السائقون names by المراكز(column names ="الاسم","الرمز")
+        Get_السائقون_by_idالمراكز(int center_id)
+
+
+
+        // get مسؤول مهمة names by المراكز(column names ="الاسم","الرمز")
+        Get_مسؤول_مهمة_by_idالمراكز(int center_id)
 
          
         requests:
-        -GetDriver
+        -GetDriver : Get_السائقون_by_idالمراكز(int center_id)
         -Get last Monthly and annual id
         -
         

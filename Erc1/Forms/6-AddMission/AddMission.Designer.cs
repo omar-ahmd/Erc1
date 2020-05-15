@@ -260,7 +260,6 @@ namespace Erc1.Forms
             resources.ApplyResources(this.Month, "Month");
             this.Month.DropDownHeight = 50;
             this.Month.FormattingEnabled = true;
-            Month.SelectedItem = DateTime.Now.Month.ToString("D2");
             this.Month.Items.AddRange(new object[] {
             resources.GetString("Month.Items"),
             resources.GetString("Month.Items1"),
@@ -286,7 +285,6 @@ namespace Erc1.Forms
             resources.ApplyResources(this.Day, "Day");
             this.Day.DropDownHeight = 50;
             this.Day.FormattingEnabled = true;
-            Day.SelectedItem = DateTime.Now.Day.ToString("D2");
             this.Day.Name = "Day";
             this.Day.Sorted = true;
             // 
@@ -296,7 +294,7 @@ namespace Erc1.Forms
             this.Time.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.Time.Name = "Time";
             this.Time.ShowUpDown = true;
-            Time.Value = DateTime.Now;
+            this.Time.Value = new System.DateTime(2020, 5, 15, 11, 49, 22, 856);
             // 
             // tableLayoutPanel11
             // 
@@ -660,7 +658,7 @@ namespace Erc1.Forms
             // 
             this.ColdMission.Check = true;
             resources.ApplyResources(this.ColdMission, "ColdMission");
-            this.ColdMission.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ColdMission.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ColdMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
             this.ColdMission.Name = "ColdMission";
             this.ColdMission.text = "مهمة باردة";
@@ -692,7 +690,7 @@ namespace Erc1.Forms
             // 
             this.FireMission.Check = false;
             resources.ApplyResources(this.FireMission, "FireMission");
-            this.FireMission.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FireMission.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FireMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
             this.FireMission.Name = "FireMission";
             this.FireMission.text = "حريق";
@@ -702,7 +700,7 @@ namespace Erc1.Forms
             // 
             this.UrgentMission.Check = false;
             resources.ApplyResources(this.UrgentMission, "UrgentMission");
-            this.UrgentMission.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UrgentMission.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UrgentMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
             this.UrgentMission.Name = "UrgentMission";
             this.UrgentMission.text = "مهمة طارئة";
@@ -712,7 +710,7 @@ namespace Erc1.Forms
             // 
             this.ActivityMission.Check = false;
             resources.ApplyResources(this.ActivityMission, "ActivityMission");
-            this.ActivityMission.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActivityMission.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ActivityMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
             this.ActivityMission.Name = "ActivityMission";
             this.ActivityMission.text = "تغطية نشاط";

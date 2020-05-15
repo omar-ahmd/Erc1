@@ -175,7 +175,7 @@ namespace Erc1.Classes
             {
                 var c = (
                 from staff in entity.العاملون.
-                Where(r => (r.المركز == center_id && r.الوظيفة1.الوظيفة1 == "متطوع" && r.مسعف_أو_مساعد == true))
+                Where(r => (r.المركز == center_id && r.مسعف_أو_مساعد == true))
                 select new
                 {
                     staff.الرمز,
@@ -186,6 +186,41 @@ namespace Erc1.Classes
             };
         }
 
+        // get السائقون names by المراكز(column names ="الاسم","الرمز")
+        public static IEnumerable Get_السائقون_by_idالمراكز(int center_id)
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from staff in entity.العاملون.
+                Where(r => (r.المركز == center_id && r.سائق_أو_لا == true))
+                select new
+                {
+                    staff.الرمز,
+                    staff.الاسم
+                }
+                    ); ;
+                return c.ToList();
+            };
+        }
+
+        // get مسؤول مهمة names by المراكز(column names ="الاسم","الرمز")
+        public static IEnumerable Get_مسؤول_مهمة_by_idالمراكز(int center_id)
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from staff in entity.العاملون.
+                Where(r => (r.المركز == center_id && r.مسؤول_مهمة_أو_لا == true))
+                select new
+                {
+                    staff.الرمز,
+                    staff.الاسم
+                }
+                    ); ;
+                return c.ToList();
+            };
+        }
 
 
 
