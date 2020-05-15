@@ -17,31 +17,6 @@ using System.Reflection;
 
 namespace Erc1.BAL
 {
-	public class MyFunctions
-	{
-		public static DataTable ToDataTable<T>(List<T> items)
-		{
-			var tb = new DataTable(typeof(T).Name);
-			PropertyInfo[] props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
-			foreach (var prop in props)
-			{
-				tb.Columns.Add(prop.Name, prop.PropertyType);
-
-
-			}
-			foreach (var item in items)
-			{
-				var values = new object[props.Length];
-				for (var i = 0; i < props.Length; i++)
-				{
-					values[i] = props[i].GetValue(item, null);
-				}
-				tb.Rows.Add(values);
-			}
-			return tb;
-		}
-	}
-	
 	public enum MissionType
 	{
 		Urgent,
@@ -243,6 +218,55 @@ namespace Erc1.BAL
 		public static IEnumerable GetCases()
 		{
 			return mission.Get_الحالات();
+		}
+
+
+		static Thread ImportCasesType, ImportCenter, ImportCases;
+		static IEnumerable casetype = null, centers = null, Cases = null;
+
+		public static bool FillAddMissionForm(AddMission addm)
+		{
+			try
+			{
+
+				ImportCasesType = new Thread(() => { casetype = addMission.Get_CasesType(); });
+				ImportCenter = new Thread(() => { centers = addMission.Get_centers(); });
+				ImportCases = new Thread(() => { Cases = addMission.GetCases(); });
+
+				ImportCasesType.Start();
+				ImportCenter.Start();
+				ImportCases.Start();
+
+				ImportCenter.Join();
+				ImportCasesType.Join();
+				ImportCases.Join();
+
+
+				addm.CenterID.DataSource = centers;
+				addm.CenterID.ValueMember = "id";
+				addm.CenterID.DisplayMember = "centers";
+				addm.CenterID.SelectedValueChanged += addm.CenterID_SelectedValueChanged;
+
+				addm.CaseType.DataSource = casetype;
+				addm.CaseType.ValueMember = "الرمز";
+				addm.CaseType.DisplayMember = "النوعية";
+
+
+
+				addm.CenterID.SelectedValue = 200;
+				addm.CenterID.SelectedValue = 100;
+
+				addm.Case.DataSource = Cases;
+				addm.Case.ValueMember = "رمز";
+				addm.Case.DisplayMember = "المرض";
+				return true;
+			}
+			catch(Exception ex)
+			{
+				return false;
+			}
+		
+		
 		}
 
 
@@ -800,9 +824,6 @@ namespace Erc1.BAL
 			}
 			
 		}
-
-
-
 		public bool ImportData(CONTROLS.ParamInformation paramInfo)
 		{
 			try
@@ -841,6 +862,106 @@ namespace Erc1.BAL
 
 			
 
+
+
+		}
+
+		public static bool FillParamForm(Erc1.CONTROLS.ParamInformation pI,AddMission addm)
+		{
+			IEnumerable HeadOfshift = addMission.GetWorkers(int.Parse(addm.CenterID.SelectedValue.ToString()));
+			IEnumerable HeadOfmission = addMission.GetWorkers(int.Parse(addm.CenterID.SelectedValue.ToString()));
+			IEnumerable paramedic1 = addMission.GetWorkers(int.Parse(addm.CenterID.SelectedValue.ToString()));
+			IEnumerable paramedic2 = addMission.GetWorkers(int.Parse(addm.CenterID.SelectedValue.ToString()));
+			IEnumerable recipientOfMission = addMission.GetWorkers(int.Parse(addm.CenterID.SelectedValue.ToString()));
+
+			string valuem = "الرمز", Display = "الاسم";
+
+			try
+			{
+
+				pI.Name_HeadOfMission.DataSource = HeadOfmission;
+				pI.Name_HeadOfMission.ValueMember = valuem;
+				pI.Name_HeadOfMission.DisplayMember = Display;
+				if (pI.Name_HeadOfMission.SelectedValue != null)
+				{
+					pI.ID_HeadOfMission.Text = pI.Name_HeadOfMission.SelectedValue.ToString();
+					
+				}
+				else
+				{
+					pI.ID_HeadOfMission.Text = "";
+				}
+				pI.Name_HeadOfMission.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+
+				pI.Name_HeadOfShift.DataSource = HeadOfshift;
+				pI.Name_HeadOfShift.ValueMember = valuem;
+				pI.Name_HeadOfShift.DisplayMember = Display;
+				if (pI.Name_HeadOfShift.SelectedValue != null)
+				{
+					pI.ID_HeadOfShift.Text = pI.Name_HeadOfShift.SelectedValue.ToString();
+					
+				}
+				else
+				{
+					pI.ID_HeadOfShift.Text = "";
+				}
+				pI.Name_HeadOfShift.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+
+				pI.Name_Paramedic1.DataSource = paramedic1;
+				pI.Name_Paramedic1.ValueMember = valuem;
+				pI.Name_Paramedic1.DisplayMember = Display;
+				if (pI.Name_Paramedic1.SelectedValue != null)
+				{
+					pI.ID_Paramedic1.Text = pI.Name_Paramedic1.SelectedValue.ToString();
+					
+				}
+				else
+				{
+					pI.ID_Paramedic1.Text = "";
+				}
+				pI.Name_Paramedic1.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+
+				pI.Name_Paramedic2.DataSource = paramedic2;
+				pI.Name_Paramedic2.ValueMember = valuem;
+				pI.Name_Paramedic2.DisplayMember = Display;
+				if (pI.Name_Paramedic2.SelectedValue != null)
+				{
+					pI.ID_Paramedic2.Text = pI.Name_Paramedic2.SelectedValue.ToString();
+					
+				}
+				else
+				{
+					pI.ID_Paramedic2.Text = "";
+				}
+				pI.Name_Paramedic2.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+
+				pI.Name_RecipientOfMission.DataSource = recipientOfMission;
+				pI.Name_RecipientOfMission.ValueMember = valuem;
+				pI.Name_RecipientOfMission.DisplayMember = Display;
+				if (pI.Name_RecipientOfMission.SelectedValue != null)
+				{
+					pI.ID_RecipientOfMission.Text = pI.Name_RecipientOfMission.SelectedValue.ToString();
+					
+				}
+				else
+				{
+					pI.ID_RecipientOfMission.Text = "";
+				}
+
+				pI.Name_RecipientOfMission.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+				return true;
+			}
+			catch (Exception ex)
+			{
+				
+				
+				
+				
+				
+				
+
+				return false;
+			}
 
 
 		}
