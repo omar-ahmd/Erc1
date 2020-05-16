@@ -12,70 +12,98 @@ namespace Erc1.Classes
 {
     class Mission
     {
-        
-////////////using (AdventureWorks db = new AdventureWorks())
-////////////{
-////////////    var person = (from p in db.People
-////////////                  join e in db.EmailAddresses
-////////////                  on p.BusinessEntityID equals e.BusinessEntityID
-////////////                  where p.FirstName == "KEN"
-////////////                  select new
-////////////                  {
-////////////                      ID = p.BusinessEntityID,
-////////////                      FirstName = p.FirstName,
-////////////                      MiddleName = p.MiddleName,
-////////////                      LastName = p.LastName,
-////////////                      EmailID = e.EmailAddress1
-////////////                  }).ToList();
- 
-////////////    foreach (var p in person)
-////////////    {
-////////////        Console.WriteLine("{0} {1} {2} {3} {4}", p.ID, p.FirstName, p.MiddleName, p.LastName, p.EmailID);
-////////////    }
-////////////}
+
+        ////////////using (AdventureWorks db = new AdventureWorks())
+        ////////////{
+        ////////////    var person = (from p in db.People
+        ////////////                  join e in db.EmailAddresses
+        ////////////                  on p.BusinessEntityID equals e.BusinessEntityID
+        ////////////                  where p.FirstName == "KEN"
+        ////////////                  select new
+        ////////////                  {
+        ////////////                      ID = p.BusinessEntityID,
+        ////////////                      FirstName = p.FirstName,
+        ////////////                      MiddleName = p.MiddleName,
+        ////////////                      LastName = p.LastName,
+        ////////////                      EmailID = e.EmailAddress1
+        ////////////                  }).ToList();
+
+        ////////////    foreach (var p in person)
+        ////////////    {
+        ////////////        Console.WriteLine("{0} {1} {2} {3} {4}", p.ID, p.FirstName, p.MiddleName, p.LastName, p.EmailID);
+        ////////////    }
+        ////////////}
 
 
-        // city name of center
-        public static IEnumerable Getالمراكز() 
+
+
+
+        // get monthlyid 
+        public static int Get_MonthlyID()
         {
-            
-                using (ERCEntities entity = new ERCEntities())
-                {
-                var c = (
-                from centers in entity.المراكز
-                join regions in entity.المناطق
-                on centers.المدينة equals regions.رمز
-                orderby centers.المدينة
-                select new
-                {
-                    regions = regions.المنطقة,
-                    centers = centers.الرمز
-                }
-                    ); ;
-                    return c.ToList();
-                };
-            
+            using (ERCEntities entity = new ERCEntities())
+            {
+                int c = entity.المهمات_المنفذة
+                   .Where(r => r.الرمز_الشهري == entity.المهمات_المنفذة.Max(p => p.الرمز_الشهري))
+                   .Select(r => r.الرمز_الشهري).Single()
+                   ;
+                return c;
+            };
         }
 
-        // cars of a center by id
-        public static IEnumerable Getالآليات(int marakez)
-        {
 
+        // get yearid 
+        public static int Get_YearID()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                int c = entity.المهمات_المنفذة
+                   .Where(r => r.رمز_السنوي == entity.المهمات_المنفذة.Max(p => p.رمز_السنوي))
+                   .Select(r => r.رمز_السنوي).Single()
+                   ;
+                return c;
+            };
+        }
+
+
+        // get المناطق names(column names ="المنطقة","رمز")
+        public static IEnumerable Get_المناطق(int city_key)
+        {
             using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
-                from cars in entity.الآليات
-                where cars.المركز == marakez
+                from p in entity.المناطق
+                where p.المدينة == city_key
                 select new
                 {
-                    cars = cars.موديل_
+                    p.رمز,
+                    p.المنطقة
                 }
                     ); ;
-                //var c = entity.الآليات.Where(r => r.المركز== marakez);
                 return c.ToList();
             };
-
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         public static void insertMission(int الرمز_الشهري, DateTime التاريخ,int الآلية, int المريض, Nullable<int> من_مشفى, Nullable<int> من_القسم, Nullable<int> الطبيب_المعالج,

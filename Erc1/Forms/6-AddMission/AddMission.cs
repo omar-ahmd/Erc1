@@ -140,12 +140,8 @@ namespace Erc1.Forms
         bool isFilled =false;
         private void AddMission_Load(object sender, EventArgs e)
         {
-            DataTable dt = mission.d();
-            ComboBox _c20 = (ComboBox)(tableLayoutPanel20.Controls.Find("pi", true)[0].Controls.Find("tpi1", true)[0].Controls.Find("tp", true)[0].Controls.Find("np", true))[0];
-            _c20.DataSource = dt;
-            _c20.DisplayMember = "الرمز";
-            _c20.ValueMember = "الرمز";
-
+           
+            
 
             var centers = Classes.mission.Get_Centers();
 
@@ -256,7 +252,7 @@ namespace Erc1.Forms
 
 
 
-            var cars = Classes.Mission.Getالآليات(int.Parse(comboBox1.SelectedValue.ToString()));
+            var cars = Classes.mission.Getالآليات();
             comboBox12.DataSource = cars;
             comboBox12.DisplayMember = "cars";
 
