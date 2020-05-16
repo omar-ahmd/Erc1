@@ -75,7 +75,7 @@
 
          
         requests:
-        -GetDriver : Get_السائقون_by_idالمراكز(int center_id)
-        -Get last Monthly and annual id
-        -
+        -Get_المناطق_by_idالمدن
+        -Get_infectious_case
+        -get insurance
         

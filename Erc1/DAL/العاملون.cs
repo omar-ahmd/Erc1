@@ -39,9 +39,8 @@ namespace Erc1.DAL
         public Nullable<int> الوظيفة { get; set; }
         public string الدوام { get; set; }
         public Nullable<int> فئة_الدم { get; set; }
-        public string مسعف_أو_مساعد { get; set; }
+        public Nullable<bool> مسعف_أو_مساعد { get; set; }
         public Nullable<bool> سائق_أو_لا { get; set; }
-        public string الموقع { get; set; }
         public Nullable<bool> مسؤول_مهمة_أو_لا { get; set; }
         public int المركز { get; set; }
         public string اللقب { get; set; }

@@ -24,6 +24,7 @@ namespace Erc1.Forms
 
         public Erc1.BAL.MissionType type { get; set; }
         private MissionType missionTy;
+
         public MissionType MissionTy
         {
             get { return missionTy; }
@@ -31,8 +32,12 @@ namespace Erc1.Forms
         }
 
         CasesOfMission cM;
-
-
+        bool l = false;
+        int ParamInfoEvent = 0;
+        
+        
+        
+        
         protected override CreateParams CreateParams
         {
             get
@@ -46,6 +51,12 @@ namespace Erc1.Forms
         public AddMission(MissionType missionType)
         {
             InitializeComponent();
+
+            Year.SelectedItem = DateTime.Now.Year.ToString("D2");
+            Month.SelectedItem = DateTime.Now.Month.ToString("D2");
+            Day.SelectedItem = DateTime.Now.Day.ToString("D2");
+            Time.Value = DateTime.Now;
+
             missionTy = missionType;
             switch (missionType)
             {
@@ -126,7 +137,6 @@ namespace Erc1.Forms
             paI.Show();
             pI.Hide();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             panel9.BackgroundImage = Erc1.Properties.Resources._12;
@@ -142,17 +152,10 @@ namespace Erc1.Forms
 
 
             BAL.addMission.FillAddMissionForm(this);
-
-            Year.SelectedItem = DateTime.Now.Year.ToString("D2");
-            Month.SelectedItem = DateTime.Now.Month.ToString("D2");
-            Day.SelectedItem = DateTime.Now.Day.ToString("D2");
-            Time.Value = DateTime.Now;
-
-
             Case.SelectedValueChanged += Case_SelectedValueChanged;
 
         }
-        bool l = false;
+
         private void Month_SelectedValueChanged(object sender, EventArgs e)
         {
             
@@ -200,14 +203,34 @@ namespace Erc1.Forms
                 ActivityMission.Check = false;
             }
         }
+
         public void CenterID_SelectedValueChanged(object sender, EventArgs e)
         {
 
             CarId.DataSource = addMission.GetCars(int.Parse(CenterID.SelectedValue.ToString()));
-            CarId.ValueMember = "id";
+            //CarId.ValueMember = "id";
             CarId.DisplayMember = "cars";
+            CarId.ResetText();
 
-            BAL.ParamedicsInfo.FillParamForm(pI, this);
+
+            if (ParamInfoEvent>0)
+            {
+                pI.Name_HeadOfMission.SelectedValueChanged -= pI.Name_HeadOfMission_SelectedValueChanged;
+
+                pI.Name_HeadOfShift.SelectedValueChanged -= pI.Name_HeadOfMission_SelectedValueChanged;
+
+                pI.Name_Paramedic1.SelectedValueChanged -= pI.Name_HeadOfMission_SelectedValueChanged;
+
+                pI.Name_Paramedic2.SelectedValueChanged -= pI.Name_HeadOfMission_SelectedValueChanged;
+
+                pI.Name_RecipientOfMission.SelectedValueChanged -= pI.Name_HeadOfMission_SelectedValueChanged;
+
+                pI.Name_Driver.SelectedValueChanged -= pI.Name_HeadOfMission_SelectedValueChanged;
+
+                ParamInfoEvent = 0;
+            }
+            
+            BAL.ParamedicsInfo.FillParamForm(pI, this,ref ParamInfoEvent);
 
 
 
@@ -250,7 +273,7 @@ namespace Erc1.Forms
             }
             cM.AddCase(Case.Text, int.Parse(Case.SelectedValue.ToString()));
         }
-        
-       
+
+
     }
 }

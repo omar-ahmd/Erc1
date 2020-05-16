@@ -14,9 +14,12 @@ using System.Collections;
 using System.Security.Permissions;
 using System.Threading;
 using System.Reflection;
+using Erc1.CONTROLS;
+using Erc1.Classes;
 
 namespace Erc1.BAL
 {
+
 	public enum MissionType
 	{
 		Urgent,
@@ -29,6 +32,30 @@ namespace Erc1.BAL
 		Hospital,
 		Home
 	}
+
+	public static class MyFunction
+	{
+		public static bool FillComboBox(ComboBox combo,object DataSource,string DisplayMember,string ValueMember)
+		{
+			try
+			{
+
+
+				combo.DataSource = DataSource;
+				combo.DisplayMember = DisplayMember;
+				combo.ValueMember = ValueMember;
+				combo.Text = "";
+				return true;
+			}
+			catch(Exception ex)
+			{
+				return false;
+			}
+
+
+		}
+	}
+
     class addMission
     {
 		public addMission()
@@ -191,6 +218,8 @@ namespace Erc1.BAL
 
 		}
 
+
+
 		public static IEnumerable Get_Cases()
 		{
 			return mission.Get_الحالات();
@@ -203,22 +232,19 @@ namespace Erc1.BAL
 		{
 			return mission.Get_نوعيات_الحالات(); 
 		}
-		public static IEnumerable GetWorkers()
-		{
-			return mission.Get_العاملون();
-		}
-		public static IEnumerable GetWorkers(int CenterID)
-		{
-			return mission.Get_العاملون_by_idالمراكز(CenterID);
-		}
+
 		public static IEnumerable GetCars(int CentrID)
 		{
-			return mission.Getالآليات(CentrID);
+			return mission.Getالآليات_by_المركز(CentrID);
 		}
 		public static IEnumerable GetCases()
 		{
 			return mission.Get_الحالات();
 		}
+
+
+
+
 
 
 		static Thread ImportCasesType, ImportCenter, ImportCases;
@@ -241,24 +267,16 @@ namespace Erc1.BAL
 				ImportCasesType.Join();
 				ImportCases.Join();
 
-
-				addm.CenterID.DataSource = centers;
-				addm.CenterID.ValueMember = "id";
-				addm.CenterID.DisplayMember = "centers";
+				MyFunction.FillComboBox(addm.CenterID, centers, "centers", "id");
 				addm.CenterID.SelectedValueChanged += addm.CenterID_SelectedValueChanged;
 
-				addm.CaseType.DataSource = casetype;
-				addm.CaseType.ValueMember = "الرمز";
-				addm.CaseType.DisplayMember = "النوعية";
+
+				MyFunction.FillComboBox(addm.CaseType, casetype, "النوعية", "الرمز");
+	
+
+				MyFunction.FillComboBox(addm.Case, Cases, "المرض", "رمز");
 
 
-
-				addm.CenterID.SelectedValue = 200;
-				addm.CenterID.SelectedValue = 100;
-
-				addm.Case.DataSource = Cases;
-				addm.Case.ValueMember = "رمز";
-				addm.Case.DisplayMember = "المرض";
 				return true;
 			}
 			catch(Exception ex)
@@ -702,6 +720,43 @@ namespace Erc1.BAL
 			}
 		}
 
+
+		public static IEnumerable GetPatients()
+		{
+			return mission.Get_المرضى();
+		}
+		public static IEnumerable GetHospitals()
+		{
+			return mission.Get_المستشفيات();
+		}
+		public static IEnumerable GetDepartementOfHos(int HosID)
+		{
+			return mission.Get_أقسام_المستشفيات(HosID);
+		}
+		public static IEnumerable GetFloors(int HosID)
+		{
+			return mission.Get_طوابق_المستشفيات(HosID);
+		}
+		public static IEnumerable GetCities()
+		{
+			return mission.Get_المدن();
+		}
+		public static IEnumerable GetMedicine()
+		{
+			return null;
+		}
+		public static IEnumerable GetRegions(int CityID)
+		{
+			return null;
+		}
+		public static IEnumerable GetInsurance()
+		{
+			return null;
+		}
+
+		
+		
+
 	}
 	class ParamedicsInfo
 	{
@@ -800,6 +855,22 @@ namespace Erc1.BAL
 			set { driverID = value; }
 		}
 
+		public static IEnumerable GetWorkers()
+		{
+			return mission.Get_العاملون();
+		}
+		public static IEnumerable GetWorkers(int CenterID)
+		{
+			return mission.Get_العاملون_by_idالمراكز(CenterID);
+		}
+		public static IEnumerable GetDrivers(int CenterID)
+		{
+			return mission.Get_السائقون_by_idالمراكز(CenterID);
+		}
+		public static IEnumerable GetHeadOfMission(int CenterID)
+		{
+			return mission.Get_مسؤول_مهمة_by_idالمراكز(CenterID);
+		}
 
 
 		public bool SaveInfo(المهمات_المنفذة Mission)
@@ -866,89 +937,49 @@ namespace Erc1.BAL
 
 		}
 
-		public static bool FillParamForm(Erc1.CONTROLS.ParamInformation pI,AddMission addm)
+
+		public static bool FillParamForm(Erc1.CONTROLS.ParamInformation pI,AddMission addm,ref int countevent)
 		{
-			IEnumerable HeadOfshift = addMission.GetWorkers(int.Parse(addm.CenterID.SelectedValue.ToString()));
-			IEnumerable HeadOfmission = addMission.GetWorkers(int.Parse(addm.CenterID.SelectedValue.ToString()));
-			IEnumerable paramedic1 = addMission.GetWorkers(int.Parse(addm.CenterID.SelectedValue.ToString()));
-			IEnumerable paramedic2 = addMission.GetWorkers(int.Parse(addm.CenterID.SelectedValue.ToString()));
-			IEnumerable recipientOfMission = addMission.GetWorkers(int.Parse(addm.CenterID.SelectedValue.ToString()));
+			IEnumerable HeadOfshift = GetWorkers(int.Parse(addm.CenterID.SelectedValue.ToString()));
+			IEnumerable HeadOfmission = GetHeadOfMission(int.Parse(addm.CenterID.SelectedValue.ToString()));
+			IEnumerable paramedic1 = GetWorkers(int.Parse(addm.CenterID.SelectedValue.ToString()));
+			IEnumerable paramedic2 = GetWorkers(int.Parse(addm.CenterID.SelectedValue.ToString()));
+			IEnumerable Driver = GetDrivers(int.Parse(addm.CenterID.SelectedValue.ToString()));
+			IEnumerable recipientOfMission = GetWorkers(int.Parse(addm.CenterID.SelectedValue.ToString()));
 
 			string valuem = "الرمز", Display = "الاسم";
 
 			try
 			{
+				
+				MyFunction.FillComboBox(pI.Name_HeadOfMission, HeadOfmission, Display, valuem);
+				
+				MyFunction.FillComboBox(pI.Name_HeadOfShift, HeadOfshift, Display, valuem);
 
-				pI.Name_HeadOfMission.DataSource = HeadOfmission;
-				pI.Name_HeadOfMission.ValueMember = valuem;
-				pI.Name_HeadOfMission.DisplayMember = Display;
-				if (pI.Name_HeadOfMission.SelectedValue != null)
-				{
-					pI.ID_HeadOfMission.Text = pI.Name_HeadOfMission.SelectedValue.ToString();
-					
-				}
-				else
-				{
-					pI.ID_HeadOfMission.Text = "";
-				}
-				pI.Name_HeadOfMission.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+				MyFunction.FillComboBox(pI.Name_Paramedic1, paramedic1, Display, valuem);
 
-				pI.Name_HeadOfShift.DataSource = HeadOfshift;
-				pI.Name_HeadOfShift.ValueMember = valuem;
-				pI.Name_HeadOfShift.DisplayMember = Display;
-				if (pI.Name_HeadOfShift.SelectedValue != null)
-				{
-					pI.ID_HeadOfShift.Text = pI.Name_HeadOfShift.SelectedValue.ToString();
-					
-				}
-				else
-				{
-					pI.ID_HeadOfShift.Text = "";
-				}
-				pI.Name_HeadOfShift.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+				MyFunction.FillComboBox(pI.Name_Paramedic2, paramedic2, Display, valuem);
+				
+				MyFunction.FillComboBox(pI.Name_RecipientOfMission, recipientOfMission, Display, valuem);
 
-				pI.Name_Paramedic1.DataSource = paramedic1;
-				pI.Name_Paramedic1.ValueMember = valuem;
-				pI.Name_Paramedic1.DisplayMember = Display;
-				if (pI.Name_Paramedic1.SelectedValue != null)
-				{
-					pI.ID_Paramedic1.Text = pI.Name_Paramedic1.SelectedValue.ToString();
-					
-				}
-				else
-				{
-					pI.ID_Paramedic1.Text = "";
-				}
-				pI.Name_Paramedic1.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+				MyFunction.FillComboBox(pI.Name_Driver, Driver, Display, valuem);
 
-				pI.Name_Paramedic2.DataSource = paramedic2;
-				pI.Name_Paramedic2.ValueMember = valuem;
-				pI.Name_Paramedic2.DisplayMember = Display;
-				if (pI.Name_Paramedic2.SelectedValue != null)
+				if (countevent == 0)
 				{
-					pI.ID_Paramedic2.Text = pI.Name_Paramedic2.SelectedValue.ToString();
-					
-				}
-				else
-				{
-					pI.ID_Paramedic2.Text = "";
-				}
-				pI.Name_Paramedic2.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+					pI.Name_HeadOfMission.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
 
-				pI.Name_RecipientOfMission.DataSource = recipientOfMission;
-				pI.Name_RecipientOfMission.ValueMember = valuem;
-				pI.Name_RecipientOfMission.DisplayMember = Display;
-				if (pI.Name_RecipientOfMission.SelectedValue != null)
-				{
-					pI.ID_RecipientOfMission.Text = pI.Name_RecipientOfMission.SelectedValue.ToString();
-					
-				}
-				else
-				{
-					pI.ID_RecipientOfMission.Text = "";
-				}
+					pI.Name_HeadOfShift.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
 
-				pI.Name_RecipientOfMission.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+					pI.Name_Paramedic1.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+
+					pI.Name_Paramedic2.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+
+					pI.Name_RecipientOfMission.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+
+					pI.Name_Driver.SelectedValueChanged += pI.Name_HeadOfMission_SelectedValueChanged;
+
+					countevent++;
+				}
 				return true;
 			}
 			catch (Exception ex)

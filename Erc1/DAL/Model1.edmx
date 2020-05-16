@@ -19,14 +19,14 @@
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="int" Nullable="false" />
+          <Property Name="الرمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="اسم القسم" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="الأطباء">
           <Key>
             <PropertyRef Name="رمز" />
           </Key>
-          <Property Name="رمز" Type="int" Nullable="false" />
+          <Property Name="رمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name=" اسم" Type="nvarchar" MaxLength="20" />
           <Property Name="عنوان" Type="nvarchar" MaxLength="20" />
           <Property Name="اختصاص" Type="nvarchar" MaxLength="10" />
@@ -40,7 +40,7 @@
             <PropertyRef Name="رمز الآلية" />
             <PropertyRef Name="المركز" />
           </Key>
-          <Property Name="رمز الآلية" Type="int" Nullable="false" />
+          <Property Name="رمز الآلية" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="المركز" Type="int" Nullable="false" />
           <Property Name="نوعية الاستخدام" Type="nvarchar" MaxLength="10" />
           <Property Name="موديل " Type="nvarchar" MaxLength="10" />
@@ -54,28 +54,28 @@
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="int" Nullable="false" />
+          <Property Name="الرمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="المرض" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="الأمراض المعدية">
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="int" Nullable="false" />
+          <Property Name="الرمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="المرض" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="الجهات الضامنة">
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="int" Nullable="false" />
+          <Property Name="الرمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="الجهة الضامنة" Type="nchar" MaxLength="25" Nullable="false" />
         </EntityType>
         <EntityType Name="الحالات">
           <Key>
             <PropertyRef Name="رمز" />
           </Key>
-          <Property Name="رمز" Type="int" Nullable="false" />
+          <Property Name="رمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="رمز النوعية" Type="int" />
           <Property Name="المرض" Type="nvarchar" MaxLength="30" />
           <Property Name="المرض بالانجليزي" Type="nvarchar" MaxLength="30" />
@@ -85,7 +85,7 @@
             <PropertyRef Name="الرمز" />
             <PropertyRef Name="المركز" />
           </Key>
-          <Property Name="الرمز" Type="int" Nullable="false" />
+          <Property Name="الرمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="الاسم" Type="nvarchar" MaxLength="50" />
           <Property Name="الجنسية" Type="nvarchar" MaxLength="50" />
           <Property Name="مكان السجل" Type="nvarchar" MaxLength="50" />
@@ -99,9 +99,8 @@
           <Property Name="الوظيفة" Type="int" />
           <Property Name="الدوام" Type="nvarchar" MaxLength="15" />
           <Property Name="فئة الدم" Type="int" />
-          <Property Name="مسعف أو مساعد" Type="nvarchar" MaxLength="10" />
+          <Property Name="مسعف أو مساعد" Type="bit" />
           <Property Name="سائق أو لا" Type="bit" />
-          <Property Name="الموقع" Type="nvarchar" MaxLength="15" />
           <Property Name="مسؤول مهمة أو لا" Type="bit" />
           <Property Name="المركز" Type="int" Nullable="false" />
           <Property Name="اللقب" Type="nvarchar" MaxLength="20" />
@@ -113,14 +112,14 @@
           <Key>
             <PropertyRef Name="رمز" />
           </Key>
-          <Property Name="رمز" Type="int" Nullable="false" />
+          <Property Name="رمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="المدينة" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="المراكز">
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="int" Nullable="false" />
+          <Property Name="الرمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="المدينة" Type="int" />
           <Property Name="تاريخ التاسيس" Type="date" />
         </EntityType>
@@ -128,7 +127,7 @@
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="int" Nullable="false" />
+          <Property Name="الرمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="اسم" Type="nvarchar" MaxLength="25" />
           <Property Name="تاريخ الولادة" Type="date" />
           <Property Name="وزن" Type="int" />
@@ -144,7 +143,7 @@
           <Key>
             <PropertyRef Name="رمز المستشفى" />
           </Key>
-          <Property Name="رمز المستشفى" Type="int" Nullable="false" />
+          <Property Name="رمز المستشفى" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="عدد الطوابق" Type="smallint" />
           <Property Name="العنوان" Type="nvarchar" MaxLength="40" />
           <Property Name="الهاتف" Type="nvarchar" MaxLength="20" />
@@ -168,15 +167,16 @@
           <Key>
             <PropertyRef Name="رمز" />
           </Key>
-          <Property Name="رمز" Type="int" Nullable="false" />
+          <Property Name="رمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="المنطقة" Type="nvarchar" MaxLength="20" />
+          <Property Name="المدينة" Type="int" />
         </EntityType>
         <EntityType Name="المهماة المؤجلة">
           <Key>
             <PropertyRef Name="رمز" />
             <PropertyRef Name="رمز المركز" />
           </Key>
-          <Property Name="رمز" Type="int" Nullable="false" />
+          <Property Name="رمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="رمز المركز" Type="int" Nullable="false" />
           <Property Name="اسم" Type="int" />
           <Property Name="العمر" Type="int" />
@@ -265,29 +265,34 @@
         <EntityType Name="حالات المهمات">
           <Key>
             <PropertyRef Name="رمز الحالة" />
+            <PropertyRef Name="الرمز الشهري" />
+            <PropertyRef Name="رمز السنوي" />
+            <PropertyRef Name="السنة" />
           </Key>
           <Property Name="رمز الحالة" Type="int" Nullable="false" />
-          <Property Name="رمز المهمة" Type="int" Nullable="false" />
+          <Property Name="الرمز الشهري" Type="int" Nullable="false" />
+          <Property Name="رمز السنوي" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="السنة" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="طبيعة المهمة">
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="int" Nullable="false" />
+          <Property Name="الرمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="طبيعة المهمة" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="فئة الدم">
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="int" Nullable="false" />
+          <Property Name="الرمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="فئة الدم" Type="nvarchar" MaxLength="5" />
         </EntityType>
         <EntityType Name="نوعيات الحالات">
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="int" Nullable="false" />
+          <Property Name="الرمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="النوعية" Type="nvarchar" MaxLength="30" />
         </EntityType>
         <Association Name="FK_الأطباء_ToTable_المستشفيات">
@@ -527,6 +532,18 @@
             </Principal>
             <Dependent Role="المستشفيات">
               <PropertyRef Name="رمز المنطقة" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_المناطق_ToTableالمدن">
+          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
+          <End Role="المناطق" Type="Self.المناطق" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="المدن">
+              <PropertyRef Name="رمز" />
+            </Principal>
+            <Dependent Role="المناطق">
+              <PropertyRef Name="المدينة" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1160,6 +1177,10 @@
             <End Role="المناطق" EntitySet="المناطق" />
             <End Role="المستشفيات" EntitySet="المستشفيات" />
           </AssociationSet>
+          <AssociationSet Name="FK_المناطق_ToTableالمدن" Association="Self.FK_المناطق_ToTableالمدن">
+            <End Role="المدن" EntitySet="المدن" />
+            <End Role="المناطق" EntitySet="المناطق" />
+          </AssociationSet>
           <AssociationSet Name="FK_المهمات الملغاة_ToTableأقسام المستشفيات1" Association="Self.FK_المهمات الملغاة_ToTableأقسام المستشفيات1">
             <End Role="المستشفيات" EntitySet="المستشفيات" />
             <End Role="المهمات الملغاة" EntitySet="المهمات الملغاة" />
@@ -1340,7 +1361,7 @@
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="Int32" Nullable="false" />
+          <Property Name="الرمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="اسم_القسم" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="المستشفيات_مع_اقسام" Relationship="Self.FK_المستشفيات_مع_اقسام_ToTableأقسام_المستشفيات" FromRole="أقسام_المستشفيات" ToRole="المستشفيات_مع_اقسام" />
           <NavigationProperty Name="المهمات_الملغاة" Relationship="Self.FK_المهمات_الملغاة_ToTableالمستشفيات1" FromRole="أقسام_المستشفيات" ToRole="المهمات_الملغاة" />
@@ -1354,7 +1375,7 @@
           <Key>
             <PropertyRef Name="رمز" />
           </Key>
-          <Property Name="رمز" Type="Int32" Nullable="false" />
+          <Property Name="رمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="C_اسم" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="عنوان" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="اختصاص" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
@@ -1373,7 +1394,7 @@
             <PropertyRef Name="رمز_الآلية" />
             <PropertyRef Name="المركز" />
           </Key>
-          <Property Name="رمز_الآلية" Type="Int32" Nullable="false" />
+          <Property Name="رمز_الآلية" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="المركز" Type="Int32" Nullable="false" />
           <Property Name="نوعية_الاستخدام" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="موديل_" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
@@ -1389,7 +1410,7 @@
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="Int32" Nullable="false" />
+          <Property Name="الرمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="المرض" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="المرضى" Relationship="Self.FK_المرضى_ToTableالأمراض_المزمنة" FromRole="الأمراض_المزمنة" ToRole="المرضى" />
         </EntityType>
@@ -1397,7 +1418,7 @@
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="Int32" Nullable="false" />
+          <Property Name="الرمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="المرض" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableالأمراض_المعدية" FromRole="الأمراض_المعدية" ToRole="المهمات_المنفذة" />
         </EntityType>
@@ -1405,7 +1426,7 @@
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="Int32" Nullable="false" />
+          <Property Name="الرمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="الجهة_الضامنة" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
           <NavigationProperty Name="المرضى" Relationship="Self.FK_المرضى_ToTableالضمان" FromRole="الجهات_الضامنة" ToRole="المرضى" />
           <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableالجهة_الضامنة" FromRole="الجهات_الضامنة" ToRole="المهمات_المنفذة" />
@@ -1414,7 +1435,7 @@
           <Key>
             <PropertyRef Name="رمز" />
           </Key>
-          <Property Name="رمز" Type="Int32" Nullable="false" />
+          <Property Name="رمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="رمز_النوعية" Type="Int32" />
           <Property Name="المرض" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="المرض_بالانجليزي" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
@@ -1427,7 +1448,7 @@
             <PropertyRef Name="الرمز" />
             <PropertyRef Name="المركز" />
           </Key>
-          <Property Name="الرمز" Type="Int32" Nullable="false" />
+          <Property Name="الرمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="الاسم" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="الجنسية" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="مكان_السجل" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -1441,9 +1462,8 @@
           <Property Name="الوظيفة" Type="Int32" />
           <Property Name="الدوام" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="فئة_الدم" Type="Int32" />
-          <Property Name="مسعف_أو_مساعد" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="مسعف_أو_مساعد" Type="Boolean" />
           <Property Name="سائق_أو_لا" Type="Boolean" />
-          <Property Name="الموقع" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="مسؤول_مهمة_أو_لا" Type="Boolean" />
           <Property Name="المركز" Type="Int32" Nullable="false" />
           <Property Name="اللقب" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
@@ -1466,13 +1486,14 @@
           <Key>
             <PropertyRef Name="رمز" />
           </Key>
-          <Property Name="رمز" Type="Int32" Nullable="false" />
+          <Property Name="رمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="المدينة" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="الأطباء" Relationship="Self.FK_الأطباء_ToTableالمدن" FromRole="المدن" ToRole="الأطباء" />
           <NavigationProperty Name="العاملون" Relationship="Self.FK_العاملون_ToTableالمدينة" FromRole="المدن" ToRole="العاملون" />
           <NavigationProperty Name="المراكز" Relationship="Self.FK_المراكز_ToTableالمدن" FromRole="المدن" ToRole="المراكز" />
           <NavigationProperty Name="المرضى" Relationship="Self.FK_المرضى_ToTableالمدن" FromRole="المدن" ToRole="المرضى" />
           <NavigationProperty Name="المستشفيات" Relationship="Self.FK_المستشفيات_ToTableالمدينة" FromRole="المدن" ToRole="المستشفيات" />
+          <NavigationProperty Name="المناطق" Relationship="Self.FK_المناطق_ToTableالمدن" FromRole="المدن" ToRole="المناطق" />
           <NavigationProperty Name="المهمات_الملغاة" Relationship="Self.FK_المهمات_الملغاة_ToTableالمدن1" FromRole="المدن" ToRole="المهمات_الملغاة" />
           <NavigationProperty Name="المهمات_الملغاة1" Relationship="Self.FK_المهمات_الملغاة_ToTableالمدن2" FromRole="المدن" ToRole="المهمات_الملغاة" />
           <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableالمدن1" FromRole="المدن" ToRole="المهمات_المنفذة" />
@@ -1484,7 +1505,7 @@
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="Int32" Nullable="false" />
+          <Property Name="الرمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="المدينة" Type="Int32" />
           <Property Name="تاريخ_التاسيس" Type="DateTime" Precision="0" />
           <NavigationProperty Name="الآليات" Relationship="Self.FK_الآليات_ToTable_المراكز" FromRole="المراكز" ToRole="الآليات" />
@@ -1495,7 +1516,7 @@
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="Int32" Nullable="false" />
+          <Property Name="الرمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="اسم" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
           <Property Name="تاريخ_الولادة" Type="DateTime" Precision="0" />
           <Property Name="وزن" Type="Int32" />
@@ -1518,7 +1539,7 @@
           <Key>
             <PropertyRef Name="رمز_المستشفى" />
           </Key>
-          <Property Name="رمز_المستشفى" Type="Int32" Nullable="false" />
+          <Property Name="رمز_المستشفى" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="عدد_الطوابق" Type="Int16" />
           <Property Name="العنوان" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="الهاتف" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
@@ -1554,10 +1575,12 @@
           <Key>
             <PropertyRef Name="رمز" />
           </Key>
-          <Property Name="رمز" Type="Int32" Nullable="false" />
+          <Property Name="رمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="المنطقة" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="المدينة" Type="Int32" />
           <NavigationProperty Name="الأطباء" Relationship="Self.FK_الأطباء_ToTableالمناطق" FromRole="المناطق" ToRole="الأطباء" />
           <NavigationProperty Name="العاملون" Relationship="Self.FK_العاملون_ToTableالمنطقة" FromRole="المناطق" ToRole="العاملون" />
+          <NavigationProperty Name="المدن" Relationship="Self.FK_المناطق_ToTableالمدن" FromRole="المناطق" ToRole="المدن" />
           <NavigationProperty Name="المرضى" Relationship="Self.FK_المرضى_ToTableالمناطق" FromRole="المناطق" ToRole="المرضى" />
           <NavigationProperty Name="المستشفيات" Relationship="Self.FK_المستشفيات_ToTableالمناطق" FromRole="المناطق" ToRole="المستشفيات" />
           <NavigationProperty Name="المهمات_الملغاة" Relationship="Self.FK_المهمات_الملغاة_ToTableالمناطق1" FromRole="المناطق" ToRole="المهمات_الملغاة" />
@@ -1572,7 +1595,7 @@
             <PropertyRef Name="رمز" />
             <PropertyRef Name="رمز_المركز" />
           </Key>
-          <Property Name="رمز" Type="Int32" Nullable="false" />
+          <Property Name="رمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="رمز_المركز" Type="Int32" Nullable="false" />
           <Property Name="اسم" Type="Int32" />
           <Property Name="العمر" Type="Int32" />
@@ -1702,15 +1725,20 @@
         <EntityType Name="حالات_المهمات">
           <Key>
             <PropertyRef Name="رمز_الحالة" />
+            <PropertyRef Name="الرمز_الشهري" />
+            <PropertyRef Name="رمز_السنوي" />
+            <PropertyRef Name="السنة" />
           </Key>
           <Property Name="رمز_الحالة" Type="Int32" Nullable="false" />
-          <Property Name="رمز_المهمة" Type="Int32" Nullable="false" />
+          <Property Name="الرمز_الشهري" Type="Int32" Nullable="false" />
+          <Property Name="رمز_السنوي" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="السنة" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="طبيعة_المهمة">
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="Int32" Nullable="false" />
+          <Property Name="الرمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="طبيعة_المهمة1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="المهمات_الملغاة" Relationship="Self.FK_المهمات_الملغاة_ToTableطبيعة_المهمة" FromRole="طبيعة_المهمة" ToRole="المهمات_الملغاة" />
           <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableطبيعة_المهمة" FromRole="طبيعة_المهمة" ToRole="المهمات_المنفذة" />
@@ -1719,7 +1747,7 @@
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="Int32" Nullable="false" />
+          <Property Name="الرمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="فئة_الدم1" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="العاملون" Relationship="Self.FK_العاملون_ToTableفئة_الدم" FromRole="فئة_الدم" ToRole="العاملون" />
         </EntityType>
@@ -1727,7 +1755,7 @@
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="Int32" Nullable="false" />
+          <Property Name="الرمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="النوعية" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="الحالات" Relationship="Self.FK_الحالات_ToTableنوعيات_الحالات" FromRole="نوعيات_الحالات" ToRole="الحالات" />
         </EntityType>
@@ -2165,6 +2193,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_المناطق_ToTableالمدن">
+          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
+          <End Role="المناطق" Type="Self.المناطق" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="المدن">
+              <PropertyRef Name="رمز" />
+            </Principal>
+            <Dependent Role="المناطق">
+              <PropertyRef Name="المدينة" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_المهمات_الملغاة_ToTableالمدن1">
           <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
           <End Role="المهمات_الملغاة" Type="Self.المهمات_الملغاة" Multiplicity="*" />
@@ -2465,7 +2505,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ERCEntities3" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ERCEntities4" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="أقسام_المستشفيات" EntityType="Self.أقسام_المستشفيات" />
           <EntitySet Name="الأطباء" EntityType="Self.الأطباء" />
@@ -2629,6 +2669,10 @@
             <End Role="المدن" EntitySet="المدن" />
             <End Role="المستشفيات" EntitySet="المستشفيات" />
           </AssociationSet>
+          <AssociationSet Name="FK_المناطق_ToTableالمدن" Association="Self.FK_المناطق_ToTableالمدن">
+            <End Role="المدن" EntitySet="المدن" />
+            <End Role="المناطق" EntitySet="المناطق" />
+          </AssociationSet>
           <AssociationSet Name="FK_المهمات_الملغاة_ToTableالمدن1" Association="Self.FK_المهمات_الملغاة_ToTableالمدن1">
             <End Role="المدن" EntitySet="المدن" />
             <End Role="المهمات_الملغاة" EntitySet="المهمات_الملغاة" />
@@ -2770,7 +2814,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ERCModelStoreContainer" CdmEntityContainer="ERCEntities3">
+        <EntityContainerMapping StorageEntityContainer="ERCModelStoreContainer" CdmEntityContainer="ERCEntities4">
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="ERCModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -2872,7 +2916,6 @@
                 <ScalarProperty Name="فئة_الدم" ColumnName="فئة الدم" />
                 <ScalarProperty Name="مسعف_أو_مساعد" ColumnName="مسعف أو مساعد" />
                 <ScalarProperty Name="سائق_أو_لا" ColumnName="سائق أو لا" />
-                <ScalarProperty Name="الموقع" ColumnName="الموقع" />
                 <ScalarProperty Name="مسؤول_مهمة_أو_لا" ColumnName="مسؤول مهمة أو لا" />
                 <ScalarProperty Name="المركز" ColumnName="المركز" />
                 <ScalarProperty Name="اللقب" ColumnName="اللقب" />
@@ -2946,6 +2989,7 @@
               <MappingFragment StoreEntitySet="المناطق">
                 <ScalarProperty Name="رمز" ColumnName="رمز" />
                 <ScalarProperty Name="المنطقة" ColumnName="المنطقة" />
+                <ScalarProperty Name="المدينة" ColumnName="المدينة" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3042,7 +3086,9 @@
             <EntityTypeMapping TypeName="ERCModel.حالات_المهمات">
               <MappingFragment StoreEntitySet="حالات المهمات">
                 <ScalarProperty Name="رمز_الحالة" ColumnName="رمز الحالة" />
-                <ScalarProperty Name="رمز_المهمة" ColumnName="رمز المهمة" />
+                <ScalarProperty Name="الرمز_الشهري" ColumnName="الرمز الشهري" />
+                <ScalarProperty Name="رمز_السنوي" ColumnName="رمز السنوي" />
+                <ScalarProperty Name="السنة" ColumnName="السنة" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -31,14 +31,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -51,10 +49,10 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(190, 20);
+            this.button2.Location = new System.Drawing.Point(310, 20);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 120);
+            this.button2.Size = new System.Drawing.Size(270, 250);
             this.button2.TabIndex = 1;
             this.button2.Text = "ADD";
             this.button2.UseVisualStyleBackColor = false;
@@ -62,24 +60,14 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(184)))), ((int)(((byte)(127)))));
             this.button1.Location = new System.Drawing.Point(20, 20);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 120);
+            this.button1.Size = new System.Drawing.Size(270, 250);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(431, 47);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(554, 469);
-            this.dataGridView1.TabIndex = 2;
             // 
             // HospitalsForm
             // 
@@ -90,7 +78,6 @@
             this.Name = "HospitalsForm";
             this.Text = "HospitalsForm";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -100,6 +87,5 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

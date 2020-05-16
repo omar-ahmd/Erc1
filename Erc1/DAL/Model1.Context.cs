@@ -15,10 +15,10 @@ namespace Erc1.DAL
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class ERCEntities : DbContext
+    public partial class ERCEntities4 : DbContext
     {
-        public ERCEntities()
-            : base("name=ERCEntities")
+        public ERCEntities4()
+            : base("name=ERCEntities4")
         {
         }
     

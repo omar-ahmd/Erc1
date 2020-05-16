@@ -22,6 +22,7 @@ namespace Erc1.DAL
             this.المراكز = new HashSet<المراكز>();
             this.المرضى = new HashSet<المرضى>();
             this.المستشفيات = new HashSet<المستشفيات>();
+            this.المناطق = new HashSet<المناطق>();
             this.المهمات_الملغاة = new HashSet<المهمات_الملغاة>();
             this.المهمات_الملغاة1 = new HashSet<المهمات_الملغاة>();
             this.المهمات_المنفذة = new HashSet<المهمات_المنفذة>();
@@ -43,6 +44,8 @@ namespace Erc1.DAL
         public virtual ICollection<المرضى> المرضى { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<المستشفيات> المستشفيات { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<المناطق> المناطق { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<المهمات_الملغاة> المهمات_الملغاة { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -13,6 +13,8 @@ using System.Windows.Forms;
 
 namespace Erc1.Forms._4_Hospitals
 {
+
+
     public partial class HospitalsForm : Form
     {
         public HospitalsForm()
@@ -25,45 +27,42 @@ namespace Erc1.Forms._4_Hospitals
         أقسام_المستشفيات departement = new أقسام_المستشفيات();
         private void button1_Click(object sender, EventArgs e)
         {
-            if(available)
+            Mybutton sen = (Mybutton)sender;
+            if (sen.available)
             {
-                button1.BackColor = Color.Red;
-                available = false;
-                Busy = true;
+                sen.BackColor = Color.Red;
+                sen.available = false;
+                sen.Busy = true;
             }
-            else if(Busy)
+            else if (sen.Busy)
             {
-                button1.BackColor = Color.Orange;
-                MidBusy = true;
-                Busy = false;
+                sen.BackColor = Color.Orange;
+                sen.MidBusy = true;
+                sen.Busy = false;
             }
-            else if(MidBusy)
+            else if (sen.MidBusy)
             {
-                button1.BackColor = Color.Green;
-                MidBusy = false;
-                available = true;
+                sen.BackColor = Color.FromArgb(109, 184, 127) ;
+                sen.MidBusy = false;
+                sen.available = true;
             }
 
-            using (ERCEntities3 db = new ERCEntities3())
-            {
-
-                
-                departement.اسم_القسم = "الطوائ";
-
-
-                db.أقسام_المستشفيات.Add(departement);
-                db.SaveChanges();
-
-            }
         }
         int row=0, column=1;
         
         private void button2_Click(object sender, EventArgs e)
         {
-       
+            
             int startX = button1.Location.X, startY = button1.Location.Y;
             int width = button1.Width, heigh = button1.Height;
-            Button bt = new Button();
+            Mybutton bt = new Mybutton();
+            bt.Click += button1_Click;
+            bt.Text = "H";
+
+            bt.Font = new System.Drawing.Font("Arial", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+
+            bt.BackColor = Color.FromArgb(109, 184, 127);
             bt.Location = button2.Location;
             bt.Size = button2.Size;
             bt.Text = "hos";
@@ -81,5 +80,13 @@ namespace Erc1.Forms._4_Hospitals
             }
             button2.Location = new Point(startX + column * (width + startX), startY + row * (startY + heigh));
         }
+    }
+    public class Mybutton : Button
+    {
+        public bool available = true;
+        public bool Busy = false;
+        public bool MidBusy = false;
+
+
     }
 }
