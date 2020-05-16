@@ -36,8 +36,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.ID_HeadOfMission = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
-            this.Name_Paramedic2 = new System.Windows.Forms.ComboBox();
+            this.tp = new System.Windows.Forms.TableLayoutPanel();
+            this.np = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -88,7 +88,7 @@
             this.tableLayoutPanel21.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            this.tableLayoutPanel18.SuspendLayout();
+            this.tp.SuspendLayout();
             this.tableLayoutPanel19.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -127,7 +127,7 @@
             this.tpi1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tpi1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.5F));
             this.tpi1.Controls.Add(this.tp2, 1, 1);
-            this.tpi1.Controls.Add(this.tableLayoutPanel18, 1, 3);
+            this.tpi1.Controls.Add(this.tp, 1, 3);
             this.tpi1.Controls.Add(this.tableLayoutPanel14, 1, 7);
             this.tpi1.Controls.Add(this.tableLayoutPanel8, 3, 7);
             this.tpi1.Controls.Add(this.tpi5, 3, 1);
@@ -265,44 +265,44 @@
             this.ID_HeadOfMission.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ID_HeadOfMission.WordWrap = false;
             // 
-            // tableLayoutPanel18
+            // tp
             // 
-            this.tableLayoutPanel18.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel18.ColumnCount = 2;
-            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel18.Controls.Add(this.Name_Paramedic2, 0, 1);
-            this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel19, 1, 0);
-            this.tableLayoutPanel18.Controls.Add(this.ID_Paramedic2, 1, 1);
-            this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel18.Location = new System.Drawing.Point(71, 172);
-            this.tableLayoutPanel18.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel18.Name = "tableLayoutPanel18";
-            this.tableLayoutPanel18.RowCount = 3;
-            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel18.Size = new System.Drawing.Size(379, 81);
-            this.tableLayoutPanel18.TabIndex = 7;
+            this.tp.BackColor = System.Drawing.Color.Transparent;
+            this.tp.ColumnCount = 2;
+            this.tp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tp.Controls.Add(this.np, 0, 1);
+            this.tp.Controls.Add(this.tableLayoutPanel19, 1, 0);
+            this.tp.Controls.Add(this.ID_Paramedic2, 1, 1);
+            this.tp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tp.Location = new System.Drawing.Point(71, 172);
+            this.tp.Margin = new System.Windows.Forms.Padding(0);
+            this.tp.Name = "tp";
+            this.tp.RowCount = 3;
+            this.tp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tp.Size = new System.Drawing.Size(379, 81);
+            this.tp.TabIndex = 7;
             // 
-            // Name_Paramedic2
+            // np
             // 
-            this.Name_Paramedic2.BackColor = System.Drawing.SystemColors.Control;
-            this.Name_Paramedic2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Name_Paramedic2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name_Paramedic2.FormattingEnabled = true;
-            this.Name_Paramedic2.Items.AddRange(new object[] {
+            this.np.BackColor = System.Drawing.SystemColors.Control;
+            this.np.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.np.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.np.FormattingEnabled = true;
+            this.np.Items.AddRange(new object[] {
             "100-طرابلس",
             "200-ضنية",
             "300",
             "400-قلمون"});
-            this.Name_Paramedic2.Location = new System.Drawing.Point(0, 28);
-            this.Name_Paramedic2.Margin = new System.Windows.Forms.Padding(0);
-            this.Name_Paramedic2.Name = "Name_Paramedic2";
-            this.Name_Paramedic2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Name_Paramedic2.Size = new System.Drawing.Size(284, 37);
-            this.Name_Paramedic2.Sorted = true;
-            this.Name_Paramedic2.TabIndex = 10;
+            this.np.Location = new System.Drawing.Point(0, 28);
+            this.np.Margin = new System.Windows.Forms.Padding(0);
+            this.np.Name = "np";
+            this.np.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.np.Size = new System.Drawing.Size(284, 37);
+            this.np.Sorted = true;
+            this.np.TabIndex = 10;
             // 
             // tableLayoutPanel19
             // 
@@ -1029,8 +1029,8 @@
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            this.tableLayoutPanel18.ResumeLayout(false);
-            this.tableLayoutPanel18.PerformLayout();
+            this.tp.ResumeLayout(false);
+            this.tp.PerformLayout();
             this.tableLayoutPanel19.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
@@ -1083,7 +1083,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.TextBox ID_HeadOfMission;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
+        private System.Windows.Forms.TableLayoutPanel tp;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label9;
@@ -1120,7 +1120,7 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TextBox Notes;
         private System.Windows.Forms.ComboBox Name_HeadOfMission;
-        private System.Windows.Forms.ComboBox Name_Paramedic2;
+        private System.Windows.Forms.ComboBox np;
         private System.Windows.Forms.ComboBox Name_RecipientOfMission;
         private System.Windows.Forms.ComboBox Name_Paramedic1;
         private System.Windows.Forms.ComboBox Name_Driver;

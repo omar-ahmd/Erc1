@@ -6,12 +6,99 @@ using System.Threading.Tasks;
 using Erc1.model;
 using System.Collections;
 using System.Data;
-
+using System.ComponentModel;
 
 namespace Erc1.Classes
 {
+    class cent 
+    
+    {
+        int key;
+      public int Key {
+            get;
+            set;
+        }
+    
+    }
+
     class mission
     {
+
+        public static DataTable d(int hospital_key) 
+        {
+            var table = new DataTable();
+            using (var entity = new ERCEntities())
+            { 
+                
+                var cmd = entity.Database.Connection.CreateCommand();
+                cmd.CommandText = (@"select kesem.[الرمز] , kesem.[اسم القسم] 
+                    from[أقسام المستشفيات] as kesem
+                    join[المستشفيات مع اقسام] as hk
+                    on kesem.[الرمز] = hk.[رمز القسم]
+                    join[المستشفيات] as hospital
+                    on hk.[رمز المشفى] = hospital.[رمز المستشفى]
+                    where hospital.[رمز المستشفى] =" + hospital_key+ "sections");
+                cmd.Connection.Open();
+                table.Load(cmd.ExecuteReader());
+            }
+            return table;
+        }
+   
+        //public static IList<cent> center()
+        //{ 
+        //    using (var entity = new ERCEntities())
+        //    {
+        //        IList<cent> c;
+        //        c = int.Parse(entity.المراكز.Select(r => new { r.الرمز }).ToString()) ;
+        //        return c;
+        //    }
+        //}
+
+
+        //public static DataTable ConvertToDataTable<T>(IList<T> data)
+        //{
+        //    PropertyDescriptorCollection properties =
+        //        TypeDescriptor.GetProperties(typeof(T));
+
+        //    DataTable table = new DataTable();
+
+        //    foreach (PropertyDescriptor prop in properties)
+        //        table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+
+        //    foreach (T item in data)
+        //    {
+        //        DataRow row = table.NewRow();
+        //        foreach (PropertyDescriptor prop in properties)
+        //        {
+        //            row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+        //        }
+        //        table.Rows.Add(row);
+        //    }
+        //    return table;
+        //}
+
+
+
+        //DataTable dt = new DataTable();
+        //public static DataTable center()
+        //{
+
+        //    using (ERCEntities entity = new ERCEntities())
+        //    {
+        //        (from center in entity.المراكز.AsEnumerable()
+        //         select new
+        //         {
+        //             id = center.الرمز,
+        //             name = center.المدن.المدينة
+
+        //         }).Aggregate(table, (dt, r) =>
+        //         {
+        //             dt.Rows.Add(r.id, r.Name);
+        //             return dt;
+        //         });
+        //    };
+
+        //}
 
 
         //// get المراكز id (column name ="الرمز")
@@ -23,6 +110,34 @@ namespace Erc1.Classes
         //        return c.ToList();
         //    }
         //}
+
+
+        // get monthlyid 
+        public static int Get_MonthlyID()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                 int c = entity.المهمات_المنفذة
+                    .Where (r=>r.الرمز_الشهري==entity.المهمات_المنفذة.Max(p=>p.الرمز_الشهري))
+                    .Select(r => r.الرمز_الشهري).Single()
+                    ;
+                return c;
+            };
+        }
+
+
+        // get yearid 
+        public static int Get_YearID()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                int c = entity.المهمات_المنفذة
+                   .Where(r => r.رمز_السنوي == entity.المهمات_المنفذة.Max(p => p.رمز_السنوي))
+                   .Select(r => r.رمز_السنوي).Single()
+                   ;
+                return c;
+            };
+        }
 
 
         //get all centers (column names ="centers","id")
