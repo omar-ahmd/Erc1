@@ -792,9 +792,6 @@
   <data name="AnnualID.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="AnnualID.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="AnnualID.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 13.8pt</value>
   </data>
@@ -833,9 +830,6 @@
   </data>
   <data name="MonthlyID.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="MonthlyID.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="MonthlyID.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 13.8pt</value>

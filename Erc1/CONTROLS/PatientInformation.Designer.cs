@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.Patient = new System.Windows.Forms.TableLayoutPanel();
             this.Name_Patient = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,7 +44,7 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.FromHosInfo = new System.Windows.Forms.TableLayoutPanel();
+            this.FromHospital = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.FromHosRoom = new System.Windows.Forms.TextBox();
             this.FromHosFloor = new System.Windows.Forms.ComboBox();
@@ -53,14 +53,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.FromHospit = new System.Windows.Forms.TableLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.Name_FromHospital = new System.Windows.Forms.ComboBox();
             this.ID_FromHospital = new System.Windows.Forms.TextBox();
-            this.ToHosInfo = new System.Windows.Forms.TableLayoutPanel();
+            this.ToHospital = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.ToHosRoom = new System.Windows.Forms.TextBox();
             this.ToHosFloor = new System.Windows.Forms.ComboBox();
@@ -69,7 +69,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.ToHospit = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -143,7 +143,7 @@
             this.FromHome = new Erc1.CONTROLS.LabelBord();
             this.ToHos = new Erc1.CONTROLS.LabelBord();
             this.ToHome = new Erc1.CONTROLS.LabelBord();
-            this.tableLayoutPanel5.SuspendLayout();
+            this.Patient.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -152,17 +152,17 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel2.SuspendLayout();
-            this.FromHosInfo.SuspendLayout();
+            this.FromHospital.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
+            this.FromHospit.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
-            this.ToHosInfo.SuspendLayout();
+            this.ToHospital.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
-            this.tableLayoutPanel13.SuspendLayout();
+            this.ToHospit.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tableLayoutPanel14.SuspendLayout();
@@ -193,26 +193,25 @@
             this.tableLayoutPanel27.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel5
+            // Patient
             // 
-            this.tableLayoutPanel5.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.Controls.Add(this.Name_Patient, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel4, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.ID_Patient, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(this.CanSit, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(520, 15);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.80597F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.19403F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(397, 67);
-            this.tableLayoutPanel5.TabIndex = 1;
+            this.Patient.BackColor = System.Drawing.Color.Transparent;
+            this.Patient.ColumnCount = 2;
+            this.Patient.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.Patient.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.Patient.Controls.Add(this.Name_Patient, 0, 1);
+            this.Patient.Controls.Add(this.tableLayoutPanel4, 1, 0);
+            this.Patient.Controls.Add(this.ID_Patient, 1, 1);
+            this.Patient.Controls.Add(this.CanSit, 0, 0);
+            this.Patient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Patient.Location = new System.Drawing.Point(520, 15);
+            this.Patient.Margin = new System.Windows.Forms.Padding(0);
+            this.Patient.Name = "Patient";
+            this.Patient.RowCount = 2;
+            this.Patient.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.Patient.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.Patient.Size = new System.Drawing.Size(397, 67);
+            this.Patient.TabIndex = 1;
             // 
             // Name_Patient
             // 
@@ -225,15 +224,13 @@
             this.Name_Patient.ItemHeight = 27;
             this.Name_Patient.Items.AddRange(new object[] {
             "جديد"});
-            this.Name_Patient.Location = new System.Drawing.Point(0, 25);
+            this.Name_Patient.Location = new System.Drawing.Point(0, 26);
             this.Name_Patient.Margin = new System.Windows.Forms.Padding(0);
             this.Name_Patient.Name = "Name_Patient";
             this.Name_Patient.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Name_Patient.Size = new System.Drawing.Size(297, 35);
-            this.Name_Patient.Sorted = true;
             this.Name_Patient.TabIndex = 9;
             this.Name_Patient.SelectedIndexChanged += new System.EventHandler(this.Name_Patient_SelectedIndexChanged);
-            this.Name_Patient.SelectedValueChanged += new System.EventHandler(this.Name_Patient_SelectedValueChanged);
             // 
             // tableLayoutPanel4
             // 
@@ -246,7 +243,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(100, 25);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(100, 26);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // panel1
@@ -258,7 +255,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(100, 25);
+            this.panel1.Size = new System.Drawing.Size(100, 26);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -284,7 +281,7 @@
             this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 25);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -298,7 +295,7 @@
             this.ID_Patient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ID_Patient.Enabled = false;
             this.ID_Patient.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
-            this.ID_Patient.Location = new System.Drawing.Point(297, 25);
+            this.ID_Patient.Location = new System.Drawing.Point(297, 26);
             this.ID_Patient.Margin = new System.Windows.Forms.Padding(0);
             this.ID_Patient.Name = "ID_Patient";
             this.ID_Patient.ReadOnly = true;
@@ -317,11 +314,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.5F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.Patient, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.FromHosInfo, 3, 5);
-            this.tableLayoutPanel1.Controls.Add(this.ToHosInfo, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.FromHospital, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.ToHospital, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.FromHomeInfo, 3, 7);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel21, 3, 9);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel24, 1, 9);
@@ -373,7 +370,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CancilingtText.BackColor = System.Drawing.SystemColors.Control;
             this.CancilingtText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CancilingtText.Enabled = false;
             this.CancilingtText.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
             this.CancilingtText.Location = new System.Drawing.Point(0, 26);
             this.CancilingtText.Margin = new System.Windows.Forms.Padding(0);
@@ -402,8 +398,7 @@
             this.Save.Size = new System.Drawing.Size(81, 41);
             this.Save.TabIndex = 0;
             this.Save.Text = "حفظ";
-            this.Save.UseVisualStyleBackColor = true;
-            this.Save.UseWaitCursor = true;
+            this.Save.UseVisualStyleBackColor = false;
             this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // panel3
@@ -476,26 +471,26 @@
             this.label2.Text = "من";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // FromHosInfo
+            // FromHospital
             // 
-            this.FromHosInfo.ColumnCount = 1;
-            this.FromHosInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.FromHosInfo.Controls.Add(this.tableLayoutPanel9, 0, 3);
-            this.FromHosInfo.Controls.Add(this.tableLayoutPanel8, 0, 2);
-            this.FromHosInfo.Controls.Add(this.tableLayoutPanel7, 0, 0);
-            this.FromHosInfo.Controls.Add(this.tableLayoutPanel6, 0, 1);
-            this.FromHosInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FromHosInfo.Enabled = false;
-            this.FromHosInfo.Location = new System.Drawing.Point(520, 145);
-            this.FromHosInfo.Margin = new System.Windows.Forms.Padding(0);
-            this.FromHosInfo.Name = "FromHosInfo";
-            this.FromHosInfo.RowCount = 4;
-            this.FromHosInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.67F));
-            this.FromHosInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
-            this.FromHosInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.67F));
-            this.FromHosInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
-            this.FromHosInfo.Size = new System.Drawing.Size(397, 134);
-            this.FromHosInfo.TabIndex = 5;
+            this.FromHospital.ColumnCount = 1;
+            this.FromHospital.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.FromHospital.Controls.Add(this.tableLayoutPanel9, 0, 3);
+            this.FromHospital.Controls.Add(this.tableLayoutPanel8, 0, 2);
+            this.FromHospital.Controls.Add(this.FromHospit, 0, 0);
+            this.FromHospital.Controls.Add(this.tableLayoutPanel6, 0, 1);
+            this.FromHospital.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FromHospital.Enabled = false;
+            this.FromHospital.Location = new System.Drawing.Point(520, 145);
+            this.FromHospital.Margin = new System.Windows.Forms.Padding(0);
+            this.FromHospital.Name = "FromHospital";
+            this.FromHospital.RowCount = 4;
+            this.FromHospital.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.67F));
+            this.FromHospital.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.FromHospital.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.67F));
+            this.FromHospital.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.FromHospital.Size = new System.Drawing.Size(397, 134);
+            this.FromHospital.TabIndex = 5;
             // 
             // tableLayoutPanel9
             // 
@@ -524,7 +519,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FromHosRoom.BackColor = System.Drawing.SystemColors.Control;
             this.FromHosRoom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FromHosRoom.Enabled = false;
             this.FromHosRoom.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
             this.FromHosRoom.Location = new System.Drawing.Point(0, 0);
             this.FromHosRoom.Margin = new System.Windows.Forms.Padding(0);
@@ -553,7 +547,6 @@
             this.FromHosFloor.Name = "FromHosFloor";
             this.FromHosFloor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.FromHosFloor.Size = new System.Drawing.Size(119, 35);
-            this.FromHosFloor.Sorted = true;
             this.FromHosFloor.TabIndex = 8;
             // 
             // FromHosDepartement
@@ -575,7 +568,6 @@
             this.FromHosDepartement.Name = "FromHosDepartement";
             this.FromHosDepartement.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.FromHosDepartement.Size = new System.Drawing.Size(158, 35);
-            this.FromHosDepartement.Sorted = true;
             this.FromHosDepartement.TabIndex = 6;
             // 
             // tableLayoutPanel8
@@ -645,20 +637,20 @@
             this.label5.Text = "غرفة";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // tableLayoutPanel7
+            // FromHospit
             // 
-            this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel7.Controls.Add(this.panel5, 1, 0);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(397, 22);
-            this.tableLayoutPanel7.TabIndex = 1;
+            this.FromHospit.ColumnCount = 2;
+            this.FromHospit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.FromHospit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.FromHospit.Controls.Add(this.panel5, 1, 0);
+            this.FromHospit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FromHospit.Location = new System.Drawing.Point(0, 0);
+            this.FromHospit.Margin = new System.Windows.Forms.Padding(0);
+            this.FromHospit.Name = "FromHospit";
+            this.FromHospit.RowCount = 1;
+            this.FromHospit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.FromHospit.Size = new System.Drawing.Size(397, 22);
+            this.FromHospit.TabIndex = 1;
             // 
             // panel5
             // 
@@ -735,7 +727,6 @@
             this.Name_FromHospital.Name = "Name_FromHospital";
             this.Name_FromHospital.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Name_FromHospital.Size = new System.Drawing.Size(297, 35);
-            this.Name_FromHospital.Sorted = true;
             this.Name_FromHospital.TabIndex = 8;
             // 
             // ID_FromHospital
@@ -746,37 +737,37 @@
             this.ID_FromHospital.BackColor = System.Drawing.SystemColors.Control;
             this.ID_FromHospital.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ID_FromHospital.Enabled = false;
-            this.ID_FromHospital.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
+            this.ID_FromHospital.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ID_FromHospital.Location = new System.Drawing.Point(297, 0);
             this.ID_FromHospital.Margin = new System.Windows.Forms.Padding(0);
             this.ID_FromHospital.Name = "ID_FromHospital";
             this.ID_FromHospital.ReadOnly = true;
             this.ID_FromHospital.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.ID_FromHospital.Size = new System.Drawing.Size(100, 36);
+            this.ID_FromHospital.Size = new System.Drawing.Size(100, 34);
             this.ID_FromHospital.TabIndex = 7;
             this.ID_FromHospital.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ID_FromHospital.WordWrap = false;
             // 
-            // ToHosInfo
+            // ToHospital
             // 
-            this.ToHosInfo.ColumnCount = 1;
-            this.ToHosInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ToHosInfo.Controls.Add(this.tableLayoutPanel11, 0, 3);
-            this.ToHosInfo.Controls.Add(this.tableLayoutPanel12, 0, 2);
-            this.ToHosInfo.Controls.Add(this.tableLayoutPanel13, 0, 0);
-            this.ToHosInfo.Controls.Add(this.tableLayoutPanel14, 0, 1);
-            this.ToHosInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ToHosInfo.Enabled = false;
-            this.ToHosInfo.Location = new System.Drawing.Point(74, 145);
-            this.ToHosInfo.Margin = new System.Windows.Forms.Padding(0);
-            this.ToHosInfo.Name = "ToHosInfo";
-            this.ToHosInfo.RowCount = 4;
-            this.ToHosInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.67F));
-            this.ToHosInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
-            this.ToHosInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.67F));
-            this.ToHosInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
-            this.ToHosInfo.Size = new System.Drawing.Size(397, 134);
-            this.ToHosInfo.TabIndex = 6;
+            this.ToHospital.ColumnCount = 1;
+            this.ToHospital.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ToHospital.Controls.Add(this.tableLayoutPanel11, 0, 3);
+            this.ToHospital.Controls.Add(this.tableLayoutPanel12, 0, 2);
+            this.ToHospital.Controls.Add(this.ToHospit, 0, 0);
+            this.ToHospital.Controls.Add(this.tableLayoutPanel14, 0, 1);
+            this.ToHospital.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ToHospital.Enabled = false;
+            this.ToHospital.Location = new System.Drawing.Point(74, 145);
+            this.ToHospital.Margin = new System.Windows.Forms.Padding(0);
+            this.ToHospital.Name = "ToHospital";
+            this.ToHospital.RowCount = 4;
+            this.ToHospital.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.67F));
+            this.ToHospital.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.ToHospital.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.67F));
+            this.ToHospital.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.ToHospital.Size = new System.Drawing.Size(397, 134);
+            this.ToHospital.TabIndex = 6;
             // 
             // tableLayoutPanel11
             // 
@@ -805,12 +796,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ToHosRoom.BackColor = System.Drawing.SystemColors.Control;
             this.ToHosRoom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ToHosRoom.Enabled = false;
             this.ToHosRoom.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
             this.ToHosRoom.Location = new System.Drawing.Point(0, 0);
             this.ToHosRoom.Margin = new System.Windows.Forms.Padding(0);
             this.ToHosRoom.Name = "ToHosRoom";
-            this.ToHosRoom.ReadOnly = true;
             this.ToHosRoom.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ToHosRoom.Size = new System.Drawing.Size(120, 36);
             this.ToHosRoom.TabIndex = 10;
@@ -835,7 +824,6 @@
             this.ToHosFloor.Name = "ToHosFloor";
             this.ToHosFloor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ToHosFloor.Size = new System.Drawing.Size(119, 35);
-            this.ToHosFloor.Sorted = true;
             this.ToHosFloor.TabIndex = 8;
             // 
             // ToHosDepartement
@@ -857,7 +845,6 @@
             this.ToHosDepartement.Name = "ToHosDepartement";
             this.ToHosDepartement.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ToHosDepartement.Size = new System.Drawing.Size(158, 35);
-            this.ToHosDepartement.Sorted = true;
             this.ToHosDepartement.TabIndex = 6;
             // 
             // tableLayoutPanel12
@@ -927,20 +914,20 @@
             this.label10.Text = "غرفة";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // tableLayoutPanel13
+            // ToHospit
             // 
-            this.tableLayoutPanel13.ColumnCount = 2;
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel13.Controls.Add(this.panel6, 1, 0);
-            this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
-            this.tableLayoutPanel13.RowCount = 1;
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(397, 22);
-            this.tableLayoutPanel13.TabIndex = 1;
+            this.ToHospit.ColumnCount = 2;
+            this.ToHospit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.ToHospit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.ToHospit.Controls.Add(this.panel6, 1, 0);
+            this.ToHospit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ToHospit.Location = new System.Drawing.Point(0, 0);
+            this.ToHospit.Margin = new System.Windows.Forms.Padding(0);
+            this.ToHospit.Name = "ToHospit";
+            this.ToHospit.RowCount = 1;
+            this.ToHospit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ToHospit.Size = new System.Drawing.Size(397, 22);
+            this.ToHospit.TabIndex = 1;
             // 
             // panel6
             // 
@@ -1017,7 +1004,6 @@
             this.Name_ToHospital.Name = "Name_ToHospital";
             this.Name_ToHospital.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Name_ToHospital.Size = new System.Drawing.Size(297, 35);
-            this.Name_ToHospital.Sorted = true;
             this.Name_ToHospital.TabIndex = 10;
             // 
             // ID_ToHospital
@@ -1124,12 +1110,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FromBuilding.BackColor = System.Drawing.SystemColors.Control;
             this.FromBuilding.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FromBuilding.Enabled = false;
             this.FromBuilding.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
             this.FromBuilding.Location = new System.Drawing.Point(41, 0);
             this.FromBuilding.Margin = new System.Windows.Forms.Padding(0);
             this.FromBuilding.Name = "FromBuilding";
-            this.FromBuilding.ReadOnly = true;
             this.FromBuilding.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.FromBuilding.Size = new System.Drawing.Size(89, 36);
             this.FromBuilding.TabIndex = 13;
@@ -1142,12 +1126,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FromFloor.BackColor = System.Drawing.SystemColors.Control;
             this.FromFloor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FromFloor.Enabled = false;
             this.FromFloor.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
             this.FromFloor.Location = new System.Drawing.Point(0, 0);
             this.FromFloor.Margin = new System.Windows.Forms.Padding(0);
             this.FromFloor.Name = "FromFloor";
-            this.FromFloor.ReadOnly = true;
             this.FromFloor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.FromFloor.Size = new System.Drawing.Size(41, 36);
             this.FromFloor.TabIndex = 12;
@@ -1160,12 +1142,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.FromStreet.BackColor = System.Drawing.SystemColors.Control;
             this.FromStreet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FromStreet.Enabled = false;
             this.FromStreet.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
             this.FromStreet.Location = new System.Drawing.Point(130, 0);
             this.FromStreet.Margin = new System.Windows.Forms.Padding(0);
             this.FromStreet.Name = "FromStreet";
-            this.FromStreet.ReadOnly = true;
             this.FromStreet.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.FromStreet.Size = new System.Drawing.Size(89, 36);
             this.FromStreet.TabIndex = 11;
@@ -1177,7 +1157,7 @@
             this.FromCity.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.FromCity.BackColor = System.Drawing.SystemColors.Control;
             this.FromCity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FromCity.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FromCity.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FromCity.FormattingEnabled = true;
             this.FromCity.ItemHeight = 27;
             this.FromCity.Items.AddRange(new object[] {
@@ -1190,7 +1170,6 @@
             this.FromCity.Name = "FromCity";
             this.FromCity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.FromCity.Size = new System.Drawing.Size(89, 35);
-            this.FromCity.Sorted = true;
             this.FromCity.TabIndex = 9;
             // 
             // FromRegion
@@ -1199,7 +1178,7 @@
             this.FromRegion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.FromRegion.BackColor = System.Drawing.SystemColors.Control;
             this.FromRegion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FromRegion.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FromRegion.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FromRegion.FormattingEnabled = true;
             this.FromRegion.ItemHeight = 27;
             this.FromRegion.Items.AddRange(new object[] {
@@ -1212,7 +1191,6 @@
             this.FromRegion.Name = "FromRegion";
             this.FromRegion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.FromRegion.Size = new System.Drawing.Size(89, 35);
-            this.FromRegion.Sorted = true;
             this.FromRegion.TabIndex = 8;
             // 
             // tableLayoutPanel17
@@ -1427,7 +1405,6 @@
             this.InfectionDiseases.Name = "InfectionDiseases";
             this.InfectionDiseases.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.InfectionDiseases.Size = new System.Drawing.Size(198, 35);
-            this.InfectionDiseases.Sorted = true;
             this.InfectionDiseases.TabIndex = 6;
             // 
             // tableLayoutPanel23
@@ -1559,7 +1536,6 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox3.Size = new System.Drawing.Size(199, 35);
-            this.comboBox3.Sorted = true;
             this.comboBox3.TabIndex = 9;
             // 
             // tableLayoutPanel24
@@ -1602,7 +1578,6 @@
             this.Insurance.Name = "Insurance";
             this.Insurance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Insurance.Size = new System.Drawing.Size(199, 35);
-            this.Insurance.Sorted = true;
             this.Insurance.TabIndex = 6;
             // 
             // tableLayoutPanel25
@@ -1722,7 +1697,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.OtherInfo.BackColor = System.Drawing.SystemColors.Control;
             this.OtherInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.OtherInfo.Enabled = false;
             this.OtherInfo.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
             this.OtherInfo.Location = new System.Drawing.Point(0, 23);
             this.OtherInfo.Margin = new System.Windows.Forms.Padding(0);
@@ -1798,13 +1772,14 @@
             this.tableLayoutPanel15.Controls.Add(this.ToStreet, 0, 0);
             this.tableLayoutPanel15.Controls.Add(this.ToCity, 0, 0);
             this.tableLayoutPanel15.Controls.Add(this.ToRegion, 0, 0);
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 22);
             this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tableLayoutPanel15.RowCount = 1;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(397, 37);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(397, 44);
             this.tableLayoutPanel15.TabIndex = 8;
             // 
             // ToBuilding
@@ -1814,12 +1789,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ToBuilding.BackColor = System.Drawing.SystemColors.Control;
             this.ToBuilding.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ToBuilding.Enabled = false;
             this.ToBuilding.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
             this.ToBuilding.Location = new System.Drawing.Point(41, 0);
             this.ToBuilding.Margin = new System.Windows.Forms.Padding(0);
             this.ToBuilding.Name = "ToBuilding";
-            this.ToBuilding.ReadOnly = true;
             this.ToBuilding.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ToBuilding.Size = new System.Drawing.Size(89, 36);
             this.ToBuilding.TabIndex = 13;
@@ -1832,12 +1805,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ToFloor.BackColor = System.Drawing.SystemColors.Control;
             this.ToFloor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ToFloor.Enabled = false;
             this.ToFloor.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
             this.ToFloor.Location = new System.Drawing.Point(0, 0);
             this.ToFloor.Margin = new System.Windows.Forms.Padding(0);
             this.ToFloor.Name = "ToFloor";
-            this.ToFloor.ReadOnly = true;
             this.ToFloor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ToFloor.Size = new System.Drawing.Size(41, 36);
             this.ToFloor.TabIndex = 12;
@@ -1850,12 +1821,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ToStreet.BackColor = System.Drawing.SystemColors.Control;
             this.ToStreet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ToStreet.Enabled = false;
             this.ToStreet.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
             this.ToStreet.Location = new System.Drawing.Point(130, 0);
             this.ToStreet.Margin = new System.Windows.Forms.Padding(0);
             this.ToStreet.Name = "ToStreet";
-            this.ToStreet.ReadOnly = true;
             this.ToStreet.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ToStreet.Size = new System.Drawing.Size(89, 36);
             this.ToStreet.TabIndex = 11;
@@ -1867,7 +1836,7 @@
             this.ToCity.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ToCity.BackColor = System.Drawing.SystemColors.Control;
             this.ToCity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ToCity.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToCity.Font = new System.Drawing.Font("Arial Narrow", 13.8F);
             this.ToCity.FormattingEnabled = true;
             this.ToCity.ItemHeight = 27;
             this.ToCity.Items.AddRange(new object[] {
@@ -1880,7 +1849,6 @@
             this.ToCity.Name = "ToCity";
             this.ToCity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ToCity.Size = new System.Drawing.Size(89, 35);
-            this.ToCity.Sorted = true;
             this.ToCity.TabIndex = 9;
             // 
             // ToRegion
@@ -1889,7 +1857,7 @@
             this.ToRegion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ToRegion.BackColor = System.Drawing.SystemColors.Control;
             this.ToRegion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ToRegion.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToRegion.Font = new System.Drawing.Font("Arial Narrow", 13.8F);
             this.ToRegion.FormattingEnabled = true;
             this.ToRegion.ItemHeight = 27;
             this.ToRegion.Items.AddRange(new object[] {
@@ -1902,7 +1870,6 @@
             this.ToRegion.Name = "ToRegion";
             this.ToRegion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ToRegion.Size = new System.Drawing.Size(89, 35);
-            this.ToRegion.Sorted = true;
             this.ToRegion.TabIndex = 8;
             // 
             // tableLayoutPanel18
@@ -2117,7 +2084,7 @@
             this.CanSit.Check = false;
             this.CanSit.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CanSit.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
-            this.CanSit.Location = new System.Drawing.Point(0, 0);
+            this.CanSit.Location = new System.Drawing.Point(0, 1);
             this.CanSit.Margin = new System.Windows.Forms.Padding(0);
             this.CanSit.Name = "CanSit";
             this.CanSit.Size = new System.Drawing.Size(168, 25);
@@ -2192,8 +2159,8 @@
             this.Text = "PatientInformation";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.PatientInformation_Load);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
+            this.Patient.ResumeLayout(false);
+            this.Patient.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -2206,23 +2173,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.FromHosInfo.ResumeLayout(false);
+            this.FromHospital.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
-            this.tableLayoutPanel7.ResumeLayout(false);
+            this.FromHospit.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
-            this.ToHosInfo.ResumeLayout(false);
+            this.ToHospital.ResumeLayout(false);
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel11.PerformLayout();
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel12.PerformLayout();
-            this.tableLayoutPanel13.ResumeLayout(false);
+            this.ToHospit.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -2276,7 +2243,7 @@
         public System.Windows.Forms.TextBox CancilingtText;
         public System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.ComboBox Name_Patient;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        public System.Windows.Forms.TableLayoutPanel Patient;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         public System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label label1;
@@ -2292,24 +2259,24 @@
         public LabelBord ToHos;
         public LabelBord ToHome;
         public System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TableLayoutPanel FromHosInfo;
+        public System.Windows.Forms.TableLayoutPanel FromHospital;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.Label label5;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        public System.Windows.Forms.TableLayoutPanel FromHospit;
         public System.Windows.Forms.Panel panel5;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.PictureBox pictureBox2;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         public System.Windows.Forms.TextBox ID_FromHospital;
-        public System.Windows.Forms.TableLayoutPanel ToHosInfo;
+        public System.Windows.Forms.TableLayoutPanel ToHospital;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         public System.Windows.Forms.Label label8;
         public System.Windows.Forms.Label label9;
         public System.Windows.Forms.Label label10;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
+        public System.Windows.Forms.TableLayoutPanel ToHospit;
         public System.Windows.Forms.Panel panel6;
         public System.Windows.Forms.Label label11;
         public System.Windows.Forms.PictureBox pictureBox3;
@@ -2340,7 +2307,6 @@
         public System.Windows.Forms.Label label21;
         public System.Windows.Forms.PictureBox pictureBox7;
         public System.Windows.Forms.TextBox OtherInfo;
-        public System.Windows.Forms.ComboBox Name_FromHospital;
         public System.Windows.Forms.ComboBox Name_ToHospital;
         public System.Windows.Forms.ComboBox InfectionDiseases;
         public System.Windows.Forms.ComboBox Insurance;
@@ -2387,5 +2353,6 @@
         public System.Windows.Forms.ComboBox ToCity;
         public System.Windows.Forms.ComboBox ToRegion;
         public LabelBord CanSit;
+        public System.Windows.Forms.ComboBox Name_FromHospital;
     }
 }

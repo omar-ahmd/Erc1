@@ -48,7 +48,7 @@ namespace Erc1.Classes
         //get all centers (column names ="centers","id")
         public static IEnumerable Get_Centers()
         {
-            using (ERCEntities4 entity = new ERCEntities4())
+            using (ERCEntities entity = new ERCEntities())
             {
                 var c = from centers in entity.المراكز
                         where centers.المدن.رمز == centers.المدينة
@@ -68,7 +68,7 @@ namespace Erc1.Classes
         public static IEnumerable Getالآليات()
         {
 
-            using (ERCEntities4 entity = new ERCEntities4())
+            using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
                 from cars in entity.الآليات
@@ -86,7 +86,7 @@ namespace Erc1.Classes
         public static IEnumerable Getالآليات_by_المركز(int marakez)
         {
 
-            using (ERCEntities4 entity = new ERCEntities4())
+            using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
                 from cars in entity.الآليات
@@ -105,7 +105,7 @@ namespace Erc1.Classes
         // get الحالات names (column names ="المرض","رمز")
         public static IEnumerable Get_الحالات()
         {
-            using (ERCEntities4 entity = new ERCEntities4())
+            using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
                 from disease in entity.الحالات
@@ -122,7 +122,7 @@ namespace Erc1.Classes
         // get الحالات names by idنوعية_الحالة (column name ="المرض")
         public static IEnumerable Get_الحالات_by_idنوعية_الحالة(int id_type_of_disease)
         {
-            using (var entity = new ERCEntities4())
+            using (var entity = new ERCEntities())
             {
                 var c = entity.الحالات
                     .Where(r => r.رمز_النوعية == id_type_of_disease)
@@ -139,7 +139,7 @@ namespace Erc1.Classes
         // get نوعيات الحالات (column name ="النوعية","الرمز")
         public static IEnumerable Get_نوعيات_الحالات()
         {
-            using (var entity = new ERCEntities4())
+            using (var entity = new ERCEntities())
             {
                 var c = entity.نوعيات_الحالات;
                 return c.ToList();
@@ -164,7 +164,7 @@ namespace Erc1.Classes
         // get العاملون names (column names ="الاسم","الرمز")
         public static IEnumerable Get_العاملون()
         {
-            using (ERCEntities4 entity = new ERCEntities4())
+            using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
                 from staff in entity.العاملون
@@ -182,7 +182,7 @@ namespace Erc1.Classes
         // get العاملون names by المراكز(column names ="الاسم","الرمز")
         public static IEnumerable Get_العاملون_by_idالمراكز(int center_id)
         {
-            using (ERCEntities4 entity = new ERCEntities4())
+            using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
                 from staff in entity.العاملون.
@@ -203,7 +203,7 @@ namespace Erc1.Classes
         // get المسعفون names by المراكز(column names ="الاسم","الرمز")
         public static IEnumerable Get_المسعفون_by_idالمراكز(int center_id)
         {
-            using (ERCEntities4 entity = new ERCEntities4())
+            using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
                 from staff in entity.العاملون.
@@ -221,7 +221,7 @@ namespace Erc1.Classes
         // get السائقون names by المراكز(column names ="الاسم","الرمز")
         public static IEnumerable Get_السائقون_by_idالمراكز(int center_id)
         {
-            using (ERCEntities4 entity = new ERCEntities4())
+            using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
                 from staff in entity.العاملون.
@@ -239,7 +239,7 @@ namespace Erc1.Classes
         // get مسؤول مهمة names by المراكز(column names ="الاسم","الرمز")
         public static IEnumerable Get_مسؤول_مهمة_by_idالمراكز(int center_id)
         {
-            using (ERCEntities4 entity = new ERCEntities4())
+            using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
                 from staff in entity.العاملون.
@@ -274,7 +274,7 @@ namespace Erc1.Classes
         // get المرضى names(column names ="اسم","الرمز")
         public static IEnumerable Get_المرضى()
         {
-            using (ERCEntities4 entity = new ERCEntities4())
+            using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
                 from p in entity.المرضى
@@ -292,7 +292,7 @@ namespace Erc1.Classes
         // get المدن names(column names ="المدينة","رمز")
         public static IEnumerable Get_المدن()
         {
-            using (ERCEntities4 entity = new ERCEntities4())
+            using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
                 from p in entity.المدن
@@ -330,7 +330,7 @@ namespace Erc1.Classes
         // get المستشفيات(column names ="اسم","رمز_المستشفى")
         public static IEnumerable Get_المستشفيات()
         {
-            using (ERCEntities4 entity = new ERCEntities4())
+            using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
                 from h in entity.المستشفيات
@@ -348,7 +348,7 @@ namespace Erc1.Classes
         // get طوابق المستشفيات (column names ="عدد_الطوابق","الرمز")
         public static IEnumerable Get_طوابق_المستشفيات(int hospital_key)
         {
-            using (ERCEntities4 entity = new ERCEntities4())
+            using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
                 from h in entity.المستشفيات
@@ -368,7 +368,7 @@ namespace Erc1.Classes
         // get أقسام المستشفيات (column names ="sections_id","sections_name")
         public static IEnumerable Get_أقسام_المستشفيات(int hospital_key)
         {
-            using (ERCEntities4 entity = new ERCEntities4())
+            using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
              from h_s in entity.المستشفيات_مع_اقسام

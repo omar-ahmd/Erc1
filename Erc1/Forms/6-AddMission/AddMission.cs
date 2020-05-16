@@ -21,7 +21,7 @@ namespace Erc1.Forms
         public PatientInformation paI;
         public ParamInformation pI;
 
-
+        public event EventHandler SaveMission;
         public Erc1.BAL.MissionType type { get; set; }
         private MissionType missionTy;
 
@@ -33,7 +33,6 @@ namespace Erc1.Forms
 
         CasesOfMission cM;
         bool l = false;
-        int ParamInfoEvent = 0;
         
         
         
@@ -57,7 +56,7 @@ namespace Erc1.Forms
             Day.SelectedItem = DateTime.Now.Day.ToString("D2");
             Time.Value = DateTime.Now;
 
-            missionTy = missionType;
+            MissionTy = missionType;
             switch (missionType)
             {
                 case Forms.MissionType.Implemented:
@@ -177,6 +176,9 @@ namespace Erc1.Forms
 
             
         }
+
+
+
         private void UrgentMission_CheckChange(object sender, EventArgs e)
         {
             if (UrgentMission.Check)
@@ -184,8 +186,7 @@ namespace Erc1.Forms
                 
                 type = BAL.MissionType.Urgent;
                 ColdMission.Check = false;
-                FireMission.Check = false;
-                ActivityMission.Check = false;
+                
 
 
             }
@@ -199,51 +200,17 @@ namespace Erc1.Forms
             {
                 type = BAL.MissionType.Cold;
                 UrgentMission.Check = false;
-                FireMission.Check = false;
-                ActivityMission.Check = false;
+                
             }
-        }
-
-        public void CenterID_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-            CarId.DataSource = addMission.GetCars(int.Parse(CenterID.SelectedValue.ToString()));
-            //CarId.ValueMember = "id";
-            CarId.DisplayMember = "cars";
-            CarId.ResetText();
-
-
-            if (ParamInfoEvent>0)
-            {
-                pI.Name_HeadOfMission.SelectedValueChanged -= pI.Name_HeadOfMission_SelectedValueChanged;
-
-                pI.Name_HeadOfShift.SelectedValueChanged -= pI.Name_HeadOfMission_SelectedValueChanged;
-
-                pI.Name_Paramedic1.SelectedValueChanged -= pI.Name_HeadOfMission_SelectedValueChanged;
-
-                pI.Name_Paramedic2.SelectedValueChanged -= pI.Name_HeadOfMission_SelectedValueChanged;
-
-                pI.Name_RecipientOfMission.SelectedValueChanged -= pI.Name_HeadOfMission_SelectedValueChanged;
-
-                pI.Name_Driver.SelectedValueChanged -= pI.Name_HeadOfMission_SelectedValueChanged;
-
-                ParamInfoEvent = 0;
-            }
-            
-            BAL.ParamedicsInfo.FillParamForm(pI, this,ref ParamInfoEvent);
-
-
-
-
         }
         private void ActivityMission_CheckChange(object sender, EventArgs e)
         {
             if (ActivityMission.Check)
             {
                 type = BAL.MissionType.Activity;
-                ColdMission.Check = false;
+                
                 FireMission.Check = false;
-                UrgentMission.Check = false;
+                
             }
         }
         private void FireMission_CheckChange(object sender, EventArgs e)
@@ -251,12 +218,30 @@ namespace Erc1.Forms
             if (FireMission.Check)
             {
                 type = BAL.MissionType.Fire;
-                ColdMission.Check = false;
-                UrgentMission.Check = false;
+
                 ActivityMission.Check = false;
             }
         }
-        private void Save_Click(object sender, EventArgs e)
+
+
+        public void CenterID_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (CenterID.SelectedItem != null)
+            {
+                CarId.DataSource = addMission.GetCars(int.Parse(CenterID.SelectedValue.ToString()));
+                //CarId.ValueMember = "id";
+                CarId.DisplayMember = "cars";
+                CarId.ResetText();
+                BAL.ParamedicsInfo.FillParamForm(pI, this);
+            }
+            
+
+
+
+
+        }
+
+        private void ShowCase_Click(object sender, EventArgs e)
         {
             if (cM == null)
             {

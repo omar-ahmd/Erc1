@@ -12,7 +12,7 @@ namespace ERC
         }
 
 
-        OperationForm of = new OperationForm();
+        public static OperationForm of = new OperationForm();
 
 
 

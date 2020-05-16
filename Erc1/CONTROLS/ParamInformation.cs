@@ -23,7 +23,14 @@ namespace Erc1.CONTROLS
             ComboBox sen = (ComboBox)sender;
             string na = sen.Name.Split('_')[1];
             TextBox t = (TextBox)this.Controls["param"].Controls[na].Controls["ID" + "_" + na];
-            t.Text = sen.SelectedValue.ToString();
+            if (sen.SelectedValue != null)
+            {
+                t.Text = sen.SelectedValue.ToString();
+            }
+            else
+            {
+                t.Text = "";
+            }
 
         }
 

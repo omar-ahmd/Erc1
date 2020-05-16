@@ -182,6 +182,7 @@
             // 
             // Name_HeadOfMission
             // 
+            this.Name_HeadOfMission.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.Name_HeadOfMission.BackColor = System.Drawing.SystemColors.Control;
             this.Name_HeadOfMission.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Name_HeadOfMission.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -290,6 +291,7 @@
             // 
             // Name_Paramedic2
             // 
+            this.Name_Paramedic2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.Name_Paramedic2.BackColor = System.Drawing.SystemColors.Control;
             this.Name_Paramedic2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Name_Paramedic2.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -489,6 +491,7 @@
             // 
             // Name_RecipientOfMission
             // 
+            this.Name_RecipientOfMission.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.Name_RecipientOfMission.BackColor = System.Drawing.SystemColors.Control;
             this.Name_RecipientOfMission.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Name_RecipientOfMission.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -707,6 +710,7 @@
             // 
             // Name_Paramedic1
             // 
+            this.Name_Paramedic1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.Name_Paramedic1.BackColor = System.Drawing.SystemColors.Control;
             this.Name_Paramedic1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Name_Paramedic1.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -815,6 +819,7 @@
             // 
             // Name_Driver
             // 
+            this.Name_Driver.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.Name_Driver.BackColor = System.Drawing.SystemColors.Control;
             this.Name_Driver.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Name_Driver.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

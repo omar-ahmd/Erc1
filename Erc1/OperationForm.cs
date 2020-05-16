@@ -13,9 +13,9 @@ namespace ERC
 
         ///Add mission forms
 
-        AddMission cm;
-        AddMission im;
-        AddMission dm;
+        public AddMission cm;
+        public AddMission im;
+        public AddMission dm;
         public OperationForm()
         {
             InitializeComponent();
@@ -65,6 +65,8 @@ namespace ERC
         }
         private void Add_Clicked(object sender, EventArgs e)
         {
+           
+
             panel2.Controls.Add(cm);
             panel2.Controls.Add(im);
             panel2.Controls.Add(dm);
@@ -83,6 +85,9 @@ namespace ERC
             Paramadic.BClicked = false;
 
             stripForAddButton sfab = new stripForAddButton();
+            sfab.ImpClicked -= Sfab_ImpClicked;
+            sfab.DelClicked -= Sfab_DelClicked;
+            sfab.CancClicked -= Sfab_CancClicked;
             sfab.Dock = DockStyle.Fill;
             ContainerOfStrips.Controls.Add(sfab);
             sfab.ImpClicked += Sfab_ImpClicked;
