@@ -14,6 +14,37 @@ namespace Erc1.Classes
 
 
 
+
+        // get monthlyid 
+        public static int Get_MonthlyID()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                int c = entity.المهمات_المنفذة
+                   .Where(r => r.الرمز_الشهري == entity.المهمات_المنفذة.Max(p => p.الرمز_الشهري))
+                   .Select(r => r.الرمز_الشهري).Single()
+                   ;
+                return c;
+            };
+        }
+
+
+        // get yearid 
+        public static int Get_YearID()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                int c = entity.المهمات_المنفذة
+                   .Where(r => r.رمز_السنوي == entity.المهمات_المنفذة.Max(p => p.رمز_السنوي))
+                   .Select(r => r.رمز_السنوي).Single()
+                   ;
+                return c;
+            };
+        }
+
+
+
+
         //get all centers (column names ="centers","id")
         public static IEnumerable Get_Centers()
         {
@@ -275,7 +306,27 @@ namespace Erc1.Classes
         }
 
 
-        // get المستشفيات(column names ="اسم","الرمز")
+
+        // get المناطق names(column names ="المنطقة","رمز")
+        public static IEnumerable Get_المناطق(int city_key)
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from p in entity.المناطق
+                where p.المدينة == city_key
+                select new
+                {
+                    p.رمز,
+                    p.المنطقة
+                }
+                    ); ;
+                return c.ToList();
+            };
+        }
+
+
+        // get المستشفيات(column names ="اسم","رمز_المستشفى")
         public static IEnumerable Get_المستشفيات()
         {
             using (ERCEntities entity = new ERCEntities())
