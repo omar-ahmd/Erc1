@@ -18,7 +18,7 @@ namespace Erc1.DAL
     public partial class ERCEntities : DbContext
     {
         public ERCEntities()
-            : base("name=ERCEntities4")
+            : base("name=ERCEntities")
         {
         }
     
@@ -50,11 +50,6 @@ namespace Erc1.DAL
         public virtual DbSet<طبيعة_المهمة> طبيعة_المهمة { get; set; }
         public virtual DbSet<فئة_الدم> فئة_الدم { get; set; }
         public virtual DbSet<نوعيات_الحالات> نوعيات_الحالات { get; set; }
-    
-        public virtual ObjectResult<Getالمراكز_Result> Getالمراكز()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Getالمراكز_Result>("Getالمراكز");
-        }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

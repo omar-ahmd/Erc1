@@ -28,12 +28,13 @@ namespace Erc1.DAL
         }
     
         public int رمز_المستشفى { get; set; }
-        public Nullable<short> عدد_الطوابق { get; set; }
         public string العنوان { get; set; }
         public string الهاتف { get; set; }
         public string اسم_المستشفى { get; set; }
         public Nullable<int> رمز_المدينة { get; set; }
         public Nullable<int> رمز_المنطقة { get; set; }
+        public Nullable<short> الطابق_السفلي { get; set; }
+        public Nullable<short> الطابق_العلوي { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<الأطباء> الأطباء { get; set; }

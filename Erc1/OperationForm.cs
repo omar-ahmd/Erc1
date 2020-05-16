@@ -26,12 +26,11 @@ namespace ERC
             this.Size = new Size(w, h);
 
             this.DoubleBuffered = true;
+            
 
-            this.SetStyle(ControlStyles.UserPaint
-                | ControlStyles.OptimizedDoubleBuffer
-                | ControlStyles.AllPaintingInWmPaint
-                | ControlStyles.SupportsTransparentBackColor, true);
         }
+
+
 
         private void exit_Clicked(object sender, EventArgs e)
         {
@@ -182,6 +181,11 @@ namespace ERC
         {
             this.Update();
             panel2.Update();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
     }
 

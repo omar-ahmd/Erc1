@@ -105,7 +105,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.MedcineID = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
             this.Insurance = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
@@ -1374,7 +1374,7 @@
             this.tableLayoutPanel21.Controls.Add(this.InfectionDiseases, 0, 1);
             this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel23, 0, 0);
             this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel22, 1, 0);
-            this.tableLayoutPanel21.Controls.Add(this.comboBox3, 1, 1);
+            this.tableLayoutPanel21.Controls.Add(this.MedcineID, 1, 1);
             this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel21.Location = new System.Drawing.Point(520, 443);
             this.tableLayoutPanel21.Margin = new System.Windows.Forms.Padding(0);
@@ -1517,26 +1517,26 @@
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
-            // comboBox3
+            // MedcineID
             // 
-            this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox3.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.ItemHeight = 27;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.MedcineID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.MedcineID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.MedcineID.BackColor = System.Drawing.SystemColors.Control;
+            this.MedcineID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MedcineID.Font = new System.Drawing.Font("Air Strip Arabic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MedcineID.FormattingEnabled = true;
+            this.MedcineID.ItemHeight = 27;
+            this.MedcineID.Items.AddRange(new object[] {
             "100-طرابلس",
             "200-ضنية",
             "300",
             "400-قلمون"});
-            this.comboBox3.Location = new System.Drawing.Point(198, 23);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(0);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox3.Size = new System.Drawing.Size(199, 35);
-            this.comboBox3.TabIndex = 9;
+            this.MedcineID.Location = new System.Drawing.Point(198, 23);
+            this.MedcineID.Margin = new System.Windows.Forms.Padding(0);
+            this.MedcineID.Name = "MedcineID";
+            this.MedcineID.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.MedcineID.Size = new System.Drawing.Size(199, 35);
+            this.MedcineID.TabIndex = 9;
             // 
             // tableLayoutPanel24
             // 
@@ -2342,7 +2342,7 @@
         public System.Windows.Forms.ComboBox ToHosFloor;
         public System.Windows.Forms.ComboBox ToHosDepartement;
         public System.Windows.Forms.ComboBox FromCity;
-        public System.Windows.Forms.ComboBox comboBox3;
+        public System.Windows.Forms.ComboBox MedcineID;
         public System.Windows.Forms.TextBox FromBuilding;
         public System.Windows.Forms.TextBox FromFloor;
         public System.Windows.Forms.TextBox FromStreet;

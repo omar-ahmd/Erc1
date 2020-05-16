@@ -4,29 +4,29 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f7f9296ac7bb4d358901c54dd06b1d4f" Name="Diagram1">
+      <Diagram DiagramId="df2707ff12f640efadf2338b9787336b" Name="Diagram1">
         <EntityTypeShape EntityType="ERCModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ERCModel.أقسام_المستشفيات" Width="1.5" PointX="10.5" PointY="28.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERCModel.الأطباء" Width="1.5" PointX="8.25" PointY="33" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.الأطباء" Width="1.5" PointX="8.25" PointY="33.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ERCModel.الآليات" Width="1.5" PointX="5.25" PointY="33.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ERCModel.الأمراض_المزمنة" Width="1.5" PointX="8.25" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERCModel.الأمراض_المعدية" Width="1.5" PointX="13.5" PointY="29" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERCModel.الجهات_الضامنة" Width="1.5" PointX="8.25" PointY="42" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.الأمراض_المعدية" Width="1.5" PointX="13.5" PointY="29.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.الجهات_الضامنة" Width="1.5" PointX="8.25" PointY="42.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ERCModel.الحالات" Width="1.5" PointX="10.5" PointY="45.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERCModel.العاملون" Width="1.5" PointX="5.25" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.العاملون" Width="1.5" PointX="5.25" PointY="25.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ERCModel.المدن" Width="1.5" PointX="0.75" PointY="23.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ERCModel.المراكز" Width="1.5" PointX="3" PointY="34.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERCModel.المرضى" Width="1.5" PointX="10.5" PointY="32.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.المرضى" Width="1.5" PointX="10.5" PointY="32.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ERCModel.المستشفيات" Width="1.5" PointX="5.25" PointY="37.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERCModel.المستشفيات_مع_اقسام" Width="1.5" PointX="7.5" PointY="38.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERCModel.المناطق" Width="1.5" PointX="3" PointY="42.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERCModel.المهماة_المؤجلة" Width="1.5" PointX="7.5" PointY="25.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERCModel.المهمات_الملغاة" Width="1.5" PointX="12.75" PointY="31.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERCModel.المهمات_المنفذة" Width="1.5" PointX="15.75" PointY="29.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERCModel.الوظيفة" Width="1.5" PointX="3" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.المستشفيات_مع_اقسام" Width="1.5" PointX="7.5" PointY="38.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.المناطق" Width="1.5" PointX="3" PointY="42.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.المهماة_المؤجلة" Width="1.5" PointX="7.5" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.المهمات_الملغاة" Width="1.5" PointX="12.75" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.المهمات_المنفذة" Width="1.5" PointX="15.75" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.الوظيفة" Width="1.5" PointX="3" PointY="26.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ERCModel.حالات_المهمات" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ERCModel.طبيعة_المهمة" Width="1.5" PointX="10.5" PointY="38.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ERCModel.فئة_الدم" Width="1.5" PointX="3" PointY="29.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ERCModel.فئة_الدم" Width="1.5" PointX="3" PointY="29.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ERCModel.نوعيات_الحالات" Width="1.5" PointX="8.25" PointY="45.5" IsExpanded="true" />
         <AssociationConnector Association="ERCModel.FK_المستشفيات_مع_اقسام_ToTableأقسام_المستشفيات" ManuallyRouted="false" />
         <AssociationConnector Association="ERCModel.FK_المهمات_الملغاة_ToTableالمستشفيات1" ManuallyRouted="false" />

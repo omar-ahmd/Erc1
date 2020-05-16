@@ -15,6 +15,9 @@ namespace Erc1.DAL
     public partial class المهمات_المنفذة
     {
         public int الرمز_الشهري { get; set; }
+        public int رمز_السنوي { get; set; }
+        public int السنة { get; set; }
+        public int رمز__المركز { get; set; }
         public Nullable<System.DateTime> التاريخ { get; set; }
         public Nullable<int> الآلية { get; set; }
         public int المريض { get; set; }
@@ -28,11 +31,9 @@ namespace Erc1.DAL
         public int مسعف_1 { get; set; }
         public int مسعف_2 { get; set; }
         public int السائق { get; set; }
-        public string رقم_المتصل { get; set; }
-        public string الهاتف { get; set; }
+        public Nullable<int> رقم_المتصل { get; set; }
+        public Nullable<int> الهاتف { get; set; }
         public Nullable<int> متلقي_المهمة { get; set; }
-        public int رمز_السنوي { get; set; }
-        public int السنة { get; set; }
         public string تفاصيل_ال_من { get; set; }
         public string تفاصيل_ال_الى { get; set; }
         public Nullable<int> من_رمز_المدينة { get; set; }
@@ -42,7 +43,6 @@ namespace Erc1.DAL
         public string التفاصيل { get; set; }
         public string اسم_المتصل { get; set; }
         public int طبيعة_المهمة { get; set; }
-        public int رمز__المركز { get; set; }
         public Nullable<bool> مريض_مقعد { get; set; }
         public Nullable<int> الأمراض_المعدية { get; set; }
         public Nullable<int> مسؤول_الدوام { get; set; }

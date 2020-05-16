@@ -1,5 +1,6 @@
 ﻿using ERC;
 using Erc1.BAL;
+using Erc1.Classes;
 using System;
 using System.Collections;
 using System.Windows.Forms;
@@ -25,6 +26,8 @@ namespace Erc1.CONTROLS
             }
         }
 
+
+
         private void FromHos_CheckChange(object sender, EventArgs e)
         {
             if (!FromHos.Check)
@@ -41,9 +44,11 @@ namespace Erc1.CONTROLS
                 {
                     FromHomeInfo.Enabled = false;
                     FromHome.Check = false;
+
                     FromBuilding.Text = "";
-                    FromCity.Text = "";
-                    FromRegion.Text = "";
+                    FromRegion.SelectedItem = null;
+                    FromCity.SelectedItem = null;
+                    
                     FromFloor.Text = "";
                     FromStreet.Text = "";
                     MoreFromInfo.Text = "";
@@ -56,8 +61,10 @@ namespace Erc1.CONTROLS
                     
                 }
                 catch { }
-
-                MyFunction.FillComboBox(Name_FromHospital, BAL.PatientInfo.GetHospitals(), "اسم_المستشفى", "رمز_المستشفى");
+                if (Name_FromHospital.DataSource == null)
+                {
+                    MyFunction.FillComboBox(Name_FromHospital, BAL.PatientInfo.GetHospitals(), "اسم_المستشفى", "رمز_المستشفى");
+                }
                 ID_FromHospital.Text = "";
                 Name_FromHospital.SelectedValueChanged += Name_FromHospital_SelectedValueChanged;
 
@@ -69,16 +76,35 @@ namespace Erc1.CONTROLS
             ComboBox sen = (ComboBox)sender;
             string na = sen.Name.Split('_')[1];
             TextBox t = (TextBox)sen.Parent.Controls["ID" + "_" + na];
-            t.Text = ("H"+sen.SelectedValue.ToString()).ToUpper();
+            if (sen.SelectedValue != null)
+            {
+                t.Text = ("H" + sen.SelectedValue.ToString()).ToUpper();
+
+               
+
+                FromHosDepartement.SelectedValueChanged -= FromHosDepartement_SelectedValueChanged;
+
+                MyFunction.FillComboBox(FromHosDepartement, BAL.PatientInfo.GetDepartementOfHos(int.Parse(Name_FromHospital.SelectedValue.ToString())), "sections_name", "sections_id");
+
+                FromHosDepartement.SelectedValueChanged += FromHosDepartement_SelectedValueChanged;
+                
+
+                short[] FloorHos = BAL.PatientInfo.GetFloors(int.Parse(Name_FromHospital.SelectedValue.ToString()));
+                MyFunction.FillComboBox(FromHosFloor, FloorHos, "عدد_الطوابق", "رمز_المستشفى");
 
 
-            IEnumerable DepHos = BAL.PatientInfo.GetDepartementOfHos(int.Parse(Name_FromHospital.SelectedValue.ToString()));
 
-            MyFunction.FillComboBox(FromHosDepartement, DepHos, "sections_name", "sections_id");
-            FromHosDepartement.SelectedValueChanged += FromHosDepartement_SelectedValueChanged;
 
-            IEnumerable FloorHos = BAL.PatientInfo.GetFloors(int.Parse(Name_FromHospital.SelectedValue.ToString()));
-            MyFunction.FillComboBox(FromHosFloor, FloorHos, "عدد_الطوابق", "رمز_المستشفى");
+                FromHosFloor.Text = "";
+            }
+            else
+            {
+                t.Text = "";
+
+            }
+
+            
+
             
         }
 
@@ -103,12 +129,12 @@ namespace Erc1.CONTROLS
                     FromHos.Check = false;
 
                     ID_FromHospital.Text="";
-                    Name_FromHospital.Text = "";
-                    FromHosDepartement.Text = "";
-                    FromHosFloor.Text = "";
+                    Name_FromHospital.SelectedItem = null ;
+                    FromHosDepartement.SelectedItem = null;
+                    FromHosFloor.SelectedItem = null;
                     FromHosRoom.Text = "";
 
-
+                    
 
                 }
                 try
@@ -116,10 +142,12 @@ namespace Erc1.CONTROLS
                     FromCity.SelectedValueChanged -= FromCity_SelectedValueChanged;
                 }
                 catch { };
-                IEnumerable Cities = BAL.PatientInfo.GetCities();
-
-                MyFunction.FillComboBox(FromCity, Cities, "المدينة", "رمز");
+                if (FromCity.DataSource == null)
+                {
+                    MyFunction.FillComboBox(FromCity, BAL.PatientInfo.GetCities(), "المدينة", "رمز");
+                }
                 FromCity.SelectedValueChanged += FromCity_SelectedValueChanged;
+                
             }
 
             
@@ -129,7 +157,10 @@ namespace Erc1.CONTROLS
 
         private void FromCity_SelectedValueChanged(object sender, EventArgs e)
         {
-            MyFunction.FillComboBox(FromRegion, BAL.PatientInfo.GetRegions(int.Parse(FromCity.SelectedValue.ToString())),"المنطقة", "رمز");
+            if (FromCity.SelectedValue != null)
+            {
+                MyFunction.FillComboBox(FromRegion, BAL.PatientInfo.GetRegions(int.Parse(FromCity.SelectedValue.ToString())), "المنطقة", "رمز");
+            }
         }
 
 
@@ -137,55 +168,80 @@ namespace Erc1.CONTROLS
 
         private void ToHos_CheckChange(object sender, EventArgs e)
         {
+
             if (!ToHos.Check)
             {
                 ToHospital.Enabled = false;
-
-
             }
             else
             {
                 ToHospital.Enabled = true;
+
+
+
                 if (ToHome.Check)
                 {
                     ToHomeInfo.Enabled = false;
                     ToHome.Check = false;
-                    Name_ToHospital.DataSource = null;
 
                     ToBuilding.Text = "";
-                    ToCity.Text = "";
-                    ToRegion.Text = "";
+                    ToRegion.SelectedItem = null;
+                    ToCity.SelectedItem = null;
+
                     ToFloor.Text = "";
                     ToStreet.Text = "";
                     MoreToInfo.Text = "";
+
                 }
                 try
                 {
+
                     ToCity.SelectedValueChanged -= Name_ToHospital_SelectedValueChanged;
+
                 }
                 catch { }
-
-                MyFunction.FillComboBox(Name_ToHospital, BAL.PatientInfo.GetHospitals(), "اسم_المستشفى", "رمز_المستشفى");
+                if (Name_ToHospital.DataSource == null)
+                {
+                    MyFunction.FillComboBox(Name_ToHospital, BAL.PatientInfo.GetHospitals(), "اسم_المستشفى", "رمز_المستشفى");
+                }
                 ID_ToHospital.Text = "";
                 Name_ToHospital.SelectedValueChanged += Name_ToHospital_SelectedValueChanged;
+
             }
+        
         }
 
         private void Name_ToHospital_SelectedValueChanged(object sender, EventArgs e)
         {
-
             ComboBox sen = (ComboBox)sender;
             string na = sen.Name.Split('_')[1];
             TextBox t = (TextBox)sen.Parent.Controls["ID" + "_" + na];
-            t.Text = ("H" + sen.SelectedValue.ToString()).ToUpper();
+            if (sen.SelectedValue != null)
+            {
+                t.Text = ("H" + sen.SelectedValue.ToString()).ToUpper();
 
-            IEnumerable DepHos = BAL.PatientInfo.GetDepartementOfHos(int.Parse(Name_ToHospital.SelectedValue.ToString()));
 
-            MyFunction.FillComboBox(ToHosDepartement, DepHos, "sections_name", "sections_id");
-            ToHosDepartement.SelectedValueChanged += ToHosDepartement_SelectedValueChanged;
 
-            IEnumerable FloorHos = BAL.PatientInfo.GetFloors(int.Parse(Name_ToHospital.SelectedValue.ToString()));
-            MyFunction.FillComboBox(ToHosFloor, FloorHos, "عدد_الطوابق", "رمز_المستشفى");
+                ToHosDepartement.SelectedValueChanged -= ToHosDepartement_SelectedValueChanged;
+
+                MyFunction.FillComboBox(ToHosDepartement, BAL.PatientInfo.GetDepartementOfHos(int.Parse(Name_ToHospital.SelectedValue.ToString())), "sections_name", "sections_id");
+
+                ToHosDepartement.SelectedValueChanged += ToHosDepartement_SelectedValueChanged;
+
+
+                short[] FloorHos = BAL.PatientInfo.GetFloors(int.Parse(Name_ToHospital.SelectedValue.ToString()));
+                MyFunction.FillComboBox(ToHosFloor, FloorHos, "عدد_الطوابق", "رمز_المستشفى");
+
+
+
+
+                ToHosFloor.Text = "";
+            }
+            else
+            {
+                t.Text = "";
+
+            }
         }
 
         private void ToHosDepartement_SelectedValueChanged(object sender, EventArgs e)
@@ -209,9 +265,9 @@ namespace Erc1.CONTROLS
                     ToHos.Check = false;
 
                     ID_ToHospital.Text = "";
-                    Name_ToHospital.Text = "";
-                    ToHosDepartement.Text = "";
-                    ToHosFloor.Text = "";
+                    Name_ToHospital.SelectedItem = null;
+                    ToHosDepartement.SelectedItem = null;
+                    ToHosFloor.SelectedItem = null;
                     ToHosRoom.Text = "";
                 }
                 try
@@ -219,16 +275,20 @@ namespace Erc1.CONTROLS
                     ToCity.SelectedValueChanged -= ToCity_SelectedValueChanged;
                 }
                 catch { };
-                IEnumerable Cities = BAL.PatientInfo.GetCities();
-
-                MyFunction.FillComboBox(ToCity, Cities, "المدينة", "رمز");
+                if (ToCity.DataSource == null)
+                {
+                    MyFunction.FillComboBox(ToCity, BAL.PatientInfo.GetCities(), "المدينة", "رمز");
+                }
                 ToCity.SelectedValueChanged += ToCity_SelectedValueChanged;
             }
         }
 
         private void ToCity_SelectedValueChanged(object sender, EventArgs e)
         {
-            MyFunction.FillComboBox(ToRegion, BAL.PatientInfo.GetRegions(int.Parse(ToCity.SelectedValue.ToString())), "المنطقة", "رمز");
+            if (ToCity.SelectedValue != null)
+            {
+                MyFunction.FillComboBox(ToRegion, BAL.PatientInfo.GetRegions(int.Parse(ToCity.SelectedValue.ToString())), "المنطقة", "رمز");
+            }
 
         }
 
@@ -261,6 +321,10 @@ namespace Erc1.CONTROLS
             MyFunction.FillComboBox(Name_Patient, PatientInfo.GetPatients(), "اسم", "الرمز");
             Name_Patient.SelectedValueChanged += Name_Patient_SelectedValueChanged1;
 
+
+            MyFunction.FillComboBox(Insurance, PatientInfo.GetInsurance(), "الجهة_الضامنة", "الرمز");
+            //MyFunction.FillComboBox(MedcineID, PatientInfo.GetMedicine(), "اسم", "رمز");
+            MyFunction.FillComboBox(InfectionDiseases, PatientInfo.GetInfectiousDeseases(), "المرض", "الرمز");
 
         }
 

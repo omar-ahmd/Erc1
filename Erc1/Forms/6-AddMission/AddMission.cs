@@ -33,10 +33,10 @@ namespace Erc1.Forms
 
         CasesOfMission cM;
         bool l = false;
-        
-        
-        
-        
+
+
+
+
         protected override CreateParams CreateParams
         {
             get
@@ -55,6 +55,10 @@ namespace Erc1.Forms
             Month.SelectedItem = DateTime.Now.Month.ToString("D2");
             Day.SelectedItem = DateTime.Now.Day.ToString("D2");
             Time.Value = DateTime.Now;
+            this.DoubleBuffered = true;
+            System.Reflection.PropertyInfo a = typeof(Control).GetProperty("DoubleBuffered",
+                System.Reflection.BindingFlags.NonPublic |
+                System.Reflection.BindingFlags.Instance);
 
             MissionTy = missionType;
             switch (missionType)
@@ -152,6 +156,9 @@ namespace Erc1.Forms
 
             BAL.addMission.FillAddMissionForm(this);
             Case.SelectedValueChanged += Case_SelectedValueChanged;
+
+
+
 
         }
 

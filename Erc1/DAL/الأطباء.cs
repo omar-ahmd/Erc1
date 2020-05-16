@@ -22,7 +22,7 @@ namespace Erc1.DAL
         }
     
         public int رمز { get; set; }
-        public string C_اسم { get; set; }
+        public string اسم { get; set; }
         public string عنوان { get; set; }
         public string اختصاص { get; set; }
         public string هاتف { get; set; }

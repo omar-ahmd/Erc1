@@ -41,6 +41,7 @@ namespace Erc1.BAL
 			{
 
 
+				
 				combo.DataSource = DataSource;
 				combo.DisplayMember = DisplayMember;
 				combo.ValueMember = ValueMember;
@@ -62,6 +63,7 @@ namespace Erc1.BAL
 		{
 
 		}
+		
 		public المهمات_المنفذة Mission;
 
 		private int centerID;
@@ -79,6 +81,7 @@ namespace Erc1.BAL
 		private PatientInfo patientInfo;
 		private ParamedicsInfo paramedicsInfo;
 		private Erc1.Forms.MissionType missionty;
+
 
 		public Erc1.Forms.MissionType MissionTy
 		{
@@ -237,7 +240,6 @@ namespace Erc1.BAL
 		{
 			return mission.Get_نوعيات_الحالات(); 
 		}
-
 		public static IEnumerable GetCars(int CentrID)
 		{
 			return mission.Getالآليات_by_المركز(CentrID);
@@ -245,6 +247,14 @@ namespace Erc1.BAL
 		public static IEnumerable GetCases()
 		{
 			return mission.Get_الحالات();
+		}
+		public static int GetMonthlyID(int year,int month)
+		{
+			return mission.Get_MonthlyID(year, month);
+		}
+		public static int GetAnuualID(int year)
+		{
+			return mission.Get_YearID(year);
 		}
 
 
@@ -280,6 +290,9 @@ namespace Erc1.BAL
 	
 
 				MyFunction.FillComboBox(addm.Case, Cases, "المرض", "رمز");
+				addm.MonthlyID.Text = GetMonthlyID(DateTime.Now.Year, DateTime.Now.Month).ToString();
+				addm.AnnualID.Text = GetAnuualID(DateTime.Now.Year).ToString();
+			
 
 
 				return true;
@@ -696,8 +709,8 @@ namespace Erc1.BAL
 					MessageBox.Show("يجب تعبئ كامل المعلومات");
 				}
 
-				MedicineID = patientInfo.comboBox3.SelectedIndex;
-				MedicineName = patientInfo.comboBox3.SelectedItem.ToString();
+				MedicineID = patientInfo.MedcineID.SelectedIndex;
+				MedicineName = patientInfo.MedcineID.SelectedItem.ToString();
 
 				// infetious case
 
@@ -738,7 +751,7 @@ namespace Erc1.BAL
 		{
 			return mission.Get_أقسام_المستشفيات(HosID);
 		}
-		public static IEnumerable GetFloors(int HosID)
+		public static short[] GetFloors(int HosID)
 		{
 			return mission.Get_طوابق_المستشفيات(HosID);
 		}
@@ -753,12 +766,15 @@ namespace Erc1.BAL
 		public static IEnumerable GetRegions(int CityID)
 		{
 			return mission.Get_المناطق(CityID);
-		}
+		} 
 		public static IEnumerable GetInsurance()
 		{
-			return null;
+			return mission.Get_الجهات_الضامنة();
 		}
-
+		public static IEnumerable GetInfectiousDeseases()
+		{
+			return mission.Get_الأمراض_المعدية();
+		}
 		
 		
 
@@ -888,7 +904,7 @@ namespace Erc1.BAL
 				Mission.مسعف_2 = Paramedic2ID;
 				Mission.متلقي_المهمة = RecipientMissionID;
 				Mission.اسم_المتصل = callerName;
-				Mission.رقم_المتصل = callerPhone.ToString();
+				//Mission.رقم_المتصل = callerPhone.ToString();
 
 				//add headofshift to database in mission table
 				return true;

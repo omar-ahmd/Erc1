@@ -27,7 +27,7 @@
             <PropertyRef Name="رمز" />
           </Key>
           <Property Name="رمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name=" اسم" Type="nvarchar" MaxLength="20" />
+          <Property Name="اسم" Type="nvarchar" MaxLength="20" />
           <Property Name="عنوان" Type="nvarchar" MaxLength="20" />
           <Property Name="اختصاص" Type="nvarchar" MaxLength="10" />
           <Property Name="هاتف" Type="nvarchar" MaxLength="10" />
@@ -40,7 +40,7 @@
             <PropertyRef Name="رمز الآلية" />
             <PropertyRef Name="المركز" />
           </Key>
-          <Property Name="رمز الآلية" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="رمز الآلية" Type="int" Nullable="false" />
           <Property Name="المركز" Type="int" Nullable="false" />
           <Property Name="نوعية الاستخدام" Type="nvarchar" MaxLength="10" />
           <Property Name="موديل " Type="nvarchar" MaxLength="10" />
@@ -144,12 +144,13 @@
             <PropertyRef Name="رمز المستشفى" />
           </Key>
           <Property Name="رمز المستشفى" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="عدد الطوابق" Type="smallint" />
           <Property Name="العنوان" Type="nvarchar" MaxLength="40" />
           <Property Name="الهاتف" Type="nvarchar" MaxLength="20" />
           <Property Name="اسم المستشفى" Type="nvarchar" MaxLength="20" />
           <Property Name="رمز المدينة" Type="int" />
           <Property Name="رمز المنطقة" Type="int" />
+          <Property Name="الطابق السفلي" Type="smallint" />
+          <Property Name="الطابق العلوي" Type="smallint" />
         </EntityType>
         <EntityType Name="المستشفيات مع اقسام">
           <Key>
@@ -223,6 +224,9 @@
             <PropertyRef Name="رمز  المركز" />
           </Key>
           <Property Name="الرمز الشهري" Type="int" Nullable="false" />
+          <Property Name="رمز السنوي" Type="int" Nullable="false" />
+          <Property Name="السنة" Type="int" Nullable="false" />
+          <Property Name="رمز  المركز" Type="int" Nullable="false" />
           <Property Name="التاريخ" Type="datetime" />
           <Property Name="الآلية" Type="int" />
           <Property Name="المريض" Type="int" Nullable="false" />
@@ -236,11 +240,9 @@
           <Property Name="مسعف 1" Type="int" Nullable="false" />
           <Property Name="مسعف 2" Type="int" Nullable="false" />
           <Property Name="السائق" Type="int" Nullable="false" />
-          <Property Name="رقم المتصل" Type="nvarchar" MaxLength="20" />
-          <Property Name="الهاتف" Type="nvarchar" MaxLength="20" />
+          <Property Name="رقم المتصل" Type="int" />
+          <Property Name="الهاتف" Type="int" />
           <Property Name="متلقي المهمة" Type="int" />
-          <Property Name="رمز السنوي" Type="int" Nullable="false" />
-          <Property Name="السنة" Type="int" Nullable="false" />
           <Property Name="تفاصيل ال من" Type="nvarchar" MaxLength="50" />
           <Property Name="تفاصيل ال الى" Type="nvarchar" MaxLength="50" />
           <Property Name="من رمز المدينة" Type="int" />
@@ -250,7 +252,6 @@
           <Property Name="التفاصيل" Type="nvarchar" MaxLength="50" />
           <Property Name="اسم المتصل" Type="nvarchar" MaxLength="30" />
           <Property Name="طبيعة المهمة" Type="int" Nullable="false" />
-          <Property Name="رمز  المركز" Type="int" Nullable="false" />
           <Property Name="مريض مقعد" Type="bit" />
           <Property Name="الأمراض المعدية" Type="int" />
           <Property Name="مسؤول الدوام" Type="int" />
@@ -1042,7 +1043,6 @@
           </ReferentialConstraint>
         </Association>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="Getالمراكز" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -1376,7 +1376,7 @@
             <PropertyRef Name="رمز" />
           </Key>
           <Property Name="رمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="C_اسم" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="اسم" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="عنوان" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="اختصاص" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="هاتف" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
@@ -1394,7 +1394,7 @@
             <PropertyRef Name="رمز_الآلية" />
             <PropertyRef Name="المركز" />
           </Key>
-          <Property Name="رمز_الآلية" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="رمز_الآلية" Type="Int32" Nullable="false" />
           <Property Name="المركز" Type="Int32" Nullable="false" />
           <Property Name="نوعية_الاستخدام" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="موديل_" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
@@ -1540,12 +1540,13 @@
             <PropertyRef Name="رمز_المستشفى" />
           </Key>
           <Property Name="رمز_المستشفى" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="عدد_الطوابق" Type="Int16" />
           <Property Name="العنوان" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="الهاتف" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="اسم_المستشفى" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="رمز_المدينة" Type="Int32" />
           <Property Name="رمز_المنطقة" Type="Int32" />
+          <Property Name="الطابق_السفلي" Type="Int16" />
+          <Property Name="الطابق_العلوي" Type="Int16" />
           <NavigationProperty Name="الأطباء" Relationship="Self.FK_الأطباء_ToTable_المستشفيات" FromRole="المستشفيات" ToRole="الأطباء" />
           <NavigationProperty Name="المدن" Relationship="Self.FK_المستشفيات_ToTableالمدينة" FromRole="المستشفيات" ToRole="المدن" />
           <NavigationProperty Name="المستشفيات_مع_اقسام" Relationship="Self.FK_المستشفيات_مع_اقسام_ToTableالمستشفيات" FromRole="المستشفيات" ToRole="المستشفيات_مع_اقسام" />
@@ -1662,6 +1663,9 @@
             <PropertyRef Name="رمز__المركز" />
           </Key>
           <Property Name="الرمز_الشهري" Type="Int32" Nullable="false" />
+          <Property Name="رمز_السنوي" Type="Int32" Nullable="false" />
+          <Property Name="السنة" Type="Int32" Nullable="false" />
+          <Property Name="رمز__المركز" Type="Int32" Nullable="false" />
           <Property Name="التاريخ" Type="DateTime" Precision="3" />
           <Property Name="الآلية" Type="Int32" />
           <Property Name="المريض" Type="Int32" Nullable="false" />
@@ -1675,11 +1679,9 @@
           <Property Name="مسعف_1" Type="Int32" Nullable="false" />
           <Property Name="مسعف_2" Type="Int32" Nullable="false" />
           <Property Name="السائق" Type="Int32" Nullable="false" />
-          <Property Name="رقم_المتصل" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="الهاتف" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="رقم_المتصل" Type="Int32" />
+          <Property Name="الهاتف" Type="Int32" />
           <Property Name="متلقي_المهمة" Type="Int32" />
-          <Property Name="رمز_السنوي" Type="Int32" Nullable="false" />
-          <Property Name="السنة" Type="Int32" Nullable="false" />
           <Property Name="تفاصيل_ال_من" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="تفاصيل_ال_الى" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="من_رمز_المدينة" Type="Int32" />
@@ -1689,7 +1691,6 @@
           <Property Name="التفاصيل" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="اسم_المتصل" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="طبيعة_المهمة" Type="Int32" Nullable="false" />
-          <Property Name="رمز__المركز" Type="Int32" Nullable="false" />
           <Property Name="مريض_مقعد" Type="Boolean" />
           <Property Name="الأمراض_المعدية" Type="Int32" />
           <Property Name="مسؤول_الدوام" Type="Int32" />
@@ -2505,7 +2506,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ERCEntities4" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ERCEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="أقسام_المستشفيات" EntityType="Self.أقسام_المستشفيات" />
           <EntitySet Name="الأطباء" EntityType="Self.الأطباء" />
@@ -2773,7 +2774,6 @@
             <End Role="طبيعة_المهمة" EntitySet="طبيعة_المهمة" />
             <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
           </AssociationSet>
-          <FunctionImport Name="Getالمراكز" ReturnType="Collection(ERCModel.Getالمراكز_Result)" />
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -2805,16 +2805,12 @@
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
-        <ComplexType Name="Getالمراكز_Result">
-          <Property Type="String" Name="المدينة" Nullable="true" MaxLength="20" />
-          <Property Type="Int32" Name="الرمز" Nullable="false" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ERCModelStoreContainer" CdmEntityContainer="ERCEntities4">
+        <EntityContainerMapping StorageEntityContainer="ERCModelStoreContainer" CdmEntityContainer="ERCEntities">
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="ERCModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -2838,7 +2834,7 @@
             <EntityTypeMapping TypeName="ERCModel.الأطباء">
               <MappingFragment StoreEntitySet="الأطباء">
                 <ScalarProperty Name="رمز" ColumnName="رمز" />
-                <ScalarProperty Name="C_اسم" ColumnName=" اسم" />
+                <ScalarProperty Name="اسم" ColumnName="اسم" />
                 <ScalarProperty Name="عنوان" ColumnName="عنوان" />
                 <ScalarProperty Name="اختصاص" ColumnName="اختصاص" />
                 <ScalarProperty Name="هاتف" ColumnName="هاتف" />
@@ -2963,12 +2959,13 @@
             <EntityTypeMapping TypeName="ERCModel.المستشفيات">
               <MappingFragment StoreEntitySet="المستشفيات">
                 <ScalarProperty Name="رمز_المستشفى" ColumnName="رمز المستشفى" />
-                <ScalarProperty Name="عدد_الطوابق" ColumnName="عدد الطوابق" />
                 <ScalarProperty Name="العنوان" ColumnName="العنوان" />
                 <ScalarProperty Name="الهاتف" ColumnName="الهاتف" />
                 <ScalarProperty Name="اسم_المستشفى" ColumnName="اسم المستشفى" />
                 <ScalarProperty Name="رمز_المدينة" ColumnName="رمز المدينة" />
                 <ScalarProperty Name="رمز_المنطقة" ColumnName="رمز المنطقة" />
+                <ScalarProperty Name="الطابق_السفلي" ColumnName="الطابق السفلي" />
+                <ScalarProperty Name="الطابق_العلوي" ColumnName="الطابق العلوي" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3040,6 +3037,9 @@
             <EntityTypeMapping TypeName="ERCModel.المهمات_المنفذة">
               <MappingFragment StoreEntitySet="المهمات المنفذة">
                 <ScalarProperty Name="الرمز_الشهري" ColumnName="الرمز الشهري" />
+                <ScalarProperty Name="رمز_السنوي" ColumnName="رمز السنوي" />
+                <ScalarProperty Name="السنة" ColumnName="السنة" />
+                <ScalarProperty Name="رمز__المركز" ColumnName="رمز  المركز" />
                 <ScalarProperty Name="التاريخ" ColumnName="التاريخ" />
                 <ScalarProperty Name="الآلية" ColumnName="الآلية" />
                 <ScalarProperty Name="المريض" ColumnName="المريض" />
@@ -3056,8 +3056,6 @@
                 <ScalarProperty Name="رقم_المتصل" ColumnName="رقم المتصل" />
                 <ScalarProperty Name="الهاتف" ColumnName="الهاتف" />
                 <ScalarProperty Name="متلقي_المهمة" ColumnName="متلقي المهمة" />
-                <ScalarProperty Name="رمز_السنوي" ColumnName="رمز السنوي" />
-                <ScalarProperty Name="السنة" ColumnName="السنة" />
                 <ScalarProperty Name="تفاصيل_ال_من" ColumnName="تفاصيل ال من" />
                 <ScalarProperty Name="تفاصيل_ال_الى" ColumnName="تفاصيل ال الى" />
                 <ScalarProperty Name="من_رمز_المدينة" ColumnName="من رمز المدينة" />
@@ -3067,7 +3065,6 @@
                 <ScalarProperty Name="التفاصيل" ColumnName="التفاصيل" />
                 <ScalarProperty Name="اسم_المتصل" ColumnName="اسم المتصل" />
                 <ScalarProperty Name="طبيعة_المهمة" ColumnName="طبيعة المهمة" />
-                <ScalarProperty Name="رمز__المركز" ColumnName="رمز  المركز" />
                 <ScalarProperty Name="مريض_مقعد" ColumnName="مريض مقعد" />
                 <ScalarProperty Name="الأمراض_المعدية" ColumnName="الأمراض المعدية" />
                 <ScalarProperty Name="مسؤول_الدوام" ColumnName="مسؤول الدوام" />
@@ -3116,14 +3113,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="Getالمراكز" FunctionName="ERCModel.Store.Getالمراكز">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ERCModel.Getالمراكز_Result">
-                <ScalarProperty Name="المدينة" ColumnName="المدينة" />
-                <ScalarProperty Name="الرمز" ColumnName="الرمز" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="ERCModel.Store.sp_alterdiagram" />
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="ERCModel.Store.sp_creatediagram" />
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="ERCModel.Store.sp_dropdiagram" />

@@ -345,23 +345,7 @@ namespace Erc1.Classes
         }
 
 
-        // get طوابق المستشفيات (column names ="عدد_الطوابق","الرمز")
-        public static IEnumerable Get_طوابق_المستشفيات(int hospital_key)
-        {
-            using (ERCEntities entity = new ERCEntities())
-            {
-                var c = (
-                from h in entity.المستشفيات
-                where h.رمز_المستشفى == hospital_key
-                select new
-                {
-                    h.رمز_المستشفى,
-                    h.عدد_الطوابق
-                }
-                    ); ;
-                return c.ToList();
-            };
-        }
+
 
 
 

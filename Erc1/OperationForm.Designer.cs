@@ -406,6 +406,7 @@ namespace ERC
             // 
             // panel2
             // 
+            this.panel2.AutoSize = true;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
@@ -413,6 +414,7 @@ namespace ERC
             this.panel2.Size = new System.Drawing.Size(818, 559);
             this.panel2.TabIndex = 11;
             this.panel2.SizeChanged += new System.EventHandler(this.panel2_SizeChanged);
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             this.panel2.Resize += new System.EventHandler(this.panel2_Resize);
             // 
             // tableLayoutPanel1
@@ -527,6 +529,7 @@ namespace ERC
             // 
             // tableLayoutPanel7
             // 
+            this.tableLayoutPanel7.AutoSize = true;
             this.tableLayoutPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(148)))), ((int)(((byte)(158)))));
             this.tableLayoutPanel7.ColumnCount = 8;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -651,6 +654,7 @@ namespace ERC
             // 
             // tableLayoutPanel13
             // 
+            this.tableLayoutPanel13.AutoSize = true;
             this.tableLayoutPanel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(148)))), ((int)(((byte)(158)))));
             this.tableLayoutPanel13.ColumnCount = 1;
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -667,6 +671,7 @@ namespace ERC
             // 
             // ContainerOfStrips
             // 
+            this.ContainerOfStrips.AutoSize = true;
             this.ContainerOfStrips.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
             this.ContainerOfStrips.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContainerOfStrips.Location = new System.Drawing.Point(0, 41);
@@ -679,6 +684,7 @@ namespace ERC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(1024, 650);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -688,6 +694,7 @@ namespace ERC
             this.Text = "OperationForm";
             this.Resize += new System.EventHandler(this.OperationForm_Resize);
             this.OperationLayout.ResumeLayout(false);
+            this.OperationLayout.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.operlabel.ResumeLayout(false);
             this.operlabel.PerformLayout();
@@ -695,7 +702,9 @@ namespace ERC
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel12.ResumeLayout(false);
+            this.tableLayoutPanel12.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
@@ -706,6 +715,7 @@ namespace ERC
             this.tableLayoutPanel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tableLayoutPanel13.ResumeLayout(false);
+            this.tableLayoutPanel13.PerformLayout();
             this.ResumeLayout(false);
 
         }
