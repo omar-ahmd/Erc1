@@ -113,28 +113,46 @@ namespace Erc1.Classes
 
 
         // get monthlyid 
-        public static int Get_MonthlyID()
+        public static int Get_MonthlyID(int year,int month)
         {
             using (ERCEntities entity = new ERCEntities())
             {
-                 int c = entity.المهمات_المنفذة
-                    .Where (r=>r.الرمز_الشهري==entity.المهمات_المنفذة.Max(p=>p.الرمز_الشهري))
-                    .Select(r => r.الرمز_الشهري).Single()
-                    ;
+                int c;
+                try
+                {
+                     c = entity.المهمات_المنفذة
+                       .Where(r => r.التاريخ.Value.Year == year && r.التاريخ.Value.Month == month && r.الرمز_الشهري == entity.المهمات_المنفذة.Max(p => p.الرمز_الشهري))
+                       .Select(r => r.الرمز_الشهري).Single()
+                       ;
+                    c += 1;
+                }
+                catch 
+                {
+                     c = 1;
+                }
                 return c;
             };
         }
 
 
         // get yearid 
-        public static int Get_YearID()
+        public static int Get_YearID(int year)
         {
             using (ERCEntities entity = new ERCEntities())
             {
-                int c = entity.المهمات_المنفذة
-                   .Where(r => r.رمز_السنوي == entity.المهمات_المنفذة.Max(p => p.رمز_السنوي))
+                int c;
+                try
+                {
+                    c = entity.المهمات_المنفذة
+                   .Where(r => r.التاريخ.Value.Year == year && r.رمز_السنوي == entity.المهمات_المنفذة.Max(p => p.رمز_السنوي))
                    .Select(r => r.رمز_السنوي).Single()
                    ;
+                    c += 1;
+                }
+                catch
+                {
+                    c = 1;
+                }
                 return c;
             };
         }
@@ -465,21 +483,26 @@ namespace Erc1.Classes
         }
 
 
-        // get طوابق المستشفيات (column names ="عدد_الطوابق","رمز_المستشفى")
-        public static IEnumerable Get_طوابق_المستشفيات(int hospital_key)
+        // get طوابق المستشفيات 
+        public static short[] Get_طوابق_المستشفيات(int hospital_key)
         {
             using (ERCEntities entity = new ERCEntities())
             {
-                var c = (
-                from h in entity.المستشفيات
-                where h.رمز_المستشفى == hospital_key
-                select new
+                short[] c;
+                short c1,c2;
+                    
+                   c1= entity.المستشفيات.
+                  Where(r => r.رمز_المستشفى == hospital_key)
+                  .Select(r => r.الطابق_السفلي).Single().Value;
+                c2 = entity.المستشفيات.
+                  Where(r => r.رمز_المستشفى == hospital_key)
+                  .Select(r => r.الطابق_العلوي).Single().Value;
+                c = new short[c2 - c1 + 1];
+                for (short i =0; i <= c2-c1; i++)
                 {
-                    h.رمز_المستشفى,
-                    h.عدد_الطوابق
+                    c[i] = (short)(c1 +i);
                 }
-                    ); ;
-                return c.ToList();
+                return c;
             };
         }
 
@@ -539,13 +562,60 @@ namespace Erc1.Classes
 
 
 
+        // get الأطباء by hospitalID (column names ="رمز","اسم")
+        public static IEnumerable Get_الأطباء(int hospital_key)
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+             from doctors in entity.الأطباء
+             where doctors.مكان_العمل == hospital_key
+             select new
+             {
+                 doctors.رمز,
+                 doctors.اسم
+             });;
+                return c.ToList();
+            }
+        }
+
+
+
+        // get الجهات_الضامنة(column names ="الجهة_الضامنة","الرمز")
+        public static IEnumerable Get_الجهات_الضامنة()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+             from insurance in entity.الجهات_الضامنة
+             select new
+             {
+                 insurance.الرمز,
+                 insurance.الجهة_الضامنة
+             }); ;
+                return c.ToList();
+            }
+        }
+
+        // get الأمراض_المعدية(column names ="المرض","الرمز")
+        public static IEnumerable Get_الأمراض_المعدية()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+             from disease in entity.الأمراض_المعدية
+             select new
+             {
+                 disease.الرمز,
+                 disease.المرض
+             }); ;
+                return c.ToList();
+            }
+        }
 
 
 
 
-
-
-    
 
         // add mission
         public static void AddMission(int الرمز_الشهري, DateTime التاريخ, int الآلية, int المريض, Nullable<int> من_مشفى, Nullable<int> من_القسم, Nullable<int> الطبيب_المعالج,

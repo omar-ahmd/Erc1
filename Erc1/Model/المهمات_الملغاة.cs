@@ -36,10 +36,10 @@ namespace Erc1.model
         public virtual المدن المدن { get; set; }
         public virtual المدن المدن1 { get; set; }
         public virtual المرضى المرضى { get; set; }
-        public virtual المستشفيات المستشفيات { get; set; }
-        public virtual المستشفيات المستشفيات1 { get; set; }
         public virtual المناطق المناطق { get; set; }
         public virtual المناطق المناطق1 { get; set; }
         public virtual طبيعة_المهمة طبيعة_المهمة1 { get; set; }
+        public virtual المستشفيات المستشفيات { get; set; }
+        public virtual المستشفيات المستشفيات1 { get; set; }
     }
 }

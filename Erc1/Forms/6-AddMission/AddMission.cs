@@ -209,13 +209,29 @@ namespace Erc1.Forms
             c25.ValueMember = "sections_id";
             c25.DisplayMember = "sections_name";
             ComboBox c26 = (ComboBox)(tableLayoutPanel20.Controls.Find("pai", true)[0].Controls.Find("tp1", true)[0].Controls.Find("tp9", true)[0].Controls.Find("FromHosFloor", true))[0];
-            var levels = mission.Get_طوابق_المستشفيات(int.Parse(c24.SelectedValue.ToString()));
-            c26.DataSource = levels;
-            c26.ValueMember = "رمز_المستشفى";
-            c26.DisplayMember = "عدد_الطوابق";
+            short[] levels = mission.Get_طوابق_المستشفيات(int.Parse(c24.SelectedValue.ToString()));
+            for (int i = 0; i < levels.Length; i++)
+            {
+                c26.Items.Add (levels[i]);
+            }
             TextBox t = (TextBox)(tableLayoutPanel20.Controls.Find("pai", true)[0].Controls.Find("tp1", true)[0].Controls.Find("tp6", true)[0].Controls.Find("ID_FromHospital", true))[0];
             t.Text = c24.SelectedValue.ToString();
 
+            ComboBox c27 = (ComboBox)(tableLayoutPanel20.Controls.Find("pai", true)[0].Controls.Find("tp1", true)[0].Controls.Find("tp21", true)[0].Controls.Find("Medicine", true))[0];
+            var doctors = mission.Get_الأطباء(int.Parse(c24.SelectedValue.ToString()));
+            c27.DataSource = doctors;
+            c27.ValueMember = "رمز";
+            c27.DisplayMember = "اسم";
+            ComboBox c28 = (ComboBox)(tableLayoutPanel20.Controls.Find("pai", true)[0].Controls.Find("tp1", true)[0].Controls.Find("tp24", true)[0].Controls.Find("Insurance", true))[0];
+            var insurance = mission.Get_الجهات_الضامنة();
+            c28.DataSource = insurance;
+            c28.ValueMember = "الرمز";
+            c28.DisplayMember = "الجهة_الضامنة";
+            ComboBox c29 = (ComboBox)(tableLayoutPanel20.Controls.Find("pai", true)[0].Controls.Find("tp1", true)[0].Controls.Find("tp21", true)[0].Controls.Find("InfectionDiseases", true))[0];
+            var disease= mission.Get_الأمراض_المعدية();
+            c29.DataSource = disease;
+            c29.ValueMember = "الرمز";
+            c29.DisplayMember = "المرض";
 
 
         }
@@ -247,8 +263,11 @@ namespace Erc1.Forms
 
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-
-            textBox3.Text = mission.Get_MonthlyID().ToString();
+            int t1, t2;
+            t1 = DateTime.Now.Year;
+            t2 = DateTime.Now.Month;
+            textBox3.Text = mission.Get_MonthlyID(t1,t2).ToString();
+            textBox4.Text = mission.Get_YearID(t1).ToString();
 
 
 

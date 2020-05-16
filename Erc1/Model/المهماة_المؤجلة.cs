@@ -36,9 +36,9 @@ namespace Erc1.model
         public virtual الحالات الحالات { get; set; }
         public virtual المدن المدن { get; set; }
         public virtual المدن المدن1 { get; set; }
-        public virtual المستشفيات المستشفيات { get; set; }
-        public virtual المستشفيات المستشفيات1 { get; set; }
         public virtual المناطق المناطق { get; set; }
         public virtual المناطق المناطق1 { get; set; }
+        public virtual المستشفيات المستشفيات { get; set; }
+        public virtual المستشفيات المستشفيات1 { get; set; }
     }
 }

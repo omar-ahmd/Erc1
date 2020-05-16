@@ -39,7 +39,6 @@ namespace Erc1.model
         public virtual DbSet<المدن> المدن { get; set; }
         public virtual DbSet<المراكز> المراكز { get; set; }
         public virtual DbSet<المرضى> المرضى { get; set; }
-        public virtual DbSet<المستشفيات> المستشفيات { get; set; }
         public virtual DbSet<المستشفيات_مع_اقسام> المستشفيات_مع_اقسام { get; set; }
         public virtual DbSet<المناطق> المناطق { get; set; }
         public virtual DbSet<المهماة_المؤجلة> المهماة_المؤجلة { get; set; }
@@ -50,6 +49,7 @@ namespace Erc1.model
         public virtual DbSet<طبيعة_المهمة> طبيعة_المهمة { get; set; }
         public virtual DbSet<فئة_الدم> فئة_الدم { get; set; }
         public virtual DbSet<نوعيات_الحالات> نوعيات_الحالات { get; set; }
+        public virtual DbSet<المستشفيات> المستشفيات { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

@@ -98,5 +98,10 @@ namespace Erc1.CONTROLS
 
         
         }
+
+        private void Medicine_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
