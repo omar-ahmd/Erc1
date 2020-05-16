@@ -1,7 +1,6 @@
 ﻿
         Mohammd
 
-        Mohammd
         // get الحالات names (column names ="المرض" , "رمز")
         Get_الحالات()
 
@@ -28,7 +27,7 @@
 
 
         //get all centers (column names ="centers","id")
-        public static IEnumerable Get_Centers()
+        Get_Centers()
 
 
 
@@ -51,7 +50,13 @@
         Get_المدن()
 
 
-        // get المستشفيات(column names ="اسم","الرمز")
+
+        // get المناطق names(column names ="المنطقة","رمز")
+        Get_المناطق(int city_key)
+      
+
+
+        // get المستشفيات(column names ="اسم","رمز_المستشفى")
         Get_المستشفيات()
 
 
@@ -73,7 +78,17 @@
         // get مسؤول مهمة names by المراكز(column names ="الاسم","الرمز")
         Get_مسؤول_مهمة_by_idالمراكز(int center_id)
 
+
+
+        // get monthlyid 
+        Get_MonthlyID()
+
+
+        // get yearid 
+        Get_YearID()
          
+
+
         requests:
         -Get_المناطق_by_idالمدن
         -Get_infectious_case
