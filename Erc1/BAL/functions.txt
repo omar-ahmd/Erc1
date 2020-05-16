@@ -88,6 +88,38 @@
         Get_YearID()
          
 
+         
+
+        // get monthlyid 
+        Get_MonthlyID(int year, int month)
+
+
+
+        // get yearid 
+        Get_YearID(int year)
+
+
+
+        // get طوابق المستشفيات
+        public static short[] Get_طوابق_المستشفيات(int hospital_key)
+
+
+
+        // get الأطباء by hospitalID (column names ="رمز","اسم")
+        Get_الأطباء(int hospital_key)
+
+
+
+        // get الجهات_الضامنة(column names ="الجهة_الضامنة","الرمز")
+        Get_الجهات_الضامنة()
+
+
+
+        // get الأمراض_المعدية(column names ="المرض","الرمز")
+        Get_الأمراض_المعدية()
+
+
+
 
         requests:
         -Get_المناطق_by_idالمدن
