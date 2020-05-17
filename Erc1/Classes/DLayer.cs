@@ -694,6 +694,38 @@ namespace Erc1.Classes
 
         }
 
+        public static bool add_Cases(DataTable new_Case)
+        {
+            bool added = false;
+            using (ERCEntities entity = new model.ERCEntities())
+            {
+                try
+                {
+                    foreach (DataRow row in new_Case.Rows)
+                    {
+                        حالات_المهمات newCase = new حالات_المهمات()
+                        {
+                            رمز_الحالة = int.Parse(row["رمز_الحالة"].ToString()),
+                            الرمز_الشهري = int.Parse(row["الرمز_الشهري"].ToString()),
+                            رمز_السنوي = int.Parse(row["رمز_السنوي"].ToString()),
+                            السنة = int.Parse(row["السنة"].ToString())
+                        };
+                        entity.حالات_المهمات.Add(newCase);
+                        entity.SaveChanges();
+                    }
+
+                    added = true;
+                    return added;
+                }
+                catch
+                {
+                    added = false;
+                    return added;
+                }
+            };
+
+        }
+
 
 
 

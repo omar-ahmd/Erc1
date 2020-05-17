@@ -16,7 +16,7 @@ namespace Erc1.model
     {
         public int رمز_الحالة { get; set; }
         public int الرمز_الشهري { get; set; }
-        public string رمز_السنوي { get; set; }
-        public string السنة { get; set; }
+        public int رمز_السنوي { get; set; }
+        public int السنة { get; set; }
     }
 }
