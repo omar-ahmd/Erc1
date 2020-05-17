@@ -64,6 +64,9 @@ namespace Erc1.BAL
 		}
 		
 		public المهمات_المنفذة Mission;
+		public المهماة_المؤجلة DMission;
+		public المهمات_الملغاة CMission;
+
 
 		private int centerID;
 		private int carID;
@@ -180,7 +183,7 @@ namespace Erc1.BAL
 		
 
 
-		public المهمات_المنفذة SaveImplementedMission()
+		public bool SaveImplementedMission()
 		{
 			Mission = new المهمات_المنفذة();
 			Mission.رمز__المركز = centerID;
@@ -195,12 +198,51 @@ namespace Erc1.BAL
 			PatientInfo.SaveInfo(Mission);
 			ParamedicsInfo.SaveInfo(Mission);
 
-			return Mission;
+			return mission.add_Mission(Mission);
 
 
 
 		}
-		
+
+		/*public bool SaveDelayedMission()
+		{
+			DMission = new المهماة_المؤجلة();
+			Mission.رمز__المركز = centerID;
+			Mission.الرمز_الشهري = MonthlyID;
+			Mission.رمز_السنوي = AnnualID;
+			Mission.الآلية = carID;
+			Mission.التاريخ = Date;
+			// cases and casetype
+			Mission.طبيعة_المهمة = MissionTypeID;
+			Mission.التفاصيل = MoreInfoAboutCase;
+
+			PatientInfo.SaveInfo(DMission);
+
+			return mission.add_Mission(DMission);
+
+
+
+		}
+		public bool SaveCanceledMission()
+		{
+			CMission = new المهمات_الملغاة();
+			Mission.رمز__المركز = centerID;
+			Mission.الرمز_الشهري = MonthlyID;
+			Mission.رمز_السنوي = AnnualID;
+			Mission.الآلية = carID;
+			Mission.التاريخ = Date;
+			// cases and casetype
+			Mission.طبيعة_المهمة = MissionTypeID;
+			Mission.التفاصيل = MoreInfoAboutCase;
+
+			PatientInfo.SaveInfo(CMission);
+
+			return mission.add_Mission(CMission);
+
+
+
+		}*/
+
 
 		public bool ImportInfo(AddMission addMission)
 		{
@@ -260,14 +302,31 @@ namespace Erc1.BAL
 
 				MoreInfoAboutCase = addMission.MoreInfoAboutCase.Text;
 
-				PatientInfo = new PatientInfo();
-				ParamedicsInfo = new ParamedicsInfo();
+				bool PatientImporDone, ParamDone;
 
 
 
-				bool done = PatientInfo.ImportInfo(addMission.paI) && ParamedicsInfo.ImportData(addMission.pI);
+				if(MissionTy==Forms.MissionType.Implemented)
+				{
+					PatientInfo = new PatientInfo();
+					ParamedicsInfo = new ParamedicsInfo();
+					PatientImporDone = PatientInfo.ImportInfo(addMission.paI);
+					ParamDone = ParamedicsInfo.ImportData(addMission.pI);
+					return PatientImporDone && ParamDone;
+				}
+				else if(MissionTy == Forms.MissionType.Dlayed)
+				{
+					PatientInfo = new PatientInfo();
+					PatientImporDone = PatientInfo.ImportInfo(addMission.paI);
+				}
+				else
+				{
+					PatientInfo = new PatientInfo();
+					PatientImporDone = PatientInfo.ImportInfo(addMission.paI);
+				}
 
-				return done;
+				return true;
+				
 			}
 			catch(Exception ex)
 			{
@@ -665,15 +724,114 @@ namespace Erc1.BAL
 				Mission.إلى_القسم = ToDepatementID;
 				Mission.تفاصيل_ال_الى = ToHosFloor + " ," + ToRoom;
 			}
+
 			Mission.مريض_مقعد = CanSit;
-			Mission.الطبيب_المعالج = MedicineID;
-			Mission.الأمراض_المعدية = InfectiousdiseasesID;
-			Mission.الجهة_الضامنة = insuranceID;
+			if (MedicineID != -1)
+			{
+				Mission.الطبيب_المعالج = MedicineID;
+			}
+			else
+			{
+				Mission.الطبيب_المعالج = null;
+			}
+
+			if (InfectiousdiseasesID != -1)
+			{
+				Mission.الأمراض_المعدية = InfectiousdiseasesID;
+			}
+			else
+			{
+				Mission.الأمراض_المعدية = null;
+			}
+
+			if (InsuranceID != -1)
+			{
+				Mission.الجهة_الضامنة = InsuranceID;
+			}
+			else
+			{
+				Mission.الجهة_الضامنة = null;
+			}
 
 
 			return true;
 		}
-		
+
+		/*public bool SaveInfo(المهمات_الملغاة Mission)
+		{
+			Mission.رمز_المريض = patientID;
+
+			if (!IsPatientExist(patientID))
+			{
+				المرضى Patient = new المرضى();
+				//get data of new patient and added him to data table of patients
+				//a new form appear and the user fill the data 
+				//addpatient class
+			}
+			if (From == FromTo.Home)
+			{
+				Mission.من_رمز_المدينة = FromCityID;
+				Mission.من_رمز_المنطقة = FromregionID;
+			}
+			else
+			{
+				Mission.من_مشفى = FromHospitalID;
+				Mission.من_القسم = FromDepatementID;
+			}
+			if (To == FromTo.Home)
+			{
+				Mission.الى_رمز_المدينة = ToCityID;
+				Mission.الى_رمز_المنطقة = ToregionID;
+			}
+			else
+			{
+				Mission.إلى_مشفى = ToHospitalID;
+				Mission.إلى_القسم = ToDepatementID;
+			}
+
+
+
+
+			return true;
+		}*/
+
+		/*public bool SaveInfo(المهماة_المؤجلة Mission)
+		{
+		 = patientID;
+
+			if (!IsPatientExist(patientID))
+			{
+				المرضى Patient = new المرضى();
+				//get data of new patient and added him to data table of patients
+				//a new form appear and the user fill the data 
+				//addpatient class
+			}
+			if (From == FromTo.Home)
+			{
+				Mission.من_رمز_المدينة = FromCityID;
+				Mission.من_رمز_المنطقة = FromregionID;
+			}
+			else
+			{
+				Mission.من_مشفى = FromHospitalID;
+				Mission.من_القسم = FromDepatementID;
+			}
+			if (To == FromTo.Home)
+			{
+				Mission.الى_رمز_المدينة = ToCityID;
+				Mission.الى_رمز_المنطقة = ToregionID;
+			}
+			else
+			{
+				Mission.إلى_مشفى = ToHospitalID;
+				Mission.إلى_القسم = ToDepatementID;
+			}
+
+
+
+
+			return true;
+		}*/
 		public bool ImportInfo(CONTROLS.PatientInformation patientInfo)
 		{
 			try
@@ -729,9 +887,7 @@ namespace Erc1.BAL
 						FromRoom = int.Parse(patientInfo.FromHosRoom.Text);
 					}
 					catch(Exception ex)
-					{
-
-					}
+					{ }
 
 
 				}
@@ -774,7 +930,7 @@ namespace Erc1.BAL
 					}
 					catch(Exception  ex)
 					{
-
+						
 					}
 					FromMoreInfoAboutAdress = patientInfo.MoreFromInfo.Text;
 
@@ -822,7 +978,7 @@ namespace Erc1.BAL
 						ToRoom = int.Parse(patientInfo.ToHosRoom.Text);
 					}
 					catch(Exception ex)
-					{ 
+					{
 					}
 
 
@@ -865,7 +1021,6 @@ namespace Erc1.BAL
 					}
 					catch(Exception ex)
 					{
-
 					}
 					ToMoreInfoAboutAdress = patientInfo.MoreToInfo.Text;
 
@@ -883,7 +1038,7 @@ namespace Erc1.BAL
 				}
 				catch(Exception ex)
 				{
-
+					MedicineID = -1;
 				}
 				MedicineName = patientInfo.MedcineID.Text;
 				try
@@ -892,7 +1047,7 @@ namespace Erc1.BAL
 				}
 				catch (Exception ex)
 				{
-
+					InfectiousdiseasesID =-1;
 				}
 				Infectiousdiseases = patientInfo.InfectionDiseases.Text;
 				try
@@ -901,8 +1056,11 @@ namespace Erc1.BAL
 				}
 				catch (Exception ex)
 				{
-
+					MessageBox.Show("f");
+					InsuranceID = -1;
 				}
+
+				CauseOfCancilling = patientInfo.CancilingCause.Text;
 
 				insuranceName = patientInfo.Insurance.Text;
 				MoreInfoAboutPatient = patientInfo.OtherInfo.Text;
@@ -1088,12 +1246,48 @@ namespace Erc1.BAL
 			{
 				Mission.السائق = DriverID;
 				Mission.مسؤول_المهمة = HeadOfMissionID;
-				Mission.مسعف_1 = Paramedic1ID;
-				Mission.مسعف_2 = Paramedic2ID;
-				Mission.متلقي_المهمة = RecipientMissionID;
-				Mission.اسم_المتصل = CallerName;
-				Mission.رقم_المتصل = CallerPhone;
 				Mission.مسؤول_الدوام = HeadOfMissionID;
+
+				if (Paramedic1ID != -1)
+				{
+					Mission.مسعف_1 = Paramedic1ID;
+				}
+				else
+				{
+					//Mission.مسعف_1 = null;
+				}
+
+				if (paramedic2ID != -1)
+				{
+					Mission.مسعف_2 = Paramedic2ID;
+				}
+				else
+				{
+					//Mission.مسعف_2 = null;
+				}
+
+				if (RecipientMissionID != -1)
+				{
+					Mission.متلقي_المهمة = RecipientMissionID;
+				}
+				else
+
+				{
+					Mission.متلقي_المهمة = null;
+				}
+				
+				if(CallerPhone!=-1)
+				{
+					Mission.رقم_المتصل = CallerPhone;
+				}
+				else
+				{
+					Mission.رقم_المتصل = null;
+				}
+
+				Mission.اسم_المتصل = CallerName;
+				
+				
 				return true;
 			}
 			catch(Exception ex)
@@ -1107,22 +1301,51 @@ namespace Erc1.BAL
 		{
 			try
 			{
-
+				Paramedic1Name = paramInfo.Name_Paramedic1.Text;
+				Paramedic2Name = paramInfo.Name_Paramedic2.Text;
+				RecipientMissionName = paramInfo.Name_RecipientOfMission.Text;
+				CallerName = paramInfo.CallerName.Text;
 				try
 				{
-					Paramedic1Name = paramInfo.Name_Paramedic1.Text;
-					Paramedic2Name = paramInfo.Name_Paramedic2.Text;
+
 					Paramedic1ID = int.Parse(paramInfo.Name_Paramedic1.SelectedValue.ToString());
+				}
+				catch
+				{
+					Paramedic1ID = -1;
+				}
+				try
+				{
 					Paramedic2ID = int.Parse(paramInfo.Name_Paramedic2.SelectedValue.ToString());
+				}
+				catch
+				{
+					Paramedic2ID = -1;
+				}
+				try
+				{
 					RecipientMissionID = int.Parse(paramInfo.Name_RecipientOfMission.SelectedValue.ToString());
-					RecipientMissionName = paramInfo.Name_RecipientOfMission.Text;
-					CallerName = paramInfo.CallerName.Text;
+				}
+				catch
+				{
+					RecipientMissionID = -1;
+				}
+				try
+				{ 	
+					
 					CallerPhone = int.Parse(paramInfo.CallerPhone.Text);
 				}
 				catch(Exception ex)
 				{
+					
+					
+					
+					CallerPhone = -1;
 
 				}
+
+
+
 
 
 				HeadOfMissionName = paramInfo.Name_HeadOfMission.Text;

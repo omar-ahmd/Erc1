@@ -300,22 +300,35 @@ namespace Erc1.CONTROLS
         private void Save_Click(object sender, EventArgs e)
         {
             addMission add = new addMission();
-            bool done = add.ImportInfo(LoginForm.of.im);
-            if(done)
+            if (((Erc1.Forms.AddMission)(this.Parent.Parent.Parent.Parent.Parent)).MissionTy==Forms.MissionType.Implemented)
             {
+                bool done = add.ImportInfo(LoginForm.of.im);
+                if (done)
+                {
 
-                المهمات_المنفذة mission = add.SaveImplementedMission();
-                ERCEntities eRCEntities = new ERCEntities();
-                eRCEntities.المهمات_المنفذة.Add(mission);
-                eRCEntities.SaveChanges();
-                LoginForm.of.im.Dispose();
-                //LoginForm.of.im = new Forms.AddMission(Forms.MissionType.Implemented);
-                LoginForm.of.Sfab_ImpClicked(0, EventArgs.Empty);
+                    if (add.SaveImplementedMission())
+                    {
+
+                        LoginForm.of.im.Dispose();
+                        LoginForm.of.Sfab_ImpClicked(0, EventArgs.Empty);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR");
+                    }
 
 
 
+                }
+                else if (((Erc1.Forms.AddMission)(this.Parent.Parent.Parent.Parent.Parent)).MissionTy == Forms.MissionType.Dlayed)
+                {
+
+                }
+                else
+                {
+
+                }
             }
-            MessageBox.Show(done.ToString());
 
             
         }

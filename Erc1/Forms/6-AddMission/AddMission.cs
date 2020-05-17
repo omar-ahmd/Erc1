@@ -21,6 +21,7 @@ namespace Erc1.Forms
     {
         public PatientInformation paI;
         public ParamInformation pI;
+
         public event EventHandler SaveMission;
         public CasesOfMission cM;
         bool l = false;
@@ -85,8 +86,7 @@ namespace Erc1.Forms
                         paI.Hide();
 
                         button2.Show();
-                        //this.MissionType.Show();
-                        //this.MissionID.Show();
+
                         this.panel9.BackgroundImage = Erc1.Properties.Resources._12;
                         break;
 
@@ -182,8 +182,11 @@ namespace Erc1.Forms
             else
             {
                 dayinmonth = DateTime.DaysInMonth(int.Parse(Year.SelectedItem.ToString()), int.Parse(Month.SelectedItem.ToString()));
-                MonthlyID.Text = mission.Get_MonthlyID(int.Parse(Year.SelectedItem.ToString()), int.Parse(Month.SelectedItem.ToString())).ToString() ;
-                AnnualID.Text = mission.Get_YearID(int.Parse(Year.SelectedItem.ToString())).ToString();
+                if (missionTy == Forms.MissionType.Implemented)
+                {
+                    MonthlyID.Text = mission.Get_MonthlyID(int.Parse(Year.SelectedItem.ToString()), int.Parse(Month.SelectedItem.ToString())).ToString();
+                    AnnualID.Text = mission.Get_YearID(int.Parse(Year.SelectedItem.ToString())).ToString();
+                }
                 
 
             }

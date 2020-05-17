@@ -86,21 +86,21 @@ namespace Erc1.Forms
             this.CaseType = new System.Windows.Forms.ComboBox();
             this.Save = new System.Windows.Forms.Button();
             this.MissionType = new System.Windows.Forms.TableLayoutPanel();
+            this.ColdMission = new Erc1.CONTROLS.LabelBord();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.ColdMission = new Erc1.CONTROLS.LabelBord();
             this.FireMission = new Erc1.CONTROLS.LabelBord();
             this.UrgentMission = new Erc1.CONTROLS.LabelBord();
             this.ActivityMission = new Erc1.CONTROLS.LabelBord();
+            this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -139,10 +139,10 @@ namespace Erc1.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tableLayoutPanel19.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.tableLayoutPanel20.SuspendLayout();
             this.tableLayoutPanel21.SuspendLayout();
-            this.tableLayoutPanel23.SuspendLayout();
             this.tableLayoutPanel22.SuspendLayout();
+            this.tableLayoutPanel23.SuspendLayout();
+            this.tableLayoutPanel20.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -650,6 +650,16 @@ namespace Erc1.Forms
             this.MissionType.Controls.Add(this.ActivityMission, 3, 1);
             this.MissionType.Name = "MissionType";
             // 
+            // ColdMission
+            // 
+            this.ColdMission.Check = true;
+            resources.ApplyResources(this.ColdMission, "ColdMission");
+            this.ColdMission.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ColdMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this.ColdMission.Name = "ColdMission";
+            this.ColdMission.text = "مهمة باردة";
+            this.ColdMission.CheckChange += new System.EventHandler(this.ColdMission_CheckChange);
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
@@ -671,71 +681,6 @@ namespace Erc1.Forms
             this.pictureBox5.Image = global::Erc1.Properties.Resources.Untitled_11;
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.TabStop = false;
-            // 
-            // tableLayoutPanel19
-            // 
-            resources.ApplyResources(this.tableLayoutPanel19, "tableLayoutPanel19");
-            this.tableLayoutPanel19.Controls.Add(this.panel9, 1, 1);
-            this.tableLayoutPanel19.Name = "tableLayoutPanel19";
-            // 
-            // panel9
-            // 
-            this.panel9.BackgroundImage = global::Erc1.Properties.Resources._12;
-            resources.ApplyResources(this.panel9, "panel9");
-            this.panel9.Controls.Add(this.tableLayoutPanel20);
-            this.panel9.Name = "panel9";
-            // 
-            // tableLayoutPanel20
-            // 
-            this.tableLayoutPanel20.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.tableLayoutPanel20, "tableLayoutPanel20");
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel21, 0, 0);
-            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
-            // 
-            // tableLayoutPanel21
-            // 
-            resources.ApplyResources(this.tableLayoutPanel21, "tableLayoutPanel21");
-            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel23, 1, 0);
-            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel22, 0, 0);
-            this.tableLayoutPanel21.Name = "tableLayoutPanel21";
-            // 
-            // tableLayoutPanel23
-            // 
-            resources.ApplyResources(this.tableLayoutPanel23, "tableLayoutPanel23");
-            this.tableLayoutPanel23.Controls.Add(this.button2, 1, 1);
-            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
-            // 
-            // button2
-            // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // tableLayoutPanel22
-            // 
-            resources.ApplyResources(this.tableLayoutPanel22, "tableLayoutPanel22");
-            this.tableLayoutPanel22.Controls.Add(this.button1, 1, 1);
-            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
-            // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // ColdMission
-            // 
-            this.ColdMission.Check = true;
-            resources.ApplyResources(this.ColdMission, "ColdMission");
-            this.ColdMission.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ColdMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
-            this.ColdMission.Name = "ColdMission";
-            this.ColdMission.text = "مهمة باردة";
-            this.ColdMission.CheckChange += new System.EventHandler(this.ColdMission_CheckChange);
             // 
             // FireMission
             // 
@@ -766,6 +711,61 @@ namespace Erc1.Forms
             this.ActivityMission.Name = "ActivityMission";
             this.ActivityMission.text = "تغطية نشاط";
             this.ActivityMission.CheckChange += new System.EventHandler(this.ActivityMission_CheckChange);
+            // 
+            // tableLayoutPanel19
+            // 
+            resources.ApplyResources(this.tableLayoutPanel19, "tableLayoutPanel19");
+            this.tableLayoutPanel19.Controls.Add(this.panel9, 1, 1);
+            this.tableLayoutPanel19.Name = "tableLayoutPanel19";
+            // 
+            // panel9
+            // 
+            this.panel9.BackgroundImage = global::Erc1.Properties.Resources._12;
+            resources.ApplyResources(this.panel9, "panel9");
+            this.panel9.Controls.Add(this.tableLayoutPanel20);
+            this.panel9.Name = "panel9";
+            // 
+            // tableLayoutPanel21
+            // 
+            resources.ApplyResources(this.tableLayoutPanel21, "tableLayoutPanel21");
+            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel23, 1, 0);
+            this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel22, 0, 0);
+            this.tableLayoutPanel21.Name = "tableLayoutPanel21";
+            // 
+            // tableLayoutPanel22
+            // 
+            resources.ApplyResources(this.tableLayoutPanel22, "tableLayoutPanel22");
+            this.tableLayoutPanel22.Controls.Add(this.button1, 1, 1);
+            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tableLayoutPanel23
+            // 
+            resources.ApplyResources(this.tableLayoutPanel23, "tableLayoutPanel23");
+            this.tableLayoutPanel23.Controls.Add(this.button2, 1, 1);
+            this.tableLayoutPanel23.Name = "tableLayoutPanel23";
+            // 
+            // button2
+            // 
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.Name = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // tableLayoutPanel20
+            // 
+            this.tableLayoutPanel20.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.tableLayoutPanel20, "tableLayoutPanel20");
+            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel21, 0, 0);
+            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             // 
             // AddMission
             // 
@@ -827,10 +827,10 @@ namespace Erc1.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tableLayoutPanel19.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
-            this.tableLayoutPanel20.ResumeLayout(false);
             this.tableLayoutPanel21.ResumeLayout(false);
-            this.tableLayoutPanel23.ResumeLayout(false);
             this.tableLayoutPanel22.ResumeLayout(false);
+            this.tableLayoutPanel23.ResumeLayout(false);
+            this.tableLayoutPanel20.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -844,12 +844,6 @@ namespace Erc1.Forms
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
         public System.Windows.Forms.Panel panel9;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
-        public System.Windows.Forms.Button button2;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
-        public System.Windows.Forms.Button button1;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         public System.Windows.Forms.ComboBox Year;
@@ -907,5 +901,11 @@ namespace Erc1.Forms
         public CONTROLS.LabelBord FireMission;
         public CONTROLS.LabelBord UrgentMission;
         public CONTROLS.LabelBord ActivityMission;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
+        public System.Windows.Forms.Button button1;
     }
 }

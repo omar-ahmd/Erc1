@@ -125,7 +125,7 @@ namespace ERC
         //Add Mission buttons
         private void Sfab_CancClicked(object sender, EventArgs e)
         {
-            if (cm == null)
+            if (cm == null || cm.IsDisposed)
             {
                 cm = new AddMission(MissionType.Canceled) { TopLevel = false };
                 cm.Size = panel2.Size;
@@ -139,7 +139,7 @@ namespace ERC
         }
         private void Sfab_DelClicked(object sender, EventArgs e)
         {
-            if (dm == null)
+            if (dm == null || dm.IsDisposed)
             {
                 dm = new AddMission(MissionType.Dlayed) { TopLevel = false };
                 dm.Size = panel2.Size;

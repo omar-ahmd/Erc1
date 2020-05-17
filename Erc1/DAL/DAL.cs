@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Erc1.DAL;
 using System.Collections;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Erc1.Classes
 {
@@ -377,14 +378,18 @@ namespace Erc1.Classes
                 int c;
                 try
                 {
+                    MessageBox.Show(month.ToString());
+                    
+
                     c = entity.المهمات_المنفذة
-                      .Where(r => r.التاريخ.Value.Year == year && r.التاريخ.Value.Month == month && r.الرمز_الشهري == entity.المهمات_المنفذة.Max(p => p.الرمز_الشهري))
-                      .Select(r => r.الرمز_الشهري).Single()
-                      ;
+                        .Where(r => (r.التاريخ.Value.Year == year) && (r.التاريخ.Value.Month == month) )
+                        .Max(r => r.الرمز_الشهري)
+                        ;
                     c += 1;
                 }
-                catch
+                catch(Exception ex)
                 {
+                    MessageBox.Show("k");
                     c = 1;
                 }
                 return c;
@@ -401,8 +406,8 @@ namespace Erc1.Classes
                 try
                 {
                     c = entity.المهمات_المنفذة
-                   .Where(r => r.التاريخ.Value.Year == year && r.رمز_السنوي == entity.المهمات_المنفذة.Max(p => p.رمز_السنوي))
-                   .Select(r => r.رمز_السنوي).Single()
+                   .Where(r => r.التاريخ.Value.Year == year).Max(p => p.رمز_السنوي)
+                   
                    ;
                     c += 1;
                 }
@@ -460,21 +465,7 @@ namespace Erc1.Classes
         }
 
 
-        // get الأطباء (column names ="رمز","اسم")
-        public static IEnumerable Get_الأطباء()
-        {
-            using (ERCEntities entity = new ERCEntities())
-            {
-                var c = (
-             from doctors in entity.الأطباء
-             select new
-             {
-                 doctors.رمز,
-                 doctors.اسم
-             }); ;
-                return c.ToList();
-            }
-        }
+
 
 
         // get الجهات_الضامنة(column names ="الجهة_الضامنة","الرمز")
@@ -528,7 +519,7 @@ namespace Erc1.Classes
                     added = entity.SaveChanges() > 0 ? true : false; ;
                     return added;
                 }
-                catch
+                catch(Exception ex)
                 {
                     added = false;
                     return added;
