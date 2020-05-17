@@ -229,17 +229,17 @@
           <Property Name="رمز  المركز" Type="int" Nullable="false" />
           <Property Name="التاريخ" Type="datetime" />
           <Property Name="الآلية" Type="int" />
-          <Property Name="المريض" Type="int" Nullable="false" />
+          <Property Name="المريض" Type="int" />
           <Property Name="من مشفى" Type="int" />
           <Property Name="من القسم" Type="int" />
           <Property Name="الطبيب المعالج" Type="int" />
           <Property Name="الجهة الضامنة" Type="int" />
           <Property Name="إلى مشفى" Type="int" />
           <Property Name="إلى القسم" Type="int" />
-          <Property Name="مسؤول المهمة" Type="int" Nullable="false" />
-          <Property Name="مسعف 1" Type="int" Nullable="false" />
-          <Property Name="مسعف 2" Type="int" Nullable="false" />
-          <Property Name="السائق" Type="int" Nullable="false" />
+          <Property Name="مسؤول المهمة" Type="int" />
+          <Property Name="مسعف 1" Type="int" />
+          <Property Name="مسعف 2" Type="int" />
+          <Property Name="السائق" Type="int" />
           <Property Name="رقم المتصل" Type="int" />
           <Property Name="الهاتف" Type="int" />
           <Property Name="متلقي المهمة" Type="int" />
@@ -251,10 +251,11 @@
           <Property Name="الى رمز المنطقة" Type="int" />
           <Property Name="التفاصيل" Type="nvarchar" MaxLength="50" />
           <Property Name="اسم المتصل" Type="nvarchar" MaxLength="30" />
-          <Property Name="طبيعة المهمة" Type="int" Nullable="false" />
+          <Property Name="طبيعة المهمة" Type="int" />
           <Property Name="مريض مقعد" Type="bit" />
           <Property Name="الأمراض المعدية" Type="int" />
           <Property Name="مسؤول الدوام" Type="int" />
+          <Property Name="نوعية الحالة" Type="int" />
         </EntityType>
         <EntityType Name="الوظيفة">
           <Key>
@@ -272,8 +273,8 @@
           </Key>
           <Property Name="رمز الحالة" Type="int" Nullable="false" />
           <Property Name="الرمز الشهري" Type="int" Nullable="false" />
-          <Property Name="رمز السنوي" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="السنة" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="رمز السنوي" Type="int" Nullable="false" />
+          <Property Name="السنة" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="طبيعة المهمة">
           <Key>
@@ -755,7 +756,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_المهمات المنفذة_ToTableالعاملون1">
-          <End Role="العاملون" Type="Self.العاملون" Multiplicity="1" />
+          <End Role="العاملون" Type="Self.العاملون" Multiplicity="0..1" />
           <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="العاملون">
@@ -769,7 +770,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_المهمات المنفذة_ToTableالعاملون2">
-          <End Role="العاملون" Type="Self.العاملون" Multiplicity="1" />
+          <End Role="العاملون" Type="Self.العاملون" Multiplicity="0..1" />
           <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="العاملون">
@@ -783,7 +784,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_المهمات المنفذة_ToTableالعاملون3">
-          <End Role="العاملون" Type="Self.العاملون" Multiplicity="1" />
+          <End Role="العاملون" Type="Self.العاملون" Multiplicity="0..1" />
           <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="العاملون">
@@ -797,7 +798,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_المهمات المنفذة_ToTableالعاملون4">
-          <End Role="العاملون" Type="Self.العاملون" Multiplicity="1" />
+          <End Role="العاملون" Type="Self.العاملون" Multiplicity="0..1" />
           <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="العاملون">
@@ -863,7 +864,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_المهمات المنفذة_ToTableالمرضى">
-          <End Role="المرضى" Type="Self.المرضى" Multiplicity="1" />
+          <End Role="المرضى" Type="Self.المرضى" Multiplicity="0..1" />
           <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="المرضى">
@@ -923,7 +924,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_المهمات المنفذة_ToTableطبيعة المهمة">
-          <End Role="طبيعة المهمة" Type="Self.طبيعة المهمة" Multiplicity="1" />
+          <End Role="طبيعة المهمة" Type="Self.طبيعة المهمة" Multiplicity="0..1" />
           <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="طبيعة المهمة">
@@ -931,6 +932,18 @@
             </Principal>
             <Dependent Role="المهمات المنفذة">
               <PropertyRef Name="طبيعة المهمة" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_المهمات المنفذة_ToTableنوعيات الحالات">
+          <End Role="نوعيات الحالات" Type="Self.نوعيات الحالات" Multiplicity="0..1" />
+          <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="نوعيات الحالات">
+              <PropertyRef Name="الرمز" />
+            </Principal>
+            <Dependent Role="المهمات المنفذة">
+              <PropertyRef Name="نوعية الحالة" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1305,6 +1318,10 @@
             <End Role="طبيعة المهمة" EntitySet="طبيعة المهمة" />
             <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
           </AssociationSet>
+          <AssociationSet Name="FK_المهمات المنفذة_ToTableنوعيات الحالات" Association="Self.FK_المهمات المنفذة_ToTableنوعيات الحالات">
+            <End Role="نوعيات الحالات" EntitySet="نوعيات الحالات" />
+            <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
+          </AssociationSet>
           <AssociationSet Name="FK_المهمات المؤجلة_ToTableأقسام المستشفيات1" Association="Self.FK_المهمات المؤجلة_ToTableأقسام المستشفيات1">
             <End Role="المستشفيات" EntitySet="المستشفيات" />
             <End Role="المهماة المؤجلة" EntitySet="المهماة المؤجلة" />
@@ -1668,17 +1685,17 @@
           <Property Name="رمز__المركز" Type="Int32" Nullable="false" />
           <Property Name="التاريخ" Type="DateTime" Precision="3" />
           <Property Name="الآلية" Type="Int32" />
-          <Property Name="المريض" Type="Int32" Nullable="false" />
+          <Property Name="المريض" Type="Int32" />
           <Property Name="من_مشفى" Type="Int32" />
           <Property Name="من_القسم" Type="Int32" />
           <Property Name="الطبيب_المعالج" Type="Int32" />
           <Property Name="الجهة_الضامنة" Type="Int32" />
           <Property Name="إلى_مشفى" Type="Int32" />
           <Property Name="إلى_القسم" Type="Int32" />
-          <Property Name="مسؤول_المهمة" Type="Int32" Nullable="false" />
-          <Property Name="مسعف_1" Type="Int32" Nullable="false" />
-          <Property Name="مسعف_2" Type="Int32" Nullable="false" />
-          <Property Name="السائق" Type="Int32" Nullable="false" />
+          <Property Name="مسؤول_المهمة" Type="Int32" />
+          <Property Name="مسعف_1" Type="Int32" />
+          <Property Name="مسعف_2" Type="Int32" />
+          <Property Name="السائق" Type="Int32" />
           <Property Name="رقم_المتصل" Type="Int32" />
           <Property Name="الهاتف" Type="Int32" />
           <Property Name="متلقي_المهمة" Type="Int32" />
@@ -1690,10 +1707,11 @@
           <Property Name="الى_رمز_المنطقة" Type="Int32" />
           <Property Name="التفاصيل" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="اسم_المتصل" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="طبيعة_المهمة" Type="Int32" Nullable="false" />
+          <Property Name="طبيعة_المهمة" Type="Int32" />
           <Property Name="مريض_مقعد" Type="Boolean" />
           <Property Name="الأمراض_المعدية" Type="Int32" />
           <Property Name="مسؤول_الدوام" Type="Int32" />
+          <Property Name="نوعية_الحالة" Type="Int32" />
           <NavigationProperty Name="أقسام_المستشفيات" Relationship="Self.FK_المهمات_المنفذة_ToTableالمستشفيات1" FromRole="المهمات_المنفذة" ToRole="أقسام_المستشفيات" />
           <NavigationProperty Name="أقسام_المستشفيات1" Relationship="Self.FK_المهمات_المنفذة_ToTableالمستشفيات2" FromRole="المهمات_المنفذة" ToRole="أقسام_المستشفيات" />
           <NavigationProperty Name="الأطباء" Relationship="Self.FK_المهمات_المنفذة_ToTableالأطباء" FromRole="المهمات_المنفذة" ToRole="الأطباء" />
@@ -1714,6 +1732,7 @@
           <NavigationProperty Name="المناطق" Relationship="Self.FK_المهمات_المنفذة_ToTableالمناطق1" FromRole="المهمات_المنفذة" ToRole="المناطق" />
           <NavigationProperty Name="المناطق1" Relationship="Self.FK_المهمات_المنفذة_ToTableالمناطق2" FromRole="المهمات_المنفذة" ToRole="المناطق" />
           <NavigationProperty Name="طبيعة_المهمة1" Relationship="Self.FK_المهمات_المنفذة_ToTableطبيعة_المهمة" FromRole="المهمات_المنفذة" ToRole="طبيعة_المهمة" />
+          <NavigationProperty Name="نوعيات_الحالات" Relationship="Self.FK_المهمات_المنفذة_ToTableنوعيات_الحالات" FromRole="المهمات_المنفذة" ToRole="نوعيات_الحالات" />
         </EntityType>
         <EntityType Name="الوظيفة">
           <Key>
@@ -1732,8 +1751,8 @@
           </Key>
           <Property Name="رمز_الحالة" Type="Int32" Nullable="false" />
           <Property Name="الرمز_الشهري" Type="Int32" Nullable="false" />
-          <Property Name="رمز_السنوي" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="السنة" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="رمز_السنوي" Type="Int32" Nullable="false" />
+          <Property Name="السنة" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="طبيعة_المهمة">
           <Key>
@@ -1759,6 +1778,7 @@
           <Property Name="الرمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="النوعية" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="الحالات" Relationship="Self.FK_الحالات_ToTableنوعيات_الحالات" FromRole="نوعيات_الحالات" ToRole="الحالات" />
+          <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableنوعيات_الحالات" FromRole="نوعيات_الحالات" ToRole="المهمات_المنفذة" />
         </EntityType>
         <Association Name="FK_المستشفيات_مع_اقسام_ToTableأقسام_المستشفيات">
           <End Role="أقسام_المستشفيات" Type="Self.أقسام_المستشفيات" Multiplicity="1" />
@@ -2075,7 +2095,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_المهمات_المنفذة_ToTableالعاملون1">
-          <End Role="العاملون" Type="Self.العاملون" Multiplicity="1" />
+          <End Role="العاملون" Type="Self.العاملون" Multiplicity="0..1" />
           <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="العاملون">
@@ -2089,7 +2109,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_المهمات_المنفذة_ToTableالعاملون2">
-          <End Role="العاملون" Type="Self.العاملون" Multiplicity="1" />
+          <End Role="العاملون" Type="Self.العاملون" Multiplicity="0..1" />
           <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="العاملون">
@@ -2103,7 +2123,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_المهمات_المنفذة_ToTableالعاملون3">
-          <End Role="العاملون" Type="Self.العاملون" Multiplicity="1" />
+          <End Role="العاملون" Type="Self.العاملون" Multiplicity="0..1" />
           <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="العاملون">
@@ -2117,7 +2137,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_المهمات_المنفذة_ToTableالعاملون4">
-          <End Role="العاملون" Type="Self.العاملون" Multiplicity="1" />
+          <End Role="العاملون" Type="Self.العاملون" Multiplicity="0..1" />
           <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="العاملون">
@@ -2303,7 +2323,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_المهمات_المنفذة_ToTableالمرضى">
-          <End Role="المرضى" Type="Self.المرضى" Multiplicity="1" />
+          <End Role="المرضى" Type="Self.المرضى" Multiplicity="0..1" />
           <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="المرضى">
@@ -2495,7 +2515,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_المهمات_المنفذة_ToTableطبيعة_المهمة">
-          <End Role="طبيعة_المهمة" Type="Self.طبيعة_المهمة" Multiplicity="1" />
+          <End Role="طبيعة_المهمة" Type="Self.طبيعة_المهمة" Multiplicity="0..1" />
           <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="طبيعة_المهمة">
@@ -2503,6 +2523,18 @@
             </Principal>
             <Dependent Role="المهمات_المنفذة">
               <PropertyRef Name="طبيعة_المهمة" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_المهمات_المنفذة_ToTableنوعيات_الحالات">
+          <End Role="نوعيات_الحالات" Type="Self.نوعيات_الحالات" Multiplicity="0..1" />
+          <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="نوعيات_الحالات">
+              <PropertyRef Name="الرمز" />
+            </Principal>
+            <Dependent Role="المهمات_المنفذة">
+              <PropertyRef Name="نوعية_الحالة" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2772,6 +2804,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_المهمات_المنفذة_ToTableطبيعة_المهمة" Association="Self.FK_المهمات_المنفذة_ToTableطبيعة_المهمة">
             <End Role="طبيعة_المهمة" EntitySet="طبيعة_المهمة" />
+            <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
+          </AssociationSet>
+          <AssociationSet Name="FK_المهمات_المنفذة_ToTableنوعيات_الحالات" Association="Self.FK_المهمات_المنفذة_ToTableنوعيات_الحالات">
+            <End Role="نوعيات_الحالات" EntitySet="نوعيات_الحالات" />
             <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
           </AssociationSet>
           <FunctionImport Name="sp_alterdiagram">
@@ -3068,6 +3104,7 @@
                 <ScalarProperty Name="مريض_مقعد" ColumnName="مريض مقعد" />
                 <ScalarProperty Name="الأمراض_المعدية" ColumnName="الأمراض المعدية" />
                 <ScalarProperty Name="مسؤول_الدوام" ColumnName="مسؤول الدوام" />
+                <ScalarProperty Name="نوعية_الحالة" ColumnName="نوعية الحالة" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -18,6 +18,7 @@ namespace Erc1.DAL
         public نوعيات_الحالات()
         {
             this.الحالات = new HashSet<الحالات>();
+            this.المهمات_المنفذة = new HashSet<المهمات_المنفذة>();
         }
     
         public int الرمز { get; set; }
@@ -25,5 +26,7 @@ namespace Erc1.DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<الحالات> الحالات { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<المهمات_المنفذة> المهمات_المنفذة { get; set; }
     }
 }

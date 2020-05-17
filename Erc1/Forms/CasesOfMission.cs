@@ -66,7 +66,6 @@ namespace Erc1.Forms
                 dr[1] = Case;
                 SelectedCases.Rows.Add(dr);
             }
-            MessageBox.Show(SelectedCases.Rows.Count.ToString());
             return SelectedCases.Rows.Count;
         }
 

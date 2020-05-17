@@ -571,7 +571,7 @@ namespace Erc1.Classes
         public static bool add_Cases(DataTable new_Case)
         {
             bool added = false;
-            using (ERCEntities entity = new model.ERCEntities())
+            using (ERCEntities entity = new ERCEntities())
             {
                 try
                 {

@@ -181,7 +181,7 @@ namespace Erc1.BAL
 		}
 
 		
-
+		
 
 		public bool SaveImplementedMission()
 		{
@@ -191,14 +191,34 @@ namespace Erc1.BAL
 			Mission.رمز_السنوي = AnnualID;
 			Mission.الآلية = carID;
 			Mission.التاريخ = Date;
-			//casetype and cases
+			Mission.نوعية_الحالة = CaseTypeID;
+			Mission.السنة = Date.Year;
 			Mission.طبيعة_المهمة = MissionTypeID;
 			Mission.التفاصيل = MoreInfoAboutCase;
 
 			PatientInfo.SaveInfo(Mission);
 			ParamedicsInfo.SaveInfo(Mission);
+			
+			DataTable cas = new DataTable();
+			cas.Clear();
+			cas.Columns.Add("رمز_الحالة");
+			cas.Columns.Add("الرمز_الشهري");
+			cas.Columns.Add("رمز_السنوي");
+			cas.Columns.Add("السنة");
 
-			return mission.add_Mission(Mission);
+
+			DataRow dr;
+			foreach (DataRow row in Case.Rows)
+			{
+				dr = cas.NewRow();
+				dr["رمز_الحالة"] = row["ID"];
+				dr["الرمز_الشهري"] = MonthlyID;
+				dr["رمز_السنوي"] = AnnualID;
+				dr["السنة"] = Date.Year;
+				cas.Rows.Add(dr);
+			}
+
+			return mission.add_Mission(Mission) && mission.add_Cases(cas);
 
 
 
@@ -285,7 +305,10 @@ namespace Erc1.BAL
 					MessageBox.Show("Please choose Cases");
 					return false;
 				}
-
+				else
+				{
+					Case = addMission.cM.SelectedCases;
+				}
 				try
 				{
 					CaseTypeID = int.Parse(addMission.CaseType.SelectedValue.ToString());
@@ -367,7 +390,7 @@ namespace Erc1.BAL
 		{
 			return mission.Get_YearID(year);
 		}
-
+		
 
 
 
