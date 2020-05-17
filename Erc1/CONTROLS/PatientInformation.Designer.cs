@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ID_Patient = new System.Windows.Forms.TextBox();
+            this.CanSit = new Erc1.CONTROLS.LabelBord();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.CancilingtText = new System.Windows.Forms.TextBox();
@@ -43,6 +44,8 @@
             this.CancilingCause = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.FromHos = new Erc1.CONTROLS.LabelBord();
+            this.FromHome = new Erc1.CONTROLS.LabelBord();
             this.label2 = new System.Windows.Forms.Label();
             this.FromHospital = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
@@ -118,6 +121,8 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.OtherInfo = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.ToHos = new Erc1.CONTROLS.LabelBord();
+            this.ToHome = new Erc1.CONTROLS.LabelBord();
             this.label3 = new System.Windows.Forms.Label();
             this.ToHomeInfo = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
@@ -138,11 +143,6 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.CanSit = new Erc1.CONTROLS.LabelBord();
-            this.FromHos = new Erc1.CONTROLS.LabelBord();
-            this.FromHome = new Erc1.CONTROLS.LabelBord();
-            this.ToHos = new Erc1.CONTROLS.LabelBord();
-            this.ToHome = new Erc1.CONTROLS.LabelBord();
             this.Patient.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -305,6 +305,19 @@
             this.ID_Patient.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ID_Patient.WordWrap = false;
             // 
+            // CanSit
+            // 
+            this.CanSit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.CanSit.Check = false;
+            this.CanSit.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CanSit.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
+            this.CanSit.Location = new System.Drawing.Point(0, 1);
+            this.CanSit.Margin = new System.Windows.Forms.Padding(0);
+            this.CanSit.Name = "CanSit";
+            this.CanSit.Size = new System.Drawing.Size(168, 25);
+            this.CanSit.TabIndex = 7;
+            this.CanSit.text = "يستطيع الجلوس";
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
@@ -384,14 +397,14 @@
             // 
             // Save
             // 
-            this.Save.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Save.BackgroundImage = global::Erc1.Properties.Resources.جديد;
             this.Save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Save.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Save.FlatAppearance.BorderSize = 0;
             this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Save.Font = new System.Drawing.Font("Air Strip Arabic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Save.ForeColor = System.Drawing.Color.White;
+            this.Save.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.Save.Location = new System.Drawing.Point(316, 26);
             this.Save.Margin = new System.Windows.Forms.Padding(0);
             this.Save.Name = "Save";
@@ -454,6 +467,35 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(397, 33);
             this.panel2.TabIndex = 3;
+            // 
+            // FromHos
+            // 
+            this.FromHos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.FromHos.Check = false;
+            this.FromHos.Dock = System.Windows.Forms.DockStyle.Left;
+            this.FromHos.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FromHos.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
+            this.FromHos.Location = new System.Drawing.Point(133, 0);
+            this.FromHos.Margin = new System.Windows.Forms.Padding(0);
+            this.FromHos.Name = "FromHos";
+            this.FromHos.Size = new System.Drawing.Size(133, 33);
+            this.FromHos.TabIndex = 9;
+            this.FromHos.text = "مستشفى";
+            this.FromHos.CheckChange += new System.EventHandler(this.FromHos_CheckChange);
+            // 
+            // FromHome
+            // 
+            this.FromHome.Check = false;
+            this.FromHome.Dock = System.Windows.Forms.DockStyle.Left;
+            this.FromHome.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FromHome.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
+            this.FromHome.Location = new System.Drawing.Point(0, 0);
+            this.FromHome.Margin = new System.Windows.Forms.Padding(0);
+            this.FromHome.Name = "FromHome";
+            this.FromHome.Size = new System.Drawing.Size(133, 33);
+            this.FromHome.TabIndex = 8;
+            this.FromHome.text = "منزل-منطقة";
+            this.FromHome.CheckChange += new System.EventHandler(this.FromHome_CheckChange);
             // 
             // label2
             // 
@@ -1720,6 +1762,34 @@
             this.panel4.Size = new System.Drawing.Size(397, 33);
             this.panel4.TabIndex = 4;
             // 
+            // ToHos
+            // 
+            this.ToHos.Check = false;
+            this.ToHos.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ToHos.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToHos.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
+            this.ToHos.Location = new System.Drawing.Point(133, 0);
+            this.ToHos.Margin = new System.Windows.Forms.Padding(0);
+            this.ToHos.Name = "ToHos";
+            this.ToHos.Size = new System.Drawing.Size(133, 33);
+            this.ToHos.TabIndex = 12;
+            this.ToHos.text = "مستشفى";
+            this.ToHos.CheckChange += new System.EventHandler(this.ToHos_CheckChange);
+            // 
+            // ToHome
+            // 
+            this.ToHome.Check = false;
+            this.ToHome.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ToHome.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToHome.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
+            this.ToHome.Location = new System.Drawing.Point(0, 0);
+            this.ToHome.Margin = new System.Windows.Forms.Padding(0);
+            this.ToHome.Name = "ToHome";
+            this.ToHome.Size = new System.Drawing.Size(133, 33);
+            this.ToHome.TabIndex = 11;
+            this.ToHome.text = "منزل-منطقة";
+            this.ToHome.CheckChange += new System.EventHandler(this.ToHome_CheckChange);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -2077,76 +2147,6 @@
             this.label31.TabIndex = 2;
             this.label31.Text = "تفاصيل";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // CanSit
-            // 
-            this.CanSit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.CanSit.Check = false;
-            this.CanSit.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CanSit.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
-            this.CanSit.Location = new System.Drawing.Point(0, 1);
-            this.CanSit.Margin = new System.Windows.Forms.Padding(0);
-            this.CanSit.Name = "CanSit";
-            this.CanSit.Size = new System.Drawing.Size(168, 25);
-            this.CanSit.TabIndex = 7;
-            this.CanSit.text = "يستطيع الجلوس";
-            // 
-            // FromHos
-            // 
-            this.FromHos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.FromHos.Check = false;
-            this.FromHos.Dock = System.Windows.Forms.DockStyle.Left;
-            this.FromHos.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FromHos.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
-            this.FromHos.Location = new System.Drawing.Point(133, 0);
-            this.FromHos.Margin = new System.Windows.Forms.Padding(0);
-            this.FromHos.Name = "FromHos";
-            this.FromHos.Size = new System.Drawing.Size(133, 33);
-            this.FromHos.TabIndex = 9;
-            this.FromHos.text = "مستشفى";
-            this.FromHos.CheckChange += new System.EventHandler(this.FromHos_CheckChange);
-            // 
-            // FromHome
-            // 
-            this.FromHome.Check = false;
-            this.FromHome.Dock = System.Windows.Forms.DockStyle.Left;
-            this.FromHome.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FromHome.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
-            this.FromHome.Location = new System.Drawing.Point(0, 0);
-            this.FromHome.Margin = new System.Windows.Forms.Padding(0);
-            this.FromHome.Name = "FromHome";
-            this.FromHome.Size = new System.Drawing.Size(133, 33);
-            this.FromHome.TabIndex = 8;
-            this.FromHome.text = "منزل-منطقة";
-            this.FromHome.CheckChange += new System.EventHandler(this.FromHome_CheckChange);
-            // 
-            // ToHos
-            // 
-            this.ToHos.Check = false;
-            this.ToHos.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ToHos.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ToHos.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
-            this.ToHos.Location = new System.Drawing.Point(133, 0);
-            this.ToHos.Margin = new System.Windows.Forms.Padding(0);
-            this.ToHos.Name = "ToHos";
-            this.ToHos.Size = new System.Drawing.Size(133, 33);
-            this.ToHos.TabIndex = 12;
-            this.ToHos.text = "مستشفى";
-            this.ToHos.CheckChange += new System.EventHandler(this.ToHos_CheckChange);
-            // 
-            // ToHome
-            // 
-            this.ToHome.Check = false;
-            this.ToHome.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ToHome.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ToHome.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
-            this.ToHome.Location = new System.Drawing.Point(0, 0);
-            this.ToHome.Margin = new System.Windows.Forms.Padding(0);
-            this.ToHome.Name = "ToHome";
-            this.ToHome.Size = new System.Drawing.Size(133, 33);
-            this.ToHome.TabIndex = 11;
-            this.ToHome.text = "منزل-منطقة";
-            this.ToHome.CheckChange += new System.EventHandler(this.ToHome_CheckChange);
             // 
             // PatientInformation
             // 

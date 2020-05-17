@@ -1,6 +1,7 @@
 ﻿using ERC;
 using Erc1.BAL;
 using Erc1.Classes;
+using Erc1.DAL;
 using System;
 using System.Collections;
 using System.Windows.Forms;
@@ -299,7 +300,23 @@ namespace Erc1.CONTROLS
         private void Save_Click(object sender, EventArgs e)
         {
             addMission add = new addMission();
-            add.ImportInfo(LoginForm.of.im);
+            bool done = add.ImportInfo(LoginForm.of.im);
+            if(done)
+            {
+
+                المهمات_المنفذة mission = add.SaveImplementedMission();
+                ERCEntities eRCEntities = new ERCEntities();
+                eRCEntities.المهمات_المنفذة.Add(mission);
+                eRCEntities.SaveChanges();
+                LoginForm.of.im.Dispose();
+                //LoginForm.of.im = new Forms.AddMission(Forms.MissionType.Implemented);
+                LoginForm.of.Sfab_ImpClicked(0, EventArgs.Empty);
+
+
+
+            }
+            MessageBox.Show(done.ToString());
+
             
         }
 
@@ -323,7 +340,7 @@ namespace Erc1.CONTROLS
 
 
             MyFunction.FillComboBox(Insurance, PatientInfo.GetInsurance(), "الجهة_الضامنة", "الرمز");
-            //MyFunction.FillComboBox(MedcineID, PatientInfo.GetMedicine(), "اسم", "رمز");
+            MyFunction.FillComboBox(MedcineID, PatientInfo.GetMedicine(), "اسم", "رمز");
             MyFunction.FillComboBox(InfectionDiseases, PatientInfo.GetInfectiousDeseases(), "المرض", "الرمز");
 
         }

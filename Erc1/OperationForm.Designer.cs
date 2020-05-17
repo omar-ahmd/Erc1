@@ -406,16 +406,14 @@ namespace ERC
             // 
             // panel2
             // 
-            this.panel2.AutoSize = true;
+            this.panel2.CausesValidation = false;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.ImeMode = System.Windows.Forms.ImeMode.On;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(818, 559);
             this.panel2.TabIndex = 11;
-            this.panel2.SizeChanged += new System.EventHandler(this.panel2_SizeChanged);
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            this.panel2.Resize += new System.EventHandler(this.panel2_Resize);
             // 
             // tableLayoutPanel1
             // 
@@ -684,7 +682,6 @@ namespace ERC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(1024, 650);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -692,9 +689,7 @@ namespace ERC
             this.Name = "OperationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OperationForm";
-            this.Resize += new System.EventHandler(this.OperationForm_Resize);
             this.OperationLayout.ResumeLayout(false);
-            this.OperationLayout.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.operlabel.ResumeLayout(false);
             this.operlabel.PerformLayout();

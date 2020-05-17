@@ -1,4 +1,5 @@
 ﻿using Erc1.BAL;
+using Erc1.Classes;
 using Erc1.CONTROLS;
 using System;
 using System.Collections;
@@ -20,20 +21,21 @@ namespace Erc1.Forms
     {
         public PatientInformation paI;
         public ParamInformation pI;
-
         public event EventHandler SaveMission;
-        public Erc1.BAL.MissionType type { get; set; }
+        public CasesOfMission cM;
+        bool l = false;
+
+
+        private Erc1.BAL.MissionType type=Erc1.BAL.MissionType.Cold;
         private MissionType missionTy;
 
+        public Erc1.BAL.MissionType Type { get { return type; } set {type=value; } }
+        
         public MissionType MissionTy
         {
             get { return missionTy; }
             set { missionTy = value; }
         }
-
-        CasesOfMission cM;
-        bool l = false;
-
 
 
 
@@ -46,6 +48,9 @@ namespace Erc1.Forms
                 return handleparam;
             }
         }
+
+
+
 
         public AddMission(MissionType missionType)
         {
@@ -134,6 +139,9 @@ namespace Erc1.Forms
 
 
         }
+
+
+
         private void button2_Click(object sender, EventArgs e)
         {
             panel9.BackgroundImage = Erc1.Properties.Resources._112;
@@ -156,7 +164,7 @@ namespace Erc1.Forms
 
             BAL.addMission.FillAddMissionForm(this);
             Case.SelectedValueChanged += Case_SelectedValueChanged;
-
+            
 
 
 
@@ -164,7 +172,6 @@ namespace Erc1.Forms
 
         private void Month_SelectedValueChanged(object sender, EventArgs e)
         {
-            
             Day.Items.Clear();
             int dayinmonth;
             if(!l)
@@ -175,6 +182,10 @@ namespace Erc1.Forms
             else
             {
                 dayinmonth = DateTime.DaysInMonth(int.Parse(Year.SelectedItem.ToString()), int.Parse(Month.SelectedItem.ToString()));
+                MonthlyID.Text = mission.Get_MonthlyID(int.Parse(Year.SelectedItem.ToString()), int.Parse(Month.SelectedItem.ToString())).ToString() ;
+                AnnualID.Text = mission.Get_YearID(int.Parse(Year.SelectedItem.ToString())).ToString();
+                
+
             }
             for (int i = 1; i <= dayinmonth; i++)
             {
@@ -190,12 +201,8 @@ namespace Erc1.Forms
         {
             if (UrgentMission.Check)
             {
-                
-                type = BAL.MissionType.Urgent;
+                Type = BAL.MissionType.Urgent;
                 ColdMission.Check = false;
-                
-
-
             }
             
             
@@ -205,29 +212,30 @@ namespace Erc1.Forms
         {
             if (ColdMission.Check)
             {
-                type = BAL.MissionType.Cold;
+                
+                Type = BAL.MissionType.Cold;
                 UrgentMission.Check = false;
                 
             }
         }
         private void ActivityMission_CheckChange(object sender, EventArgs e)
         {
-            if (ActivityMission.Check)
+            /*if (ActivityMission.Check)
             {
                 type = BAL.MissionType.Activity;
                 
                 FireMission.Check = false;
                 
-            }
+            }*/
         }
         private void FireMission_CheckChange(object sender, EventArgs e)
         {
-            if (FireMission.Check)
+            /*if (FireMission.Check)
             {
                 type = BAL.MissionType.Fire;
 
                 ActivityMission.Check = false;
-            }
+            }*/
         }
 
 
@@ -236,10 +244,14 @@ namespace Erc1.Forms
             if (CenterID.SelectedItem != null)
             {
                 CarId.DataSource = addMission.GetCars(int.Parse(CenterID.SelectedValue.ToString()));
-                //CarId.ValueMember = "id";
                 CarId.DisplayMember = "cars";
-                CarId.ResetText();
-                BAL.ParamedicsInfo.FillParamForm(pI, this);
+                CarId.SelectedItem = null;
+                bool done=BAL.ParamedicsInfo.FillParamForm(pI, this);
+                if(!done)
+                {
+                    MessageBox.Show("error on importing data from database");
+                    return;
+                }
             }
             
 
@@ -263,9 +275,45 @@ namespace Erc1.Forms
             {
                 cM = new CasesOfMission(Case);
             }
-            cM.AddCase(Case.Text, int.Parse(Case.SelectedValue.ToString()));
+            if (Case.SelectedValue != null)
+            {
+                cM.AddCase(Case.Text, int.Parse(Case.SelectedValue.ToString()));
+            }
+            cM.dataGridView1.UserDeletedRow -= DataGridView1_UserDeletedRow;
+            cM.dataGridView1.UserDeletedRow += DataGridView1_UserDeletedRow;
+            cM.dataGridView1.RowsAdded -= DataGridView1_RowsAdded;
+            cM.dataGridView1.RowsAdded += DataGridView1_RowsAdded;
         }
 
+        private void DataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (cM.SelectedCases.Rows.Count == 0)
+            {
+                Case.SelectedItem = null;
+            }
+            else
+            {
+                Case.SelectedValue = int.Parse((cM.SelectedCases.Rows[cM.SelectedCases.Rows.Count - 1]["ID"]).ToString());
+            }
+            
+        }
 
+        private void DataGridView1_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            if(cM.SelectedCases.Rows.Count==0)
+            {
+                Case.SelectedItem = null;
+
+            }
+            else
+            {
+                Case.SelectedValue = int.Parse((cM.SelectedCases.Rows[cM.SelectedCases.Rows.Count-1]["ID"]).ToString());
+            }
+        }
+
+        private void Case_DisplayMemberChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

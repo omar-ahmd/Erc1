@@ -86,13 +86,9 @@ namespace Erc1.Forms
             this.CaseType = new System.Windows.Forms.ComboBox();
             this.Save = new System.Windows.Forms.Button();
             this.MissionType = new System.Windows.Forms.TableLayoutPanel();
-            this.ColdMission = new Erc1.CONTROLS.LabelBord();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.FireMission = new Erc1.CONTROLS.LabelBord();
-            this.UrgentMission = new Erc1.CONTROLS.LabelBord();
-            this.ActivityMission = new Erc1.CONTROLS.LabelBord();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
@@ -101,6 +97,10 @@ namespace Erc1.Forms
             this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
+            this.ColdMission = new Erc1.CONTROLS.LabelBord();
+            this.FireMission = new Erc1.CONTROLS.LabelBord();
+            this.UrgentMission = new Erc1.CONTROLS.LabelBord();
+            this.ActivityMission = new Erc1.CONTROLS.LabelBord();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -249,7 +249,6 @@ namespace Erc1.Forms
             resources.GetString("Year.Items53"),
             resources.GetString("Year.Items54")});
             this.Year.Name = "Year";
-            this.Year.Sorted = true;
             this.Year.SelectedValueChanged += new System.EventHandler(this.Month_SelectedValueChanged);
             // 
             // Month
@@ -274,7 +273,6 @@ namespace Erc1.Forms
             resources.GetString("Month.Items10"),
             resources.GetString("Month.Items11")});
             this.Month.Name = "Month";
-            this.Month.Sorted = true;
             this.Month.SelectedValueChanged += new System.EventHandler(this.Month_SelectedValueChanged);
             // 
             // Day
@@ -286,7 +284,6 @@ namespace Erc1.Forms
             this.Day.DropDownHeight = 50;
             this.Day.FormattingEnabled = true;
             this.Day.Name = "Day";
-            this.Day.Sorted = true;
             // 
             // Time
             // 
@@ -614,7 +611,7 @@ namespace Erc1.Forms
             resources.GetString("Case.Items2"),
             resources.GetString("Case.Items3")});
             this.Case.Name = "Case";
-            this.Case.Sorted = true;
+            this.Case.DisplayMemberChanged += new System.EventHandler(this.Case_DisplayMemberChanged);
             // 
             // CaseType
             // 
@@ -635,6 +632,7 @@ namespace Erc1.Forms
             // 
             resources.ApplyResources(this.Save, "Save");
             this.Save.BackgroundImage = global::Erc1.Properties.Resources.جديد;
+            this.Save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Save.FlatAppearance.BorderSize = 0;
             this.Save.ForeColor = System.Drawing.Color.White;
             this.Save.Name = "Save";
@@ -645,22 +643,12 @@ namespace Erc1.Forms
             // 
             this.MissionType.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.MissionType, "MissionType");
-            this.MissionType.Controls.Add(this.ColdMission, 5, 2);
+            this.MissionType.Controls.Add(this.ColdMission, 5, 1);
             this.MissionType.Controls.Add(this.panel5, 7, 0);
-            this.MissionType.Controls.Add(this.FireMission, 1, 2);
-            this.MissionType.Controls.Add(this.UrgentMission, 7, 2);
-            this.MissionType.Controls.Add(this.ActivityMission, 3, 2);
+            this.MissionType.Controls.Add(this.FireMission, 1, 1);
+            this.MissionType.Controls.Add(this.UrgentMission, 7, 1);
+            this.MissionType.Controls.Add(this.ActivityMission, 3, 1);
             this.MissionType.Name = "MissionType";
-            // 
-            // ColdMission
-            // 
-            this.ColdMission.Check = true;
-            resources.ApplyResources(this.ColdMission, "ColdMission");
-            this.ColdMission.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ColdMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
-            this.ColdMission.Name = "ColdMission";
-            this.ColdMission.text = "مهمة باردة";
-            this.ColdMission.CheckChange += new System.EventHandler(this.ColdMission_CheckChange);
             // 
             // panel5
             // 
@@ -683,36 +671,6 @@ namespace Erc1.Forms
             this.pictureBox5.Image = global::Erc1.Properties.Resources.Untitled_11;
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.TabStop = false;
-            // 
-            // FireMission
-            // 
-            this.FireMission.Check = false;
-            resources.ApplyResources(this.FireMission, "FireMission");
-            this.FireMission.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FireMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
-            this.FireMission.Name = "FireMission";
-            this.FireMission.text = "حريق";
-            this.FireMission.CheckChange += new System.EventHandler(this.FireMission_CheckChange);
-            // 
-            // UrgentMission
-            // 
-            this.UrgentMission.Check = false;
-            resources.ApplyResources(this.UrgentMission, "UrgentMission");
-            this.UrgentMission.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UrgentMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
-            this.UrgentMission.Name = "UrgentMission";
-            this.UrgentMission.text = "مهمة طارئة";
-            this.UrgentMission.CheckChange += new System.EventHandler(this.UrgentMission_CheckChange);
-            // 
-            // ActivityMission
-            // 
-            this.ActivityMission.Check = false;
-            resources.ApplyResources(this.ActivityMission, "ActivityMission");
-            this.ActivityMission.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActivityMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
-            this.ActivityMission.Name = "ActivityMission";
-            this.ActivityMission.text = "تغطية نشاط";
-            this.ActivityMission.CheckChange += new System.EventHandler(this.ActivityMission_CheckChange);
             // 
             // tableLayoutPanel19
             // 
@@ -768,6 +726,46 @@ namespace Erc1.Forms
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // ColdMission
+            // 
+            this.ColdMission.Check = true;
+            resources.ApplyResources(this.ColdMission, "ColdMission");
+            this.ColdMission.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ColdMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this.ColdMission.Name = "ColdMission";
+            this.ColdMission.text = "مهمة باردة";
+            this.ColdMission.CheckChange += new System.EventHandler(this.ColdMission_CheckChange);
+            // 
+            // FireMission
+            // 
+            this.FireMission.Check = false;
+            resources.ApplyResources(this.FireMission, "FireMission");
+            this.FireMission.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FireMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this.FireMission.Name = "FireMission";
+            this.FireMission.text = "حريق";
+            this.FireMission.CheckChange += new System.EventHandler(this.FireMission_CheckChange);
+            // 
+            // UrgentMission
+            // 
+            this.UrgentMission.Check = false;
+            resources.ApplyResources(this.UrgentMission, "UrgentMission");
+            this.UrgentMission.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UrgentMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this.UrgentMission.Name = "UrgentMission";
+            this.UrgentMission.text = "مهمة طارئة";
+            this.UrgentMission.CheckChange += new System.EventHandler(this.UrgentMission_CheckChange);
+            // 
+            // ActivityMission
+            // 
+            this.ActivityMission.Check = false;
+            resources.ApplyResources(this.ActivityMission, "ActivityMission");
+            this.ActivityMission.font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActivityMission.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this.ActivityMission.Name = "ActivityMission";
+            this.ActivityMission.text = "تغطية نشاط";
+            this.ActivityMission.CheckChange += new System.EventHandler(this.ActivityMission_CheckChange);
             // 
             // AddMission
             // 
@@ -843,52 +841,7 @@ namespace Erc1.Forms
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        public System.Windows.Forms.TableLayoutPanel MissionID;
-        public System.Windows.Forms.TextBox AnnualID;
-        public System.Windows.Forms.TextBox MonthlyID;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
-        public System.Windows.Forms.TableLayoutPanel MissionType;
-        public CONTROLS.LabelBord ColdMission;
-        public CONTROLS.LabelBord FireMission;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
-        public System.Windows.Forms.Panel panel5;
-        public CONTROLS.LabelBord UrgentMission;
-        public CONTROLS.LabelBord ActivityMission;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
-        public System.Windows.Forms.TextBox MoreInfoAboutCase;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
-        public System.Windows.Forms.Panel panel4;
-        public System.Windows.Forms.Label label4;
-        public System.Windows.Forms.PictureBox pictureBox4;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        public System.Windows.Forms.Panel panel2;
-        public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.PictureBox pictureBox2;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        public System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.PictureBox pictureBox1;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        public System.Windows.Forms.Panel panel3;
-        public System.Windows.Forms.Label label3;
-        public System.Windows.Forms.PictureBox pictureBox3;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
-        public System.Windows.Forms.Panel panel8;
-        public System.Windows.Forms.Label label8;
-        public System.Windows.Forms.PictureBox pictureBox8;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
-        public System.Windows.Forms.Panel panel6;
-        public System.Windows.Forms.Label label6;
-        public System.Windows.Forms.PictureBox pictureBox6;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
-        public System.Windows.Forms.Panel panel7;
-        public System.Windows.Forms.Label label7;
-        public System.Windows.Forms.PictureBox pictureBox7;
-        public System.Windows.Forms.Label label5;
-        public System.Windows.Forms.PictureBox pictureBox5;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
         public System.Windows.Forms.Panel panel9;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
@@ -897,17 +850,62 @@ namespace Erc1.Forms
         public System.Windows.Forms.Button button2;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
         public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         public System.Windows.Forms.ComboBox Year;
         public System.Windows.Forms.ComboBox Month;
         public System.Windows.Forms.ComboBox Day;
-        public System.Windows.Forms.ComboBox CarId;
-        public System.Windows.Forms.ComboBox CenterID;
-        public System.Windows.Forms.ComboBox Case;
-        public System.Windows.Forms.ComboBox CaseType;
+        public System.Windows.Forms.DateTimePicker Time;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        public System.Windows.Forms.Panel panel4;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.PictureBox pictureBox4;
         public System.Windows.Forms.Panel panel10;
         public System.Windows.Forms.Label label9;
         public System.Windows.Forms.PictureBox pictureBox9;
-        public System.Windows.Forms.DateTimePicker Time;
+        public System.Windows.Forms.TableLayoutPanel MissionID;
+        public System.Windows.Forms.TextBox AnnualID;
+        public System.Windows.Forms.TextBox MonthlyID;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        public System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        public System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.PictureBox pictureBox3;
+        public System.Windows.Forms.ComboBox CarId;
+        public System.Windows.Forms.ComboBox CenterID;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
+        public System.Windows.Forms.TextBox MoreInfoAboutCase;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
+        public System.Windows.Forms.Panel panel8;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.PictureBox pictureBox8;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
+        public System.Windows.Forms.Panel panel6;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.PictureBox pictureBox6;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
+        public System.Windows.Forms.Panel panel7;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.PictureBox pictureBox7;
+        public System.Windows.Forms.ComboBox Case;
+        public System.Windows.Forms.ComboBox CaseType;
         public System.Windows.Forms.Button Save;
+        public System.Windows.Forms.TableLayoutPanel MissionType;
+        public CONTROLS.LabelBord ColdMission;
+        public System.Windows.Forms.Panel panel5;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.PictureBox pictureBox5;
+        public CONTROLS.LabelBord FireMission;
+        public CONTROLS.LabelBord UrgentMission;
+        public CONTROLS.LabelBord ActivityMission;
     }
 }

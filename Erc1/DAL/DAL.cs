@@ -443,13 +443,13 @@ namespace Erc1.Classes
 
 
         // get الأطباء by hospitalID (column names ="رمز","اسم")
-        public static IEnumerable Get_الأطباء(int hospital_key)
+        public static IEnumerable Get_الأطباء()
         {
             using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
              from doctors in entity.الأطباء
-             where doctors.مكان_العمل == hospital_key
+           
              select new
              {
                  doctors.رمز,

@@ -22,10 +22,9 @@ namespace Erc1.BAL
 
 	public enum MissionType
 	{
-		Urgent,
+		
 		Cold,
-		Fire,
-		Activity
+		Urgent
 	}
 	public enum FromTo
 	{
@@ -73,8 +72,7 @@ namespace Erc1.BAL
 		private DateTime date;
 		private MissionType missionType;
 		private int missionTypeID;
-		private string[] caseName;
-		private int[] caseNameID;
+		private DataTable cases;
 		private int caseTypeID;
 		private string caseTypeName;
 		private string moreInfoAboutCase;
@@ -118,22 +116,40 @@ namespace Erc1.BAL
 		public MissionType MissionType
 		{
 			get { return missionType; }
-			set { missionType = value; }
+			set
+			{
+				missionType = value; 
+				if(missionType==MissionType.Urgent)
+				{
+					MissionTypeID = 1;
+				}
+				else if(missionType==MissionType.Cold)
+				{
+					MissionTypeID = 2;
+				}
+			}
 		}
 		public int MissionTypeID
 		{
-			get { return missionTypeID; }
-			set { missionTypeID = value; }
+			get 
+			{ 
+				return missionTypeID; 
+			}
+			set
+			{
+				missionTypeID = value;
+			}
 		}
-		public string[] CaseName
+		public DataTable Case
 		{
-			get { return caseName; }
-			set { caseName = value; }
-		}
-		public int[] CaseNameID
-		{
-			get { return caseNameID; }
-			set { caseNameID = value; }
+			get
+			{
+				return cases;
+			}
+			set
+			{
+				cases = value;
+			}
 		}
 		public int CaseTypeID
 		{
@@ -167,14 +183,15 @@ namespace Erc1.BAL
 		public المهمات_المنفذة SaveImplementedMission()
 		{
 			Mission = new المهمات_المنفذة();
+			Mission.رمز__المركز = centerID;
 			Mission.الرمز_الشهري = MonthlyID;
-			//Mission.رمز_السنوي = AnnualID; change datatype of annualid
+			Mission.رمز_السنوي = AnnualID;
 			Mission.الآلية = carID;
 			Mission.التاريخ = Date;
+			// cases and casetype
 			Mission.طبيعة_المهمة = MissionTypeID;
-			//dabbousi should creat a casestable that is have as a key(monthlyid,annualid)
-			//dabbousi should creat a caseTypetable 
 			Mission.التفاصيل = MoreInfoAboutCase;
+
 			PatientInfo.SaveInfo(Mission);
 			ParamedicsInfo.SaveInfo(Mission);
 
@@ -192,28 +209,65 @@ namespace Erc1.BAL
 			{
 
 				MissionTy = addMission.MissionTy;
+				try
+				{
+					CenterID = int.Parse(addMission.CenterID.SelectedValue.ToString());
+				}
+				catch(Exception ex)
+				{
+					MessageBox.Show("Please choose one of the center");
+					return false;
+				}
 
-				CenterID = int.Parse(addMission.CenterID.SelectedValue.ToString());
-				MessageBox.Show(addMission.CarId.SelectedText.ToString());
-
-				CarID = int.Parse(addMission.CarId.Text.ToString());
+				try
+				{
+					CarID = int.Parse(addMission.CarId.Text.ToString());
+					
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Please choose one of the car");
+					return false;
+				}
+				
 				MonthlyID = int.Parse(addMission.MonthlyID.Text);
 				AnnualID = int.Parse(addMission.AnnualID.Text);
+
+
 				DateTime Date = new DateTime(int.Parse(addMission.Year.Text), int.Parse(addMission.Month.Text), int.Parse(addMission.Day.Text), addMission.Time.Value.Hour, addMission.Time.Value.Minute, 0);
 				this.Date = Date;
-				MissionType = addMission.type;
-				//casesID
-				CaseTypeID = int.Parse(addMission.CaseType.SelectedValue.ToString());
+				MissionType = addMission.Type;
+
+				
+				if(addMission.cM == null || addMission.cM.SelectedCases.Rows.Count==0)
+				{
+					MessageBox.Show("Please choose Cases");
+					return false;
+				}
+
+				try
+				{
+					CaseTypeID = int.Parse(addMission.CaseType.SelectedValue.ToString());
+
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Please choose case type");
+					return false;
+				}
+				
 				CaseTypeName = addMission.CaseType.Text;
+
 				MoreInfoAboutCase = addMission.MoreInfoAboutCase.Text;
 
 				PatientInfo = new PatientInfo();
-				PatientInfo.ImportInfo(addMission.paI);
-
 				ParamedicsInfo = new ParamedicsInfo();
-				ParamedicsInfo.ImportData(addMission.pI);
 
-				return true;
+
+
+				bool done = PatientInfo.ImportInfo(addMission.paI) && ParamedicsInfo.ImportData(addMission.pI);
+
+				return done;
 			}
 			catch(Exception ex)
 			{
@@ -353,9 +407,9 @@ namespace Erc1.BAL
 		private string tomoreInfoAboutAdress;
 
 		private string medicineName;
-		private string[] infectiousdiseases;
+		private string infectiousdiseases;
 		private int medicineID;
-		private int[] infectiousdiseasesID;
+		private int infectiousdiseasesID;
 		private int insuranceID;
 		private string insuranceName;
 		private string moreInfoAboutPatient;
@@ -382,7 +436,7 @@ namespace Erc1.BAL
 			get { return insuranceID; }
 			set { insuranceID = value; }
 		}
-		public int[] InfectiousdiseasesID
+		public int InfectiousdiseasesID
 		{
 			get { return infectiousdiseasesID; }
 			set { infectiousdiseasesID = value; }
@@ -392,7 +446,7 @@ namespace Erc1.BAL
 			get { return medicineID; }
 			set { medicineID = value; }
 		}
-		public string[] Infectiousdiseases
+		public string Infectiousdiseases
 		{
 			get { return infectiousdiseases; }
 			set { infectiousdiseases = value; }
@@ -611,9 +665,11 @@ namespace Erc1.BAL
 				Mission.إلى_القسم = ToDepatementID;
 				Mission.تفاصيل_ال_الى = ToHosFloor + " ," + ToRoom;
 			}
-			// add infectious case variable to implemented mission
-			// add canSit variable to implemented mission
-			// call function to add new infectious case for patient if it is not exist
+			Mission.مريض_مقعد = CanSit;
+			Mission.الطبيب_المعالج = MedicineID;
+			Mission.الأمراض_المعدية = InfectiousdiseasesID;
+			Mission.الجهة_الضامنة = insuranceID;
+
 
 			return true;
 		}
@@ -622,24 +678,60 @@ namespace Erc1.BAL
 		{
 			try
 			{
-				PatientID = int.Parse(patientInfo.ID_Patient.Text);
+				try
+				{
+					PatientID = int.Parse(patientInfo.Name_Patient.SelectedValue.ToString());
+				}
+				catch(Exception ex)
+				{
+					MessageBox.Show("choose one patient");
+				}
+
 				PatientName = patientInfo.Name_Patient.Text;
 
 				CanSit = patientInfo.CanSit.Check;
 
 				if(patientInfo.FromHos.Check)
-				{
+				{	
+
 					From = FromTo.Hospital;
 
-					FromHospitalID=int.Parse(patientInfo.ID_FromHospital.Text);
+					try
+					{
+						FromHospitalID = int.Parse(patientInfo.Name_FromHospital.SelectedValue.ToString());
+					}
+					catch(Exception ex)
+					{
+						MessageBox.Show("Choose hospital");
+						return false;
+					}
+
 					FromHospitalName = patientInfo.Name_FromHospital.Text;
 
-					FromDepatementID = patientInfo.FromHosDepartement.SelectedIndex;
-					FromDepartementName = patientInfo.FromHosDepartement.SelectedItem.ToString();
+					try
+					{
+						FromDepatementID = int.Parse(patientInfo.FromHosDepartement.SelectedValue.ToString());
 
-					FromHosFloor = int.Parse(patientInfo.FromHosFloor.SelectedItem.ToString());
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show("Choose hospital");
+						return false;
+					}
 
-					FromRoom = int.Parse(patientInfo.FromHosRoom.Text);
+					
+					FromDepartementName = patientInfo.FromHosDepartement.Text.ToString();
+
+					try
+					{
+						FromHosFloor = int.Parse(patientInfo.FromHosFloor.SelectedItem.ToString());
+
+						FromRoom = int.Parse(patientInfo.FromHosRoom.Text);
+					}
+					catch(Exception ex)
+					{
+
+					}
 
 
 				}
@@ -647,18 +739,43 @@ namespace Erc1.BAL
 				{
 					From = FromTo.Home;
 
-					FromCityID = patientInfo.FromCity.SelectedIndex;
-					FromCityName = patientInfo.FromCity.SelectedItem.ToString();
+					try
+					{
+						FromCityID = int.Parse(patientInfo.FromCity.SelectedValue.ToString());
+					}
+					catch(Exception ex)
+					{
+						MessageBox.Show("Choose City");
+						return false;
+					}
+					
+					FromCityName = patientInfo.FromCity.Text.ToString();
 
-					FromregionID = patientInfo.FromRegion.SelectedIndex;
-					FromregionName = patientInfo.FromRegion.SelectedItem.ToString();
+
+					try
+					{
+						FromregionID = int.Parse(patientInfo.FromRegion.SelectedValue.ToString());
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show("Choose Region");
+						return false;
+					}
+					
+
+					FromregionName = patientInfo.FromRegion.Text.ToString();
 
 					FromstreetName = patientInfo.FromStreet.Text;
 
 					Frombuilding = patientInfo.FromBuilding.Text;
+					try
+					{
+						Fromfloor = int.Parse(patientInfo.FromFloor.Text);
+					}
+					catch(Exception  ex)
+					{
 
-					Fromfloor = int.Parse(patientInfo.FromFloor.Text);
-
+					}
 					FromMoreInfoAboutAdress = patientInfo.MoreFromInfo.Text;
 
 
@@ -670,53 +787,124 @@ namespace Erc1.BAL
 
 				if (patientInfo.ToHos.Check)
 				{
+
 					To = FromTo.Hospital;
 
+					try
+					{
+						ToHospitalID = int.Parse(patientInfo.Name_ToHospital.SelectedValue.ToString());
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show("Choose hospital");
+						return false;
+					}
 
-					ToHospitalID = int.Parse(patientInfo.ID_ToHospital.Text);
 					ToHospitalName = patientInfo.Name_ToHospital.Text;
 
-					ToDepatementID = patientInfo.ToHosDepartement.SelectedIndex;
-					ToDepartementName = patientInfo.ToHosDepartement.SelectedItem.ToString();
-					
-					ToHosFloor = int.Parse(patientInfo.ToHosFloor.SelectedItem.ToString());
+					try
+					{
+						ToDepatementID = int.Parse(patientInfo.ToHosDepartement.SelectedValue.ToString());
 
-					ToRoom = int.Parse(patientInfo.ToHosRoom.Text);
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show("Choose hospital");
+						return false;
+					}
 
+
+					ToDepartementName = patientInfo.ToHosDepartement.Text.ToString();
+					try
+					{
+						ToHosFloor = int.Parse(patientInfo.ToHosFloor.SelectedItem.ToString());
+
+						ToRoom = int.Parse(patientInfo.ToHosRoom.Text);
+					}
+					catch(Exception ex)
+					{ 
+					}
 
 
 				}
 				else if (patientInfo.ToHome.Check)
 				{
 					To = FromTo.Home;
+					try
+					{
+						ToCityID = int.Parse(patientInfo.ToCity.SelectedValue.ToString());
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show("Choose City");
+						return false;
+					}
 
-					ToCityID = patientInfo.ToCity.SelectedIndex;
-					ToCityName = patientInfo.ToCity.SelectedItem.ToString();
+					ToCityName = patientInfo.ToCity.Text.ToString();
 
-					ToregionID = patientInfo.ToRegion.SelectedIndex;
-					ToregionName = patientInfo.ToRegion.SelectedItem.ToString();
+
+					try
+					{
+						ToregionID = int.Parse(patientInfo.ToRegion.SelectedValue.ToString());
+					}
+					catch (Exception ex)
+					{
+						MessageBox.Show("Choose Region");
+						return false;
+					}
+
+
+					ToregionName = patientInfo.ToRegion.Text.ToString();
 
 					TostreetName = patientInfo.ToStreet.Text;
 
 					Tobuilding = patientInfo.ToBuilding.Text;
+					try
+					{
+						Tofloor = int.Parse(patientInfo.ToFloor.Text);
+					}
+					catch(Exception ex)
+					{
 
-					Tofloor = int.Parse(patientInfo.ToFloor.Text);
-
+					}
 					ToMoreInfoAboutAdress = patientInfo.MoreToInfo.Text;
+
+
 				}
 				else
 				{
 					MessageBox.Show("يجب تعبئ كامل المعلومات");
 				}
 
-				MedicineID = patientInfo.MedcineID.SelectedIndex;
-				MedicineName = patientInfo.MedcineID.SelectedItem.ToString();
 
-				// infetious case
+				try
+				{
+					MedicineID = int.Parse(patientInfo.MedcineID.SelectedValue.ToString());
+				}
+				catch(Exception ex)
+				{
 
-				InsuranceID = patientInfo.Insurance.SelectedIndex;
-				insuranceName = patientInfo.Insurance.SelectedItem.ToString();
+				}
+				MedicineName = patientInfo.MedcineID.Text;
+				try
+				{
+					InfectiousdiseasesID = int.Parse(patientInfo.InfectionDiseases.SelectedValue.ToString());
+				}
+				catch (Exception ex)
+				{
 
+				}
+				Infectiousdiseases = patientInfo.InfectionDiseases.Text;
+				try
+				{
+					InsuranceID = int.Parse(patientInfo.Insurance.SelectedValue.ToString());
+				}
+				catch (Exception ex)
+				{
+
+				}
+
+				insuranceName = patientInfo.Insurance.Text;
 				MoreInfoAboutPatient = patientInfo.OtherInfo.Text;
 				
 
@@ -761,7 +949,7 @@ namespace Erc1.BAL
 		}
 		public static IEnumerable GetMedicine()
 		{
-			return null;
+			return mission.Get_الأطباء();
 		}
 		public static IEnumerable GetRegions(int CityID)
 		{
@@ -903,10 +1091,9 @@ namespace Erc1.BAL
 				Mission.مسعف_1 = Paramedic1ID;
 				Mission.مسعف_2 = Paramedic2ID;
 				Mission.متلقي_المهمة = RecipientMissionID;
-				Mission.اسم_المتصل = callerName;
-				//Mission.رقم_المتصل = callerPhone.ToString();
-
-				//add headofshift to database in mission table
+				Mission.اسم_المتصل = CallerName;
+				Mission.رقم_المتصل = CallerPhone;
+				Mission.مسؤول_الدوام = HeadOfMissionID;
 				return true;
 			}
 			catch(Exception ex)
@@ -920,26 +1107,41 @@ namespace Erc1.BAL
 		{
 			try
 			{
-				Paramedic1Name = paramInfo.Name_Paramedic1.Text;
-				Paramedic1ID = int.Parse(paramInfo.ID_Paramedic1.Text);
 
-				Paramedic2Name = paramInfo.Name_Paramedic2.Text;
-				Paramedic2ID = int.Parse(paramInfo.ID_Paramedic2.Text);
+				try
+				{
+					Paramedic1Name = paramInfo.Name_Paramedic1.Text;
+					Paramedic2Name = paramInfo.Name_Paramedic2.Text;
+					Paramedic1ID = int.Parse(paramInfo.Name_Paramedic1.SelectedValue.ToString());
+					Paramedic2ID = int.Parse(paramInfo.Name_Paramedic2.SelectedValue.ToString());
+					RecipientMissionID = int.Parse(paramInfo.Name_RecipientOfMission.SelectedValue.ToString());
+					RecipientMissionName = paramInfo.Name_RecipientOfMission.Text;
+					CallerName = paramInfo.CallerName.Text;
+					CallerPhone = int.Parse(paramInfo.CallerPhone.Text);
+				}
+				catch(Exception ex)
+				{
 
-				HeadOfMissionID = int.Parse(paramInfo.ID_HeadOfMission.Text);
+				}
+
+
 				HeadOfMissionName = paramInfo.Name_HeadOfMission.Text;
-
-				DriverID = int.Parse(paramInfo.ID_Driver.Text);
 				DriverName = paramInfo.Name_Driver.Text;
-
 				HeadOfShiftName = paramInfo.Name_HeadOfShift.Text;
-				HeadOfShiftID = int.Parse(paramInfo.ID_HeadOfShift.Text);
 
-				RecipientMissionID = int.Parse(paramInfo.ID_RecipientOfMission.Text);
-				RecipientMissionName = paramInfo.Name_RecipientOfMission.Text;
+				try
+				{
+					HeadOfMissionID = int.Parse(paramInfo.Name_HeadOfMission.SelectedValue.ToString());
+					HeadOfShiftID = int.Parse(paramInfo.Name_HeadOfShift.SelectedValue.ToString());
+					DriverID = int.Parse(paramInfo.Name_Driver.SelectedValue.ToString());
 
-				CallerName = paramInfo.CallerName.Text;
-				CallerPhone = int.Parse(paramInfo.CallerPhone.Text);
+				}
+				catch(Exception ex)
+				{
+					MessageBox.Show("fill team information");
+					return false;
+				}
+
 
 				MoreInfo = paramInfo.MoreInfo.Text;
 				return true;
@@ -949,13 +1151,6 @@ namespace Erc1.BAL
 				MessageBox.Show(ex.Message);
 				return false;
 			}
-			
-
-
-			
-
-
-
 		}
 
 

@@ -41,9 +41,18 @@ namespace ERC
 
             if (normal)
             {
+                
                 this.WindowState = FormWindowState.Maximized;
+                
+
+
                 bunifuElipse1.ElipseRadius = 0;
                 normal = false;
+                
+
+
+
+
 
             }
             else
@@ -66,9 +75,6 @@ namespace ERC
         {
            
 
-            panel2.Controls.Add(cm);
-            panel2.Controls.Add(im);
-            panel2.Controls.Add(dm);
             foreach (Control cont in panel2.Controls)
             {
                 cont.Size = panel2.Size;
@@ -110,7 +116,6 @@ namespace ERC
             ((MButton)(sen)).BClicked = true;
 
 
-            //MessageBox.Show(sender.GetType().ToString());
         }
 
 
@@ -124,6 +129,7 @@ namespace ERC
             {
                 cm = new AddMission(MissionType.Canceled) { TopLevel = false };
                 cm.Size = panel2.Size;
+                cm.Dock = DockStyle.Fill;
                 panel2.Controls.Add(cm);
             }
             cm.Show();
@@ -137,19 +143,26 @@ namespace ERC
             {
                 dm = new AddMission(MissionType.Dlayed) { TopLevel = false };
                 dm.Size = panel2.Size;
+                dm.Dock = DockStyle.Fill;
                 panel2.Controls.Add(dm);
             }
             dm.Show();
             if (im != null) im.Hide();
             if (cm != null) cm.Hide();
         }
-        private void Sfab_ImpClicked(object sender, EventArgs e)
+        public void Sfab_ImpClicked(object sender, EventArgs e)
         {
-            if (im == null)
+            
+            
+            if (im == null||im.IsDisposed)
             {
                 im = new AddMission(MissionType.Implemented) { TopLevel = false };
                 im.Size = panel2.Size;
+                im.Dock = DockStyle.Fill;
+                
                 panel2.Controls.Add(im);
+                
+                
             }
             im.Show();
             if(dm!=null) dm.Hide();
@@ -162,31 +175,6 @@ namespace ERC
         }
 
 
-
-
-        private void panel2_SizeChanged(object sender, EventArgs e)
-        {
-            foreach (Control cont in panel2.Controls)
-            {
-                cont.Size = panel2.Size;
-            }
-        }
-
-        private void panel2_Resize(object sender, EventArgs e)
-        {
-            panel2.Update();
-        }
-
-        private void OperationForm_Resize(object sender, EventArgs e)
-        {
-            this.Update();
-            panel2.Update();
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
     }
 
 }
