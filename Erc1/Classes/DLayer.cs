@@ -10,16 +10,6 @@ using System.ComponentModel;
 
 namespace Erc1.Classes
 {
-    class cent 
-    
-    {
-        int key;
-      public int Key {
-            get;
-            set;
-        }
-    
-    }
 
     class mission
     {
@@ -580,6 +570,23 @@ namespace Erc1.Classes
         }
 
 
+        // get الأطباء by hospitalID (column names ="رمز","اسم")
+        public static IEnumerable Get_الأطباء()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+             from doctors in entity.الأطباء
+             select new
+             {
+                 doctors.رمز,
+                 doctors.اسم
+             }); ;
+                return c.ToList();
+            }
+        }
+
+
 
         // get الجهات_الضامنة(column names ="الجهة_الضامنة","الرمز")
         public static IEnumerable Get_الجهات_الضامنة()
@@ -614,10 +621,85 @@ namespace Erc1.Classes
         }
 
 
+ 
+
+
+
+
 
 
 
         // add mission
+
+
+        public static bool add_Mission(المهمات_المنفذة new_Mission)
+        {
+            bool added = false;
+            using (ERCEntities entity = new model.ERCEntities())
+            {
+                try
+                {
+                    entity.المهمات_المنفذة.Add(new_Mission);
+                    added = entity.SaveChanges() > 0 ? true : false; ;
+                    return added;
+                }
+                catch
+                {
+                    added = false;
+                    return added;
+                }
+            };
+
+        }
+
+
+        public static bool add_Mission(المهماة_المؤجلة new_Mission)
+        {
+            bool added = false;
+            using (ERCEntities entity = new model.ERCEntities())
+            {
+                try
+                {
+                    entity.المهماة_المؤجلة.Add(new_Mission);
+                    added = entity.SaveChanges() > 0 ? true : false; ;
+                    return added;
+                }
+                catch
+                {
+                    added = false;
+                    return added;
+                }
+            };
+
+        }
+
+
+        public static bool add_Mission(المهمات_الملغاة new_Mission)
+        {
+            bool added = false;
+            using (ERCEntities entity = new model.ERCEntities())
+            {
+                try
+                {
+                    entity.المهمات_الملغاة.Add(new_Mission);
+                    added = entity.SaveChanges() > 0 ? true : false; ;
+                    return added;
+                }
+                catch
+                {
+                    added = false;
+                    return added;
+                }
+            };
+
+        }
+
+
+
+
+
+
+
         public static void AddMission(int الرمز_الشهري, DateTime التاريخ, int الآلية, int المريض, Nullable<int> من_مشفى, Nullable<int> من_القسم, Nullable<int> الطبيب_المعالج,
              Nullable<int> الجهة_الضامنة, Nullable<int> إلى_مشفى, Nullable<int> إلى_القسم, int مسؤول_المهمة, int مسعف_1, int مسعف_2,
             int السائق, int الهاتف, Nullable<int> متلقي_المهمة, int رمز_الحالة, int رمز_السنوي,

@@ -37,87 +37,13 @@ namespace Erc1.Classes
 
 
 
-        // get monthlyid 
-        public static int Get_MonthlyID(int year, int month)
-        {
-            using (ERCEntities entity = new ERCEntities())
-            {
-                int c;
-                try
-                {
-                    c = entity.المهمات_المنفذة
-                      .Where(r => r.التاريخ.Value.Year == year && r.التاريخ.Value.Month == month && r.الرمز_الشهري == entity.المهمات_المنفذة.Max(p => p.الرمز_الشهري))
-                      .Select(r => r.الرمز_الشهري).Single()
-                      ;
-                    c += 1;
-                }
-                catch
-                {
-                    c = 1;
-                }
-                return c;
-            };
-        }
-
-
-        // get yearid 
-        public static int Get_YearID(int year)
-        {
-            using (ERCEntities entity = new ERCEntities())
-            {
-                int c;
-                try
-                {
-                    c = entity.المهمات_المنفذة
-                   .Where(r => r.التاريخ.Value.Year == year && r.رمز_السنوي == entity.المهمات_المنفذة.Max(p => p.رمز_السنوي))
-                   .Select(r => r.رمز_السنوي).Single()
-                   ;
-                    c += 1;
-                }
-                catch
-                {
-                    c = 1;
-                }
-                return c;
-            };
-        }
-
-
-
-
-        // get طوابق المستشفيات
-        public static short[] Get_طوابق_المستشفيات(int hospital_key)
-        {
-            using (ERCEntities entity = new ERCEntities())
-            {
-                short[] c;
-                short c1, c2;
-
-                c1 = entity.المستشفيات.
-               Where(r => r.رمز_المستشفى == hospital_key)
-               .Select(r => r.الطابق_السفلي).Single().Value;
-                c2 = entity.المستشفيات.
-                  Where(r => r.رمز_المستشفى == hospital_key)
-                  .Select(r => r.الطابق_العلوي).Single().Value;
-                c = new short[c2 - c1 + 1];
-                for (short i = 0; i <= c2 - c1; i++)
-                {
-                    c[i] = (short)(c1 + i);
-                }
-                return c;
-            };
-        }
-
-
-
-        // get الأطباء by hospitalID (column names ="رمز","اسم")
-        public static IEnumerable Get_الأطباء(int hospital_key)
+        // get الأطباء (column names ="رمز","اسم")
+        public static IEnumerable Get_الأطباء()
         {
             using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
              from doctors in entity.الأطباء
-             where doctors.مكان_العمل == hospital_key
              select new
              {
                  doctors.رمز,
@@ -127,41 +53,67 @@ namespace Erc1.Classes
             }
         }
 
-
-
-        // get الجهات_الضامنة(column names ="الجهة_الضامنة","الرمز")
-        public static IEnumerable Get_الجهات_الضامنة()
+        public static bool add_Mission(المهمات_المنفذة new_Mission)
         {
-            using (ERCEntities entity = new ERCEntities())
+            bool added = false;
+            using (ERCEntities entity = new model.ERCEntities())
             {
-                var c = (
-             from insurance in entity.الجهات_الضامنة
-             select new
-             {
-                 insurance.الرمز,
-                 insurance.الجهة_الضامنة
-             }); ;
-                return c.ToList();
-            }
-        }
+                try
+                {
+                    entity.المهمات_المنفذة.Add(new_Mission);
+                    added = entity.SaveChanges() > 0 ? true : false; ;
+                    return added;
+                }
+                catch
+                {
+                    added = false;
+                    return added;
+                }
+            };
 
-        // get الأمراض_المعدية(column names ="المرض","الرمز")
-        public static IEnumerable Get_الأمراض_المعدية()
-        {
-            using (ERCEntities entity = new ERCEntities())
-            {
-                var c = (
-             from disease in entity.الأمراض_المعدية
-             select new
-             {
-                 disease.الرمز,
-                 disease.المرض
-             }); ;
-                return c.ToList();
-            }
         }
 
 
+        public static bool add_Mission(المهماة_المؤجلة new_Mission)
+        {
+            bool added = false;
+            using (ERCEntities entity = new model.ERCEntities())
+            {
+                try
+                {
+                    entity.المهماة_المؤجلة.Add(new_Mission);
+                    added = entity.SaveChanges() > 0 ? true : false; ;
+                    return added;
+                }
+                catch
+                {
+                    added = false;
+                    return added;
+                }
+            };
+
+        }
+
+
+        public static bool add_Mission(المهمات_الملغاة new_Mission)
+        {
+            bool added = false;
+            using (ERCEntities entity = new model.ERCEntities())
+            {
+                try
+                {
+                    entity.المهمات_الملغاة.Add(new_Mission);
+                    added = entity.SaveChanges() > 0 ? true : false; ;
+                    return added;
+                }
+                catch
+                {
+                    added = false;
+                    return added;
+                }
+            };
+
+        }
 
 
 
