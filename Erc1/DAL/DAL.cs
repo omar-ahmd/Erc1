@@ -460,6 +460,22 @@ namespace Erc1.Classes
         }
 
 
+        // get الأطباء (column names ="رمز","اسم")
+        public static IEnumerable Get_الأطباء()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+             from doctors in entity.الأطباء
+             select new
+             {
+                 doctors.رمز,
+                 doctors.اسم
+             }); ;
+                return c.ToList();
+            }
+        }
+
 
         // get الجهات_الضامنة(column names ="الجهة_الضامنة","الرمز")
         public static IEnumerable Get_الجهات_الضامنة()
@@ -492,6 +508,78 @@ namespace Erc1.Classes
                 return c.ToList();
             }
         }
+
+
+
+
+        
+
+
+
+
+        public static bool add_Mission(المهمات_المنفذة new_Mission)
+        {
+            bool added = false;
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+                    entity.المهمات_المنفذة.Add(new_Mission);
+                    added = entity.SaveChanges() > 0 ? true : false; ;
+                    return added;
+                }
+                catch
+                {
+                    added = false;
+                    return added;
+                }
+            };
+
+        }
+
+
+        public static bool add_Mission(المهماة_المؤجلة new_Mission)
+        {
+            bool added = false;
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+                    entity.المهماة_المؤجلة.Add(new_Mission);
+                    added = entity.SaveChanges() > 0 ? true : false; ;
+                    return added;
+                }
+                catch
+                {
+                    added = false;
+                    return added;
+                }
+            };
+
+        }
+
+
+        public static bool add_Mission(المهمات_الملغاة new_Mission)
+        {
+            bool added = false;
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+                    entity.المهمات_الملغاة.Add(new_Mission);
+                    added = entity.SaveChanges() > 0 ? true : false; ;
+                    return added;
+                }
+                catch
+                {
+                    added = false;
+                    return added;
+                }
+            };
+
+        }
+
+
 
 
 

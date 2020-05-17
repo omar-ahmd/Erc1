@@ -118,6 +118,20 @@
         // get الأمراض_المعدية(column names ="المرض","الرمز")
         Get_الأمراض_المعدية()
 
+        
+        // get الأطباء (column names ="رمز","اسم")
+        Get_الأطباء()
+
+
+        
+        bool add_Mission(المهمات_المنفذة new_Mission)
+
+
+        bool add_Mission(المهماة_المؤجلة new_Mission)
+
+
+        bool add_Mission(المهمات_الملغاة new_Mission)
+
 
 
 
