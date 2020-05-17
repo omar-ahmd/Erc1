@@ -2,6 +2,7 @@
 using Erc1.BAL;
 using Erc1.Classes;
 using Erc1.DAL;
+using Erc1.Forms._8_AddPatient;
 using System;
 using System.Collections;
 using System.Windows.Forms;
@@ -300,9 +301,10 @@ namespace Erc1.CONTROLS
         private void Save_Click(object sender, EventArgs e)
         {
             addMission add = new addMission();
-            if (((Erc1.Forms.AddMission)(this.Parent.Parent.Parent.Parent.Parent)).MissionTy==Forms.MissionType.Implemented)
+            bool done;
+            if (((Erc1.Forms.AddMission)(this.Parent.Parent.Parent.Parent.Parent)).MissionTy == Forms.MissionType.Implemented)
             {
-                bool done = add.ImportInfo(LoginForm.of.im);
+                done = add.ImportInfo(LoginForm.of.im);
                 if (done)
                 {
 
@@ -320,18 +322,27 @@ namespace Erc1.CONTROLS
 
 
                 }
-                else if (((Erc1.Forms.AddMission)(this.Parent.Parent.Parent.Parent.Parent)).MissionTy == Forms.MissionType.Dlayed)
-                {
-
-                }
-                else
+            }
+            else if (((Erc1.Forms.AddMission)(this.Parent.Parent.Parent.Parent.Parent)).MissionTy == Forms.MissionType.Dlayed)
+            {
+                done = add.ImportInfo(LoginForm.of.dm);
+                if (done)
                 {
 
                 }
             }
+            else
+            {
+                done = add.ImportInfo(LoginForm.of.cm);
+                if(done)
+                {
+
+                }
+            }
+        }
 
             
-        }
+        
 
         public void Name_Patient_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -364,6 +375,14 @@ namespace Erc1.CONTROLS
             string na = sen.Name.Split('_')[1];
             TextBox t = (TextBox)sen.Parent.Controls["ID" + "_" + na];
             t.Text = sen.SelectedValue.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddPatient addp = new AddPatient();
+            addp.StartPosition = FormStartPosition.CenterScreen;
+            addp.Text = "Add Patient";
+            addp.Show();
         }
     }
 }

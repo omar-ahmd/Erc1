@@ -95,12 +95,12 @@ namespace Erc1.Forms
             this.ActivityMission = new Erc1.CONTROLS.LabelBord();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -139,10 +139,10 @@ namespace Erc1.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tableLayoutPanel19.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.tableLayoutPanel21.SuspendLayout();
-            this.tableLayoutPanel22.SuspendLayout();
-            this.tableLayoutPanel23.SuspendLayout();
             this.tableLayoutPanel20.SuspendLayout();
+            this.tableLayoutPanel21.SuspendLayout();
+            this.tableLayoutPanel23.SuspendLayout();
+            this.tableLayoutPanel22.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -249,7 +249,6 @@ namespace Erc1.Forms
             resources.GetString("Year.Items53"),
             resources.GetString("Year.Items54")});
             this.Year.Name = "Year";
-            this.Year.SelectedValueChanged += new System.EventHandler(this.Month_SelectedValueChanged);
             // 
             // Month
             // 
@@ -725,26 +724,19 @@ namespace Erc1.Forms
             this.panel9.Controls.Add(this.tableLayoutPanel20);
             this.panel9.Name = "panel9";
             // 
+            // tableLayoutPanel20
+            // 
+            this.tableLayoutPanel20.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.tableLayoutPanel20, "tableLayoutPanel20");
+            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel21, 0, 0);
+            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
+            // 
             // tableLayoutPanel21
             // 
             resources.ApplyResources(this.tableLayoutPanel21, "tableLayoutPanel21");
             this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel23, 1, 0);
             this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel22, 0, 0);
             this.tableLayoutPanel21.Name = "tableLayoutPanel21";
-            // 
-            // tableLayoutPanel22
-            // 
-            resources.ApplyResources(this.tableLayoutPanel22, "tableLayoutPanel22");
-            this.tableLayoutPanel22.Controls.Add(this.button1, 1, 1);
-            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
-            // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tableLayoutPanel23
             // 
@@ -760,12 +752,19 @@ namespace Erc1.Forms
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // tableLayoutPanel20
+            // tableLayoutPanel22
             // 
-            this.tableLayoutPanel20.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.tableLayoutPanel20, "tableLayoutPanel20");
-            this.tableLayoutPanel20.Controls.Add(this.tableLayoutPanel21, 0, 0);
-            this.tableLayoutPanel20.Name = "tableLayoutPanel20";
+            resources.ApplyResources(this.tableLayoutPanel22, "tableLayoutPanel22");
+            this.tableLayoutPanel22.Controls.Add(this.button1, 1, 1);
+            this.tableLayoutPanel22.Name = "tableLayoutPanel22";
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AddMission
             // 
@@ -827,10 +826,10 @@ namespace Erc1.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tableLayoutPanel19.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
-            this.tableLayoutPanel21.ResumeLayout(false);
-            this.tableLayoutPanel22.ResumeLayout(false);
-            this.tableLayoutPanel23.ResumeLayout(false);
             this.tableLayoutPanel20.ResumeLayout(false);
+            this.tableLayoutPanel21.ResumeLayout(false);
+            this.tableLayoutPanel23.ResumeLayout(false);
+            this.tableLayoutPanel22.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

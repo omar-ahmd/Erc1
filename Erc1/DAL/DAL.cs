@@ -378,9 +378,6 @@ namespace Erc1.Classes
                 int c;
                 try
                 {
-                    MessageBox.Show(month.ToString());
-                    
-
                     c = entity.المهمات_المنفذة
                         .Where(r => (r.التاريخ.Value.Year == year) && (r.التاريخ.Value.Month == month) )
                         .Max(r => r.الرمز_الشهري)
@@ -389,7 +386,6 @@ namespace Erc1.Classes
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("k");
                     c = 1;
                 }
                 return c;

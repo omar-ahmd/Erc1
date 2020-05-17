@@ -67,6 +67,8 @@ namespace Erc1.Forms
                 System.Reflection.BindingFlags.Instance);
 
             MissionTy = missionType;
+
+
             switch (missionType)
             {
                 case Forms.MissionType.Implemented:
@@ -76,7 +78,7 @@ namespace Erc1.Forms
                         pI.TopLevel = false;
                         pI.Dock = DockStyle.Fill;
                         tableLayoutPanel20.Controls.Add(pI, 0, 1);
-                        pI.Invalidate();
+                        
                         pI.Show();
 
                         paI.TopLevel = false;
@@ -84,14 +86,12 @@ namespace Erc1.Forms
                         tableLayoutPanel20.Controls.Add(paI, 0, 1);
 
                         paI.Hide();
-
                         button2.Show();
 
                         this.panel9.BackgroundImage = Erc1.Properties.Resources._12;
                         break;
 
                     }
-
                 case Forms.MissionType.Dlayed:
                     {
                         paI = new PatientInformation();
@@ -182,7 +182,7 @@ namespace Erc1.Forms
             else
             {
                 dayinmonth = DateTime.DaysInMonth(int.Parse(Year.SelectedItem.ToString()), int.Parse(Month.SelectedItem.ToString()));
-                if (missionTy == Forms.MissionType.Implemented)
+                if (MissionTy == Forms.MissionType.Implemented)
                 {
                     MonthlyID.Text = mission.Get_MonthlyID(int.Parse(Year.SelectedItem.ToString()), int.Parse(Month.SelectedItem.ToString())).ToString();
                     AnnualID.Text = mission.Get_YearID(int.Parse(Year.SelectedItem.ToString())).ToString();
@@ -194,8 +194,9 @@ namespace Erc1.Forms
             {
                 Day.Items.Add(i.ToString("D2"));
             }
+            Year.SelectedValueChanged += Month_SelectedValueChanged;
 
-            
+
         }
 
 

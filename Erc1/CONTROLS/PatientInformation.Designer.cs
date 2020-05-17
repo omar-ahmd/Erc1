@@ -138,6 +138,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.CanSit = new Erc1.CONTROLS.LabelBord();
             this.FromHos = new Erc1.CONTROLS.LabelBord();
             this.FromHome = new Erc1.CONTROLS.LabelBord();
@@ -196,20 +197,22 @@
             // Patient
             // 
             this.Patient.BackColor = System.Drawing.Color.Transparent;
-            this.Patient.ColumnCount = 2;
-            this.Patient.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.Patient.ColumnCount = 3;
             this.Patient.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.Patient.Controls.Add(this.Name_Patient, 0, 1);
-            this.Patient.Controls.Add(this.tableLayoutPanel4, 1, 0);
-            this.Patient.Controls.Add(this.ID_Patient, 1, 1);
-            this.Patient.Controls.Add(this.CanSit, 0, 0);
+            this.Patient.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.Patient.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.Patient.Controls.Add(this.button1, 0, 1);
+            this.Patient.Controls.Add(this.Name_Patient, 1, 1);
+            this.Patient.Controls.Add(this.tableLayoutPanel4, 2, 0);
+            this.Patient.Controls.Add(this.ID_Patient, 2, 1);
+            this.Patient.Controls.Add(this.CanSit, 1, 0);
             this.Patient.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Patient.Location = new System.Drawing.Point(520, 15);
             this.Patient.Margin = new System.Windows.Forms.Padding(0);
             this.Patient.Name = "Patient";
             this.Patient.RowCount = 2;
-            this.Patient.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.Patient.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.Patient.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.Patient.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.Patient.Size = new System.Drawing.Size(397, 67);
             this.Patient.TabIndex = 1;
             // 
@@ -224,11 +227,11 @@
             this.Name_Patient.ItemHeight = 27;
             this.Name_Patient.Items.AddRange(new object[] {
             "جديد"});
-            this.Name_Patient.Location = new System.Drawing.Point(0, 26);
+            this.Name_Patient.Location = new System.Drawing.Point(99, 30);
             this.Name_Patient.Margin = new System.Windows.Forms.Padding(0);
             this.Name_Patient.Name = "Name_Patient";
             this.Name_Patient.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Name_Patient.Size = new System.Drawing.Size(297, 35);
+            this.Name_Patient.Size = new System.Drawing.Size(198, 35);
             this.Name_Patient.TabIndex = 9;
             this.Name_Patient.SelectedIndexChanged += new System.EventHandler(this.Name_Patient_SelectedIndexChanged);
             // 
@@ -243,7 +246,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(100, 26);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(100, 30);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // panel1
@@ -255,7 +258,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(100, 26);
+            this.panel1.Size = new System.Drawing.Size(100, 30);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -281,7 +284,7 @@
             this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 26);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -295,7 +298,7 @@
             this.ID_Patient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ID_Patient.Enabled = false;
             this.ID_Patient.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F);
-            this.ID_Patient.Location = new System.Drawing.Point(297, 26);
+            this.ID_Patient.Location = new System.Drawing.Point(297, 30);
             this.ID_Patient.Margin = new System.Windows.Forms.Padding(0);
             this.ID_Patient.Name = "ID_Patient";
             this.ID_Patient.ReadOnly = true;
@@ -2078,16 +2081,35 @@
             this.label31.Text = "تفاصيل";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::Erc1.Properties.Resources.جديد;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Air Strip Arabic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.Location = new System.Drawing.Point(0, 30);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 37);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "اضافة مريض";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // CanSit
             // 
-            this.CanSit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.CanSit.Check = false;
+            this.CanSit.Dock = System.Windows.Forms.DockStyle.Left;
             this.CanSit.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CanSit.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
-            this.CanSit.Location = new System.Drawing.Point(0, 1);
+            this.CanSit.Location = new System.Drawing.Point(99, 0);
             this.CanSit.Margin = new System.Windows.Forms.Padding(0);
             this.CanSit.Name = "CanSit";
-            this.CanSit.Size = new System.Drawing.Size(168, 25);
+            this.CanSit.Size = new System.Drawing.Size(168, 30);
             this.CanSit.TabIndex = 7;
             this.CanSit.text = "يستطيع الجلوس";
             // 
@@ -2098,10 +2120,10 @@
             this.FromHos.Dock = System.Windows.Forms.DockStyle.Left;
             this.FromHos.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FromHos.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
-            this.FromHos.Location = new System.Drawing.Point(133, 0);
+            this.FromHos.Location = new System.Drawing.Point(150, 0);
             this.FromHos.Margin = new System.Windows.Forms.Padding(0);
             this.FromHos.Name = "FromHos";
-            this.FromHos.Size = new System.Drawing.Size(133, 33);
+            this.FromHos.Size = new System.Drawing.Size(150, 33);
             this.FromHos.TabIndex = 9;
             this.FromHos.text = "مستشفى";
             this.FromHos.CheckChange += new System.EventHandler(this.FromHos_CheckChange);
@@ -2115,7 +2137,7 @@
             this.FromHome.Location = new System.Drawing.Point(0, 0);
             this.FromHome.Margin = new System.Windows.Forms.Padding(0);
             this.FromHome.Name = "FromHome";
-            this.FromHome.Size = new System.Drawing.Size(133, 33);
+            this.FromHome.Size = new System.Drawing.Size(150, 33);
             this.FromHome.TabIndex = 8;
             this.FromHome.text = "منزل-منطقة";
             this.FromHome.CheckChange += new System.EventHandler(this.FromHome_CheckChange);
@@ -2126,10 +2148,10 @@
             this.ToHos.Dock = System.Windows.Forms.DockStyle.Left;
             this.ToHos.font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ToHos.ForColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(66)))));
-            this.ToHos.Location = new System.Drawing.Point(133, 0);
+            this.ToHos.Location = new System.Drawing.Point(150, 0);
             this.ToHos.Margin = new System.Windows.Forms.Padding(0);
             this.ToHos.Name = "ToHos";
-            this.ToHos.Size = new System.Drawing.Size(133, 33);
+            this.ToHos.Size = new System.Drawing.Size(150, 33);
             this.ToHos.TabIndex = 12;
             this.ToHos.text = "مستشفى";
             this.ToHos.CheckChange += new System.EventHandler(this.ToHos_CheckChange);
@@ -2143,7 +2165,7 @@
             this.ToHome.Location = new System.Drawing.Point(0, 0);
             this.ToHome.Margin = new System.Windows.Forms.Padding(0);
             this.ToHome.Name = "ToHome";
-            this.ToHome.Size = new System.Drawing.Size(133, 33);
+            this.ToHome.Size = new System.Drawing.Size(150, 33);
             this.ToHome.TabIndex = 11;
             this.ToHome.text = "منزل-منطقة";
             this.ToHome.CheckChange += new System.EventHandler(this.ToHome_CheckChange);
@@ -2354,5 +2376,6 @@
         public System.Windows.Forms.ComboBox ToRegion;
         public LabelBord CanSit;
         public System.Windows.Forms.ComboBox Name_FromHospital;
+        public System.Windows.Forms.Button button1;
     }
 }
