@@ -33,16 +33,32 @@ namespace Erc1.Classes
             }
             return table;
         }
-   
-        //public static IList<cent> center()
-        //{ 
-        //    using (var entity = new ERCEntities())
-        //    {
-        //        IList<cent> c;
-        //        c = int.Parse(entity.المراكز.Select(r => new { r.الرمز }).ToString()) ;
-        //        return c;
-        //    }
-        //}
+
+        public static IEnumerable center()
+        {
+            using (var entity = new ERCEntities())
+            {
+                
+               var c = (
+             from center in entity.المراكز
+             select new
+             {
+                  center.الرمز
+             }
+                 ); ;
+                return c.ToList();
+            };
+        }
+
+        public static DataTable Get_center_DATALAYER()
+        {
+            DataLayer dt;
+            DataTable centers;
+            dt = new DataLayer(@"QSC-2019\SQLEXPRESS", "ERC");
+            centers = dt.GetData("select الرمز from المراكز ", "centers");
+            return centers;
+        }
+
 
 
         //public static DataTable ConvertToDataTable<T>(IList<T> data)
