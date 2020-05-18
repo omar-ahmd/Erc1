@@ -259,6 +259,71 @@ namespace Erc1.Classes
 
 
 
+        // get المسعفون names (column names ="الاسم","الرمز")
+        public static IEnumerable Get_المسعفون()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from staff in entity.العاملون.
+                Where(r => (r.مسعف_أو_مساعد == true))
+                select new
+                {
+                    staff.الرمز,
+                    staff.الاسم
+                }
+                    ); ;
+                return c.ToList();
+            };
+        }
+
+        // get السائقون names (column names ="الاسم","الرمز")
+        public static IEnumerable Get_السائقون()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from staff in entity.العاملون.
+                Where(r => (r.سائق_أو_لا == true))
+                select new
+                {
+                    staff.الرمز,
+                    staff.الاسم
+                }
+                    ); ;
+                return c.ToList();
+            };
+        }
+
+        // get مسؤول مهمة names (column names ="الاسم","الرمز")
+        public static IEnumerable Get_مسؤول_مهمة()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from staff in entity.العاملون.
+                Where(r => (r.مسؤول_مهمة_أو_لا == true))
+                select new
+                {
+                    staff.الرمز,
+                    staff.الاسم
+                }
+                    ); ;
+                return c.ToList();
+            };
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
