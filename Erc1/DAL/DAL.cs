@@ -55,7 +55,7 @@ namespace Erc1.Classes
                         where centers.المدن.رمز == centers.المدينة
                         select new
                         {
-                            centers = centers.الرمز + " - " + centers.المدن.المدينة,
+                            centers = centers.الرمز ,// + " - " + centers.المدن.المدينة,
                             id = centers.الرمز
                         };
 

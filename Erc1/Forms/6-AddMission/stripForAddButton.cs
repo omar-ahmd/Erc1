@@ -16,8 +16,8 @@ namespace Erc1.Forms._6_AddMission
             try
             {
 
-                sButton2.Clicked = false;
-                sButton1.Clicked = false;
+                CancButton.Clicked = false;
+                ImpButton.Clicked = false;
                 DelClicked.Invoke(this, e);
             }
             catch (Exception)
@@ -32,8 +32,8 @@ namespace Erc1.Forms._6_AddMission
             try
             {
 
-                sButton1.Clicked = false;
-                sButton3.Clicked = false;
+                ImpButton.Clicked = false;
+                DelButton.Clicked = false;
                 CancClicked.Invoke(this, e);
             }
             catch (Exception)
@@ -50,8 +50,8 @@ namespace Erc1.Forms._6_AddMission
             try
             {
 
-                sButton2.Clicked = false;
-                sButton3.Clicked = false;
+                CancButton.Clicked = false;
+                DelButton.Clicked = false;
 
                 ImpClicked.Invoke(this, e);
 

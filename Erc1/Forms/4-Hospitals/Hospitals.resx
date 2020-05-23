@@ -1,0 +1,852 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tableLayoutPanel1.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tableLayoutPanel1.AutoScrollMinSize" type="System.Drawing.Size, System.Drawing">
+    <value>300, 300</value>
+  </data>
+  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Up.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Up.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>On</value>
+  </data>
+  <data name="Up.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 528</value>
+  </data>
+  <data name="Up.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="Up.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 28</value>
+  </data>
+  <data name="Up.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="Up.Text" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;Up.Name" xml:space="preserve">
+    <value>Up</value>
+  </data>
+  <data name="&gt;&gt;Up.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Up.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;Up.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="hospitalControlcs1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>531, 22</value>
+  </data>
+  <data name="hospitalControlcs1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs1.Name" xml:space="preserve">
+    <value>hospitalControlcs1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs1.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs1.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="hospitalControlcs2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 22</value>
+  </data>
+  <data name="hospitalControlcs2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs2.Name" xml:space="preserve">
+    <value>hospitalControlcs2</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs2.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs2.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="hospitalControlcs3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 69</value>
+  </data>
+  <data name="hospitalControlcs3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs3.Name" xml:space="preserve">
+    <value>hospitalControlcs3</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs3.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs3.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="hospitalControlcs4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>531, 69</value>
+  </data>
+  <data name="hospitalControlcs4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs4.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs4.Name" xml:space="preserve">
+    <value>hospitalControlcs4</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs4.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs4.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs4.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="hospitalControlcs5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 116</value>
+  </data>
+  <data name="hospitalControlcs5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs5.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs5.Name" xml:space="preserve">
+    <value>hospitalControlcs5</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs5.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs5.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs5.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="hospitalControlcs6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>531, 116</value>
+  </data>
+  <data name="hospitalControlcs6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs6.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs6.Name" xml:space="preserve">
+    <value>hospitalControlcs6</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs6.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs6.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs6.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="hospitalControlcs7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 163</value>
+  </data>
+  <data name="hospitalControlcs7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs7.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs7.Name" xml:space="preserve">
+    <value>hospitalControlcs7</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs7.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs7.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs7.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="hospitalControlcs8.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>531, 163</value>
+  </data>
+  <data name="hospitalControlcs8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs8.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs8.Name" xml:space="preserve">
+    <value>hospitalControlcs8</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs8.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs8.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs8.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="hospitalControlcs9.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 210</value>
+  </data>
+  <data name="hospitalControlcs9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs9.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs9.Name" xml:space="preserve">
+    <value>hospitalControlcs9</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs9.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs9.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs9.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="hospitalControlcs10.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>531, 210</value>
+  </data>
+  <data name="hospitalControlcs10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs10.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs10.Name" xml:space="preserve">
+    <value>hospitalControlcs10</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs10.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs10.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs10.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="hospitalControlcs11.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 257</value>
+  </data>
+  <data name="hospitalControlcs11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs11.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs11.Name" xml:space="preserve">
+    <value>hospitalControlcs11</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs11.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs11.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs11.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="hospitalControlcs12.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>531, 257</value>
+  </data>
+  <data name="hospitalControlcs12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs12.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs12.Name" xml:space="preserve">
+    <value>hospitalControlcs12</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs12.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs12.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs12.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="hospitalControlcs13.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 304</value>
+  </data>
+  <data name="hospitalControlcs13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs13.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs13.Name" xml:space="preserve">
+    <value>hospitalControlcs13</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs13.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs13.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs13.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="hospitalControlcs14.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>531, 304</value>
+  </data>
+  <data name="hospitalControlcs14.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs14.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs14.Name" xml:space="preserve">
+    <value>hospitalControlcs14</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs14.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs14.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs14.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="hospitalControlcs15.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 351</value>
+  </data>
+  <data name="hospitalControlcs15.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs15.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs15.Name" xml:space="preserve">
+    <value>hospitalControlcs15</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs15.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs15.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs15.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="hospitalControlcs16.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>531, 351</value>
+  </data>
+  <data name="hospitalControlcs16.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs16.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs16.Name" xml:space="preserve">
+    <value>hospitalControlcs16</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs16.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs16.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs16.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="hospitalControlcs17.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 398</value>
+  </data>
+  <data name="hospitalControlcs17.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs17.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs17.Name" xml:space="preserve">
+    <value>hospitalControlcs17</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs17.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs17.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs17.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="hospitalControlcs18.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>531, 398</value>
+  </data>
+  <data name="hospitalControlcs18.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs18.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs18.Name" xml:space="preserve">
+    <value>hospitalControlcs18</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs18.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs18.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs18.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="hospitalControlcs19.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs19.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 445</value>
+  </data>
+  <data name="hospitalControlcs19.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs19.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs19.Name" xml:space="preserve">
+    <value>hospitalControlcs19</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs19.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs19.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs19.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="hospitalControlcs20.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>531, 445</value>
+  </data>
+  <data name="hospitalControlcs20.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs20.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs20.Name" xml:space="preserve">
+    <value>hospitalControlcs20</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs20.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs20.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs20.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="hospitalControlcs21.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs21.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 492</value>
+  </data>
+  <data name="hospitalControlcs21.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs21.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs21.Name" xml:space="preserve">
+    <value>hospitalControlcs21</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs21.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs21.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs21.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="hospitalControlcs22.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="hospitalControlcs22.Location" type="System.Drawing.Point, System.Drawing">
+    <value>531, 492</value>
+  </data>
+  <data name="hospitalControlcs22.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="hospitalControlcs22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 36</value>
+  </data>
+  <data name="hospitalControlcs22.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs22.Name" xml:space="preserve">
+    <value>hospitalControlcs22</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs22.Type" xml:space="preserve">
+    <value>Erc1.CONTROLS.HospitalControlcs, Erc1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs22.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;hospitalControlcs22.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="Down.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Down.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>On</value>
+  </data>
+  <data name="Down.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1001, 528</value>
+  </data>
+  <data name="Down.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="Down.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 28</value>
+  </data>
+  <data name="Down.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="Down.Text" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;Down.Name" xml:space="preserve">
+    <value>Down</value>
+  </data>
+  <data name="&gt;&gt;Down.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Down.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;Down.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1045, 556</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="Up" Row="22" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs1" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs2" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs3" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs4" Row="3" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs5" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs6" Row="5" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs7" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs8" Row="7" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs9" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs10" Row="9" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs11" Row="11" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs12" Row="11" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs13" Row="13" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs14" Row="13" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs15" Row="15" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs16" Row="15" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs17" Row="17" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs18" Row="17" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs19" Row="19" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs20" Row="19" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs21" Row="21" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="hospitalControlcs22" Row="21" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="Down" Row="22" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,4,Percent,45,Percent,2,Percent,45,Percent,4" /&gt;&lt;Rows Styles="Percent,4.000162,Percent,6.546261,Percent,2.00008,Percent,6.550261,Percent,2.00008,Percent,6.550261,Percent,2.00008,Percent,6.550261,Percent,2.00008,Percent,6.550261,Percent,2.00008,Percent,6.550261,Percent,2.00008,Percent,6.550261,Percent,2.00008,Percent,6.550261,Percent,2.00008,Percent,6.550261,Percent,2.00008,Percent,6.550261,Percent,2.00008,Percent,6.550261,Percent,3.950158" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.AutoScrollMargin" type="System.Drawing.Size, System.Drawing">
+    <value>200, 200</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1045, 556</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>On</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>implementedmissons</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Hospitals</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

@@ -416,12 +416,12 @@ namespace Erc1.BAL
 				ImportMonthlyID.Start();
 				ImportAnnualId.Start();
 
-
-				ImportCenter.Join();
 				ImportCasesType.Join();
+				ImportCenter.Join();
 				ImportCases.Join();
-				ImportAnnualId.Join();
 				ImportMonthlyID.Join();
+				ImportAnnualId.Join();
+
 
 
 				MyFunction.FillComboBox(addm.CenterID, centers, "centers", "id");
@@ -1481,5 +1481,13 @@ namespace Erc1.BAL
 
 		}
 	}
-	
+
+	class Hospitals
+	{
+		public Hospitals()
+		{
+
+		}
+
+	}	
 }

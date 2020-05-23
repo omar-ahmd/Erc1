@@ -1,5 +1,6 @@
 ﻿using Erc1.CONTROLS;
 using Erc1.Forms;
+using Erc1.Forms._4_Hospitals;
 using Erc1.Forms._6_AddMission;
 using System;
 using System.Drawing;
@@ -16,6 +17,10 @@ namespace ERC
         public AddMission cm;
         public AddMission im;
         public AddMission dm;
+
+
+        stripForAddButton sfab;
+        stripForHospitals s;
         public OperationForm()
         {
             InitializeComponent();
@@ -71,35 +76,7 @@ namespace ERC
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        private void Add_Clicked(object sender, EventArgs e)
-        {
-           
 
-            foreach (Control cont in panel2.Controls)
-            {
-                cont.Size = panel2.Size;
-            }
-
-
-            Add.BClicked = true;
-            Home.BClicked = false;
-            Reports.BClicked = false;
-            Hospitals.BClicked = false;
-            Car.BClicked = false;
-            Settings.BClicked = false;
-            Paramadic.BClicked = false;
-
-            stripForAddButton sfab = new stripForAddButton();
-            sfab.ImpClicked -= Sfab_ImpClicked;
-            sfab.DelClicked -= Sfab_DelClicked;
-            sfab.CancClicked -= Sfab_CancClicked;
-            sfab.Dock = DockStyle.Fill;
-            ContainerOfStrips.Controls.Add(sfab);
-            sfab.ImpClicked += Sfab_ImpClicked;
-            sfab.DelClicked += Sfab_DelClicked;
-            sfab.CancClicked += Sfab_CancClicked;
-
-        }
         private void Home_Clicked(object sender, EventArgs e)
         {
 
@@ -115,7 +92,108 @@ namespace ERC
             Control sen = (Control)sender;
             ((MButton)(sen)).BClicked = true;
 
+            foreach (var item in ContainerOfStrips.Controls)
+            {
+                ((Control)item).Hide();
+            }
+            foreach (Control cont in panel2.Controls)
+            {
+                cont.Size = panel2.Size;
+                cont.Hide();
+            }
 
+            if (Add.BClicked)
+            {
+
+                
+                if(sfab==null)
+                {
+                    sfab = new stripForAddButton();
+                    sfab.Dock = DockStyle.Fill;
+
+                    ContainerOfStrips.Controls.Add(sfab);
+                    sfab.ImpClicked += Sfab_ImpClicked;
+                    sfab.DelClicked += Sfab_DelClicked;
+                    sfab.CancClicked += Sfab_CancClicked;
+                    
+                }
+                else
+                {
+                    sfab.DelButton.Clicked = false;
+                    sfab.ImpButton.Clicked = false;
+                    sfab.CancButton.Clicked = false;
+                    sfab.Show();
+
+                }
+
+            }
+            else if(Home.BClicked)
+            {
+
+            }
+            else if (Reports.BClicked)
+            {
+
+            }
+            else if (Hospitals.BClicked)
+            {
+                if (s == null)
+                {
+                    s = new stripForHospitals();
+                    s.Dock = DockStyle.Fill;
+                    ContainerOfStrips.Controls.Add(s);
+                    s.AddHosClicked -= S_AddHosClicked;
+                    s.HosClicked -= S_HosClicked;
+                    s.AddHosClicked += S_AddHosClicked;
+                    s.HosClicked += S_HosClicked;
+                }
+                else
+                {
+                    s.Hos.Clicked = false;
+                    s.addhos.Clicked = false;
+                    s.Show();
+                }
+            }
+            else if (Car.BClicked)
+            {
+
+            }
+            else if (Settings.BClicked)
+            {
+
+            }
+            else if (Paramadic.BClicked)
+            {
+
+            }
+
+
+
+
+
+        }
+
+        Erc1.Forms._4_Hospitals.Hospitals h;
+        private void S_HosClicked(object sender, EventArgs e)
+        {
+            
+
+            if (h == null || h.IsDisposed)
+            {
+                h = new Hospitals() { TopLevel = false };
+                h.Size = panel2.Size;
+                h.Dock = DockStyle.Fill;
+
+                panel2.Controls.Add(h);
+
+
+            }
+            h.Show();
+        }
+
+        private void S_AddHosClicked(object sender, EventArgs e)
+        {
+            
         }
 
 
@@ -127,7 +205,7 @@ namespace ERC
         {
             if (cm == null || cm.IsDisposed)
             {
-                cm = new AddMission(MissionType.Canceled) { TopLevel = false };
+                cm = new AddMission(Erc1.Forms.MissionType.Canceled) { TopLevel = false };
                 cm.Size = panel2.Size;
                 cm.Dock = DockStyle.Fill;
                 panel2.Controls.Add(cm);
@@ -141,7 +219,7 @@ namespace ERC
         {
             if (dm == null || dm.IsDisposed)
             {
-                dm = new AddMission(MissionType.Dlayed) { TopLevel = false };
+                dm = new AddMission(Erc1.Forms.MissionType.Dlayed) { TopLevel = false };
                 dm.Size = panel2.Size;
                 dm.Dock = DockStyle.Fill;
                 panel2.Controls.Add(dm);
@@ -156,7 +234,7 @@ namespace ERC
             
             if (im == null||im.IsDisposed)
             {
-                im = new AddMission(MissionType.Implemented) { TopLevel = false };
+                im = new AddMission(Erc1.Forms.MissionType.Implemented) { TopLevel = false };
                 im.Size = panel2.Size;
                 im.Dock = DockStyle.Fill;
                 
@@ -167,8 +245,7 @@ namespace ERC
             im.Show();
             if(dm!=null) dm.Hide();
             if(cm!=null) cm.Hide();
-
-
+            
 
 
 

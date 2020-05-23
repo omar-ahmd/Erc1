@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.AddmissionLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.sButton3 = new Erc1.CONTROLS.SButton();
-            this.sButton2 = new Erc1.CONTROLS.SButton();
-            this.sButton1 = new Erc1.CONTROLS.SButton();
+            this.DelButton = new Erc1.CONTROLS.SButton();
+            this.CancButton = new Erc1.CONTROLS.SButton();
+            this.ImpButton = new Erc1.CONTROLS.SButton();
             this.AddmissionLayout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,9 +43,9 @@
             this.AddmissionLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.AddmissionLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.AddmissionLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.AddmissionLayout.Controls.Add(this.sButton3, 1, 0);
-            this.AddmissionLayout.Controls.Add(this.sButton2, 0, 0);
-            this.AddmissionLayout.Controls.Add(this.sButton1, 2, 0);
+            this.AddmissionLayout.Controls.Add(this.DelButton, 1, 0);
+            this.AddmissionLayout.Controls.Add(this.CancButton, 0, 0);
+            this.AddmissionLayout.Controls.Add(this.ImpButton, 2, 0);
             this.AddmissionLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddmissionLayout.Location = new System.Drawing.Point(0, 0);
             this.AddmissionLayout.Margin = new System.Windows.Forms.Padding(0);
@@ -56,53 +56,53 @@
             this.AddmissionLayout.Size = new System.Drawing.Size(965, 369);
             this.AddmissionLayout.TabIndex = 0;
             // 
-            // sButton3
+            // DelButton
             // 
-            this.sButton3.Clicked = false;
-            this.sButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sButton3.labelColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.sButton3.labelText = "مهمات مؤجلة";
-            this.sButton3.Location = new System.Drawing.Point(483, 0);
-            this.sButton3.Margin = new System.Windows.Forms.Padding(0);
-            this.sButton3.Name = "sButton3";
-            this.sButton3.panelColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.sButton3.Size = new System.Drawing.Size(241, 369);
-            this.sButton3.TabIndex = 2;
-            this.sButton3.textFont = new System.Drawing.Font("Air Strip Arabic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sButton3.textForeColor = System.Drawing.Color.White;
-            this.sButton3.ButClicked += new System.EventHandler(this.sButton3_ButClicked);
+            this.DelButton.Clicked = false;
+            this.DelButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DelButton.labelColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
+            this.DelButton.labelText = "مهمات مؤجلة";
+            this.DelButton.Location = new System.Drawing.Point(483, 0);
+            this.DelButton.Margin = new System.Windows.Forms.Padding(0);
+            this.DelButton.Name = "DelButton";
+            this.DelButton.panelColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
+            this.DelButton.Size = new System.Drawing.Size(241, 369);
+            this.DelButton.TabIndex = 2;
+            this.DelButton.textFont = new System.Drawing.Font("Air Strip Arabic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DelButton.textForeColor = System.Drawing.Color.White;
+            this.DelButton.ButClicked += new System.EventHandler(this.sButton3_ButClicked);
             // 
-            // sButton2
+            // CancButton
             // 
-            this.sButton2.Clicked = false;
-            this.sButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sButton2.labelColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.sButton2.labelText = "مهمات ملغاة";
-            this.sButton2.Location = new System.Drawing.Point(724, 0);
-            this.sButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.sButton2.Name = "sButton2";
-            this.sButton2.panelColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.sButton2.Size = new System.Drawing.Size(241, 369);
-            this.sButton2.TabIndex = 1;
-            this.sButton2.textFont = new System.Drawing.Font("Air Strip Arabic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sButton2.textForeColor = System.Drawing.Color.White;
-            this.sButton2.ButClicked += new System.EventHandler(this.sButton2_ButClicked);
+            this.CancButton.Clicked = false;
+            this.CancButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CancButton.labelColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
+            this.CancButton.labelText = "مهمات ملغاة";
+            this.CancButton.Location = new System.Drawing.Point(724, 0);
+            this.CancButton.Margin = new System.Windows.Forms.Padding(0);
+            this.CancButton.Name = "CancButton";
+            this.CancButton.panelColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
+            this.CancButton.Size = new System.Drawing.Size(241, 369);
+            this.CancButton.TabIndex = 1;
+            this.CancButton.textFont = new System.Drawing.Font("Air Strip Arabic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancButton.textForeColor = System.Drawing.Color.White;
+            this.CancButton.ButClicked += new System.EventHandler(this.sButton2_ButClicked);
             // 
-            // sButton1
+            // ImpButton
             // 
-            this.sButton1.Clicked = false;
-            this.sButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sButton1.labelColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.sButton1.labelText = "مهمات منفذة";
-            this.sButton1.Location = new System.Drawing.Point(242, 0);
-            this.sButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.sButton1.Name = "sButton1";
-            this.sButton1.panelColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
-            this.sButton1.Size = new System.Drawing.Size(241, 369);
-            this.sButton1.TabIndex = 0;
-            this.sButton1.textFont = new System.Drawing.Font("Air Strip Arabic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sButton1.textForeColor = System.Drawing.Color.White;
-            this.sButton1.ButClicked += new System.EventHandler(this.sButton1_ButClicked);
+            this.ImpButton.Clicked = false;
+            this.ImpButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ImpButton.labelColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
+            this.ImpButton.labelText = "مهمات منفذة";
+            this.ImpButton.Location = new System.Drawing.Point(242, 0);
+            this.ImpButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ImpButton.Name = "ImpButton";
+            this.ImpButton.panelColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(120)))), ((int)(((byte)(132)))));
+            this.ImpButton.Size = new System.Drawing.Size(241, 369);
+            this.ImpButton.TabIndex = 0;
+            this.ImpButton.textFont = new System.Drawing.Font("Air Strip Arabic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ImpButton.textForeColor = System.Drawing.Color.White;
+            this.ImpButton.ButClicked += new System.EventHandler(this.sButton1_ButClicked);
             // 
             // stripForAddButton
             // 
@@ -116,12 +116,9 @@
 
         }
         #endregion
-
-        private Erc1.CONTROLS.SButton sButton1;
-        private Erc1.CONTROLS.SButton sButton3;
-        private Erc1.CONTROLS.SButton sButton2;
         private System.Windows.Forms.TableLayoutPanel AddmissionLayout;
-
-
+        public CONTROLS.SButton ImpButton;
+        public CONTROLS.SButton DelButton;
+        public CONTROLS.SButton CancButton;
     }
 }

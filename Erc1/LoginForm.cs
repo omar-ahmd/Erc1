@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Erc1.BAL;
+using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ERC
@@ -15,10 +17,11 @@ namespace ERC
         public static OperationForm of = new OperationForm();
 
 
-
+        Thread ImportCasesType;
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            ImportCasesType = new Thread(() => { addMission.Get_CasesType(); });
+            ImportCasesType.Start();
             this.Hide();
             of.Show();
 

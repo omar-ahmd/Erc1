@@ -77,6 +77,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CONTROLS\HospitalControlcs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CONTROLS\HospitalControlcs.Designer.cs">
+      <DependentUpon>HospitalControlcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="CONTROLS\LabelBord.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -199,11 +205,23 @@
     <Compile Include="DAL\نوعيات_الحالات.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\4-Hospitals\Hospitals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\4-Hospitals\Hospitals.Designer.cs">
+      <DependentUpon>Hospitals.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\4-Hospitals\HospitalsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\4-Hospitals\HospitalsForm.Designer.cs">
       <DependentUpon>HospitalsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\4-Hospitals\StripForHospitals.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\4-Hospitals\StripForHospitals.Designer.cs">
+      <DependentUpon>StripForHospitals.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\6-AddMission\AddMission.cs">
       <SubType>Form</SubType>
@@ -243,6 +261,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CONTROLS\HospitalControlcs.resx">
+      <DependentUpon>HospitalControlcs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CONTROLS\LabelBord.resx">
       <DependentUpon>LabelBord.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,8 +282,14 @@
     <EmbeddedResource Include="CONTROLS\SButton.resx">
       <DependentUpon>SButton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\4-Hospitals\Hospitals.resx">
+      <DependentUpon>Hospitals.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\4-Hospitals\HospitalsForm.resx">
       <DependentUpon>HospitalsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\4-Hospitals\StripForHospitals.resx">
+      <DependentUpon>StripForHospitals.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\6-AddMission\AddMission.resx">
       <DependentUpon>AddMission.cs</DependentUpon>
@@ -425,6 +452,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\1.png" />
+    <None Include="Resources\11.png" />
+    <None Include="Resources\1 - Copy.png" />
+    <None Include="Resources\12.png" />
     <Content Include="TextFile1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

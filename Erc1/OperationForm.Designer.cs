@@ -357,7 +357,7 @@ namespace ERC
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(205, 38);
             this.Add.TabIndex = 19;
-            this.Add.Clicked += new System.EventHandler(this.Add_Clicked);
+            this.Add.Clicked += new System.EventHandler(this.Home_Clicked);
             // 
             // Settings
             // 
@@ -370,6 +370,7 @@ namespace ERC
             this.Settings.Name = "Settings";
             this.Settings.Size = new System.Drawing.Size(205, 38);
             this.Settings.TabIndex = 20;
+            this.Settings.Clicked += new System.EventHandler(this.Home_Clicked);
             // 
             // Paramadic
             // 
