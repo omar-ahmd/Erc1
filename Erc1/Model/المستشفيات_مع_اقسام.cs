@@ -17,7 +17,6 @@ namespace Erc1.model
         public int رمز_المشفى { get; set; }
         public int رمز_القسم { get; set; }
         public string تحويلة_القسم { get; set; }
-        public Nullable<bool> متاح_او_لا { get; set; }
         public string المبلغ_عن_الموضوع { get; set; }
         public Nullable<short> الطابق { get; set; }
     

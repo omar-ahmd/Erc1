@@ -140,7 +140,8 @@ namespace Erc1.Forms
         bool isFilled =false;
         private void AddMission_Load(object sender, EventArgs e)
         {
-           
+            DataTable d= Classes.hospitals.Get_1أقسام_المستشفى(1);
+            dataGridView1.DataSource = d;
             
 
             var centers = Classes.mission.Get_Centers();

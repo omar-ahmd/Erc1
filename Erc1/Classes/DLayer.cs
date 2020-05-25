@@ -7,6 +7,8 @@ using Erc1.model;
 using System.Collections;
 using System.Data;
 using System.ComponentModel;
+using System.Data.Linq;
+using System.Windows.Documents;
 
 namespace Erc1.Classes
 {
@@ -745,7 +747,7 @@ namespace Erc1.Classes
     }
 
     class hospitals
-        {
+    {
         // get hospital info(column names ="اسم_المستشفى","الرمز","الهاتف")
         public static IEnumerable Get_Info_Hospital(int hospitalID)
         {
@@ -753,12 +755,13 @@ namespace Erc1.Classes
             {
                 var c = (
                 from h in entity.المستشفيات
-                where (h.رمز_المستشفى==hospitalID)
+                where (h.رمز_المستشفى == hospitalID)
                 select new
                 {
-                   h.رمز_المستشفى,
-                   h.اسم_المستشفى,
-                   h.الهاتف
+                    h.رمز_المستشفى,
+                    h.اسم_المستشفى,
+                    h.الهاتف,
+                    h.الملاحظات
                 }
                     ); ;
                 return c.ToList();
@@ -784,6 +787,40 @@ namespace Erc1.Classes
                     ); ;
                 return c.ToList();
             };
+        }
+
+
+        public static DataTable Get_1أقسام_المستشفى(int hospitalID) {
+            
+            using (ERCEntities entity = new ERCEntities())
+            {
+                DataTable dt = new DataTable();
+                var c = (from r in entity.المستشفيات_مع_اقسام.AsEnumerable()
+                         select new
+                         {
+                             الرمز = r.أقسام_المستشفيات.الرمز,
+                             اسم_القسم= r.أقسام_المستشفيات.اسم_القسم,
+                             تحويلة_القسم=  r.تحويلة_القسم,
+                             الطابق=r.الطابق
+                         });
+                         //creating columns
+                    dt.Columns.Add("الرمز", typeof(int));
+                    dt.Columns.Add("اسم_القسم", typeof(string));
+                    dt.Columns.Add("تحويلة_القسم", typeof(string));
+                    dt.Columns.Add("الطابق", typeof(int));
+                DataRow dr;
+                //creating rows
+                foreach (var k in c)
+                {
+                    dr= dt.NewRow();
+                    dr["الرمز"] = k.الرمز;
+                    dr["اسم_القسم"] = k.اسم_القسم;
+                    dr["تحويلة_القسم"] = k.تحويلة_القسم;
+                    dr["الطابق"] =k.الطابق;
+                    dt.Rows.Add(dr);
+                }
+                return dt;
+            }
         }
     }
     

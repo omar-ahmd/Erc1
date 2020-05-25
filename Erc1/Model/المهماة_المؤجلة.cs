@@ -30,15 +30,17 @@ namespace Erc1.model
         public Nullable<int> تفاصيل_ال_الى { get; set; }
         public Nullable<int> رمز_الحالة { get; set; }
         public Nullable<System.DateTime> التاريخ_والوقت { get; set; }
+        public string اسم_المتصل { get; set; }
+        public Nullable<int> رقم_المتصل { get; set; }
     
         public virtual أقسام_المستشفيات أقسام_المستشفيات { get; set; }
         public virtual أقسام_المستشفيات أقسام_المستشفيات1 { get; set; }
         public virtual الحالات الحالات { get; set; }
         public virtual المدن المدن { get; set; }
         public virtual المدن المدن1 { get; set; }
-        public virtual المناطق المناطق { get; set; }
-        public virtual المناطق المناطق1 { get; set; }
         public virtual المستشفيات المستشفيات { get; set; }
         public virtual المستشفيات المستشفيات1 { get; set; }
+        public virtual المناطق المناطق { get; set; }
+        public virtual المناطق المناطق1 { get; set; }
     }
 }
