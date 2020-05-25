@@ -14,12 +14,12 @@ namespace Erc1.Classes
     class mission
     {
 
-        public static DataTable d(int hospital_key) 
+        public static DataTable d(int hospital_key)
         {
             var table = new DataTable();
             using (var entity = new ERCEntities())
-            { 
-                
+            {
+
                 var cmd = entity.Database.Connection.CreateCommand();
                 cmd.CommandText = (@"select kesem.[الرمز] , kesem.[اسم القسم] 
                     from[أقسام المستشفيات] as kesem
@@ -27,7 +27,7 @@ namespace Erc1.Classes
                     on kesem.[الرمز] = hk.[رمز القسم]
                     join[المستشفيات] as hospital
                     on hk.[رمز المشفى] = hospital.[رمز المستشفى]
-                    where hospital.[رمز المستشفى] =" + hospital_key+ "sections");
+                    where hospital.[رمز المستشفى] =" + hospital_key + "sections");
                 cmd.Connection.Open();
                 table.Load(cmd.ExecuteReader());
             }
@@ -38,14 +38,14 @@ namespace Erc1.Classes
         {
             using (var entity = new ERCEntities())
             {
-                
-               var c = (
-             from center in entity.المراكز
-             select new
-             {
+
+                var c = (
+              from center in entity.المراكز
+              select new
+              {
                   center.الرمز
-             }
-                 ); ;
+              }
+                  ); ;
                 return c.ToList();
             };
         }
@@ -119,22 +119,22 @@ namespace Erc1.Classes
 
 
         // get monthlyid 
-        public static int Get_MonthlyID(int year,int month)
+        public static int Get_MonthlyID(int year, int month)
         {
             using (ERCEntities entity = new ERCEntities())
             {
                 int c;
                 try
                 {
-                     c = entity.المهمات_المنفذة
-                       .Where(r => r.التاريخ.Value.Year == year && r.التاريخ.Value.Month == month && r.الرمز_الشهري == entity.المهمات_المنفذة.Max(p => p.الرمز_الشهري))
-                       .Select(r => r.الرمز_الشهري).Single()
-                       ;
+                    c = entity.المهمات_المنفذة
+                      .Where(r => r.التاريخ.Value.Year == year && r.التاريخ.Value.Month == month && r.الرمز_الشهري == entity.المهمات_المنفذة.Max(p => p.الرمز_الشهري))
+                      .Select(r => r.الرمز_الشهري).Single()
+                      ;
                     c += 1;
                 }
-                catch 
+                catch
                 {
-                     c = 1;
+                    c = 1;
                 }
                 return c;
             };
@@ -230,9 +230,9 @@ namespace Erc1.Classes
                 select new
                 {
                     disease.رمز,
-                   المرض = disease.المرض_بالانجليزي + " - " + disease.المرض
+                    المرض = disease.المرض_بالانجليزي + " - " + disease.المرض
                 }
-                    ) ; ;
+                    ); ;
                 return c.ToList();
             };
         }
@@ -243,9 +243,9 @@ namespace Erc1.Classes
             using (var entity = new ERCEntities())
             {
                 var c = entity.الحالات
-                    .Where(r=>r.رمز_النوعية== id_type_of_disease)
+                    .Where(r => r.رمز_النوعية == id_type_of_disease)
                     .Select(r => new { r.رمز,
-                        المرض= r.المرض_بالانجليزي +" - "+r.المرض });
+                        المرض = r.المرض_بالانجليزي + " - " + r.المرض });
                 return c.ToList();
             }
         }
@@ -322,7 +322,7 @@ namespace Erc1.Classes
             {
                 var c = (
                 from staff in entity.العاملون.
-                Where(r => (r.المركز == center_id  && r.مسعف_أو_مساعد==true))
+                Where(r => (r.المركز == center_id && r.مسعف_أو_مساعد == true))
                 select new
                 {
                     staff.الرمز,
@@ -340,7 +340,7 @@ namespace Erc1.Classes
             {
                 var c = (
                 from staff in entity.العاملون.
-                Where(r => (r.المركز == center_id  && r.سائق_أو_لا == true))
+                Where(r => (r.المركز == center_id && r.سائق_أو_لا == true))
                 select new
                 {
                     staff.الرمز,
@@ -397,8 +397,8 @@ namespace Erc1.Classes
                 from p in entity.المرضى
                 select new
                 {
-                   p.الرمز,
-                   p.اسم
+                    p.الرمز,
+                    p.اسم
                 }
                     ); ;
                 return c.ToList();
@@ -411,7 +411,7 @@ namespace Erc1.Classes
         {
             DataLayer dt;
             dt = new DataLayer(@"QSC-2019\SQLEXPRESS", "ERC");
-            string c=dt.GetValue("select الرمز from المرضى where اسم = '" + 
+            string c = dt.GetValue("select الرمز from المرضى where اسم = '" +
                 name + "'").ToString();
             return c;
         }
@@ -439,7 +439,7 @@ namespace Erc1.Classes
             DataLayer dt;
             DataTable city;
             dt = new DataLayer(@"QSC-2019\SQLEXPRESS", "ERC");
-             city = dt.GetData("select * from المدن","city");
+            city = dt.GetData("select * from المدن", "city");
             return city;
         }
 
@@ -450,7 +450,7 @@ namespace Erc1.Classes
             {
                 var c = (
                 from p in entity.المناطق
-                where p.المدينة==city_key
+                where p.المدينة == city_key
                 select new
                 {
                     p.رمز,
@@ -466,8 +466,8 @@ namespace Erc1.Classes
             DataLayer dt;
             DataTable region;
             dt = new DataLayer(@"QSC-2019\SQLEXPRESS", "ERC");
-            region = dt.GetData("select رمز,المنطقة from المناطق where المدينة='"+
-                city_key.ToString()+"'", "region");
+            region = dt.GetData("select رمز,المنطقة from المناطق where المدينة='" +
+                city_key.ToString() + "'", "region");
             return region;
         }
 
@@ -495,18 +495,18 @@ namespace Erc1.Classes
             using (ERCEntities entity = new ERCEntities())
             {
                 short[] c;
-                short c1,c2;
-                    
-                   c1= entity.المستشفيات.
-                  Where(r => r.رمز_المستشفى == hospital_key)
-                  .Select(r => r.الطابق_السفلي).Single().Value;
+                short c1, c2;
+
+                c1 = entity.المستشفيات.
+               Where(r => r.رمز_المستشفى == hospital_key)
+               .Select(r => r.الطابق_السفلي).Single().Value;
                 c2 = entity.المستشفيات.
                   Where(r => r.رمز_المستشفى == hospital_key)
                   .Select(r => r.الطابق_العلوي).Single().Value;
                 c = new short[c2 - c1 + 1];
-                for (short i =0; i <= c2-c1; i++)
+                for (short i = 0; i <= c2 - c1; i++)
                 {
-                    c[i] = (short)(c1 +i);
+                    c[i] = (short)(c1 + i);
                 }
                 return c;
             };
@@ -562,7 +562,7 @@ namespace Erc1.Classes
                     on kesem.[الرمز] = hk.[رمز القسم]
                     join[المستشفيات] as hospital
                     on hk.[رمز المشفى] = hospital.[رمز المستشفى]
-                    where hospital.[رمز المستشفى] ="+hospital_key,"sections");
+                    where hospital.[رمز المستشفى] =" + hospital_key, "sections");
             return sections;
         }
 
@@ -580,7 +580,7 @@ namespace Erc1.Classes
              {
                  doctors.رمز,
                  doctors.اسم
-             });;
+             }); ;
                 return c.ToList();
             }
         }
@@ -637,7 +637,7 @@ namespace Erc1.Classes
         }
 
 
- 
+
 
 
 
@@ -742,57 +742,49 @@ namespace Erc1.Classes
 
         }
 
+    }
 
-
-
-
-
-
-        public static void AddMission(int الرمز_الشهري, DateTime التاريخ, int الآلية, int المريض, Nullable<int> من_مشفى, Nullable<int> من_القسم, Nullable<int> الطبيب_المعالج,
-             Nullable<int> الجهة_الضامنة, Nullable<int> إلى_مشفى, Nullable<int> إلى_القسم, int مسؤول_المهمة, int مسعف_1, int مسعف_2,
-            int السائق, int الهاتف, Nullable<int> متلقي_المهمة, int رمز_الحالة, int رمز_السنوي,
-            int السنة, string تفاصيل_ال_من, string تفاصيل_ال_الى, Nullable<int> من_رمز_المدينة, Nullable<int> من_رمز_المنطقة,
-            Nullable<int> الى_رمز_المدينة, Nullable<int> الى_رمز_المنطقة, string التفاصيل, string اسم_المتصل,
-            int طبيعة_المهمة, int رمز__المركز)
+    class hospitals
         {
-            using (ERCEntities entity = new model.ERCEntities())
+        // get hospital info(column names ="اسم_المستشفى","الرمز","الهاتف")
+        public static IEnumerable Get_Info_Hospital(int hospitalID)
+        {
+            using (ERCEntities entity = new ERCEntities())
             {
-                المهمات_المنفذة newmission = new المهمات_المنفذة()
+                var c = (
+                from h in entity.المستشفيات
+                where (h.رمز_المستشفى==hospitalID)
+                select new
                 {
-                    الرمز_الشهري = الرمز_الشهري,
-                    التاريخ = التاريخ,
-                    الآلية = الآلية,
-                    المريض = المريض,
-                    من_مشفى = من_مشفى,
-                    من_القسم = من_القسم,
-                    الطبيب_المعالج = الطبيب_المعالج,
-                    الجهة_الضامنة = الجهة_الضامنة,
-                    إلى_مشفى = إلى_مشفى,
-                    إلى_القسم = إلى_القسم,
-                    مسؤول_المهمة = مسؤول_المهمة,
-                    مسعف_1 = مسعف_1,
-                    مسعف_2 = مسعف_2,
-                    السائق = السائق,
-                    الهاتف = الهاتف,
-                    متلقي_المهمة = متلقي_المهمة,
-                    رمز_السنوي = رمز_السنوي,
-                    السنة = السنة,
-                    تفاصيل_ال_من = تفاصيل_ال_من,
-                    تفاصيل_ال_الى = تفاصيل_ال_الى,
-                    من_رمز_المدينة = من_رمز_المدينة,
-                    من_رمز_المنطقة = من_رمز_المنطقة,
-                    الى_رمز_المدينة = الى_رمز_المدينة,
-                    الى_رمز_المنطقة = الى_رمز_المنطقة,
-                    التفاصيل = التفاصيل,
-                    اسم_المتصل = اسم_المتصل,
-                    طبيعة_المهمة = طبيعة_المهمة,
-                    رمز__المركز = رمز__المركز
-                };
-                entity.المهمات_المنفذة.Add(newmission);
-                entity.SaveChanges();
+                   h.رمز_المستشفى,
+                   h.اسم_المستشفى,
+                   h.الهاتف
+                }
+                    ); ;
+                return c.ToList();
             };
         }
 
+
+        // get  أقسام المستشفى(column names ="اسم_القسم","الرمز","تحويلة_القسم","الطابق")
+        public static IEnumerable Get_أقسام_المستشفى(int hospitalID)
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from h in entity.المستشفيات_مع_اقسام
+                where (h.رمز_المشفى == hospitalID)
+                select new
+                {
+                    h.أقسام_المستشفيات.الرمز,
+                    h.أقسام_المستشفيات.اسم_القسم,
+                    h.تحويلة_القسم,
+                    h.الطابق
+                }
+                    ); ;
+                return c.ToList();
+            };
+        }
     }
     
 }
