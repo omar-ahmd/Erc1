@@ -672,8 +672,9 @@ namespace Erc1.Classes
     class Hospital
     {
         // get hospital info(column names ="اسم_المستشفى","الرمز","الهاتف","الملاحظات")
-        public static IEnumerable Get_Info_Hospital(int hospitalID)
+        public static DataTable Get_Info_Hospital(int hospitalID)
         {
+            DataTable dt = new DataTable();
             using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
@@ -686,8 +687,23 @@ namespace Erc1.Classes
                     h.الهاتف,
                     h.الملاحظات
                 }
-                    ); ;
-                return c.ToList();
+                    ); //creating columns
+                dt.Columns.Add("رمز_المستشفى", typeof(int));
+                dt.Columns.Add("اسم_المستشفى", typeof(string));
+                dt.Columns.Add("الهاتف", typeof(string));
+                dt.Columns.Add("الملاحظات", typeof(string));
+                DataRow dr;
+                //creating rows
+                foreach (var k in c)
+                {
+                    dr = dt.NewRow();
+                    dr["رمز_المستشفى"] = k.الرمز;
+                    dr["اسم_المستشفى"] = k.اسم_القسم;
+                    dr["الهاتف"] = k.تحويلة_القسم;
+                    dr["الملاحظات"] = k.الطابق;
+                    dt.Rows.Add(dr);
+                }
+                return dt;
             };
         }
 
