@@ -139,7 +139,7 @@
 
 
         // get hospital info(column names ="اسم_المستشفى","الرمز","الهاتف","الملاحظات")
-        Get_Info_Hospital(int hospitalID)
+        Get_Info_Hospital()
 
 
         // get  أقسام المستشفى(column names ="اسم_القسم","الرمز","تحويلة_القسم","الطابق")

@@ -672,14 +672,13 @@ namespace Erc1.Classes
     class Hospital
     {
         // get hospital info(column names ="اسم_المستشفى","الرمز","الهاتف","الملاحظات")
-        public static DataTable Get_Info_Hospital(int hospitalID)
+        public static DataTable Get_Info_Hospital()
         {
             DataTable dt = new DataTable();
             using (ERCEntities entity = new ERCEntities())
             {
                 var c = (
                 from h in entity.المستشفيات
-                where (h.رمز_المستشفى == hospitalID)
                 select new
                 {
                     h.رمز_المستشفى,
