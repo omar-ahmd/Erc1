@@ -322,21 +322,6 @@ namespace Erc1.Classes
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         // get المرضى names(column names ="اسم","الرمز")
         public static IEnumerable Get_المرضى()
         {
@@ -427,6 +412,8 @@ namespace Erc1.Classes
              {
                  sections_id = h_s.أقسام_المستشفيات.الرمز,
                  sections_name = h_s.أقسام_المستشفيات.اسم_القسم
+                
+
              });
                 return c.ToList();
             }

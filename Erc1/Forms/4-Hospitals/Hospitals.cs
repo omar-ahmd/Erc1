@@ -45,6 +45,7 @@ namespace Erc1.Forms._4_Hospitals
         public Hospitals()
         {
             InitializeComponent();
+
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -70,6 +71,11 @@ namespace Erc1.Forms._4_Hospitals
                 HosPages++;
             }
             
+        }
+
+        private void Hospitals_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

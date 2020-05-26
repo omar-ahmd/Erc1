@@ -33,8 +33,8 @@ namespace Erc1.CONTROLS
             }
             set 
             {
-                hosID = value; 
-
+                hosID = value;
+                textBox1.Text = "ff";
             }
         }
 
