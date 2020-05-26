@@ -99,7 +99,7 @@ namespace Erc1.Forms._4_Hospitals
             // 
             // _1
             // 
-            this._1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this._1.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._1, "_1");
             this._1.HosID = 1;
             this._1.Hosstatus = Erc1.CONTROLS.HosStatus.Available;

@@ -151,6 +151,7 @@
           <Property Name="رمز المنطقة" Type="int" />
           <Property Name="الطابق السفلي" Type="smallint" />
           <Property Name="الطابق العلوي" Type="smallint" />
+          <Property Name="الملاحظات" Type="nvarchar" MaxLength="40" />
         </EntityType>
         <EntityType Name="المستشفيات مع اقسام">
           <Key>
@@ -160,7 +161,6 @@
           <Property Name="رمز المشفى" Type="int" Nullable="false" />
           <Property Name="رمز القسم" Type="int" Nullable="false" />
           <Property Name="تحويلة القسم" Type="nchar" MaxLength="10" />
-          <Property Name="متاح او لا" Type="bit" />
           <Property Name="المبلغ عن الموضوع" Type="nchar" MaxLength="20" />
           <Property Name="الطابق" Type="smallint" />
         </EntityType>
@@ -193,6 +193,8 @@
           <Property Name="تفاصيل ال الى" Type="int" />
           <Property Name="رمز الحالة" Type="int" />
           <Property Name="التاريخ والوقت" Type="datetime" />
+          <Property Name="اسم المتصل" Type="nvarchar" MaxLength="30" />
+          <Property Name="رقم المتصل" Type="int" />
         </EntityType>
         <EntityType Name="المهمات الملغاة">
           <Key>
@@ -1564,6 +1566,7 @@
           <Property Name="رمز_المنطقة" Type="Int32" />
           <Property Name="الطابق_السفلي" Type="Int16" />
           <Property Name="الطابق_العلوي" Type="Int16" />
+          <Property Name="الملاحظات" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="الأطباء" Relationship="Self.FK_الأطباء_ToTable_المستشفيات" FromRole="المستشفيات" ToRole="الأطباء" />
           <NavigationProperty Name="المدن" Relationship="Self.FK_المستشفيات_ToTableالمدينة" FromRole="المستشفيات" ToRole="المدن" />
           <NavigationProperty Name="المستشفيات_مع_اقسام" Relationship="Self.FK_المستشفيات_مع_اقسام_ToTableالمستشفيات" FromRole="المستشفيات" ToRole="المستشفيات_مع_اقسام" />
@@ -1583,7 +1586,6 @@
           <Property Name="رمز_المشفى" Type="Int32" Nullable="false" />
           <Property Name="رمز_القسم" Type="Int32" Nullable="false" />
           <Property Name="تحويلة_القسم" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="متاح_او_لا" Type="Boolean" />
           <Property Name="المبلغ_عن_الموضوع" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="الطابق" Type="Int16" />
           <NavigationProperty Name="أقسام_المستشفيات" Relationship="Self.FK_المستشفيات_مع_اقسام_ToTableأقسام_المستشفيات" FromRole="المستشفيات_مع_اقسام" ToRole="أقسام_المستشفيات" />
@@ -1629,6 +1631,8 @@
           <Property Name="تفاصيل_ال_الى" Type="Int32" />
           <Property Name="رمز_الحالة" Type="Int32" />
           <Property Name="التاريخ_والوقت" Type="DateTime" Precision="3" />
+          <Property Name="اسم_المتصل" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="رقم_المتصل" Type="Int32" />
           <NavigationProperty Name="أقسام_المستشفيات" Relationship="Self.FK_المهمات_المؤجلة_ToTableالمستشفيات1" FromRole="المهماة_المؤجلة" ToRole="أقسام_المستشفيات" />
           <NavigationProperty Name="أقسام_المستشفيات1" Relationship="Self.FK_المهمات_المؤجلة_ToTableالمستشفيات2" FromRole="المهماة_المؤجلة" ToRole="أقسام_المستشفيات" />
           <NavigationProperty Name="الحالات" Relationship="Self.FK_المهمات_المؤجلة_ToTableالحالات" FromRole="المهماة_المؤجلة" ToRole="الحالات" />
@@ -3002,6 +3006,7 @@
                 <ScalarProperty Name="رمز_المنطقة" ColumnName="رمز المنطقة" />
                 <ScalarProperty Name="الطابق_السفلي" ColumnName="الطابق السفلي" />
                 <ScalarProperty Name="الطابق_العلوي" ColumnName="الطابق العلوي" />
+                <ScalarProperty Name="الملاحظات" ColumnName="الملاحظات" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3011,7 +3016,6 @@
                 <ScalarProperty Name="رمز_المشفى" ColumnName="رمز المشفى" />
                 <ScalarProperty Name="رمز_القسم" ColumnName="رمز القسم" />
                 <ScalarProperty Name="تحويلة_القسم" ColumnName="تحويلة القسم" />
-                <ScalarProperty Name="متاح_او_لا" ColumnName="متاح او لا" />
                 <ScalarProperty Name="المبلغ_عن_الموضوع" ColumnName="المبلغ عن الموضوع" />
                 <ScalarProperty Name="الطابق" ColumnName="الطابق" />
               </MappingFragment>
@@ -3045,6 +3049,8 @@
                 <ScalarProperty Name="تفاصيل_ال_الى" ColumnName="تفاصيل ال الى" />
                 <ScalarProperty Name="رمز_الحالة" ColumnName="رمز الحالة" />
                 <ScalarProperty Name="التاريخ_والوقت" ColumnName="التاريخ والوقت" />
+                <ScalarProperty Name="اسم_المتصل" ColumnName="اسم المتصل" />
+                <ScalarProperty Name="رقم_المتصل" ColumnName="رقم المتصل" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

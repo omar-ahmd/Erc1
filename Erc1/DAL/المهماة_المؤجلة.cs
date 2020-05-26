@@ -30,6 +30,8 @@ namespace Erc1.DAL
         public Nullable<int> تفاصيل_ال_الى { get; set; }
         public Nullable<int> رمز_الحالة { get; set; }
         public Nullable<System.DateTime> التاريخ_والوقت { get; set; }
+        public string اسم_المتصل { get; set; }
+        public Nullable<int> رقم_المتصل { get; set; }
     
         public virtual أقسام_المستشفيات أقسام_المستشفيات { get; set; }
         public virtual أقسام_المستشفيات أقسام_المستشفيات1 { get; set; }

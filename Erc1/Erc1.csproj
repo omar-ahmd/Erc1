@@ -442,6 +442,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BAL\functions.txt" />
+    <None Include="Resources\1.png" />
+    <None Include="Resources\11.png" />
+    <None Include="Resources\1 - Copy.png" />
+    <None Include="Resources\12.png" />
     <Content Include="DAL\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -452,10 +456,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\1.png" />
-    <None Include="Resources\11.png" />
-    <None Include="Resources\1 - Copy.png" />
-    <None Include="Resources\12.png" />
     <Content Include="TextFile1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

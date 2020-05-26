@@ -19,9 +19,7 @@ namespace Erc1.CONTROLS
     }
     public partial class HospitalControlcs : UserControl
     {
-        public event EventHandler HosIDChanged;
-        //public HospitalInfo (new form)
-        //public Hospital(BAL) TO GET ACCSESS TO HOPITAL DATA
+        public event EventHandler HosStatusChanged, HosIDChanged;
 
 
         private int hosID;
@@ -34,10 +32,16 @@ namespace Erc1.CONTROLS
             set 
             {
                 hosID = value;
-                textBox1.Text = "ff";
+                HosIDChanged += HospitalControlcs_HosIDChanged;
+                HosIDChanged.Invoke(this, EventArgs.Empty);
+
             }
         }
 
+        private void HospitalControlcs_HosIDChanged(object sender, EventArgs e)
+        {
+            label1.Text = "H" + HosID;
+        }
 
         public HospitalControlcs()
         {
@@ -56,26 +60,49 @@ namespace Erc1.CONTROLS
             set 
             {
                 hosstatus = value;
-                HosIDChanged += HospitalControlcs_HosIDChanged;
-                HosIDChanged.Invoke(this, EventArgs.Empty);
+                HosStatusChanged += HospitalControlcs_HosStatusChanged;
+                HosStatusChanged.Invoke(this, EventArgs.Empty);
                  
             }
         }
 
-        private void HospitalControlcs_HosIDChanged(object sender, EventArgs e)
+        private void HospitalControlcs_HosStatusChanged(object sender, EventArgs e)
         {
             //GetHos(int ID) we should get id/name/number/available or not/Notes/Departements/ext/
             //add info into this user control and into this HopitalsInfo Form
+            
+            switch (Hosstatus)
+            {
+                case HosStatus.Available:
+                    {
+                        
+                        textBox1.Text = "";
+                        textBox1.ReadOnly = true;
+                        textBox1.BackColor = Color.FromArgb(109, 184, 127);
+                        break;
+                    }
+                case HosStatus.Busy:
+                    {
+                        textBox1.Text = "";
+                        textBox1.ReadOnly = true;
+                        textBox1.BackColor = Color.FromArgb(222, 54, 67);
+                        break;
+                    }
+                case HosStatus.AvailBusy:
+                    {
+                        textBox1.ReadOnly = false;
+                        textBox1.BackColor = Color.FromArgb(241, 149, 98);
+                        break;
+                    }
+                default:
+                    {
+                        break;
+                    }
+            }
 
-            HosIDChanged -= HospitalControlcs_HosIDChanged;
+
+            HosStatusChanged -= HospitalControlcs_HosStatusChanged;
         }
-
-        private void textBox1_Click(object sender, EventArgs e)
-        {
-            MouseEventArgs me=(MouseEventArgs) e;
-            if (me.Button == System.Windows.Forms.MouseButtons.Right){ MessageBox.Show("kk"); }
-        }
-
         private void textBox1_MouseClick(object sender, MouseEventArgs e)
         {
 
@@ -87,24 +114,16 @@ namespace Erc1.CONTROLS
                     case HosStatus.Available:
                         {
                             Hosstatus = HosStatus.Busy;
-                            textBox1.Text = "";
-                            textBox1.ReadOnly = true;
-                            textBox1.BackColor = Color.FromArgb(222,54,67);
                             break;
                         }
                     case HosStatus.Busy:
                         {
                             Hosstatus = HosStatus.AvailBusy;
-                            textBox1.ReadOnly = false;
-                            textBox1.BackColor = Color.FromArgb(241,149,98);
                             break;
                         }
                     case HosStatus.AvailBusy:
                         {
                             Hosstatus = HosStatus.Available;
-                            textBox1.Text = "";
-                            textBox1.ReadOnly = true;
-                            textBox1.BackColor = Color.FromArgb(109, 184, 127);
                             break;
                         }
                     default:
@@ -115,12 +134,6 @@ namespace Erc1.CONTROLS
 
             }
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void HospitalName_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Hospital Form");

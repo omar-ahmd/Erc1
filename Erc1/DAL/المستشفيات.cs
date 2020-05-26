@@ -35,6 +35,7 @@ namespace Erc1.DAL
         public Nullable<int> رمز_المنطقة { get; set; }
         public Nullable<short> الطابق_السفلي { get; set; }
         public Nullable<short> الطابق_العلوي { get; set; }
+        public string الملاحظات { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<الأطباء> الأطباء { get; set; }

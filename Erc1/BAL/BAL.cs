@@ -1489,5 +1489,14 @@ namespace Erc1.BAL
 
 		}
 
+		public static DataTable GetHospitals()
+		{
+			return Erc1.Classes.Hospital.Get_Info_Hospital();
+		}
+		public static DataTable GetDepartement(int HosID)
+		{
+			return Erc1.Classes.Hospital.Get_أقسام_المستشفى(HosID);
+		}
+
 	}	
 }

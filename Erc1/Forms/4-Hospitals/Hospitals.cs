@@ -3,6 +3,7 @@ using Erc1.Classes;
 using Erc1.CONTROLS;
 using System;
 using System.Collections;
+using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
@@ -72,10 +73,26 @@ namespace Erc1.Forms._4_Hospitals
             }
             
         }
-
+        DataTable Hosdt;
+        
         private void Hospitals_Load(object sender, EventArgs e)
         {
-
+            Hosdt = Hospital.Get_Info_Hospital();
+            int hosnumb = Hosdt.Rows.Count;
+            for (int i = 0; i < hosnumb; i++)
+            {
+                HospitalControlcs h = (HospitalControlcs)tableLayoutPanel1.Controls["_" + (i + 1).ToString()];
+                h.HosID = int.Parse(Hosdt.Rows[i]["رمز_المستشفى"].ToString());
+                h.HospitalName.Text = Hosdt.Rows[i]["اسم_المستشفى"].ToString();
+                if(h.textBox1.Text!= "")
+                {
+                    h.Hosstatus = HosStatus.AvailBusy;
+                }
+                else
+                {
+                    h.Hosstatus = HosStatus.Available;
+                }
+            }
         }
     }
 }
