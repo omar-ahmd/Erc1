@@ -135,6 +135,22 @@
 
 
 
+        //////// HOSPITAL FORM   //////////
+
+
+        // get hospital info(column names ="اسم_المستشفى","الرمز","الهاتف","الملاحظات")
+        Get_Info_Hospital(int hospitalID)
+
+
+        // get  أقسام المستشفى(column names ="اسم_القسم","الرمز","تحويلة_القسم","الطابق")
+        DataTable Get_أقسام_المستشفى(int hospitalID)
+
+
+
+
+
+
+
         requests:
         -Get_المناطق_by_idالمدن
         -Get_infectious_case

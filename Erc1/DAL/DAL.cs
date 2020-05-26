@@ -668,4 +668,66 @@ namespace Erc1.Classes
 
 
     }
+
+    class Hospital
+    {
+        // get hospital info(column names ="اسم_المستشفى","الرمز","الهاتف","الملاحظات")
+        public static IEnumerable Get_Info_Hospital(int hospitalID)
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from h in entity.المستشفيات
+                where (h.رمز_المستشفى == hospitalID)
+                select new
+                {
+                    h.رمز_المستشفى,
+                    h.اسم_المستشفى,
+                    h.الهاتف,
+                    h.الملاحظات
+                }
+                    ); ;
+                return c.ToList();
+            };
+        }
+
+
+        // get  أقسام المستشفى(column names ="اسم_القسم","الرمز","تحويلة_القسم","الطابق")
+
+        public static DataTable Get_أقسام_المستشفى(int hospitalID)
+        {
+
+            using (ERCEntities entity = new ERCEntities())
+            {
+                DataTable dt = new DataTable();
+                var c = (from r in entity.المستشفيات_مع_اقسام.AsEnumerable()
+                         select new
+                         {
+                             الرمز = r.أقسام_المستشفيات.الرمز,
+                             اسم_القسم = r.أقسام_المستشفيات.اسم_القسم,
+                             تحويلة_القسم = r.تحويلة_القسم,
+                             الطابق = r.الطابق
+                         });
+                //creating columns
+                dt.Columns.Add("الرمز", typeof(int));
+                dt.Columns.Add("اسم_القسم", typeof(string));
+                dt.Columns.Add("تحويلة_القسم", typeof(string));
+                dt.Columns.Add("الطابق", typeof(int));
+                DataRow dr;
+                //creating rows
+                foreach (var k in c)
+                {
+                    dr = dt.NewRow();
+                    dr["الرمز"] = k.الرمز;
+                    dr["اسم_القسم"] = k.اسم_القسم;
+                    dr["تحويلة_القسم"] = k.تحويلة_القسم;
+                    dr["الطابق"] = k.الطابق;
+                    dt.Rows.Add(dr);
+                }
+                return dt;
+            }
+        }
+
+
+    }
 }
