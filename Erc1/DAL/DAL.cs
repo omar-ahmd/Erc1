@@ -671,13 +671,15 @@ namespace Erc1.Classes
                     h.رمز_المستشفى,
                     h.اسم_المستشفى,
                     h.الهاتف,
-                    h.الملاحظات
+                    h.الملاحظات,
+                    h.الحالة
                 }
                     ); //creating columns
                 dt.Columns.Add("رمز_المستشفى", typeof(int));
                 dt.Columns.Add("اسم_المستشفى", typeof(string));
                 dt.Columns.Add("الهاتف", typeof(string));
                 dt.Columns.Add("الملاحظات", typeof(string));
+                dt.Columns.Add("الحالة", typeof(string));
                 DataRow dr;
                 //creating rows
                 foreach (var k in c)
@@ -687,6 +689,7 @@ namespace Erc1.Classes
                     dr["اسم_المستشفى"] = k.اسم_المستشفى;
                     dr["الهاتف"] = k.الهاتف;
                     dr["الملاحظات"] = k.الملاحظات;
+                    dr["الحالة"] = k.الحالة;
                     dt.Rows.Add(dr);
                 }
                 return dt;

@@ -138,7 +138,7 @@
         //////// HOSPITAL FORM   //////////
 
 
-        // get hospital info(column names ="اسم_المستشفى","الرمز","الهاتف","الملاحظات")
+        // get hospital info(column names ="اسم_المستشفى","الرمز","الهاتف","الملاحظات","الحالة")
         Get_Info_Hospital()
 
 
