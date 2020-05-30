@@ -328,7 +328,16 @@ namespace Erc1.CONTROLS
                 done = add.ImportInfo(LoginForm.of.dm);
                 if (done)
                 {
+                    if (add.SaveDelayedMission())
+                    {
 
+                        LoginForm.of.im.Dispose();
+                        LoginForm.of.Sfab_DelClicked(0, EventArgs.Empty);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR");
+                    }
                 }
             }
             else

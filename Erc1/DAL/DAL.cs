@@ -698,7 +698,6 @@ namespace Erc1.Classes
 
 
         // get  أقسام المستشفى(column names ="اسم_القسم","الرمز","تحويلة_القسم","الطابق")
-
         public static DataTable Get_أقسام_المستشفى(int hospitalID)
         {
 

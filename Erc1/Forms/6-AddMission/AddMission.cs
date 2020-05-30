@@ -161,7 +161,6 @@ namespace Erc1.Forms
         private void AddMission_Load(object sender, EventArgs e)
         {
 
-
             BAL.addMission.FillAddMissionForm(this);
             Case.SelectedValueChanged += Case_SelectedValueChanged;
             

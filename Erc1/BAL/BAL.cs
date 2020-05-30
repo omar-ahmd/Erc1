@@ -16,6 +16,7 @@ using System.Threading;
 using System.Reflection;
 using Erc1.CONTROLS;
 using Erc1.Classes;
+using System.Runtime.CompilerServices;
 
 namespace Erc1.BAL
 {
@@ -226,16 +227,48 @@ namespace Erc1.BAL
 		public bool SaveDelayedMission()
 		{
 			DMission = new المهماة_المؤجلة();
-			Mission.رمز__المركز = centerID;
-			Mission.الرمز_الشهري = MonthlyID;
-			Mission.رمز_السنوي = AnnualID;
-			Mission.الآلية = carID;
-			Mission.التاريخ = Date;
-			// cases and casetype
-			Mission.طبيعة_المهمة = MissionTypeID;
-			Mission.التفاصيل = MoreInfoAboutCase;
+			DMission.رمز_المركز = centerID;
+			//car
+			//mission type
+			DMission.رمز = MonthlyID;
+			DMission.التاريخ_والوقت = Date;
+			//case type
+			//case
+			// تفاصيل الحالة
+			//patient id
+			//patient name
+			//can sit
+			//from
+			//to
+			//caller  phone
+			//caller name
+
+
+
+
+
 
 			PatientInfo.SaveInfo(DMission);
+
+			DataTable cas = new DataTable();
+			cas.Clear();
+			cas.Columns.Add("رمز_الحالة");
+			cas.Columns.Add("الرمز_الشهري");
+			cas.Columns.Add("رمز_السنوي");
+			cas.Columns.Add("السنة");
+
+
+			DataRow dr;
+			foreach (DataRow row in Case.Rows)
+			{
+				dr = cas.NewRow();
+				dr["رمز_الحالة"] = row["ID"];
+				dr["الرمز_الشهري"] = MonthlyID;
+				dr["رمز_السنوي"] = AnnualID;
+				dr["السنة"] = Date.Year;
+				cas.Rows.Add(dr);
+			}
+
 
 			return mission.add_Mission(DMission);
 
@@ -407,20 +440,37 @@ namespace Erc1.BAL
 				ImportCasesType = new Thread(() => { casetype = addMission.Get_CasesType(); });
 				ImportCenter = new Thread(() => { centers = addMission.Get_centers(); });
 				ImportCases = new Thread(() => { Cases = addMission.GetCases(); });
-				ImportMonthlyID = new Thread(() => { MonthlyId = GetMonthlyID(DateTime.Now.Year, DateTime.Now.Month); });
-				ImportAnnualId = new Thread(() => { annualid = GetAnuualID(DateTime.Now.Year); });
+
+				if (addm.MissionTy == Forms.MissionType.Implemented)
+				{
+					ImportMonthlyID = new Thread(() => { MonthlyId = GetMonthlyID(DateTime.Now.Year, DateTime.Now.Month); });
+					ImportAnnualId = new Thread(() => { annualid = GetAnuualID(DateTime.Now.Year); });
+					ImportMonthlyID.Start();
+					ImportAnnualId.Start();
+					ImportMonthlyID.Join();
+					ImportAnnualId.Join();
+					addm.MonthlyID.Text = MonthlyId.ToString();
+					addm.AnnualID.Text = annualid.ToString();
+				}
+				else if(addm.MissionTy == Forms.MissionType.Dlayed)
+				{
+
+				}
+				else if(addm.MissionTy == Forms.MissionType.Canceled)
+				{
+
+				}
+
 
 				ImportCasesType.Start();
 				ImportCenter.Start();
 				ImportCases.Start();
-				ImportMonthlyID.Start();
-				ImportAnnualId.Start();
+				
 
 				ImportCasesType.Join();
 				ImportCenter.Join();
 				ImportCases.Join();
-				ImportMonthlyID.Join();
-				ImportAnnualId.Join();
+				
 
 
 
@@ -433,8 +483,7 @@ namespace Erc1.BAL
 
 				MyFunction.FillComboBox(addm.Case, Cases, "المرض", "رمز");
 
-				addm.MonthlyID.Text = MonthlyId.ToString();
-				addm.AnnualID.Text = annualid.ToString();
+				
 
 
 
@@ -856,9 +905,9 @@ namespace Erc1.BAL
 			{
 				Mission.إلى_مشفى = ToHospitalID;
 				Mission.إلى_القسم = ToDepatementID;
-			}*/
+			}
 
-
+			*/
 
 
 			return true;

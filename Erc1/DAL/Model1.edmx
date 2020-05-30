@@ -151,7 +151,8 @@
           <Property Name="رمز المنطقة" Type="int" />
           <Property Name="الطابق السفلي" Type="smallint" />
           <Property Name="الطابق العلوي" Type="smallint" />
-          <Property Name="الملاحظات" Type="nvarchar" MaxLength="40" />
+          <Property Name="الملاحظات" Type="nvarchar(max)" />
+          <Property Name="الحالة" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="المستشفيات مع اقسام">
           <Key>
@@ -1566,7 +1567,8 @@
           <Property Name="رمز_المنطقة" Type="Int32" />
           <Property Name="الطابق_السفلي" Type="Int16" />
           <Property Name="الطابق_العلوي" Type="Int16" />
-          <Property Name="الملاحظات" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="الملاحظات" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="الحالة" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="الأطباء" Relationship="Self.FK_الأطباء_ToTable_المستشفيات" FromRole="المستشفيات" ToRole="الأطباء" />
           <NavigationProperty Name="المدن" Relationship="Self.FK_المستشفيات_ToTableالمدينة" FromRole="المستشفيات" ToRole="المدن" />
           <NavigationProperty Name="المستشفيات_مع_اقسام" Relationship="Self.FK_المستشفيات_مع_اقسام_ToTableالمستشفيات" FromRole="المستشفيات" ToRole="المستشفيات_مع_اقسام" />
@@ -3007,6 +3009,7 @@
                 <ScalarProperty Name="الطابق_السفلي" ColumnName="الطابق السفلي" />
                 <ScalarProperty Name="الطابق_العلوي" ColumnName="الطابق العلوي" />
                 <ScalarProperty Name="الملاحظات" ColumnName="الملاحظات" />
+                <ScalarProperty Name="الحالة" ColumnName="الحالة" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

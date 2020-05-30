@@ -96,13 +96,14 @@ namespace Erc1.Forms._4_Hospitals
             resources.ApplyResources(this.Up, "Up");
             this.Up.Name = "Up";
             this.Up.UseVisualStyleBackColor = false;
+            this.Up.Click += new System.EventHandler(this.Up_Click);
             // 
             // _1
             // 
             this._1.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._1, "_1");
             this._1.HosID = 1;
-            this._1.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._1.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._1.Name = "_1";
             // 
             // _2
@@ -110,7 +111,7 @@ namespace Erc1.Forms._4_Hospitals
             this._2.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._2, "_2");
             this._2.HosID = 2;
-            this._2.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._2.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._2.Name = "_2";
             // 
             // _4
@@ -118,7 +119,7 @@ namespace Erc1.Forms._4_Hospitals
             this._4.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._4, "_4");
             this._4.HosID = 4;
-            this._4.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._4.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._4.Name = "_4";
             // 
             // _3
@@ -126,7 +127,7 @@ namespace Erc1.Forms._4_Hospitals
             this._3.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._3, "_3");
             this._3.HosID = 3;
-            this._3.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._3.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._3.Name = "_3";
             // 
             // _6
@@ -134,7 +135,7 @@ namespace Erc1.Forms._4_Hospitals
             this._6.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._6, "_6");
             this._6.HosID = 6;
-            this._6.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._6.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._6.Name = "_6";
             // 
             // _5
@@ -142,7 +143,7 @@ namespace Erc1.Forms._4_Hospitals
             this._5.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._5, "_5");
             this._5.HosID = 5;
-            this._5.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._5.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._5.Name = "_5";
             // 
             // _8
@@ -150,7 +151,7 @@ namespace Erc1.Forms._4_Hospitals
             this._8.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._8, "_8");
             this._8.HosID = 8;
-            this._8.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._8.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._8.Name = "_8";
             // 
             // _7
@@ -158,7 +159,7 @@ namespace Erc1.Forms._4_Hospitals
             this._7.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._7, "_7");
             this._7.HosID = 7;
-            this._7.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._7.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._7.Name = "_7";
             // 
             // _10
@@ -166,7 +167,7 @@ namespace Erc1.Forms._4_Hospitals
             this._10.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._10, "_10");
             this._10.HosID = 10;
-            this._10.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._10.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._10.Name = "_10";
             // 
             // _9
@@ -174,7 +175,7 @@ namespace Erc1.Forms._4_Hospitals
             this._9.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._9, "_9");
             this._9.HosID = 9;
-            this._9.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._9.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._9.Name = "_9";
             // 
             // _12
@@ -182,7 +183,7 @@ namespace Erc1.Forms._4_Hospitals
             this._12.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._12, "_12");
             this._12.HosID = 12;
-            this._12.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._12.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._12.Name = "_12";
             // 
             // _11
@@ -190,7 +191,7 @@ namespace Erc1.Forms._4_Hospitals
             this._11.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._11, "_11");
             this._11.HosID = 11;
-            this._11.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._11.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._11.Name = "_11";
             // 
             // _14
@@ -198,7 +199,7 @@ namespace Erc1.Forms._4_Hospitals
             this._14.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._14, "_14");
             this._14.HosID = 14;
-            this._14.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._14.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._14.Name = "_14";
             // 
             // _13
@@ -206,7 +207,7 @@ namespace Erc1.Forms._4_Hospitals
             this._13.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._13, "_13");
             this._13.HosID = 13;
-            this._13.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._13.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._13.Name = "_13";
             // 
             // _16
@@ -214,7 +215,7 @@ namespace Erc1.Forms._4_Hospitals
             this._16.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._16, "_16");
             this._16.HosID = 16;
-            this._16.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._16.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._16.Name = "_16";
             // 
             // _15
@@ -222,7 +223,7 @@ namespace Erc1.Forms._4_Hospitals
             this._15.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._15, "_15");
             this._15.HosID = 15;
-            this._15.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._15.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._15.Name = "_15";
             // 
             // _18
@@ -230,7 +231,7 @@ namespace Erc1.Forms._4_Hospitals
             this._18.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._18, "_18");
             this._18.HosID = 18;
-            this._18.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._18.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._18.Name = "_18";
             // 
             // _17
@@ -238,7 +239,7 @@ namespace Erc1.Forms._4_Hospitals
             this._17.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._17, "_17");
             this._17.HosID = 17;
-            this._17.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._17.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._17.Name = "_17";
             // 
             // _20
@@ -246,7 +247,7 @@ namespace Erc1.Forms._4_Hospitals
             this._20.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._20, "_20");
             this._20.HosID = 20;
-            this._20.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._20.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._20.Name = "_20";
             // 
             // _19
@@ -254,7 +255,7 @@ namespace Erc1.Forms._4_Hospitals
             this._19.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._19, "_19");
             this._19.HosID = 19;
-            this._19.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._19.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._19.Name = "_19";
             // 
             // _22
@@ -262,7 +263,7 @@ namespace Erc1.Forms._4_Hospitals
             this._22.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._22, "_22");
             this._22.HosID = 22;
-            this._22.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._22.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._22.Name = "_22";
             // 
             // _21
@@ -270,7 +271,7 @@ namespace Erc1.Forms._4_Hospitals
             this._21.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this._21, "_21");
             this._21.HosID = 21;
-            this._21.Hosstatus = Erc1.CONTROLS.HosStatus.Available;
+            this._21.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._21.Name = "_21";
             // 
             // Down

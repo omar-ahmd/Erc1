@@ -174,6 +174,8 @@ namespace ERC
         }
 
         Erc1.Forms._4_Hospitals.Hospitals h;
+
+
         private void S_HosClicked(object sender, EventArgs e)
         {
             
@@ -190,7 +192,6 @@ namespace ERC
             }
             h.Show();
         }
-
         private void S_AddHosClicked(object sender, EventArgs e)
         {
             
@@ -201,7 +202,7 @@ namespace ERC
 
 
         //Add Mission buttons
-        private void Sfab_CancClicked(object sender, EventArgs e)
+        public void Sfab_CancClicked(object sender, EventArgs e)
         {
             if (cm == null || cm.IsDisposed)
             {
@@ -215,11 +216,33 @@ namespace ERC
             if (im != null) im.Hide();
 
         }
-        private void Sfab_DelClicked(object sender, EventArgs e)
+        public void Sfab_DelClicked(object sender, EventArgs e)
         {
             if (dm == null || dm.IsDisposed)
             {
                 dm = new AddMission(Erc1.Forms.MissionType.Dlayed) { TopLevel = false };
+
+                
+                dm.MonthlyID.Hide();
+
+                dm.AnnualID.Name = "ID";
+                dm.paI.label20.Text = "رقم المتصل";
+                dm.paI.label21.Text = "اسم المتصل";
+                Control c = dm.paI.Insurance.Parent;
+                dm.paI.Insurance.Dispose();
+
+                TextBox t = new TextBox();
+                t.Font = dm.paI.OtherInfo.Font;
+                t.BackColor = dm.paI.OtherInfo.BackColor;
+                t.Dock = DockStyle.Fill;
+                t.Margin = dm.paI.OtherInfo.Margin;
+                t.RightToLeft = RightToLeft.Yes;
+                c.Controls.Add(t);
+
+
+                dm.paI.tableLayoutPanel21.Hide();
+
+
                 dm.Size = panel2.Size;
                 dm.Dock = DockStyle.Fill;
                 panel2.Controls.Add(dm);
