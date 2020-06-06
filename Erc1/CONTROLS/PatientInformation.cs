@@ -297,10 +297,10 @@ namespace Erc1.CONTROLS
 
 
 
-
+        addMission add;
         private void Save_Click(object sender, EventArgs e)
         {
-            addMission add = new addMission();
+            add = new addMission();
             bool done;
             if (((Erc1.Forms.AddMission)(this.Parent.Parent.Parent.Parent.Parent)).MissionTy == Forms.MissionType.Implemented)
             {
@@ -385,12 +385,11 @@ namespace Erc1.CONTROLS
             TextBox t = (TextBox)sen.Parent.Controls["ID" + "_" + na];
             t.Text = sen.SelectedValue.ToString();
         }
-
+        public AddPatient addp;
         private void button1_Click(object sender, EventArgs e)
         {
-            AddPatient addp = new AddPatient();
+            addp = new AddPatient();
             addp.StartPosition = FormStartPosition.CenterScreen;
-            addp.Text = "Add Patient";
             addp.Show();
         }
     }

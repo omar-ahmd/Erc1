@@ -106,20 +106,29 @@ namespace Erc1.Classes
         // get الحالات names (column names ="المرض","رمز")
         public static IEnumerable Get_الحالات()
         {
-            using (ERCEntities entity = new ERCEntities())
+            try
             {
-                var c = (
-                from disease in entity.الحالات
-                select new
-                {
-                    disease.رمز,
-                    المرض = disease.المرض_بالانجليزي + " - " + disease.المرض
-                }
-                    ); ;
-                return c.ToList();
-            };
-        }
 
+
+                using (ERCEntities entity = new ERCEntities())
+                {
+                    var c = (
+                    from disease in entity.الحالات
+                    select new
+                    {
+                        disease.رمز,
+                        المرض = disease.المرض_بالانجليزي + " - " + disease.المرض
+                    }
+                        ); ;
+                    return c.ToList();
+                };
+            }
+            catch
+            {
+                MessageBox.Show("error");
+                return null;
+            }
+        }
         // get الحالات names by idنوعية_الحالة (column name ="المرض")
         public static IEnumerable Get_الحالات_by_idنوعية_الحالة(int id_type_of_disease)
         {
@@ -135,8 +144,6 @@ namespace Erc1.Classes
                 return c.ToList();
             }
         }
-
-
         // get نوعيات الحالات (column name ="النوعية","الرمز")
         public static IEnumerable Get_نوعيات_الحالات()
         {

@@ -17,6 +17,7 @@ using System.Reflection;
 using Erc1.CONTROLS;
 using Erc1.Classes;
 using System.Runtime.CompilerServices;
+using Erc1.Forms._8_AddPatient;
 
 namespace Erc1.BAL
 {
@@ -507,7 +508,9 @@ namespace Erc1.BAL
 
 		}
 
-		private int patientID;
+
+        #region VARIABLES
+        private int patientID;
 		private string patientName;
 		private bool canSit;
 		private FromTo from;
@@ -553,9 +556,18 @@ namespace Erc1.BAL
 		private string insuranceName;
 		private string moreInfoAboutPatient;
 		private string causeOfCancilling;
+		private int weight;
 
+        #endregion
 
-		public string CauseOfCancilling 
+        #region proprties
+
+		public int Weight
+		{
+			get { return weight; }
+			set { weight = value; }
+		}
+        public string CauseOfCancilling 
 		{
 			get {return causeOfCancilling; }
 			set { causeOfCancilling = value; } 
@@ -765,20 +777,24 @@ namespace Erc1.BAL
 			set { patientID = value; }
 		}
 
+		#endregion
+
+
 		public static bool IsPatientExist(int PatientID)
 		{
 			return false;
 		}
-		public bool SaveInfo(المهمات_المنفذة Mission)
+
+
+        #region SAVEDATA
+        public bool SaveInfo(المهمات_المنفذة Mission)
 		{
 			Mission.المريض = patientID;
 			
 			if(!IsPatientExist(patientID))
 			{
 				المرضى Patient = new المرضى();
-				//get data of new patient and added him to data table of patients
-				//a new form appear and the user fill the data 
-				//addpatient class
+				
 			}
 			if (From == FromTo.Home)
 			{
@@ -832,6 +848,8 @@ namespace Erc1.BAL
 			{
 				Mission.الجهة_الضامنة = null;
 			}
+
+
 
 
 			return true;
@@ -914,7 +932,13 @@ namespace Erc1.BAL
 		}
 
 
-		public bool ImportInfo(CONTROLS.PatientInformation patientInfo)
+
+        #endregion
+
+
+
+
+        public bool ImportInfo(CONTROLS.PatientInformation patientInfo)
 		{
 			try
 			{
@@ -1165,8 +1189,12 @@ namespace Erc1.BAL
 				return false;
 			}
 		}
+		
 
 
+
+
+		#region GETTEROFDATA
 		public static IEnumerable GetPatients()
 		{
 			return mission.Get_المرضى();
@@ -1203,11 +1231,11 @@ namespace Erc1.BAL
 		{
 			return mission.Get_الأمراض_المعدية();
 		}
-		
-		
 
-	}
-	class ParamedicsInfo
+        #endregion
+
+    }
+    class ParamedicsInfo
 	{
 		private int driverID;
 		private string driverName;
@@ -1531,7 +1559,118 @@ namespace Erc1.BAL
 		}
 	}
 
-	class Hospitals
+
+	class Patient
+	{
+		public Patient()
+		{
+
+		}
+
+        #region variables
+        private string name;
+		private int insuranceID;
+		private int weight;
+		private int cityid;
+		private int regionid;
+		private DateTime dateOfBirth;
+		private int doctorID;
+		private string phone;
+        #endregion
+
+        #region Proprties
+        public string Name
+		{
+			get { return name; }
+			set { name = value; }
+		}
+		public int InsuranceID
+		{
+			get { return insuranceID; }
+			set { insuranceID = value; }
+		}
+		public int Weight
+		{
+			get { return weight; }
+			set { weight = value; }
+		}
+		public int CityID
+		{
+			get { return cityid; }
+			set { cityid = value; }
+		}
+		public int RegionID
+		{
+			get { return regionid; }
+			set { regionid = value; }
+		}
+		public DateTime DateOfBirth
+		{
+			get { return dateOfBirth; }
+			set { dateOfBirth = value; }
+		}
+		public int DoctorID
+		{
+			get { return doctorID; }
+			set { doctorID = value; }
+		}
+		public string Phone
+		{
+			get { return phone; }
+			set { phone = value; }
+		}
+        #endregion
+
+        #region Fuctions
+		public bool ImportPatient( AddPatient addPatient)
+		{
+			try
+			{
+				Name = addPatient.NNAME.Text;
+				InsuranceID = int.Parse(addPatient.Insurancebox.SelectedValue.ToString());
+				Weight = int.Parse(addPatient.Weight.Text);
+				DateOfBirth = addPatient.DateOfBirth.Value;
+				CityID = int.Parse(addPatient.CityBox.SelectedValue.ToString());
+				RegionID = int.Parse(addPatient.RegionBox.SelectedValue.ToString());
+				Phone = addPatient.Phone.Text;
+				return true;
+			}
+			catch
+			{
+				return false;
+			}
+		}
+		public المرضى AddPatient()
+		{
+			try
+
+			{
+				المرضى patient = new المرضى();
+				patient.اسم = Name;
+				patient.الطبيب_المعالج = doctorID;
+				patient.وزن = Weight;
+				patient.رمز_المدينة = CityID;
+				patient.رمز_المنطقة = RegionID;
+				patient.الهاتف = Phone;
+				patient.الضمان = InsuranceID;
+				//dateof birth
+				return patient;
+					 
+			}
+			catch
+			{
+				return null;
+			}
+
+
+				
+
+		}
+        #endregion
+
+
+    }
+    class Hospitals
 	{
 		public Hospitals()
 		{
