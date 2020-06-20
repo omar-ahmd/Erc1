@@ -77,6 +77,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CONTROLS\DepartementInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CONTROLS\DepartementInfo.Designer.cs">
+      <DependentUpon>DepartementInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="CONTROLS\HospitalControlcs.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,19 +128,19 @@
     <Compile Include="BAL\BAL.cs" />
     <Compile Include="DAL\DAL.cs" />
     <Compile Include="DAL\Model1.Context.cs">
+      <DependentUpon>Model1.Context.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Model1.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Model1.Designer.cs">
+      <DependentUpon>Model1.edmx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="DAL\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -261,6 +267,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CONTROLS\DepartementInfo.resx">
+      <DependentUpon>DepartementInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CONTROLS\HospitalControlcs.resx">
       <DependentUpon>HospitalControlcs.cs</DependentUpon>
     </EmbeddedResource>
@@ -456,6 +465,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\55.png" />
+    <None Include="Resources\551.png" />
     <Content Include="TextFile1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -121,6 +121,7 @@ namespace Erc1.Forms._4_Hospitals
             for (int i = 0; i < y; i++) 
             {
                 HospitalControlcs h = (HospitalControlcs)tableLayoutPanel1.Controls["_" + (i + 1).ToString()];
+                h.HosStatusChanged += H_HosStatusChanged;
                 h.HosID = int.Parse(Hosdt.Rows[i]["رمز_المستشفى"].ToString());
                 h.HospitalName.Text = Hosdt.Rows[i]["اسم_المستشفى"].ToString();
                 if(Hosdt.Rows[i]["الملاحظات"].ToString() != "")
@@ -141,6 +142,33 @@ namespace Erc1.Forms._4_Hospitals
 
                 }
             }
+        }
+
+        private void H_HosStatusChanged(object sender, EventArgs e)
+        {
+            HospitalControlcs hoscont = (HospitalControlcs)sender;
+            int i = int.Parse(hoscont.Name[1].ToString()) - 1;
+            DataRow dr = Hosdt.Rows[i];
+            if (hoscont.Hosstatus != HosStatus.AvailBusy)
+            {
+
+                dr["الملاحظات"] = "";
+            }
+            else
+            {
+                if (hoscont.Hosstatus == HosStatus.Available)
+                {
+                    dr["الحالة"] = "متاح";
+                    
+                }
+                else if (hoscont.Hosstatus == HosStatus.Busy)
+                {
+                    dr["الحالة"] = "غير متاح";
+                }
+
+            }
+
+            BAL.Hospitals.SaveHospitale(dr);
         }
 
         private void Up_Click(object sender, EventArgs e)
@@ -179,6 +207,21 @@ namespace Erc1.Forms._4_Hospitals
                 }
 
             }
+        }
+
+        private void _1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void _1_HosClick(object sender, EventArgs e)
+        {
+            HospitalControlcs hos = (HospitalControlcs)sender;
+
+            HospitalsForm h = new HospitalsForm(Hosdt.Rows[int.Parse(hos.Name[1].ToString())-1]);
+
+            h.Show();
+
         }
     }
 }

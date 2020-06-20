@@ -1,0 +1,158 @@
+﻿
+        Mohammd
+
+        // get الحالات names (column names ="المرض" , "رمز")
+        Get_الحالات()
+
+
+
+        // get الحالات names by idنوعية_الحالة (column name ="المرض")
+        Get_الحالات_by_idنوعية_الحالة(int id_type_of_disease)
+
+
+
+        // get نوعيات الحالات (column name ="النوعية" , "الرمز")
+        Get_نوعيات_الحالات()
+
+
+
+        // get العاملون names (column names ="الاسم" , "الرمز")
+        Get_العاملون()
+
+
+
+        // get العاملون names by المراكز(column names ="الاسم","الرمز")
+        Get_العاملون_by_idالمراكز(int center_id)
+ 
+
+
+        //get all centers (column names ="centers","id")
+        Get_Centers()
+
+
+
+        
+        // cars of a center by id column name("cars")
+        Getالآليات()
+
+
+
+        // cars of a center by id column name("cars")
+        Getالآليات_by_المركز(int marakez)
+
+        
+        // get المرضى names(column names ="اسم","الرمز")
+        Get_المرضى()
+
+
+
+        // get المدن names(column names ="المدينة","رمز")
+        Get_المدن()
+
+
+
+        // get المناطق names(column names ="المنطقة","رمز")
+        Get_المناطق(int city_key)
+      
+
+
+        // get المستشفيات(column names ="اسم","رمز_المستشفى")
+        Get_المستشفيات()
+
+
+        // get أقسام المستشفيات (column names ="sections_id","sections_name")
+         Get_أقسام_المستشفيات(int hospital_key)
+         
+
+
+        // get طوابق المستشفيات (column names ="عدد_الطوابق","الرمز")
+        Get_طوابق_المستشفيات(int hospital_key)
+
+
+
+        // get السائقون names by المراكز(column names ="الاسم","الرمز")
+        Get_السائقون_by_idالمراكز(int center_id)
+
+
+
+        // get مسؤول مهمة names by المراكز(column names ="الاسم","الرمز")
+        Get_مسؤول_مهمة_by_idالمراكز(int center_id)
+
+
+
+        // get monthlyid 
+        Get_MonthlyID()
+
+
+        // get yearid 
+        Get_YearID()
+         
+
+         
+
+        // get monthlyid 
+        Get_MonthlyID(int year, int month)
+
+
+
+        // get yearid 
+        Get_YearID(int year)
+
+
+
+        // get طوابق المستشفيات
+        public static short[] Get_طوابق_المستشفيات(int hospital_key)
+
+
+
+        // get الأطباء by hospitalID (column names ="رمز","اسم")
+        Get_الأطباء(int hospital_key)
+
+
+
+        // get الجهات_الضامنة(column names ="الجهة_الضامنة","الرمز")
+        Get_الجهات_الضامنة()
+
+
+
+        // get الأمراض_المعدية(column names ="المرض","الرمز")
+        Get_الأمراض_المعدية()
+
+        
+        // get الأطباء (column names ="رمز","اسم")
+        Get_الأطباء()
+
+
+        
+        bool add_Mission(المهمات_المنفذة new_Mission)
+
+
+        bool add_Mission(المهماة_المؤجلة new_Mission)
+
+
+        bool add_Mission(المهمات_الملغاة new_Mission)
+
+
+
+
+        //////// HOSPITAL FORM   //////////
+
+
+        // get hospital info(column names ="اسم_المستشفى","الرمز","الهاتف","الملاحظات","الحالة")
+        Get_Info_Hospital()
+
+
+        // get  أقسام المستشفى(column names ="اسم_القسم","الرمز","تحويلة_القسم","الطابق")
+        Get_أقسام_المستشفى(int hospitalID)
+
+
+
+
+
+
+
+        requests:
+        -Get_المناطق_by_idالمدن
+        -Get_infectious_case
+        -get insurance
+        

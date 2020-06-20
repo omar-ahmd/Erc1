@@ -20,8 +20,9 @@ namespace Erc1.CONTROLS
     }
     public partial class HospitalControlcs : UserControl
     {
-        public event EventHandler HosStatusChanged, HosIDChanged;
+        public event EventHandler HosStatusChanged, HosIDChanged,HosClick;
 
+        
 
         private int hosID;
         public int HosID
@@ -112,6 +113,7 @@ namespace Erc1.CONTROLS
 
             HosStatusChanged -= HospitalControlcs_HosStatusChanged;
         }
+
         private void textBox1_MouseClick(object sender, MouseEventArgs e)
         {
 
@@ -142,10 +144,19 @@ namespace Erc1.CONTROLS
                 }
 
             }
+
         }
         private void HospitalName_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hospital Form");
+            try 
+            {
+                HosClick.Invoke(this, EventArgs.Empty);
+
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
     }
 }

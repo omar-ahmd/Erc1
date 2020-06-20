@@ -1685,10 +1685,6 @@ namespace Erc1.BAL
 		{
 			return Erc1.Classes.Hospital.Get_أقسام_المستشفى(HosID);
 		}
-		public static bool SaveHospitale(DataRow dr)
-		{
-			return true;
-			    
-		}
+
 	}	
 }

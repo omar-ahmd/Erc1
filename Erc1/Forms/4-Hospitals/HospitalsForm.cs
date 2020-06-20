@@ -1,4 +1,5 @@
 ﻿using ERC;
+using Erc1.CONTROLS;
 using Erc1.DAL;
 using System;
 using System.Collections.Generic;
@@ -17,76 +18,46 @@ namespace Erc1.Forms._4_Hospitals
 
     public partial class HospitalsForm : Form
     {
-        public HospitalsForm()
-        {
-            InitializeComponent();
-        }
-        bool available = true;
-        bool Busy = false;
-        bool MidBusy = false;
-        أقسام_المستشفيات departement = new أقسام_المستشفيات();
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Mybutton sen = (Mybutton)sender;
-            if (sen.available)
-            {
-                sen.BackColor = Color.Red;
-                sen.available = false;
-                sen.Busy = true;
-            }
-            else if (sen.Busy)
-            {
-                sen.BackColor = Color.Orange;
-                sen.MidBusy = true;
-                sen.Busy = false;
-            }
-            else if (sen.MidBusy)
-            {
-                sen.BackColor = Color.FromArgb(109, 184, 127) ;
-                sen.MidBusy = false;
-                sen.available = true;
-            }
+        private int hosID;
 
-        }
-        int row=0, column=1;
-        
-        private void button2_Click(object sender, EventArgs e)
+        public int HosID
         {
+            get { return hosID; }
+            set 
+            {
+                hosID = value;
+
+            }
+        }
+        DataTable depTable;
+        public HospitalsForm(DataRow dr)
+        {
+
             
-            int startX = button1.Location.X, startY = button1.Location.Y;
-            int width = button1.Width, heigh = button1.Height;
-            Mybutton bt = new Mybutton();
-            bt.Click += button1_Click;
-            bt.Text = "H";
 
-            bt.Font = new System.Drawing.Font("Arial", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            InitializeComponent();
+
+            HosID = int.Parse(dr["رمز_المستشفى"].ToString());
+
+            HosName.Text = dr["اسم_المستشفى"].ToString();
+            HosNumber.Text = dr["الهاتف"].ToString();
 
 
-            bt.BackColor = Color.FromArgb(109, 184, 127);
-            bt.Location = button2.Location;
-            bt.Size = button2.Size;
-            bt.Text = "hos";
-            panel1.Controls.Add(bt);
-            if (button2.Location.X + 2 * button2.Size.Width + 20 > panel1.Width) 
+            depTable = BAL.Hospitals.GetDepartement(HosID);
+            foreach (DataRow row in depTable.Rows)
             {
-                row++;
-                column = 0;
-                
+                string y =row["تحويلة_القسم"].ToString();
+                string r = row["اسم_القسم"].ToString();
+                var dep = new DepartementInfo(row["تحويلة_القسم"].ToString(), row["اسم_القسم"].ToString());
+                dep.Dock = DockStyle.Top;
+                dep.Size = new Size(200, 40);
+                panel1.Controls.Add(dep);
             }
-            else
-            {
-                column++;
-               
-            }
-            button2.Location = new Point(startX + column * (width + startX), startY + row * (startY + heigh));
+            
+            
+
         }
-    }
-    public class Mybutton : Button
-    {
-        public bool available = true;
-        public bool Busy = false;
-        public bool MidBusy = false;
 
-
+ 
     }
 }

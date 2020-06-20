@@ -105,6 +105,8 @@ namespace Erc1.Forms._4_Hospitals
             this._1.HosID = 1;
             this._1.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._1.Name = "_1";
+            this._1.HosClick += new System.EventHandler(this._1_HosClick);
+            this._1.Load += new System.EventHandler(this._1_Load);
             // 
             // _2
             // 
@@ -113,6 +115,7 @@ namespace Erc1.Forms._4_Hospitals
             this._2.HosID = 2;
             this._2.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._2.Name = "_2";
+            this._2.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _4
             // 
@@ -121,6 +124,7 @@ namespace Erc1.Forms._4_Hospitals
             this._4.HosID = 4;
             this._4.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._4.Name = "_4";
+            this._4.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _3
             // 
@@ -129,6 +133,7 @@ namespace Erc1.Forms._4_Hospitals
             this._3.HosID = 3;
             this._3.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._3.Name = "_3";
+            this._3.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _6
             // 
@@ -137,6 +142,7 @@ namespace Erc1.Forms._4_Hospitals
             this._6.HosID = 6;
             this._6.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._6.Name = "_6";
+            this._6.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _5
             // 
@@ -145,6 +151,7 @@ namespace Erc1.Forms._4_Hospitals
             this._5.HosID = 5;
             this._5.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._5.Name = "_5";
+            this._5.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _8
             // 
@@ -153,6 +160,7 @@ namespace Erc1.Forms._4_Hospitals
             this._8.HosID = 8;
             this._8.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._8.Name = "_8";
+            this._8.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _7
             // 
@@ -161,6 +169,7 @@ namespace Erc1.Forms._4_Hospitals
             this._7.HosID = 7;
             this._7.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._7.Name = "_7";
+            this._7.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _10
             // 
@@ -169,6 +178,7 @@ namespace Erc1.Forms._4_Hospitals
             this._10.HosID = 10;
             this._10.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._10.Name = "_10";
+            this._10.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _9
             // 
@@ -177,6 +187,7 @@ namespace Erc1.Forms._4_Hospitals
             this._9.HosID = 9;
             this._9.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._9.Name = "_9";
+            this._9.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _12
             // 
@@ -185,6 +196,7 @@ namespace Erc1.Forms._4_Hospitals
             this._12.HosID = 12;
             this._12.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._12.Name = "_12";
+            this._12.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _11
             // 
@@ -193,6 +205,7 @@ namespace Erc1.Forms._4_Hospitals
             this._11.HosID = 11;
             this._11.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._11.Name = "_11";
+            this._11.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _14
             // 
@@ -201,6 +214,7 @@ namespace Erc1.Forms._4_Hospitals
             this._14.HosID = 14;
             this._14.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._14.Name = "_14";
+            this._14.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _13
             // 
@@ -209,6 +223,7 @@ namespace Erc1.Forms._4_Hospitals
             this._13.HosID = 13;
             this._13.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._13.Name = "_13";
+            this._13.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _16
             // 
@@ -217,6 +232,7 @@ namespace Erc1.Forms._4_Hospitals
             this._16.HosID = 16;
             this._16.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._16.Name = "_16";
+            this._16.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _15
             // 
@@ -225,6 +241,7 @@ namespace Erc1.Forms._4_Hospitals
             this._15.HosID = 15;
             this._15.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._15.Name = "_15";
+            this._15.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _18
             // 
@@ -233,6 +250,7 @@ namespace Erc1.Forms._4_Hospitals
             this._18.HosID = 18;
             this._18.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._18.Name = "_18";
+            this._18.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _17
             // 
@@ -241,6 +259,7 @@ namespace Erc1.Forms._4_Hospitals
             this._17.HosID = 17;
             this._17.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._17.Name = "_17";
+            this._17.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _20
             // 
@@ -249,6 +268,7 @@ namespace Erc1.Forms._4_Hospitals
             this._20.HosID = 20;
             this._20.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._20.Name = "_20";
+            this._20.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _19
             // 
@@ -257,6 +277,7 @@ namespace Erc1.Forms._4_Hospitals
             this._19.HosID = 19;
             this._19.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._19.Name = "_19";
+            this._19.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _22
             // 
@@ -265,6 +286,7 @@ namespace Erc1.Forms._4_Hospitals
             this._22.HosID = 22;
             this._22.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._22.Name = "_22";
+            this._22.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // _21
             // 
@@ -273,6 +295,7 @@ namespace Erc1.Forms._4_Hospitals
             this._21.HosID = 21;
             this._21.Hosstatus = Erc1.CONTROLS.HosStatus.None;
             this._21.Name = "_21";
+            this._21.HosClick += new System.EventHandler(this._1_HosClick);
             // 
             // Down
             // 
