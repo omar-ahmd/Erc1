@@ -74,15 +74,13 @@ namespace Erc1.Classes
             using (ERCEntities entity = new ERCEntities())
             {
                 المستشفيات c = new المستشفيات();
-                c = entity.المستشفيات.First(r => r.رمز_المستشفى == int.Parse(HospitalRow["رمز المستشفى"].ToString()));
+                int id = int.Parse(HospitalRow["رمز_المستشفى"].ToString());
+                c = entity.المستشفيات.First(r => r.رمز_المستشفى == id);
                 c.الحالة = HospitalRow["الحالة"].ToString();
                 c.الملاحظات = HospitalRow["الملاحظات"].ToString();
                 entity.SaveChanges();
             };
         }
-
-
-    
 
         // car
 
