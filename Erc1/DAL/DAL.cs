@@ -740,5 +740,43 @@ namespace Erc1.Classes
         }
 
 
+
+        // add Patient with return id
+        public static int add_Patient(المرضى new_patient)
+        {
+            int newID;
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+                    entity.المرضى.Add(new_patient);
+                    entity.SaveChanges();
+                    newID = new_patient.الرمز;
+                    return newID;
+                }
+                catch
+                {
+                    return 00;//error
+                }
+            };
+
+        }
+
+
+        // Update hospital from datarow
+        public void UpdateHospitalStatus(DataRow HospitalRow)//I need the id
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                المستشفيات c = new المستشفيات();
+                int id = int.Parse(HospitalRow["رمز_المستشفى"].ToString());
+                c = entity.المستشفيات.First(r => r.رمز_المستشفى == id);
+                c.الحالة = HospitalRow["الحالة"].ToString();
+                c.الملاحظات = HospitalRow["الملاحظات"].ToString();
+                entity.SaveChanges();
+            };
+        }
+
+
     }
 }

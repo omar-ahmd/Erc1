@@ -147,6 +147,12 @@
 
 
 
+        // add Patient with return id
+        int add_Patient(المرضى new_patient)
+
+        // Update hospital from datarow
+        void UpdateHospitalStatus(DataRow HospitalRow)
+
 
 
 
