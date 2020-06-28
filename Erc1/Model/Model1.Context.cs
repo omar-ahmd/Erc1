@@ -35,7 +35,9 @@ namespace Erc1.model
         public virtual DbSet<الأمراض_المعدية> الأمراض_المعدية { get; set; }
         public virtual DbSet<الجهات_الضامنة> الجهات_الضامنة { get; set; }
         public virtual DbSet<الحالات> الحالات { get; set; }
+        public virtual DbSet<الدور_في_المهمة> الدور_في_المهمة { get; set; }
         public virtual DbSet<العاملون> العاملون { get; set; }
+        public virtual DbSet<الفريق> الفريق { get; set; }
         public virtual DbSet<المدن> المدن { get; set; }
         public virtual DbSet<المراكز> المراكز { get; set; }
         public virtual DbSet<المرضى> المرضى { get; set; }
@@ -46,9 +48,11 @@ namespace Erc1.model
         public virtual DbSet<المهمات_الملغاة> المهمات_الملغاة { get; set; }
         public virtual DbSet<المهمات_المنفذة> المهمات_المنفذة { get; set; }
         public virtual DbSet<الوظيفة> الوظيفة { get; set; }
+        public virtual DbSet<إلى> إلى { get; set; }
         public virtual DbSet<حالات_المهمات> حالات_المهمات { get; set; }
         public virtual DbSet<طبيعة_المهمة> طبيعة_المهمة { get; set; }
         public virtual DbSet<فئة_الدم> فئة_الدم { get; set; }
+        public virtual DbSet<من> من { get; set; }
         public virtual DbSet<نوعيات_الحالات> نوعيات_الحالات { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)

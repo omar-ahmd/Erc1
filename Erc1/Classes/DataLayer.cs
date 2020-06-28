@@ -33,6 +33,7 @@ namespace Erc1.Classes
             {
                 IsValid = false;
             }
+            
         }
         public void SetServerName(string ServerName)
         {

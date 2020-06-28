@@ -21,8 +21,6 @@ namespace Erc1.model
             this.المستشفيات_مع_اقسام = new HashSet<المستشفيات_مع_اقسام>();
             this.المهمات_الملغاة = new HashSet<المهمات_الملغاة>();
             this.المهمات_الملغاة1 = new HashSet<المهمات_الملغاة>();
-            this.المهمات_المنفذة = new HashSet<المهمات_المنفذة>();
-            this.المهمات_المنفذة1 = new HashSet<المهمات_المنفذة>();
             this.المهماة_المؤجلة = new HashSet<المهماة_المؤجلة>();
             this.المهماة_المؤجلة1 = new HashSet<المهماة_المؤجلة>();
         }
@@ -31,15 +29,14 @@ namespace Erc1.model
         public string العنوان { get; set; }
         public string الهاتف { get; set; }
         public string اسم_المستشفى { get; set; }
-        public Nullable<int> رمز_المدينة { get; set; }
         public Nullable<int> رمز_المنطقة { get; set; }
         public Nullable<short> الطابق_السفلي { get; set; }
         public Nullable<short> الطابق_العلوي { get; set; }
         public string الملاحظات { get; set; }
+        public string الحالة { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<الأطباء> الأطباء { get; set; }
-        public virtual المدن المدن { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<المستشفيات_مع_اقسام> المستشفيات_مع_اقسام { get; set; }
         public virtual المناطق المناطق { get; set; }
@@ -47,10 +44,6 @@ namespace Erc1.model
         public virtual ICollection<المهمات_الملغاة> المهمات_الملغاة { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<المهمات_الملغاة> المهمات_الملغاة1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<المهمات_المنفذة> المهمات_المنفذة { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<المهمات_المنفذة> المهمات_المنفذة1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<المهماة_المؤجلة> المهماة_المؤجلة { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

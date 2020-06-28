@@ -14,6 +14,12 @@ namespace Erc1.model
     
     public partial class المهمات_المنفذة
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public المهمات_المنفذة()
+        {
+            this.الفريق = new HashSet<الفريق>();
+        }
+    
         public int الرمز_الشهري { get; set; }
         public int رمز_السنوي { get; set; }
         public int السنة { get; set; }
@@ -21,25 +27,12 @@ namespace Erc1.model
         public Nullable<System.DateTime> التاريخ { get; set; }
         public Nullable<int> الآلية { get; set; }
         public Nullable<int> المريض { get; set; }
-        public Nullable<int> من_مشفى { get; set; }
-        public Nullable<int> من_القسم { get; set; }
         public Nullable<int> الطبيب_المعالج { get; set; }
-        public Nullable<int> الجهة_الضامنة { get; set; }
-        public Nullable<int> إلى_مشفى { get; set; }
-        public Nullable<int> إلى_القسم { get; set; }
-        public Nullable<int> مسؤول_المهمة { get; set; }
-        public Nullable<int> مسعف_1 { get; set; }
-        public Nullable<int> مسعف_2 { get; set; }
         public Nullable<int> السائق { get; set; }
         public Nullable<int> رقم_المتصل { get; set; }
-        public Nullable<int> الهاتف { get; set; }
         public Nullable<int> متلقي_المهمة { get; set; }
         public string تفاصيل_ال_من { get; set; }
         public string تفاصيل_ال_الى { get; set; }
-        public Nullable<int> من_رمز_المدينة { get; set; }
-        public Nullable<int> من_رمز_المنطقة { get; set; }
-        public Nullable<int> الى_رمز_المدينة { get; set; }
-        public Nullable<int> الى_رمز_المنطقة { get; set; }
         public string التفاصيل { get; set; }
         public string اسم_المتصل { get; set; }
         public Nullable<int> طبيعة_المهمة { get; set; }
@@ -47,27 +40,21 @@ namespace Erc1.model
         public Nullable<int> الأمراض_المعدية { get; set; }
         public Nullable<int> مسؤول_الدوام { get; set; }
         public Nullable<int> نوعية_الحالة { get; set; }
+        public Nullable<int> من { get; set; }
+        public Nullable<int> إلى { get; set; }
     
-        public virtual أقسام_المستشفيات أقسام_المستشفيات { get; set; }
-        public virtual أقسام_المستشفيات أقسام_المستشفيات1 { get; set; }
         public virtual الأطباء الأطباء { get; set; }
         public virtual الآليات الآليات { get; set; }
         public virtual الأمراض_المعدية الأمراض_المعدية1 { get; set; }
-        public virtual الجهات_الضامنة الجهات_الضامنة { get; set; }
         public virtual العاملون العاملون { get; set; }
         public virtual العاملون العاملون1 { get; set; }
         public virtual العاملون العاملون2 { get; set; }
-        public virtual العاملون العاملون3 { get; set; }
-        public virtual العاملون العاملون4 { get; set; }
-        public virtual العاملون العاملون5 { get; set; }
-        public virtual المدن المدن { get; set; }
-        public virtual المدن المدن1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<الفريق> الفريق { get; set; }
         public virtual المرضى المرضى { get; set; }
-        public virtual المستشفيات المستشفيات { get; set; }
-        public virtual المستشفيات المستشفيات1 { get; set; }
-        public virtual المناطق المناطق { get; set; }
-        public virtual المناطق المناطق1 { get; set; }
+        public virtual إلى إلى1 { get; set; }
         public virtual طبيعة_المهمة طبيعة_المهمة1 { get; set; }
+        public virtual من من1 { get; set; }
         public virtual نوعيات_الحالات نوعيات_الحالات { get; set; }
     }
 }

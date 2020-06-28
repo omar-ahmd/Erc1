@@ -14,6 +14,7 @@ namespace Erc1.model
     
     public partial class المستشفيات_مع_اقسام
     {
+        public int الرمز { get; set; }
         public int رمز_المشفى { get; set; }
         public int رمز_القسم { get; set; }
         public string تحويلة_القسم { get; set; }

@@ -19,6 +19,7 @@ namespace Erc1.model
         {
             this.الآليات = new HashSet<الآليات>();
             this.العاملون = new HashSet<العاملون>();
+            this.المهماة_المؤجلة = new HashSet<المهماة_المؤجلة>();
         }
     
         public int الرمز { get; set; }
@@ -30,5 +31,7 @@ namespace Erc1.model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<العاملون> العاملون { get; set; }
         public virtual المدن المدن { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<المهماة_المؤجلة> المهماة_المؤجلة { get; set; }
     }
 }

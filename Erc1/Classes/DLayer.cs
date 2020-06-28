@@ -40,15 +40,22 @@ namespace Erc1.Classes
         {
             using (var entity = new ERCEntities())
             {
+                try
+                {
+                    var c = (
+                  from center in entity.المراكز
+                  select new
+                  {
+                      center.الرمز
+                  }
+                      ); ;
+                    return c.ToList();
+                }
+                catch {
+                    var c = "".ToList();//try catch barra kermel combobox
 
-                var c = (
-              from center in entity.المراكز
-              select new
-              {
-                  center.الرمز
-              }
-                  ); ;
-                return c.ToList();
+                    return c;
+                }
             };
         }
 
@@ -822,6 +829,18 @@ namespace Erc1.Classes
                 return dt;
             }
         }
+
+        //public static bool updateHospitalStatus(int Hospital_ID)
+        //{
+        //    using (ERCEntities entity = new ERCEntities())
+        //    {
+        //        المستشفيات c = new المستشفيات();
+        //        c = entity.المستشفيات.First(r => r.رمز_المستشفى == Hospital_ID);
+        //        c. = newphone;
+        //        t_1.SaveChanges();
+        //        return c;
+        //    };
+        //}
     }
     
 }

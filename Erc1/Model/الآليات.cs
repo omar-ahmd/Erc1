@@ -25,7 +25,7 @@ namespace Erc1.model
         public string نوعية_الاستخدام { get; set; }
         public string موديل_ { get; set; }
         public string نوعية_السيارة { get; set; }
-        public string مازوت_او_بنزين { get; set; }
+        public Nullable<bool> مازوت_او_بنزين { get; set; }
         public Nullable<int> رقم_اللوحة { get; set; }
         public Nullable<bool> بالخدمة_او_لا { get; set; }
         public Nullable<bool> متاحة_او_لا { get; set; }

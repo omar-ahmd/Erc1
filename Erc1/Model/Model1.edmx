@@ -32,20 +32,18 @@
           <Property Name="اختصاص" Type="nvarchar" MaxLength="10" />
           <Property Name="هاتف" Type="nvarchar" MaxLength="10" />
           <Property Name="مكان العمل" Type="int" />
-          <Property Name="رمز المدينة" Type="int" />
           <Property Name="رمز المنطقة" Type="int" />
         </EntityType>
         <EntityType Name="الآليات">
           <Key>
             <PropertyRef Name="رمز الآلية" />
-            <PropertyRef Name="المركز" />
           </Key>
           <Property Name="رمز الآلية" Type="int" Nullable="false" />
           <Property Name="المركز" Type="int" Nullable="false" />
           <Property Name="نوعية الاستخدام" Type="nvarchar" MaxLength="10" />
           <Property Name="موديل " Type="nvarchar" MaxLength="10" />
           <Property Name="نوعية السيارة" Type="nvarchar" MaxLength="10" />
-          <Property Name="مازوت او بنزين" Type="nchar" MaxLength="5" />
+          <Property Name="مازوت او بنزين" Type="bit" />
           <Property Name="رقم اللوحة" Type="int" />
           <Property Name="بالخدمة او لا" Type="bit" />
           <Property Name="متاحة او لا" Type="bit" />
@@ -80,6 +78,13 @@
           <Property Name="المرض" Type="nvarchar" MaxLength="30" />
           <Property Name="المرض بالانجليزي" Type="nvarchar" MaxLength="30" />
         </EntityType>
+        <EntityType Name="الدور في المهمة">
+          <Key>
+            <PropertyRef Name="الرمز" />
+          </Key>
+          <Property Name="الرمز" Type="int" Nullable="false" />
+          <Property Name="الدور" Type="nvarchar" MaxLength="15" Nullable="false" />
+        </EntityType>
         <EntityType Name="العاملون">
           <Key>
             <PropertyRef Name="الرمز" />
@@ -105,8 +110,22 @@
           <Property Name="المركز" Type="int" Nullable="false" />
           <Property Name="اللقب" Type="nvarchar" MaxLength="20" />
           <Property Name="تاريخ الانتساب" Type="date" />
-          <Property Name="رمز المدينة" Type="int" />
           <Property Name="رمز المنطقة" Type="int" />
+        </EntityType>
+        <EntityType Name="الفريق">
+          <Key>
+            <PropertyRef Name="الرمز الشهري" />
+            <PropertyRef Name="رمز السنوي" />
+            <PropertyRef Name="السنة" />
+            <PropertyRef Name="رمز  المركز" />
+            <PropertyRef Name="رمز العامل" />
+          </Key>
+          <Property Name="الرمز الشهري" Type="int" Nullable="false" />
+          <Property Name="رمز السنوي" Type="int" Nullable="false" />
+          <Property Name="السنة" Type="int" Nullable="false" />
+          <Property Name="رمز  المركز" Type="int" Nullable="false" />
+          <Property Name="رمز العامل" Type="int" Nullable="false" />
+          <Property Name="دور العامل" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="المدن">
           <Key>
@@ -134,7 +153,6 @@
           <Property Name="الضمان" Type="int" />
           <Property Name="الهاتف" Type="nvarchar" MaxLength="12" />
           <Property Name="العنوان" Type="nvarchar" MaxLength="40" />
-          <Property Name="رمز المدينة" Type="int" />
           <Property Name="أمراض مزمنة" Type="int" />
           <Property Name="رمز المنطقة" Type="int" />
           <Property Name="الطبيب المعالج" Type="int" />
@@ -147,21 +165,21 @@
           <Property Name="العنوان" Type="nvarchar" MaxLength="40" />
           <Property Name="الهاتف" Type="nvarchar" MaxLength="20" />
           <Property Name="اسم المستشفى" Type="nvarchar" MaxLength="20" />
-          <Property Name="رمز المدينة" Type="int" />
           <Property Name="رمز المنطقة" Type="int" />
           <Property Name="الطابق السفلي" Type="smallint" />
           <Property Name="الطابق العلوي" Type="smallint" />
-          <Property Name="الملاحظات" Type="nvarchar" MaxLength="40" />
+          <Property Name="الملاحظات" Type="nvarchar(max)" />
+          <Property Name="الحالة" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="المستشفيات مع اقسام">
           <Key>
-            <PropertyRef Name="رمز المشفى" />
-            <PropertyRef Name="رمز القسم" />
+            <PropertyRef Name="الرمز" />
           </Key>
+          <Property Name="الرمز" Type="int" Nullable="false" />
           <Property Name="رمز المشفى" Type="int" Nullable="false" />
           <Property Name="رمز القسم" Type="int" Nullable="false" />
-          <Property Name="تحويلة القسم" Type="nchar" MaxLength="10" />
-          <Property Name="المبلغ عن الموضوع" Type="nchar" MaxLength="20" />
+          <Property Name="تحويلة القسم" Type="nvarchar" MaxLength="10" />
+          <Property Name="المبلغ عن الموضوع" Type="nvarchar" MaxLength="20" />
           <Property Name="الطابق" Type="smallint" />
         </EntityType>
         <EntityType Name="المناطق">
@@ -170,7 +188,7 @@
           </Key>
           <Property Name="رمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="المنطقة" Type="nvarchar" MaxLength="20" />
-          <Property Name="المدينة" Type="int" />
+          <Property Name="المدينة" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="المهماة المؤجلة">
           <Key>
@@ -179,22 +197,23 @@
           </Key>
           <Property Name="رمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="رمز المركز" Type="int" Nullable="false" />
-          <Property Name="اسم" Type="int" />
-          <Property Name="العمر" Type="int" />
-          <Property Name="من رمز المدينة" Type="int" />
+          <Property Name="المريض" Type="int" />
+          <Property Name="يستطيع الجلوس" Type="bit" />
           <Property Name="من رمز المنطقة" Type="int" />
           <Property Name="من مشفى" Type="int" />
           <Property Name="من القسم" Type="int" />
           <Property Name="تفاصيل ال من" Type="int" />
           <Property Name="إلى مشفى" Type="int" />
           <Property Name="إلى القسم" Type="int" />
-          <Property Name="الى رمز المدينة" Type="int" />
           <Property Name="الى رمز المنطقة" Type="int" />
           <Property Name="تفاصيل ال الى" Type="int" />
           <Property Name="رمز الحالة" Type="int" />
           <Property Name="التاريخ والوقت" Type="datetime" />
           <Property Name="اسم المتصل" Type="nvarchar" MaxLength="30" />
           <Property Name="رقم المتصل" Type="int" />
+          <Property Name="نوع الحالة" Type="int" />
+          <Property Name="تفاصيل الحالة" Type="nvarchar" MaxLength="40" />
+          <Property Name="العمر" Type="int" />
         </EntityType>
         <EntityType Name="المهمات الملغاة">
           <Key>
@@ -206,13 +225,11 @@
           <Property Name="الرمز الشهري" Type="int" Nullable="false" />
           <Property Name="رمز السنوي" Type="int" Nullable="false" />
           <Property Name="التاريخ" Type="date" />
-          <Property Name="من رمز المدينة" Type="int" />
           <Property Name="من رمز المنطقة" Type="int" />
           <Property Name="من مشفى" Type="int" />
           <Property Name="من القسم" Type="int" />
           <Property Name="إلى مشفى" Type="int" />
           <Property Name="إلى القسم" Type="int" />
-          <Property Name="الى رمز المدينة" Type="int" />
           <Property Name="الى رمز المنطقة" Type="int" />
           <Property Name="رمز المريض" Type="int" />
           <Property Name="رمز الحالة" Type="int" />
@@ -232,25 +249,12 @@
           <Property Name="التاريخ" Type="datetime" />
           <Property Name="الآلية" Type="int" />
           <Property Name="المريض" Type="int" />
-          <Property Name="من مشفى" Type="int" />
-          <Property Name="من القسم" Type="int" />
           <Property Name="الطبيب المعالج" Type="int" />
-          <Property Name="الجهة الضامنة" Type="int" />
-          <Property Name="إلى مشفى" Type="int" />
-          <Property Name="إلى القسم" Type="int" />
-          <Property Name="مسؤول المهمة" Type="int" />
-          <Property Name="مسعف 1" Type="int" />
-          <Property Name="مسعف 2" Type="int" />
           <Property Name="السائق" Type="int" />
           <Property Name="رقم المتصل" Type="int" />
-          <Property Name="الهاتف" Type="int" />
           <Property Name="متلقي المهمة" Type="int" />
           <Property Name="تفاصيل ال من" Type="nvarchar" MaxLength="50" />
           <Property Name="تفاصيل ال الى" Type="nvarchar" MaxLength="50" />
-          <Property Name="من رمز المدينة" Type="int" />
-          <Property Name="من رمز المنطقة" Type="int" />
-          <Property Name="الى رمز المدينة" Type="int" />
-          <Property Name="الى رمز المنطقة" Type="int" />
           <Property Name="التفاصيل" Type="nvarchar" MaxLength="50" />
           <Property Name="اسم المتصل" Type="nvarchar" MaxLength="30" />
           <Property Name="طبيعة المهمة" Type="int" />
@@ -258,6 +262,8 @@
           <Property Name="الأمراض المعدية" Type="int" />
           <Property Name="مسؤول الدوام" Type="int" />
           <Property Name="نوعية الحالة" Type="int" />
+          <Property Name="من" Type="int" />
+          <Property Name="إلى" Type="int" />
         </EntityType>
         <EntityType Name="الوظيفة">
           <Key>
@@ -265,6 +271,14 @@
           </Key>
           <Property Name="الرمز" Type="int" Nullable="false" />
           <Property Name="الوظيفة" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="إلى">
+          <Key>
+            <PropertyRef Name="الرمز" />
+          </Key>
+          <Property Name="الرمز" Type="int" Nullable="false" />
+          <Property Name="مستشفى/منطقة" Type="bit" />
+          <Property Name="إلى" Type="int" />
         </EntityType>
         <EntityType Name="حالات المهمات">
           <Key>
@@ -292,6 +306,14 @@
           <Property Name="الرمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="فئة الدم" Type="nvarchar" MaxLength="5" />
         </EntityType>
+        <EntityType Name="من">
+          <Key>
+            <PropertyRef Name="الرمز" />
+          </Key>
+          <Property Name="الرمز" Type="int" Nullable="false" />
+          <Property Name="مستشفى/منطقة" Type="bit" />
+          <Property Name="من" Type="int" />
+        </EntityType>
         <EntityType Name="نوعيات الحالات">
           <Key>
             <PropertyRef Name="الرمز" />
@@ -308,18 +330,6 @@
             </Principal>
             <Dependent Role="الأطباء">
               <PropertyRef Name="مكان العمل" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_الأطباء_ToTableالمدن">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="الأطباء" Type="Self.الأطباء" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="الأطباء">
-              <PropertyRef Name="رمز المدينة" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -356,18 +366,6 @@
             </Principal>
             <Dependent Role="الحالات">
               <PropertyRef Name="رمز النوعية" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_العاملون_ToTableالمدينة">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="العاملون" Type="Self.العاملون" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="العاملون">
-              <PropertyRef Name="رمز المدينة" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -419,6 +417,50 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_الفريق_ToTableالدور في المهمة">
+          <End Role="الدور في المهمة" Type="Self.الدور في المهمة" Multiplicity="1" />
+          <End Role="الفريق" Type="Self.الفريق" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="الدور في المهمة">
+              <PropertyRef Name="الرمز" />
+            </Principal>
+            <Dependent Role="الفريق">
+              <PropertyRef Name="دور العامل" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_الفريق_ToTableالعاملون">
+          <End Role="العاملون" Type="Self.العاملون" Multiplicity="1" />
+          <End Role="الفريق" Type="Self.الفريق" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="العاملون">
+              <PropertyRef Name="الرمز" />
+              <PropertyRef Name="المركز" />
+            </Principal>
+            <Dependent Role="الفريق">
+              <PropertyRef Name="رمز العامل" />
+              <PropertyRef Name="رمز  المركز" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_الفريق_ToTableالمهمات المنفذة">
+          <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="1" />
+          <End Role="الفريق" Type="Self.الفريق" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="المهمات المنفذة">
+              <PropertyRef Name="السنة" />
+              <PropertyRef Name="رمز السنوي" />
+              <PropertyRef Name="الرمز الشهري" />
+              <PropertyRef Name="رمز  المركز" />
+            </Principal>
+            <Dependent Role="الفريق">
+              <PropertyRef Name="السنة" />
+              <PropertyRef Name="رمز السنوي" />
+              <PropertyRef Name="الرمز الشهري" />
+              <PropertyRef Name="رمز  المركز" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_المراكز_ToTableالمدن">
           <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
           <End Role="المراكز" Type="Self.المراكز" Multiplicity="*" />
@@ -467,18 +509,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المرضى_ToTableالمدن">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="المرضى" Type="Self.المرضى" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المرضى">
-              <PropertyRef Name="رمز المدينة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_المرضى_ToTableالمناطق">
           <End Role="المناطق" Type="Self.المناطق" Multiplicity="0..1" />
           <End Role="المرضى" Type="Self.المرضى" Multiplicity="*" />
@@ -515,18 +545,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المستشفيات_ToTableالمدينة">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المستشفيات">
-              <PropertyRef Name="رمز المدينة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_المستشفيات_ToTableالمناطق">
           <End Role="المناطق" Type="Self.المناطق" Multiplicity="0..1" />
           <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="*" />
@@ -540,7 +558,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_المناطق_ToTableالمدن">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
+          <End Role="المدن" Type="Self.المدن" Multiplicity="1" />
           <End Role="المناطق" Type="Self.المناطق" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="المدن">
@@ -551,27 +569,63 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات الملغاة_ToTableأقسام المستشفيات1">
-          <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="0..1" />
-          <End Role="المهمات الملغاة" Type="Self.المهمات الملغاة" Multiplicity="*" />
+        <Association Name="FK_المهماة المؤجلة_ToTableالمراكز">
+          <End Role="المراكز" Type="Self.المراكز" Multiplicity="1" />
+          <End Role="المهماة المؤجلة" Type="Self.المهماة المؤجلة" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="المستشفيات">
-              <PropertyRef Name="رمز المستشفى" />
+            <Principal Role="المراكز">
+              <PropertyRef Name="الرمز" />
             </Principal>
-            <Dependent Role="المهمات الملغاة">
-              <PropertyRef Name="من مشفى" />
+            <Dependent Role="المهماة المؤجلة">
+              <PropertyRef Name="رمز المركز" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات الملغاة_ToTableأقسام المستشفيات2">
-          <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="0..1" />
+        <Association Name="FK_المهماة المؤجلة_ToTableالمرضى">
+          <End Role="المرضى" Type="Self.المرضى" Multiplicity="0..1" />
+          <End Role="المهماة المؤجلة" Type="Self.المهماة المؤجلة" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="المرضى">
+              <PropertyRef Name="الرمز" />
+            </Principal>
+            <Dependent Role="المهماة المؤجلة">
+              <PropertyRef Name="المريض" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_المهماة المؤجلة_ToTableنوعيات الحالات">
+          <End Role="نوعيات الحالات" Type="Self.نوعيات الحالات" Multiplicity="0..1" />
+          <End Role="المهماة المؤجلة" Type="Self.المهماة المؤجلة" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="نوعيات الحالات">
+              <PropertyRef Name="الرمز" />
+            </Principal>
+            <Dependent Role="المهماة المؤجلة">
+              <PropertyRef Name="نوع الحالة" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_المهمات الملغاة_ToTable أقسام المستشفيات1">
+          <End Role="أقسام المستشفيات" Type="Self.أقسام المستشفيات" Multiplicity="0..1" />
           <End Role="المهمات الملغاة" Type="Self.المهمات الملغاة" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="المستشفيات">
-              <PropertyRef Name="رمز المستشفى" />
+            <Principal Role="أقسام المستشفيات">
+              <PropertyRef Name="الرمز" />
             </Principal>
             <Dependent Role="المهمات الملغاة">
-              <PropertyRef Name="إلى مشفى" />
+              <PropertyRef Name="من القسم" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_المهمات الملغاة_ToTable أقسام المستشفيات2 ">
+          <End Role="أقسام المستشفيات" Type="Self.أقسام المستشفيات" Multiplicity="0..1" />
+          <End Role="المهمات الملغاة" Type="Self.المهمات الملغاة" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="أقسام المستشفيات">
+              <PropertyRef Name="الرمز" />
+            </Principal>
+            <Dependent Role="المهمات الملغاة">
+              <PropertyRef Name="إلى القسم" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -584,30 +638,6 @@
             </Principal>
             <Dependent Role="المهمات الملغاة">
               <PropertyRef Name="رمز الحالة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات الملغاة_ToTableالمدن1">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="المهمات الملغاة" Type="Self.المهمات الملغاة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المهمات الملغاة">
-              <PropertyRef Name="من رمز المدينة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات الملغاة_ToTableالمدن2">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="المهمات الملغاة" Type="Self.المهمات الملغاة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المهمات الملغاة">
-              <PropertyRef Name="الى رمز المدينة" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -624,26 +654,26 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_المهمات الملغاة_ToTableالمستشفيات1">
-          <End Role="أقسام المستشفيات" Type="Self.أقسام المستشفيات" Multiplicity="0..1" />
+          <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="0..1" />
           <End Role="المهمات الملغاة" Type="Self.المهمات الملغاة" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="أقسام المستشفيات">
-              <PropertyRef Name="الرمز" />
+            <Principal Role="المستشفيات">
+              <PropertyRef Name="رمز المستشفى" />
             </Principal>
             <Dependent Role="المهمات الملغاة">
-              <PropertyRef Name="من القسم" />
+              <PropertyRef Name="من مشفى" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_المهمات الملغاة_ToTableالمستشفيات2">
-          <End Role="أقسام المستشفيات" Type="Self.أقسام المستشفيات" Multiplicity="0..1" />
+          <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="0..1" />
           <End Role="المهمات الملغاة" Type="Self.المهمات الملغاة" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="أقسام المستشفيات">
-              <PropertyRef Name="الرمز" />
+            <Principal Role="المستشفيات">
+              <PropertyRef Name="رمز المستشفى" />
             </Principal>
             <Dependent Role="المهمات الملغاة">
-              <PropertyRef Name="إلى القسم" />
+              <PropertyRef Name="إلى مشفى" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -683,30 +713,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات المنفذة_ToTableأقسام المستشفيات1">
-          <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="0..1" />
-          <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المستشفيات">
-              <PropertyRef Name="رمز المستشفى" />
-            </Principal>
-            <Dependent Role="المهمات المنفذة">
-              <PropertyRef Name="من مشفى" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات المنفذة_ToTableأقسام المستشفيات2">
-          <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="0..1" />
-          <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المستشفيات">
-              <PropertyRef Name="رمز المستشفى" />
-            </Principal>
-            <Dependent Role="المهمات المنفذة">
-              <PropertyRef Name="إلى مشفى" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_المهمات المنفذة_ToTableالأطباء">
           <End Role="الأطباء" Type="Self.الأطباء" Multiplicity="0..1" />
           <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
@@ -725,11 +731,9 @@
           <ReferentialConstraint>
             <Principal Role="الآليات">
               <PropertyRef Name="رمز الآلية" />
-              <PropertyRef Name="المركز" />
             </Principal>
             <Dependent Role="المهمات المنفذة">
               <PropertyRef Name="الآلية" />
-              <PropertyRef Name="رمز  المركز" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -745,32 +749,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات المنفذة_ToTableالجهة الضامنة">
-          <End Role="الجهات الضامنة" Type="Self.الجهات الضامنة" Multiplicity="0..1" />
-          <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="الجهات الضامنة">
-              <PropertyRef Name="الرمز" />
-            </Principal>
-            <Dependent Role="المهمات المنفذة">
-              <PropertyRef Name="الجهة الضامنة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات المنفذة_ToTableالعاملون1">
-          <End Role="العاملون" Type="Self.العاملون" Multiplicity="0..1" />
-          <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="العاملون">
-              <PropertyRef Name="الرمز" />
-              <PropertyRef Name="المركز" />
-            </Principal>
-            <Dependent Role="المهمات المنفذة">
-              <PropertyRef Name="مسؤول المهمة" />
-              <PropertyRef Name="رمز  المركز" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_المهمات المنفذة_ToTableالعاملون2">
           <End Role="العاملون" Type="Self.العاملون" Multiplicity="0..1" />
           <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
@@ -781,34 +759,6 @@
             </Principal>
             <Dependent Role="المهمات المنفذة">
               <PropertyRef Name="السائق" />
-              <PropertyRef Name="رمز  المركز" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات المنفذة_ToTableالعاملون3">
-          <End Role="العاملون" Type="Self.العاملون" Multiplicity="0..1" />
-          <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="العاملون">
-              <PropertyRef Name="الرمز" />
-              <PropertyRef Name="المركز" />
-            </Principal>
-            <Dependent Role="المهمات المنفذة">
-              <PropertyRef Name="مسعف 1" />
-              <PropertyRef Name="رمز  المركز" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات المنفذة_ToTableالعاملون4">
-          <End Role="العاملون" Type="Self.العاملون" Multiplicity="0..1" />
-          <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="العاملون">
-              <PropertyRef Name="الرمز" />
-              <PropertyRef Name="المركز" />
-            </Principal>
-            <Dependent Role="المهمات المنفذة">
-              <PropertyRef Name="مسعف 2" />
               <PropertyRef Name="رمز  المركز" />
             </Dependent>
           </ReferentialConstraint>
@@ -841,30 +791,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات المنفذة_ToTableالمدن1">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المهمات المنفذة">
-              <PropertyRef Name="من رمز المدينة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات المنفذة_ToTableالمدن2">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المهمات المنفذة">
-              <PropertyRef Name="الى رمز المدينة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_المهمات المنفذة_ToTableالمرضى">
           <End Role="المرضى" Type="Self.المرضى" Multiplicity="0..1" />
           <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
@@ -877,51 +803,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات المنفذة_ToTableالمستشفيات1">
-          <End Role="أقسام المستشفيات" Type="Self.أقسام المستشفيات" Multiplicity="0..1" />
+        <Association Name="FK_المهمات المنفذة_ToTableإلى">
+          <End Role="إلى" Type="Self.إلى" Multiplicity="0..1" />
           <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="أقسام المستشفيات">
+            <Principal Role="إلى">
               <PropertyRef Name="الرمز" />
             </Principal>
             <Dependent Role="المهمات المنفذة">
-              <PropertyRef Name="من القسم" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات المنفذة_ToTableالمستشفيات2">
-          <End Role="أقسام المستشفيات" Type="Self.أقسام المستشفيات" Multiplicity="0..1" />
-          <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="أقسام المستشفيات">
-              <PropertyRef Name="الرمز" />
-            </Principal>
-            <Dependent Role="المهمات المنفذة">
-              <PropertyRef Name="إلى القسم" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات المنفذة_ToTableالمناطق1">
-          <End Role="المناطق" Type="Self.المناطق" Multiplicity="0..1" />
-          <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المناطق">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المهمات المنفذة">
-              <PropertyRef Name="من رمز المنطقة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات المنفذة_ToTableالمناطق2">
-          <End Role="المناطق" Type="Self.المناطق" Multiplicity="0..1" />
-          <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المناطق">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المهمات المنفذة">
-              <PropertyRef Name="الى رمز المنطقة" />
+              <PropertyRef Name="إلى" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -937,6 +827,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_المهمات المنفذة_ToTableمن">
+          <End Role="من" Type="Self.من" Multiplicity="0..1" />
+          <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="من">
+              <PropertyRef Name="الرمز" />
+            </Principal>
+            <Dependent Role="المهمات المنفذة">
+              <PropertyRef Name="من" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_المهمات المنفذة_ToTableنوعيات الحالات">
           <End Role="نوعيات الحالات" Type="Self.نوعيات الحالات" Multiplicity="0..1" />
           <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
@@ -949,27 +851,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات المؤجلة_ToTableأقسام المستشفيات1">
-          <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="0..1" />
+        <Association Name="FK_المهمات المؤجلة_ToTable أقسام المستشفيات1">
+          <End Role="أقسام المستشفيات" Type="Self.أقسام المستشفيات" Multiplicity="0..1" />
           <End Role="المهماة المؤجلة" Type="Self.المهماة المؤجلة" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="المستشفيات">
-              <PropertyRef Name="رمز المستشفى" />
+            <Principal Role="أقسام المستشفيات">
+              <PropertyRef Name="الرمز" />
             </Principal>
             <Dependent Role="المهماة المؤجلة">
-              <PropertyRef Name="من مشفى" />
+              <PropertyRef Name="من القسم" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات المؤجلة_ToTableأقسام المستشفيات2">
-          <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="0..1" />
+        <Association Name="FK_المهمات المؤجلة_ToTable أقسام المستشفيات2">
+          <End Role="أقسام المستشفيات" Type="Self.أقسام المستشفيات" Multiplicity="0..1" />
           <End Role="المهماة المؤجلة" Type="Self.المهماة المؤجلة" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="المستشفيات">
-              <PropertyRef Name="رمز المستشفى" />
+            <Principal Role="أقسام المستشفيات">
+              <PropertyRef Name="الرمز" />
             </Principal>
             <Dependent Role="المهماة المؤجلة">
-              <PropertyRef Name="إلى مشفى" />
+              <PropertyRef Name="إلى القسم" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -985,51 +887,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات المؤجلة_ToTableالمدن1">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="المهماة المؤجلة" Type="Self.المهماة المؤجلة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المهماة المؤجلة">
-              <PropertyRef Name="من رمز المدينة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات المؤجلة_ToTableالمدن2">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="المهماة المؤجلة" Type="Self.المهماة المؤجلة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المهماة المؤجلة">
-              <PropertyRef Name="الى رمز المدينة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_المهمات المؤجلة_ToTableالمستشفيات1">
-          <End Role="أقسام المستشفيات" Type="Self.أقسام المستشفيات" Multiplicity="0..1" />
+          <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="0..1" />
           <End Role="المهماة المؤجلة" Type="Self.المهماة المؤجلة" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="أقسام المستشفيات">
-              <PropertyRef Name="الرمز" />
+            <Principal Role="المستشفيات">
+              <PropertyRef Name="رمز المستشفى" />
             </Principal>
             <Dependent Role="المهماة المؤجلة">
-              <PropertyRef Name="من القسم" />
+              <PropertyRef Name="من مشفى" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_المهمات المؤجلة_ToTableالمستشفيات2">
-          <End Role="أقسام المستشفيات" Type="Self.أقسام المستشفيات" Multiplicity="0..1" />
+          <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="0..1" />
           <End Role="المهماة المؤجلة" Type="Self.المهماة المؤجلة" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="أقسام المستشفيات">
-              <PropertyRef Name="الرمز" />
+            <Principal Role="المستشفيات">
+              <PropertyRef Name="رمز المستشفى" />
             </Principal>
             <Dependent Role="المهماة المؤجلة">
-              <PropertyRef Name="إلى القسم" />
+              <PropertyRef Name="إلى مشفى" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1097,7 +975,9 @@
           <EntitySet Name="الأمراض المعدية" EntityType="Self.الأمراض المعدية" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="الجهات الضامنة" EntityType="Self.الجهات الضامنة" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="الحالات" EntityType="Self.الحالات" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="الدور في المهمة" EntityType="Self.الدور في المهمة" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="العاملون" EntityType="Self.العاملون" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="الفريق" EntityType="Self.الفريق" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="المدن" EntityType="Self.المدن" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="المراكز" EntityType="Self.المراكز" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="المرضى" EntityType="Self.المرضى" Schema="dbo" store:Type="Tables" />
@@ -1108,16 +988,14 @@
           <EntitySet Name="المهمات الملغاة" EntityType="Self.المهمات الملغاة" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="المهمات المنفذة" EntityType="Self.المهمات المنفذة" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="الوظيفة" EntityType="Self.الوظيفة" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="إلى" EntityType="Self.إلى" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="حالات المهمات" EntityType="Self.حالات المهمات" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="طبيعة المهمة" EntityType="Self.طبيعة المهمة" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="فئة الدم" EntityType="Self.فئة الدم" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="من" EntityType="Self.من" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="نوعيات الحالات" EntityType="Self.نوعيات الحالات" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_الأطباء_ToTable_المستشفيات" Association="Self.FK_الأطباء_ToTable_المستشفيات">
             <End Role="المستشفيات" EntitySet="المستشفيات" />
-            <End Role="الأطباء" EntitySet="الأطباء" />
-          </AssociationSet>
-          <AssociationSet Name="FK_الأطباء_ToTableالمدن" Association="Self.FK_الأطباء_ToTableالمدن">
-            <End Role="المدن" EntitySet="المدن" />
             <End Role="الأطباء" EntitySet="الأطباء" />
           </AssociationSet>
           <AssociationSet Name="FK_الأطباء_ToTableالمناطق" Association="Self.FK_الأطباء_ToTableالمناطق">
@@ -1131,10 +1009,6 @@
           <AssociationSet Name="FK_الحالات_ToTableنوعيات الحالات" Association="Self.FK_الحالات_ToTableنوعيات الحالات">
             <End Role="نوعيات الحالات" EntitySet="نوعيات الحالات" />
             <End Role="الحالات" EntitySet="الحالات" />
-          </AssociationSet>
-          <AssociationSet Name="FK_العاملون_ToTableالمدينة" Association="Self.FK_العاملون_ToTableالمدينة">
-            <End Role="المدن" EntitySet="المدن" />
-            <End Role="العاملون" EntitySet="العاملون" />
           </AssociationSet>
           <AssociationSet Name="FK_العاملون_ToTableالمراكز" Association="Self.FK_العاملون_ToTableالمراكز">
             <End Role="المراكز" EntitySet="المراكز" />
@@ -1152,6 +1026,18 @@
             <End Role="فئة الدم" EntitySet="فئة الدم" />
             <End Role="العاملون" EntitySet="العاملون" />
           </AssociationSet>
+          <AssociationSet Name="FK_الفريق_ToTableالدور في المهمة" Association="Self.FK_الفريق_ToTableالدور في المهمة">
+            <End Role="الدور في المهمة" EntitySet="الدور في المهمة" />
+            <End Role="الفريق" EntitySet="الفريق" />
+          </AssociationSet>
+          <AssociationSet Name="FK_الفريق_ToTableالعاملون" Association="Self.FK_الفريق_ToTableالعاملون">
+            <End Role="العاملون" EntitySet="العاملون" />
+            <End Role="الفريق" EntitySet="الفريق" />
+          </AssociationSet>
+          <AssociationSet Name="FK_الفريق_ToTableالمهمات المنفذة" Association="Self.FK_الفريق_ToTableالمهمات المنفذة">
+            <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
+            <End Role="الفريق" EntitySet="الفريق" />
+          </AssociationSet>
           <AssociationSet Name="FK_المراكز_ToTableالمدن" Association="Self.FK_المراكز_ToTableالمدن">
             <End Role="المدن" EntitySet="المدن" />
             <End Role="المراكز" EntitySet="المراكز" />
@@ -1168,10 +1054,6 @@
             <End Role="الأطباء" EntitySet="الأطباء" />
             <End Role="المرضى" EntitySet="المرضى" />
           </AssociationSet>
-          <AssociationSet Name="FK_المرضى_ToTableالمدن" Association="Self.FK_المرضى_ToTableالمدن">
-            <End Role="المدن" EntitySet="المدن" />
-            <End Role="المرضى" EntitySet="المرضى" />
-          </AssociationSet>
           <AssociationSet Name="FK_المرضى_ToTableالمناطق" Association="Self.FK_المرضى_ToTableالمناطق">
             <End Role="المناطق" EntitySet="المناطق" />
             <End Role="المرضى" EntitySet="المرضى" />
@@ -1184,10 +1066,6 @@
             <End Role="المستشفيات" EntitySet="المستشفيات" />
             <End Role="المستشفيات مع اقسام" EntitySet="المستشفيات مع اقسام" />
           </AssociationSet>
-          <AssociationSet Name="FK_المستشفيات_ToTableالمدينة" Association="Self.FK_المستشفيات_ToTableالمدينة">
-            <End Role="المدن" EntitySet="المدن" />
-            <End Role="المستشفيات" EntitySet="المستشفيات" />
-          </AssociationSet>
           <AssociationSet Name="FK_المستشفيات_ToTableالمناطق" Association="Self.FK_المستشفيات_ToTableالمناطق">
             <End Role="المناطق" EntitySet="المناطق" />
             <End Role="المستشفيات" EntitySet="المستشفيات" />
@@ -1196,24 +1074,28 @@
             <End Role="المدن" EntitySet="المدن" />
             <End Role="المناطق" EntitySet="المناطق" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات الملغاة_ToTableأقسام المستشفيات1" Association="Self.FK_المهمات الملغاة_ToTableأقسام المستشفيات1">
-            <End Role="المستشفيات" EntitySet="المستشفيات" />
+          <AssociationSet Name="FK_المهماة المؤجلة_ToTableالمراكز" Association="Self.FK_المهماة المؤجلة_ToTableالمراكز">
+            <End Role="المراكز" EntitySet="المراكز" />
+            <End Role="المهماة المؤجلة" EntitySet="المهماة المؤجلة" />
+          </AssociationSet>
+          <AssociationSet Name="FK_المهماة المؤجلة_ToTableالمرضى" Association="Self.FK_المهماة المؤجلة_ToTableالمرضى">
+            <End Role="المرضى" EntitySet="المرضى" />
+            <End Role="المهماة المؤجلة" EntitySet="المهماة المؤجلة" />
+          </AssociationSet>
+          <AssociationSet Name="FK_المهماة المؤجلة_ToTableنوعيات الحالات" Association="Self.FK_المهماة المؤجلة_ToTableنوعيات الحالات">
+            <End Role="نوعيات الحالات" EntitySet="نوعيات الحالات" />
+            <End Role="المهماة المؤجلة" EntitySet="المهماة المؤجلة" />
+          </AssociationSet>
+          <AssociationSet Name="FK_المهمات الملغاة_ToTable أقسام المستشفيات1" Association="Self.FK_المهمات الملغاة_ToTable أقسام المستشفيات1">
+            <End Role="أقسام المستشفيات" EntitySet="أقسام المستشفيات" />
             <End Role="المهمات الملغاة" EntitySet="المهمات الملغاة" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات الملغاة_ToTableأقسام المستشفيات2" Association="Self.FK_المهمات الملغاة_ToTableأقسام المستشفيات2">
-            <End Role="المستشفيات" EntitySet="المستشفيات" />
+          <AssociationSet Name="FK_المهمات الملغاة_ToTable أقسام المستشفيات2 " Association="Self.FK_المهمات الملغاة_ToTable أقسام المستشفيات2 ">
+            <End Role="أقسام المستشفيات" EntitySet="أقسام المستشفيات" />
             <End Role="المهمات الملغاة" EntitySet="المهمات الملغاة" />
           </AssociationSet>
           <AssociationSet Name="FK_المهمات الملغاة_ToTableالحالات" Association="Self.FK_المهمات الملغاة_ToTableالحالات">
             <End Role="الحالات" EntitySet="الحالات" />
-            <End Role="المهمات الملغاة" EntitySet="المهمات الملغاة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات الملغاة_ToTableالمدن1" Association="Self.FK_المهمات الملغاة_ToTableالمدن1">
-            <End Role="المدن" EntitySet="المدن" />
-            <End Role="المهمات الملغاة" EntitySet="المهمات الملغاة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات الملغاة_ToTableالمدن2" Association="Self.FK_المهمات الملغاة_ToTableالمدن2">
-            <End Role="المدن" EntitySet="المدن" />
             <End Role="المهمات الملغاة" EntitySet="المهمات الملغاة" />
           </AssociationSet>
           <AssociationSet Name="FK_المهمات الملغاة_ToTableالمرضى" Association="Self.FK_المهمات الملغاة_ToTableالمرضى">
@@ -1221,11 +1103,11 @@
             <End Role="المهمات الملغاة" EntitySet="المهمات الملغاة" />
           </AssociationSet>
           <AssociationSet Name="FK_المهمات الملغاة_ToTableالمستشفيات1" Association="Self.FK_المهمات الملغاة_ToTableالمستشفيات1">
-            <End Role="أقسام المستشفيات" EntitySet="أقسام المستشفيات" />
+            <End Role="المستشفيات" EntitySet="المستشفيات" />
             <End Role="المهمات الملغاة" EntitySet="المهمات الملغاة" />
           </AssociationSet>
           <AssociationSet Name="FK_المهمات الملغاة_ToTableالمستشفيات2" Association="Self.FK_المهمات الملغاة_ToTableالمستشفيات2">
-            <End Role="أقسام المستشفيات" EntitySet="أقسام المستشفيات" />
+            <End Role="المستشفيات" EntitySet="المستشفيات" />
             <End Role="المهمات الملغاة" EntitySet="المهمات الملغاة" />
           </AssociationSet>
           <AssociationSet Name="FK_المهمات الملغاة_ToTableالمناطق1" Association="Self.FK_المهمات الملغاة_ToTableالمناطق1">
@@ -1240,14 +1122,6 @@
             <End Role="طبيعة المهمة" EntitySet="طبيعة المهمة" />
             <End Role="المهمات الملغاة" EntitySet="المهمات الملغاة" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات المنفذة_ToTableأقسام المستشفيات1" Association="Self.FK_المهمات المنفذة_ToTableأقسام المستشفيات1">
-            <End Role="المستشفيات" EntitySet="المستشفيات" />
-            <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات المنفذة_ToTableأقسام المستشفيات2" Association="Self.FK_المهمات المنفذة_ToTableأقسام المستشفيات2">
-            <End Role="المستشفيات" EntitySet="المستشفيات" />
-            <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
-          </AssociationSet>
           <AssociationSet Name="FK_المهمات المنفذة_ToTableالأطباء" Association="Self.FK_المهمات المنفذة_ToTableالأطباء">
             <End Role="الأطباء" EntitySet="الأطباء" />
             <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
@@ -1260,23 +1134,7 @@
             <End Role="الأمراض المعدية" EntitySet="الأمراض المعدية" />
             <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات المنفذة_ToTableالجهة الضامنة" Association="Self.FK_المهمات المنفذة_ToTableالجهة الضامنة">
-            <End Role="الجهات الضامنة" EntitySet="الجهات الضامنة" />
-            <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات المنفذة_ToTableالعاملون1" Association="Self.FK_المهمات المنفذة_ToTableالعاملون1">
-            <End Role="العاملون" EntitySet="العاملون" />
-            <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
-          </AssociationSet>
           <AssociationSet Name="FK_المهمات المنفذة_ToTableالعاملون2" Association="Self.FK_المهمات المنفذة_ToTableالعاملون2">
-            <End Role="العاملون" EntitySet="العاملون" />
-            <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات المنفذة_ToTableالعاملون3" Association="Self.FK_المهمات المنفذة_ToTableالعاملون3">
-            <End Role="العاملون" EntitySet="العاملون" />
-            <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات المنفذة_ToTableالعاملون4" Association="Self.FK_المهمات المنفذة_ToTableالعاملون4">
             <End Role="العاملون" EntitySet="العاملون" />
             <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
           </AssociationSet>
@@ -1288,68 +1146,44 @@
             <End Role="العاملون" EntitySet="العاملون" />
             <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات المنفذة_ToTableالمدن1" Association="Self.FK_المهمات المنفذة_ToTableالمدن1">
-            <End Role="المدن" EntitySet="المدن" />
-            <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات المنفذة_ToTableالمدن2" Association="Self.FK_المهمات المنفذة_ToTableالمدن2">
-            <End Role="المدن" EntitySet="المدن" />
-            <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
-          </AssociationSet>
           <AssociationSet Name="FK_المهمات المنفذة_ToTableالمرضى" Association="Self.FK_المهمات المنفذة_ToTableالمرضى">
             <End Role="المرضى" EntitySet="المرضى" />
             <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات المنفذة_ToTableالمستشفيات1" Association="Self.FK_المهمات المنفذة_ToTableالمستشفيات1">
-            <End Role="أقسام المستشفيات" EntitySet="أقسام المستشفيات" />
-            <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات المنفذة_ToTableالمستشفيات2" Association="Self.FK_المهمات المنفذة_ToTableالمستشفيات2">
-            <End Role="أقسام المستشفيات" EntitySet="أقسام المستشفيات" />
-            <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات المنفذة_ToTableالمناطق1" Association="Self.FK_المهمات المنفذة_ToTableالمناطق1">
-            <End Role="المناطق" EntitySet="المناطق" />
-            <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات المنفذة_ToTableالمناطق2" Association="Self.FK_المهمات المنفذة_ToTableالمناطق2">
-            <End Role="المناطق" EntitySet="المناطق" />
+          <AssociationSet Name="FK_المهمات المنفذة_ToTableإلى" Association="Self.FK_المهمات المنفذة_ToTableإلى">
+            <End Role="إلى" EntitySet="إلى" />
             <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
           </AssociationSet>
           <AssociationSet Name="FK_المهمات المنفذة_ToTableطبيعة المهمة" Association="Self.FK_المهمات المنفذة_ToTableطبيعة المهمة">
             <End Role="طبيعة المهمة" EntitySet="طبيعة المهمة" />
             <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
           </AssociationSet>
+          <AssociationSet Name="FK_المهمات المنفذة_ToTableمن" Association="Self.FK_المهمات المنفذة_ToTableمن">
+            <End Role="من" EntitySet="من" />
+            <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
+          </AssociationSet>
           <AssociationSet Name="FK_المهمات المنفذة_ToTableنوعيات الحالات" Association="Self.FK_المهمات المنفذة_ToTableنوعيات الحالات">
             <End Role="نوعيات الحالات" EntitySet="نوعيات الحالات" />
             <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات المؤجلة_ToTableأقسام المستشفيات1" Association="Self.FK_المهمات المؤجلة_ToTableأقسام المستشفيات1">
-            <End Role="المستشفيات" EntitySet="المستشفيات" />
+          <AssociationSet Name="FK_المهمات المؤجلة_ToTable أقسام المستشفيات1" Association="Self.FK_المهمات المؤجلة_ToTable أقسام المستشفيات1">
+            <End Role="أقسام المستشفيات" EntitySet="أقسام المستشفيات" />
             <End Role="المهماة المؤجلة" EntitySet="المهماة المؤجلة" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات المؤجلة_ToTableأقسام المستشفيات2" Association="Self.FK_المهمات المؤجلة_ToTableأقسام المستشفيات2">
-            <End Role="المستشفيات" EntitySet="المستشفيات" />
+          <AssociationSet Name="FK_المهمات المؤجلة_ToTable أقسام المستشفيات2" Association="Self.FK_المهمات المؤجلة_ToTable أقسام المستشفيات2">
+            <End Role="أقسام المستشفيات" EntitySet="أقسام المستشفيات" />
             <End Role="المهماة المؤجلة" EntitySet="المهماة المؤجلة" />
           </AssociationSet>
           <AssociationSet Name="FK_المهمات المؤجلة_ToTableالحالات" Association="Self.FK_المهمات المؤجلة_ToTableالحالات">
             <End Role="الحالات" EntitySet="الحالات" />
             <End Role="المهماة المؤجلة" EntitySet="المهماة المؤجلة" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات المؤجلة_ToTableالمدن1" Association="Self.FK_المهمات المؤجلة_ToTableالمدن1">
-            <End Role="المدن" EntitySet="المدن" />
-            <End Role="المهماة المؤجلة" EntitySet="المهماة المؤجلة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات المؤجلة_ToTableالمدن2" Association="Self.FK_المهمات المؤجلة_ToTableالمدن2">
-            <End Role="المدن" EntitySet="المدن" />
-            <End Role="المهماة المؤجلة" EntitySet="المهماة المؤجلة" />
-          </AssociationSet>
           <AssociationSet Name="FK_المهمات المؤجلة_ToTableالمستشفيات1" Association="Self.FK_المهمات المؤجلة_ToTableالمستشفيات1">
-            <End Role="أقسام المستشفيات" EntitySet="أقسام المستشفيات" />
+            <End Role="المستشفيات" EntitySet="المستشفيات" />
             <End Role="المهماة المؤجلة" EntitySet="المهماة المؤجلة" />
           </AssociationSet>
           <AssociationSet Name="FK_المهمات المؤجلة_ToTableالمستشفيات2" Association="Self.FK_المهمات المؤجلة_ToTableالمستشفيات2">
-            <End Role="أقسام المستشفيات" EntitySet="أقسام المستشفيات" />
+            <End Role="المستشفيات" EntitySet="المستشفيات" />
             <End Role="المهماة المؤجلة" EntitySet="المهماة المؤجلة" />
           </AssociationSet>
           <AssociationSet Name="FK_المهمات المؤجلة_ToTableالمناطق1" Association="Self.FK_المهمات المؤجلة_ToTableالمناطق1">
@@ -1383,12 +1217,10 @@
           <Property Name="الرمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="اسم_القسم" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="المستشفيات_مع_اقسام" Relationship="Self.FK_المستشفيات_مع_اقسام_ToTableأقسام_المستشفيات" FromRole="أقسام_المستشفيات" ToRole="المستشفيات_مع_اقسام" />
-          <NavigationProperty Name="المهمات_الملغاة" Relationship="Self.FK_المهمات_الملغاة_ToTableالمستشفيات1" FromRole="أقسام_المستشفيات" ToRole="المهمات_الملغاة" />
-          <NavigationProperty Name="المهمات_الملغاة1" Relationship="Self.FK_المهمات_الملغاة_ToTableالمستشفيات2" FromRole="أقسام_المستشفيات" ToRole="المهمات_الملغاة" />
-          <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableالمستشفيات1" FromRole="أقسام_المستشفيات" ToRole="المهمات_المنفذة" />
-          <NavigationProperty Name="المهمات_المنفذة1" Relationship="Self.FK_المهمات_المنفذة_ToTableالمستشفيات2" FromRole="أقسام_المستشفيات" ToRole="المهمات_المنفذة" />
-          <NavigationProperty Name="المهماة_المؤجلة" Relationship="Self.FK_المهمات_المؤجلة_ToTableالمستشفيات1" FromRole="أقسام_المستشفيات" ToRole="المهماة_المؤجلة" />
-          <NavigationProperty Name="المهماة_المؤجلة1" Relationship="Self.FK_المهمات_المؤجلة_ToTableالمستشفيات2" FromRole="أقسام_المستشفيات" ToRole="المهماة_المؤجلة" />
+          <NavigationProperty Name="المهمات_الملغاة" Relationship="Self.FK_المهمات_الملغاة_ToTable_أقسام_المستشفيات1" FromRole="أقسام_المستشفيات" ToRole="المهمات_الملغاة" />
+          <NavigationProperty Name="المهمات_الملغاة1" Relationship="Self.FK_المهمات_الملغاة_ToTable_أقسام_المستشفيات2_" FromRole="أقسام_المستشفيات" ToRole="المهمات_الملغاة" />
+          <NavigationProperty Name="المهماة_المؤجلة" Relationship="Self.FK_المهمات_المؤجلة_ToTable_أقسام_المستشفيات1" FromRole="أقسام_المستشفيات" ToRole="المهماة_المؤجلة" />
+          <NavigationProperty Name="المهماة_المؤجلة1" Relationship="Self.FK_المهمات_المؤجلة_ToTable_أقسام_المستشفيات2" FromRole="أقسام_المستشفيات" ToRole="المهماة_المؤجلة" />
         </EntityType>
         <EntityType Name="الأطباء">
           <Key>
@@ -1400,10 +1232,8 @@
           <Property Name="اختصاص" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="هاتف" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="مكان_العمل" Type="Int32" />
-          <Property Name="رمز_المدينة" Type="Int32" />
           <Property Name="رمز_المنطقة" Type="Int32" />
           <NavigationProperty Name="المستشفيات" Relationship="Self.FK_الأطباء_ToTable_المستشفيات" FromRole="الأطباء" ToRole="المستشفيات" />
-          <NavigationProperty Name="المدن" Relationship="Self.FK_الأطباء_ToTableالمدن" FromRole="الأطباء" ToRole="المدن" />
           <NavigationProperty Name="المناطق" Relationship="Self.FK_الأطباء_ToTableالمناطق" FromRole="الأطباء" ToRole="المناطق" />
           <NavigationProperty Name="المرضى" Relationship="Self.FK_المرضى_ToTableالطبيب_" FromRole="الأطباء" ToRole="المرضى" />
           <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableالأطباء" FromRole="الأطباء" ToRole="المهمات_المنفذة" />
@@ -1411,14 +1241,13 @@
         <EntityType Name="الآليات">
           <Key>
             <PropertyRef Name="رمز_الآلية" />
-            <PropertyRef Name="المركز" />
           </Key>
           <Property Name="رمز_الآلية" Type="Int32" Nullable="false" />
           <Property Name="المركز" Type="Int32" Nullable="false" />
           <Property Name="نوعية_الاستخدام" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="موديل_" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="نوعية_السيارة" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="مازوت_او_بنزين" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="مازوت_او_بنزين" Type="Boolean" />
           <Property Name="رقم_اللوحة" Type="Int32" />
           <Property Name="بالخدمة_او_لا" Type="Boolean" />
           <Property Name="متاحة_او_لا" Type="Boolean" />
@@ -1448,7 +1277,6 @@
           <Property Name="الرمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="الجهة_الضامنة" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
           <NavigationProperty Name="المرضى" Relationship="Self.FK_المرضى_ToTableالضمان" FromRole="الجهات_الضامنة" ToRole="المرضى" />
-          <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableالجهة_الضامنة" FromRole="الجهات_الضامنة" ToRole="المهمات_المنفذة" />
         </EntityType>
         <EntityType Name="الحالات">
           <Key>
@@ -1461,6 +1289,14 @@
           <NavigationProperty Name="نوعيات_الحالات" Relationship="Self.FK_الحالات_ToTableنوعيات_الحالات" FromRole="الحالات" ToRole="نوعيات_الحالات" />
           <NavigationProperty Name="المهمات_الملغاة" Relationship="Self.FK_المهمات_الملغاة_ToTableالحالات" FromRole="الحالات" ToRole="المهمات_الملغاة" />
           <NavigationProperty Name="المهماة_المؤجلة" Relationship="Self.FK_المهمات_المؤجلة_ToTableالحالات" FromRole="الحالات" ToRole="المهماة_المؤجلة" />
+        </EntityType>
+        <EntityType Name="الدور_في_المهمة">
+          <Key>
+            <PropertyRef Name="الرمز" />
+          </Key>
+          <Property Name="الرمز" Type="Int32" Nullable="false" />
+          <Property Name="الدور" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="الفريق" Relationship="Self.FK_الفريق_ToTableالدور_في_المهمة" FromRole="الدور_في_المهمة" ToRole="الفريق" />
         </EntityType>
         <EntityType Name="العاملون">
           <Key>
@@ -1487,19 +1323,33 @@
           <Property Name="المركز" Type="Int32" Nullable="false" />
           <Property Name="اللقب" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="تاريخ_الانتساب" Type="DateTime" Precision="0" />
-          <Property Name="رمز_المدينة" Type="Int32" />
           <Property Name="رمز_المنطقة" Type="Int32" />
-          <NavigationProperty Name="المدن" Relationship="Self.FK_العاملون_ToTableالمدينة" FromRole="العاملون" ToRole="المدن" />
           <NavigationProperty Name="المراكز" Relationship="Self.FK_العاملون_ToTableالمراكز" FromRole="العاملون" ToRole="المراكز" />
           <NavigationProperty Name="المناطق" Relationship="Self.FK_العاملون_ToTableالمنطقة" FromRole="العاملون" ToRole="المناطق" />
           <NavigationProperty Name="الوظيفة1" Relationship="Self.FK_العاملون_ToTableالوظيفة" FromRole="العاملون" ToRole="الوظيفة" />
           <NavigationProperty Name="فئة_الدم1" Relationship="Self.FK_العاملون_ToTableفئة_الدم" FromRole="العاملون" ToRole="فئة_الدم" />
-          <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون1" FromRole="العاملون" ToRole="المهمات_المنفذة" />
-          <NavigationProperty Name="المهمات_المنفذة1" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون2" FromRole="العاملون" ToRole="المهمات_المنفذة" />
-          <NavigationProperty Name="المهمات_المنفذة2" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون3" FromRole="العاملون" ToRole="المهمات_المنفذة" />
-          <NavigationProperty Name="المهمات_المنفذة3" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون4" FromRole="العاملون" ToRole="المهمات_المنفذة" />
-          <NavigationProperty Name="المهمات_المنفذة4" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون5" FromRole="العاملون" ToRole="المهمات_المنفذة" />
-          <NavigationProperty Name="المهمات_المنفذة5" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون6" FromRole="العاملون" ToRole="المهمات_المنفذة" />
+          <NavigationProperty Name="الفريق" Relationship="Self.FK_الفريق_ToTableالعاملون" FromRole="العاملون" ToRole="الفريق" />
+          <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون2" FromRole="العاملون" ToRole="المهمات_المنفذة" />
+          <NavigationProperty Name="المهمات_المنفذة1" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون5" FromRole="العاملون" ToRole="المهمات_المنفذة" />
+          <NavigationProperty Name="المهمات_المنفذة2" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون6" FromRole="العاملون" ToRole="المهمات_المنفذة" />
+        </EntityType>
+        <EntityType Name="الفريق">
+          <Key>
+            <PropertyRef Name="الرمز_الشهري" />
+            <PropertyRef Name="رمز_السنوي" />
+            <PropertyRef Name="السنة" />
+            <PropertyRef Name="رمز__المركز" />
+            <PropertyRef Name="رمز_العامل" />
+          </Key>
+          <Property Name="الرمز_الشهري" Type="Int32" Nullable="false" />
+          <Property Name="رمز_السنوي" Type="Int32" Nullable="false" />
+          <Property Name="السنة" Type="Int32" Nullable="false" />
+          <Property Name="رمز__المركز" Type="Int32" Nullable="false" />
+          <Property Name="رمز_العامل" Type="Int32" Nullable="false" />
+          <Property Name="دور_العامل" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="الدور_في_المهمة" Relationship="Self.FK_الفريق_ToTableالدور_في_المهمة" FromRole="الفريق" ToRole="الدور_في_المهمة" />
+          <NavigationProperty Name="العاملون" Relationship="Self.FK_الفريق_ToTableالعاملون" FromRole="الفريق" ToRole="العاملون" />
+          <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_الفريق_ToTableالمهمات_المنفذة" FromRole="الفريق" ToRole="المهمات_المنفذة" />
         </EntityType>
         <EntityType Name="المدن">
           <Key>
@@ -1507,18 +1357,8 @@
           </Key>
           <Property Name="رمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="المدينة" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="الأطباء" Relationship="Self.FK_الأطباء_ToTableالمدن" FromRole="المدن" ToRole="الأطباء" />
-          <NavigationProperty Name="العاملون" Relationship="Self.FK_العاملون_ToTableالمدينة" FromRole="المدن" ToRole="العاملون" />
           <NavigationProperty Name="المراكز" Relationship="Self.FK_المراكز_ToTableالمدن" FromRole="المدن" ToRole="المراكز" />
-          <NavigationProperty Name="المرضى" Relationship="Self.FK_المرضى_ToTableالمدن" FromRole="المدن" ToRole="المرضى" />
-          <NavigationProperty Name="المستشفيات" Relationship="Self.FK_المستشفيات_ToTableالمدينة" FromRole="المدن" ToRole="المستشفيات" />
           <NavigationProperty Name="المناطق" Relationship="Self.FK_المناطق_ToTableالمدن" FromRole="المدن" ToRole="المناطق" />
-          <NavigationProperty Name="المهمات_الملغاة" Relationship="Self.FK_المهمات_الملغاة_ToTableالمدن1" FromRole="المدن" ToRole="المهمات_الملغاة" />
-          <NavigationProperty Name="المهمات_الملغاة1" Relationship="Self.FK_المهمات_الملغاة_ToTableالمدن2" FromRole="المدن" ToRole="المهمات_الملغاة" />
-          <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableالمدن1" FromRole="المدن" ToRole="المهمات_المنفذة" />
-          <NavigationProperty Name="المهمات_المنفذة1" Relationship="Self.FK_المهمات_المنفذة_ToTableالمدن2" FromRole="المدن" ToRole="المهمات_المنفذة" />
-          <NavigationProperty Name="المهماة_المؤجلة" Relationship="Self.FK_المهمات_المؤجلة_ToTableالمدن1" FromRole="المدن" ToRole="المهماة_المؤجلة" />
-          <NavigationProperty Name="المهماة_المؤجلة1" Relationship="Self.FK_المهمات_المؤجلة_ToTableالمدن2" FromRole="المدن" ToRole="المهماة_المؤجلة" />
         </EntityType>
         <EntityType Name="المراكز">
           <Key>
@@ -1530,6 +1370,7 @@
           <NavigationProperty Name="الآليات" Relationship="Self.FK_الآليات_ToTable_المراكز" FromRole="المراكز" ToRole="الآليات" />
           <NavigationProperty Name="العاملون" Relationship="Self.FK_العاملون_ToTableالمراكز" FromRole="المراكز" ToRole="العاملون" />
           <NavigationProperty Name="المدن" Relationship="Self.FK_المراكز_ToTableالمدن" FromRole="المراكز" ToRole="المدن" />
+          <NavigationProperty Name="المهماة_المؤجلة" Relationship="Self.FK_المهماة_المؤجلة_ToTableالمراكز" FromRole="المراكز" ToRole="المهماة_المؤجلة" />
         </EntityType>
         <EntityType Name="المرضى">
           <Key>
@@ -1542,15 +1383,14 @@
           <Property Name="الضمان" Type="Int32" />
           <Property Name="الهاتف" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
           <Property Name="العنوان" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="رمز_المدينة" Type="Int32" />
           <Property Name="أمراض_مزمنة" Type="Int32" />
           <Property Name="رمز_المنطقة" Type="Int32" />
           <Property Name="الطبيب_المعالج" Type="Int32" />
           <NavigationProperty Name="الأطباء" Relationship="Self.FK_المرضى_ToTableالطبيب_" FromRole="المرضى" ToRole="الأطباء" />
           <NavigationProperty Name="الأمراض_المزمنة" Relationship="Self.FK_المرضى_ToTableالأمراض_المزمنة" FromRole="المرضى" ToRole="الأمراض_المزمنة" />
           <NavigationProperty Name="الجهات_الضامنة" Relationship="Self.FK_المرضى_ToTableالضمان" FromRole="المرضى" ToRole="الجهات_الضامنة" />
-          <NavigationProperty Name="المدن" Relationship="Self.FK_المرضى_ToTableالمدن" FromRole="المرضى" ToRole="المدن" />
           <NavigationProperty Name="المناطق" Relationship="Self.FK_المرضى_ToTableالمناطق" FromRole="المرضى" ToRole="المناطق" />
+          <NavigationProperty Name="المهماة_المؤجلة" Relationship="Self.FK_المهماة_المؤجلة_ToTableالمرضى" FromRole="المرضى" ToRole="المهماة_المؤجلة" />
           <NavigationProperty Name="المهمات_الملغاة" Relationship="Self.FK_المهمات_الملغاة_ToTableالمرضى" FromRole="المرضى" ToRole="المهمات_الملغاة" />
           <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableالمرضى" FromRole="المرضى" ToRole="المهمات_المنفذة" />
         </EntityType>
@@ -1562,31 +1402,28 @@
           <Property Name="العنوان" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="الهاتف" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="اسم_المستشفى" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="رمز_المدينة" Type="Int32" />
           <Property Name="رمز_المنطقة" Type="Int32" />
           <Property Name="الطابق_السفلي" Type="Int16" />
           <Property Name="الطابق_العلوي" Type="Int16" />
-          <Property Name="الملاحظات" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="الملاحظات" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="الحالة" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="الأطباء" Relationship="Self.FK_الأطباء_ToTable_المستشفيات" FromRole="المستشفيات" ToRole="الأطباء" />
-          <NavigationProperty Name="المدن" Relationship="Self.FK_المستشفيات_ToTableالمدينة" FromRole="المستشفيات" ToRole="المدن" />
           <NavigationProperty Name="المستشفيات_مع_اقسام" Relationship="Self.FK_المستشفيات_مع_اقسام_ToTableالمستشفيات" FromRole="المستشفيات" ToRole="المستشفيات_مع_اقسام" />
           <NavigationProperty Name="المناطق" Relationship="Self.FK_المستشفيات_ToTableالمناطق" FromRole="المستشفيات" ToRole="المناطق" />
-          <NavigationProperty Name="المهمات_الملغاة" Relationship="Self.FK_المهمات_الملغاة_ToTableأقسام_المستشفيات1" FromRole="المستشفيات" ToRole="المهمات_الملغاة" />
-          <NavigationProperty Name="المهمات_الملغاة1" Relationship="Self.FK_المهمات_الملغاة_ToTableأقسام_المستشفيات2" FromRole="المستشفيات" ToRole="المهمات_الملغاة" />
-          <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableأقسام_المستشفيات1" FromRole="المستشفيات" ToRole="المهمات_المنفذة" />
-          <NavigationProperty Name="المهمات_المنفذة1" Relationship="Self.FK_المهمات_المنفذة_ToTableأقسام_المستشفيات2" FromRole="المستشفيات" ToRole="المهمات_المنفذة" />
-          <NavigationProperty Name="المهماة_المؤجلة" Relationship="Self.FK_المهمات_المؤجلة_ToTableأقسام_المستشفيات1" FromRole="المستشفيات" ToRole="المهماة_المؤجلة" />
-          <NavigationProperty Name="المهماة_المؤجلة1" Relationship="Self.FK_المهمات_المؤجلة_ToTableأقسام_المستشفيات2" FromRole="المستشفيات" ToRole="المهماة_المؤجلة" />
+          <NavigationProperty Name="المهمات_الملغاة" Relationship="Self.FK_المهمات_الملغاة_ToTableالمستشفيات1" FromRole="المستشفيات" ToRole="المهمات_الملغاة" />
+          <NavigationProperty Name="المهمات_الملغاة1" Relationship="Self.FK_المهمات_الملغاة_ToTableالمستشفيات2" FromRole="المستشفيات" ToRole="المهمات_الملغاة" />
+          <NavigationProperty Name="المهماة_المؤجلة" Relationship="Self.FK_المهمات_المؤجلة_ToTableالمستشفيات1" FromRole="المستشفيات" ToRole="المهماة_المؤجلة" />
+          <NavigationProperty Name="المهماة_المؤجلة1" Relationship="Self.FK_المهمات_المؤجلة_ToTableالمستشفيات2" FromRole="المستشفيات" ToRole="المهماة_المؤجلة" />
         </EntityType>
         <EntityType Name="المستشفيات_مع_اقسام">
           <Key>
-            <PropertyRef Name="رمز_المشفى" />
-            <PropertyRef Name="رمز_القسم" />
+            <PropertyRef Name="الرمز" />
           </Key>
+          <Property Name="الرمز" Type="Int32" Nullable="false" />
           <Property Name="رمز_المشفى" Type="Int32" Nullable="false" />
           <Property Name="رمز_القسم" Type="Int32" Nullable="false" />
-          <Property Name="تحويلة_القسم" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="المبلغ_عن_الموضوع" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="تحويلة_القسم" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="المبلغ_عن_الموضوع" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="الطابق" Type="Int16" />
           <NavigationProperty Name="أقسام_المستشفيات" Relationship="Self.FK_المستشفيات_مع_اقسام_ToTableأقسام_المستشفيات" FromRole="المستشفيات_مع_اقسام" ToRole="أقسام_المستشفيات" />
           <NavigationProperty Name="المستشفيات" Relationship="Self.FK_المستشفيات_مع_اقسام_ToTableالمستشفيات" FromRole="المستشفيات_مع_اقسام" ToRole="المستشفيات" />
@@ -1597,7 +1434,7 @@
           </Key>
           <Property Name="رمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="المنطقة" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="المدينة" Type="Int32" />
+          <Property Name="المدينة" Type="Int32" Nullable="false" />
           <NavigationProperty Name="الأطباء" Relationship="Self.FK_الأطباء_ToTableالمناطق" FromRole="المناطق" ToRole="الأطباء" />
           <NavigationProperty Name="العاملون" Relationship="Self.FK_العاملون_ToTableالمنطقة" FromRole="المناطق" ToRole="العاملون" />
           <NavigationProperty Name="المدن" Relationship="Self.FK_المناطق_ToTableالمدن" FromRole="المناطق" ToRole="المدن" />
@@ -1605,8 +1442,6 @@
           <NavigationProperty Name="المستشفيات" Relationship="Self.FK_المستشفيات_ToTableالمناطق" FromRole="المناطق" ToRole="المستشفيات" />
           <NavigationProperty Name="المهمات_الملغاة" Relationship="Self.FK_المهمات_الملغاة_ToTableالمناطق1" FromRole="المناطق" ToRole="المهمات_الملغاة" />
           <NavigationProperty Name="المهمات_الملغاة1" Relationship="Self.FK_المهمات_الملغاة_ToTableالمناطق2" FromRole="المناطق" ToRole="المهمات_الملغاة" />
-          <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableالمناطق1" FromRole="المناطق" ToRole="المهمات_المنفذة" />
-          <NavigationProperty Name="المهمات_المنفذة1" Relationship="Self.FK_المهمات_المنفذة_ToTableالمناطق2" FromRole="المناطق" ToRole="المهمات_المنفذة" />
           <NavigationProperty Name="المهماة_المؤجلة" Relationship="Self.FK_المهمات_المؤجلة_ToTableالمناطق1" FromRole="المناطق" ToRole="المهماة_المؤجلة" />
           <NavigationProperty Name="المهماة_المؤجلة1" Relationship="Self.FK_المهمات_المؤجلة_ToTableالمناطق2" FromRole="المناطق" ToRole="المهماة_المؤجلة" />
         </EntityType>
@@ -1617,31 +1452,33 @@
           </Key>
           <Property Name="رمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="رمز_المركز" Type="Int32" Nullable="false" />
-          <Property Name="اسم" Type="Int32" />
-          <Property Name="العمر" Type="Int32" />
-          <Property Name="من_رمز_المدينة" Type="Int32" />
+          <Property Name="المريض" Type="Int32" />
+          <Property Name="يستطيع_الجلوس" Type="Boolean" />
           <Property Name="من_رمز_المنطقة" Type="Int32" />
           <Property Name="من_مشفى" Type="Int32" />
           <Property Name="من_القسم" Type="Int32" />
           <Property Name="تفاصيل_ال_من" Type="Int32" />
           <Property Name="إلى_مشفى" Type="Int32" />
           <Property Name="إلى_القسم" Type="Int32" />
-          <Property Name="الى_رمز_المدينة" Type="Int32" />
           <Property Name="الى_رمز_المنطقة" Type="Int32" />
           <Property Name="تفاصيل_ال_الى" Type="Int32" />
           <Property Name="رمز_الحالة" Type="Int32" />
           <Property Name="التاريخ_والوقت" Type="DateTime" Precision="3" />
           <Property Name="اسم_المتصل" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="رقم_المتصل" Type="Int32" />
-          <NavigationProperty Name="أقسام_المستشفيات" Relationship="Self.FK_المهمات_المؤجلة_ToTableالمستشفيات1" FromRole="المهماة_المؤجلة" ToRole="أقسام_المستشفيات" />
-          <NavigationProperty Name="أقسام_المستشفيات1" Relationship="Self.FK_المهمات_المؤجلة_ToTableالمستشفيات2" FromRole="المهماة_المؤجلة" ToRole="أقسام_المستشفيات" />
+          <Property Name="نوع_الحالة" Type="Int32" />
+          <Property Name="تفاصيل_الحالة" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="العمر" Type="Int32" />
+          <NavigationProperty Name="أقسام_المستشفيات" Relationship="Self.FK_المهمات_المؤجلة_ToTable_أقسام_المستشفيات1" FromRole="المهماة_المؤجلة" ToRole="أقسام_المستشفيات" />
+          <NavigationProperty Name="أقسام_المستشفيات1" Relationship="Self.FK_المهمات_المؤجلة_ToTable_أقسام_المستشفيات2" FromRole="المهماة_المؤجلة" ToRole="أقسام_المستشفيات" />
           <NavigationProperty Name="الحالات" Relationship="Self.FK_المهمات_المؤجلة_ToTableالحالات" FromRole="المهماة_المؤجلة" ToRole="الحالات" />
-          <NavigationProperty Name="المدن" Relationship="Self.FK_المهمات_المؤجلة_ToTableالمدن1" FromRole="المهماة_المؤجلة" ToRole="المدن" />
-          <NavigationProperty Name="المدن1" Relationship="Self.FK_المهمات_المؤجلة_ToTableالمدن2" FromRole="المهماة_المؤجلة" ToRole="المدن" />
-          <NavigationProperty Name="المستشفيات" Relationship="Self.FK_المهمات_المؤجلة_ToTableأقسام_المستشفيات1" FromRole="المهماة_المؤجلة" ToRole="المستشفيات" />
-          <NavigationProperty Name="المستشفيات1" Relationship="Self.FK_المهمات_المؤجلة_ToTableأقسام_المستشفيات2" FromRole="المهماة_المؤجلة" ToRole="المستشفيات" />
+          <NavigationProperty Name="المراكز" Relationship="Self.FK_المهماة_المؤجلة_ToTableالمراكز" FromRole="المهماة_المؤجلة" ToRole="المراكز" />
+          <NavigationProperty Name="المرضى" Relationship="Self.FK_المهماة_المؤجلة_ToTableالمرضى" FromRole="المهماة_المؤجلة" ToRole="المرضى" />
+          <NavigationProperty Name="المستشفيات" Relationship="Self.FK_المهمات_المؤجلة_ToTableالمستشفيات1" FromRole="المهماة_المؤجلة" ToRole="المستشفيات" />
+          <NavigationProperty Name="المستشفيات1" Relationship="Self.FK_المهمات_المؤجلة_ToTableالمستشفيات2" FromRole="المهماة_المؤجلة" ToRole="المستشفيات" />
           <NavigationProperty Name="المناطق" Relationship="Self.FK_المهمات_المؤجلة_ToTableالمناطق1" FromRole="المهماة_المؤجلة" ToRole="المناطق" />
           <NavigationProperty Name="المناطق1" Relationship="Self.FK_المهمات_المؤجلة_ToTableالمناطق2" FromRole="المهماة_المؤجلة" ToRole="المناطق" />
+          <NavigationProperty Name="نوعيات_الحالات" Relationship="Self.FK_المهماة_المؤجلة_ToTableنوعيات_الحالات" FromRole="المهماة_المؤجلة" ToRole="نوعيات_الحالات" />
         </EntityType>
         <EntityType Name="المهمات_الملغاة">
           <Key>
@@ -1653,25 +1490,21 @@
           <Property Name="الرمز_الشهري" Type="Int32" Nullable="false" />
           <Property Name="رمز_السنوي" Type="Int32" Nullable="false" />
           <Property Name="التاريخ" Type="DateTime" Precision="0" />
-          <Property Name="من_رمز_المدينة" Type="Int32" />
           <Property Name="من_رمز_المنطقة" Type="Int32" />
           <Property Name="من_مشفى" Type="Int32" />
           <Property Name="من_القسم" Type="Int32" />
           <Property Name="إلى_مشفى" Type="Int32" />
           <Property Name="إلى_القسم" Type="Int32" />
-          <Property Name="الى_رمز_المدينة" Type="Int32" />
           <Property Name="الى_رمز_المنطقة" Type="Int32" />
           <Property Name="رمز_المريض" Type="Int32" />
           <Property Name="رمز_الحالة" Type="Int32" />
           <Property Name="طبيعة_المهمة" Type="Int32" />
-          <NavigationProperty Name="أقسام_المستشفيات" Relationship="Self.FK_المهمات_الملغاة_ToTableالمستشفيات1" FromRole="المهمات_الملغاة" ToRole="أقسام_المستشفيات" />
-          <NavigationProperty Name="أقسام_المستشفيات1" Relationship="Self.FK_المهمات_الملغاة_ToTableالمستشفيات2" FromRole="المهمات_الملغاة" ToRole="أقسام_المستشفيات" />
+          <NavigationProperty Name="أقسام_المستشفيات" Relationship="Self.FK_المهمات_الملغاة_ToTable_أقسام_المستشفيات1" FromRole="المهمات_الملغاة" ToRole="أقسام_المستشفيات" />
+          <NavigationProperty Name="أقسام_المستشفيات1" Relationship="Self.FK_المهمات_الملغاة_ToTable_أقسام_المستشفيات2_" FromRole="المهمات_الملغاة" ToRole="أقسام_المستشفيات" />
           <NavigationProperty Name="الحالات" Relationship="Self.FK_المهمات_الملغاة_ToTableالحالات" FromRole="المهمات_الملغاة" ToRole="الحالات" />
-          <NavigationProperty Name="المدن" Relationship="Self.FK_المهمات_الملغاة_ToTableالمدن1" FromRole="المهمات_الملغاة" ToRole="المدن" />
-          <NavigationProperty Name="المدن1" Relationship="Self.FK_المهمات_الملغاة_ToTableالمدن2" FromRole="المهمات_الملغاة" ToRole="المدن" />
           <NavigationProperty Name="المرضى" Relationship="Self.FK_المهمات_الملغاة_ToTableالمرضى" FromRole="المهمات_الملغاة" ToRole="المرضى" />
-          <NavigationProperty Name="المستشفيات" Relationship="Self.FK_المهمات_الملغاة_ToTableأقسام_المستشفيات1" FromRole="المهمات_الملغاة" ToRole="المستشفيات" />
-          <NavigationProperty Name="المستشفيات1" Relationship="Self.FK_المهمات_الملغاة_ToTableأقسام_المستشفيات2" FromRole="المهمات_الملغاة" ToRole="المستشفيات" />
+          <NavigationProperty Name="المستشفيات" Relationship="Self.FK_المهمات_الملغاة_ToTableالمستشفيات1" FromRole="المهمات_الملغاة" ToRole="المستشفيات" />
+          <NavigationProperty Name="المستشفيات1" Relationship="Self.FK_المهمات_الملغاة_ToTableالمستشفيات2" FromRole="المهمات_الملغاة" ToRole="المستشفيات" />
           <NavigationProperty Name="المناطق" Relationship="Self.FK_المهمات_الملغاة_ToTableالمناطق1" FromRole="المهمات_الملغاة" ToRole="المناطق" />
           <NavigationProperty Name="المناطق1" Relationship="Self.FK_المهمات_الملغاة_ToTableالمناطق2" FromRole="المهمات_الملغاة" ToRole="المناطق" />
           <NavigationProperty Name="طبيعة_المهمة1" Relationship="Self.FK_المهمات_الملغاة_ToTableطبيعة_المهمة" FromRole="المهمات_الملغاة" ToRole="طبيعة_المهمة" />
@@ -1690,25 +1523,12 @@
           <Property Name="التاريخ" Type="DateTime" Precision="3" />
           <Property Name="الآلية" Type="Int32" />
           <Property Name="المريض" Type="Int32" />
-          <Property Name="من_مشفى" Type="Int32" />
-          <Property Name="من_القسم" Type="Int32" />
           <Property Name="الطبيب_المعالج" Type="Int32" />
-          <Property Name="الجهة_الضامنة" Type="Int32" />
-          <Property Name="إلى_مشفى" Type="Int32" />
-          <Property Name="إلى_القسم" Type="Int32" />
-          <Property Name="مسؤول_المهمة" Type="Int32" />
-          <Property Name="مسعف_1" Type="Int32" />
-          <Property Name="مسعف_2" Type="Int32" />
           <Property Name="السائق" Type="Int32" />
           <Property Name="رقم_المتصل" Type="Int32" />
-          <Property Name="الهاتف" Type="Int32" />
           <Property Name="متلقي_المهمة" Type="Int32" />
           <Property Name="تفاصيل_ال_من" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="تفاصيل_ال_الى" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="من_رمز_المدينة" Type="Int32" />
-          <Property Name="من_رمز_المنطقة" Type="Int32" />
-          <Property Name="الى_رمز_المدينة" Type="Int32" />
-          <Property Name="الى_رمز_المنطقة" Type="Int32" />
           <Property Name="التفاصيل" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="اسم_المتصل" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="طبيعة_المهمة" Type="Int32" />
@@ -1716,26 +1536,19 @@
           <Property Name="الأمراض_المعدية" Type="Int32" />
           <Property Name="مسؤول_الدوام" Type="Int32" />
           <Property Name="نوعية_الحالة" Type="Int32" />
-          <NavigationProperty Name="أقسام_المستشفيات" Relationship="Self.FK_المهمات_المنفذة_ToTableالمستشفيات1" FromRole="المهمات_المنفذة" ToRole="أقسام_المستشفيات" />
-          <NavigationProperty Name="أقسام_المستشفيات1" Relationship="Self.FK_المهمات_المنفذة_ToTableالمستشفيات2" FromRole="المهمات_المنفذة" ToRole="أقسام_المستشفيات" />
+          <Property Name="من" Type="Int32" />
+          <Property Name="إلى" Type="Int32" />
           <NavigationProperty Name="الأطباء" Relationship="Self.FK_المهمات_المنفذة_ToTableالأطباء" FromRole="المهمات_المنفذة" ToRole="الأطباء" />
           <NavigationProperty Name="الآليات" Relationship="Self.FK_المهمات_المنفذة_ToTableالآليات" FromRole="المهمات_المنفذة" ToRole="الآليات" />
           <NavigationProperty Name="الأمراض_المعدية1" Relationship="Self.FK_المهمات_المنفذة_ToTableالأمراض_المعدية" FromRole="المهمات_المنفذة" ToRole="الأمراض_المعدية" />
-          <NavigationProperty Name="الجهات_الضامنة" Relationship="Self.FK_المهمات_المنفذة_ToTableالجهة_الضامنة" FromRole="المهمات_المنفذة" ToRole="الجهات_الضامنة" />
-          <NavigationProperty Name="العاملون" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون1" FromRole="المهمات_المنفذة" ToRole="العاملون" />
-          <NavigationProperty Name="العاملون1" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون2" FromRole="المهمات_المنفذة" ToRole="العاملون" />
-          <NavigationProperty Name="العاملون2" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون3" FromRole="المهمات_المنفذة" ToRole="العاملون" />
-          <NavigationProperty Name="العاملون3" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون4" FromRole="المهمات_المنفذة" ToRole="العاملون" />
-          <NavigationProperty Name="العاملون4" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون5" FromRole="المهمات_المنفذة" ToRole="العاملون" />
-          <NavigationProperty Name="العاملون5" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون6" FromRole="المهمات_المنفذة" ToRole="العاملون" />
-          <NavigationProperty Name="المدن" Relationship="Self.FK_المهمات_المنفذة_ToTableالمدن1" FromRole="المهمات_المنفذة" ToRole="المدن" />
-          <NavigationProperty Name="المدن1" Relationship="Self.FK_المهمات_المنفذة_ToTableالمدن2" FromRole="المهمات_المنفذة" ToRole="المدن" />
+          <NavigationProperty Name="العاملون" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون2" FromRole="المهمات_المنفذة" ToRole="العاملون" />
+          <NavigationProperty Name="العاملون1" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون5" FromRole="المهمات_المنفذة" ToRole="العاملون" />
+          <NavigationProperty Name="العاملون2" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون6" FromRole="المهمات_المنفذة" ToRole="العاملون" />
+          <NavigationProperty Name="الفريق" Relationship="Self.FK_الفريق_ToTableالمهمات_المنفذة" FromRole="المهمات_المنفذة" ToRole="الفريق" />
           <NavigationProperty Name="المرضى" Relationship="Self.FK_المهمات_المنفذة_ToTableالمرضى" FromRole="المهمات_المنفذة" ToRole="المرضى" />
-          <NavigationProperty Name="المستشفيات" Relationship="Self.FK_المهمات_المنفذة_ToTableأقسام_المستشفيات1" FromRole="المهمات_المنفذة" ToRole="المستشفيات" />
-          <NavigationProperty Name="المستشفيات1" Relationship="Self.FK_المهمات_المنفذة_ToTableأقسام_المستشفيات2" FromRole="المهمات_المنفذة" ToRole="المستشفيات" />
-          <NavigationProperty Name="المناطق" Relationship="Self.FK_المهمات_المنفذة_ToTableالمناطق1" FromRole="المهمات_المنفذة" ToRole="المناطق" />
-          <NavigationProperty Name="المناطق1" Relationship="Self.FK_المهمات_المنفذة_ToTableالمناطق2" FromRole="المهمات_المنفذة" ToRole="المناطق" />
+          <NavigationProperty Name="إلى1" Relationship="Self.FK_المهمات_المنفذة_ToTableإلى" FromRole="المهمات_المنفذة" ToRole="إلى" />
           <NavigationProperty Name="طبيعة_المهمة1" Relationship="Self.FK_المهمات_المنفذة_ToTableطبيعة_المهمة" FromRole="المهمات_المنفذة" ToRole="طبيعة_المهمة" />
+          <NavigationProperty Name="من1" Relationship="Self.FK_المهمات_المنفذة_ToTableمن" FromRole="المهمات_المنفذة" ToRole="من" />
           <NavigationProperty Name="نوعيات_الحالات" Relationship="Self.FK_المهمات_المنفذة_ToTableنوعيات_الحالات" FromRole="المهمات_المنفذة" ToRole="نوعيات_الحالات" />
         </EntityType>
         <EntityType Name="الوظيفة">
@@ -1745,6 +1558,15 @@
           <Property Name="الرمز" Type="Int32" Nullable="false" />
           <Property Name="الوظيفة1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="العاملون" Relationship="Self.FK_العاملون_ToTableالوظيفة" FromRole="الوظيفة" ToRole="العاملون" />
+        </EntityType>
+        <EntityType Name="إلى">
+          <Key>
+            <PropertyRef Name="الرمز" />
+          </Key>
+          <Property Name="الرمز" Type="Int32" Nullable="false" />
+          <Property Name="مستشفى_منطقة" Type="Boolean" />
+          <Property Name="إلى1" Type="Int32" />
+          <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableإلى" FromRole="إلى" ToRole="المهمات_المنفذة" />
         </EntityType>
         <EntityType Name="حالات_المهمات">
           <Key>
@@ -1775,6 +1597,15 @@
           <Property Name="فئة_الدم1" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="العاملون" Relationship="Self.FK_العاملون_ToTableفئة_الدم" FromRole="فئة_الدم" ToRole="العاملون" />
         </EntityType>
+        <EntityType Name="من">
+          <Key>
+            <PropertyRef Name="الرمز" />
+          </Key>
+          <Property Name="الرمز" Type="Int32" Nullable="false" />
+          <Property Name="مستشفى_منطقة" Type="Boolean" />
+          <Property Name="من1" Type="Int32" />
+          <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableمن" FromRole="من" ToRole="المهمات_المنفذة" />
+        </EntityType>
         <EntityType Name="نوعيات_الحالات">
           <Key>
             <PropertyRef Name="الرمز" />
@@ -1782,6 +1613,7 @@
           <Property Name="الرمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="النوعية" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="الحالات" Relationship="Self.FK_الحالات_ToTableنوعيات_الحالات" FromRole="نوعيات_الحالات" ToRole="الحالات" />
+          <NavigationProperty Name="المهماة_المؤجلة" Relationship="Self.FK_المهماة_المؤجلة_ToTableنوعيات_الحالات" FromRole="نوعيات_الحالات" ToRole="المهماة_المؤجلة" />
           <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableنوعيات_الحالات" FromRole="نوعيات_الحالات" ToRole="المهمات_المنفذة" />
         </EntityType>
         <Association Name="FK_المستشفيات_مع_اقسام_ToTableأقسام_المستشفيات">
@@ -1796,7 +1628,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات_الملغاة_ToTableالمستشفيات1">
+        <Association Name="FK_المهمات_الملغاة_ToTable_أقسام_المستشفيات1">
           <End Role="أقسام_المستشفيات" Type="Self.أقسام_المستشفيات" Multiplicity="0..1" />
           <End Role="المهمات_الملغاة" Type="Self.المهمات_الملغاة" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1808,7 +1640,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات_الملغاة_ToTableالمستشفيات2">
+        <Association Name="FK_المهمات_الملغاة_ToTable_أقسام_المستشفيات2_">
           <End Role="أقسام_المستشفيات" Type="Self.أقسام_المستشفيات" Multiplicity="0..1" />
           <End Role="المهمات_الملغاة" Type="Self.المهمات_الملغاة" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1820,31 +1652,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات_المنفذة_ToTableالمستشفيات1">
-          <End Role="أقسام_المستشفيات" Type="Self.أقسام_المستشفيات" Multiplicity="0..1" />
-          <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="أقسام_المستشفيات">
-              <PropertyRef Name="الرمز" />
-            </Principal>
-            <Dependent Role="المهمات_المنفذة">
-              <PropertyRef Name="من_القسم" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات_المنفذة_ToTableالمستشفيات2">
-          <End Role="أقسام_المستشفيات" Type="Self.أقسام_المستشفيات" Multiplicity="0..1" />
-          <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="أقسام_المستشفيات">
-              <PropertyRef Name="الرمز" />
-            </Principal>
-            <Dependent Role="المهمات_المنفذة">
-              <PropertyRef Name="إلى_القسم" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات_المؤجلة_ToTableالمستشفيات1">
+        <Association Name="FK_المهمات_المؤجلة_ToTable_أقسام_المستشفيات1">
           <End Role="أقسام_المستشفيات" Type="Self.أقسام_المستشفيات" Multiplicity="0..1" />
           <End Role="المهماة_المؤجلة" Type="Self.المهماة_المؤجلة" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1856,7 +1664,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات_المؤجلة_ToTableالمستشفيات2">
+        <Association Name="FK_المهمات_المؤجلة_ToTable_أقسام_المستشفيات2">
           <End Role="أقسام_المستشفيات" Type="Self.أقسام_المستشفيات" Multiplicity="0..1" />
           <End Role="المهماة_المؤجلة" Type="Self.المهماة_المؤجلة" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1877,18 +1685,6 @@
             </Principal>
             <Dependent Role="الأطباء">
               <PropertyRef Name="مكان_العمل" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_الأطباء_ToTableالمدن">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="الأطباء" Type="Self.الأطباء" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="الأطباء">
-              <PropertyRef Name="رمز_المدينة" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1946,11 +1742,9 @@
           <ReferentialConstraint>
             <Principal Role="الآليات">
               <PropertyRef Name="رمز_الآلية" />
-              <PropertyRef Name="المركز" />
             </Principal>
             <Dependent Role="المهمات_المنفذة">
               <PropertyRef Name="الآلية" />
-              <PropertyRef Name="رمز__المركز" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1990,18 +1784,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات_المنفذة_ToTableالجهة_الضامنة">
-          <End Role="الجهات_الضامنة" Type="Self.الجهات_الضامنة" Multiplicity="0..1" />
-          <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="الجهات_الضامنة">
-              <PropertyRef Name="الرمز" />
-            </Principal>
-            <Dependent Role="المهمات_المنفذة">
-              <PropertyRef Name="الجهة_الضامنة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_الحالات_ToTableنوعيات_الحالات">
           <End Role="نوعيات_الحالات" Type="Self.نوعيات_الحالات" Multiplicity="0..1" />
           <End Role="الحالات" Type="Self.الحالات" Multiplicity="*" />
@@ -2038,15 +1820,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_العاملون_ToTableالمدينة">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="العاملون" Type="Self.العاملون" Multiplicity="*" />
+        <Association Name="FK_الفريق_ToTableالدور_في_المهمة">
+          <End Role="الدور_في_المهمة" Type="Self.الدور_في_المهمة" Multiplicity="1" />
+          <End Role="الفريق" Type="Self.الفريق" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
+            <Principal Role="الدور_في_المهمة">
+              <PropertyRef Name="الرمز" />
             </Principal>
-            <Dependent Role="العاملون">
-              <PropertyRef Name="رمز_المدينة" />
+            <Dependent Role="الفريق">
+              <PropertyRef Name="دور_العامل" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2098,16 +1880,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات_المنفذة_ToTableالعاملون1">
-          <End Role="العاملون" Type="Self.العاملون" Multiplicity="0..1" />
-          <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
+        <Association Name="FK_الفريق_ToTableالعاملون">
+          <End Role="العاملون" Type="Self.العاملون" Multiplicity="1" />
+          <End Role="الفريق" Type="Self.الفريق" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="العاملون">
               <PropertyRef Name="الرمز" />
               <PropertyRef Name="المركز" />
             </Principal>
-            <Dependent Role="المهمات_المنفذة">
-              <PropertyRef Name="مسؤول_المهمة" />
+            <Dependent Role="الفريق">
+              <PropertyRef Name="رمز_العامل" />
               <PropertyRef Name="رمز__المركز" />
             </Dependent>
           </ReferentialConstraint>
@@ -2122,34 +1904,6 @@
             </Principal>
             <Dependent Role="المهمات_المنفذة">
               <PropertyRef Name="السائق" />
-              <PropertyRef Name="رمز__المركز" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات_المنفذة_ToTableالعاملون3">
-          <End Role="العاملون" Type="Self.العاملون" Multiplicity="0..1" />
-          <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="العاملون">
-              <PropertyRef Name="الرمز" />
-              <PropertyRef Name="المركز" />
-            </Principal>
-            <Dependent Role="المهمات_المنفذة">
-              <PropertyRef Name="مسعف_1" />
-              <PropertyRef Name="رمز__المركز" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات_المنفذة_ToTableالعاملون4">
-          <End Role="العاملون" Type="Self.العاملون" Multiplicity="0..1" />
-          <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="العاملون">
-              <PropertyRef Name="الرمز" />
-              <PropertyRef Name="المركز" />
-            </Principal>
-            <Dependent Role="المهمات_المنفذة">
-              <PropertyRef Name="مسعف_2" />
               <PropertyRef Name="رمز__المركز" />
             </Dependent>
           </ReferentialConstraint>
@@ -2182,6 +1936,24 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_الفريق_ToTableالمهمات_المنفذة">
+          <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="1" />
+          <End Role="الفريق" Type="Self.الفريق" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="المهمات_المنفذة">
+              <PropertyRef Name="السنة" />
+              <PropertyRef Name="رمز_السنوي" />
+              <PropertyRef Name="الرمز_الشهري" />
+              <PropertyRef Name="رمز__المركز" />
+            </Principal>
+            <Dependent Role="الفريق">
+              <PropertyRef Name="السنة" />
+              <PropertyRef Name="رمز_السنوي" />
+              <PropertyRef Name="الرمز_الشهري" />
+              <PropertyRef Name="رمز__المركز" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_المراكز_ToTableالمدن">
           <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
           <End Role="المراكز" Type="Self.المراكز" Multiplicity="*" />
@@ -2194,32 +1966,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المرضى_ToTableالمدن">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="المرضى" Type="Self.المرضى" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المرضى">
-              <PropertyRef Name="رمز_المدينة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المستشفيات_ToTableالمدينة">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المستشفيات">
-              <PropertyRef Name="رمز_المدينة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_المناطق_ToTableالمدن">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
+          <End Role="المدن" Type="Self.المدن" Multiplicity="1" />
           <End Role="المناطق" Type="Self.المناطق" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="المدن">
@@ -2230,75 +1978,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات_الملغاة_ToTableالمدن1">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="المهمات_الملغاة" Type="Self.المهمات_الملغاة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المهمات_الملغاة">
-              <PropertyRef Name="من_رمز_المدينة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات_الملغاة_ToTableالمدن2">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="المهمات_الملغاة" Type="Self.المهمات_الملغاة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المهمات_الملغاة">
-              <PropertyRef Name="الى_رمز_المدينة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات_المنفذة_ToTableالمدن1">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المهمات_المنفذة">
-              <PropertyRef Name="من_رمز_المدينة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات_المنفذة_ToTableالمدن2">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المهمات_المنفذة">
-              <PropertyRef Name="الى_رمز_المدينة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات_المؤجلة_ToTableالمدن1">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
+        <Association Name="FK_المهماة_المؤجلة_ToTableالمراكز">
+          <End Role="المراكز" Type="Self.المراكز" Multiplicity="1" />
           <End Role="المهماة_المؤجلة" Type="Self.المهماة_المؤجلة" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
+            <Principal Role="المراكز">
+              <PropertyRef Name="الرمز" />
             </Principal>
             <Dependent Role="المهماة_المؤجلة">
-              <PropertyRef Name="من_رمز_المدينة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات_المؤجلة_ToTableالمدن2">
-          <End Role="المدن" Type="Self.المدن" Multiplicity="0..1" />
-          <End Role="المهماة_المؤجلة" Type="Self.المهماة_المؤجلة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المدن">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المهماة_المؤجلة">
-              <PropertyRef Name="الى_رمز_المدينة" />
+              <PropertyRef Name="رمز_المركز" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2311,6 +1999,18 @@
             </Principal>
             <Dependent Role="المرضى">
               <PropertyRef Name="رمز_المنطقة" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_المهماة_المؤجلة_ToTableالمرضى">
+          <End Role="المرضى" Type="Self.المرضى" Multiplicity="0..1" />
+          <End Role="المهماة_المؤجلة" Type="Self.المهماة_المؤجلة" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="المرضى">
+              <PropertyRef Name="الرمز" />
+            </Principal>
+            <Dependent Role="المهماة_المؤجلة">
+              <PropertyRef Name="المريض" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2362,7 +2062,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات_الملغاة_ToTableأقسام_المستشفيات1">
+        <Association Name="FK_المهمات_الملغاة_ToTableالمستشفيات1">
           <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="0..1" />
           <End Role="المهمات_الملغاة" Type="Self.المهمات_الملغاة" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2374,7 +2074,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات_الملغاة_ToTableأقسام_المستشفيات2">
+        <Association Name="FK_المهمات_الملغاة_ToTableالمستشفيات2">
           <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="0..1" />
           <End Role="المهمات_الملغاة" Type="Self.المهمات_الملغاة" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2386,31 +2086,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات_المنفذة_ToTableأقسام_المستشفيات1">
-          <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="0..1" />
-          <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المستشفيات">
-              <PropertyRef Name="رمز_المستشفى" />
-            </Principal>
-            <Dependent Role="المهمات_المنفذة">
-              <PropertyRef Name="من_مشفى" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات_المنفذة_ToTableأقسام_المستشفيات2">
-          <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="0..1" />
-          <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المستشفيات">
-              <PropertyRef Name="رمز_المستشفى" />
-            </Principal>
-            <Dependent Role="المهمات_المنفذة">
-              <PropertyRef Name="إلى_مشفى" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات_المؤجلة_ToTableأقسام_المستشفيات1">
+        <Association Name="FK_المهمات_المؤجلة_ToTableالمستشفيات1">
           <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="0..1" />
           <End Role="المهماة_المؤجلة" Type="Self.المهماة_المؤجلة" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2422,7 +2098,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات_المؤجلة_ToTableأقسام_المستشفيات2">
+        <Association Name="FK_المهمات_المؤجلة_ToTableالمستشفيات2">
           <End Role="المستشفيات" Type="Self.المستشفيات" Multiplicity="0..1" />
           <End Role="المهماة_المؤجلة" Type="Self.المهماة_المؤجلة" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2458,30 +2134,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات_المنفذة_ToTableالمناطق1">
-          <End Role="المناطق" Type="Self.المناطق" Multiplicity="0..1" />
-          <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المناطق">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المهمات_المنفذة">
-              <PropertyRef Name="من_رمز_المنطقة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات_المنفذة_ToTableالمناطق2">
-          <End Role="المناطق" Type="Self.المناطق" Multiplicity="0..1" />
-          <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="المناطق">
-              <PropertyRef Name="رمز" />
-            </Principal>
-            <Dependent Role="المهمات_المنفذة">
-              <PropertyRef Name="الى_رمز_المنطقة" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_المهمات_المؤجلة_ToTableالمناطق1">
           <End Role="المناطق" Type="Self.المناطق" Multiplicity="0..1" />
           <End Role="المهماة_المؤجلة" Type="Self.المهماة_المؤجلة" Multiplicity="*" />
@@ -2506,6 +2158,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_المهماة_المؤجلة_ToTableنوعيات_الحالات">
+          <End Role="نوعيات_الحالات" Type="Self.نوعيات_الحالات" Multiplicity="0..1" />
+          <End Role="المهماة_المؤجلة" Type="Self.المهماة_المؤجلة" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="نوعيات_الحالات">
+              <PropertyRef Name="الرمز" />
+            </Principal>
+            <Dependent Role="المهماة_المؤجلة">
+              <PropertyRef Name="نوع_الحالة" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_المهمات_الملغاة_ToTableطبيعة_المهمة">
           <End Role="طبيعة_المهمة" Type="Self.طبيعة_المهمة" Multiplicity="0..1" />
           <End Role="المهمات_الملغاة" Type="Self.المهمات_الملغاة" Multiplicity="*" />
@@ -2518,6 +2182,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_المهمات_المنفذة_ToTableإلى">
+          <End Role="إلى" Type="Self.إلى" Multiplicity="0..1" />
+          <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="إلى">
+              <PropertyRef Name="الرمز" />
+            </Principal>
+            <Dependent Role="المهمات_المنفذة">
+              <PropertyRef Name="إلى" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_المهمات_المنفذة_ToTableطبيعة_المهمة">
           <End Role="طبيعة_المهمة" Type="Self.طبيعة_المهمة" Multiplicity="0..1" />
           <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
@@ -2527,6 +2203,18 @@
             </Principal>
             <Dependent Role="المهمات_المنفذة">
               <PropertyRef Name="طبيعة_المهمة" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_المهمات_المنفذة_ToTableمن">
+          <End Role="من" Type="Self.من" Multiplicity="0..1" />
+          <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="من">
+              <PropertyRef Name="الرمز" />
+            </Principal>
+            <Dependent Role="المهمات_المنفذة">
+              <PropertyRef Name="من" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2551,7 +2239,9 @@
           <EntitySet Name="الأمراض_المعدية" EntityType="Self.الأمراض_المعدية" />
           <EntitySet Name="الجهات_الضامنة" EntityType="Self.الجهات_الضامنة" />
           <EntitySet Name="الحالات" EntityType="Self.الحالات" />
+          <EntitySet Name="الدور_في_المهمة" EntityType="Self.الدور_في_المهمة" />
           <EntitySet Name="العاملون" EntityType="Self.العاملون" />
+          <EntitySet Name="الفريق" EntityType="Self.الفريق" />
           <EntitySet Name="المدن" EntityType="Self.المدن" />
           <EntitySet Name="المراكز" EntityType="Self.المراكز" />
           <EntitySet Name="المرضى" EntityType="Self.المرضى" />
@@ -2562,44 +2252,34 @@
           <EntitySet Name="المهمات_الملغاة" EntityType="Self.المهمات_الملغاة" />
           <EntitySet Name="المهمات_المنفذة" EntityType="Self.المهمات_المنفذة" />
           <EntitySet Name="الوظيفة" EntityType="Self.الوظيفة" />
+          <EntitySet Name="إلى" EntityType="Self.إلى" />
           <EntitySet Name="حالات_المهمات" EntityType="Self.حالات_المهمات" />
           <EntitySet Name="طبيعة_المهمة" EntityType="Self.طبيعة_المهمة" />
           <EntitySet Name="فئة_الدم" EntityType="Self.فئة_الدم" />
+          <EntitySet Name="من" EntityType="Self.من" />
           <EntitySet Name="نوعيات_الحالات" EntityType="Self.نوعيات_الحالات" />
           <AssociationSet Name="FK_المستشفيات_مع_اقسام_ToTableأقسام_المستشفيات" Association="Self.FK_المستشفيات_مع_اقسام_ToTableأقسام_المستشفيات">
             <End Role="أقسام_المستشفيات" EntitySet="أقسام_المستشفيات" />
             <End Role="المستشفيات_مع_اقسام" EntitySet="المستشفيات_مع_اقسام" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات_الملغاة_ToTableالمستشفيات1" Association="Self.FK_المهمات_الملغاة_ToTableالمستشفيات1">
+          <AssociationSet Name="FK_المهمات_الملغاة_ToTable_أقسام_المستشفيات1" Association="Self.FK_المهمات_الملغاة_ToTable_أقسام_المستشفيات1">
             <End Role="أقسام_المستشفيات" EntitySet="أقسام_المستشفيات" />
             <End Role="المهمات_الملغاة" EntitySet="المهمات_الملغاة" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات_الملغاة_ToTableالمستشفيات2" Association="Self.FK_المهمات_الملغاة_ToTableالمستشفيات2">
+          <AssociationSet Name="FK_المهمات_الملغاة_ToTable_أقسام_المستشفيات2_" Association="Self.FK_المهمات_الملغاة_ToTable_أقسام_المستشفيات2_">
             <End Role="أقسام_المستشفيات" EntitySet="أقسام_المستشفيات" />
             <End Role="المهمات_الملغاة" EntitySet="المهمات_الملغاة" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المنفذة_ToTableالمستشفيات1" Association="Self.FK_المهمات_المنفذة_ToTableالمستشفيات1">
-            <End Role="أقسام_المستشفيات" EntitySet="أقسام_المستشفيات" />
-            <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المنفذة_ToTableالمستشفيات2" Association="Self.FK_المهمات_المنفذة_ToTableالمستشفيات2">
-            <End Role="أقسام_المستشفيات" EntitySet="أقسام_المستشفيات" />
-            <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المؤجلة_ToTableالمستشفيات1" Association="Self.FK_المهمات_المؤجلة_ToTableالمستشفيات1">
+          <AssociationSet Name="FK_المهمات_المؤجلة_ToTable_أقسام_المستشفيات1" Association="Self.FK_المهمات_المؤجلة_ToTable_أقسام_المستشفيات1">
             <End Role="أقسام_المستشفيات" EntitySet="أقسام_المستشفيات" />
             <End Role="المهماة_المؤجلة" EntitySet="المهماة_المؤجلة" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المؤجلة_ToTableالمستشفيات2" Association="Self.FK_المهمات_المؤجلة_ToTableالمستشفيات2">
+          <AssociationSet Name="FK_المهمات_المؤجلة_ToTable_أقسام_المستشفيات2" Association="Self.FK_المهمات_المؤجلة_ToTable_أقسام_المستشفيات2">
             <End Role="أقسام_المستشفيات" EntitySet="أقسام_المستشفيات" />
             <End Role="المهماة_المؤجلة" EntitySet="المهماة_المؤجلة" />
           </AssociationSet>
           <AssociationSet Name="FK_الأطباء_ToTable_المستشفيات" Association="Self.FK_الأطباء_ToTable_المستشفيات">
             <End Role="المستشفيات" EntitySet="المستشفيات" />
-            <End Role="الأطباء" EntitySet="الأطباء" />
-          </AssociationSet>
-          <AssociationSet Name="FK_الأطباء_ToTableالمدن" Association="Self.FK_الأطباء_ToTableالمدن">
-            <End Role="المدن" EntitySet="المدن" />
             <End Role="الأطباء" EntitySet="الأطباء" />
           </AssociationSet>
           <AssociationSet Name="FK_الأطباء_ToTableالمناطق" Association="Self.FK_الأطباء_ToTableالمناطق">
@@ -2634,10 +2314,6 @@
             <End Role="الجهات_الضامنة" EntitySet="الجهات_الضامنة" />
             <End Role="المرضى" EntitySet="المرضى" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المنفذة_ToTableالجهة_الضامنة" Association="Self.FK_المهمات_المنفذة_ToTableالجهة_الضامنة">
-            <End Role="الجهات_الضامنة" EntitySet="الجهات_الضامنة" />
-            <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
-          </AssociationSet>
           <AssociationSet Name="FK_الحالات_ToTableنوعيات_الحالات" Association="Self.FK_الحالات_ToTableنوعيات_الحالات">
             <End Role="نوعيات_الحالات" EntitySet="نوعيات_الحالات" />
             <End Role="الحالات" EntitySet="الحالات" />
@@ -2650,9 +2326,9 @@
             <End Role="الحالات" EntitySet="الحالات" />
             <End Role="المهماة_المؤجلة" EntitySet="المهماة_المؤجلة" />
           </AssociationSet>
-          <AssociationSet Name="FK_العاملون_ToTableالمدينة" Association="Self.FK_العاملون_ToTableالمدينة">
-            <End Role="المدن" EntitySet="المدن" />
-            <End Role="العاملون" EntitySet="العاملون" />
+          <AssociationSet Name="FK_الفريق_ToTableالدور_في_المهمة" Association="Self.FK_الفريق_ToTableالدور_في_المهمة">
+            <End Role="الدور_في_المهمة" EntitySet="الدور_في_المهمة" />
+            <End Role="الفريق" EntitySet="الفريق" />
           </AssociationSet>
           <AssociationSet Name="FK_العاملون_ToTableالمراكز" Association="Self.FK_العاملون_ToTableالمراكز">
             <End Role="المراكز" EntitySet="المراكز" />
@@ -2670,19 +2346,11 @@
             <End Role="فئة_الدم" EntitySet="فئة_الدم" />
             <End Role="العاملون" EntitySet="العاملون" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المنفذة_ToTableالعاملون1" Association="Self.FK_المهمات_المنفذة_ToTableالعاملون1">
+          <AssociationSet Name="FK_الفريق_ToTableالعاملون" Association="Self.FK_الفريق_ToTableالعاملون">
             <End Role="العاملون" EntitySet="العاملون" />
-            <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
+            <End Role="الفريق" EntitySet="الفريق" />
           </AssociationSet>
           <AssociationSet Name="FK_المهمات_المنفذة_ToTableالعاملون2" Association="Self.FK_المهمات_المنفذة_ToTableالعاملون2">
-            <End Role="العاملون" EntitySet="العاملون" />
-            <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المنفذة_ToTableالعاملون3" Association="Self.FK_المهمات_المنفذة_ToTableالعاملون3">
-            <End Role="العاملون" EntitySet="العاملون" />
-            <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المنفذة_ToTableالعاملون4" Association="Self.FK_المهمات_المنفذة_ToTableالعاملون4">
             <End Role="العاملون" EntitySet="العاملون" />
             <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
           </AssociationSet>
@@ -2694,49 +2362,29 @@
             <End Role="العاملون" EntitySet="العاملون" />
             <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
           </AssociationSet>
+          <AssociationSet Name="FK_الفريق_ToTableالمهمات_المنفذة" Association="Self.FK_الفريق_ToTableالمهمات_المنفذة">
+            <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
+            <End Role="الفريق" EntitySet="الفريق" />
+          </AssociationSet>
           <AssociationSet Name="FK_المراكز_ToTableالمدن" Association="Self.FK_المراكز_ToTableالمدن">
             <End Role="المدن" EntitySet="المدن" />
             <End Role="المراكز" EntitySet="المراكز" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المرضى_ToTableالمدن" Association="Self.FK_المرضى_ToTableالمدن">
-            <End Role="المدن" EntitySet="المدن" />
-            <End Role="المرضى" EntitySet="المرضى" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المستشفيات_ToTableالمدينة" Association="Self.FK_المستشفيات_ToTableالمدينة">
-            <End Role="المدن" EntitySet="المدن" />
-            <End Role="المستشفيات" EntitySet="المستشفيات" />
           </AssociationSet>
           <AssociationSet Name="FK_المناطق_ToTableالمدن" Association="Self.FK_المناطق_ToTableالمدن">
             <End Role="المدن" EntitySet="المدن" />
             <End Role="المناطق" EntitySet="المناطق" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات_الملغاة_ToTableالمدن1" Association="Self.FK_المهمات_الملغاة_ToTableالمدن1">
-            <End Role="المدن" EntitySet="المدن" />
-            <End Role="المهمات_الملغاة" EntitySet="المهمات_الملغاة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات_الملغاة_ToTableالمدن2" Association="Self.FK_المهمات_الملغاة_ToTableالمدن2">
-            <End Role="المدن" EntitySet="المدن" />
-            <End Role="المهمات_الملغاة" EntitySet="المهمات_الملغاة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المنفذة_ToTableالمدن1" Association="Self.FK_المهمات_المنفذة_ToTableالمدن1">
-            <End Role="المدن" EntitySet="المدن" />
-            <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المنفذة_ToTableالمدن2" Association="Self.FK_المهمات_المنفذة_ToTableالمدن2">
-            <End Role="المدن" EntitySet="المدن" />
-            <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المؤجلة_ToTableالمدن1" Association="Self.FK_المهمات_المؤجلة_ToTableالمدن1">
-            <End Role="المدن" EntitySet="المدن" />
-            <End Role="المهماة_المؤجلة" EntitySet="المهماة_المؤجلة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المؤجلة_ToTableالمدن2" Association="Self.FK_المهمات_المؤجلة_ToTableالمدن2">
-            <End Role="المدن" EntitySet="المدن" />
+          <AssociationSet Name="FK_المهماة_المؤجلة_ToTableالمراكز" Association="Self.FK_المهماة_المؤجلة_ToTableالمراكز">
+            <End Role="المراكز" EntitySet="المراكز" />
             <End Role="المهماة_المؤجلة" EntitySet="المهماة_المؤجلة" />
           </AssociationSet>
           <AssociationSet Name="FK_المرضى_ToTableالمناطق" Association="Self.FK_المرضى_ToTableالمناطق">
             <End Role="المناطق" EntitySet="المناطق" />
             <End Role="المرضى" EntitySet="المرضى" />
+          </AssociationSet>
+          <AssociationSet Name="FK_المهماة_المؤجلة_ToTableالمرضى" Association="Self.FK_المهماة_المؤجلة_ToTableالمرضى">
+            <End Role="المرضى" EntitySet="المرضى" />
+            <End Role="المهماة_المؤجلة" EntitySet="المهماة_المؤجلة" />
           </AssociationSet>
           <AssociationSet Name="FK_المهمات_الملغاة_ToTableالمرضى" Association="Self.FK_المهمات_الملغاة_ToTableالمرضى">
             <End Role="المرضى" EntitySet="المرضى" />
@@ -2754,27 +2402,19 @@
             <End Role="المناطق" EntitySet="المناطق" />
             <End Role="المستشفيات" EntitySet="المستشفيات" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات_الملغاة_ToTableأقسام_المستشفيات1" Association="Self.FK_المهمات_الملغاة_ToTableأقسام_المستشفيات1">
+          <AssociationSet Name="FK_المهمات_الملغاة_ToTableالمستشفيات1" Association="Self.FK_المهمات_الملغاة_ToTableالمستشفيات1">
             <End Role="المستشفيات" EntitySet="المستشفيات" />
             <End Role="المهمات_الملغاة" EntitySet="المهمات_الملغاة" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات_الملغاة_ToTableأقسام_المستشفيات2" Association="Self.FK_المهمات_الملغاة_ToTableأقسام_المستشفيات2">
+          <AssociationSet Name="FK_المهمات_الملغاة_ToTableالمستشفيات2" Association="Self.FK_المهمات_الملغاة_ToTableالمستشفيات2">
             <End Role="المستشفيات" EntitySet="المستشفيات" />
             <End Role="المهمات_الملغاة" EntitySet="المهمات_الملغاة" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المنفذة_ToTableأقسام_المستشفيات1" Association="Self.FK_المهمات_المنفذة_ToTableأقسام_المستشفيات1">
-            <End Role="المستشفيات" EntitySet="المستشفيات" />
-            <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المنفذة_ToTableأقسام_المستشفيات2" Association="Self.FK_المهمات_المنفذة_ToTableأقسام_المستشفيات2">
-            <End Role="المستشفيات" EntitySet="المستشفيات" />
-            <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المؤجلة_ToTableأقسام_المستشفيات1" Association="Self.FK_المهمات_المؤجلة_ToTableأقسام_المستشفيات1">
+          <AssociationSet Name="FK_المهمات_المؤجلة_ToTableالمستشفيات1" Association="Self.FK_المهمات_المؤجلة_ToTableالمستشفيات1">
             <End Role="المستشفيات" EntitySet="المستشفيات" />
             <End Role="المهماة_المؤجلة" EntitySet="المهماة_المؤجلة" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المؤجلة_ToTableأقسام_المستشفيات2" Association="Self.FK_المهمات_المؤجلة_ToTableأقسام_المستشفيات2">
+          <AssociationSet Name="FK_المهمات_المؤجلة_ToTableالمستشفيات2" Association="Self.FK_المهمات_المؤجلة_ToTableالمستشفيات2">
             <End Role="المستشفيات" EntitySet="المستشفيات" />
             <End Role="المهماة_المؤجلة" EntitySet="المهماة_المؤجلة" />
           </AssociationSet>
@@ -2786,14 +2426,6 @@
             <End Role="المناطق" EntitySet="المناطق" />
             <End Role="المهمات_الملغاة" EntitySet="المهمات_الملغاة" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المنفذة_ToTableالمناطق1" Association="Self.FK_المهمات_المنفذة_ToTableالمناطق1">
-            <End Role="المناطق" EntitySet="المناطق" />
-            <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
-          </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المنفذة_ToTableالمناطق2" Association="Self.FK_المهمات_المنفذة_ToTableالمناطق2">
-            <End Role="المناطق" EntitySet="المناطق" />
-            <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
-          </AssociationSet>
           <AssociationSet Name="FK_المهمات_المؤجلة_ToTableالمناطق1" Association="Self.FK_المهمات_المؤجلة_ToTableالمناطق1">
             <End Role="المناطق" EntitySet="المناطق" />
             <End Role="المهماة_المؤجلة" EntitySet="المهماة_المؤجلة" />
@@ -2802,12 +2434,24 @@
             <End Role="المناطق" EntitySet="المناطق" />
             <End Role="المهماة_المؤجلة" EntitySet="المهماة_المؤجلة" />
           </AssociationSet>
+          <AssociationSet Name="FK_المهماة_المؤجلة_ToTableنوعيات_الحالات" Association="Self.FK_المهماة_المؤجلة_ToTableنوعيات_الحالات">
+            <End Role="نوعيات_الحالات" EntitySet="نوعيات_الحالات" />
+            <End Role="المهماة_المؤجلة" EntitySet="المهماة_المؤجلة" />
+          </AssociationSet>
           <AssociationSet Name="FK_المهمات_الملغاة_ToTableطبيعة_المهمة" Association="Self.FK_المهمات_الملغاة_ToTableطبيعة_المهمة">
             <End Role="طبيعة_المهمة" EntitySet="طبيعة_المهمة" />
             <End Role="المهمات_الملغاة" EntitySet="المهمات_الملغاة" />
           </AssociationSet>
+          <AssociationSet Name="FK_المهمات_المنفذة_ToTableإلى" Association="Self.FK_المهمات_المنفذة_ToTableإلى">
+            <End Role="إلى" EntitySet="إلى" />
+            <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
+          </AssociationSet>
           <AssociationSet Name="FK_المهمات_المنفذة_ToTableطبيعة_المهمة" Association="Self.FK_المهمات_المنفذة_ToTableطبيعة_المهمة">
             <End Role="طبيعة_المهمة" EntitySet="طبيعة_المهمة" />
+            <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
+          </AssociationSet>
+          <AssociationSet Name="FK_المهمات_المنفذة_ToTableمن" Association="Self.FK_المهمات_المنفذة_ToTableمن">
+            <End Role="من" EntitySet="من" />
             <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
           </AssociationSet>
           <AssociationSet Name="FK_المهمات_المنفذة_ToTableنوعيات_الحالات" Association="Self.FK_المهمات_المنفذة_ToTableنوعيات_الحالات">
@@ -2890,7 +2534,6 @@
                 <ScalarProperty Name="اختصاص" ColumnName="اختصاص" />
                 <ScalarProperty Name="هاتف" ColumnName="هاتف" />
                 <ScalarProperty Name="مكان_العمل" ColumnName="مكان العمل" />
-                <ScalarProperty Name="رمز_المدينة" ColumnName="رمز المدينة" />
                 <ScalarProperty Name="رمز_المنطقة" ColumnName="رمز المنطقة" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -2944,6 +2587,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="الدور_في_المهمة">
+            <EntityTypeMapping TypeName="ERCModel.الدور_في_المهمة">
+              <MappingFragment StoreEntitySet="الدور في المهمة">
+                <ScalarProperty Name="الرمز" ColumnName="الرمز" />
+                <ScalarProperty Name="الدور" ColumnName="الدور" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="العاملون">
             <EntityTypeMapping TypeName="ERCModel.العاملون">
               <MappingFragment StoreEntitySet="العاملون">
@@ -2967,8 +2618,19 @@
                 <ScalarProperty Name="المركز" ColumnName="المركز" />
                 <ScalarProperty Name="اللقب" ColumnName="اللقب" />
                 <ScalarProperty Name="تاريخ_الانتساب" ColumnName="تاريخ الانتساب" />
-                <ScalarProperty Name="رمز_المدينة" ColumnName="رمز المدينة" />
                 <ScalarProperty Name="رمز_المنطقة" ColumnName="رمز المنطقة" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="الفريق">
+            <EntityTypeMapping TypeName="ERCModel.الفريق">
+              <MappingFragment StoreEntitySet="الفريق">
+                <ScalarProperty Name="الرمز_الشهري" ColumnName="الرمز الشهري" />
+                <ScalarProperty Name="رمز_السنوي" ColumnName="رمز السنوي" />
+                <ScalarProperty Name="السنة" ColumnName="السنة" />
+                <ScalarProperty Name="رمز__المركز" ColumnName="رمز  المركز" />
+                <ScalarProperty Name="رمز_العامل" ColumnName="رمز العامل" />
+                <ScalarProperty Name="دور_العامل" ColumnName="دور العامل" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2999,7 +2661,6 @@
                 <ScalarProperty Name="الضمان" ColumnName="الضمان" />
                 <ScalarProperty Name="الهاتف" ColumnName="الهاتف" />
                 <ScalarProperty Name="العنوان" ColumnName="العنوان" />
-                <ScalarProperty Name="رمز_المدينة" ColumnName="رمز المدينة" />
                 <ScalarProperty Name="أمراض_مزمنة" ColumnName="أمراض مزمنة" />
                 <ScalarProperty Name="رمز_المنطقة" ColumnName="رمز المنطقة" />
                 <ScalarProperty Name="الطبيب_المعالج" ColumnName="الطبيب المعالج" />
@@ -3013,17 +2674,18 @@
                 <ScalarProperty Name="العنوان" ColumnName="العنوان" />
                 <ScalarProperty Name="الهاتف" ColumnName="الهاتف" />
                 <ScalarProperty Name="اسم_المستشفى" ColumnName="اسم المستشفى" />
-                <ScalarProperty Name="رمز_المدينة" ColumnName="رمز المدينة" />
                 <ScalarProperty Name="رمز_المنطقة" ColumnName="رمز المنطقة" />
                 <ScalarProperty Name="الطابق_السفلي" ColumnName="الطابق السفلي" />
                 <ScalarProperty Name="الطابق_العلوي" ColumnName="الطابق العلوي" />
                 <ScalarProperty Name="الملاحظات" ColumnName="الملاحظات" />
+                <ScalarProperty Name="الحالة" ColumnName="الحالة" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="المستشفيات_مع_اقسام">
             <EntityTypeMapping TypeName="ERCModel.المستشفيات_مع_اقسام">
               <MappingFragment StoreEntitySet="المستشفيات مع اقسام">
+                <ScalarProperty Name="الرمز" ColumnName="الرمز" />
                 <ScalarProperty Name="رمز_المشفى" ColumnName="رمز المشفى" />
                 <ScalarProperty Name="رمز_القسم" ColumnName="رمز القسم" />
                 <ScalarProperty Name="تحويلة_القسم" ColumnName="تحويلة القسم" />
@@ -3046,22 +2708,23 @@
               <MappingFragment StoreEntitySet="المهماة المؤجلة">
                 <ScalarProperty Name="رمز" ColumnName="رمز" />
                 <ScalarProperty Name="رمز_المركز" ColumnName="رمز المركز" />
-                <ScalarProperty Name="اسم" ColumnName="اسم" />
-                <ScalarProperty Name="العمر" ColumnName="العمر" />
-                <ScalarProperty Name="من_رمز_المدينة" ColumnName="من رمز المدينة" />
+                <ScalarProperty Name="المريض" ColumnName="المريض" />
+                <ScalarProperty Name="يستطيع_الجلوس" ColumnName="يستطيع الجلوس" />
                 <ScalarProperty Name="من_رمز_المنطقة" ColumnName="من رمز المنطقة" />
                 <ScalarProperty Name="من_مشفى" ColumnName="من مشفى" />
                 <ScalarProperty Name="من_القسم" ColumnName="من القسم" />
                 <ScalarProperty Name="تفاصيل_ال_من" ColumnName="تفاصيل ال من" />
                 <ScalarProperty Name="إلى_مشفى" ColumnName="إلى مشفى" />
                 <ScalarProperty Name="إلى_القسم" ColumnName="إلى القسم" />
-                <ScalarProperty Name="الى_رمز_المدينة" ColumnName="الى رمز المدينة" />
                 <ScalarProperty Name="الى_رمز_المنطقة" ColumnName="الى رمز المنطقة" />
                 <ScalarProperty Name="تفاصيل_ال_الى" ColumnName="تفاصيل ال الى" />
                 <ScalarProperty Name="رمز_الحالة" ColumnName="رمز الحالة" />
                 <ScalarProperty Name="التاريخ_والوقت" ColumnName="التاريخ والوقت" />
                 <ScalarProperty Name="اسم_المتصل" ColumnName="اسم المتصل" />
                 <ScalarProperty Name="رقم_المتصل" ColumnName="رقم المتصل" />
+                <ScalarProperty Name="نوع_الحالة" ColumnName="نوع الحالة" />
+                <ScalarProperty Name="تفاصيل_الحالة" ColumnName="تفاصيل الحالة" />
+                <ScalarProperty Name="العمر" ColumnName="العمر" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3072,13 +2735,11 @@
                 <ScalarProperty Name="الرمز_الشهري" ColumnName="الرمز الشهري" />
                 <ScalarProperty Name="رمز_السنوي" ColumnName="رمز السنوي" />
                 <ScalarProperty Name="التاريخ" ColumnName="التاريخ" />
-                <ScalarProperty Name="من_رمز_المدينة" ColumnName="من رمز المدينة" />
                 <ScalarProperty Name="من_رمز_المنطقة" ColumnName="من رمز المنطقة" />
                 <ScalarProperty Name="من_مشفى" ColumnName="من مشفى" />
                 <ScalarProperty Name="من_القسم" ColumnName="من القسم" />
                 <ScalarProperty Name="إلى_مشفى" ColumnName="إلى مشفى" />
                 <ScalarProperty Name="إلى_القسم" ColumnName="إلى القسم" />
-                <ScalarProperty Name="الى_رمز_المدينة" ColumnName="الى رمز المدينة" />
                 <ScalarProperty Name="الى_رمز_المنطقة" ColumnName="الى رمز المنطقة" />
                 <ScalarProperty Name="رمز_المريض" ColumnName="رمز المريض" />
                 <ScalarProperty Name="رمز_الحالة" ColumnName="رمز الحالة" />
@@ -3096,25 +2757,12 @@
                 <ScalarProperty Name="التاريخ" ColumnName="التاريخ" />
                 <ScalarProperty Name="الآلية" ColumnName="الآلية" />
                 <ScalarProperty Name="المريض" ColumnName="المريض" />
-                <ScalarProperty Name="من_مشفى" ColumnName="من مشفى" />
-                <ScalarProperty Name="من_القسم" ColumnName="من القسم" />
                 <ScalarProperty Name="الطبيب_المعالج" ColumnName="الطبيب المعالج" />
-                <ScalarProperty Name="الجهة_الضامنة" ColumnName="الجهة الضامنة" />
-                <ScalarProperty Name="إلى_مشفى" ColumnName="إلى مشفى" />
-                <ScalarProperty Name="إلى_القسم" ColumnName="إلى القسم" />
-                <ScalarProperty Name="مسؤول_المهمة" ColumnName="مسؤول المهمة" />
-                <ScalarProperty Name="مسعف_1" ColumnName="مسعف 1" />
-                <ScalarProperty Name="مسعف_2" ColumnName="مسعف 2" />
                 <ScalarProperty Name="السائق" ColumnName="السائق" />
                 <ScalarProperty Name="رقم_المتصل" ColumnName="رقم المتصل" />
-                <ScalarProperty Name="الهاتف" ColumnName="الهاتف" />
                 <ScalarProperty Name="متلقي_المهمة" ColumnName="متلقي المهمة" />
                 <ScalarProperty Name="تفاصيل_ال_من" ColumnName="تفاصيل ال من" />
                 <ScalarProperty Name="تفاصيل_ال_الى" ColumnName="تفاصيل ال الى" />
-                <ScalarProperty Name="من_رمز_المدينة" ColumnName="من رمز المدينة" />
-                <ScalarProperty Name="من_رمز_المنطقة" ColumnName="من رمز المنطقة" />
-                <ScalarProperty Name="الى_رمز_المدينة" ColumnName="الى رمز المدينة" />
-                <ScalarProperty Name="الى_رمز_المنطقة" ColumnName="الى رمز المنطقة" />
                 <ScalarProperty Name="التفاصيل" ColumnName="التفاصيل" />
                 <ScalarProperty Name="اسم_المتصل" ColumnName="اسم المتصل" />
                 <ScalarProperty Name="طبيعة_المهمة" ColumnName="طبيعة المهمة" />
@@ -3122,6 +2770,8 @@
                 <ScalarProperty Name="الأمراض_المعدية" ColumnName="الأمراض المعدية" />
                 <ScalarProperty Name="مسؤول_الدوام" ColumnName="مسؤول الدوام" />
                 <ScalarProperty Name="نوعية_الحالة" ColumnName="نوعية الحالة" />
+                <ScalarProperty Name="من" ColumnName="من" />
+                <ScalarProperty Name="إلى" ColumnName="إلى" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3130,6 +2780,15 @@
               <MappingFragment StoreEntitySet="الوظيفة">
                 <ScalarProperty Name="الرمز" ColumnName="الرمز" />
                 <ScalarProperty Name="الوظيفة1" ColumnName="الوظيفة" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="إلى">
+            <EntityTypeMapping TypeName="ERCModel.إلى">
+              <MappingFragment StoreEntitySet="إلى">
+                <ScalarProperty Name="الرمز" ColumnName="الرمز" />
+                <ScalarProperty Name="مستشفى_منطقة" ColumnName="مستشفى/منطقة" />
+                <ScalarProperty Name="إلى1" ColumnName="إلى" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3156,6 +2815,15 @@
               <MappingFragment StoreEntitySet="فئة الدم">
                 <ScalarProperty Name="الرمز" ColumnName="الرمز" />
                 <ScalarProperty Name="فئة_الدم1" ColumnName="فئة الدم" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="من">
+            <EntityTypeMapping TypeName="ERCModel.من">
+              <MappingFragment StoreEntitySet="من">
+                <ScalarProperty Name="الرمز" ColumnName="الرمز" />
+                <ScalarProperty Name="مستشفى_منطقة" ColumnName="مستشفى/منطقة" />
+                <ScalarProperty Name="من1" ColumnName="من" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

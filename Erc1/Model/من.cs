@@ -12,27 +12,18 @@ namespace Erc1.model
     using System;
     using System.Collections.Generic;
     
-    public partial class الأطباء
+    public partial class من
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public الأطباء()
+        public من()
         {
-            this.المرضى = new HashSet<المرضى>();
             this.المهمات_المنفذة = new HashSet<المهمات_المنفذة>();
         }
     
-        public int رمز { get; set; }
-        public string اسم { get; set; }
-        public string عنوان { get; set; }
-        public string اختصاص { get; set; }
-        public string هاتف { get; set; }
-        public Nullable<int> مكان_العمل { get; set; }
-        public Nullable<int> رمز_المنطقة { get; set; }
+        public int الرمز { get; set; }
+        public Nullable<bool> مستشفى_منطقة { get; set; }
+        public Nullable<int> من1 { get; set; }
     
-        public virtual المستشفيات المستشفيات { get; set; }
-        public virtual المناطق المناطق { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<المرضى> المرضى { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<المهمات_المنفذة> المهمات_المنفذة { get; set; }
     }

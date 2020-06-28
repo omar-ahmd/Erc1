@@ -171,6 +171,9 @@
     <Compile Include="model\أقسام_المستشفيات.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="model\إلى.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="model\الآليات.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -189,7 +192,13 @@
     <Compile Include="model\الحالات.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="model\الدور_في_المهمة.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="model\العاملون.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model\الفريق.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="model\المدن.cs">
@@ -229,6 +238,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="model\فئة_الدم.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="model\من.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="model\نوعيات_الحالات.cs">
