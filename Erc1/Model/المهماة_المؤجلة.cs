@@ -18,13 +18,9 @@ namespace Erc1.model
         public int رمز_المركز { get; set; }
         public Nullable<int> المريض { get; set; }
         public Nullable<bool> يستطيع_الجلوس { get; set; }
-        public Nullable<int> من_رمز_المنطقة { get; set; }
-        public Nullable<int> من_مشفى { get; set; }
-        public Nullable<int> من_القسم { get; set; }
+        public Nullable<int> من { get; set; }
+        public Nullable<int> إلى { get; set; }
         public Nullable<int> تفاصيل_ال_من { get; set; }
-        public Nullable<int> إلى_مشفى { get; set; }
-        public Nullable<int> إلى_القسم { get; set; }
-        public Nullable<int> الى_رمز_المنطقة { get; set; }
         public Nullable<int> تفاصيل_ال_الى { get; set; }
         public Nullable<int> رمز_الحالة { get; set; }
         public Nullable<System.DateTime> التاريخ_والوقت { get; set; }
@@ -34,15 +30,11 @@ namespace Erc1.model
         public string تفاصيل_الحالة { get; set; }
         public Nullable<int> العمر { get; set; }
     
-        public virtual أقسام_المستشفيات أقسام_المستشفيات { get; set; }
-        public virtual أقسام_المستشفيات أقسام_المستشفيات1 { get; set; }
         public virtual الحالات الحالات { get; set; }
         public virtual المراكز المراكز { get; set; }
         public virtual المرضى المرضى { get; set; }
-        public virtual المستشفيات المستشفيات { get; set; }
-        public virtual المستشفيات المستشفيات1 { get; set; }
-        public virtual المناطق المناطق { get; set; }
-        public virtual المناطق المناطق1 { get; set; }
+        public virtual إلى إلى1 { get; set; }
+        public virtual من من1 { get; set; }
         public virtual نوعيات_الحالات نوعيات_الحالات { get; set; }
     }
 }

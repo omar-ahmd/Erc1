@@ -21,10 +21,6 @@ namespace Erc1.model
             this.العاملون = new HashSet<العاملون>();
             this.المرضى = new HashSet<المرضى>();
             this.المستشفيات = new HashSet<المستشفيات>();
-            this.المهمات_الملغاة = new HashSet<المهمات_الملغاة>();
-            this.المهمات_الملغاة1 = new HashSet<المهمات_الملغاة>();
-            this.المهماة_المؤجلة = new HashSet<المهماة_المؤجلة>();
-            this.المهماة_المؤجلة1 = new HashSet<المهماة_المؤجلة>();
         }
     
         public int رمز { get; set; }
@@ -40,13 +36,5 @@ namespace Erc1.model
         public virtual ICollection<المرضى> المرضى { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<المستشفيات> المستشفيات { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<المهمات_الملغاة> المهمات_الملغاة { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<المهمات_الملغاة> المهمات_الملغاة1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<المهماة_المؤجلة> المهماة_المؤجلة { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<المهماة_المؤجلة> المهماة_المؤجلة1 { get; set; }
     }
 }

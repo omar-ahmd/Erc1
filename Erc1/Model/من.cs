@@ -17,6 +17,8 @@ namespace Erc1.model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public من()
         {
+            this.المهماة_المؤجلة = new HashSet<المهماة_المؤجلة>();
+            this.المهمات_الملغاة = new HashSet<المهمات_الملغاة>();
             this.المهمات_المنفذة = new HashSet<المهمات_المنفذة>();
         }
     
@@ -24,6 +26,10 @@ namespace Erc1.model
         public Nullable<bool> مستشفى_منطقة { get; set; }
         public Nullable<int> من1 { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<المهماة_المؤجلة> المهماة_المؤجلة { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<المهمات_الملغاة> المهمات_الملغاة { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<المهمات_المنفذة> المهمات_المنفذة { get; set; }
     }
