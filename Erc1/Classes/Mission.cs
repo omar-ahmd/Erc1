@@ -38,30 +38,51 @@ namespace Erc1.Classes
 
         // add to row if 0 in mustashfa/aksem  else if 1 in manate2
 
+        //get mustashfa ma3 aksem id
+
         // add role (admin)
 
 
         // add marda with return id and name
+        public static int add_Patient(المرضى new_patient)
+        {
+            int newID;
+            using (ERCEntities entity = new model.ERCEntities())
+            {
+                try
+                {
+                    entity.المرضى.Add(new_patient);
+                    entity.SaveChanges();
+                    newID = new_patient.الرمز;
+                    return newID;
+                }
+                catch
+                {
+                    return 00;//error
+                }
+            };
+
+        }
 
         // bool if to or from is present
 
         // get max
 
         // change hospital status from id
+        public void UpdateHospitalStatus(DataRow HospitalRow)//I need the id
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                المستشفيات c = new المستشفيات();
+                c = entity.المستشفيات.First(r => r.رمز_المستشفى == int.Parse(HospitalRow["رمز المستشفى"].ToString()));
+                c.الحالة = HospitalRow["الحالة"].ToString();
+                c.الملاحظات = HospitalRow["الملاحظات"].ToString();
+                entity.SaveChanges();
+            };
+        }
 
 
-
-        //public static bool updateHospitalStatus(int Hospital_ID)
-        //{
-        //    using (ERCEntities entity = new ERCEntities())
-        //    {
-        //        المستشفيات c = new المستشفيات();
-        //        c = entity.المستشفيات.First(r => r.رمز_المستشفى == Hospital_ID);
-        //        c. = newphone;
-        //        t_1.SaveChanges();
-        //        return c;
-        //    };
-        //}
+    
 
         // car
 

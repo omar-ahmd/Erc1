@@ -841,6 +841,30 @@ namespace Erc1.Classes
         //        return c;
         //    };
         //}
+
+
+        //DataTable usersTable = new DataTable();
+
+        //usersTable.Columns.Add("رمز المستشفى",typeof(int));
+        //    usersTable.Columns.Add("الحالة",typeof(int));
+        //    usersTable.Columns.Add("الملاحظات",typeof(DateTime));
+
+        //    DataRow userRow = usersTable.NewRow();
+        //DateTime date = new DateTime(2002, 10, 2);
+        //userRow["رمز المستشفى"] = 500;
+        //    userRow["الحالة"] = 2;
+        //    userRow["الملاحظات"] = date;
+        //        using (ERCEntities entity = new ERCEntities())
+        //        {
+        //            المراكز c = new المراكز();
+        //DateTime dateValue = Convert.ToDateTime(userRow["الملاحظات"]);
+        //int id = int.Parse(userRow["رمز المستشفى"].ToString());
+        //c = entity.المراكز.First(r => r.الرمز ==id);
+        //            c.المدينة = int.Parse(userRow["الحالة"].ToString());
+        //c.تاريخ_التاسيس =dateValue;
+        //        entity.SaveChanges();
+        //        };
+        //}
     }
     
 }
