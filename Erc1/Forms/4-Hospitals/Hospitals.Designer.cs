@@ -34,6 +34,7 @@ namespace Erc1.Forms._4_Hospitals
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hospitals));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Up = new System.Windows.Forms.Button();
+            this.Down = new System.Windows.Forms.Button();
             this._1 = new Erc1.CONTROLS.HospitalControlcs();
             this._2 = new Erc1.CONTROLS.HospitalControlcs();
             this._4 = new Erc1.CONTROLS.HospitalControlcs();
@@ -56,7 +57,6 @@ namespace Erc1.Forms._4_Hospitals
             this._19 = new Erc1.CONTROLS.HospitalControlcs();
             this._22 = new Erc1.CONTROLS.HospitalControlcs();
             this._21 = new Erc1.CONTROLS.HospitalControlcs();
-            this.Down = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,6 +97,14 @@ namespace Erc1.Forms._4_Hospitals
             this.Up.Name = "Up";
             this.Up.UseVisualStyleBackColor = false;
             this.Up.Click += new System.EventHandler(this.Up_Click);
+            // 
+            // Down
+            // 
+            this.Down.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            resources.ApplyResources(this.Down, "Down");
+            this.Down.Name = "Down";
+            this.Down.UseVisualStyleBackColor = false;
+            this.Down.Click += new System.EventHandler(this.Down_Click);
             // 
             // _1
             // 
@@ -297,14 +305,6 @@ namespace Erc1.Forms._4_Hospitals
             this._21.Name = "_21";
             this._21.HosClick += new System.EventHandler(this._1_HosClick);
             // 
-            // Down
-            // 
-            this.Down.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
-            resources.ApplyResources(this.Down, "Down");
-            this.Down.Name = "Down";
-            this.Down.UseVisualStyleBackColor = false;
-            this.Down.Click += new System.EventHandler(this.Down_Click);
-            // 
             // Hospitals
             // 
             resources.ApplyResources(this, "$this");
@@ -341,12 +341,12 @@ namespace Erc1.Forms._4_Hospitals
         private CONTROLS.HospitalControlcs _8;
         private CONTROLS.HospitalControlcs _5;
         private CONTROLS.HospitalControlcs _6;
-        private CONTROLS.HospitalControlcs _3;
         private CONTROLS.HospitalControlcs _4;
         private CONTROLS.HospitalControlcs _2;
         private CONTROLS.HospitalControlcs _1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button Up;
         private System.Windows.Forms.Button Down;
+        private CONTROLS.HospitalControlcs _3;
     }
 }

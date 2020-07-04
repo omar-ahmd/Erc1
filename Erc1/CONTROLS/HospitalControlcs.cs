@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Erc1.Forms._4_Hospitals;
 
 namespace Erc1.CONTROLS
 {
@@ -20,7 +21,7 @@ namespace Erc1.CONTROLS
     }
     public partial class HospitalControlcs : UserControl
     {
-        public event EventHandler HosStatusChanged, HosIDChanged,HosClick;
+        public event EventHandler HosStatusChanged, HosIDChanged,HosClick,HosTextChanged;
 
         
 
@@ -89,6 +90,7 @@ namespace Erc1.CONTROLS
                     }
                 case HosStatus.AvailBusy:
                     {
+                        
                         textBox1.ReadOnly = false;
                         textBox1.BackColor = Color.FromArgb(241, 149, 98);
                         HospitalName.Enabled = true;
@@ -114,35 +116,49 @@ namespace Erc1.CONTROLS
             HosStatusChanged -= HospitalControlcs_HosStatusChanged;
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
         private void textBox1_MouseClick(object sender, MouseEventArgs e)
         {
-
-            if (e.Button == System.Windows.Forms.MouseButtons.Right) 
+            Hospitals t = (Hospitals)Parent.Parent;
+            if (!t.checkifempty())
             {
 
-                switch (Hosstatus)
+                if (e.Button == System.Windows.Forms.MouseButtons.Right)
                 {
-                    case HosStatus.Available:
-                        {
-                            Hosstatus = HosStatus.Busy;
-                            break;
-                        }
-                    case HosStatus.Busy:
-                        {
-                            Hosstatus = HosStatus.AvailBusy;
-                            break;
-                        }
-                    case HosStatus.AvailBusy:
-                        {
-                            Hosstatus = HosStatus.Available;
-                            break;
-                        }
-                    default:
-                        {
-                            break;
-                        }
-                }
 
+                    switch (Hosstatus)
+                    {
+                        case HosStatus.Available:
+                            {
+                                Hosstatus = HosStatus.Busy;
+                                break;
+                            }
+                        case HosStatus.Busy:
+                            {
+                                Hosstatus = HosStatus.AvailBusy;
+                                break;
+                            }
+                        case HosStatus.AvailBusy:
+                            {
+                                Hosstatus = HosStatus.Available;
+                                break;
+                            }
+                        default:
+                            {
+                                break;
+                            }
+
+                    }
+
+                }
+                if (e.Button == MouseButtons.Left)
+                {
+                    HosTextChanged.Invoke(this, EventArgs.Empty);
+                }
             }
 
         }

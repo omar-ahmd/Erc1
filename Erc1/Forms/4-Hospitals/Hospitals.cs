@@ -55,6 +55,8 @@ namespace Erc1.Forms._4_Hospitals
         {
 
         }
+
+
         private void Empty()
         {
             foreach (Control item in this.tableLayoutPanel1.Controls)
@@ -62,10 +64,32 @@ namespace Erc1.Forms._4_Hospitals
                 if(item.GetType() ==typeof(HospitalControlcs))
                 {
                     HospitalControlcs h = (HospitalControlcs)item;
+                    h.HosStatusChanged -= H_HosStatusChanged;
+                    h.HosTextChanged -= H_HosStatusChanged;
                     h.Hosstatus = HosStatus.None;
                 }
             }
         }
+        public bool checkifempty()
+        {
+            bool t = false;
+            foreach (Control item in this.tableLayoutPanel1.Controls)
+            {
+                if (item.GetType() == typeof(HospitalControlcs))
+                {
+                    HospitalControlcs h = (HospitalControlcs)item;
+                    if(h.Hosstatus == HosStatus.AvailBusy && (h.textBox1.Text == "" || h.textBox1.Text == "اكتب هنا"))
+                    {
+                        MessageBox.Show("you should write a note");
+                        h.textBox1.Select();
+                        t = true;
+                    }
+                }
+            }
+            return t;
+        }
+
+
         private void Down_Click(object sender, EventArgs e)
         {
 
@@ -81,12 +105,15 @@ namespace Erc1.Forms._4_Hospitals
                 for (int i = 0; i < y; i++)
                 {
                     int index = i + (HosPages-1) * 22;
+                    
                     HospitalControlcs h = (HospitalControlcs)tableLayoutPanel1.Controls["_" + (i + 1).ToString()];
                     h.HosID = int.Parse(Hosdt.Rows[index]["رمز_المستشفى"].ToString());
                     h.HospitalName.Text = Hosdt.Rows[index]["اسم_المستشفى"].ToString();
                     if (Hosdt.Rows[index]["الملاحظات"].ToString() != "")
                     {
+                        
                         h.Hosstatus = HosStatus.AvailBusy;
+                        h.textBox1.Text = Hosdt.Rows[index]["الملاحظات"].ToString();
                     }
                     else
                     {
@@ -101,6 +128,8 @@ namespace Erc1.Forms._4_Hospitals
                         }
 
                     }
+                    h.HosStatusChanged += H_HosStatusChanged;
+                    h.HosTextChanged += H_HosStatusChanged;
                 }
 
             }
@@ -117,15 +146,16 @@ namespace Erc1.Forms._4_Hospitals
             int y;
             if (HosPages == maxHosPages) y = count % 22;
                 else y = 22;
-
             for (int i = 0; i < y; i++) 
             {
+                
                 HospitalControlcs h = (HospitalControlcs)tableLayoutPanel1.Controls["_" + (i + 1).ToString()];
-                h.HosStatusChanged += H_HosStatusChanged;
                 h.HosID = int.Parse(Hosdt.Rows[i]["رمز_المستشفى"].ToString());
                 h.HospitalName.Text = Hosdt.Rows[i]["اسم_المستشفى"].ToString();
+
                 if(Hosdt.Rows[i]["الملاحظات"].ToString() != "")
                 {
+                    h.textBox1.Text = Hosdt.Rows[i]["الملاحظات"].ToString();
                     h.Hosstatus = HosStatus.AvailBusy;
                 }
                 else
@@ -141,31 +171,56 @@ namespace Erc1.Forms._4_Hospitals
                     }
 
                 }
+                h.HosStatusChanged += H_HosStatusChanged;
+                h.HosTextChanged += H_HosStatusChanged;
             }
+           
         }
 
         private void H_HosStatusChanged(object sender, EventArgs e)
         {
+
             HospitalControlcs hoscont = (HospitalControlcs)sender;
-            int i = int.Parse(hoscont.Name[1].ToString()) - 1;
+            int i = int.Parse(hoscont.Name.Substring(1)) - 1;
+            i = i + (HosPages - 1) * 22;
+            
             DataRow dr = Hosdt.Rows[i];
             if (hoscont.Hosstatus != HosStatus.AvailBusy)
             {
-
-                dr["الملاحظات"] = "";
-            }
-            else
-            {
+                dr["الملاحظات"] = null;
                 if (hoscont.Hosstatus == HosStatus.Available)
                 {
                     dr["الحالة"] = "متاح";
-                    
+
                 }
                 else if (hoscont.Hosstatus == HosStatus.Busy)
                 {
                     dr["الحالة"] = "غير متاح";
-                }
 
+                }
+            }
+            else
+            {
+                if (dr["الملاحظات"].ToString() == "")
+                {
+                    dr["الملاحظات"] = "اكتب هنا";
+                    hoscont.textBox1.Text = dr["الملاحظات"].ToString();
+                    dr["الحالة"] = null;
+                }
+                else
+                {
+                    
+                    if (hoscont.textBox1.Text == "" || hoscont.textBox1.Text== "اكتب هنا")
+                    {
+                        MessageBox.Show("you should write a note or change the color");
+                        hoscont.textBox1.Text = dr["الملاحظات"].ToString();
+                    }
+                    else
+                    {
+                        dr["الملاحظات"] = hoscont.textBox1.Text;
+                        dr["الحالة"] = null;
+                    }
+                }
             }
 
             BAL.Hospitals.SaveHospitale(dr);
@@ -183,12 +238,15 @@ namespace Erc1.Forms._4_Hospitals
                 else y = 22;
                 for (int i = 0; i < y; i++)
                 {
+                    
                     int index = i + (HosPages - 1) * 22;
+                    
                     HospitalControlcs h = (HospitalControlcs)tableLayoutPanel1.Controls["_" + (i + 1).ToString()];
                     h.HosID = int.Parse(Hosdt.Rows[index]["رمز_المستشفى"].ToString());
                     h.HospitalName.Text = Hosdt.Rows[index]["اسم_المستشفى"].ToString();
                     if (Hosdt.Rows[index]["الملاحظات"].ToString() != "")
                     {
+                        h.textBox1.Text = Hosdt.Rows[index]["الملاحظات"].ToString();
                         h.Hosstatus = HosStatus.AvailBusy;
                     }
                     else
@@ -204,6 +262,9 @@ namespace Erc1.Forms._4_Hospitals
                         }
 
                     }
+                    h.HosStatusChanged += H_HosStatusChanged;
+
+                    h.HosTextChanged += H_HosStatusChanged;
                 }
 
             }

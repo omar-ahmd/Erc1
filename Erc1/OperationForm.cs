@@ -18,6 +18,7 @@ namespace ERC
         public AddMission im;
         public AddMission dm;
 
+        public Erc1.Forms._5_Cars.Cars car;
 
         stripForAddButton sfab;
         stripForHospitals s;
@@ -156,6 +157,15 @@ namespace ERC
             }
             else if (Car.BClicked)
             {
+                if (car == null)
+                {
+                    car = new Erc1.Forms._5_Cars.Cars() { TopLevel = false };
+
+                    car.Size = panel2.Size;
+                    car.Dock = DockStyle.Fill;
+                    panel2.Controls.Add(car);
+                }
+                car.Show();
 
             }
             else if (Settings.BClicked)
@@ -175,7 +185,7 @@ namespace ERC
 
         Erc1.Forms._4_Hospitals.Hospitals h;
 
-
+        //Hospital buttons
         private void S_HosClicked(object sender, EventArgs e)
         {
             
@@ -196,7 +206,6 @@ namespace ERC
         {
             
         }
-
 
 
 

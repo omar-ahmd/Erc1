@@ -77,6 +77,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CONTROLS\CarsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CONTROLS\CarsControl.Designer.cs">
+      <DependentUpon>CarsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CONTROLS\DepartementInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,6 +132,12 @@
       <DependentUpon>SButton.cs</DependentUpon>
     </Compile>
     <Compile Include="BAL\BAL.cs" />
+    <Compile Include="CONTROLS\Teams.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CONTROLS\Teams.Designer.cs">
+      <DependentUpon>Teams.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAL\DAL.cs" />
     <Compile Include="DAL\Model1.Context.cs">
       <DependentUpon>Model1.Context.tt</DependentUpon>
@@ -229,6 +241,12 @@
     <Compile Include="Forms\4-Hospitals\StripForHospitals.Designer.cs">
       <DependentUpon>StripForHospitals.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\5-Cars\Cars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\5-Cars\Cars.Designer.cs">
+      <DependentUpon>Cars.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\6-AddMission\AddMission.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +285,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CONTROLS\CarsControl.resx">
+      <DependentUpon>CarsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CONTROLS\DepartementInfo.resx">
       <DependentUpon>DepartementInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -291,6 +312,9 @@
     <EmbeddedResource Include="CONTROLS\SButton.resx">
       <DependentUpon>SButton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CONTROLS\Teams.resx">
+      <DependentUpon>Teams.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\4-Hospitals\Hospitals.resx">
       <DependentUpon>Hospitals.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\4-Hospitals\StripForHospitals.resx">
       <DependentUpon>StripForHospitals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\5-Cars\Cars.resx">
+      <DependentUpon>Cars.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\6-AddMission\AddMission.resx">
       <DependentUpon>AddMission.cs</DependentUpon>
@@ -410,7 +437,6 @@
     <Folder Include="Forms\1-MainPage\" />
     <Folder Include="Forms\2-employee\" />
     <Folder Include="Forms\3-Reports\" />
-    <Folder Include="Forms\5-Cars\" />
     <Folder Include="Forms\7-Settings\" />
   </ItemGroup>
   <ItemGroup>
@@ -467,6 +493,8 @@
     </Content>
     <None Include="Resources\55.png" />
     <None Include="Resources\551.png" />
+    <None Include="Resources\Untitled.png" />
+    <None Include="Resources\66.png" />
     <Content Include="TextFile1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
