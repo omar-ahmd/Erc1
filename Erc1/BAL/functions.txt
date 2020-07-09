@@ -154,6 +154,28 @@
         void UpdateHospitalStatus(DataRow HospitalRow)
 
 
+        9-7-2020
+
+
+        //Add member team to a mission
+        public static bool add_Mission_Memeber(الفريق mission_member)
+
+        // check if patient exist
+        public static bool Check_Patient(int patientID)
+
+
+        // return int إلى if no error occured and -1 if there is an error
+        public static int Get_from_Region(int regionID)
+
+        // return int إلى if no error occured and -1 if there is an error
+        public static int Get_to_Region(int regionID)
+
+
+        // return int من if no error occured and -1 if there is an error
+        public static int Get_from_Hospital_Section(int hosID, int secID)
+
+        // return int إلى if no error occured and -1 if there is an error
+        public static int Get_to_Hospital_Section(int hosID, int secID)
 
 
 
