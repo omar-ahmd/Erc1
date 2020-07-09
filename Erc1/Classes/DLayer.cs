@@ -830,6 +830,63 @@ namespace Erc1.Classes
             }
         }
 
+
+
+        // add marda with return id and name
+        public static int add_Patient(المرضى new_patient)
+        {
+            int newID;
+            using (ERCEntities entity = new model.ERCEntities())
+            {
+                try
+                {
+                    entity.المرضى.Add(new_patient);
+                    entity.SaveChanges();
+                    newID = new_patient.الرمز;
+                    return newID;
+                }
+                catch
+                {
+                    return 00;//error
+                }
+            };
+
+        }
+
+
+
+
+
+
+        // change hospital status from id
+        public void UpdateHospitalStatus(DataRow HospitalRow)//I need the id
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                المستشفيات c = new المستشفيات();
+                int id = int.Parse(HospitalRow["رمز_المستشفى"].ToString());
+                c = entity.المستشفيات.First(r => r.رمز_المستشفى == id);
+                c.الحالة = HospitalRow["الحالة"].ToString();
+                c.الملاحظات = HospitalRow["الملاحظات"].ToString();
+                entity.SaveChanges();
+            };
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //public static bool updateHospitalStatus(int Hospital_ID)
         //{
         //    using (ERCEntities entity = new ERCEntities())
