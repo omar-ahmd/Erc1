@@ -226,7 +226,16 @@ namespace Erc1.BAL
 				cas.Rows.Add(dr);
 			}
 
-			return mission.add_Mission(Mission) && mission.add_Cases(cas);
+			if (mission.add_Mission(Mission) && mission.add_Cases(cas) && paramedicsInfo.SaveTeam(AnnualID, date.Year, MonthlyID, CenterID))
+			{
+
+				return true;
+			}
+			else
+			{
+				// delete mission if existe from the 3 tables 
+				return false;
+			}
 
 
 
@@ -788,7 +797,8 @@ namespace Erc1.BAL
 
 		public static bool IsPatientExist(int PatientID)
 		{
-			return false;
+			return Classes.Hospital.Check_Patient(PatientID);
+			
 		}
 
 
@@ -808,8 +818,8 @@ namespace Erc1.BAL
 			if (From == FromTo.Home)
 			{
 				
-				int exist =-1;
-				// exist=function return id of region if exist or -1 if not
+				int exist =Classes.Hospital.Get_from_Region(FromregionID);
+				
 
 				Mission.من = exist;
 				
@@ -826,7 +836,7 @@ namespace Erc1.BAL
 				//Mission.من_مشفى = FromHospitalID;
 				//Mission.من_القسم = FromDepatementID;
 
-				int exist = -1;
+				int exist = Classes.Hospital.Get_from_Hospital_Section(FromHospitalID,FromDepatementID);
 
 
 				Mission.من = exist;
@@ -840,18 +850,30 @@ namespace Erc1.BAL
 			if (To == FromTo.Home)
 			{
 
-				//Mission.الى_رمز_المدينة = ToCityID;
-				//Mission.الى_رمز_المنطقة = ToregionID;
+				int exist = Classes.Hospital.Get_to_Region(FromregionID);
+
+
+				Mission.إلى = exist;
+
+
+
 				Mission.تفاصيل_ال_الى = TostreetName + " ," + Tobuilding + " ," + Tofloor + " ," + ToMoreInfoAboutAdress;
 			}
 			else if (To == FromTo.Hospital)
 			{
-				//Mission.إلى_مشفى = ToHospitalID;
-				//Mission.إلى_القسم = ToDepatementID;
+
+				int exist = Classes.Hospital.Get_to_Hospital_Section(ToHospitalID, ToDepatementID) ;
+
+
+				Mission.إلى = exist;
+
+
+
 				Mission.تفاصيل_ال_الى = ToHosFloor + " ," + ToRoom;
 			}
 			else
 			{
+				Mission.إلى = null;
 				Mission.تفاصيل_ال_الى = ToMoreInfoAboutAdress;
 			}
 
@@ -1189,7 +1211,7 @@ namespace Erc1.BAL
 				}
 				catch (Exception ex)
 				{
-					MessageBox.Show("f");
+					
 					InsuranceID = -1;
 				}
 
@@ -1377,34 +1399,89 @@ namespace Erc1.BAL
 		}
 
 
+		public bool SaveTeam(int annualID, int Year, int MonthlyID,int centerID)
+		{
+			bool a = true;
+			الفريق head, driver, parm1, parm2;
+
+			head = new الفريق();
+			driver = new الفريق();
+			parm1 = new الفريق();
+			parm2 = new الفريق();
+
+			if (DriverID != HeadOfMissionID)
+			{
+
+				driver.الرمز_الشهري = MonthlyID;
+				driver.السنة = Year;
+				driver.رمز_السنوي = annualID;
+				driver.رمز_العامل = DriverID;
+				driver.رمز__المركز = centerID;
+				driver.دور_العامل = 3;
+
+				if (!Hospital.add_Mission_Memeber(driver)) a = false;
+
+				head.الرمز_الشهري = MonthlyID;
+				head.السنة = Year;
+				head.رمز_السنوي = annualID;
+				head.رمز_العامل = HeadOfMissionID;
+				head.رمز__المركز = centerID;
+				head.دور_العامل = 2;
+
+				if (!Hospital.add_Mission_Memeber(head)) a = false;
+			}
+			else
+			{
+				return false;
+			}
+			
+
+
+
+			if (Paramedic1ID != -1)
+			{
+				parm1.الرمز_الشهري = MonthlyID;
+				parm1.السنة = Year;
+				parm1.رمز_السنوي = annualID;
+				parm1.رمز_العامل = Paramedic1ID;
+				parm1.رمز__المركز = centerID;
+				parm1.دور_العامل = 1;
+				if (!Hospital.add_Mission_Memeber(parm1)) a = false;
+			}
+			else
+			{
+
+			}
+
+			if (paramedic2ID != -1)
+			{
+				parm2.الرمز_الشهري = MonthlyID;
+				parm2.السنة = Year;
+				parm2.رمز_السنوي = annualID;
+				parm2.رمز_العامل = Paramedic2ID;
+				parm2.رمز__المركز = centerID;
+				parm2.دور_العامل = 1;
+				if (!Hospital.add_Mission_Memeber(parm2)) a = false ;
+			}
+			else
+			{
+
+			}
+			
+			return a;
+		}
+
 		public bool SaveInfo(المهمات_المنفذة Mission)
 		{
 			try
 			{
-				
-				
+
 				
 				
 
 				
 
-				if (Paramedic1ID != -1)
-				{
-					
-				}
-				else
-				{
-					
-				}
-
-				if (paramedic2ID != -1)
-				{
-					
-				}
-				else
-				{
-					
-				}
+				
 
 				Mission.مسؤول_الدوام = HeadOfMissionID;
 
@@ -1806,64 +1883,72 @@ namespace Erc1.BAL
 		static SheetsService service;
 
 
-		static DataTable carsInfo;
+		public static DataTable carsInfo;
 		public static DataTable ReadEnteries()
 		{
 			// carID      center       engins      HeadOfmission      Driver      Paramedic1       Paramedic2 
-
-			GoogleCredential credential;
-			using (var stream = new FileStream("ace-beanbag-226012-6d2433b6d430.json", FileMode.Open, FileAccess.Read))
+			try
 			{
-				credential = GoogleCredential.FromStream(stream)
-					.CreateScoped(Scopes);
+
+
+				GoogleCredential credential;
+				using (var stream = new FileStream("ace-beanbag-226012-6d2433b6d430.json", FileMode.Open, FileAccess.Read))
+				{
+					credential = GoogleCredential.FromStream(stream)
+						.CreateScoped(Scopes);
+				}
+				service = new SheetsService(new BaseClientService.Initializer()
+				{
+					HttpClientInitializer = credential,
+					ApplicationName = ApplicationName,
+
+				});
+
+				var valueRange = new ValueRange { Values = new[] { new object[] { "=COUNTA(A:A)" } } };
+				var req = service.Spreadsheets.Values.Update(valueRange, ID, "K2");
+				req.ValueInputOption = ValueInputOptionEnum.USERENTERED;
+				req.IncludeValuesInResponse = true;
+				req.ResponseValueRenderOption = ResponseValueRenderOptionEnum.UNFORMATTEDVALUE;
+				var resp = req.Execute();
+				int count = int.Parse(resp.UpdatedData.Values[0][0].ToString());
+
+
+
+
+				var range = $"{sheet}!A:G";
+				var request = service.Spreadsheets.Values.Get(ID, range);
+				var response = request.Execute();
+				var values = response.Values;
+
+				DataTable CarsInfo = new DataTable();
+				CarsInfo.Columns.Add("Ambulance");
+				CarsInfo.Columns.Add("HeadOfMission(ID)");
+				CarsInfo.Columns.Add("Driver(ID)");
+				CarsInfo.Columns.Add("Paramedic1");
+				CarsInfo.Columns.Add("Paramedic2");
+				CarsInfo.Columns.Add("fuel");
+
+				DataRow dr;
+
+				for (int i = 1; i < count; i++)
+				{
+					dr = CarsInfo.NewRow();
+					dr[0] = values[i][1].ToString();
+					dr[1] = values[i][2].ToString();
+					dr[2] = values[i][3].ToString();
+					dr[3] = values[i][4].ToString();
+					dr[4] = values[i][5].ToString();
+					dr[5] = values[i][6].ToString();
+					CarsInfo.Rows.Add(dr);
+				}
+				carsInfo = CarsInfo;
+
+				return CarsInfo;
 			}
-			service = new SheetsService(new BaseClientService.Initializer()
+			catch
 			{
-				HttpClientInitializer = credential,
-				ApplicationName = ApplicationName,
-
-			});
-
-			var valueRange = new ValueRange { Values = new[] { new object[] { "=COUNTA(A:A)" } } };
-			var req = service.Spreadsheets.Values.Update(valueRange, ID, "K2");
-			req.ValueInputOption = ValueInputOptionEnum.USERENTERED;
-			req.IncludeValuesInResponse = true;
-			req.ResponseValueRenderOption = ResponseValueRenderOptionEnum.UNFORMATTEDVALUE;
-			var resp = req.Execute();
-			int count = int.Parse(resp.UpdatedData.Values[0][0].ToString()) ;
-
-
-
-
-			var range = $"{sheet}!A:G";
-			var request = service.Spreadsheets.Values.Get(ID, range);
-			var response = request.Execute();
-			var values = response.Values;
-
-			DataTable CarsInfo = new DataTable();
-			CarsInfo.Columns.Add("Ambulance");
-			CarsInfo.Columns.Add("HeadOfMission(ID)");
-			CarsInfo.Columns.Add("Driver(ID)");
-			CarsInfo.Columns.Add("Paramedic1");
-			CarsInfo.Columns.Add("Paramedic2");
-			CarsInfo.Columns.Add("fuel");
-
-			DataRow dr;
-
-			for (int i=1;i<count;i++)
-			{
-				dr = CarsInfo.NewRow();
-				dr[0] = values[i][1].ToString();
-				dr[1] = values[i][2].ToString();
-				dr[2] = values[i][3].ToString();
-				dr[3] = values[i][4].ToString();
-				dr[4] = values[i][5].ToString();
-				dr[5] = values[i][6].ToString();
-				CarsInfo.Rows.Add(dr);
+				return null;
 			}
-			carsInfo = CarsInfo;
-
-			return CarsInfo;
 
 		}
 
@@ -1881,6 +1966,11 @@ namespace Erc1.BAL
 				}
 			}
 			return null;
+		}
+
+		public static void ClearData()
+		{
+
 		}
 	}
 

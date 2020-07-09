@@ -162,13 +162,28 @@ namespace ERC
             }
             else if (Car.BClicked)
             {
-                if (car == null)
+                if (car == null || car.IsDisposed)
                 {
                     car = new Erc1.Forms._5_Cars.Cars() { TopLevel = false };
-
+                    if (car.CarsInfo == null)
+                    {
+                        MessageBox.Show("no data");
+                        Car.BClicked = false;
+                        car.Dispose();
+                        return;
+                    }
                     car.Size = panel2.Size;
                     car.Dock = DockStyle.Fill;
                     panel2.Controls.Add(car);
+                }
+                else
+                {
+                    if (car.CarsInfo == null)
+                    {
+                        MessageBox.Show("no data");
+                        Car.BClicked = false;
+                        return;
+                    }
                 }
                 car.Show();
 
@@ -201,11 +216,11 @@ namespace ERC
 
             if (h == null || h.IsDisposed)
             {
-                h = new Hospitals();
+                h = new Hospitals() { TopLevel = false };
                 h.Size = panel2.Size;
                 h.Dock = DockStyle.Fill;
 
-                h.WindowState = FormWindowState.Maximized;
+                panel2.Controls.Add(h);
 
 
             }

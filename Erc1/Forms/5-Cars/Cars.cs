@@ -14,12 +14,12 @@ namespace Erc1.Forms._5_Cars
 {
     public partial class Cars : Form
     {
-        DataTable CarsInfo;
+        public DataTable CarsInfo;
         public Cars()
         {
             InitializeComponent();
             
-            CarsInfo = ImportFromDrive.ReadEnteries();
+            CarsInfo = ImportFromDrive.carsInfo;
 
         }
 
@@ -68,7 +68,7 @@ namespace Erc1.Forms._5_Cars
                 {
                     centerflowlayout = new FlowLayoutPanel();
                     centerflowlayout.Dock = System.Windows.Forms.DockStyle.Bottom;
-                    centerflowlayout.Size = new Size(panel1.Size.Height / i, 2 * ca.Height + 10);
+                    centerflowlayout.AutoSize = true;
                     centerflowlayout.AutoScroll = true;
                     centerflowlayout.Location = new Point(0, 0);
                     centerflowlayout.Margin = new System.Windows.Forms.Padding(0);
@@ -84,10 +84,10 @@ namespace Erc1.Forms._5_Cars
                 string cen = center.ToString();
                 int centerID = int.Parse(cen.Split(',')[0].Split('=')[1].Replace(" ", string.Empty));
                 var Ambulances = BAL.Cars.getAmbulances(centerID);
-
+                int count = 0;
                 foreach (dynamic item in Ambulances)
                 {
-
+                    
                     bool existe = false;
 
                     string dd = item.ToString();
@@ -132,12 +132,27 @@ namespace Erc1.Forms._5_Cars
                 
 
                 
-
+                
                 panel1.Controls.Add(centerflowlayout);
                 i++;
             }
             panel1.ResumeLayout();
 
+        }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Cars car = new Erc1.Forms._5_Cars.Cars() { TopLevel = false };
+            car.CarsInfo = ImportFromDrive.ReadEnteries();
+            car.Size = panel2.Size;
+            car.Dock = DockStyle.Fill;
+            this.Parent.Controls.Add(car);
+            car.Show();
+
+            this.Dispose();
+            
+            
         }
     }
 }

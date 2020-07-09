@@ -49,6 +49,8 @@ namespace Erc1.CONTROLS
             InitializeComponent();
 
         }
+
+
         private HosStatus hosstatus = HosStatus.Available;
         public HosStatus Hosstatus
         {
@@ -66,8 +68,7 @@ namespace Erc1.CONTROLS
         }
         public void HospitalControlcs_HosStatusChanged(object sender, EventArgs e)
         {
-            //GetHos(int ID) we should get id/name/number/available or not/Notes/Departements/ext/
-            //add info into this user control and into this HopitalsInfo Form
+            
             
             switch (Hosstatus)
             {
@@ -120,7 +121,6 @@ namespace Erc1.CONTROLS
         {
             
         }
-
         private void textBox1_MouseClick(object sender, MouseEventArgs e)
         {
             Hospitals t = (Hospitals)Parent.Parent;
@@ -171,7 +171,7 @@ namespace Erc1.CONTROLS
             }
             catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
     }

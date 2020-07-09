@@ -20,7 +20,6 @@ namespace Erc1.DAL
             this.الفريق = new HashSet<الفريق>();
             this.المهمات_المنفذة = new HashSet<المهمات_المنفذة>();
             this.المهمات_المنفذة1 = new HashSet<المهمات_المنفذة>();
-            this.المهمات_المنفذة2 = new HashSet<المهمات_المنفذة>();
         }
     
         public int الرمز { get; set; }
@@ -55,7 +54,5 @@ namespace Erc1.DAL
         public virtual ICollection<المهمات_المنفذة> المهمات_المنفذة { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<المهمات_المنفذة> المهمات_المنفذة1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<المهمات_المنفذة> المهمات_المنفذة2 { get; set; }
     }
 }

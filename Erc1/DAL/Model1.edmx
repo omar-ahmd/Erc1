@@ -175,7 +175,7 @@
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="int" Nullable="false" />
+          <Property Name="الرمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="رمز المشفى" Type="int" Nullable="false" />
           <Property Name="رمز القسم" Type="int" Nullable="false" />
           <Property Name="تحويلة القسم" Type="nvarchar" MaxLength="10" />
@@ -244,7 +244,6 @@
           <Property Name="الآلية" Type="int" />
           <Property Name="المريض" Type="int" />
           <Property Name="الطبيب المعالج" Type="int" />
-          <Property Name="السائق" Type="int" />
           <Property Name="رقم المتصل" Type="int" />
           <Property Name="متلقي المهمة" Type="int" />
           <Property Name="تفاصيل ال من" Type="nvarchar" MaxLength="50" />
@@ -270,7 +269,7 @@
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="int" Nullable="false" />
+          <Property Name="الرمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="مستشفى/منطقة" Type="bit" />
           <Property Name="إلى" Type="int" />
         </EntityType>
@@ -304,7 +303,7 @@
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="int" Nullable="false" />
+          <Property Name="الرمز" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="مستشفى/منطقة" Type="bit" />
           <Property Name="من" Type="int" />
         </EntityType>
@@ -719,20 +718,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_المهمات المنفذة_ToTableالعاملون2">
-          <End Role="العاملون" Type="Self.العاملون" Multiplicity="0..1" />
-          <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="العاملون">
-              <PropertyRef Name="الرمز" />
-              <PropertyRef Name="المركز" />
-            </Principal>
-            <Dependent Role="المهمات المنفذة">
-              <PropertyRef Name="السائق" />
-              <PropertyRef Name="رمز  المركز" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_المهمات المنفذة_ToTableالعاملون5">
           <End Role="العاملون" Type="Self.العاملون" Multiplicity="0..1" />
           <End Role="المهمات المنفذة" Type="Self.المهمات المنفذة" Multiplicity="*" />
@@ -1024,10 +1009,6 @@
             <End Role="الأمراض المعدية" EntitySet="الأمراض المعدية" />
             <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات المنفذة_ToTableالعاملون2" Association="Self.FK_المهمات المنفذة_ToTableالعاملون2">
-            <End Role="العاملون" EntitySet="العاملون" />
-            <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
-          </AssociationSet>
           <AssociationSet Name="FK_المهمات المنفذة_ToTableالعاملون5" Association="Self.FK_المهمات المنفذة_ToTableالعاملون5">
             <End Role="العاملون" EntitySet="العاملون" />
             <End Role="المهمات المنفذة" EntitySet="المهمات المنفذة" />
@@ -1191,9 +1172,8 @@
           <NavigationProperty Name="الوظيفة1" Relationship="Self.FK_العاملون_ToTableالوظيفة" FromRole="العاملون" ToRole="الوظيفة" />
           <NavigationProperty Name="فئة_الدم1" Relationship="Self.FK_العاملون_ToTableفئة_الدم" FromRole="العاملون" ToRole="فئة_الدم" />
           <NavigationProperty Name="الفريق" Relationship="Self.FK_الفريق_ToTableالعاملون" FromRole="العاملون" ToRole="الفريق" />
-          <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون2" FromRole="العاملون" ToRole="المهمات_المنفذة" />
-          <NavigationProperty Name="المهمات_المنفذة1" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون5" FromRole="العاملون" ToRole="المهمات_المنفذة" />
-          <NavigationProperty Name="المهمات_المنفذة2" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون6" FromRole="العاملون" ToRole="المهمات_المنفذة" />
+          <NavigationProperty Name="المهمات_المنفذة" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون5" FromRole="العاملون" ToRole="المهمات_المنفذة" />
+          <NavigationProperty Name="المهمات_المنفذة1" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون6" FromRole="العاملون" ToRole="المهمات_المنفذة" />
         </EntityType>
         <EntityType Name="الفريق">
           <Key>
@@ -1277,7 +1257,7 @@
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="Int32" Nullable="false" />
+          <Property Name="الرمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="رمز_المشفى" Type="Int32" Nullable="false" />
           <Property Name="رمز_القسم" Type="Int32" Nullable="false" />
           <Property Name="تحويلة_القسم" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
@@ -1364,7 +1344,6 @@
           <Property Name="الآلية" Type="Int32" />
           <Property Name="المريض" Type="Int32" />
           <Property Name="الطبيب_المعالج" Type="Int32" />
-          <Property Name="السائق" Type="Int32" />
           <Property Name="رقم_المتصل" Type="Int32" />
           <Property Name="متلقي_المهمة" Type="Int32" />
           <Property Name="تفاصيل_ال_من" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -1381,9 +1360,8 @@
           <NavigationProperty Name="الأطباء" Relationship="Self.FK_المهمات_المنفذة_ToTableالأطباء" FromRole="المهمات_المنفذة" ToRole="الأطباء" />
           <NavigationProperty Name="الآليات" Relationship="Self.FK_المهمات_المنفذة_ToTableالآليات" FromRole="المهمات_المنفذة" ToRole="الآليات" />
           <NavigationProperty Name="الأمراض_المعدية1" Relationship="Self.FK_المهمات_المنفذة_ToTableالأمراض_المعدية" FromRole="المهمات_المنفذة" ToRole="الأمراض_المعدية" />
-          <NavigationProperty Name="العاملون" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون2" FromRole="المهمات_المنفذة" ToRole="العاملون" />
-          <NavigationProperty Name="العاملون1" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون5" FromRole="المهمات_المنفذة" ToRole="العاملون" />
-          <NavigationProperty Name="العاملون2" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون6" FromRole="المهمات_المنفذة" ToRole="العاملون" />
+          <NavigationProperty Name="العاملون" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون5" FromRole="المهمات_المنفذة" ToRole="العاملون" />
+          <NavigationProperty Name="العاملون1" Relationship="Self.FK_المهمات_المنفذة_ToTableالعاملون6" FromRole="المهمات_المنفذة" ToRole="العاملون" />
           <NavigationProperty Name="الفريق" Relationship="Self.FK_الفريق_ToTableالمهمات_المنفذة" FromRole="المهمات_المنفذة" ToRole="الفريق" />
           <NavigationProperty Name="المرضى" Relationship="Self.FK_المهمات_المنفذة_ToTableالمرضى" FromRole="المهمات_المنفذة" ToRole="المرضى" />
           <NavigationProperty Name="إلى1" Relationship="Self.FK_المهمات_المنفذة_ToTableإلى" FromRole="المهمات_المنفذة" ToRole="إلى" />
@@ -1403,7 +1381,7 @@
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="Int32" Nullable="false" />
+          <Property Name="الرمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="مستشفى_منطقة" Type="Boolean" />
           <Property Name="إلى1" Type="Int32" />
           <NavigationProperty Name="المهماة_المؤجلة" Relationship="Self.FK_المهماة_المؤجلة_ToTableإلى" FromRole="إلى" ToRole="المهماة_المؤجلة" />
@@ -1443,7 +1421,7 @@
           <Key>
             <PropertyRef Name="الرمز" />
           </Key>
-          <Property Name="الرمز" Type="Int32" Nullable="false" />
+          <Property Name="الرمز" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="مستشفى_منطقة" Type="Boolean" />
           <Property Name="من1" Type="Int32" />
           <NavigationProperty Name="المهماة_المؤجلة" Relationship="Self.FK_المهماة_المؤجلة_ToTableمن" FromRole="من" ToRole="المهماة_المؤجلة" />
@@ -1686,20 +1664,6 @@
             </Principal>
             <Dependent Role="الفريق">
               <PropertyRef Name="رمز_العامل" />
-              <PropertyRef Name="رمز__المركز" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_المهمات_المنفذة_ToTableالعاملون2">
-          <End Role="العاملون" Type="Self.العاملون" Multiplicity="0..1" />
-          <End Role="المهمات_المنفذة" Type="Self.المهمات_المنفذة" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="العاملون">
-              <PropertyRef Name="الرمز" />
-              <PropertyRef Name="المركز" />
-            </Principal>
-            <Dependent Role="المهمات_المنفذة">
-              <PropertyRef Name="السائق" />
               <PropertyRef Name="رمز__المركز" />
             </Dependent>
           </ReferentialConstraint>
@@ -2082,10 +2046,6 @@
             <End Role="العاملون" EntitySet="العاملون" />
             <End Role="الفريق" EntitySet="الفريق" />
           </AssociationSet>
-          <AssociationSet Name="FK_المهمات_المنفذة_ToTableالعاملون2" Association="Self.FK_المهمات_المنفذة_ToTableالعاملون2">
-            <End Role="العاملون" EntitySet="العاملون" />
-            <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
-          </AssociationSet>
           <AssociationSet Name="FK_المهمات_المنفذة_ToTableالعاملون5" Association="Self.FK_المهمات_المنفذة_ToTableالعاملون5">
             <End Role="العاملون" EntitySet="العاملون" />
             <End Role="المهمات_المنفذة" EntitySet="المهمات_المنفذة" />
@@ -2457,7 +2417,6 @@
                 <ScalarProperty Name="الآلية" ColumnName="الآلية" />
                 <ScalarProperty Name="المريض" ColumnName="المريض" />
                 <ScalarProperty Name="الطبيب_المعالج" ColumnName="الطبيب المعالج" />
-                <ScalarProperty Name="السائق" ColumnName="السائق" />
                 <ScalarProperty Name="رقم_المتصل" ColumnName="رقم المتصل" />
                 <ScalarProperty Name="متلقي_المهمة" ColumnName="متلقي المهمة" />
                 <ScalarProperty Name="تفاصيل_ال_من" ColumnName="تفاصيل ال من" />

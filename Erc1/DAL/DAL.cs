@@ -725,7 +725,9 @@ namespace Erc1.Classes
                 dt.Columns.Add("تحويلة_القسم", typeof(string));
                 dt.Columns.Add("الطابق", typeof(int));
                 DataRow dr;
+
                 //creating rows
+
                 foreach (var k in c)
                 {
                     dr = dt.NewRow();
@@ -808,7 +810,7 @@ namespace Erc1.Classes
         {
             int rep;
             bool e;
-            using (ERCEntities entity = new model.ERCEntities())
+            using (ERCEntities entity = new ERCEntities())
             {
                 try
                 {

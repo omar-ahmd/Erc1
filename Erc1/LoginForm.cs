@@ -17,10 +17,12 @@ namespace ERC
         public static OperationForm of = new OperationForm();
 
 
-        Thread ImportCasesType;
+        Thread ImportCasesType,ImportFromDrive;
         private void button1_Click(object sender, EventArgs e)
         {
             ImportCasesType = new Thread(() => { addMission.Get_CasesType(); });
+            ImportFromDrive = new Thread(() => { Erc1.BAL.ImportFromDrive.ReadEnteries(); });
+            ImportFromDrive.Start();
             ImportCasesType.Start();
             this.Hide();
             of.Show();

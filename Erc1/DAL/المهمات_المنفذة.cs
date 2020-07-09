@@ -28,7 +28,6 @@ namespace Erc1.DAL
         public Nullable<int> الآلية { get; set; }
         public Nullable<int> المريض { get; set; }
         public Nullable<int> الطبيب_المعالج { get; set; }
-        public Nullable<int> السائق { get; set; }
         public Nullable<int> رقم_المتصل { get; set; }
         public Nullable<int> متلقي_المهمة { get; set; }
         public string تفاصيل_ال_من { get; set; }
@@ -48,7 +47,6 @@ namespace Erc1.DAL
         public virtual الأمراض_المعدية الأمراض_المعدية1 { get; set; }
         public virtual العاملون العاملون { get; set; }
         public virtual العاملون العاملون1 { get; set; }
-        public virtual العاملون العاملون2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<الفريق> الفريق { get; set; }
         public virtual المرضى المرضى { get; set; }
