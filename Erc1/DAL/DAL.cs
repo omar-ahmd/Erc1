@@ -14,8 +14,6 @@ namespace Erc1.Classes
     {
 
 
-
-
         // get monthlyid 
         public static int Get_MonthlyID()
         {
@@ -661,126 +659,6 @@ namespace Erc1.Classes
 
 
 
-    }
-
-    class Hospital
-    {
-        // get hospital info(column names ="اسم_المستشفى","الرمز","الهاتف","الملاحظات")
-        public static DataTable Get_Info_Hospital()
-        {
-            DataTable dt = new DataTable();
-            using (ERCEntities entity = new ERCEntities())
-            {
-                var c = (
-                from h in entity.المستشفيات
-                select new
-                {
-                    h.رمز_المستشفى,
-                    h.اسم_المستشفى,
-                    h.الهاتف,
-                    h.الملاحظات,
-                    h.الحالة
-                }
-                    ); //creating columns
-                dt.Columns.Add("رمز_المستشفى", typeof(int));
-                dt.Columns.Add("اسم_المستشفى", typeof(string));
-                dt.Columns.Add("الهاتف", typeof(string));
-                dt.Columns.Add("الملاحظات", typeof(string));
-                dt.Columns.Add("الحالة", typeof(string));
-                DataRow dr;
-                //creating rows
-                foreach (var k in c)
-                {
-                    dr = dt.NewRow();
-                    dr["رمز_المستشفى"] = k.رمز_المستشفى;
-                    dr["اسم_المستشفى"] = k.اسم_المستشفى;
-                    dr["الهاتف"] = k.الهاتف;
-                    dr["الملاحظات"] = k.الملاحظات;
-                    dr["الحالة"] = k.الحالة;
-                    dt.Rows.Add(dr);
-                }
-                return dt;
-            };
-        }
-
-
-        // get  أقسام المستشفى(column names ="اسم_القسم","الرمز","تحويلة_القسم","الطابق")
-        public static DataTable Get_أقسام_المستشفى(int hospitalID)
-        {
-
-            using (ERCEntities entity = new ERCEntities())
-            {
-                DataTable dt = new DataTable();
-                var c = (from r in entity.المستشفيات_مع_اقسام.AsEnumerable()
-                         select new
-                         {
-                             الرمز = r.أقسام_المستشفيات.الرمز,
-                             اسم_القسم = r.أقسام_المستشفيات.اسم_القسم,
-                             تحويلة_القسم = r.تحويلة_القسم,
-                             الطابق = r.الطابق
-                         });
-                //creating columns
-                dt.Columns.Add("الرمز", typeof(int));
-                dt.Columns.Add("اسم_القسم", typeof(string));
-                dt.Columns.Add("تحويلة_القسم", typeof(string));
-                dt.Columns.Add("الطابق", typeof(int));
-                DataRow dr;
-                //creating rows
-                foreach (var k in c)
-                {
-                    dr = dt.NewRow();
-                    dr["الرمز"] = k.الرمز;
-                    dr["اسم_القسم"] = k.اسم_القسم;
-                    dr["تحويلة_القسم"] = k.تحويلة_القسم;
-                    dr["الطابق"] = k.الطابق;
-                    dt.Rows.Add(dr);
-                }
-                return dt;
-            }
-        }
-
-
-
-        // add Patient with return id
-        public static int add_Patient(المرضى new_patient)
-        {
-            int newID;
-            using (ERCEntities entity = new ERCEntities())
-            {
-                try
-                {
-                    entity.المرضى.Add(new_patient);
-                    entity.SaveChanges();
-                    newID =  new_patient.الرمز;
-                    return newID;
-                }
-                catch(Exception ex)
-                {
-                    return 00;//error
-                }
-            };
-
-        }
-
-
-        // Update hospital from datarow
-        public static void UpdateHospitalStatus(DataRow HospitalRow)//I need the id
-        {
-            using (ERCEntities entity = new ERCEntities())
-            {
-                المستشفيات c = new المستشفيات();
-                int id = int.Parse(HospitalRow["رمز_المستشفى"].ToString());
-                c = entity.المستشفيات.First(r => r.رمز_المستشفى == id);
-                c.الحالة = HospitalRow["الحالة"].ToString();
-                c.الملاحظات = HospitalRow["الملاحظات"].ToString();
-                entity.SaveChanges();
-            };
-        }
-
-
-
-
-        //    9 - 7 - 2020     //
         //Add member team to a mission
         public static bool add_Mission_Memeber(الفريق mission_member)
         {
@@ -801,38 +679,6 @@ namespace Erc1.Classes
             };
 
         }
-
-
-        // check if patient exist
-        public static bool Check_Patient(int patientID)
-        {
-            int rep;
-            bool e;
-            using (ERCEntities entity = new model.ERCEntities())
-            {
-                try
-                {
-                    rep = entity.المرضى
-                      .Where(r => r.الرمز == patientID)
-                      .Count()
-                      ;
-                    if (rep == 0) e = false;
-                    else e = true;
-                    return e;
-                }
-                catch
-                {
-                    e = false;
-                    return e;
-                }
-            };
-
-        }
-
-
-
-
-
 
 
 
@@ -976,6 +822,169 @@ namespace Erc1.Classes
         }
 
 
+        // get العامل name by id
+        public static string Get_العامل_name_byid(int Employee_id)
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                string name;
+                try
+                {
+                    name = entity.العاملون.Where(r => r.الرمز == Employee_id).Select(r => r.الاسم).Single();
+                }
+                catch
+                {
+                    name = "";
+                }
+                return name;
+            };
+        }
+
+
+    }
+
+    class Hospital
+    {
+        // get hospital info(column names ="اسم_المستشفى","الرمز","الهاتف","الملاحظات")
+        public static DataTable Get_Info_Hospital()
+        {
+            DataTable dt = new DataTable();
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from h in entity.المستشفيات
+                select new
+                {
+                    h.رمز_المستشفى,
+                    h.اسم_المستشفى,
+                    h.الهاتف,
+                    h.الملاحظات,
+                    h.الحالة
+                }
+                    ); //creating columns
+                dt.Columns.Add("رمز_المستشفى", typeof(int));
+                dt.Columns.Add("اسم_المستشفى", typeof(string));
+                dt.Columns.Add("الهاتف", typeof(string));
+                dt.Columns.Add("الملاحظات", typeof(string));
+                dt.Columns.Add("الحالة", typeof(string));
+                DataRow dr;
+                //creating rows
+                foreach (var k in c)
+                {
+                    dr = dt.NewRow();
+                    dr["رمز_المستشفى"] = k.رمز_المستشفى;
+                    dr["اسم_المستشفى"] = k.اسم_المستشفى;
+                    dr["الهاتف"] = k.الهاتف;
+                    dr["الملاحظات"] = k.الملاحظات;
+                    dr["الحالة"] = k.الحالة;
+                    dt.Rows.Add(dr);
+                }
+                return dt;
+            };
+        }
+
+
+        // get  أقسام المستشفى(column names ="اسم_القسم","الرمز","تحويلة_القسم","الطابق")
+        public static DataTable Get_أقسام_المستشفى(int hospitalID)
+        {
+
+            using (ERCEntities entity = new ERCEntities())
+            {
+                DataTable dt = new DataTable();
+                var c = (from r in entity.المستشفيات_مع_اقسام.AsEnumerable()
+                         select new
+                         {
+                             الرمز = r.أقسام_المستشفيات.الرمز,
+                             اسم_القسم = r.أقسام_المستشفيات.اسم_القسم,
+                             تحويلة_القسم = r.تحويلة_القسم,
+                             الطابق = r.الطابق
+                         });
+                //creating columns
+                dt.Columns.Add("الرمز", typeof(int));
+                dt.Columns.Add("اسم_القسم", typeof(string));
+                dt.Columns.Add("تحويلة_القسم", typeof(string));
+                dt.Columns.Add("الطابق", typeof(int));
+                DataRow dr;
+                //creating rows
+                foreach (var k in c)
+                {
+                    dr = dt.NewRow();
+                    dr["الرمز"] = k.الرمز;
+                    dr["اسم_القسم"] = k.اسم_القسم;
+                    dr["تحويلة_القسم"] = k.تحويلة_القسم;
+                    dr["الطابق"] = k.الطابق;
+                    dt.Rows.Add(dr);
+                }
+                return dt;
+            }
+        }
+
+
+
+        // add Patient with return id
+        public static int add_Patient(المرضى new_patient)
+        {
+            int newID;
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+                    entity.المرضى.Add(new_patient);
+                    entity.SaveChanges();
+                    newID =  new_patient.الرمز;
+                    return newID;
+                }
+                catch(Exception ex)
+                {
+                    return 00;//error
+                }
+            };
+
+        }
+
+
+        // Update hospital from datarow
+        public static void UpdateHospitalStatus(DataRow HospitalRow)//I need the id
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                المستشفيات c = new المستشفيات();
+                int id = int.Parse(HospitalRow["رمز_المستشفى"].ToString());
+                c = entity.المستشفيات.First(r => r.رمز_المستشفى == id);
+                c.الحالة = HospitalRow["الحالة"].ToString();
+                c.الملاحظات = HospitalRow["الملاحظات"].ToString();
+                entity.SaveChanges();
+            };
+        }
+
+
+
+
+        // check if patient exist
+        public static bool Check_Patient(int patientID)
+        {
+            int rep;
+            bool e;
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+                    rep = entity.المرضى
+                      .Where(r => r.الرمز == patientID)
+                      .Count()
+                      ;
+                    if (rep == 0) e = false;
+                    else e = true;
+                    return e;
+                }
+                catch
+                {
+                    e = false;
+                    return e;
+                }
+            };
+
+        }
 
 
     }
