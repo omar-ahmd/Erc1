@@ -892,6 +892,7 @@ namespace Erc1.Classes
             {
                 DataTable dt = new DataTable();
                 var c = (from r in entity.المستشفيات_مع_اقسام.AsEnumerable()
+                         where r.رمز_المشفى==hospitalID
                          select new
                          {
                              الرمز = r.أقسام_المستشفيات.الرمز,
