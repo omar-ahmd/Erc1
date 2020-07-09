@@ -362,7 +362,7 @@ namespace Erc1.BAL
 				bool PatientImporDone, ParamDone;
 
 
-
+				
 				if(MissionTy==Forms.MissionType.Implemented)
 				{
 					PatientInfo = new PatientInfo();

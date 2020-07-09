@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cars));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this._1Center = new System.Windows.Forms.FlowLayoutPanel();
+            this.carsControl5 = new Erc1.CONTROLS.CarsControl();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.TeamContainer = new System.Windows.Forms.Panel();
-            this.carsControl5 = new Erc1.CONTROLS.CarsControl();
-            this.carsControl1 = new Erc1.CONTROLS.CarsControl();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this._1Center.SuspendLayout();
@@ -61,6 +61,7 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Controls.Add(this._1Center);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -69,17 +70,49 @@
             this.panel1.Size = new System.Drawing.Size(589, 576);
             this.panel1.TabIndex = 0;
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 329F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 329F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 329F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 329F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 329F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(589, 329);
+            this.tableLayoutPanel3.TabIndex = 2;
+            // 
             // _1Center
             // 
             this._1Center.AutoScroll = true;
             this._1Center.Controls.Add(this.carsControl5);
-            this._1Center.Controls.Add(this.carsControl1);
-            this._1Center.Dock = System.Windows.Forms.DockStyle.Top;
-            this._1Center.Location = new System.Drawing.Point(0, 0);
+            this._1Center.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this._1Center.Location = new System.Drawing.Point(0, 329);
             this._1Center.Margin = new System.Windows.Forms.Padding(0);
             this._1Center.Name = "_1Center";
-            this._1Center.Size = new System.Drawing.Size(589, 163);
+            this._1Center.Size = new System.Drawing.Size(589, 247);
             this._1Center.TabIndex = 1;
+            // 
+            // carsControl5
+            // 
+            this.carsControl5.BackColor = System.Drawing.Color.Transparent;
+            this.carsControl5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("carsControl5.BackgroundImage")));
+            this.carsControl5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.carsControl5.CarID = 105;
+            this.carsControl5.Clicked = false;
+            this.carsControl5.Entered = false;
+            this.carsControl5.Location = new System.Drawing.Point(3, 3);
+            this.carsControl5.Name = "carsControl5";
+            this.carsControl5.Size = new System.Drawing.Size(224, 126);
+            this.carsControl5.TabIndex = 4;
+            this.carsControl5.conClick += new System.EventHandler(this.carsControl1_conClick_1);
+            this.carsControl5.conEntered += new System.EventHandler(this.carsControl1_conClick_1);
+            this.carsControl5.conLeft += new System.EventHandler(this.carsControl1_conClick_1);
             // 
             // tableLayoutPanel2
             // 
@@ -103,40 +136,8 @@
             this.TeamContainer.Location = new System.Drawing.Point(0, 69);
             this.TeamContainer.Margin = new System.Windows.Forms.Padding(0);
             this.TeamContainer.Name = "TeamContainer";
-            this.TeamContainer.Size = new System.Drawing.Size(401, 429);
+            this.TeamContainer.Size = new System.Drawing.Size(401, 428);
             this.TeamContainer.TabIndex = 1;
-            // 
-            // carsControl5
-            // 
-            this.carsControl5.BackColor = System.Drawing.Color.Transparent;
-            this.carsControl5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("carsControl5.BackgroundImage")));
-            this.carsControl5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.carsControl5.CarID = 105;
-            this.carsControl5.Clicked = false;
-            this.carsControl5.Entered = false;
-            this.carsControl5.Location = new System.Drawing.Point(3, 3);
-            this.carsControl5.Name = "carsControl5";
-            this.carsControl5.Size = new System.Drawing.Size(224, 126);
-            this.carsControl5.TabIndex = 4;
-            this.carsControl5.conClick += new System.EventHandler(this.carsControl1_conClick_1);
-            this.carsControl5.conEntered += new System.EventHandler(this.carsControl1_conClick_1);
-            this.carsControl5.conLeft += new System.EventHandler(this.carsControl1_conClick_1);
-            // 
-            // carsControl1
-            // 
-            this.carsControl1.BackColor = System.Drawing.Color.Transparent;
-            this.carsControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("carsControl1.BackgroundImage")));
-            this.carsControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.carsControl1.CarID = 102;
-            this.carsControl1.Clicked = false;
-            this.carsControl1.Entered = false;
-            this.carsControl1.Location = new System.Drawing.Point(233, 3);
-            this.carsControl1.Name = "carsControl1";
-            this.carsControl1.Size = new System.Drawing.Size(224, 126);
-            this.carsControl1.TabIndex = 5;
-            this.carsControl1.conClick += new System.EventHandler(this.carsControl1_conClick_1);
-            this.carsControl1.conEntered += new System.EventHandler(this.carsControl1_conClick_1);
-            this.carsControl1.conLeft += new System.EventHandler(this.carsControl1_conClick_1);
             // 
             // Cars
             // 
@@ -147,6 +148,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Cars";
             this.Text = "Cars";
+            this.Load += new System.EventHandler(this.Cars_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this._1Center.ResumeLayout(false);
@@ -163,6 +165,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel TeamContainer;
         private CONTROLS.CarsControl carsControl5;
-        private CONTROLS.CarsControl carsControl1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }

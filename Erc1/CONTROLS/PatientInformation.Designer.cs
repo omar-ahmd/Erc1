@@ -1837,7 +1837,6 @@
             this.ToHomeInfo.Controls.Add(this.tableLayoutPanel20, 0, 0);
             this.ToHomeInfo.Controls.Add(this.tableLayoutPanel27, 0, 2);
             this.ToHomeInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ToHomeInfo.Enabled = false;
             this.ToHomeInfo.Location = new System.Drawing.Point(74, 294);
             this.ToHomeInfo.Margin = new System.Windows.Forms.Padding(0);
             this.ToHomeInfo.Name = "ToHomeInfo";
@@ -1865,6 +1864,7 @@
             this.tableLayoutPanel15.Controls.Add(this.ToCity, 0, 0);
             this.tableLayoutPanel15.Controls.Add(this.ToRegion, 0, 0);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel15.Enabled = false;
             this.tableLayoutPanel15.Location = new System.Drawing.Point(0, 22);
             this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
@@ -2012,6 +2012,7 @@
             this.tableLayoutPanel20.Controls.Add(this.label27, 0, 0);
             this.tableLayoutPanel20.Controls.Add(this.label28, 0, 0);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel20.Enabled = false;
             this.tableLayoutPanel20.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
@@ -2130,12 +2131,12 @@
             this.label29.Font = new System.Drawing.Font("Air Strip Arabic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.Color.White;
             this.label29.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.label29.Location = new System.Drawing.Point(336, 2);
+            this.label29.Location = new System.Drawing.Point(132, 2);
             this.label29.Name = "label29";
             this.label29.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label29.Size = new System.Drawing.Size(58, 20);
+            this.label29.Size = new System.Drawing.Size(262, 20);
             this.label29.TabIndex = 4;
-            this.label29.Text = "تفاصيل";
+            this.label29.Text = "تفاصيل(علاج ميداني،جمعية أخرى...)";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label30
@@ -2342,18 +2343,12 @@
         public System.Windows.Forms.Label label26;
         public System.Windows.Forms.Label label25;
         public System.Windows.Forms.TableLayoutPanel ToHomeInfo;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
-        public System.Windows.Forms.TextBox MoreToInfo;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
         public System.Windows.Forms.Label label15;
         public System.Windows.Forms.Label label16;
         public System.Windows.Forms.Label label17;
         public System.Windows.Forms.Label label27;
         public System.Windows.Forms.Label label28;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel27;
-        public System.Windows.Forms.Label label29;
-        public System.Windows.Forms.Label label30;
-        public System.Windows.Forms.Label label31;
         public System.Windows.Forms.Label CancilingCause;
         public System.Windows.Forms.PictureBox pictureBox8;
         public System.Windows.Forms.TextBox FromHosRoom;
@@ -2377,5 +2372,11 @@
         public LabelBord CanSit;
         public System.Windows.Forms.ComboBox Name_FromHospital;
         public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
+        public System.Windows.Forms.TextBox MoreToInfo;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel27;
+        public System.Windows.Forms.Label label29;
+        public System.Windows.Forms.Label label30;
+        public System.Windows.Forms.Label label31;
     }
 }

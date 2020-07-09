@@ -60,6 +60,17 @@ namespace Erc1.CONTROLS
             }
         }
 
+        private int centerID;
+
+        public int CenterID
+        {
+            get { return centerID; }
+            set
+            {
+                centerID = value;
+            }
+        }
+
         private void CarId_Click(object sender, EventArgs e)
         {
             if (Clicked) Clicked = false;

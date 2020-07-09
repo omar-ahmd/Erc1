@@ -27,11 +27,9 @@ namespace Erc1.DAL
         public string اختصاص { get; set; }
         public string هاتف { get; set; }
         public Nullable<int> مكان_العمل { get; set; }
-        public Nullable<int> رمز_المدينة { get; set; }
         public Nullable<int> رمز_المنطقة { get; set; }
     
         public virtual المستشفيات المستشفيات { get; set; }
-        public virtual المدن المدن { get; set; }
         public virtual المناطق المناطق { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<المرضى> المرضى { get; set; }

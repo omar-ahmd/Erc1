@@ -139,40 +139,43 @@ namespace Erc1.Forms._4_Hospitals
         private void Hospitals_Load(object sender, EventArgs e)
         {
             Hosdt = BAL.Hospitals.GetHospitals();
-            maxHosPages = (Hosdt.Rows.Count / 22);
-            int count = Hosdt.Rows.Count;
-            if (Hosdt.Rows.Count % 22 != 0) maxHosPages++;
-
-            int y;
-            if (HosPages == maxHosPages) y = count % 22;
-                else y = 22;
-            for (int i = 0; i < y; i++) 
+            if (Hosdt.Rows.Count != 0)
             {
-                
-                HospitalControlcs h = (HospitalControlcs)tableLayoutPanel1.Controls["_" + (i + 1).ToString()];
-                h.HosID = int.Parse(Hosdt.Rows[i]["رمز_المستشفى"].ToString());
-                h.HospitalName.Text = Hosdt.Rows[i]["اسم_المستشفى"].ToString();
+                maxHosPages = (Hosdt.Rows.Count / 22);
+                int count = Hosdt.Rows.Count;
+                if (Hosdt.Rows.Count % 22 != 0) maxHosPages++;
 
-                if(Hosdt.Rows[i]["الملاحظات"].ToString() != "")
+                int y;
+                if (HosPages == maxHosPages) y = count % 22;
+                else y = 22;
+                for (int i = 0; i < y; i++)
                 {
-                    h.textBox1.Text = Hosdt.Rows[i]["الملاحظات"].ToString();
-                    h.Hosstatus = HosStatus.AvailBusy;
-                }
-                else
-                {
-                    if (Hosdt.Rows[i]["الحالة"].ToString() == "متاح")
-                    {
-                        
-                        h.Hosstatus = HosStatus.Available;
-                    }
-                    else if (Hosdt.Rows[i]["الحالة"].ToString() == "غير متاح")
-                    {
-                        h.Hosstatus = HosStatus.Busy;
-                    }
 
+                    HospitalControlcs h = (HospitalControlcs)tableLayoutPanel1.Controls["_" + (i + 1).ToString()];
+                    h.HosID = int.Parse(Hosdt.Rows[i]["رمز_المستشفى"].ToString());
+                    h.HospitalName.Text = Hosdt.Rows[i]["اسم_المستشفى"].ToString();
+
+                    if (Hosdt.Rows[i]["الملاحظات"].ToString() != "")
+                    {
+                        h.textBox1.Text = Hosdt.Rows[i]["الملاحظات"].ToString();
+                        h.Hosstatus = HosStatus.AvailBusy;
+                    }
+                    else
+                    {
+                        if (Hosdt.Rows[i]["الحالة"].ToString() == "متاح")
+                        {
+
+                            h.Hosstatus = HosStatus.Available;
+                        }
+                        else if (Hosdt.Rows[i]["الحالة"].ToString() == "غير متاح")
+                        {
+                            h.Hosstatus = HosStatus.Busy;
+                        }
+
+                    }
+                    h.HosStatusChanged += H_HosStatusChanged;
+                    h.HosTextChanged += H_HosStatusChanged;
                 }
-                h.HosStatusChanged += H_HosStatusChanged;
-                h.HosTextChanged += H_HosStatusChanged;
             }
            
         }

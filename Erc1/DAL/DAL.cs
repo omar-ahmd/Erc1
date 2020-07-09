@@ -751,10 +751,10 @@ namespace Erc1.Classes
                 {
                     entity.المرضى.Add(new_patient);
                     entity.SaveChanges();
-                    newID = new_patient.الرمز;
+                    newID =  new_patient.الرمز;
                     return newID;
                 }
-                catch
+                catch(Exception ex)
                 {
                     return 00;//error
                 }
@@ -764,7 +764,7 @@ namespace Erc1.Classes
 
 
         // Update hospital from datarow
-        public void UpdateHospitalStatus(DataRow HospitalRow)//I need the id
+        public static void UpdateHospitalStatus(DataRow HospitalRow)//I need the id
         {
             using (ERCEntities entity = new ERCEntities())
             {

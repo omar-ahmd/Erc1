@@ -18,6 +18,12 @@ using Erc1.CONTROLS;
 using Erc1.Classes;
 using System.Runtime.CompilerServices;
 using Erc1.Forms._8_AddPatient;
+using Google.Apis.Sheets.v4;
+using Google.Apis.Auth.OAuth2;
+using System.IO;
+using Google.Apis.Services;
+using Google.Apis.Sheets.v4.Data;
+using static Google.Apis.Sheets.v4.SpreadsheetsResource.ValuesResource.UpdateRequest;
 
 namespace Erc1.BAL
 {
@@ -310,7 +316,7 @@ namespace Erc1.BAL
 				}
 				catch(Exception ex)
 				{
-					MessageBox.Show("Please choose one of the center");
+					MessageBox.Show("Please choose one of the centers");
 					return false;
 				}
 
@@ -794,31 +800,59 @@ namespace Erc1.BAL
 			if(!IsPatientExist(patientID))
 			{
 				المرضى Patient = new المرضى();
+
 				
 			}
+
+			من fom = new من();
 			if (From == FromTo.Home)
 			{
-				Mission.من_رمز_المدينة = FromCityID;
-				Mission.من_رمز_المنطقة = FromregionID;
+				
+				int exist =-1;
+				// exist=function return id of region if exist or -1 if not
+
+				Mission.من = exist;
+				
+
+				
 				Mission.تفاصيل_ال_من = FromstreetName + " ," + Frombuilding + " ," + Fromfloor + " ," + FromMoreInfoAboutAdress;
 			}
-			else
+			else if (From == FromTo.Hospital)
 			{
-				Mission.من_مشفى = FromHospitalID;
-				Mission.من_القسم = FromDepatementID;
+
+				
+
+				//bit = 1
+				//Mission.من_مشفى = FromHospitalID;
+				//Mission.من_القسم = FromDepatementID;
+
+				int exist = -1;
+
+
+				Mission.من = exist;
+
+
+
+
 				Mission.تفاصيل_ال_من = FromHosFloor + " ," + fromroom;
 			}
+
 			if (To == FromTo.Home)
 			{
-				Mission.الى_رمز_المدينة = ToCityID;
-				Mission.الى_رمز_المنطقة = ToregionID;
+
+				//Mission.الى_رمز_المدينة = ToCityID;
+				//Mission.الى_رمز_المنطقة = ToregionID;
 				Mission.تفاصيل_ال_الى = TostreetName + " ," + Tobuilding + " ," + Tofloor + " ," + ToMoreInfoAboutAdress;
+			}
+			else if (To == FromTo.Hospital)
+			{
+				//Mission.إلى_مشفى = ToHospitalID;
+				//Mission.إلى_القسم = ToDepatementID;
+				Mission.تفاصيل_ال_الى = ToHosFloor + " ," + ToRoom;
 			}
 			else
 			{
-				Mission.إلى_مشفى = ToHospitalID;
-				Mission.إلى_القسم = ToDepatementID;
-				Mission.تفاصيل_ال_الى = ToHosFloor + " ," + ToRoom;
+				Mission.تفاصيل_ال_الى = ToMoreInfoAboutAdress;
 			}
 
 			Mission.مريض_مقعد = CanSit;
@@ -840,14 +874,7 @@ namespace Erc1.BAL
 				Mission.الأمراض_المعدية = null;
 			}
 
-			if (InsuranceID != -1)
-			{
-				Mission.الجهة_الضامنة = InsuranceID;
-			}
-			else
-			{
-				Mission.الجهة_الضامنة = null;
-			}
+
 
 
 
@@ -1134,7 +1161,7 @@ namespace Erc1.BAL
 				}
 				else
 				{
-					MessageBox.Show("يجب تعبئ كامل المعلومات");
+					//MessageBox.Show("يجب تعبئ كامل المعلومات");
 				}
 
 
@@ -1354,27 +1381,32 @@ namespace Erc1.BAL
 		{
 			try
 			{
-				Mission.السائق = DriverID;
-				Mission.مسؤول_المهمة = HeadOfMissionID;
-				Mission.مسؤول_الدوام = HeadOfMissionID;
+				
+				
+				
+				
+
+				
 
 				if (Paramedic1ID != -1)
 				{
-					Mission.مسعف_1 = Paramedic1ID;
+					
 				}
 				else
 				{
-					//Mission.مسعف_1 = null;
+					
 				}
 
 				if (paramedic2ID != -1)
 				{
-					Mission.مسعف_2 = Paramedic2ID;
+					
 				}
 				else
 				{
-					//Mission.مسعف_2 = null;
+					
 				}
+
+				Mission.مسؤول_الدوام = HeadOfMissionID;
 
 				if (RecipientMissionID != -1)
 				{
@@ -1569,47 +1601,55 @@ namespace Erc1.BAL
 
         #region variables
         private string name;
-		private int insuranceID;
-		private int weight;
-		private int cityid;
-		private int regionid;
-		private DateTime dateOfBirth;
-		private int doctorID;
+		private int? insuranceID;
+		private int? weight;
+		private int? cityid;
+		private int? regionid;
+		private DateTime? dateOfBirth;
+		private int? doctorID;
 		private string phone;
+		private string moreInfo;
         #endregion
 
         #region Proprties
+
+		public string MoreInfo
+		{
+			get { return moreInfo; }
+			set { moreInfo = value; }
+		}
         public string Name
 		{
 			get { return name; }
 			set { name = value; }
 		}
-		public int InsuranceID
+		public Nullable<int> InsuranceID
 		{
 			get { return insuranceID; }
 			set { insuranceID = value; }
 		}
-		public int Weight
+		public int? Weight
 		{
 			get { return weight; }
 			set { weight = value; }
 		}
-		public int CityID
+		public int? CityID
 		{
 			get { return cityid; }
 			set { cityid = value; }
 		}
-		public int RegionID
+		public int? RegionID
 		{
 			get { return regionid; }
 			set { regionid = value; }
 		}
-		public DateTime DateOfBirth
+	    
+		public DateTime? DateOfBirth
 		{
 			get { return dateOfBirth; }
 			set { dateOfBirth = value; }
 		}
-		public int DoctorID
+		public int? DoctorID
 		{
 			get { return doctorID; }
 			set { doctorID = value; }
@@ -1626,13 +1666,58 @@ namespace Erc1.BAL
 		{
 			try
 			{
-				Name = addPatient.NNAME.Text;
-				InsuranceID = int.Parse(addPatient.Insurancebox.SelectedValue.ToString());
-				Weight = int.Parse(addPatient.Weight.Text);
-				DateOfBirth = addPatient.DateOfBirth.Value;
-				CityID = int.Parse(addPatient.CityBox.SelectedValue.ToString());
-				RegionID = int.Parse(addPatient.RegionBox.SelectedValue.ToString());
+				if(addPatient.NNAME.Text == "")
+				{
+					MessageBox.Show("املأ كل المعلومات");
+					return false;
+				}
+				else
+				{
+					Name = addPatient.NNAME.Text;
+				}
+
+				try 
+				{
+					InsuranceID = int.Parse(addPatient.Insurancebox.SelectedValue.ToString());
+				}
+				catch
+				{
+					InsuranceID = null;
+				}
+
+				try
+				{
+					Weight = int.Parse(addPatient.Weight.Text);
+				}
+				catch
+				{
+					MessageBox.Show("املأ كل المعاومات");
+				}
+
+				try
+				{
+					DateOfBirth = addPatient.DateOfBirth.Value;
+				}
+				catch
+				{
+					MessageBox.Show("املأ كل المعاومات");
+				}
+
+				try
+				{
+					CityID = int.Parse(addPatient.CityBox.SelectedValue.ToString());
+
+					RegionID = int.Parse(addPatient.RegionBox.SelectedValue.ToString());
+				}
+				catch
+				{
+					RegionID = null;
+				}
+
 				Phone = addPatient.Phone.Text;
+
+				MoreInfo = addPatient.textBox1.Text;
+
 				return true;
 			}
 			catch
@@ -1640,26 +1725,30 @@ namespace Erc1.BAL
 				return false;
 			}
 		}
-		public المرضى AddPatient()
+		public int AddPatient()
 		{
 			try
-
 			{
 				المرضى patient = new المرضى();
+				//patient.الرمز = 1;
 				patient.اسم = Name;
 				patient.الطبيب_المعالج = doctorID;
-				patient.وزن = Weight;
-				patient.رمز_المدينة = CityID;
+				patient.وزن = 70;
+				//patient.رمز_المدينة = CityID;
 				patient.رمز_المنطقة = RegionID;
 				patient.الهاتف = Phone;
 				patient.الضمان = InsuranceID;
-				//dateof birth
-				return patient;
-					 
+				patient.العنوان = MoreInfo;
+				patient.تاريخ_الولادة = DateOfBirth;
+				patient.أمراض_مزمنة = null;
+				
+				return Hospital.add_Patient(patient);
+
 			}
 			catch
 			{
-				return null;
+				MessageBox.Show("rr");
+				return -1;
 			}
 
 
@@ -1687,8 +1776,116 @@ namespace Erc1.BAL
 		}
 		public static bool SaveHospitale(DataRow dr)
 		{
+			Erc1.Classes.Hospital.UpdateHospitalStatus(dr);
 			return true;
 			    
 		}
 	}	
+	class Cars
+	{
+		public Cars()
+		{
+
+		}
+
+		public static IEnumerable getAmbulances(int centerID)
+		{
+			return Classes.mission.Getالآليات_by_المركز(centerID);
+		}
+	}
+
+
+
+
+	static class ImportFromDrive
+	{
+		static readonly string[] Scopes = { SheetsService.Scope.Spreadsheets };
+		static readonly string ApplicationName="";
+		static readonly string ID = "1xU4nKY-GN5VEEl_RkuiIprVWJKwbHqrkk7mFEciaCbM";
+		static readonly string sheet = "Form responses 1";
+		static SheetsService service;
+
+
+		static DataTable carsInfo;
+		public static DataTable ReadEnteries()
+		{
+			// carID      center       engins      HeadOfmission      Driver      Paramedic1       Paramedic2 
+
+			GoogleCredential credential;
+			using (var stream = new FileStream("ace-beanbag-226012-6d2433b6d430.json", FileMode.Open, FileAccess.Read))
+			{
+				credential = GoogleCredential.FromStream(stream)
+					.CreateScoped(Scopes);
+			}
+			service = new SheetsService(new BaseClientService.Initializer()
+			{
+				HttpClientInitializer = credential,
+				ApplicationName = ApplicationName,
+
+			});
+
+			var valueRange = new ValueRange { Values = new[] { new object[] { "=COUNTA(A:A)" } } };
+			var req = service.Spreadsheets.Values.Update(valueRange, ID, "K2");
+			req.ValueInputOption = ValueInputOptionEnum.USERENTERED;
+			req.IncludeValuesInResponse = true;
+			req.ResponseValueRenderOption = ResponseValueRenderOptionEnum.UNFORMATTEDVALUE;
+			var resp = req.Execute();
+			int count = int.Parse(resp.UpdatedData.Values[0][0].ToString()) ;
+
+
+
+
+			var range = $"{sheet}!A:G";
+			var request = service.Spreadsheets.Values.Get(ID, range);
+			var response = request.Execute();
+			var values = response.Values;
+
+			DataTable CarsInfo = new DataTable();
+			CarsInfo.Columns.Add("Ambulance");
+			CarsInfo.Columns.Add("HeadOfMission(ID)");
+			CarsInfo.Columns.Add("Driver(ID)");
+			CarsInfo.Columns.Add("Paramedic1");
+			CarsInfo.Columns.Add("Paramedic2");
+			CarsInfo.Columns.Add("fuel");
+
+			DataRow dr;
+
+			for (int i=1;i<count;i++)
+			{
+				dr = CarsInfo.NewRow();
+				dr[0] = values[i][1].ToString();
+				dr[1] = values[i][2].ToString();
+				dr[2] = values[i][3].ToString();
+				dr[3] = values[i][4].ToString();
+				dr[4] = values[i][5].ToString();
+				dr[5] = values[i][6].ToString();
+				CarsInfo.Rows.Add(dr);
+			}
+			carsInfo = CarsInfo;
+
+			return CarsInfo;
+
+		}
+
+		public static DataRow ReadCarInfo(int CarID)
+		{
+			if (carsInfo == null) 
+			{
+				return null;
+			}
+			foreach (DataRow row in carsInfo.Rows)
+			{
+				if(row[0].ToString() == CarID.ToString())
+				{
+					return row;
+				}
+			}
+			return null;
+		}
+	}
+
+
+
+
+
 }

@@ -78,6 +78,11 @@ namespace ERC
             this.WindowState = FormWindowState.Minimized;
         }
 
+
+
+
+
+
         private void Home_Clicked(object sender, EventArgs e)
         {
 
@@ -183,8 +188,12 @@ namespace ERC
 
         }
 
-        Erc1.Forms._4_Hospitals.Hospitals h;
 
+
+
+
+
+        Erc1.Forms._4_Hospitals.Hospitals h;
         //Hospital buttons
         private void S_HosClicked(object sender, EventArgs e)
         {
@@ -192,11 +201,11 @@ namespace ERC
 
             if (h == null || h.IsDisposed)
             {
-                h = new Hospitals() { TopLevel = false };
+                h = new Hospitals();
                 h.Size = panel2.Size;
                 h.Dock = DockStyle.Fill;
 
-                panel2.Controls.Add(h);
+                h.WindowState = FormWindowState.Maximized;
 
 
             }

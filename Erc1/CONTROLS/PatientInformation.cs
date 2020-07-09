@@ -175,7 +175,7 @@ namespace Erc1.CONTROLS
             {
                 ToHospital.Enabled = false;
             }
-            else
+            else 
             {
                 ToHospital.Enabled = true;
 
@@ -183,7 +183,8 @@ namespace Erc1.CONTROLS
 
                 if (ToHome.Check)
                 {
-                    ToHomeInfo.Enabled = false;
+                    tableLayoutPanel15.Enabled = false;
+                    tableLayoutPanel20.Enabled = false;
                     ToHome.Check = false;
 
                     ToBuilding.Text = "";
@@ -255,12 +256,14 @@ namespace Erc1.CONTROLS
         {
             if (!ToHome.Check)
             {
-                ToHomeInfo.Enabled = false;
+                tableLayoutPanel15.Enabled = false;
+                tableLayoutPanel20.Enabled = false;
             }
             else
             {
 
-                ToHomeInfo.Enabled = true;
+                tableLayoutPanel15.Enabled = true;
+                tableLayoutPanel20.Enabled = true;
                 if (ToHos.Check)
                 {
                     ToHospital.Enabled = false;
@@ -355,11 +358,7 @@ namespace Erc1.CONTROLS
 
         public void Name_Patient_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Name_Patient.Text == "جديد")
-            {
-                Erc1.Forms._8_AddPatient.AddPatient addPatient = new Forms._8_AddPatient.AddPatient();
-                addPatient.Show();
-            }
+
 
         }
 
@@ -378,7 +377,7 @@ namespace Erc1.CONTROLS
 
         }
 
-        private void Name_Patient_SelectedValueChanged1(object sender, EventArgs e)
+        public void Name_Patient_SelectedValueChanged1(object sender, EventArgs e)
         {
             ComboBox sen = (ComboBox)sender;
             string na = sen.Name.Split('_')[1];
@@ -388,8 +387,10 @@ namespace Erc1.CONTROLS
         public AddPatient addp;
         private void button1_Click(object sender, EventArgs e)
         {
-            addp = new AddPatient();
+            addp = new AddPatient(this);
             addp.StartPosition = FormStartPosition.CenterScreen;
+            
+            
             addp.Show();
         }
     }

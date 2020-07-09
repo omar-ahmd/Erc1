@@ -12,26 +12,25 @@ namespace Erc1.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class المراكز
+    public partial class إلى
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public المراكز()
+        public إلى()
         {
-            this.الآليات = new HashSet<الآليات>();
-            this.العاملون = new HashSet<العاملون>();
             this.المهماة_المؤجلة = new HashSet<المهماة_المؤجلة>();
+            this.المهمات_الملغاة = new HashSet<المهمات_الملغاة>();
+            this.المهمات_المنفذة = new HashSet<المهمات_المنفذة>();
         }
     
         public int الرمز { get; set; }
-        public Nullable<int> المدينة { get; set; }
-        public Nullable<System.DateTime> تاريخ_التاسيس { get; set; }
+        public Nullable<bool> مستشفى_منطقة { get; set; }
+        public Nullable<int> إلى1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<الآليات> الآليات { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<العاملون> العاملون { get; set; }
-        public virtual المدن المدن { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<المهماة_المؤجلة> المهماة_المؤجلة { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<المهمات_الملغاة> المهمات_الملغاة { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<المهمات_المنفذة> المهمات_المنفذة { get; set; }
     }
 }

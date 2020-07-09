@@ -12,21 +12,18 @@ namespace Erc1.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class المدن
+    public partial class الدور_في_المهمة
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public المدن()
+        public الدور_في_المهمة()
         {
-            this.المراكز = new HashSet<المراكز>();
-            this.المناطق = new HashSet<المناطق>();
+            this.الفريق = new HashSet<الفريق>();
         }
     
-        public int رمز { get; set; }
-        public string المدينة { get; set; }
+        public int الرمز { get; set; }
+        public string الدور { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<المراكز> المراكز { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<المناطق> المناطق { get; set; }
+        public virtual ICollection<الفريق> الفريق { get; set; }
     }
 }
