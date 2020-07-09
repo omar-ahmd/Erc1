@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Erc1.BAL;
 
 namespace Erc1.CONTROLS
 {
@@ -45,6 +46,30 @@ namespace Erc1.CONTROLS
                     Param1_ID.Text = carINFO[3].ToString();
                     Param2_ID.Text = carINFO[4].ToString();
                     Fuel.Text = carINFO[5].ToString();
+
+                    try
+                    {
+                        Head_Name.Text = Employees.GetPatientByID(int.Parse(Head_ID.Text));
+                    }
+                    catch { }
+
+                    try
+                    {
+                        Driver_Name.Text = Employees.GetPatientByID(int.Parse(Driver_ID.Text));
+                    }
+                    catch { }
+
+                    try
+                    {
+                        Param1_Name.Text = Employees.GetPatientByID(int.Parse(Param1_ID.Text));
+                    }
+                    catch { }
+
+                    try
+                    {
+                        Param2_Name.Text = Employees.GetPatientByID(int.Parse(Param2_ID.Text));
+                    }
+                    catch { }
                 }
                 catch
                 {

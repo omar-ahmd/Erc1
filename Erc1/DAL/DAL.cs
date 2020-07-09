@@ -722,7 +722,7 @@ namespace Erc1.Classes
         {
             int rep;
             bool e;
-            using (ERCEntities entity = new model.ERCEntities())
+            using (ERCEntities entity = new ERCEntities())
             {
                 try
                 {

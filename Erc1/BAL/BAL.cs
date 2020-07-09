@@ -64,6 +64,8 @@ namespace Erc1.BAL
 		}
 	}
 
+
+
     class addMission
     {
 		public addMission()
@@ -818,7 +820,7 @@ namespace Erc1.BAL
 			if (From == FromTo.Home)
 			{
 				
-				int exist =Classes.Hospital.Get_from_Region(FromregionID);
+				int exist =Classes.mission.Get_from_Region(FromregionID);
 				
 
 				Mission.من = exist;
@@ -836,7 +838,7 @@ namespace Erc1.BAL
 				//Mission.من_مشفى = FromHospitalID;
 				//Mission.من_القسم = FromDepatementID;
 
-				int exist = Classes.Hospital.Get_from_Hospital_Section(FromHospitalID,FromDepatementID);
+				int exist = Classes.mission.Get_from_Hospital_Section(FromHospitalID,FromDepatementID);
 
 
 				Mission.من = exist;
@@ -850,7 +852,7 @@ namespace Erc1.BAL
 			if (To == FromTo.Home)
 			{
 
-				int exist = Classes.Hospital.Get_to_Region(FromregionID);
+				int exist = Classes.mission.Get_to_Region(FromregionID);
 
 
 				Mission.إلى = exist;
@@ -862,7 +864,7 @@ namespace Erc1.BAL
 			else if (To == FromTo.Hospital)
 			{
 
-				int exist = Classes.Hospital.Get_to_Hospital_Section(ToHospitalID, ToDepatementID) ;
+				int exist = Classes.mission.Get_to_Hospital_Section(ToHospitalID, ToDepatementID) ;
 
 
 				Mission.إلى = exist;
@@ -1419,7 +1421,7 @@ namespace Erc1.BAL
 				driver.رمز__المركز = centerID;
 				driver.دور_العامل = 3;
 
-				if (!Hospital.add_Mission_Memeber(driver)) a = false;
+				if (!mission.add_Mission_Memeber(driver)) a = false;
 
 				head.الرمز_الشهري = MonthlyID;
 				head.السنة = Year;
@@ -1428,7 +1430,7 @@ namespace Erc1.BAL
 				head.رمز__المركز = centerID;
 				head.دور_العامل = 2;
 
-				if (!Hospital.add_Mission_Memeber(head)) a = false;
+				if (!mission.add_Mission_Memeber(head)) a = false;
 			}
 			else
 			{
@@ -1446,7 +1448,7 @@ namespace Erc1.BAL
 				parm1.رمز_العامل = Paramedic1ID;
 				parm1.رمز__المركز = centerID;
 				parm1.دور_العامل = 1;
-				if (!Hospital.add_Mission_Memeber(parm1)) a = false;
+				if (!mission.add_Mission_Memeber(parm1)) a = false;
 			}
 			else
 			{
@@ -1461,7 +1463,7 @@ namespace Erc1.BAL
 				parm2.رمز_العامل = Paramedic2ID;
 				parm2.رمز__المركز = centerID;
 				parm2.دور_العامل = 1;
-				if (!Hospital.add_Mission_Memeber(parm2)) a = false ;
+				if (!mission.add_Mission_Memeber(parm2)) a = false ;
 			}
 			else
 			{
@@ -1669,6 +1671,9 @@ namespace Erc1.BAL
 	}
 
 
+
+
+
 	class Patient
 	{
 		public Patient()
@@ -1832,6 +1837,7 @@ namespace Erc1.BAL
 				
 
 		}
+
         #endregion
 
 
@@ -1868,6 +1874,13 @@ namespace Erc1.BAL
 		public static IEnumerable getAmbulances(int centerID)
 		{
 			return Classes.mission.Getالآليات_by_المركز(centerID);
+		}
+	}
+	class Employees
+	{
+		public static string GetPatientByID(int EmployeeID)
+		{
+			return mission.Get_العامل_name_byid(EmployeeID);
 		}
 	}
 
