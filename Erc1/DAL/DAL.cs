@@ -897,7 +897,7 @@ namespace Erc1.Classes
                 }
                 catch
                 {
-                    name = "";
+                    name = "Not founded";
                 }
                 return name;
             };
