@@ -885,15 +885,15 @@ namespace Erc1.Classes
         }
 
 
-        // get العامل name by id
-        public static string Get_العامل_name_byid(int Employee_id)
+        // get العامل name by id and center id
+        public static string Get_العامل_name_byid(int Employee_id, int centerID)
         {
             using (ERCEntities entity = new ERCEntities())
             {
                 string name;
                 try
                 {
-                    name = entity.العاملون.Where(r => r.الرمز == Employee_id).Select(r => r.الاسم).Single();
+                    name = entity.العاملون.Where(r => (r.الرمز == Employee_id && r.المركز == centerID)).Select(r => r.الاسم).Single();
                 }
                 catch
                 {
