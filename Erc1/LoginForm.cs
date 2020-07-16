@@ -24,6 +24,7 @@ namespace ERC
             ImportFromDrive = new Thread(() => { Erc1.BAL.ImportFromDrive.ReadEnteries(); });
             ImportFromDrive.Start();
             ImportCasesType.Start();
+
             this.Hide();
             of.Show();
 

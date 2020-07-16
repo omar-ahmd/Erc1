@@ -40,23 +40,28 @@ namespace Erc1.CONTROLS
                 
             }
         }
+        public Font f
+        {
+            get { return CarId.Font; }
+            set { CarId.Font = value; }
 
+        }
 
         public CarsControl()
         {
             InitializeComponent();
-            //t = new Teams();
-            //t.Dock = DockStyle.Fill;
         }
-        private int carID;
+        private int carID = 0;
 
         public int CarID
         {
             get { return carID; }
             set 
-            { 
-                carID = value;
-                CarId.Text = value.ToString() ;
+            {
+
+                    carID =value;
+                    CarId.Text = value.ToString();
+
             }
         }
 

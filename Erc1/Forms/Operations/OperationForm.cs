@@ -190,7 +190,19 @@ namespace ERC
             }
             else if (Settings.BClicked)
             {
+                if (setting == null)
+                {
+                    setting = new Erc1.Forms.Admin.Settings() { TopLevel = false } ;
+                    setting.Size = panel2.Size;
+                    setting.Dock = DockStyle.Fill;
+                    panel2.Controls.Add(setting);
 
+                }
+                else
+                {
+                    
+                }
+                setting.Show();
             }
             else if (Paramadic.BClicked)
             {
@@ -205,7 +217,7 @@ namespace ERC
 
 
 
-
+        Erc1.Forms.Admin.Settings setting;
 
 
         Erc1.Forms._4_Hospitals.Hospitals h;

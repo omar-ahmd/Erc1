@@ -98,6 +98,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CONTROLS\Btn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CONTROLS\Btn.Designer.cs">
+      <DependentUpon>Btn.cs</DependentUpon>
+    </Compile>
     <Compile Include="CONTROLS\CarsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -256,46 +262,70 @@
     <Compile Include="DAL\نوعيات_الحالات.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Forms\4-Hospitals\Hospitals.cs">
+    <Compile Include="Forms\Admin\Hosp\Hospitals.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\4-Hospitals\Hospitals.Designer.cs">
+    <Compile Include="Forms\Admin\Hosp\Hospitals.Designer.cs">
       <DependentUpon>Hospitals.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\4-Hospitals\HospitalsForm.cs">
+    <Compile Include="Forms\Admin\Hosp\section.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\4-Hospitals\HospitalsForm.Designer.cs">
+    <Compile Include="Forms\Admin\Hosp\section.Designer.cs">
+      <DependentUpon>section.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Volunteers\Volunteers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Volunteers\Volunteers.Designer.cs">
+      <DependentUpon>Volunteers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Operations\4-Hospitals\Hospitals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Operations\4-Hospitals\Hospitals.Designer.cs">
+      <DependentUpon>Hospitals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Operations\4-Hospitals\HospitalsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Operations\4-Hospitals\HospitalsForm.Designer.cs">
       <DependentUpon>HospitalsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\4-Hospitals\StripForHospitals.cs">
+    <Compile Include="Forms\Operations\4-Hospitals\StripForHospitals.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\4-Hospitals\StripForHospitals.Designer.cs">
+    <Compile Include="Forms\Operations\4-Hospitals\StripForHospitals.Designer.cs">
       <DependentUpon>StripForHospitals.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\5-Cars\Cars.cs">
+    <Compile Include="Forms\Operations\5-Cars\Cars.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\5-Cars\Cars.Designer.cs">
+    <Compile Include="Forms\Operations\5-Cars\Cars.Designer.cs">
       <DependentUpon>Cars.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\6-AddMission\AddMission.cs">
+    <Compile Include="Forms\Operations\6-AddMission\AddMission.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\6-AddMission\AddMission.Designer.cs">
+    <Compile Include="Forms\Operations\6-AddMission\AddMission.Designer.cs">
       <DependentUpon>AddMission.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\6-AddMission\stripForAddButton.cs">
+    <Compile Include="Forms\Operations\6-AddMission\stripForAddButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\6-AddMission\stripForAddButton.Designer.cs">
+    <Compile Include="Forms\Operations\6-AddMission\stripForAddButton.Designer.cs">
       <DependentUpon>stripForAddButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\8-AddPatient\AddPatient.cs">
+    <Compile Include="Forms\Operations\8-AddPatient\AddPatient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\8-AddPatient\AddPatient.Designer.cs">
+    <Compile Include="Forms\Operations\8-AddPatient\AddPatient.Designer.cs">
       <DependentUpon>AddPatient.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CasesOfMission.cs">
@@ -310,14 +340,17 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OperationForm.cs">
+    <Compile Include="Forms\Operations\OperationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OperationForm.Designer.cs">
+    <Compile Include="Forms\Operations\OperationForm.Designer.cs">
       <DependentUpon>OperationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CONTROLS\Btn.resx">
+      <DependentUpon>Btn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CONTROLS\CarsControl.resx">
       <DependentUpon>CarsControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -348,25 +381,37 @@
     <EmbeddedResource Include="CONTROLS\Teams.resx">
       <DependentUpon>Teams.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\4-Hospitals\Hospitals.resx">
+    <EmbeddedResource Include="Forms\Admin\Hosp\Hospitals.resx">
       <DependentUpon>Hospitals.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\4-Hospitals\HospitalsForm.resx">
+    <EmbeddedResource Include="Forms\Admin\Hosp\section.resx">
+      <DependentUpon>section.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Volunteers\Volunteers.resx">
+      <DependentUpon>Volunteers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Operations\4-Hospitals\Hospitals.resx">
+      <DependentUpon>Hospitals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Operations\4-Hospitals\HospitalsForm.resx">
       <DependentUpon>HospitalsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\4-Hospitals\StripForHospitals.resx">
+    <EmbeddedResource Include="Forms\Operations\4-Hospitals\StripForHospitals.resx">
       <DependentUpon>StripForHospitals.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\5-Cars\Cars.resx">
+    <EmbeddedResource Include="Forms\Operations\5-Cars\Cars.resx">
       <DependentUpon>Cars.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\6-AddMission\AddMission.resx">
+    <EmbeddedResource Include="Forms\Operations\6-AddMission\AddMission.resx">
       <DependentUpon>AddMission.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\6-AddMission\stripForAddButton.resx">
+    <EmbeddedResource Include="Forms\Operations\6-AddMission\stripForAddButton.resx">
       <DependentUpon>stripForAddButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\8-AddPatient\AddPatient.resx">
+    <EmbeddedResource Include="Forms\Operations\8-AddPatient\AddPatient.resx">
       <DependentUpon>AddPatient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CasesOfMission.resx">
@@ -375,7 +420,7 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OperationForm.resx">
+    <EmbeddedResource Include="Forms\Operations\OperationForm.resx">
       <DependentUpon>OperationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

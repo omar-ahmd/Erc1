@@ -235,7 +235,7 @@ namespace Erc1.BAL
 			}
 			else
 			{
-				// delete mission if existe from the 3 tables 
+				DeleteMission(AnnualID, MonthlyID, Date.Year, CenterID); 
 				return false;
 			}
 
@@ -514,6 +514,12 @@ namespace Erc1.BAL
 			}
 		
 		
+		}
+
+
+		public static bool DeleteMission(int annualID,int monthlyID,int Year,int CenterID)
+		{
+			return mission.delete_Mission_Team_Cases(monthlyID, annualID, Year, CenterID);
 		}
 
 
@@ -1240,7 +1246,9 @@ namespace Erc1.BAL
 				return false;
 			}
 		}
-		
+
+
+
 
 
 
@@ -1258,6 +1266,11 @@ namespace Erc1.BAL
 		{
 			return mission.Get_أقسام_المستشفيات(HosID);
 		}
+		public static IEnumerable GetDepartement()
+		{
+			return Classes.Hospital.Get_أقسام_المستشفيات();
+		}
+
 		public static short[] GetFloors(int HosID)
 		{
 			return mission.Get_طوابق_المستشفيات(HosID);
@@ -1863,7 +1876,26 @@ namespace Erc1.BAL
 			return true;
 			    
 		}
-	}	
+
+		public static bool AddHospital(المستشفيات hos,DataTable sections)
+		{
+			return Classes.Hospital.addOrUpdate_Hospital(hos) && Classes.Hospital.addOrUpdate_HospitalDepartment(sections, hos.رمز_المستشفى);
+		}
+		public static int Add_Section(string Section_Name)
+		{
+			return Classes.Hospital.add_Department(Section_Name);
+		}
+		public static المستشفيات GetHospital(int HosId)
+		{
+			return Classes.Hospital.Get_hospital_INFO(HosId);
+		}
+	
+		public static int GetCityId(int? regionId)
+		{
+			return Classes.Hospital.Get_city_by_regionID(regionId);
+		}
+
+	}
 	class Cars
 	{
 		public Cars()
@@ -1882,6 +1914,20 @@ namespace Erc1.BAL
 		{
 			return mission.Get_العامل_name_byid(EmployeeID);
 		}
+
+		public static IEnumerable GetWorks()
+		{
+			return Classes.mission.Get_الوظائف();
+		}
+
+		public static IEnumerable BloodType()
+		{
+			return Classes.mission.Get_فئات_الدم(); ;
+		}
+		public static bool AddVolunteer(العاملون volunteer)
+		{
+			return Classes.Hospital.addOrUpdate_worker(volunteer);
+		}
 	}
 
 
@@ -1894,6 +1940,7 @@ namespace Erc1.BAL
 		static readonly string ID = "1xU4nKY-GN5VEEl_RkuiIprVWJKwbHqrkk7mFEciaCbM";
 		static readonly string sheet = "Form responses 1";
 		static SheetsService service;
+		static bool ready = false;
 
 
 		public static DataTable carsInfo;
@@ -1955,7 +2002,8 @@ namespace Erc1.BAL
 					CarsInfo.Rows.Add(dr);
 				}
 				carsInfo = CarsInfo;
-
+				MessageBox.Show("Google drive Informations are Imported ");
+				ready = true;
 				return CarsInfo;
 			}
 			catch

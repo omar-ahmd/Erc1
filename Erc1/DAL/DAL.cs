@@ -7,6 +7,7 @@ using Erc1.DAL;
 using System.Collections;
 using System.Data;
 using System.Windows.Forms;
+using System.Data.Entity.Migrations;
 
 namespace Erc1.Classes
 {
@@ -53,7 +54,7 @@ namespace Erc1.Classes
                         where centers.المدن.رمز == centers.المدينة
                         select new
                         {
-                            centers = centers.الرمز ,// + " - " + centers.المدن.المدينة,
+                            centers = centers.الرمز,// + " - " + centers.المدن.المدينة,
                             id = centers.الرمز
                         };
 
@@ -92,7 +93,7 @@ namespace Erc1.Classes
                 where cars.المركز == marakez
                 select new
                 {
-                    
+
                     cars = cars.رمز_الآلية
                 }
                     ); ;
@@ -362,7 +363,39 @@ namespace Erc1.Classes
             };
         }
 
+        //get works
+        public static IEnumerable Get_الوظائف()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from p in entity.الوظيفة
+                select new
+                {
+                    رمز=p.الرمز,
+                    وظيفة=p.الوظيفة1
+                }
+                    ); ;
+                return c.ToList();
+            };
+        }
 
+        // get blood types
+        public static IEnumerable Get_فئات_الدم()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+                from p in entity.فئة_الدم
+                select new
+                {
+                    رمز = p.الرمز,
+                    فئة = p.فئة_الدم1
+                }
+                    ); ;
+                return c.ToList();
+            };
+        }
 
         // get المناطق names(column names ="المنطقة","رمز")
         public static IEnumerable Get_المناطق(int city_key)
@@ -417,7 +450,7 @@ namespace Erc1.Classes
              {
                  sections_id = h_s.أقسام_المستشفيات.الرمز,
                  sections_name = h_s.أقسام_المستشفيات.اسم_القسم
-                
+
 
              });
                 return c.ToList();
@@ -436,12 +469,12 @@ namespace Erc1.Classes
                 try
                 {
                     c = entity.المهمات_المنفذة
-                        .Where(r => (r.التاريخ.Value.Year == year) && (r.التاريخ.Value.Month == month) )
+                        .Where(r => (r.التاريخ.Value.Year == year) && (r.التاريخ.Value.Month == month))
                         .Max(r => r.الرمز_الشهري)
                         ;
                     c += 1;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     c = 1;
                 }
@@ -460,7 +493,7 @@ namespace Erc1.Classes
                 {
                     c = entity.المهمات_المنفذة
                    .Where(r => r.التاريخ.Value.Year == year).Max(p => p.رمز_السنوي)
-                   
+
                    ;
                     c += 1;
                 }
@@ -507,7 +540,7 @@ namespace Erc1.Classes
             {
                 var c = (
              from doctors in entity.الأطباء
-           
+
              select new
              {
                  doctors.رمز,
@@ -556,7 +589,7 @@ namespace Erc1.Classes
 
 
 
-        
+
 
 
 
@@ -572,7 +605,7 @@ namespace Erc1.Classes
                     added = entity.SaveChanges() > 0 ? true : false; ;
                     return added;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     added = false;
                     return added;
@@ -995,7 +1028,7 @@ namespace Erc1.Classes
             {
                 DataTable dt = new DataTable();
                 var c = (from r in entity.المستشفيات_مع_اقسام.AsEnumerable()
-                         where r.رمز_المشفى==hospitalID
+                         where r.رمز_المشفى == hospitalID
                          select new
                          {
                              الرمز = r.أقسام_المستشفيات.الرمز,
@@ -1035,10 +1068,10 @@ namespace Erc1.Classes
                 {
                     entity.المرضى.Add(new_patient);
                     entity.SaveChanges();
-                    newID =  new_patient.الرمز;
+                    newID = new_patient.الرمز;
                     return newID;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     return 00;//error
                 }
@@ -1088,6 +1121,206 @@ namespace Erc1.Classes
                 }
             };
 
+        }
+
+
+        // get sections
+        public static IEnumerable Get_أقسام_المستشفيات()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = (
+             from department in entity.أقسام_المستشفيات
+             select new
+             {
+                 department.الرمز,
+                 department.اسم_القسم
+             }); ;
+                return c.ToList();
+            }
+        }
+
+        // add section
+        public static int add_Department(string dep)
+        {
+            int newID;
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+                    أقسام_المستشفيات NewDep = new أقسام_المستشفيات();
+                    NewDep.اسم_القسم = dep;
+                    entity.أقسام_المستشفيات.Add(NewDep);
+                    entity.SaveChanges();
+                    newID = NewDep.الرمز;
+                    return newID;
+                }
+                catch
+                {
+                    return -1;//error
+                }
+            };
+
+
+
+
+
+        }
+
+        //Add Hospital
+        public static bool addOrUpdate_Hospital(المستشفيات new_hospital)
+        {
+            bool ok;
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+                    
+                    entity.المستشفيات.AddOrUpdate(new_hospital);
+                    entity.SaveChanges();
+                    ok = true;
+                }
+                catch
+                {
+                    ok = false;
+                }
+                return ok;
+            };
+
+        }
+
+
+
+        // add worker
+        public static bool addOrUpdate_worker(العاملون worker)
+        {
+            bool ok;
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+
+                    entity.العاملون.AddOrUpdate(worker);
+                    entity.SaveChanges();
+                    ok = true;
+                }
+                catch
+                {
+                    ok = false;
+                }
+                return ok;
+            };
+
+        }
+
+        //Add HospitalDepartment
+        //Add or update HospitalDepartment
+        public static bool addOrUpdate_HospitalDepartment(DataTable new_Hospital_Dep, int hosID)
+        {
+            bool added = false;
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+                    foreach (DataRow row in new_Hospital_Dep.Rows)
+                    {
+                        int id = int.Parse(row["الرمز"].ToString());
+                        string e = row["تحويلة_القسم"].ToString();
+                        short s = short.Parse(row["الطابق"].ToString());
+                        المستشفيات_مع_اقسام newDep = entity.المستشفيات_مع_اقسام.Where((r => r.رمز_القسم == id && r.رمز_المشفى == hosID )).FirstOrDefault();
+                        if (newDep != null)
+                        {
+                            newDep.رمز_القسم = int.Parse(row["الرمز"].ToString());
+                            newDep.تحويلة_القسم = row["تحويلةالقسم"].ToString();
+                            newDep.الطابق = short.Parse(row["الطابق"].ToString());
+                            entity.SaveChanges();
+                        }
+                        else
+                        {
+                            newDep = new المستشفيات_مع_اقسام()
+                            {
+                                رمز_المشفى = hosID,
+                                رمز_القسم = id,
+                                تحويلة_القسم = e,
+                                الطابق = s
+                            };
+                            entity.المستشفيات_مع_اقسام.Add(newDep);
+                            entity.SaveChanges();
+                        }
+                    }
+
+                    added = true;
+                    return added;
+                }
+                catch(Exception ex)
+                {
+                    added = false;
+                    return added;
+                }
+            };
+
+        }
+
+        public static bool Check_hospital(int HospitalID)
+        {
+            int rep;
+            bool e;
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+                    rep = entity.المستشفيات
+                      .Where(r => r.رمز_المستشفى == HospitalID)
+                      .Count()
+                      ;
+                    if (rep == 0) e = false;
+                    else e = true;
+                    return e;
+                }
+                catch
+                {
+                    e = false;
+                    return e;
+                }
+            };
+        }
+
+        //Get hospital info
+        public static المستشفيات Get_hospital_INFO(int HospitalID)
+        {
+            المستشفيات hos;
+            bool e;
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+                    hos = entity.المستشفيات
+                      .Where(r => r.رمز_المستشفى == HospitalID).FirstOrDefault();
+                    return hos;
+                }
+                catch
+                {
+                    return null;
+                }
+            };
+        }
+
+        // get city id by region id
+        public static int Get_city_by_regionID(int? regionID)
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                int city;
+                try
+                {
+                    city = entity.المناطق.Where(r => r.رمز == regionID).Select(r => r.المدينة).Single();
+                }
+                catch
+                {
+                    city = -1;
+                }
+                return city;
+            };
         }
 
 
