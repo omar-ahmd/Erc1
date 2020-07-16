@@ -1,4 +1,5 @@
-﻿using Erc1.Forms._4_Hospitals;
+﻿using Erc1.Forms;
+using Erc1.Forms._4_Hospitals;
 using System;
 using System.Windows.Forms;
 

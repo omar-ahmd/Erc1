@@ -138,6 +138,12 @@
     <Compile Include="Forms\6-AddMission\stripForAddButton.Designer.cs">
       <DependentUpon>stripForAddButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Test Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Test Form.Designer.cs">
+      <DependentUpon>Test Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\6-AddMission\stripForAddButton.resx">
       <DependentUpon>stripForAddButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Test Form.resx">
+      <DependentUpon>Test Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
