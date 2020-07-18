@@ -316,6 +316,8 @@ namespace Erc1.Forms._4_Hospitals
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.Load += new System.EventHandler(this.Hospitals_Load);
+            this.Shown += new System.EventHandler(this.Hospitals_Shown);
+            this.VisibleChanged += new System.EventHandler(this.Hospitals_VisibleChanged);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

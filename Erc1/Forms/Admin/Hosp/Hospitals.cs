@@ -41,7 +41,12 @@ namespace Erc1.Forms.Admin
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (Hos_Name.Text == "") button1.Enabled = false;
-            else button1.Enabled = true;
+            else
+            {
+                button1.Enabled = true;
+                s = new section(ID.Text);
+                s.StartPosition = FormStartPosition.CenterParent;
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -93,6 +98,7 @@ namespace Erc1.Forms.Admin
                 hosp.الطابق_العلوي = (short)numericUpDown2.Value;
                 hosp.العنوان = Info.Text;
                 hosp.الهاتف = phone.Text;
+                hosp.الحالة = "متاح";
                 
             }
             catch

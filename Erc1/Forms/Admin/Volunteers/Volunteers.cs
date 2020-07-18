@@ -20,7 +20,7 @@ namespace Erc1.Forms.Admin.Volunteers
             try
             {
                 MyFunction.FillComboBox(City, BAL.PatientInfo.GetCities(), "المدينة", "رمز");
-                MyFunction.FillComboBox(Role, BAL.Employees.BloodType(), "فئة", "رمز");
+                MyFunction.FillComboBox(Blood, BAL.Employees.BloodType(), "فئة", "رمز");
                 MyFunction.FillComboBox(Role, BAL.Employees.GetWorks(), "وظيفة", "رمز");
             }
             catch

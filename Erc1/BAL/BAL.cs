@@ -1910,9 +1910,9 @@ namespace Erc1.BAL
 	}
 	class Employees
 	{
-		public static string GetPatientByID(int EmployeeID)
+		public static string GetPatientByID(int EmployeeID,int centerId)
 		{
-			return mission.Get_العامل_name_byid(EmployeeID);
+			return mission.Get_العامل_name_byid(EmployeeID, centerId);
 		}
 
 		public static IEnumerable GetWorks()
@@ -1922,7 +1922,7 @@ namespace Erc1.BAL
 
 		public static IEnumerable BloodType()
 		{
-			return Classes.mission.Get_فئات_الدم(); ;
+			return  Classes.mission.Get_فئات_الدم(); ;
 		}
 		public static bool AddVolunteer(العاملون volunteer)
 		{

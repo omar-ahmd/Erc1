@@ -49,25 +49,25 @@ namespace Erc1.CONTROLS
 
                     try
                     {
-                        Head_Name.Text = Employees.GetPatientByID(int.Parse(Head_ID.Text));
+                        Head_Name.Text = Employees.GetPatientByID(int.Parse(Head_ID.Text), int.Parse(CenterID.Text));
                     }
                     catch { }
 
                     try
                     {
-                        Driver_Name.Text = Employees.GetPatientByID(int.Parse(Driver_ID.Text));
+                        Driver_Name.Text = Employees.GetPatientByID(int.Parse(Driver_ID.Text), int.Parse(CenterID.Text));
                     }
                     catch { }
 
                     try
                     {
-                        Param1_Name.Text = Employees.GetPatientByID(int.Parse(Param1_ID.Text));
+                        Param1_Name.Text = Employees.GetPatientByID(int.Parse(Param1_ID.Text), int.Parse(CenterID.Text));
                     }
                     catch { }
 
                     try
                     {
-                        Param2_Name.Text = Employees.GetPatientByID(int.Parse(Param2_ID.Text));
+                        Param2_Name.Text = Employees.GetPatientByID(int.Parse(Param2_ID.Text),  int.Parse(CenterID.Text));
                     }
                     catch { }
                 }

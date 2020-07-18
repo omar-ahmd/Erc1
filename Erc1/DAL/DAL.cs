@@ -1204,8 +1204,9 @@ namespace Erc1.Classes
                     entity.SaveChanges();
                     ok = true;
                 }
-                catch
+                catch(Exception ex)
                 {
+                    MessageBox.Show(ex.Message);
                     ok = false;
                 }
                 return ok;
