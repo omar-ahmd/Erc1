@@ -1019,6 +1019,27 @@ namespace Erc1.Classes
             };
         }
 
+        //get all Hospitals
+        public static IEnumerable Get_Hospitals()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = from hospitals in entity.المستشفيات
+                        select new
+                        {
+                            hospitals.رمز_المستشفى,
+                            hospitals.اسم_المستشفى,
+                            hospitals.الهاتف,
+                            hospitals.المناطق.المدن.المدينة,
+                            hospitals.المناطق.المنطقة,
+                            hospitals.العنوان,
+                            hospitals.الطابق_السفلي,
+                            hospitals.الطابق_العلوي
+                        };
+
+                return c.ToList();
+            };
+        }
 
         // get  أقسام المستشفى(column names ="اسم_القسم","الرمز","تحويلة_القسم","الطابق")
         public static DataTable Get_أقسام_المستشفى(int hospitalID)
@@ -1321,6 +1342,45 @@ namespace Erc1.Classes
                     city = -1;
                 }
                 return city;
+            };
+        }
+
+
+    }
+    class Employees
+    {
+
+
+        //get all employees 
+        public static IEnumerable Get_Employees()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = from employees in entity.العاملون
+                        select new
+                        {
+                            employees.الرمز,
+                            employees.الاسم,
+                            employees.اللقب,
+                            employees.مكان_السجل,
+                            employees.رقم_السجل,
+                            employees.الجنسية,
+                            employees.اسم_الأم,
+                            employees.تاريخ_الولادة,
+                            employees.تاريخ_الانتساب,
+                            employees.البريد,
+                            employees.الوظيفة1.الوظيفة1,
+                            employees.الدوام,
+                            employees.فئة_الدم1.فئة_الدم1,
+                            employees.المناطق.المدن.المدينة,
+                            employees.المناطق.المنطقة,
+                            employees.العنوان,
+                            employees.مسعف_أو_مساعد,
+                            employees.مسؤول_مهمة_أو_لا,
+                            employees.سائق_أو_لا
+                        };
+
+                return c.ToList();
             };
         }
 
