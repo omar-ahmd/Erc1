@@ -58,7 +58,7 @@ namespace Erc1.Forms.Operations.Reports
 
         private void view_Click(object sender, EventArgs e)
         {
-            Classes.mission.Get_Missions(int.Parse(year.Text),
+            //Classes.mission.Get_Missions(int.Parse(year.Text),
         }
     }
 }

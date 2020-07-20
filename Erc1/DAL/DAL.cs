@@ -1117,7 +1117,7 @@ namespace Erc1.Classes
 
     }
 
-}
+
 
     class Hospital
     {
