@@ -1210,7 +1210,7 @@ namespace Erc1.Classes
                     r.النوعية = diseaseType;
                     entity.نوعيات_الحالات.Add(r);
                     entity.SaveChanges();
-                    newID = r.رمز;
+                    newID = r.الرمز;
                     return newID;
                 }
                 catch

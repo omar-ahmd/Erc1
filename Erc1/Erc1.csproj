@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="Classes\DataLayer.cs" />
     <Compile Include="Classes\DLayer.cs" />
+    <Compile Include="Classes\Hashing.cs" />
     <Compile Include="Classes\Mission.cs" />
     <Compile Include="CONTROLS\LabelBord.cs">
       <SubType>UserControl</SubType>

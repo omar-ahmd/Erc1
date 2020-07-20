@@ -259,7 +259,7 @@ namespace Erc1.Classes
                         r.النوعية = diseaseType;
                         entity.نوعيات_الحالات.Add(r);
                         entity.SaveChanges();
-                        newID = r.رمز;
+                        newID = r.الرمز;
                         return newID;
                     }
                     catch
@@ -533,6 +533,10 @@ namespace Erc1.Classes
 
 
 
+
+
+
+
             //get all Missions for specific year
             public static IEnumerable Get_Missions(int year)
             {
@@ -592,12 +596,21 @@ namespace Erc1.Classes
                 };
             }
 
-            public static IEnumerable Get_Missions(int year, int month, int center)
+            public static IEnumerable Get_Missions(int? year, int? month, int? center,int? caseType,int? volunteer,int? car,int? patient)
             {
                 using (ERCEntities entity = new ERCEntities())
                 {
-                    var c = from missions in entity.المهمات_المنفذة
-                            where missions.السنة == year && missions.التاريخ.Value.Month == month && missions.رمز__المركز == center
+                    if (volunteer == null )
+                    {
+                       var c = from missions in entity.المهمات_المنفذة
+                            where (
+                            ((year == null && missions.السنة != -1) || (year != null && missions.السنة == year)) &&
+                            ((month == null && missions.التاريخ.Value.Month != -1) || (month != null && missions.التاريخ.Value.Month == month)) &&
+                            ((center == null && missions.رمز__المركز != -1) || (center != null && missions.رمز__المركز == center)) &&
+                            ((caseType == null && missions.نوعية_الحالة != -1) || (caseType != null && missions.نوعية_الحالة == caseType)) &&
+                            ((car == null && missions.الآلية != -1) || (car != null && missions.الآلية == car)) &&
+                            ((patient == null && missions.المريض != -1) || (patient != null && missions.المريض == patient))
+                            )
                             select new
                             {
                                 missions.الرمز_الشهري,
@@ -616,11 +629,44 @@ namespace Erc1.Classes
                                 missions.نوعية_الحالة,
 
                             };
+                        return c.ToList();
+                    }
+                    else
+                    {
+                       var c = from missions in entity.الفريق
+                            where (
+                            ((year == null && missions.المهمات_المنفذة.السنة != -1) || (year != null && missions.المهمات_المنفذة.السنة == year)) &&
+                            ((month == null && missions.المهمات_المنفذة.التاريخ.Value.Month != -1) || (month != null && missions.المهمات_المنفذة.التاريخ.Value.Month == month)) &&
+                            ((center == null && missions.رمز__المركز != -1) || (center != null && missions.رمز__المركز == center)) &&
+                            ((caseType == null && missions.المهمات_المنفذة.نوعية_الحالة != -1) || (caseType != null && missions.المهمات_المنفذة.نوعية_الحالة == caseType)) &&
+                            ((car == null && missions.المهمات_المنفذة.الآلية != -1) || (car != null && missions.المهمات_المنفذة.الآلية == car)) &&
+                            ((patient == null && missions.المهمات_المنفذة.المريض != -1) || (patient != null && missions.المهمات_المنفذة.المريض == patient))&&
+                            ((missions.رمز_العامل == volunteer))
 
+                            )
+                               select new
+                            {
+                                missions.الرمز_الشهري,
+                                missions.رمز_السنوي,
+                                missions.رمز__المركز,
+                                missions.المهمات_المنفذة.طبيعة_المهمة1.طبيعة_المهمة1,
+                                patient = missions.المهمات_المنفذة.المرضى.اسم,
+                                employee1 = missions.المهمات_المنفذة.العاملون1.الاسم,
+                                employee2 = missions.المهمات_المنفذة.العاملون2.الاسم,
+                                missions.المهمات_المنفذة.رقم_المتصل,
+                                missions.المهمات_المنفذة.اسم_المتصل,
+                                doctor = missions.المهمات_المنفذة.الأطباء.اسم,
+                                missions.المهمات_المنفذة.الآلية,
+                                missions.المهمات_المنفذة.التاريخ,
+                                missions.المهمات_المنفذة.مريض_مقعد,
+                                missions.المهمات_المنفذة.نوعية_الحالة,
 
-                    return c.ToList();
+                            };
+                        return c.ToList();
+                    }
                 };
             }
+
 
             // count mission by month
             public static int Count_Missions(int month, int year)
@@ -629,6 +675,8 @@ namespace Erc1.Classes
                 {
                     try
                     {
+                        // int mon;
+                        // if mounth==null mon=-1 else mon=mounth
                         int rep = entity.المهمات_المنفذة
                             .Where(r => r.التاريخ.Value.Month == month && r.السنة == year)
                            .Count()
@@ -642,19 +690,26 @@ namespace Erc1.Classes
                 };
             }
 
-            public static int[,] MissionsInYearByMonth(int year)
+
+            public static DataTable MissionsInYearByMonth(int year)
             {
-                int[,] missions = new int[2, 12];
+                DataTable dt = new DataTable(); ;
+                DataRow dr;
+                //creating columns
+                dt.Columns.Add("Month", typeof(int));
+                dt.Columns.Add("Missions Number", typeof(int));
                 try
                 {
                     for (int i = 1; i <= 12; i++)
                     {
-                        missions[0, i] = i;
-                        missions[1, i] = Count_Missions(i, year);
+                        dr = dt.NewRow();
+                        dr["Month"] = i;
+                        dr["Missions Number"] = Count_Missions(i, year);
+                        dt.Rows.Add(dr);
                     }
                 }
                 catch { }
-                return missions;
+                return dt;
             }
 
 
