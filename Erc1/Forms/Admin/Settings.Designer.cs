@@ -126,6 +126,7 @@
             this.btn2.Size = new System.Drawing.Size(359, 119);
             this.btn2.TabIndex = 2;
             this.btn2.text = "إضافة مستشفى";
+            this.btn2.Load += new System.EventHandler(this.btn2_Load_1);
             // 
             // btn4
             // 
@@ -140,6 +141,7 @@
             this.btn4.Size = new System.Drawing.Size(359, 119);
             this.btn4.TabIndex = 4;
             this.btn4.text = "إضافة مركز";
+            this.btn4.Load += new System.EventHandler(this.btn4_Load);
             // 
             // btn5
             // 

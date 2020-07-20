@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -114,7 +115,7 @@ namespace Erc1.Forms.Admin
             {
 
             }
-
+            dataGridView1.DataSource = BAL.Hospitals.Get_Hospitals();
 
         }
 
@@ -149,6 +150,12 @@ namespace Erc1.Forms.Admin
             }
             if (Hos_Name.Text == "") button1.Enabled = false;
             else button1.Enabled = true;
+        }
+
+        private void Hospitals_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = BAL.Hospitals.Get_Hospitals(); 
+            
         }
     }
 }

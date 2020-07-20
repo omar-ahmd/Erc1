@@ -296,16 +296,17 @@ namespace Erc1.Forms._4_Hospitals
 
         private void Hospitals_VisibleChanged(object sender, EventArgs e)
         {
-            
+            if (loaded)
+            {
+                loaded = true;
+                Hospitals_Load(this, EventArgs.Empty);
+                loaded = false;
+            }
         }
 
         private void Hospitals_Shown(object sender, EventArgs e)
         {
-            if (loaded)
-            {
-                Hospitals_Load(this, EventArgs.Empty);
-            }
-            //Hosdt = BAL.Hospitals.GetHospitals();
+            
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Collections;
 using System.Data;
 using System.Windows.Forms;
 using System.Data.Entity.Migrations;
+using System.Data.Entity.Core;
 
 namespace Erc1.Classes
 {
@@ -88,16 +89,33 @@ namespace Erc1.Classes
 
             using (ERCEntities entity = new ERCEntities())
             {
-                var c = (
-                from cars in entity.الآليات
-                where cars.المركز == marakez
-                select new
+                 
+                if (marakez != -1)
                 {
+                    var c = (
+                    from cars in entity.الآليات
+                    where cars.المركز == marakez
+                    select new
+                    {
 
-                    cars = cars.رمز_الآلية
+                        cars = cars.رمز_الآلية
+                    }
+                        ); ;
+                    return c.ToList();
                 }
-                    ); ;
-                return c.ToList();
+                else
+                {
+                    var cc = (
+                    from cars in entity.الآليات
+                    select new
+                    {
+
+                        cars = cars.رمز_الآلية
+                    }
+                        ); ;
+                    return cc.ToList();
+                }
+                
             };
 
         }
@@ -1385,5 +1403,131 @@ namespace Erc1.Classes
         }
 
 
+    }
+    class Centers
+    {
+        public Centers()
+        {
+
+        }
+
+        public static bool AddCenter(المراكز Center)
+        {
+            bool ok;
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+
+                    entity.المراكز.AddOrUpdate(Center);
+                    entity.SaveChanges();
+                    ok = true;
+                }
+                catch
+                {
+                    ok = false;
+                }
+                return ok;
+            };
+        }
+        public static IEnumerable GetCenters()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = from Center in entity.المراكز
+                        select new
+                        {
+                            Center.الرمز,
+                            Center.المدن.المدينة,
+                            Center.تاريخ_التاسيس
+                        };
+
+                return c.ToList();
+            };
+        }
+        public static المراكز Get_Center_Info(int CenterId)
+        {
+            المراكز hos;
+            bool e;
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+                    hos = entity.المراكز
+                      .Where(r => r.الرمز == CenterId).FirstOrDefault();
+                    return hos;
+                }
+                catch
+                {
+                    return null;
+                }
+            };
+        }
+
+
+    }
+    class Cars
+    {
+        public Cars()
+        {
+                
+        }
+
+        public static bool AddCar(الآليات Car)
+        {
+            bool ok;
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+
+                    entity.الآليات.AddOrUpdate(Car);
+                    entity.SaveChanges();
+                    ok = true;
+                }
+                catch(EntityCommandExecutionException ex)
+                {
+                    ok = false;
+                }
+                return ok;
+            };
+        }
+        public static IEnumerable GetCars()
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                var c = from Car in entity.الآليات
+                        select new
+                        {
+                            Car.رمز_الآلية,
+                            Car.رقم_اللوحة,
+                            Car.مازوت_او_بنزين,
+                            Car.نوعية_الاستخدام,
+                            Car.نوعية_السيارة,
+                            Car.المركز
+
+                        };
+
+                return c.ToList();
+            };
+        }
+        public static الآليات Get_Car_Info(int CarId)
+        {
+            الآليات hos;
+            bool e;
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+                    hos = entity.الآليات
+                      .Where(r => r.رمز_الآلية == CarId).FirstOrDefault();
+                    return hos;
+                }
+                catch
+                {
+                    return null;
+                }
+            };
+        }
     }
 }

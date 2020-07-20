@@ -2,6 +2,7 @@
 using Erc1.Forms;
 using Erc1.Forms._4_Hospitals;
 using Erc1.Forms._6_AddMission;
+using Erc1.Forms.Operations.Reports;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -81,7 +82,7 @@ namespace ERC
 
 
 
-
+        Reports r;
 
         private void Home_Clicked(object sender, EventArgs e)
         {
@@ -139,7 +140,20 @@ namespace ERC
             }
             else if (Reports.BClicked)
             {
+                if (r == null)
+                {
+                    r = new Reports() { TopLevel = false };
+                    r.Size = panel2.Size;
+                    r.Dock = DockStyle.Fill;
+                    panel2.Controls.Add(r);
 
+
+                }
+                else
+                {
+                    
+                }
+                r.Show();
             }
             else if (Hospitals.BClicked)
             {

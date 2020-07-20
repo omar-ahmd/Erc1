@@ -37,19 +37,43 @@ namespace Erc1.Forms.Admin
                 Hos.StartPosition = FormStartPosition.CenterParent;
                 Hos.Show();
             }
-            else if(i=="1")
+            else if (i == "1")
             {
                 Vol = new Volunteers.Volunteers();
                 Vol.StartPosition = FormStartPosition.CenterParent;
                 Vol.Show();
             }
+            else if (i == "4")
+            {
+                center = new Centers.Centers();
+                center.StartPosition = FormStartPosition.CenterScreen ;
+                center.Show();
+            }
+            else if(i=="3")
+            {
+                car = new Cars();
+                car.StartPosition = FormStartPosition.CenterScreen;
+                car.Show();
+            }
         }
 
         Hospitals Hos;
         Volunteers.Volunteers Vol;
+        Centers.Centers center;
+        Cars car;
         private void btn2_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void btn4_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn2_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

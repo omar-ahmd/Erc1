@@ -227,8 +227,10 @@ namespace Erc1.BAL
 				dr["السنة"] = Date.Year;
 				cas.Rows.Add(dr);
 			}
+			bool  s = mission.add_Mission(Mission)   &&  mission.add_Cases(cas) && paramedicsInfo.SaveTeam(AnnualID, date.Year, MonthlyID, CenterID);
 
-			if (mission.add_Mission(Mission) && mission.add_Cases(cas) && paramedicsInfo.SaveTeam(AnnualID, date.Year, MonthlyID, CenterID))
+			MessageBox.Show(s.ToString());
+			if (s)
 			{
 
 				return true;
@@ -1862,6 +1864,10 @@ namespace Erc1.BAL
 
 		}
 
+		public static IEnumerable Get_Hospitals()
+		{
+			return Classes.Hospital.Get_Hospitals();
+		}
 		public static DataTable GetHospitals()
 		{
 			return Erc1.Classes.Hospital.Get_Info_Hospital();
@@ -1907,6 +1913,20 @@ namespace Erc1.BAL
 		{
 			return Classes.mission.Getالآليات_by_المركز(centerID);
 		}
+
+
+		public static bool AddCar(الآليات Car)
+		{
+			return Classes.Cars.AddCar(Car);
+		}
+		public static IEnumerable GetCars()
+		{
+			return Classes.Cars.GetCars();
+		}
+		public static الآليات Get_Car_Info(int CarId)
+		{
+			return Classes.Cars.Get_Car_Info(CarId);
+		}
 	}
 	class Employees
 	{
@@ -1914,7 +1934,10 @@ namespace Erc1.BAL
 		{
 			return mission.Get_العامل_name_byid(EmployeeID, centerId);
 		}
-
+		public static IEnumerable Get_Employees()
+		{
+			return Classes.Employees.Get_Employees();
+		}
 		public static IEnumerable GetWorks()
 		{
 			return Classes.mission.Get_الوظائف();
@@ -1930,7 +1953,27 @@ namespace Erc1.BAL
 		}
 	}
 
+	class center
+	{
+		public center()
+		{
 
+
+		}
+
+		public static IEnumerable GetCenters()
+		{
+			return Classes.Centers.GetCenters();
+		}
+		public static bool AddCenter(المراكز center)
+		{
+			return Classes.Centers.AddCenter(center);
+		}
+		public static المراكز GetCenter(int CenterId)
+		{
+			return Centers.Get_Center_Info(CenterId);
+		}
+	}
 
 
 	static class ImportFromDrive

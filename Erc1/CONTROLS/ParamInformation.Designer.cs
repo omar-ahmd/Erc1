@@ -192,7 +192,6 @@
             this.Name_HeadOfMission.Name = "Name_HeadOfMission";
             this.Name_HeadOfMission.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Name_HeadOfMission.Size = new System.Drawing.Size(284, 35);
-            this.Name_HeadOfMission.Sorted = true;
             this.Name_HeadOfMission.TabIndex = 11;
             this.Name_HeadOfMission.DisplayMemberChanged += new System.EventHandler(this.Name_HeadOfShift_DisplayMemberChanged);
             // 
@@ -301,7 +300,6 @@
             this.Name_Paramedic2.Name = "Name_Paramedic2";
             this.Name_Paramedic2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Name_Paramedic2.Size = new System.Drawing.Size(284, 35);
-            this.Name_Paramedic2.Sorted = true;
             this.Name_Paramedic2.TabIndex = 10;
             this.Name_Paramedic2.DisplayMemberChanged += new System.EventHandler(this.Name_HeadOfShift_DisplayMemberChanged);
             // 
@@ -501,7 +499,6 @@
             this.Name_RecipientOfMission.Name = "Name_RecipientOfMission";
             this.Name_RecipientOfMission.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Name_RecipientOfMission.Size = new System.Drawing.Size(284, 35);
-            this.Name_RecipientOfMission.Sorted = true;
             this.Name_RecipientOfMission.TabIndex = 9;
             this.Name_RecipientOfMission.DisplayMemberChanged += new System.EventHandler(this.Name_HeadOfShift_DisplayMemberChanged);
             // 
@@ -665,7 +662,6 @@
             this.Name_HeadOfShift.Name = "Name_HeadOfShift";
             this.Name_HeadOfShift.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Name_HeadOfShift.Size = new System.Drawing.Size(284, 35);
-            this.Name_HeadOfShift.Sorted = true;
             this.Name_HeadOfShift.TabIndex = 5;
             this.Name_HeadOfShift.DisplayMemberChanged += new System.EventHandler(this.Name_HeadOfShift_DisplayMemberChanged);
             // 
@@ -720,7 +716,6 @@
             this.Name_Paramedic1.Name = "Name_Paramedic1";
             this.Name_Paramedic1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Name_Paramedic1.Size = new System.Drawing.Size(284, 35);
-            this.Name_Paramedic1.Sorted = true;
             this.Name_Paramedic1.TabIndex = 7;
             this.Name_Paramedic1.DisplayMemberChanged += new System.EventHandler(this.Name_HeadOfShift_DisplayMemberChanged);
             // 
@@ -829,7 +824,6 @@
             this.Name_Driver.Name = "Name_Driver";
             this.Name_Driver.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Name_Driver.Size = new System.Drawing.Size(284, 35);
-            this.Name_Driver.Sorted = true;
             this.Name_Driver.TabIndex = 8;
             this.Name_Driver.DisplayMemberChanged += new System.EventHandler(this.Name_HeadOfShift_DisplayMemberChanged);
             // 

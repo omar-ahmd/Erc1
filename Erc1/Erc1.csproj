@@ -262,6 +262,18 @@
     <Compile Include="DAL\نوعيات_الحالات.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Admin\Cars\Cars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Cars\Cars.Designer.cs">
+      <DependentUpon>Cars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Centers\Centers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Centers\Centers.Designer.cs">
+      <DependentUpon>Centers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Admin\Hosp\Hospitals.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +346,12 @@
     <Compile Include="Forms\CasesOfMission.Designer.cs">
       <DependentUpon>CasesOfMission.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Operations\Reports\Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Operations\Reports\Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,6 +399,12 @@
     <EmbeddedResource Include="CONTROLS\Teams.resx">
       <DependentUpon>Teams.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Cars\Cars.resx">
+      <DependentUpon>Cars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Centers\Centers.resx">
+      <DependentUpon>Centers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Hosp\Hospitals.resx">
       <DependentUpon>Hospitals.cs</DependentUpon>
     </EmbeddedResource>
@@ -416,6 +440,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CasesOfMission.resx">
       <DependentUpon>CasesOfMission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Operations\Reports\Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

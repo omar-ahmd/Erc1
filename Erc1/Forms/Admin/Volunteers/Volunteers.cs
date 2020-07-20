@@ -99,6 +99,12 @@ namespace Erc1.Forms.Admin.Volunteers
             {
 
             }
+            dataGridView1.DataSource = BAL.Employees.Get_Employees();
+        }
+
+        private void Volunteers_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = BAL.Employees.Get_Employees();
         }
     }
 }
