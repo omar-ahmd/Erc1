@@ -111,6 +111,7 @@
             this.view.TabIndex = 19;
             this.view.Text = "عرض المعلومات";
             this.view.UseVisualStyleBackColor = true;
+            this.view.Click += new System.EventHandler(this.view_Click);
             // 
             // CaseType
             // 
