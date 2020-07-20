@@ -995,6 +995,7 @@ namespace Erc1.Classes
             }
         }
 
+        //Get Missions By Filter
         public static IEnumerable Get_Missions(int? year, int? month, int? center, int? caseType, int? volunteer, int? car, int? patient)
         {
             using (ERCEntities entity = new ERCEntities())
@@ -1074,8 +1075,6 @@ namespace Erc1.Classes
             {
                 try
                 {
-                    // int mon;
-                    // if mounth==null mon=-1 else mon=mounth
                     int rep = entity.المهمات_المنفذة
                         .Where(r => r.التاريخ.Value.Month == month && r.السنة == year)
                        .Count()
@@ -1089,8 +1088,84 @@ namespace Erc1.Classes
             };
         }
 
+        public static int Count_Missions(int month, int year, int center)
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+                    int rep = entity.المهمات_المنفذة
+                        .Where(r => r.التاريخ.Value.Month == month && r.السنة == year && r.رمز__المركز == center)
+                       .Count()
+                    ;
+                    return rep;
+                }
+                catch
+                {
+                    return -1;
+                }
+            };
+        }
 
-        public static DataTable MissionsInYearByMonth(int year)
+        public static int Count_Missions_By_CaseType(int month, int year, int casetype)
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+                    int rep = entity.المهمات_المنفذة
+                        .Where(r => r.التاريخ.Value.Month == month && r.السنة == year && r.رمز__المركز == casetype)
+                       .Count()
+                    ;
+                    return rep;
+                }
+                catch
+                {
+                    return -1;
+                }
+            };
+        }
+        public static int Count_Missions_By_Car(int month, int year, int car)
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+                    int rep = entity.المهمات_المنفذة
+                        .Where(r => r.التاريخ.Value.Month == month && r.السنة == year && r.رمز__المركز == car)
+                       .Count()
+                    ;
+                    return rep;
+                }
+                catch
+                {
+                    return -1;
+                }
+            };
+        }
+        public static int Count_Missions_By_Volunteer(int month, int year, int volunteer)
+        {
+            using (ERCEntities entity = new ERCEntities())
+            {
+                try
+                {
+                    int rep = entity.الفريق
+                        .Where(r => r.المهمات_المنفذة.التاريخ.Value.Month == month && r.السنة == year && r.رمز_العامل == volunteer)
+                       .Count()
+                    ;
+                    return rep;
+                }
+                catch
+                {
+                    return -1;
+                }
+            };
+        }
+
+
+
+        //return Datatable months with count
+        public static DataTable MissionsInYear(int year)
         {
             DataTable dt = new DataTable(); ;
             DataRow dr;
@@ -1111,13 +1186,92 @@ namespace Erc1.Classes
             return dt;
         }
 
+        public static DataTable MissionsInYear(int year, int center)
+        {
+            DataTable dt = new DataTable(); ;
+            DataRow dr;
+            //creating columns
+            dt.Columns.Add("Month", typeof(int));
+            dt.Columns.Add("Missions Number", typeof(int));
+            try
+            {
+                for (int i = 1; i <= 12; i++)
+                {
+                    dr = dt.NewRow();
+                    dr["Month"] = i;
+                    dr["Missions Number"] = Count_Missions(i, year, center);
+                    dt.Rows.Add(dr);
+                }
+            }
+            catch { }
+            return dt;
+        }
+
+        public static DataTable MissionsInYearByCaseType(int year, int casetype)
+        {
+            DataTable dt = new DataTable(); ;
+            DataRow dr;
+            //creating columns
+            dt.Columns.Add("Month", typeof(int));
+            dt.Columns.Add("Missions Number", typeof(int));
+            try
+            {
+                for (int i = 1; i <= 12; i++)
+                {
+                    dr = dt.NewRow();
+                    dr["Month"] = i;
+                    dr["Missions Number"] = Count_Missions_By_CaseType(i, year, casetype);
+                    dt.Rows.Add(dr);
+                }
+            }
+            catch { }
+            return dt;
+        }
+        public static DataTable MissionsInYearByCar(int year, int car)
+        {
+            DataTable dt = new DataTable(); ;
+            DataRow dr;
+            //creating columns
+            dt.Columns.Add("Month", typeof(int));
+            dt.Columns.Add("Missions Number", typeof(int));
+            try
+            {
+                for (int i = 1; i <= 12; i++)
+                {
+                    dr = dt.NewRow();
+                    dr["Month"] = i;
+                    dr["Missions Number"] = Count_Missions_By_Car(i, year, car);
+                    dt.Rows.Add(dr);
+                }
+            }
+            catch { }
+            return dt;
+        }
+        public static DataTable MissionsInYearByVolunteer(int year, int volunteer)
+        {
+            DataTable dt = new DataTable(); ;
+            DataRow dr;
+            //creating columns
+            dt.Columns.Add("Month", typeof(int));
+            dt.Columns.Add("Missions Number", typeof(int));
+            try
+            {
+                for (int i = 1; i <= 12; i++)
+                {
+                    dr = dt.NewRow();
+                    dr["Month"] = i;
+                    dr["Missions Number"] = Count_Missions_By_Volunteer(i, year, volunteer);
+                    dt.Rows.Add(dr);
+                }
+            }
+            catch { }
+            return dt;
+        }
 
 
 
 
     }
-
-
 
     class Hospital
     {
