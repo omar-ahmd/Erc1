@@ -58,7 +58,14 @@ namespace Erc1.Forms.Operations.Reports
 
         private void view_Click(object sender, EventArgs e)
         {
-            //Classes.mission.Get_Missions(int.Parse(year.Text),
+            int? y = int.Parse(year.Text)
+                , m = int.Parse(Months.Text)
+                , c = (int?)centers.SelectedValue
+                , ca = (int?)CaseType.SelectedValue
+                , v = (int?)volunteers.SelectedValue
+                , car = (int?)Cars.SelectedValue
+                ,p= (int?)Patient.SelectedValue;
+            dataGridView1.DataSource = Classes.mission.Get_Missions(y,m ,c ,ca ,v ,car ,p );
         }
     }
 }
