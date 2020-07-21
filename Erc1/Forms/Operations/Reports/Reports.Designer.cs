@@ -48,13 +48,14 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this._3 = new System.Windows.Forms.Button();
+            this._2 = new System.Windows.Forms.Button();
+            this._5 = new System.Windows.Forms.Button();
+            this._4 = new System.Windows.Forms.Button();
+            this._1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -105,6 +106,7 @@
             // 
             // view
             // 
+            this.view.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.view.Location = new System.Drawing.Point(3, 116);
             this.view.Name = "view";
             this.view.Size = new System.Drawing.Size(313, 33);
@@ -115,6 +117,7 @@
             // 
             // CaseType
             // 
+            this.CaseType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CaseType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CaseType.FormattingEnabled = true;
             this.CaseType.Location = new System.Drawing.Point(327, 116);
@@ -126,6 +129,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(484, 87);
@@ -137,6 +141,7 @@
             // 
             // Patient
             // 
+            this.Patient.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Patient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Patient.FormattingEnabled = true;
             this.Patient.Location = new System.Drawing.Point(649, 116);
@@ -148,6 +153,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(880, 87);
@@ -159,6 +165,7 @@
             // 
             // volunteers
             // 
+            this.volunteers.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.volunteers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.volunteers.FormattingEnabled = true;
             this.volunteers.Location = new System.Drawing.Point(971, 116);
@@ -170,6 +177,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(1153, 87);
@@ -181,6 +189,7 @@
             // 
             // Cars
             // 
+            this.Cars.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Cars.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cars.FormattingEnabled = true;
             this.Cars.Location = new System.Drawing.Point(3, 33);
@@ -192,6 +201,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(231, 4);
@@ -203,6 +213,7 @@
             // 
             // centers
             // 
+            this.centers.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.centers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.centers.FormattingEnabled = true;
             this.centers.Location = new System.Drawing.Point(327, 33);
@@ -214,6 +225,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(567, 4);
@@ -225,6 +237,7 @@
             // 
             // Months
             // 
+            this.Months.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Months.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Months.FormattingEnabled = true;
             this.Months.Items.AddRange(new object[] {
@@ -249,6 +262,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(880, 4);
@@ -260,6 +274,7 @@
             // 
             // year
             // 
+            this.year.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.year.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.year.FormattingEnabled = true;
             this.year.Items.AddRange(new object[] {
@@ -288,6 +303,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(1213, 9);
@@ -300,8 +316,8 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.54263F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.45737F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.34109F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.65891F));
             this.tableLayoutPanel2.Controls.Add(this.panel3, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -317,83 +333,90 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this._3);
+            this.panel3.Controls.Add(this._2);
+            this.panel3.Controls.Add(this._5);
+            this.panel3.Controls.Add(this._4);
+            this.panel3.Controls.Add(this._1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(1038, 0);
+            this.panel3.Location = new System.Drawing.Point(1088, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(252, 561);
+            this.panel3.Size = new System.Drawing.Size(202, 561);
             this.panel3.TabIndex = 1;
+            this.panel3.Click += new System.EventHandler(this.button1_Click);
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(77, 12);
+            this.label5.Location = new System.Drawing.Point(49, 18);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(110, 26);
             this.label5.TabIndex = 26;
             this.label5.Text = "رسم بياني";
             // 
-            // button5
+            // _3
             // 
-            this.button5.Location = new System.Drawing.Point(48, 412);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(165, 33);
-            this.button5.TabIndex = 24;
-            this.button5.Text = "مهمات الآلية";
-            this.button5.UseVisualStyleBackColor = true;
+            this._3.Location = new System.Drawing.Point(20, 418);
+            this._3.Name = "_3";
+            this._3.Size = new System.Drawing.Size(165, 33);
+            this._3.TabIndex = 24;
+            this._3.Text = "مهمات الآلية";
+            this._3.UseVisualStyleBackColor = true;
+            this._3.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button4
+            // _2
             // 
-            this.button4.Location = new System.Drawing.Point(48, 334);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(165, 33);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "مهمات حسب نوعية الحالات";
-            this.button4.UseVisualStyleBackColor = true;
+            this._2.Location = new System.Drawing.Point(20, 340);
+            this._2.Name = "_2";
+            this._2.Size = new System.Drawing.Size(165, 33);
+            this._2.TabIndex = 23;
+            this._2.Text = "مهمات حسب نوعية الحالات";
+            this._2.UseVisualStyleBackColor = true;
+            this._2.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
+            // _5
             // 
-            this.button3.Location = new System.Drawing.Point(48, 256);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 33);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "مهمات المركز";
-            this.button3.UseVisualStyleBackColor = true;
+            this._5.Location = new System.Drawing.Point(20, 262);
+            this._5.Name = "_5";
+            this._5.Size = new System.Drawing.Size(165, 33);
+            this._5.TabIndex = 22;
+            this._5.Text = "مهمات المركز";
+            this._5.UseVisualStyleBackColor = true;
+            this._5.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // _4
             // 
-            this.button2.Location = new System.Drawing.Point(48, 178);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 33);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "مهمات المسعف";
-            this.button2.UseVisualStyleBackColor = true;
+            this._4.Location = new System.Drawing.Point(20, 184);
+            this._4.Name = "_4";
+            this._4.Size = new System.Drawing.Size(165, 33);
+            this._4.TabIndex = 21;
+            this._4.Text = "مهمات المسعف";
+            this._4.UseVisualStyleBackColor = true;
+            this._4.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button1
+            // _1
             // 
-            this.button1.Location = new System.Drawing.Point(48, 100);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 33);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "المهمات في السنة";
-            this.button1.UseVisualStyleBackColor = true;
+            this._1.Location = new System.Drawing.Point(20, 106);
+            this._1.Name = "_1";
+            this._1.Size = new System.Drawing.Size(165, 33);
+            this._1.TabIndex = 20;
+            this._1.Text = "المهمات في السنة";
+            this._1.UseVisualStyleBackColor = true;
+            this._1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1038, 561);
+            this.panel2.Size = new System.Drawing.Size(1088, 561);
             this.panel2.TabIndex = 0;
             // 
             // dataGridView1
@@ -402,10 +425,21 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1038, 527);
+            this.dataGridView1.Size = new System.Drawing.Size(1088, 527);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Air Strip Arabic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(971, 530);
+            this.label9.Name = "label9";
+            this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label9.Size = new System.Drawing.Size(0, 26);
+            this.label9.TabIndex = 27;
             // 
             // Reports
             // 
@@ -413,6 +447,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1290, 738);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Reports";
             this.Text = "Reports";
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -422,6 +457,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -451,10 +487,11 @@
         private System.Windows.Forms.Button view;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button _3;
+        private System.Windows.Forms.Button _2;
+        private System.Windows.Forms.Button _5;
+        private System.Windows.Forms.Button _4;
+        private System.Windows.Forms.Button _1;
+        private System.Windows.Forms.Label label9;
     }
 }

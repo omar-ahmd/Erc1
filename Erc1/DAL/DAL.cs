@@ -1026,7 +1026,7 @@ namespace Erc1.Classes
                                 missions.الآلية,
                                 missions.التاريخ,
                                 missions.مريض_مقعد,
-                                missions.نوعية_الحالة,
+                                missions.نوعيات_الحالات.النوعية,
 
                             };
                     return c.ToList();
@@ -1059,7 +1059,7 @@ namespace Erc1.Classes
                                 missions.المهمات_المنفذة.الآلية,
                                 missions.المهمات_المنفذة.التاريخ,
                                 missions.المهمات_المنفذة.مريض_مقعد,
-                                missions.المهمات_المنفذة.نوعية_الحالة,
+                                missions.المهمات_المنفذة.نوعيات_الحالات.النوعية,
 
                             };
                     return c.ToList();
@@ -1167,7 +1167,7 @@ namespace Erc1.Classes
         //return Datatable months with count
         public static DataTable MissionsInYear(int year)
         {
-            DataTable dt = new DataTable(); ;
+            DataTable dt = new DataTable(); 
             DataRow dr;
             //creating columns
             dt.Columns.Add("Month", typeof(int));
@@ -1182,10 +1182,10 @@ namespace Erc1.Classes
                     dt.Rows.Add(dr);
                 }
             }
-            catch { }
+            catch 
+            { }
             return dt;
         }
-
         public static DataTable MissionsInYear(int year, int center)
         {
             DataTable dt = new DataTable(); ;
@@ -1206,7 +1206,6 @@ namespace Erc1.Classes
             catch { }
             return dt;
         }
-
         public static DataTable MissionsInYearByCaseType(int year, int casetype)
         {
             DataTable dt = new DataTable(); ;
