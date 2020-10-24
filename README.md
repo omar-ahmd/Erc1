@@ -1,4 +1,4 @@
-C# application connect to MySQL database and google drive api to manage a paramedic association , this association have many main parts which should be managed
+C# application connected to MySQL database and google drive api to manage a paramedic association , this association have many main parts that should be managed
 - Employees
 - Ambulances
 - Missions
